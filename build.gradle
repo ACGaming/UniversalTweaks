@@ -1,0 +1,86 @@
+buildscript {
+    repositories {
+        maven {
+            url = "https://maven.minecraftforge.net"
+        }
+        maven {
+            name = "Sponge"
+            url = "https://repo.spongepowered.org/maven"
+        }
+    }
+    dependencies {
+        classpath("com.anatawa12.forge:ForgeGradle:2.3-1.0.+") {
+            changing = true
+        }
+        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'org.spongepowered.mixin'
+
+version = "1.12.2-1.0.0"
+group = "mod.acgaming.hkntweaks"
+archivesBaseName = "HkNTweaks"
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft {
+    version = "1.12.2-14.23.5.2847"
+    runDir = "run"
+    mappings = "stable_39"
+
+    def args = ["-Dmixin.debug.export=true",
+                '-Dmixin.hotSwap=true',
+                '-Dmixin.checks.interfaces=true']
+
+    clientJvmArgs.addAll(args)
+    serverJvmArgs.addAll(args)
+}
+
+jar {
+    manifest {
+        attributes 'FMLCorePlugin': 'mod.acgaming.hkntweaks.core.HkNTweaksLoadingPlugin'
+        attributes 'FMLCorePluginContainsFMLMod': 'true'
+        attributes 'ForceLoadAsMod': 'true'
+    }
+}
+
+repositories {
+    maven {
+        name = "Curse Maven"
+        url "https://www.cursemaven.com"
+    }
+    maven {
+        name = "CleanroomMC"
+        url "https://maven.cleanroommc.com"
+    }
+    maven {
+        name = "Sponge"
+        url = "https://repo.spongepowered.org/maven"
+    }
+}
+
+dependencies {
+    deobfCompile "zone.rong:mixinbooter:5.0"
+}
+
+mixin {
+    add sourceSets.main, "hkntweaks.refmap.json"
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}

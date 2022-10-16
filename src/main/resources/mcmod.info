@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "hkntweaks",
+    "name": "HkN Tweaks",
+    "description": "ACGaming's assorted collection of bugfixes and tweaks",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "authorList": [
+      "ACGaming"
+    ],
+    "dependencies": [
+      "mixinbooter"
+    ]
+  }
+]

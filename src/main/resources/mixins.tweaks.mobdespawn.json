@@ -1,0 +1,7 @@
+{
+  "package": "mod.acgaming.hkntweaks.tweaks.mixin",
+  "refmap": "hkntweaks.refmap.json",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": ["HkNMobDespawnMixin"]
+}

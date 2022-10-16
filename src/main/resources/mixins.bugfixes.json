@@ -1,0 +1,8 @@
+{
+  "package": "mod.acgaming.hkntweaks.bugfixes.mixin",
+  "refmap": "hkntweaks.refmap.json",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": ["HkNDimensionChangeMixin", "HkNEntityAABBMixin", "HkNLadderFlyingMixin", "HkNLadderFlyingPlayerMixin", "HkNPistonChunkMixin", "HkNPistonTileMixin", "HkNSkeletonAimMixin"],
+  "client": ["HkNBlockOverlayMixin"]
+}
