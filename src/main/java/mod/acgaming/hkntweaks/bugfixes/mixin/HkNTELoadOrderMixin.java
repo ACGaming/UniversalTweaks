@@ -15,7 +15,7 @@ import zone.rong.mixinextras.injector.ModifyExpressionValue;
 // https://bugs.mojang.com/browse/MC-89146
 // Courtesy of Xcom6000
 @Mixin(Chunk.class)
-public class HkNPistonChunkMixin
+public class HkNTELoadOrderMixin
 {
     @ModifyExpressionValue(method = "<init>", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/Maps;newHashMap()Ljava/util/HashMap;"))
     public HashMap<BlockPos, TileEntity> hknWrapLinkedHashMap(HashMap<BlockPos, TileEntity> hashMap)

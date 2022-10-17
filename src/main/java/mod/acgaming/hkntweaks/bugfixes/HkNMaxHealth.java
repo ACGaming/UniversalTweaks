@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.hkntweaks.HkNTweaks;
+import mod.acgaming.hkntweaks.config.HkNTweaksConfig;
 
 // Courtesy of Laike-Endaril
 @Mod.EventBusSubscriber(modid = HkNTweaks.MODID)
@@ -19,12 +20,14 @@ public class HkNMaxHealth
     @SubscribeEvent
     public static void hknPlayerLogin(PlayerEvent.PlayerLoggedInEvent event)
     {
+        if (!HkNTweaksConfig.bugfixes.hknMaxHealthToggle) return;
         event.player.getTags().add("loginhpgo");
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    public static void hknServerTick(TickEvent.PlayerTickEvent event)
+    public static void hknPlayerTick(TickEvent.PlayerTickEvent event)
     {
+        if (!HkNTweaksConfig.bugfixes.hknMaxHealthToggle) return;
         if (event.side == Side.SERVER && event.phase == TickEvent.Phase.END)
         {
             EntityPlayer player = event.player;

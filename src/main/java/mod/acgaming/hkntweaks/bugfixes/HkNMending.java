@@ -15,6 +15,7 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.hkntweaks.HkNTweaks;
+import mod.acgaming.hkntweaks.config.HkNTweaksConfig;
 
 // Courtesy of FloorIsJava
 @Mod.EventBusSubscriber(modid = HkNTweaks.MODID)
@@ -38,6 +39,7 @@ public class HkNMending
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void hknPickupXP(final PlayerPickupXpEvent event)
     {
+        if (!HkNTweaksConfig.bugfixes.hknMendingToggle) return;
         event.setCanceled(true);
         final EntityPlayer player = event.getEntityPlayer();
         final EntityXPOrb xp = event.getOrb();

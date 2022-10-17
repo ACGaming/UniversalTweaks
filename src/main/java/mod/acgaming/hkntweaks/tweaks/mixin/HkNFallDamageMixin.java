@@ -27,6 +27,6 @@ public class HkNFallDamageMixin
     @Inject(method = "handleWaterMovement", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;extinguish()V"))
     public void hknLoadFallDistance(CallbackInfoReturnable<Boolean> cir)
     {
-        this.fallDistance = hknFallDistance - HkNTweaksConfig.tweaks.hknFallDamageSubtrahend;
+        this.fallDistance = hknFallDistance - HkNTweaksConfig.tweaks.hknFallDamageValue;
     }
 }
