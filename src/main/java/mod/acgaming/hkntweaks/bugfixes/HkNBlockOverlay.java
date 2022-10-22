@@ -22,11 +22,12 @@ import net.minecraft.util.math.BlockPos.MutableBlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.hkntweaks.HkNTweaks;
 
 // Courtesy of Meldexun
-@Mod.EventBusSubscriber(modid = HkNTweaks.MODID)
+@Mod.EventBusSubscriber(modid = HkNTweaks.MODID, value = Side.CLIENT)
 public class HkNBlockOverlay
 {
     @SuppressWarnings("deprecation")

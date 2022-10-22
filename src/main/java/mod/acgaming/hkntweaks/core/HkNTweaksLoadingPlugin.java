@@ -7,7 +7,9 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 import net.minecraftforge.common.ForgeVersion;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.hkntweaks.HkNTweaks;
 import mod.acgaming.hkntweaks.config.HkNTweaksConfig;
@@ -18,6 +20,8 @@ import zone.rong.mixinbooter.IEarlyMixinLoader;
 @IFMLLoadingPlugin.SortingIndex(Integer.MIN_VALUE)
 public class HkNTweaksLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 {
+    public static final boolean isClient = FMLLaunchHandler.side() == Side.CLIENT;
+
     static
     {
         if (HkNTweaksConfig.bugfixes.hknLocaleToggle && Locale.getDefault().getLanguage().equals("tr"))
@@ -61,7 +65,7 @@ public class HkNTweaksLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoa
     @Override
     public List<String> getMixinConfigs()
     {
-        return Arrays.asList(
+        return isClient ? Arrays.asList(
             "mixins.bugfixes.blockoverlay.json",
             "mixins.bugfixes.dimensionchange.json",
             "mixins.bugfixes.entityaabb.json",
@@ -73,17 +77,36 @@ public class HkNTweaksLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoa
             "mixins.tweaks.autojump.json",
             "mixins.tweaks.bedobstruction.json",
             "mixins.tweaks.falldamage.json",
-            "mixins.tweaks.mobdespawn.json"
-        );
+            "mixins.tweaks.mobdespawn.json") :
+            Arrays.asList(
+                "mixins.bugfixes.dimensionchange.json",
+                "mixins.bugfixes.entityaabb.json",
+                "mixins.bugfixes.ladderflying.json",
+                "mixins.bugfixes.pistontile.json",
+                "mixins.bugfixes.skeletonaim.json",
+                "mixins.bugfixes.teloadorder.json",
+                "mixins.tweaks.attributes.json",
+                "mixins.tweaks.bedobstruction.json",
+                "mixins.tweaks.falldamage.json",
+                "mixins.tweaks.mobdespawn.json"
+            );
     }
 
     @Override
     public boolean shouldMixinConfigQueue(String mixinConfig)
     {
+        if (isClient)
+        {
+            switch (mixinConfig)
+            {
+                case "mixins.bugfixes.blockoverlay.json":
+                    return HkNTweaksConfig.bugfixes.hknBlockOverlayToggle;
+                case "mixins.tweaks.autojump.json":
+                    return HkNTweaksConfig.tweaks.hknAutoJumpToggle;
+            }
+        }
         switch (mixinConfig)
         {
-            case "mixins.bugfixes.blockoverlay.json":
-                return HkNTweaksConfig.bugfixes.hknBlockOverlayToggle;
             case "mixins.bugfixes.dimensionchange.json":
                 return HkNTweaksConfig.bugfixes.hknDimensionChangeToggle;
             case "mixins.bugfixes.entityaabb.json":
@@ -98,8 +121,6 @@ public class HkNTweaksLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoa
                 return HkNTweaksConfig.bugfixes.hknTELoadOrderToggle;
             case "mixins.tweaks.attributes.json":
                 return HkNTweaksConfig.tweaks.hknAttributesToggle;
-            case "mixins.tweaks.autojump.json":
-                return HkNTweaksConfig.tweaks.hknAutoJumpToggle;
             case "mixins.tweaks.bedobstruction.json":
                 return HkNTweaksConfig.tweaks.hknBedObstructionToggle;
             case "mixins.tweaks.falldamage.json":
