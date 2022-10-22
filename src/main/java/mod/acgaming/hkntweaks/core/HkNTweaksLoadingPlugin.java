@@ -2,6 +2,7 @@ package mod.acgaming.hkntweaks.core;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -19,7 +20,11 @@ public class HkNTweaksLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoa
 {
     static
     {
-        HkNTweaks.LOGGER.info("HkN Tweaks Core initializing...");
+        if (HkNTweaksConfig.bugfixes.hknLocaleToggle && Locale.getDefault().getLanguage().equals("tr"))
+        {
+            HkNTweaks.LOGGER.info("The locale is Turkish, which is unfortunately not supported by some mods. Changing to English...");
+            Locale.setDefault(Locale.ENGLISH);
+        }
     }
 
     @Override

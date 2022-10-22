@@ -41,6 +41,11 @@ public class HkNTweaksConfig
         @Config.Comment("Disables climbing movement when flying")
         public boolean hknLadderFlyingToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Locale Fix")
+        @Config.Comment("Prevents various crashes with Turkish locale")
+        public boolean hknLocaleToggle = true;
+
         @Config.RequiresWorldRestart
         @Config.Name("Max Health Fix")
         @Config.Comment("Saves increased player health to tags")
