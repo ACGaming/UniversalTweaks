@@ -40,6 +40,7 @@ public class UTMending
     public static void utPickupXP(final PlayerPickupXpEvent event)
     {
         if (!UTConfig.bugfixes.utMendingToggle) return;
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMending ::: Player pick up XP event");
         event.setCanceled(true);
         final EntityPlayer player = event.getEntityPlayer();
         final EntityXPOrb xp = event.getOrb();

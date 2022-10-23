@@ -7,6 +7,8 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -30,6 +32,7 @@ public abstract class UTMobDespawnMixin extends EntityLivingBase
     @Inject(at = @At("TAIL"), method = "updateEquipmentIfNeeded")
     public void utUpdateEquipmentIfNeeded(CallbackInfo info)
     {
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Update equipment");
         this.pickedItems = true;
         this.persistenceRequired = this.hasCustomName();
     }
@@ -37,6 +40,7 @@ public abstract class UTMobDespawnMixin extends EntityLivingBase
     @Redirect(method = "despawnEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/EntityLiving;setDead()V"))
     public void utDespawnEntity(EntityLiving instance)
     {
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Despawn entity");
         if (this.pickedItems) this.dropEquipmentOnDespawn();
         this.setDead();
     }

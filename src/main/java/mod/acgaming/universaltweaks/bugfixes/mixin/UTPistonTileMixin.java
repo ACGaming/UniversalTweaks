@@ -7,6 +7,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityPiston;
 import net.minecraft.util.EnumFacing;
 
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -49,6 +51,7 @@ public class UTPistonTileMixin extends TileEntity
         this.lastProgress = compound.getFloat("lastProgress");
         this.extending = compound.getBoolean("extending");
         this.shouldHeadBeRendered = compound.getBoolean("source");
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPistonTile ::: Read from NBT");
     }
 
     /**
@@ -66,6 +69,7 @@ public class UTPistonTileMixin extends TileEntity
         compound.setFloat("lastProgress", this.lastProgress);
         compound.setBoolean("extending", this.extending);
         compound.setBoolean("source", this.shouldHeadBeRendered);
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPistonTile ::: Write to NBT");
         return compound;
     }
 }

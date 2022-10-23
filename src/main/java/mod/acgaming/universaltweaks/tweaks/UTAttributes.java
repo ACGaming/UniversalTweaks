@@ -21,7 +21,7 @@ public class UTAttributes
             {
                 ((RangedAttributeAccessor) attribute).setMinimumValue(Double.MIN_VALUE);
                 ((RangedAttributeAccessor) attribute).setMaximumValue(Double.MAX_VALUE);
-                UniversalTweaks.LOGGER.info("Successfully altered attribute " + attribute.getName());
+                UniversalTweaks.LOGGER.info("UTAttributes ::: Successfully altered attribute " + attribute.getName());
             }
         }
     }

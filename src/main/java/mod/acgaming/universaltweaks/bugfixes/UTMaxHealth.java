@@ -21,12 +21,14 @@ public class UTMaxHealth
     public static void utPlayerLogin(PlayerEvent.PlayerLoggedInEvent event)
     {
         if (!UTConfig.bugfixes.utMaxHealthToggle) return;
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMaxHealth ::: Player logged in event");
         event.player.getTags().add("loginhpgo");
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utPlayerTick(TickEvent.PlayerTickEvent event)
     {
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMaxHealth ::: Player tick event");
         if (!UTConfig.bugfixes.utMaxHealthToggle) return;
         if (event.side == Side.SERVER && event.phase == TickEvent.Phase.END)
         {

@@ -15,6 +15,10 @@ public class UTConfig
     @Config.Comment("Bugfixes Category")
     public static BugfixesCategory bugfixes = new BugfixesCategory();
 
+    @Config.Name("Debug")
+    @Config.Comment("Debug Category")
+    public static DebugCategory debug = new DebugCategory();
+
     @Config.Name("Tweaks")
     @Config.Comment("Tweaks Category")
     public static TweaksCategory tweaks = new TweaksCategory();
@@ -74,6 +78,13 @@ public class UTConfig
         @Config.Name("Tile Entity Update Order Fix")
         @Config.Comment("Keeps the order of tile entities on chunk load")
         public boolean utTELoadOrderToggle = true;
+    }
+
+    public static class DebugCategory
+    {
+        @Config.Name("Debug logging")
+        @Config.Comment("Enable debug logging")
+        public boolean utDebugToggle = false;
     }
 
     public static class TweaksCategory

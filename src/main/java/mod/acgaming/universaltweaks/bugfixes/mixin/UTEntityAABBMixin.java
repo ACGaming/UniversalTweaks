@@ -6,6 +6,8 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.common.util.Constants;
 
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,6 +29,7 @@ public abstract class UTEntityAABBMixin
     @Inject(method = "writeToNBT", at = @At(value = "INVOKE", target = "Lnet/minecraft/nbt/NBTTagCompound;setTag(Ljava/lang/String;Lnet/minecraft/nbt/NBTBase;)V", ordinal = 2))
     public void utWriteAABBToNBT(NBTTagCompound compound, CallbackInfoReturnable<NBTTagCompound> cir)
     {
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityAABB ::: Write AABB to NBT");
         AxisAlignedBB aabb = this.getEntityBoundingBox();
         if (aabb != null) compound.setTag("AABB", newDoubleNBTList(aabb.minX, aabb.minY, aabb.minZ, aabb.maxX, aabb.maxY, aabb.maxZ));
     }
@@ -34,6 +37,7 @@ public abstract class UTEntityAABBMixin
     @Inject(method = "readFromNBT", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;setRotation(FF)V"))
     public void utReadAABBFromNBT(NBTTagCompound compound, CallbackInfo ci)
     {
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityAABB ::: Read AABB from NBT");
         if (compound.hasKey("AABB"))
         {
             NBTTagList aabbNbt = compound.getTagList("AABB", Constants.NBT.TAG_DOUBLE);

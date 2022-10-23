@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfig;
 
 // Courtesy of matthewprenger
 @SuppressWarnings("NullableProblems")
@@ -60,28 +61,9 @@ public class UTHelp
         }
     };
 
-    /**
-     * Checks to see if an {@link net.minecraft.command.ICommand ICommand} has a valid compareTo method
-     *
-     * @param command the command
-     * @return {@code true} if the compareTo method is valid, {@code false} if not
-     */
-    static boolean validCompareTo(@Nonnull final ICommand command)
-    {
-        try
-        {
-            return command.compareTo(testCmd1) != command.compareTo(testCmd2);
-        }
-        catch (Exception e)
-        {
-            UniversalTweaks.LOGGER.warn("UTHelp ::: Failed to test command '{}' for a valid compareTo", command, e);
-            return true; // True because we don't know that the impl is bad, just that it throws an exception
-        }
-    }
-
     public static void onServerStarting(FMLServerStartingEvent event)
     {
-        UniversalTweaks.LOGGER.info("UTHelp ::: Server starting event");
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHelp ::: Server starting event");
         event.registerServerCommand(new CommandHelp()
         {
             @SuppressWarnings("ConstantConditions")
@@ -119,7 +101,7 @@ public class UTHelp
 
     public static void onServerStarted(FMLServerStartedEvent event)
     {
-        UniversalTweaks.LOGGER.info("UTHelp ::: Server started event");
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHelp ::: Server started event");
         Collection<ICommand> commands = FMLCommonHandler.instance().getMinecraftServerInstance().getCommandManager().getCommands().values();
         for (final ICommand command : commands)
         {
@@ -127,6 +109,25 @@ public class UTHelp
             {
                 UniversalTweaks.LOGGER.warn("UTHelp ::: Command {} from class {} incorrectly overrides compareTo: %s", command.getName(), command.getClass().getName());
             }
+        }
+    }
+
+    /**
+     * Checks to see if an {@link net.minecraft.command.ICommand ICommand} has a valid compareTo method
+     *
+     * @param command the command
+     * @return {@code true} if the compareTo method is valid, {@code false} if not
+     */
+    static boolean validCompareTo(@Nonnull final ICommand command)
+    {
+        try
+        {
+            return command.compareTo(testCmd1) != command.compareTo(testCmd2);
+        }
+        catch (Exception e)
+        {
+            UniversalTweaks.LOGGER.warn("UTHelp ::: Failed to test command '{}' for a valid compareTo", command, e);
+            return true; // True because we don't know that the impl is bad, just that it throws an exception
         }
     }
 }

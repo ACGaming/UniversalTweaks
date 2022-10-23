@@ -44,7 +44,7 @@ public class UniversalTweaks
         "after:mendingfix;" +
         "after:savemystronghold;" +
         "after:stepupfix";
-    public static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     public static void throwIncompatibility()
     {

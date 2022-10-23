@@ -20,6 +20,7 @@ public class UTOffhand
     public static void utOffhand(PlayerInteractEvent.RightClickBlock event)
     {
         if (!UTConfig.tweaks.utOffhandToggle) return;
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTOffhand ::: Right click block event");
         EntityPlayer player = event.getEntityPlayer();
         Item heldItemMainhand = player.getHeldItemMainhand().getItem();
         Item heldItemOffhand = player.getHeldItemOffhand().getItem();

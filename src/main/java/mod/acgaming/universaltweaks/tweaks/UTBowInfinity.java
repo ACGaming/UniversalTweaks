@@ -23,6 +23,7 @@ public class UTBowInfinity
     public static void utBowInfinity(ArrowNockEvent event)
     {
         if (!UTConfig.tweaks.utBowInfinityToggle) return;
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBowInfinity ::: Arrow nock event");
         if (EnchantmentHelper.getEnchantmentLevel(INFINITY, event.getBow()) > 0)
         {
             event.getEntityPlayer().setActiveHand(event.getHand());

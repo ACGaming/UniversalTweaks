@@ -7,6 +7,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.chunk.Chunk;
 
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import zone.rong.mixinextras.injector.ModifyExpressionValue;
@@ -20,6 +22,7 @@ public class UTTELoadOrderMixin
     @ModifyExpressionValue(method = "<init>", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/Maps;newHashMap()Ljava/util/HashMap;"))
     public HashMap<BlockPos, TileEntity> utWrapLinkedHashMap(HashMap<BlockPos, TileEntity> hashMap)
     {
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTTELoadOrder ::: Wrap linked hash map");
         return new LinkedHashMap<>(hashMap);
     }
 }

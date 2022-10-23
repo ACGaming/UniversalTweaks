@@ -3,6 +3,8 @@ package mod.acgaming.universaltweaks.bugfixes.mixin;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.PlayerCapabilities;
 
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
@@ -17,6 +19,7 @@ public class UTLadderFlyingPlayerMixin extends UTLadderFlyingMixin
     @Override
     public boolean utIsNotClimbing(boolean isSpectator)
     {
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLadderFlyingPlayer ::: Player climb check");
         return isSpectator || (capabilities.isFlying);
     }
 }
