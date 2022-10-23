@@ -1,13 +1,12 @@
 # 🔧 Universal Tweaks 🔧
 ### A one-stop-shop for all bugfixing and tweaking needs
 
-Already implemented features:
-
 **Bugfixes:**
 * Block Overlay: Fixes x-ray when standing in non-suffocating blocks
 * Dimension Change Player States: Fixes missing player states when changing dimensions by sending additional packets
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * Ladder Flying Slowdown: Disables climbing movement when flying
+* Locale: Prevents various crashes with Turkish locale
 * Max Health: Saves increased player health to tags
 * Mending: Only repairs damaged equipment with XP
 * Piston Progress: Properly saves the last state of pistons to tags
