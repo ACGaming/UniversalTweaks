@@ -70,6 +70,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.dimensionchange.json",
             "mixins.bugfixes.entityaabb.json",
             "mixins.bugfixes.ladderflying.json",
+            "mixins.bugfixes.miningglitch.client.json",
+            "mixins.bugfixes.miningglitch.server.json",
             "mixins.bugfixes.pistontile.json",
             "mixins.bugfixes.skeletonaim.json",
             "mixins.bugfixes.teloadorder.json",
@@ -82,6 +84,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.dimensionchange.json",
                 "mixins.bugfixes.entityaabb.json",
                 "mixins.bugfixes.ladderflying.json",
+                "mixins.bugfixes.miningglitch.server.json",
                 "mixins.bugfixes.pistontile.json",
                 "mixins.bugfixes.skeletonaim.json",
                 "mixins.bugfixes.teloadorder.json",
@@ -101,6 +104,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             {
                 case "mixins.bugfixes.blockoverlay.json":
                     return UTConfig.bugfixes.utBlockOverlayToggle;
+                case "mixins.bugfixes.miningglitch.client.json":
+                    return UTConfig.bugfixes.utMiningGlitchToggle;
                 case "mixins.tweaks.autojump.json":
                     return UTConfig.tweaks.utAutoJumpToggle;
             }
@@ -113,6 +118,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.bugfixes.utEntityAABBToggle;
             case "mixins.bugfixes.ladderflying.json":
                 return UTConfig.bugfixes.utLadderFlyingToggle;
+            case "mixins.bugfixes.miningglitch.server.json":
+                return UTConfig.bugfixes.utMiningGlitchToggle;
             case "mixins.bugfixes.pistontile.json":
                 return UTConfig.bugfixes.utPistonTileToggle;
             case "mixins.bugfixes.skeletonaim.json":

@@ -64,6 +64,10 @@ public class UTConfig
         @Config.Comment("Only repairs damaged equipment with XP")
         public boolean utMendingToggle = true;
 
+        @Config.Name("Mining Glitch Fix")
+        @Config.Comment("Avoids the need for multiple mining attempts by sending additional movement packets")
+        public boolean utMiningGlitchToggle = true;
+
         @Config.RequiresMcRestart
         @Config.Name("Piston Progress Fix")
         @Config.Comment("Properly saves the last state of pistons to tags")

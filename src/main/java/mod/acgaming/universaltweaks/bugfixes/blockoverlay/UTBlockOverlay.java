@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.bugfixes;
+package mod.acgaming.universaltweaks.bugfixes.blockoverlay;
 
 import java.util.ArrayList;
 import java.util.Arrays;

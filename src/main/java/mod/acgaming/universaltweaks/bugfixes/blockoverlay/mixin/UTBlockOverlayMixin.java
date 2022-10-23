@@ -1,11 +1,11 @@
-package mod.acgaming.universaltweaks.bugfixes.mixin;
+package mod.acgaming.universaltweaks.bugfixes.blockoverlay.mixin;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderGlobal;
 import net.minecraft.util.BlockRenderLayer;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.bugfixes.UTBlockOverlay;
+import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlay;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

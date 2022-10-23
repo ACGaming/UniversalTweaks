@@ -1,5 +1,5 @@
 {
-  "package": "mod.acgaming.universaltweaks.bugfixes.mixin",
+  "package": "mod.acgaming.universaltweaks.bugfixes.blockoverlay.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
