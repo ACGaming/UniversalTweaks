@@ -36,6 +36,11 @@ public class UTConfig
         @Config.Comment("Saves entity bounding boxes to tags to prevent breakouts and suffocation")
         public boolean utEntityAABBToggle = true;
 
+        @Config.RequiresWorldRestart
+        @Config.Name("Help Fix")
+        @Config.Comment("Replaces the help command, sorts and reports broken commands")
+        public boolean utHelpToggle = true;
+
         @Config.RequiresMcRestart
         @Config.Name("Ladder Flying Slowdown Fix")
         @Config.Comment("Disables climbing movement when flying")

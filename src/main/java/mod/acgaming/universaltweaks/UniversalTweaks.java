@@ -10,10 +10,13 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 
+import mod.acgaming.universaltweaks.bugfixes.UTHelp;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
@@ -35,6 +38,7 @@ public class UniversalTweaks
         "after:blockoverlayfix;" +
         "after:bowinfinityfix;" +
         "after:experiencebugfix;" +
+        "after:helpfixer;" +
         "after:letmedespawn;" +
         "after:loginhpfix;" +
         "after:mendingfix;" +
@@ -53,6 +57,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("blockoverlayfix")) messages.add("Block Overlay Fix");
         if (Loader.isModLoaded("bowinfinityfix")) messages.add("Bow Infinity Fix");
         if (Loader.isModLoaded("experiencebugfix")) messages.add("Fix Experience Bug");
+        if (Loader.isModLoaded("helpfixer")) messages.add("HelpFixer");
         if (Loader.isModLoaded("letmedespawn")) messages.add("Let Me Despawn");
         if (Loader.isModLoaded("loginhpfix")) messages.add("Login HP Fix");
         if (Loader.isModLoaded("mendingfix")) messages.add("Mending Fix");
@@ -82,5 +87,17 @@ public class UniversalTweaks
     {
         if (UTConfig.tweaks.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
         LOGGER.info("Universal Tweaks initialized");
+    }
+
+    @Mod.EventHandler
+    public void onServerStarting(FMLServerStartingEvent event)
+    {
+        if (UTConfig.bugfixes.utHelpToggle) UTHelp.onServerStarting(event);
+    }
+
+    @Mod.EventHandler
+    public void onServerStarted(FMLServerStartedEvent event)
+    {
+        if (UTConfig.bugfixes.utHelpToggle) UTHelp.onServerStarted(event);
     }
 }
