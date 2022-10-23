@@ -83,7 +83,7 @@ public class UTConfig
     public static class DebugCategory
     {
         @Config.Name("Debug logging")
-        @Config.Comment("Enable debug logging")
+        @Config.Comment("Enables debug logging")
         public boolean utDebugToggle = false;
     }
 
@@ -107,6 +107,10 @@ public class UTConfig
         @Config.Name("Bow Infinity Remedy")
         @Config.Comment("Bows enchanted with Infinity no longer require arrows")
         public boolean utBowInfinityToggle = true;
+
+        @Config.Name("Fast Leaf Decay")
+        @Config.Comment("Makes leaves decay faster when trees are chopped")
+        public boolean utLeafDecayToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Water Fall Damage")
