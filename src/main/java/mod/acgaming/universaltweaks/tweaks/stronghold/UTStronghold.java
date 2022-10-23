@@ -1,7 +1,6 @@
 package mod.acgaming.universaltweaks.tweaks.stronghold;
 
 import net.minecraftforge.event.terraingen.InitMapGenEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -11,13 +10,13 @@ import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.MapGenSafeStrongh
 import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
 
 // Courtesy of yungnickyoung
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTStronghold
 {
     @SubscribeEvent(priority = EventPriority.NORMAL)
-    public static void utOnStrongholdGen(InitMapGenEvent event)
+    public void utOnStrongholdGen(InitMapGenEvent event)
     {
         if (!UTConfig.tweaks.utStrongholdToggle) return;
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTStronghold ::: Init map gen event");
         if (event.getType() == InitMapGenEvent.EventType.STRONGHOLD)
         {
             MapGenSafeStronghold safeStronghold = new MapGenSafeStronghold();

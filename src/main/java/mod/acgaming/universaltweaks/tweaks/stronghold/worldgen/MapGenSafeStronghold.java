@@ -37,9 +37,11 @@ public class MapGenSafeStronghold extends MapGenStronghold
         this.initializeStructureData(worldIn);
         int i = (chunkCoord.x << 4) + 8;
         int j = (chunkCoord.z << 4) + 8;
+
         for (StructureStart structureStart : this.structureMap.values())
         {
             Start structurestart = (Start) structureStart;
+
             if (structurestart.isSizeableStructure() && structurestart.isValidForPostProcess(chunkCoord) && structurestart.getBoundingBox().intersectsWith(i, j, i + 15, j + 15))
             {
                 structurestart.generateSafeStructure(worldIn, randomIn, new StructureBoundingBox(i, j, i + 15, j + 15));
@@ -53,8 +55,10 @@ public class MapGenSafeStronghold extends MapGenStronghold
     {
         sWorld = this.world;
         sRand = this.rand;
+
         MapGenStructureIO.registerStructure(Start.class, "Stronghold");
         StructureSafeStrongholdPieces.registerStrongholdPieces();
+
         updateCurrStronghold(chunkX, chunkZ);
         return sStart;
     }
@@ -63,12 +67,14 @@ public class MapGenSafeStronghold extends MapGenStronghold
     {
         foundStrongholdX = chunkX;
         foundStrongholdZ = chunkZ;
+
         // Create StructureStart. This will generate the list of components (stronghold pieces) ...
         // ... but the stronghold will not be generated until accessed by SafeStrongholdWorldGenerator.
         Start start;
         for (start = new Start(this.world, this.rand, chunkX, chunkZ); start.getComponents().isEmpty() || ((StructureSafeStrongholdPieces.Stairs2) start.getComponents().get(0)).strongholdPortalRoom == null; start = new Start(this.world, this.rand, chunkX, chunkZ))
         {
         }
+
         sStart = start;
         createdStronghold = true;
     }
@@ -90,23 +96,28 @@ public class MapGenSafeStronghold extends MapGenStronghold
             super(chunkX, chunkZ);
             this.world = worldIn;
             this.rand = random;
+
             StructureSafeStrongholdPieces.prepareStructurePieces();
-            structurestrongholdpieces$stairs2 = new StructureSafeStrongholdPieces.Stairs2(rand, (chunkX << 4) + 2, (chunkZ << 4) + 2);
+            structurestrongholdpieces$stairs2 = new StructureSafeStrongholdPieces.Stairs2(0, rand, (chunkX << 4) + 2, (chunkZ << 4) + 2);
             this.components.add(structurestrongholdpieces$stairs2);
             structurestrongholdpieces$stairs2.buildComponent(structurestrongholdpieces$stairs2, this.components, rand);
+
             populateComponents();
         }
 
         public void populateComponents()
         {
             list = structurestrongholdpieces$stairs2.pendingChildren;
+
             while (!list.isEmpty())
             {
                 int i = rand.nextInt(list.size());
                 StructureComponent structurecomponent = list.remove(i);
                 structurecomponent.buildComponent(structurestrongholdpieces$stairs2, this.components, rand);
             }
+
             sComponents = this.components;
+
             this.updateBoundingBox();
             this._boundingBox = boundingBox;
             this.markAvailableHeight(world, rand, 10);
@@ -119,9 +130,11 @@ public class MapGenSafeStronghold extends MapGenStronghold
         public void generateSafeStructure(World worldIn, Random rand, StructureBoundingBox structurebb)
         {
             Iterator iterator = this.components.iterator();
+
             while (iterator.hasNext())
             {
                 SafeStructureComponent structurecomponent = (SafeStructureComponent) iterator.next();
+
                 if (structurecomponent.getBoundingBox().intersectsWith(structurebb) && !structurecomponent.addComponentParts(worldIn, rand, structurebb))
                 {
                     iterator.remove();
