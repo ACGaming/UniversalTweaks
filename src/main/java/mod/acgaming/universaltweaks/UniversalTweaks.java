@@ -38,10 +38,13 @@ public class UniversalTweaks
         "after:blockoverlayfix;" +
         "after:bowinfinityfix;" +
         "after:experiencebugfix;" +
+        "after:fastleafdecay;" +
         "after:helpfixer;" +
+        "after:leafdecay;" +
         "after:letmedespawn;" +
         "after:loginhpfix;" +
         "after:mendingfix;" +
+        "after:quickleafdecay;" +
         "after:savemystronghold;" +
         "after:stepupfix";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
@@ -57,10 +60,13 @@ public class UniversalTweaks
         if (Loader.isModLoaded("blockoverlayfix")) messages.add("Block Overlay Fix");
         if (Loader.isModLoaded("bowinfinityfix")) messages.add("Bow Infinity Fix");
         if (Loader.isModLoaded("experiencebugfix")) messages.add("Fix Experience Bug");
+        if (Loader.isModLoaded("fastleafdecay")) messages.add("Fast Leaf Decay");
         if (Loader.isModLoaded("helpfixer")) messages.add("HelpFixer");
+        if (Loader.isModLoaded("leafdecay")) messages.add("Leaf Decay Accelerator");
         if (Loader.isModLoaded("letmedespawn")) messages.add("Let Me Despawn");
         if (Loader.isModLoaded("loginhpfix")) messages.add("Login HP Fix");
         if (Loader.isModLoaded("mendingfix")) messages.add("Mending Fix");
+        if (Loader.isModLoaded("quickleafdecay")) messages.add("Quick Leaf Decay");
         if (Loader.isModLoaded("savemystronghold")) messages.add("Save My Stronghold!");
         if (Loader.isModLoaded("stepupfix")) messages.add("StepupFixer");
         if (messages.size() > 3)
