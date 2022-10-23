@@ -19,8 +19,8 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
 version = "1.12.2-1.0.0"
-group = "mod.acgaming.hkntweaks"
-archivesBaseName = "HkNTweaks"
+group = "mod.acgaming.universaltweaks"
+archivesBaseName = "UniversalTweaks"
 
 sourceCompatibility = targetCompatibility = '1.8'
 compileJava {
@@ -42,7 +42,7 @@ minecraft {
 
 jar {
     manifest {
-        attributes 'FMLCorePlugin': 'mod.acgaming.hkntweaks.core.HkNTweaksLoadingPlugin'
+        attributes 'FMLCorePlugin': 'mod.acgaming.universaltweaks.core.UTLoadingPlugin'
         attributes 'FMLCorePluginContainsFMLMod': 'true'
         attributes 'ForceLoadAsMod': 'true'
     }
@@ -68,7 +68,7 @@ dependencies {
 }
 
 mixin {
-    add sourceSets.main, "hkntweaks.refmap.json"
+    add sourceSets.main, "universaltweaks.refmap.json"
 }
 
 processResources {

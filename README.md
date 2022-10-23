@@ -1,4 +1,4 @@
-# 🔧 HkN Tweaks 🔧
+# 🔧 Universal Tweaks 🔧
 ### A one-stop-shop for all bugfixing and tweaking needs
 
 Already implemented features:

@@ -1,8 +1,8 @@
 [
   {
-    "modid": "hkntweaks",
-    "name": "HkN Tweaks",
-    "description": "ACGaming's assorted collection of bugfixes and tweaks",
+    "modid": "universaltweaks",
+    "name": "Universal Tweaks",
+    "description": "A one-stop-shop for all bugfixing and tweaking needs",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "",
