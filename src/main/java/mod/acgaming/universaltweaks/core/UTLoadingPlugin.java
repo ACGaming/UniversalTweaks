@@ -82,6 +82,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.bedobstruction.json",
             "mixins.tweaks.falldamage.json",
             "mixins.tweaks.mobdespawn.json",
+            "mixins.tweaks.prefixcheck.json",
             "mixins.tweaks.resourcemanager.json") :
             Arrays.asList(
                 "mixins.bugfixes.destroypacket.json",
@@ -95,7 +96,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.attributes.json",
                 "mixins.tweaks.bedobstruction.json",
                 "mixins.tweaks.falldamage.json",
-                "mixins.tweaks.mobdespawn.json"
+                "mixins.tweaks.mobdespawn.json",
+                "mixins.tweaks.prefixcheck.json"
             );
     }
 
@@ -144,6 +146,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.tweaks.utFallDamageToggle;
             case "mixins.tweaks.mobdespawn.json":
                 return UTConfig.tweaks.utMobDespawnToggle;
+            case "mixins.tweaks.prefixcheck.json":
+                return UTConfig.tweaks.utPrefixCheckToggle;
         }
         return true;
     }

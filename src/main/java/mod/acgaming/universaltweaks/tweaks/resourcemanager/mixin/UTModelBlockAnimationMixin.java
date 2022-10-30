@@ -26,7 +26,7 @@ public class UTModelBlockAnimationMixin
     private static void utLoadVanillaAnimation(IResourceManager manager, ResourceLocation location, CallbackInfoReturnable<ModelBlockAnimation> info)
     {
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTModelBlockAnimationMixin ::: Load vanilla animation");
-        if (UTConfig.tweaks.utDisableAnimatedModelsToggle && manager instanceof ICheckableResourceManager && !((ICheckableResourceManager) manager).hasResource(location))
+        if (manager instanceof ICheckableResourceManager && !((ICheckableResourceManager) manager).hasResource(location))
         {
             info.setReturnValue(defaultModelBlockAnimation);
         }

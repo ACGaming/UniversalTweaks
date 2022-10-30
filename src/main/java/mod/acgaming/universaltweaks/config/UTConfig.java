@@ -132,6 +132,11 @@ public class UTConfig
         public boolean utLeafDecayToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fast Prefix Checking")
+        @Config.Comment("Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time")
+        public boolean utPrefixCheckToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Water Fall Damage")
         @Config.Comment("Re-implements an improved version of pre-1.4 fall damage in water")
         public boolean utFallDamageToggle = false;
