@@ -20,8 +20,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(GameData.class)
 public class UTPrefixCheckMixin
 {
-    @Inject(method = "checkPrefix(Ljava/lang/String;)Lnet/minecraft/util/ResourceLocation;", at = @At("HEAD"), cancellable = true, remap = false)
-    private static void checkPrefix(String name, CallbackInfoReturnable<ResourceLocation> info)
+    @Inject(method = "checkPrefix(Ljava/lang/String;Z)Lnet/minecraft/util/ResourceLocation;", at = @At("HEAD"), cancellable = true, remap = false)
+    private static void checkPrefix(String name, boolean warnOverrides, CallbackInfoReturnable<ResourceLocation> info)
     {
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPrefixCheckMixin ::: Check prefix");
         // Get position of the last separator
