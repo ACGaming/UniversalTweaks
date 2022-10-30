@@ -91,7 +91,7 @@ public class UTConfig
 
     public static class DebugCategory
     {
-        @Config.Name("Debug logging")
+        @Config.Name("Debug Logging")
         @Config.Comment("Enables debug logging")
         public boolean utDebugToggle = false;
     }
