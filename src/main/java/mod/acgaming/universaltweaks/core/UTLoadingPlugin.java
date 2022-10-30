@@ -67,6 +67,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     {
         return isClient ? Arrays.asList(
             "mixins.bugfixes.blockoverlay.json",
+            "mixins.bugfixes.destroypacket.json",
             "mixins.bugfixes.dimensionchange.json",
             "mixins.bugfixes.entityaabb.json",
             "mixins.bugfixes.ladderflying.json",
@@ -82,6 +83,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.falldamage.json",
             "mixins.tweaks.mobdespawn.json") :
             Arrays.asList(
+                "mixins.bugfixes.destroypacket.json",
                 "mixins.bugfixes.dimensionchange.json",
                 "mixins.bugfixes.entityaabb.json",
                 "mixins.bugfixes.ladderflying.json",
@@ -115,6 +117,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         }
         switch (mixinConfig)
         {
+            case "mixins.bugfixes.destroypacket.json":
+                return UTConfig.bugfixes.utDestroyPacketToggle;
             case "mixins.bugfixes.dimensionchange.json":
                 return UTConfig.bugfixes.utDimensionChangeToggle;
             case "mixins.bugfixes.entityaabb.json":

@@ -31,6 +31,11 @@ public class UTConfig
         public boolean utBlockOverlayToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Destroy Entity Packets Fix")
+        @Config.Comment("Fixes lag caused by dead entities by sending additional packets when the player is not alive")
+        public boolean utDestroyPacketToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Dimension Change Player States Fix")
         @Config.Comment("Fixes missing player states when changing dimensions by sending additional packets")
         public boolean utDimensionChangeToggle = true;
