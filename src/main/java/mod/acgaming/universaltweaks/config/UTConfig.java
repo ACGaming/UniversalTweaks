@@ -94,6 +94,10 @@ public class UTConfig
         @Config.Name("Debug Logging")
         @Config.Comment("Enables debug logging")
         public boolean utDebugToggle = false;
+
+        @Config.Name("Obsolete Mods Screen")
+        @Config.Comment("Enables a screen displaying incompatible mods on game load")
+        public boolean utObsoleteModsToggle = true;
     }
 
     public static class TweaksCategory
@@ -128,11 +132,6 @@ public class UTConfig
         public boolean utDisableAudioDebugToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Item Entity Combination")
-        @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
-        public boolean utCombineItemEntityToggle = true;
-
-        @Config.RequiresMcRestart
         @Config.Name("Fast Dye Blending")
         @Config.Comment("Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry")
         public boolean utDyeBlendingToggle = true;
@@ -147,14 +146,9 @@ public class UTConfig
         public boolean utPrefixCheckToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Water Fall Damage")
-        @Config.Comment("Re-implements an improved version of pre-1.4 fall damage in water")
-        public boolean utFallDamageToggle = false;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Water Fall Damage Reduction")
-        @Config.Comment("How much fall damage gets reduced by water per tick")
-        public float utFallDamageValue = 2F;
+        @Config.Name("Item Entity Combination")
+        @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
+        public boolean utCombineItemEntityToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Mob Despawn Improvement")
@@ -169,6 +163,16 @@ public class UTConfig
         @Config.Name("Stronghold Replacement")
         @Config.Comment("Replaces stronghold generation with a safer variant")
         public boolean utStrongholdToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Water Fall Damage")
+        @Config.Comment("Re-implements an improved version of pre-1.4 fall damage in water")
+        public boolean utFallDamageToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Water Fall Damage Reduction")
+        @Config.Comment("How much fall damage gets reduced by water per tick")
+        public float utFallDamageValue = 2F;
     }
 
     @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)

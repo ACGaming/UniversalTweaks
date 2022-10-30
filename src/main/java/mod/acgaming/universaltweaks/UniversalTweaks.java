@@ -73,7 +73,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("surge")) messages.add("Surge");
         if (messages.size() > 3)
         {
-            if (FMLLaunchHandler.side() == Side.CLIENT) UTObsoleteModsHandler.throwException(messages);
+            if (FMLLaunchHandler.side() == Side.CLIENT && UTConfig.debug.utObsoleteModsToggle) UTObsoleteModsHandler.throwException(messages);
             else
             {
                 messages.add("");
