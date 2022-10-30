@@ -117,6 +117,12 @@ public class UTConfig
         @Config.Comment("Bows enchanted with Infinity no longer require arrows")
         public boolean utBowInfinityToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Animated Models")
+        @Config.Comment("Improves model load times by removing Forge's animated models")
+        public boolean utDisableAnimatedModelsToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Disable Audio Debug")
         @Config.Comment("Improves loading times by removing debug code for missing sounds and subtitles")
         public boolean utDisableAudioDebugToggle = true;

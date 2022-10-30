@@ -81,7 +81,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.autojump.json",
             "mixins.tweaks.bedobstruction.json",
             "mixins.tweaks.falldamage.json",
-            "mixins.tweaks.mobdespawn.json") :
+            "mixins.tweaks.mobdespawn.json",
+            "mixins.tweaks.resourcemanager.json") :
             Arrays.asList(
                 "mixins.bugfixes.destroypacket.json",
                 "mixins.bugfixes.dimensionchange.json",
@@ -113,6 +114,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfig.tweaks.utDisableAudioDebugToggle;
                 case "mixins.tweaks.autojump.json":
                     return UTConfig.tweaks.utAutoJumpToggle;
+                case "mixins.tweaks.resourcemanager.json":
+                    return UTConfig.tweaks.utDisableAnimatedModelsToggle;
             }
         }
         switch (mixinConfig)
