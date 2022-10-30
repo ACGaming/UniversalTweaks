@@ -13,9 +13,9 @@ import org.spongepowered.asm.mixin.Shadow;
 // https://bugs.mojang.com/browse/MC-118710
 // Courtesy of mrgrim
 @Mixin(EntityPlayerSP.class)
-public abstract class UTPlayerWalking extends AbstractClientPlayer implements IEntityPlayerSP
+public abstract class UTPlayerWalkingMixin extends AbstractClientPlayer implements IEntityPlayerSP
 {
-    public UTPlayerWalking(World worldIn, GameProfile playerProfile)
+    public UTPlayerWalkingMixin(World worldIn, GameProfile playerProfile)
     {
         super(worldIn, playerProfile);
     }

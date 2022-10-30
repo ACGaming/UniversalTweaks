@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 // https://bugs.mojang.com/browse/MC-118710
 // Courtesy of mrgrim
 @Mixin(PlayerControllerMP.class)
-public class UTPlayerPosition
+public class UTPlayerPositionMixin
 {
     @Shadow
     @Final
@@ -29,7 +29,7 @@ public class UTPlayerPosition
     @Inject(slice = @Slice(from = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;getTutorial()Lnet/minecraft/client/tutorial/Tutorial;", ordinal = 1), to = @At(value = "INVOKE", target = "Lnet/minecraft/block/state/IBlockState;getMaterial()Lnet/minecraft/block/material/Material;", ordinal = 0)), method = "clickBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/NetHandlerPlayClient;sendPacket(Lnet/minecraft/network/Packet;)V", ordinal = 0))
     private void utUpdatePlayerPositionBeforeDigging(BlockPos loc, EnumFacing face, CallbackInfoReturnable<Boolean> ci)
     {
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPlayerPosition ::: Update player position");
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPlayerPositionMixin ::: Update player position");
         ((IEntityPlayerSP) this.mc.player).updateWalkingPlayer();
     }
 }
