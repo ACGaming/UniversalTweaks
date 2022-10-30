@@ -76,6 +76,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.skeletonaim.json",
             "mixins.bugfixes.teloadorder.json",
             "mixins.tweaks.attributes.json",
+            "mixins.tweaks.audioreload.json",
             "mixins.tweaks.autojump.json",
             "mixins.tweaks.bedobstruction.json",
             "mixins.tweaks.falldamage.json",
@@ -106,6 +107,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfig.bugfixes.utBlockOverlayToggle;
                 case "mixins.bugfixes.miningglitch.client.json":
                     return UTConfig.bugfixes.utMiningGlitchToggle;
+                case "mixins.tweaks.audioreload.json":
+                    return UTConfig.tweaks.utDisableAudioDebugToggle;
                 case "mixins.tweaks.autojump.json":
                     return UTConfig.tweaks.utAutoJumpToggle;
             }

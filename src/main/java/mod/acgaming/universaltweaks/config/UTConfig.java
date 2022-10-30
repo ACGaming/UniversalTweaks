@@ -112,6 +112,10 @@ public class UTConfig
         @Config.Comment("Bows enchanted with Infinity no longer require arrows")
         public boolean utBowInfinityToggle = true;
 
+        @Config.Name("Disable Audio Debug")
+        @Config.Comment("Improves loading times by removing debug code for missing sounds and subtitles")
+        public boolean utDisableAudioDebugToggle = true;
+
         @Config.Name("Fast Leaf Decay")
         @Config.Comment("Makes leaves decay faster when trees are chopped")
         public boolean utLeafDecayToggle = true;
