@@ -132,6 +132,11 @@ public class UTConfig
         @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
         public boolean utCombineItemEntityToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Fast Dye Blending")
+        @Config.Comment("Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry")
+        public boolean utDyeBlendingToggle = true;
+
         @Config.Name("Fast Leaf Decay")
         @Config.Comment("Makes leaves decay faster when trees are chopped")
         public boolean utLeafDecayToggle = true;
