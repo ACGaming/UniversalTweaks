@@ -127,6 +127,11 @@ public class UTConfig
         @Config.Comment("Improves loading times by removing debug code for missing sounds and subtitles")
         public boolean utDisableAudioDebugToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Item Entity Combination")
+        @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
+        public boolean utCombineItemEntityToggle = true;
+
         @Config.Name("Fast Leaf Decay")
         @Config.Comment("Makes leaves decay faster when trees are chopped")
         public boolean utLeafDecayToggle = true;

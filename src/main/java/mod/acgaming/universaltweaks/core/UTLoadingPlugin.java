@@ -80,6 +80,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.audioreload.json",
             "mixins.tweaks.autojump.json",
             "mixins.tweaks.bedobstruction.json",
+            "mixins.tweaks.itementity.json",
             "mixins.tweaks.falldamage.json",
             "mixins.tweaks.mobdespawn.json",
             "mixins.tweaks.prefixcheck.json",
@@ -95,6 +96,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.teloadorder.json",
                 "mixins.tweaks.attributes.json",
                 "mixins.tweaks.bedobstruction.json",
+                "mixins.tweaks.itementity.json",
                 "mixins.tweaks.falldamage.json",
                 "mixins.tweaks.mobdespawn.json",
                 "mixins.tweaks.prefixcheck.json"
@@ -142,6 +144,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.tweaks.utAttributesToggle;
             case "mixins.tweaks.bedobstruction.json":
                 return UTConfig.tweaks.utBedObstructionToggle;
+            case "mixins.tweaks.itementity.json":
+                return UTConfig.tweaks.utCombineItemEntityToggle;
             case "mixins.tweaks.falldamage.json":
                 return UTConfig.tweaks.utFallDamageToggle;
             case "mixins.tweaks.mobdespawn.json":
