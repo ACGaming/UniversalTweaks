@@ -121,6 +121,10 @@ public class UTConfig
         @Config.Comment("Bows enchanted with Infinity no longer require arrows")
         public boolean utBowInfinityToggle = true;
 
+        @Config.Name("Cactus Size")
+        @Config.Comment("Determines how tall cacti can grow")
+        public int utCactusSize = 3;
+
         @Config.RequiresMcRestart
         @Config.Name("Disable Animated Models")
         @Config.Comment("Improves model load times by removing Forge's animated models")
@@ -163,6 +167,10 @@ public class UTConfig
         @Config.Name("Stronghold Replacement")
         @Config.Comment("Replaces stronghold generation with a safer variant")
         public boolean utStrongholdToggle = true;
+
+        @Config.Name("Sugar Cane Size")
+        @Config.Comment("Determines how tall sugar cane can grow")
+        public int utSugarCaneSize = 3;
 
         @Config.RequiresMcRestart
         @Config.Name("Water Fall Damage")
