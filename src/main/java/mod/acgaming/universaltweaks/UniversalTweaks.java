@@ -37,6 +37,7 @@ public class UniversalTweaks
         "after:bedbreakbegone;" +
         "after:blockoverlayfix;" +
         "after:bowinfinityfix;" +
+        "after:configurablecane;" +
         "after:experiencebugfix;" +
         "after:fastleafdecay;" +
         "after:helpfixer;" +
@@ -60,6 +61,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("bedbreakbegone")) messages.add("BedBreakBegone");
         if (Loader.isModLoaded("blockoverlayfix")) messages.add("Block Overlay Fix");
         if (Loader.isModLoaded("bowinfinityfix")) messages.add("Bow Infinity Fix");
+        if (Loader.isModLoaded("configurablecane")) messages.add("Configurable Cane");
         if (Loader.isModLoaded("experiencebugfix")) messages.add("Fix Experience Bug");
         if (Loader.isModLoaded("fastleafdecay")) messages.add("Fast Leaf Decay");
         if (Loader.isModLoaded("helpfixer")) messages.add("HelpFixer");
