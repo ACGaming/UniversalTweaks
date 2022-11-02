@@ -112,6 +112,10 @@ public class UTConfig
         @Config.Comment("Replaces auto jump with an increased step height")
         public boolean utAutoJumpToggle = true;
 
+        @Config.Name("Auto Switch Tools")
+        @Config.Comment("Switches the selected hotbar slot to a proper tool if required")
+        public boolean utAutoSwitchToggle = false;
+
         @Config.RequiresMcRestart
         @Config.Name("Bed Obstruction Replacement")
         @Config.Comment("Replaces bed obstruction checks with an improved version")
