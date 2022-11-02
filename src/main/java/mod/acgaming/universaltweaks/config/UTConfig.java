@@ -137,7 +137,7 @@ public class UTConfig
         @Config.RequiresMcRestart
         @Config.Name("Disable Audio Debug")
         @Config.Comment("Improves loading times by removing debug code for missing sounds and subtitles")
-        public boolean utDisableAudioDebugToggle = true;
+        public boolean utDisableAudioDebugToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Fast Dye Blending")
