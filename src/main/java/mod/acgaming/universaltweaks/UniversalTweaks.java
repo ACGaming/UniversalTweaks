@@ -31,24 +31,24 @@ public class UniversalTweaks
 {
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
-    public static final String VERSION = "1.12.2-1.0.0-pre1";
+    public static final String VERSION = "1.12.2-1.0.0-pre2";
     public static final String DEPENDENCIES = "required-after:mixinbooter;" +
-        "after:attributefix;" +
-        "after:bedbreakbegone;" +
-        "after:blockoverlayfix;" +
-        "after:bowinfinityfix;" +
-        "after:configurablecane;" +
-        "after:experiencebugfix;" +
-        "after:fastleafdecay;" +
-        "after:helpfixer;" +
-        "after:leafdecay;" +
-        "after:letmedespawn;" +
-        "after:loginhpfix;" +
-        "after:mendingfix;" +
-        "after:quickleafdecay;" +
-        "after:savemystronghold;" +
-        "after:stepupfix;" +
-        "after:surge";
+        "before:attributefix;" +
+        "before:bedbreakbegone;" +
+        "before:blockoverlayfix;" +
+        "before:bowinfinityfix;" +
+        "before:configurablecane;" +
+        "before:experiencebugfix;" +
+        "before:fastleafdecay;" +
+        "before:helpfixer;" +
+        "before:leafdecay;" +
+        "before:letmedespawn;" +
+        "before:loginhpfix;" +
+        "before:mendingfix;" +
+        "before:quickleafdecay;" +
+        "before:savemystronghold;" +
+        "before:stepupfix;" +
+        "before:surge";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     public static void throwIncompatibility()
