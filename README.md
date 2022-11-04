@@ -33,5 +33,6 @@ All changes are toggleable via the config file.
 * Item Entity Combination: Stops combination of item entities if their maximum stack size is reached
 * Mob Despawn Improvement: Mobs carrying picked up items will drop their equipment and despawn properly
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
+* Remove Recipe Book: Removes the recipe book button from GUIs
 * Stronghold Replacement: Replaces stronghold generation with a safer variant
 * Water Fall Damage: Re-implements an improved version of pre-1.4 fall damage in water
