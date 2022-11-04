@@ -26,6 +26,7 @@ public class UTDyeBlendingMixin
     @Inject(method = "getDyeColorMixFromParents(Lnet/minecraft/entity/passive/EntityAnimal;Lnet/minecraft/entity/passive/EntityAnimal;)Lnet/minecraft/item/EnumDyeColor;", at = @At("HEAD"), cancellable = true)
     public void utGetDyeColorMixFromParents(EntityAnimal father, EntityAnimal mother, CallbackInfoReturnable<EnumDyeColor> info)
     {
+        if (!UTConfig.tweaks.utDyeBlendingToggle) return;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDyeBlendingMixin ::: Get dye color mix from parents");
         // Ensure both entities are sheep.
         if (father instanceof EntitySheep && mother instanceof EntitySheep)

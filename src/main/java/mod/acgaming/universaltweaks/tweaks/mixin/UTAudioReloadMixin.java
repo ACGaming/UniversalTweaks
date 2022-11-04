@@ -47,6 +47,7 @@ public class UTAudioReloadMixin
     @Inject(method = "onResourceManagerReload(Lnet/minecraft/client/resources/IResourceManager;)V", at = @At("HEAD"), cancellable = true)
     public void utOnResourceManagerReload(IResourceManager resourceManager, CallbackInfo info)
     {
+        if (!UTConfig.tweaks.utDisableAudioDebugToggle) return;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAudioReloadMixin ::: Resource manager reload");
         this.soundRegistry.clearMap();
         final List<Tuple<ResourceLocation, SoundList>> soundLists = new LinkedList<>();

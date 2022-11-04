@@ -86,6 +86,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.mobdespawn.json",
             "mixins.tweaks.plantables.json",
             "mixins.tweaks.prefixcheck.json",
+            "mixins.tweaks.recipebook.json",
             "mixins.tweaks.resourcemanager.json") :
             Arrays.asList(
                 "mixins.bugfixes.destroypacket.json",
@@ -115,51 +116,33 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             switch (mixinConfig)
             {
                 case "mixins.bugfixes.blockoverlay.json":
-                    return UTConfig.bugfixes.utBlockOverlayToggle;
                 case "mixins.bugfixes.miningglitch.client.json":
-                    return UTConfig.bugfixes.utMiningGlitchToggle;
                 case "mixins.tweaks.audioreload.json":
-                    return UTConfig.tweaks.utDisableAudioDebugToggle;
                 case "mixins.tweaks.autojump.json":
-                    return UTConfig.tweaks.utAutoJumpToggle;
+                case "mixins.tweaks.recipebook.json":
                 case "mixins.tweaks.resourcemanager.json":
-                    return UTConfig.tweaks.utDisableAnimatedModelsToggle;
+                    return true;
             }
         }
         switch (mixinConfig)
         {
             case "mixins.bugfixes.destroypacket.json":
-                return UTConfig.bugfixes.utDestroyPacketToggle;
             case "mixins.bugfixes.dimensionchange.json":
-                return UTConfig.bugfixes.utDimensionChangeToggle;
             case "mixins.bugfixes.entityaabb.json":
-                return UTConfig.bugfixes.utEntityAABBToggle;
             case "mixins.bugfixes.ladderflying.json":
-                return UTConfig.bugfixes.utLadderFlyingToggle;
             case "mixins.bugfixes.miningglitch.server.json":
-                return UTConfig.bugfixes.utMiningGlitchToggle;
             case "mixins.bugfixes.pistontile.json":
-                return UTConfig.bugfixes.utPistonTileToggle;
             case "mixins.bugfixes.skeletonaim.json":
-                return UTConfig.bugfixes.utSkeletonAimToggle;
             case "mixins.bugfixes.teloadorder.json":
-                return UTConfig.bugfixes.utTELoadOrderToggle;
             case "mixins.tweaks.attributes.json":
-                return UTConfig.tweaks.utAttributesToggle;
             case "mixins.tweaks.bedobstruction.json":
-                return UTConfig.tweaks.utBedObstructionToggle;
             case "mixins.tweaks.dyeblending.json":
-                return UTConfig.tweaks.utDyeBlendingToggle;
             case "mixins.tweaks.itementity.json":
-                return UTConfig.tweaks.utCombineItemEntityToggle;
             case "mixins.tweaks.falldamage.json":
-                return UTConfig.tweaks.utFallDamageToggle;
             case "mixins.tweaks.mobdespawn.json":
-                return UTConfig.tweaks.utMobDespawnToggle;
             case "mixins.tweaks.plantables.json":
-                return true;
             case "mixins.tweaks.prefixcheck.json":
-                return UTConfig.tweaks.utPrefixCheckToggle;
+                return true;
         }
         return true;
     }

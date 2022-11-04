@@ -17,6 +17,7 @@ public class UTAutoJumpMixin
     @Inject(method = "isAutoJumpEnabled", at = @At("RETURN"), cancellable = true)
     public void utAutoJump(CallbackInfoReturnable<Boolean> cir)
     {
+        if (!UTConfig.tweaks.utAutoJumpToggle) return;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAutoJump ::: Auto jump check");
         if (Minecraft.getMinecraft().gameSettings.autoJump && !Minecraft.getMinecraft().player.isSneaking()) Minecraft.getMinecraft().player.stepHeight = 1.2f;
         else Minecraft.getMinecraft().player.stepHeight = 0.6f;

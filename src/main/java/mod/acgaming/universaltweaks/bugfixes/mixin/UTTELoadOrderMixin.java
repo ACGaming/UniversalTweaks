@@ -22,6 +22,7 @@ public class UTTELoadOrderMixin
     @ModifyExpressionValue(method = "<init>", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/Maps;newHashMap()Ljava/util/HashMap;"))
     public HashMap<BlockPos, TileEntity> utWrapLinkedHashMap(HashMap<BlockPos, TileEntity> hashMap)
     {
+        if (!UTConfig.bugfixes.utTELoadOrderToggle) return hashMap;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTTELoadOrder ::: Wrap linked hash map");
         return new LinkedHashMap<>(hashMap);
     }

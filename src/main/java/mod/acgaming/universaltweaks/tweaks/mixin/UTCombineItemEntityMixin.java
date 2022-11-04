@@ -22,6 +22,7 @@ public abstract class UTCombineItemEntityMixin
     @Inject(method = "searchForOtherItemsNearby()V", at = @At("HEAD"), cancellable = true)
     public void utSearchForOtherItemsNearby(CallbackInfo info)
     {
+        if (!UTConfig.tweaks.utCombineItemEntityToggle) return;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCombineItemEntityMixin ::: Search for other items nearby");
         final ItemStack stack = this.getItem();
         if (stack.getCount() >= stack.getMaxStackSize()) info.cancel();
@@ -30,6 +31,7 @@ public abstract class UTCombineItemEntityMixin
     @Inject(method = "combineItems(Lnet/minecraft/entity/item/EntityItem;)Z", at = @At("HEAD"), cancellable = true)
     public void utCombineItems(EntityItem other, CallbackInfoReturnable<Boolean> info)
     {
+        if (!UTConfig.tweaks.utCombineItemEntityToggle) return;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCombineItemEntityMixin ::: Combine items");
         final ItemStack stack = this.getItem();
         if (stack.getCount() >= stack.getMaxStackSize()) info.setReturnValue(false);

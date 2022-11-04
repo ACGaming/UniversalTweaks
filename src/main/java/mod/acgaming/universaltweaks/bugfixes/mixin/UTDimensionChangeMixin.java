@@ -37,6 +37,7 @@ public abstract class UTDimensionChangeMixin extends EntityPlayer
     @Inject(method = "changeDimension", at = @At(value = "HEAD"), remap = false)
     public void utChangeDimension(int dimensionIn, ITeleporter teleporter, CallbackInfoReturnable<Entity> cir)
     {
+        if (!UTConfig.bugfixes.utDimensionChangeToggle) return;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDimensionChange ::: Change dimension");
         this.connection.sendPacket(new SPacketUpdateHealth(this.getHealth(), this.foodStats.getFoodLevel(), this.foodStats.getSaturationLevel()));
         this.connection.sendPacket(new SPacketSetExperience(this.experience, this.experienceTotal, this.experienceLevel));

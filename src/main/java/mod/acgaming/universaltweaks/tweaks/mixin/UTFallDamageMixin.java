@@ -22,6 +22,7 @@ public class UTFallDamageMixin
     @Inject(method = "handleWaterMovement", at = @At("HEAD"))
     public void utStoreFallDistance(CallbackInfoReturnable<Boolean> cir)
     {
+        if (!UTConfig.tweaks.utFallDamageToggle) return;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFallDamage ::: Store fall damage");
         utFallDistance = this.fallDistance;
     }
@@ -29,6 +30,7 @@ public class UTFallDamageMixin
     @Inject(method = "handleWaterMovement", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;extinguish()V"))
     public void utLoadFallDistance(CallbackInfoReturnable<Boolean> cir)
     {
+        if (!UTConfig.tweaks.utFallDamageToggle) return;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFallDamage ::: Load fall damage");
         this.fallDistance = utFallDistance - UTConfig.tweaks.utFallDamageValue;
     }

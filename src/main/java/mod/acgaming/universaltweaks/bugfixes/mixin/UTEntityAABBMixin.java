@@ -36,14 +36,8 @@ public abstract class UTEntityAABBMixin
     @Shadow
     public abstract void setPosition(double x, double y, double z);
 
-    @Shadow
-    protected abstract NBTTagList newDoubleNBTList(double... numbers);
-
-    @Shadow
-    protected abstract boolean shouldSetPosAfterLoading();
-
     @Inject(method = "writeToNBT", at = @At(value = "INVOKE", target = "Lnet/minecraft/nbt/NBTTagCompound;setUniqueId(Ljava/lang/String;Ljava/util/UUID;)V", shift = At.Shift.AFTER, ordinal = 0))
-    private void utSaveAABBToNBT(NBTTagCompound compound, CallbackInfoReturnable<NBTTagCompound> ci)
+    public void utSaveAABBToNBT(NBTTagCompound compound, CallbackInfoReturnable<NBTTagCompound> ci)
     {
         if (UTConfig.bugfixes.utEntityAABBToggle)
         {
@@ -54,7 +48,7 @@ public abstract class UTEntityAABBMixin
     }
 
     @Redirect(method = "readFromNBT", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;shouldSetPosAfterLoading()Z"))
-    private boolean utReadAABBFromNBT(Entity entity, NBTTagCompound compound)
+    public boolean utReadAABBFromNBT(Entity entity, NBTTagCompound compound)
     {
         if (this.shouldSetPosAfterLoading()) this.setPosition(this.posX, this.posY, this.posZ);
         if (UTConfig.bugfixes.utEntityAABBToggle && compound.hasKey("AABB", 9))
@@ -72,4 +66,10 @@ public abstract class UTEntityAABBMixin
         }
         return false;
     }
+
+    @Shadow
+    protected abstract NBTTagList newDoubleNBTList(double... numbers);
+
+    @Shadow
+    protected abstract boolean shouldSetPosAfterLoading();
 }
