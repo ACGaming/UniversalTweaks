@@ -46,6 +46,7 @@ public class UniversalTweaks
         "before:letmedespawn;" +
         "before:loginhpfix;" +
         "before:mendingfix;" +
+        "before:overpowered_mending;" +
         "before:quickleafdecay;" +
         "before:savemystronghold;" +
         "before:stepupfix;" +
@@ -70,6 +71,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("letmedespawn")) messages.add("Let Me Despawn");
         if (Loader.isModLoaded("loginhpfix")) messages.add("Login HP Fix");
         if (Loader.isModLoaded("mendingfix")) messages.add("Mending Fix");
+        if (Loader.isModLoaded("overpowered_mending")) messages.add("Overpowered Mending");
         if (Loader.isModLoaded("quickleafdecay")) messages.add("Quick Leaf Decay");
         if (Loader.isModLoaded("savemystronghold")) messages.add("Save My Stronghold!");
         if (Loader.isModLoaded("stepupfix")) messages.add("StepupFixer");

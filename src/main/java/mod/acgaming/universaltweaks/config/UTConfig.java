@@ -74,10 +74,6 @@ public class UTConfig
         @Config.Comment("Saves increased player health to tags")
         public boolean utMaxHealthToggle = true;
 
-        @Config.Name("Mending Fix")
-        @Config.Comment("Only repairs damaged equipment with XP")
-        public boolean utMendingToggle = true;
-
         @Config.Name("Mining Glitch Fix")
         @Config.Comment("Avoids the need for multiple mining attempts by sending additional movement packets")
         public boolean utMiningGlitchToggle = true;
@@ -166,6 +162,14 @@ public class UTConfig
         @Config.Name("Item Entity Combination")
         @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
         public boolean utCombineItemEntityToggle = true;
+
+        @Config.Name("Mending Fix")
+        @Config.Comment("Only repairs damaged equipment with XP")
+        public boolean utMendingToggle = true;
+
+        @Config.Name("Mending Fix Overpowered")
+        @Config.Comment("If mending fix is enabled, repairs entire damaged inventory with XP")
+        public boolean utMendingOPToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Mob Despawn Improvement")

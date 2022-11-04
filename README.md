@@ -12,7 +12,6 @@ All changes are toggleable via the config file.
 * Ladder Flying Slowdown: Disables climbing movement when flying
 * Locale: Prevents various crashes with Turkish locale
 * Max Health: Saves increased player health to tags
-* Mending: Only repairs damaged equipment with XP
 * Mining Glitch: Avoids the need for multiple mining attempts by sending additional movement packets
 * Piston Progress: Properly saves the last state of pistons to tags
 * Skeleton Aim: Fixes skeletons not looking at their targets when strafing
@@ -29,6 +28,8 @@ All changes are toggleable via the config file.
 * Fast Dye Blending: Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry
 * Fast Leaf Decay: Makes leaves decay faster when trees are chopped
 * Fast Prefix Checking: Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
+* Mending: Only repairs damaged equipment with XP
+* Mending Overpowered: If mending fix is enabled, repairs entire damaged inventory with XP
 * Item Entity Combination: Stops combination of item entities if their maximum stack size is reached
 * Mob Despawn Improvement: Mobs carrying picked up items will drop their equipment and despawn properly
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
