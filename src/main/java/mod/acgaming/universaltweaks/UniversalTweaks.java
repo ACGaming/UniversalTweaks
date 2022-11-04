@@ -17,6 +17,7 @@ import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.bugfixes.UTHelp;
+import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
@@ -96,6 +97,7 @@ public class UniversalTweaks
     public void init(FMLInitializationEvent event)
     {
         if (UTConfig.tweaks.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
+        if (UTConfig.bugfixes.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
         LOGGER.info("Universal Tweaks initialized");
     }
 

@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
 
 @Config(modid = UniversalTweaks.MODID, name = "UniversalTweaks")
 public class UTConfig
@@ -29,6 +30,14 @@ public class UTConfig
         @Config.Name("Block Overlay Fix")
         @Config.Comment("Fixes x-ray when standing in non-suffocating blocks")
         public boolean utBlockOverlayToggle = true;
+
+        @Config.Name("Block Overlay Fix Blacklist")
+        @Config.Comment({"Excludes blocks from the block overlay fix", "Syntax: modid:block"})
+        public String[] utBlockOverlayBlacklist = new String[] {};
+
+        @Config.Name("Block Overlay Fix Whitelist")
+        @Config.Comment({"Includes blocks in the block overlay fix", "Syntax: modid:block"})
+        public String[] utBlockOverlayWhitelist = new String[] {};
 
         @Config.RequiresMcRestart
         @Config.Name("Destroy Entity Packets Fix")
@@ -196,6 +205,7 @@ public class UTConfig
             if (event.getModID().equals(UniversalTweaks.MODID))
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
+                if (bugfixes.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
                 UniversalTweaks.LOGGER.info("Universal Tweaks config reloaded");
             }
         }
