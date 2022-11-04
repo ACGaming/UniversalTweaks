@@ -11,16 +11,13 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
 
-@SideOnly(Side.CLIENT)
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
+@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTAutoSwitch
 {
-    @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public static void utAutoSwitch(PlayerInteractEvent.LeftClickBlock event)
     {

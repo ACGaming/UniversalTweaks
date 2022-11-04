@@ -1,6 +1,8 @@
 # 🔧 Universal Tweaks 🔧
 ### A one-stop-shop for all bugfixing and tweaking needs
 
+All changes are toggleable via the config file.
+
 **Bugfixes:**
 * Block Overlay: Fixes x-ray when standing in non-suffocating blocks
 * Destroy Entity Packets: Fixes lag caused by dead entities by sending additional packets when the player is not alive
@@ -19,6 +21,7 @@
 **Tweaks:**
 * Attributes Uncap: Virtually uncaps entity attributes
 * Auto Jump Replacement: Replaces auto jump with an increased step height
+* Auto Switch Tools: Switches the selected hotbar slot to a proper tool if required
 * Bed Obstruction Replacement: Replaces bed obstruction checks with an improved version
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
 * Disable Animated Models: Improves model load times by removing Forge's animated models
