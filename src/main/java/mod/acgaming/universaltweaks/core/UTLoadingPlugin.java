@@ -71,6 +71,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.dimensionchange.json",
             "mixins.bugfixes.entityaabb.json",
             "mixins.bugfixes.entitytracker.json",
+            "mixins.bugfixes.frustumculling.json",
             "mixins.bugfixes.hashcode.json",
             "mixins.bugfixes.ladderflying.json",
             "mixins.bugfixes.miningglitch.client.json",
@@ -120,6 +121,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             switch (mixinConfig)
             {
                 case "mixins.bugfixes.blockoverlay.json":
+                case "mixins.bugfixes.frustumculling.json":
                 case "mixins.bugfixes.miningglitch.client.json":
                 case "mixins.tweaks.audioreload.json":
                 case "mixins.tweaks.autojump.json":

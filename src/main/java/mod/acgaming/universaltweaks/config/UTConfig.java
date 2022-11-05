@@ -54,6 +54,10 @@ public class UTConfig
         @Config.Comment("Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions")
         public boolean utEntityTrackerToggle = true;
 
+        @Config.Name("Frustum Culling Fix")
+        @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
+        public boolean utFrustumCullingToggle = true;
+
         @Config.Name("Hash Code Fix")
         @Config.Comment("Reduces CPU overhead caused by incorrect hash code")
         public boolean utHashCodeToggle = true;

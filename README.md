@@ -9,6 +9,7 @@ All changes are toggleable via the config file.
 * Dimension Change Player States: Fixes missing player states when changing dimensions by sending additional packets
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
+* Frustum Culling: Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * Hash Code: Reduces CPU overhead caused by incorrect hash code
 * Help: Replaces the help command, sorts and reports broken commands
 * Ladder Flying Slowdown: Disables climbing movement when flying
