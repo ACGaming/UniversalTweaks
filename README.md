@@ -11,7 +11,6 @@ All changes are toggleable via the config file.
 * Entity Suffocation: Pushes entities out of blocks when growing up to prevent suffocation
 * Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
 * Frustum Culling: Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
-* Hash Code: Reduces CPU overhead caused by incorrect hash code
 * Help: Replaces the help command, sorts and reports broken commands
 * Ladder Flying Slowdown: Disables climbing movement when flying
 * Locale: Prevents various crashes with Turkish locale
@@ -20,6 +19,9 @@ All changes are toggleable via the config file.
 * Piston Progress: Properly saves the last state of pistons to tags
 * Skeleton Aim: Fixes skeletons not looking at their targets when strafing
 * Tile Entity Update Order: Keeps the order of tile entities on chunk load
+
+Upcoming:
+* Hash Code: Reduces CPU overhead caused by incorrect hash code
 
 **Tweaks:**
 * Attributes Uncap: Virtually uncaps entity attributes

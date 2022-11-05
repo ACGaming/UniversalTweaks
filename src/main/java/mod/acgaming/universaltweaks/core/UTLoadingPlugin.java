@@ -73,7 +73,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.entitysuffocation.json",
             "mixins.bugfixes.entitytracker.json",
             "mixins.bugfixes.frustumculling.json",
-            "mixins.bugfixes.hashcode.json",
             "mixins.bugfixes.ladderflying.json",
             "mixins.bugfixes.miningglitch.client.json",
             "mixins.bugfixes.miningglitch.server.json",
@@ -98,7 +97,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.entityaabb.json",
                 "mixins.bugfixes.entitysuffocation.json",
                 "mixins.bugfixes.entitytracker.json",
-                "mixins.bugfixes.hashcode.json",
                 "mixins.bugfixes.ladderflying.json",
                 "mixins.bugfixes.miningglitch.server.json",
                 "mixins.bugfixes.pistontile.json",
@@ -139,7 +137,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.bugfixes.entityaabb.json":
             case "mixins.bugfixes.entitysuffocation.json":
             case "mixins.bugfixes.entitytracker.json":
-            case "mixins.bugfixes.hashcode.json":
             case "mixins.bugfixes.ladderflying.json":
             case "mixins.bugfixes.miningglitch.server.json":
             case "mixins.bugfixes.pistontile.json":

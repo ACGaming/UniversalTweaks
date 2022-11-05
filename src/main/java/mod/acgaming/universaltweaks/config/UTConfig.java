@@ -62,9 +62,9 @@ public class UTConfig
         @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
         public boolean utFrustumCullingToggle = true;
 
-        @Config.Name("Hash Code Fix")
-        @Config.Comment("Reduces CPU overhead caused by incorrect hash code")
-        public boolean utHashCodeToggle = true;
+        //@Config.Name("Hash Code Fix")
+        //@Config.Comment("Reduces CPU overhead caused by incorrect hash code")
+        //public boolean utHashCodeToggle = true;
 
         @Config.Name("Help Fix")
         @Config.Comment("Replaces the help command, sorts and reports broken commands")
