@@ -50,6 +50,10 @@ public class UTConfig
         @Config.Comment("Saves entity bounding boxes to tags to prevent breakouts and suffocation")
         public boolean utEntityAABBToggle = true;
 
+        @Config.Name("Entity Tracker Fix")
+        @Config.Comment("Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions")
+        public boolean utEntityTrackerToggle = true;
+
         @Config.Name("Hash Code Fix")
         @Config.Comment("Reduces CPU overhead caused by incorrect hash code")
         public boolean utHashCodeToggle = true;

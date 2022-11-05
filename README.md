@@ -8,6 +8,7 @@ All changes are toggleable via the config file.
 * Destroy Entity Packets: Fixes lag caused by dead entities by sending additional packets when the player is not alive
 * Dimension Change Player States: Fixes missing player states when changing dimensions by sending additional packets
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
+* Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
 * Hash Code: Reduces CPU overhead caused by incorrect hash code
 * Help: Replaces the help command, sorts and reports broken commands
 * Ladder Flying Slowdown: Disables climbing movement when flying
