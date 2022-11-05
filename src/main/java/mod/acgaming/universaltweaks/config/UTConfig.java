@@ -50,6 +50,10 @@ public class UTConfig
         @Config.Comment("Saves entity bounding boxes to tags to prevent breakouts and suffocation")
         public boolean utEntityAABBToggle = true;
 
+        @Config.Name("Hash Code Fix")
+        @Config.Comment("Reduces CPU overhead caused by incorrect hash code")
+        public boolean utHashCodeToggle = true;
+
         @Config.Name("Help Fix")
         @Config.Comment("Replaces the help command, sorts and reports broken commands")
         public boolean utHelpToggle = true;
