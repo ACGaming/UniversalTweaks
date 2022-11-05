@@ -1,6 +1,6 @@
-package mod.acgaming.universaltweaks.tweaks.mixin;
+package mod.acgaming.universaltweaks.tweaks.recipebook.mixin;
 
-import net.minecraft.client.gui.inventory.GuiInventory;
+import net.minecraft.client.gui.inventory.GuiCrafting;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
@@ -9,14 +9,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(GuiInventory.class)
-public class UTRecipeBookInvMixin
+@Mixin(GuiCrafting.class)
+public class UTRecipeBookCraftMixin
 {
     @Inject(method = "initGui", at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z"), cancellable = true)
-    public void utLoadFallDistance(CallbackInfo ci)
+    public void utHideRecipeBook(CallbackInfo ci)
     {
         if (!UTConfig.tweaks.utRecipeBookToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookInvMixin ::: Initialize GUI");
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookCraftMixin ::: Initialize GUI");
         ci.cancel();
     }
 }
