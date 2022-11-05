@@ -41,7 +41,6 @@ public class UniversalTweaks
         "before:configurablecane;" +
         "before:experiencebugfix;" +
         "before:fastleafdecay;" +
-        "before:foamfix;" +
         "before:helpfixer;" +
         "before:leafdecay;" +
         "before:letmedespawn;" +
@@ -54,7 +53,6 @@ public class UniversalTweaks
         "before:stepupfix;" +
         "before:surge";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
-    public static boolean foamfixLoaded;
 
     public static void throwIncompatibility()
     {
@@ -95,7 +93,6 @@ public class UniversalTweaks
     public void preInit(FMLPreInitializationEvent event)
     {
         throwIncompatibility();
-        if (Loader.isModLoaded("foamfix")) foamfixLoaded = true;
         if (UTConfig.tweaks.utAttributesToggle) UTAttributes.utSetAttributes();
         if (UTConfig.tweaks.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
     }
