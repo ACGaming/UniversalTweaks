@@ -8,6 +8,7 @@ All changes are toggleable via the config file.
 * Destroy Entity Packets: Fixes lag caused by dead entities by sending additional packets when the player is not alive
 * Dimension Change Player States: Fixes missing player states when changing dimensions by sending additional packets
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
+* Entity Suffocation: Pushes entities out of blocks when growing up to prevent suffocation
 * Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
 * Frustum Culling: Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * Hash Code: Reduces CPU overhead caused by incorrect hash code

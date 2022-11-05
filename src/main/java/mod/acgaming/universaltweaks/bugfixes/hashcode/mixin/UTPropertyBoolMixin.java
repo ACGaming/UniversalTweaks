@@ -3,7 +3,6 @@ package mod.acgaming.universaltweaks.bugfixes.hashcode.mixin;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.properties.PropertyBool;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -30,7 +29,7 @@ public abstract class UTPropertyBoolMixin
     public void utCalculateCachedHashCode(CallbackInfo ci)
     {
         if (!UTConfig.bugfixes.utHashCodeToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPropertyBoolMixin ::: Initialize");
+        //if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPropertyBoolMixin ::: Initialize");
         this.cachedHashCode = 31 * super.hashCode() + this.allowedValues.hashCode();
     }
 
@@ -38,7 +37,7 @@ public abstract class UTPropertyBoolMixin
     public void utCachedHashCode(CallbackInfoReturnable<Integer> ci)
     {
         if (!UTConfig.bugfixes.utHashCodeToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPropertyBoolMixin ::: Hash code");
+        //if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPropertyBoolMixin ::: Hash code");
         ci.setReturnValue(this.cachedHashCode);
     }
 }
