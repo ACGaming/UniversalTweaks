@@ -29,6 +29,7 @@ Upcoming:
 * Auto Switch Tools: Switches the selected hotbar slot to a proper tool if required
 * Bed Obstruction Replacement: Replaces bed obstruction checks with an improved version
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
+* Dimension Unload: Unloads dimensions not in use to free up resources
 * Disable Animated Models: Improves model load times by removing Forge's animated models
 * Disable Audio Debug: Improves loading times by removing debug code for missing sounds and subtitles
 * Fast Dye Blending: Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry

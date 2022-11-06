@@ -51,7 +51,8 @@ public class UniversalTweaks
         "before:quickleafdecay;" +
         "before:savemystronghold;" +
         "before:stepupfix;" +
-        "before:surge";
+        "before:surge;" +
+        "before:unloader";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     public static void throwIncompatibility()
@@ -78,6 +79,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("savemystronghold")) messages.add("Save My Stronghold!");
         if (Loader.isModLoaded("stepupfix")) messages.add("StepupFixer");
         if (Loader.isModLoaded("surge")) messages.add("Surge");
+        if (Loader.isModLoaded("unloader")) messages.add("Unloader");
         if (messages.size() > 3)
         {
             if (FMLLaunchHandler.side() == Side.CLIENT && UTConfig.debug.utObsoleteModsToggle) UTObsoleteModsHandler.throwException(messages);

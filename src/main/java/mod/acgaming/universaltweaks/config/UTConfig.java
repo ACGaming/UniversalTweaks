@@ -136,6 +136,18 @@ public class UTConfig
         @Config.Comment("Determines how tall cacti can grow")
         public int utCactusSize = 3;
 
+        @Config.Name("Dimension Unload")
+        @Config.Comment("Unloads dimensions not in use to free up resources")
+        public boolean utUnloaderToggle = true;
+
+        @Config.Name("Dimension Unload Interval")
+        @Config.Comment("Time (in ticks) to wait before checking dimensions")
+        public int utUnloaderInterval = 600;
+
+        @Config.Name("Dimension Unload Blacklist")
+        @Config.Comment({"List of dimensions which should not be unloaded", "Can be dimension name or ID", "Uses regular expressions"})
+        public String[] utUnloaderBlacklist = {"0", "overworld"};
+
         @Config.Name("Disable Animated Models")
         @Config.Comment("Improves model load times by removing Forge's animated models")
         public boolean utDisableAnimatedModelsToggle = false;
