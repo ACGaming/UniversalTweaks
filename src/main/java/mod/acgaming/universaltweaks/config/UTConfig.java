@@ -136,6 +136,18 @@ public class UTConfig
         @Config.Comment("Determines how tall cacti can grow")
         public int utCactusSize = 3;
 
+        @Config.Name("Chunk Gen Limit")
+        @Config.Comment("Limits maximum chunk generation per tick for improved server performance")
+        public boolean utChunkGenLimitToggle = false;
+
+        @Config.Name("Chunk Gen Limit Ticks")
+        @Config.Comment("Maximum chunks to generate per tick per dimension")
+        public int utChunkGenLimitTicks = 2;
+
+        @Config.Name("Chunk Gen Limit Time")
+        @Config.Comment("Maximum time in ms to spend generating chunks per tick per dimension")
+        public int utChunkGenLimitTime = 5;
+
         @Config.Name("Dimension Unload")
         @Config.Comment("Unloads dimensions not in use to free up resources")
         public boolean utUnloaderToggle = true;
