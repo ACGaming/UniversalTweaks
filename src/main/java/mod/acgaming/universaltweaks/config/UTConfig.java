@@ -112,6 +112,14 @@ public class UTConfig
 
     public static class TweaksCategory
     {
+        @Config.Name("AI Replacement")
+        @Config.Comment("Replaces entity AI for improved server performance")
+        public boolean utAIReplacementToggle = true;
+
+        @Config.Name("AI Removal")
+        @Config.Comment("Removes entity AI for improved server performance")
+        public boolean utAIRemovalToggle = false;
+
         @Config.Name("Attributes Uncap")
         @Config.Comment("Virtually uncaps entity attributes")
         public boolean utAttributesToggle = true;

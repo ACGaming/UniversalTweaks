@@ -24,6 +24,7 @@ Upcoming:
 * Hash Code: Reduces CPU overhead caused by incorrect hash code
 
 **Tweaks:**
+* AI Improvements: Replaces/removes entity AI for improved server performance
 * Attributes Uncap: Virtually uncaps entity attributes
 * Auto Jump Replacement: Replaces auto jump with an increased step height
 * Auto Switch Tools: Switches the selected hotbar slot to a proper tool if required

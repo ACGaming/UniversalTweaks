@@ -79,6 +79,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.pistontile.json",
             "mixins.bugfixes.skeletonaim.json",
             "mixins.bugfixes.teloadorder.json",
+            "mixins.tweaks.ai.json",
             "mixins.tweaks.attributes.json",
             "mixins.tweaks.audioreload.json",
             "mixins.tweaks.autojump.json",
@@ -103,6 +104,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.pistontile.json",
                 "mixins.bugfixes.skeletonaim.json",
                 "mixins.bugfixes.teloadorder.json",
+                "mixins.tweaks.ai.json",
                 "mixins.tweaks.attributes.json",
                 "mixins.tweaks.bedobstruction.json",
                 "mixins.tweaks.chunkgenlimit.json",
@@ -144,6 +146,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.bugfixes.pistontile.json":
             case "mixins.bugfixes.skeletonaim.json":
             case "mixins.bugfixes.teloadorder.json":
+            case "mixins.tweaks.ai.json":
             case "mixins.tweaks.attributes.json":
             case "mixins.tweaks.bedobstruction.json":
             case "mixins.tweaks.chunkgenlimit.json":

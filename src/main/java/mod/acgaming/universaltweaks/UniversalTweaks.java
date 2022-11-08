@@ -61,6 +61,7 @@ public class UniversalTweaks
         messages.add("Universal Tweaks has replaced and improved upon functionalities from the following mods.");
         messages.add("Therefore, these mods are now incompatible with Universal Tweaks:");
         messages.add("");
+        if (Loader.isModLoaded("aiimprovements")) messages.add("AI Improvements");
         if (Loader.isModLoaded("attributefix")) messages.add("AttributeFix");
         if (Loader.isModLoaded("bedbreakbegone")) messages.add("BedBreakBegone");
         if (Loader.isModLoaded("blockoverlayfix")) messages.add("Block Overlay Fix");
