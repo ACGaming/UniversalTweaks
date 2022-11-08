@@ -18,9 +18,7 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 8
@@ -32,11 +30,11 @@ jobs:
       run: chmod +x ./gradlew
       shell: bash
     - name: Build with Gradle
-      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+      uses: gradle/gradle-build-action@v2
       with:
         arguments: build
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.1
       with:
-        name: Artifacts
+        name: Download
         path: ./build/libs
