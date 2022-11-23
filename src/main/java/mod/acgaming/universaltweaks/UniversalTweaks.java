@@ -41,6 +41,7 @@ public class UniversalTweaks
         "before:configurablecane;" +
         "before:experiencebugfix;" +
         "before:fastleafdecay;" +
+        "before:givemebackmyhp;" +
         "before:helpfixer;" +
         "before:leafdecay;" +
         "before:letmedespawn;" +
@@ -70,6 +71,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("configurablecane")) messages.add("Configurable Cane");
         if (Loader.isModLoaded("experiencebugfix")) messages.add("Fix Experience Bug");
         if (Loader.isModLoaded("fastleafdecay")) messages.add("Fast Leaf Decay");
+        if (Loader.isModLoaded("givemebackmyhp")) messages.add("Give Me Back My HP");
         if (Loader.isModLoaded("helpfixer")) messages.add("HelpFixer");
         if (Loader.isModLoaded("leafdecay")) messages.add("Leaf Decay Accelerator");
         if (Loader.isModLoaded("letmedespawn")) messages.add("Let Me Despawn");
@@ -82,6 +84,14 @@ public class UniversalTweaks
         if (Loader.isModLoaded("stepupfix")) messages.add("StepupFixer");
         if (Loader.isModLoaded("surge")) messages.add("Surge");
         if (Loader.isModLoaded("unloader")) messages.add("Unloader");
+
+        try
+        {
+            Class.forName("io.github.jikuja.LocaleTweaker");
+            messages.add("LocaleFixer");
+        }
+        catch (ClassNotFoundException ignored) {}
+
         if (messages.size() > 3)
         {
             if (FMLLaunchHandler.side() == Side.CLIENT && UTConfig.debug.utObsoleteModsToggle && !Loader.isModLoaded("enderio")) UTObsoleteModsHandler.throwException(messages);
