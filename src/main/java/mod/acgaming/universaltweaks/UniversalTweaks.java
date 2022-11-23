@@ -32,7 +32,7 @@ public class UniversalTweaks
 {
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
-    public static final String VERSION = "1.12.2-1.0.0-pre3";
+    public static final String VERSION = "1.12.2-1.0.0-pre4";
     public static final String DEPENDENCIES = "required-after:mixinbooter;" +
         "before:attributefix;" +
         "before:bedbreakbegone;" +
@@ -84,7 +84,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("unloader")) messages.add("Unloader");
         if (messages.size() > 3)
         {
-            if (FMLLaunchHandler.side() == Side.CLIENT && UTConfig.debug.utObsoleteModsToggle) UTObsoleteModsHandler.throwException(messages);
+            if (FMLLaunchHandler.side() == Side.CLIENT && UTConfig.debug.utObsoleteModsToggle && !Loader.isModLoaded("enderio")) UTObsoleteModsHandler.throwException(messages);
             else
             {
                 messages.add("");
