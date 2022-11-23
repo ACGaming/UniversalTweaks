@@ -19,9 +19,9 @@ public class UTLeafDecay
     public static void utLeafDecay(BlockEvent.NeighborNotifyEvent event)
     {
         if (!UTConfig.tweaks.utLeafDecayToggle) return;
+        World world = event.getWorld();
         for (EnumFacing facing : event.getNotifiedSides())
         {
-            World world = event.getWorld();
             BlockPos pos = event.getPos().offset(facing);
             IBlockState blockState = world.getBlockState(pos);
             Block block = blockState.getBlock();
