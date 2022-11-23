@@ -124,10 +124,19 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         {
             switch (mixinConfig)
             {
+                case "mixins.tweaks.audioreload.json":
+                    try
+                    {
+                        Class.forName("net.darkhax.surge.core.SurgeLoadingPlugin");
+                        return false;
+                    }
+                    catch (ClassNotFoundException e)
+                    {
+                        return true;
+                    }
                 case "mixins.bugfixes.blockoverlay.json":
                 case "mixins.bugfixes.frustumculling.json":
                 case "mixins.bugfixes.miningglitch.client.json":
-                case "mixins.tweaks.audioreload.json":
                 case "mixins.tweaks.autojump.json":
                 case "mixins.tweaks.recipebook.json":
                 case "mixins.tweaks.resourcemanager.json":
