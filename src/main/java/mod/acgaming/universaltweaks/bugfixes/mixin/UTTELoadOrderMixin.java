@@ -19,7 +19,7 @@ import zone.rong.mixinextras.injector.ModifyExpressionValue;
 @Mixin(Chunk.class)
 public class UTTELoadOrderMixin
 {
-    @ModifyExpressionValue(method = "<init>", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/Maps;newHashMap()Ljava/util/HashMap;"))
+    @ModifyExpressionValue(method = "<init>(Lnet/minecraft/world/World;II)V", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/Maps;newHashMap()Ljava/util/HashMap;"), remap = false)
     public HashMap<BlockPos, TileEntity> utWrapLinkedHashMap(HashMap<BlockPos, TileEntity> hashMap)
     {
         if (!UTConfig.bugfixes.utTELoadOrderToggle) return hashMap;
