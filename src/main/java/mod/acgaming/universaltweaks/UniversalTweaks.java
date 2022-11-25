@@ -94,7 +94,13 @@ public class UniversalTweaks
 
         if (messages.size() > 3)
         {
-            if (FMLLaunchHandler.side() == Side.CLIENT && UTConfig.debug.utObsoleteModsToggle && !Loader.isModLoaded("enderio")) UTObsoleteModsHandler.throwException(messages);
+            if (FMLLaunchHandler.side() == Side.CLIENT
+                && UTConfig.debug.utObsoleteModsToggle
+                && !Loader.isModLoaded("enderio")
+                && !Loader.isModLoaded("gregtech"))
+            {
+                UTObsoleteModsHandler.throwException(messages);
+            }
             else
             {
                 messages.add("");
