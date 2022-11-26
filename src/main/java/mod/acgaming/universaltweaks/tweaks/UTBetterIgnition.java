@@ -27,14 +27,13 @@ public class UTBetterIgnition
         EntityPlayer player = event.getEntityPlayer();
         ItemStack stackMainhand = player.getHeldItemMainhand();
         ItemStack stackOffhand = player.getHeldItemOffhand();
-        if (stackMainhand.getItem() instanceof ItemFlintAndSteel || stackOffhand.getItem() instanceof ItemFlintAndSteel)
-        {
-            World world = event.getWorld();
-            Entity target = event.getTarget();
-            world.playSound(player, target.getPosition(), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, world.rand.nextFloat() * 0.4F + 0.8F);
-            target.setFire(8);
-            if (stackMainhand.getItem() instanceof ItemFlintAndSteel && hand == EnumHand.MAIN_HAND) stackMainhand.damageItem(1, player);
-            else if (stackOffhand.getItem() instanceof ItemFlintAndSteel && hand == EnumHand.OFF_HAND) stackOffhand.damageItem(1, player);
-        }
+        if (hand == EnumHand.MAIN_HAND && stackMainhand.getItem() instanceof ItemFlintAndSteel) stackMainhand.damageItem(1, player);
+        else if (hand == EnumHand.OFF_HAND && stackOffhand.getItem() instanceof ItemFlintAndSteel) stackOffhand.damageItem(1, player);
+        else return;
+        World world = event.getWorld();
+        Entity target = event.getTarget();
+        world.playSound(player, target.getPosition(), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, world.rand.nextFloat() * 0.4F + 0.8F);
+        target.setFire(8);
+        UniversalTweaks.LOGGER.info("Event fired for hand " + hand);
     }
 }
