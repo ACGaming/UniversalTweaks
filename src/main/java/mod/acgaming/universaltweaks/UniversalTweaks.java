@@ -32,7 +32,7 @@ public class UniversalTweaks
 {
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
-    public static final String VERSION = "1.12.2-1.0.0-pre4";
+    public static final String VERSION = "1.12.2-1.0.0-pre5";
     public static final String DEPENDENCIES = "required-after:mixinbooter;" +
         "before:attributefix;" +
         "before:bedbreakbegone;" +
@@ -65,6 +65,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("aiimprovements")) messages.add("AI Improvements");
         if (Loader.isModLoaded("attributefix")) messages.add("AttributeFix");
         if (Loader.isModLoaded("bedbreakbegone")) messages.add("BedBreakBegone");
+        if (Loader.isModLoaded("blockfire")) messages.add("BlockFire");
         if (Loader.isModLoaded("blockoverlayfix")) messages.add("Block Overlay Fix");
         if (Loader.isModLoaded("bowinfinityfix")) messages.add("Bow Infinity Fix");
         if (Loader.isModLoaded("chunkgenlimit")) messages.add("Chunk Generation Limiter");

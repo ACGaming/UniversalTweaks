@@ -26,6 +26,10 @@ public class UTConfig
 
     public static class BugfixesCategory
     {
+        @Config.Name("Block Fire Fix")
+        @Config.Comment("Prevents fire projectiles burning entities when blocking with shields")
+        public boolean utBlockFireToggle = true;
+
         @Config.Name("Block Overlay Fix")
         @Config.Comment("Fixes x-ray when standing in non-suffocating blocks")
         public boolean utBlockOverlayToggle = true;

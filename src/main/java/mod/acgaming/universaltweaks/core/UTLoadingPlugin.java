@@ -66,6 +66,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public List<String> getMixinConfigs()
     {
         return isClient ? Arrays.asList(
+            "mixins.bugfixes.blockfire.json",
             "mixins.bugfixes.blockoverlay.json",
             "mixins.bugfixes.destroypacket.json",
             "mixins.bugfixes.dimensionchange.json",
@@ -94,6 +95,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.recipebook.json",
             "mixins.tweaks.resourcemanager.json") :
             Arrays.asList(
+                "mixins.bugfixes.blockfire.json",
                 "mixins.bugfixes.destroypacket.json",
                 "mixins.bugfixes.dimensionchange.json",
                 "mixins.bugfixes.entityaabb.json",
@@ -145,6 +147,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         }
         switch (mixinConfig)
         {
+            case "mixins.bugfixes.blockfire.json":
             case "mixins.bugfixes.destroypacket.json":
             case "mixins.bugfixes.dimensionchange.json":
             case "mixins.bugfixes.entityaabb.json":
