@@ -140,6 +140,10 @@ public class UTConfig
         @Config.Comment("Replaces bed obstruction checks with an improved version")
         public boolean utBedObstructionToggle = true;
 
+        @Config.Name("Better Ignition")
+        @Config.Comment("Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them")
+        public boolean utBetterIgnitionToggle = true;
+
         @Config.Name("Bow Infinity Remedy")
         @Config.Comment("Bows enchanted with Infinity no longer require arrows")
         public boolean utBowInfinityToggle = true;

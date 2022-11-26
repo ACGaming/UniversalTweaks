@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(EntityArrow.class)
-public abstract class UTBlockFireMixin
+public class UTBlockFireMixin
 {
     @Redirect(method = "onHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;setFire(I)V"))
     public void utBlockFire(Entity instance, int seconds)

@@ -1,0 +1,40 @@
+package mod.acgaming.universaltweaks.tweaks;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemFlintAndSteel;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.world.World;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfig;
+
+@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
+public class UTBetterIgnition
+{
+    @SubscribeEvent
+    public static void utBetterIgnition(PlayerInteractEvent.EntityInteract event)
+    {
+        if (!UTConfig.tweaks.utBetterIgnitionToggle) return;
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterIgnition ::: Right click entity event");
+        EnumHand hand = event.getHand();
+        EntityPlayer player = event.getEntityPlayer();
+        ItemStack stackMainhand = player.getHeldItemMainhand();
+        ItemStack stackOffhand = player.getHeldItemOffhand();
+        if (stackMainhand.getItem() instanceof ItemFlintAndSteel || stackOffhand.getItem() instanceof ItemFlintAndSteel)
+        {
+            World world = event.getWorld();
+            Entity target = event.getTarget();
+            world.playSound(player, target.getPosition(), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, world.rand.nextFloat() * 0.4F + 0.8F);
+            target.setFire(8);
+            if (stackMainhand.getItem() instanceof ItemFlintAndSteel && hand == EnumHand.MAIN_HAND) stackMainhand.damageItem(1, player);
+            else if (stackOffhand.getItem() instanceof ItemFlintAndSteel && hand == EnumHand.OFF_HAND) stackOffhand.damageItem(1, player);
+        }
+    }
+}

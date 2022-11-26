@@ -30,6 +30,7 @@ Upcoming:
 * Auto Jump Replacement: Replaces auto jump with an increased step height
 * Auto Switch Tools: Switches the selected hotbar slot to a proper tool if required
 * Bed Obstruction Replacement: Replaces bed obstruction checks with an improved version
+* Better Ignition: Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
 * Chunk Gen Limit: Limits maximum chunk generation per tick for improved server performance
 * Dimension Unload: Unloads dimensions not in use to free up resources
