@@ -164,6 +164,10 @@ public class UTConfig
         @Config.Comment("Maximum time in ms to spend generating chunks per tick per dimension")
         public int utChunkGenLimitTime = 5;
 
+        @Config.Name("Damage Tilt")
+        @Config.Comment("Restores feature to tilt the camera when damaged")
+        public boolean utDamageTiltToggle = true;
+
         @Config.Name("Dimension Unload")
         @Config.Comment("Unloads dimensions not in use to free up resources")
         public boolean utUnloaderToggle = true;

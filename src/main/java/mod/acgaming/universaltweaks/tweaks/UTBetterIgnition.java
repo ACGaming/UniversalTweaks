@@ -34,6 +34,5 @@ public class UTBetterIgnition
         Entity target = event.getTarget();
         world.playSound(player, target.getPosition(), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, world.rand.nextFloat() * 0.4F + 0.8F);
         target.setFire(8);
-        UniversalTweaks.LOGGER.info("Event fired for hand " + hand);
     }
 }

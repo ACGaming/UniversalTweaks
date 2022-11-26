@@ -36,9 +36,11 @@ public class UniversalTweaks
     public static final String DEPENDENCIES = "required-after:mixinbooter;" +
         "before:attributefix;" +
         "before:bedbreakbegone;" +
+        "before:blockfire;" +
         "before:blockoverlayfix;" +
         "before:bowinfinityfix;" +
         "before:configurablecane;" +
+        "before:damagetilt;" +
         "before:experiencebugfix;" +
         "before:fastleafdecay;" +
         "before:givemebackmyhp;" +
@@ -70,6 +72,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("bowinfinityfix")) messages.add("Bow Infinity Fix");
         if (Loader.isModLoaded("chunkgenlimit")) messages.add("Chunk Generation Limiter");
         if (Loader.isModLoaded("configurablecane")) messages.add("Configurable Cane");
+        if (Loader.isModLoaded("damagetilt")) messages.add("Damage Tilt");
         if (Loader.isModLoaded("experiencebugfix")) messages.add("Fix Experience Bug");
         if (Loader.isModLoaded("fastleafdecay")) messages.add("Fast Leaf Decay");
         if (Loader.isModLoaded("givemebackmyhp")) messages.add("Give Me Back My HP");
