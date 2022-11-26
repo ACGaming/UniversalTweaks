@@ -21,9 +21,6 @@ All changes are toggleable via the config file.
 * Skeleton Aim: Fixes skeletons not looking at their targets when strafing
 * Tile Entity Update Order: Keeps the order of tile entities on chunk load
 
-Upcoming:
-* Hash Code: Reduces CPU overhead caused by incorrect hash code
-
 **Tweaks:**
 * AI Improvements: Replaces/removes entity AI for improved server performance
 * Attributes Uncap: Virtually uncaps entity attributes
@@ -33,6 +30,7 @@ Upcoming:
 * Better Ignition: Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
 * Chunk Gen Limit: Limits maximum chunk generation per tick for improved server performance
+* Damage Tilt: Restores feature to tilt the camera when damaged
 * Dimension Unload: Unloads dimensions not in use to free up resources
 * Disable Animated Models: Improves model load times by removing Forge's animated models
 * Disable Audio Debug: Improves loading times by removing debug code for missing sounds and subtitles
