@@ -37,6 +37,7 @@ All changes are toggleable via the config file.
 * Fast Dye Blending: Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry
 * Fast Leaf Decay: Makes leaves decay faster when trees are chopped
 * Fast Prefix Checking: Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
+* Fence/Wall Jump: Allows the player to jump over fences and walls
 * Mending: Only repairs damaged equipment with XP
 * Mending Overpowered: If mending fix is enabled, repairs entire damaged inventory with XP
 * Item Entity Combination: Stops combination of item entities if their maximum stack size is reached

@@ -200,6 +200,10 @@ public class UTConfig
         @Config.Comment("Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time")
         public boolean utPrefixCheckToggle = true;
 
+        @Config.Name("Fence/Wall Jump")
+        @Config.Comment("Allows the player to jump over fences and walls")
+        public boolean utFenceWallJumpToggle = true;
+
         @Config.Name("Item Entity Combination")
         @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
         public boolean utCombineItemEntityToggle = true;

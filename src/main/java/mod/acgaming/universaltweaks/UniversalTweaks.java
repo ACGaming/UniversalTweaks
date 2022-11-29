@@ -33,29 +33,7 @@ public class UniversalTweaks
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
     public static final String VERSION = "1.12.2-1.0.0-pre5";
-    public static final String DEPENDENCIES = "required-after:mixinbooter;" +
-        "before:attributefix;" +
-        "before:bedbreakbegone;" +
-        "before:blockfire;" +
-        "before:blockoverlayfix;" +
-        "before:bowinfinityfix;" +
-        "before:configurablecane;" +
-        "before:damagetilt;" +
-        "before:experiencebugfix;" +
-        "before:fastleafdecay;" +
-        "before:givemebackmyhp;" +
-        "before:helpfixer;" +
-        "before:leafdecay;" +
-        "before:letmedespawn;" +
-        "before:loginhpfix;" +
-        "before:mendingfix;" +
-        "before:norecipebook;" +
-        "before:overpowered_mending;" +
-        "before:quickleafdecay;" +
-        "before:savemystronghold;" +
-        "before:stepupfix;" +
-        "before:surge;" +
-        "before:unloader";
+    public static final String DEPENDENCIES = "required-after:mixinbooter";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     public static void throwIncompatibility()
@@ -64,6 +42,7 @@ public class UniversalTweaks
         messages.add("Universal Tweaks has replaced and improved upon functionalities from the following mods.");
         messages.add("Therefore, these mods are now incompatible with Universal Tweaks:");
         messages.add("");
+        
         if (Loader.isModLoaded("aiimprovements")) messages.add("AI Improvements");
         if (Loader.isModLoaded("attributefix")) messages.add("AttributeFix");
         if (Loader.isModLoaded("bedbreakbegone")) messages.add("BedBreakBegone");
@@ -75,6 +54,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("damagetilt")) messages.add("Damage Tilt");
         if (Loader.isModLoaded("experiencebugfix")) messages.add("Fix Experience Bug");
         if (Loader.isModLoaded("fastleafdecay")) messages.add("Fast Leaf Decay");
+        if (Loader.isModLoaded("fencejumper")) messages.add("Fence Jumper");
         if (Loader.isModLoaded("givemebackmyhp")) messages.add("Give Me Back My HP");
         if (Loader.isModLoaded("helpfixer")) messages.add("HelpFixer");
         if (Loader.isModLoaded("leafdecay")) messages.add("Leaf Decay Accelerator");
