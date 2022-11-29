@@ -140,6 +140,10 @@ public class UTConfig
         @Config.Comment("Replaces bed obstruction checks with an improved version")
         public boolean utBedObstructionToggle = true;
 
+        @Config.Name("Better Harvest")
+        @Config.Comment("Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking")
+        public boolean utBetterHarvestToggle = false;
+
         @Config.Name("Better Ignition")
         @Config.Comment("Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them")
         public boolean utBetterIgnitionToggle = true;

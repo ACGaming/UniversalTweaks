@@ -42,12 +42,13 @@ public class UniversalTweaks
         messages.add("Universal Tweaks has replaced and improved upon functionalities from the following mods.");
         messages.add("Therefore, these mods are now incompatible with Universal Tweaks:");
         messages.add("");
-        
+
         if (Loader.isModLoaded("aiimprovements")) messages.add("AI Improvements");
         if (Loader.isModLoaded("attributefix")) messages.add("AttributeFix");
         if (Loader.isModLoaded("bedbreakbegone")) messages.add("BedBreakBegone");
         if (Loader.isModLoaded("blockfire")) messages.add("BlockFire");
         if (Loader.isModLoaded("blockoverlayfix")) messages.add("Block Overlay Fix");
+        if (Loader.isModLoaded("bottomsugarcanharvest")) messages.add("Bottom Sugar Cane Harvest");
         if (Loader.isModLoaded("bowinfinityfix")) messages.add("Bow Infinity Fix");
         if (Loader.isModLoaded("chunkgenlimit")) messages.add("Chunk Generation Limiter");
         if (Loader.isModLoaded("configurablecane")) messages.add("Configurable Cane");
