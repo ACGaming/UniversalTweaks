@@ -208,6 +208,10 @@ public class UTConfig
         @Config.Comment("Allows the player to jump over fences and walls")
         public boolean utFenceWallJumpToggle = true;
 
+        @Config.Name("Infinite Music")
+        @Config.Comment("Lets background music play continuously without delays")
+        public boolean utInfiniteMusicToggle = false;
+
         @Config.Name("Item Entity Combination")
         @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
         public boolean utCombineItemEntityToggle = true;

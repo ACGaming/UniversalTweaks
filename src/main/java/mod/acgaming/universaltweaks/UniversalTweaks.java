@@ -52,6 +52,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("bowinfinityfix")) messages.add("Bow Infinity Fix");
         if (Loader.isModLoaded("chunkgenlimit")) messages.add("Chunk Generation Limiter");
         if (Loader.isModLoaded("configurablecane")) messages.add("Configurable Cane");
+        if (Loader.isModLoaded("continousmusic")) messages.add("Infinite Music");
         if (Loader.isModLoaded("damagetilt")) messages.add("Damage Tilt");
         if (Loader.isModLoaded("experiencebugfix")) messages.add("Fix Experience Bug");
         if (Loader.isModLoaded("fastleafdecay")) messages.add("Fast Leaf Decay");

@@ -39,9 +39,10 @@ All changes are toggleable via the config file.
 * Fast Leaf Decay: Makes leaves decay faster when trees are chopped
 * Fast Prefix Checking: Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
 * Fence/Wall Jump: Allows the player to jump over fences and walls
-* Mending: Only repairs damaged equipment with XP
-* Mending Overpowered: If mending fix is enabled, repairs entire damaged inventory with XP
+* Infinite Music: Lets background music play continuously without delays
 * Item Entity Combination: Stops combination of item entities if their maximum stack size is reached
+* Mending Overpowered: If mending fix is enabled, repairs entire damaged inventory with XP
+* Mending: Only repairs damaged equipment with XP
 * Mob Despawn Improvement: Mobs carrying picked up items will drop their equipment and despawn properly
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
 * Remove Recipe Book: Removes the recipe book button from GUIs

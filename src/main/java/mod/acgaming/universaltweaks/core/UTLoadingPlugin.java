@@ -88,6 +88,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.chunkgenlimit.json",
             "mixins.tweaks.damagetilt.json",
             "mixins.tweaks.dyeblending.json",
+            "mixins.tweaks.infinitemusic.json",
             "mixins.tweaks.itementity.json",
             "mixins.tweaks.falldamage.json",
             "mixins.tweaks.mobdespawn.json",
@@ -142,6 +143,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.bugfixes.miningglitch.client.json":
                 case "mixins.tweaks.autojump.json":
                 case "mixins.tweaks.damagetilt.json":
+                case "mixins.tweaks.infinitemusic.json":
                 case "mixins.tweaks.recipebook.json":
                 case "mixins.tweaks.resourcemanager.json":
                     return true;
