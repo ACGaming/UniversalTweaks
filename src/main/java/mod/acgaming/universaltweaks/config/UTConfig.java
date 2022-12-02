@@ -212,6 +212,14 @@ public class UTConfig
         @Config.Comment("Allows the player to jump over fences and walls")
         public boolean utFenceWallJumpToggle = true;
 
+        @Config.Name("Horizontal Collision Damage")
+        @Config.Comment("Applies horizontal collision damage to the player akin to elytra collision")
+        public boolean utCollisionDamageToggle = false;
+
+        @Config.Name("Horizontal Collision Damage Factor")
+        @Config.Comment({"The damage factor that gets multiplied with the player speed", "Vanilla default for elytra damage is 10"})
+        public int utCollisionDamageFactor = 10;
+
         @Config.Name("Infinite Music")
         @Config.Comment("Lets background music play continuously without delays")
         public boolean utInfiniteMusicToggle = false;

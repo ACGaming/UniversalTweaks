@@ -87,6 +87,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.autojump.json",
             "mixins.tweaks.bedobstruction.json",
             "mixins.tweaks.chunkgenlimit.json",
+            "mixins.tweaks.collisiondamage.json",
             "mixins.tweaks.damagetilt.json",
             "mixins.tweaks.dyeblending.json",
             "mixins.tweaks.infinitemusic.json",
@@ -114,6 +115,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.attributes.json",
                 "mixins.tweaks.bedobstruction.json",
                 "mixins.tweaks.chunkgenlimit.json",
+                "mixins.tweaks.collisiondamage.json",
                 "mixins.tweaks.dyeblending.json",
                 "mixins.tweaks.itementity.json",
                 "mixins.tweaks.falldamage.json",
@@ -169,6 +171,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.attributes.json":
             case "mixins.tweaks.bedobstruction.json":
             case "mixins.tweaks.chunkgenlimit.json":
+            case "mixins.tweaks.collisiondamage.json":
             case "mixins.tweaks.dyeblending.json":
             case "mixins.tweaks.itementity.json":
             case "mixins.tweaks.falldamage.json":

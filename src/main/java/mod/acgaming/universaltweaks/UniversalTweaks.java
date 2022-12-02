@@ -32,7 +32,7 @@ public class UniversalTweaks
 {
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
-    public static final String VERSION = "1.12.2-1.0.0-pre5";
+    public static final String VERSION = "1.12.2-1.0.0";
     public static final String DEPENDENCIES = "required-after:mixinbooter";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
@@ -51,6 +51,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("bottomsugarcanharvest")) messages.add("Bottom Sugar Cane Harvest");
         if (Loader.isModLoaded("bowinfinityfix")) messages.add("Bow Infinity Fix");
         if (Loader.isModLoaded("chunkgenlimit")) messages.add("Chunk Generation Limiter");
+        if (Loader.isModLoaded("collisiondamage")) messages.add("Collision Damage");
         if (Loader.isModLoaded("configurablecane")) messages.add("Configurable Cane");
         if (Loader.isModLoaded("continousmusic")) messages.add("Infinite Music");
         if (Loader.isModLoaded("damagetilt")) messages.add("Damage Tilt");
