@@ -69,6 +69,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("savemystronghold")) messages.add("Save My Stronghold!");
         if (Loader.isModLoaded("stepupfix")) messages.add("StepupFixer");
         if (Loader.isModLoaded("surge")) messages.add("Surge");
+        if (Loader.isModLoaded("tidychunk")) messages.add("TidyChunk");
         if (Loader.isModLoaded("unloader")) messages.add("Unloader");
 
         try

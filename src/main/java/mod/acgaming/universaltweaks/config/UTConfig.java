@@ -248,6 +248,10 @@ public class UTConfig
         @Config.Comment("Determines how tall sugar cane can grow")
         public int utSugarCaneSize = 3;
 
+        @Config.Name("Tidy Chunk")
+        @Config.Comment("Tidies newly generated chunks by removing scattered item entities")
+        public boolean utTidyChunkToggle = false;
+
         @Config.Name("Water Fall Damage")
         @Config.Comment("Re-implements an improved version of pre-1.4 fall damage in water")
         public boolean utFallDamageToggle = false;
