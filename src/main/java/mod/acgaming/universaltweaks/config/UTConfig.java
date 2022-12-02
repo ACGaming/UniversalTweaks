@@ -42,6 +42,10 @@ public class UTConfig
         @Config.Comment({"Includes blocks in the block overlay fix", "Syntax: modid:block"})
         public String[] utBlockOverlayWhitelist = new String[] {};
 
+        @Config.Name("Comparator Timing Fix")
+        @Config.Comment("Fixes inconsistent delays of comparators to prevent redstone timing issues")
+        public boolean utComparatorTimingToggle = true;
+
         @Config.Name("Destroy Entity Packets Fix")
         @Config.Comment("Fixes lag caused by dead entities by sending additional packets when the player is not alive")
         public boolean utDestroyPacketToggle = true;
