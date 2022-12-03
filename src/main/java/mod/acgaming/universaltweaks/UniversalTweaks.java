@@ -101,7 +101,7 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        throwIncompatibility();
+        if (!UTConfig.debug.utBypassIncompatibilityToggle) throwIncompatibility();
         if (UTConfig.tweaks.utAttributesToggle) UTAttributes.utSetAttributes();
         if (UTConfig.tweaks.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
     }

@@ -120,6 +120,10 @@ public class UTConfig
         @Config.Name("Obsolete Mods Screen")
         @Config.Comment("Enables a screen displaying incompatible mods on game load")
         public boolean utObsoleteModsToggle = true;
+
+        @Config.Name("Bypass Incompatibility Warnings")
+        @Config.Comment("For those who live life on the edge, may or may not include Jons")
+        public boolean utBypassIncompatibilityToggle = false;
     }
 
     public static class ModsCategory
