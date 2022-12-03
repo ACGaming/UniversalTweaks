@@ -32,8 +32,8 @@ public class UniversalTweaks
 {
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
-    public static final String VERSION = "1.12.2-1.0.0";
-    public static final String DEPENDENCIES = "required-after:mixinbooter";
+    public static final String VERSION = "1.12.2-1.1.0";
+    public static final String DEPENDENCIES = "required-after:mixinbooter;after:tconstruct";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     public static void throwIncompatibility()
@@ -70,6 +70,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("savemystronghold")) messages.add("Save My Stronghold!");
         if (Loader.isModLoaded("stepupfix")) messages.add("StepupFixer");
         if (Loader.isModLoaded("surge")) messages.add("Surge");
+        if (Loader.isModLoaded("tconfixes")) messages.add("TConFixes");
         if (Loader.isModLoaded("tidychunk")) messages.add("TidyChunk");
         if (Loader.isModLoaded("unloader")) messages.add("Unloader");
 

@@ -20,6 +20,10 @@ public class UTConfig
     @Config.Comment("Debug Category")
     public static DebugCategory debug = new DebugCategory();
 
+    @Config.Name("Mods")
+    @Config.Comment("Mods Category")
+    public static ModsCategory mods = new ModsCategory();
+
     @Config.Name("Tweaks")
     @Config.Comment("Tweaks Category")
     public static TweaksCategory tweaks = new TweaksCategory();
@@ -116,6 +120,17 @@ public class UTConfig
         @Config.Name("Obsolete Mods Screen")
         @Config.Comment("Enables a screen displaying incompatible mods on game load")
         public boolean utObsoleteModsToggle = true;
+    }
+
+    public static class ModsCategory
+    {
+        @Config.Name("[Tinkers' Construct] Projectile Despawning")
+        @Config.Comment("Despawns unbreakable projectiles faster to improve framerates")
+        public boolean utTConProjectileToggle = true;
+
+        @Config.Name("[Tinkers' Construct] Offhand Shuriken")
+        @Config.Comment("Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand")
+        public boolean utTConShurikenToggle = true;
     }
 
     public static class TweaksCategory

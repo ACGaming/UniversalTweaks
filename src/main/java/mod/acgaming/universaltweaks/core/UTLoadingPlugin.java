@@ -9,7 +9,6 @@ import javax.annotation.Nullable;
 import net.minecraftforge.common.ForgeVersion;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
-import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
@@ -20,7 +19,7 @@ import zone.rong.mixinbooter.IEarlyMixinLoader;
 @IFMLLoadingPlugin.SortingIndex(Integer.MIN_VALUE)
 public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 {
-    public static final boolean isClient = FMLLaunchHandler.side() == Side.CLIENT;
+    public static final boolean isClient = FMLLaunchHandler.side().isClient();
 
     static
     {
