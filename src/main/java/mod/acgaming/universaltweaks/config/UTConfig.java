@@ -131,6 +131,24 @@ public class UTConfig
         @Config.Name("[Tinkers' Construct] Offhand Shuriken")
         @Config.Comment("Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand")
         public boolean utTConShurikenToggle = true;
+
+        @Config.Name("[Mo' Creatures] Custom Modded Biomes")
+        @Config.Comment(
+            {
+                "Adds support for modded biome spawns",
+                "Syntax: modid;name;key;tag;filename",
+                "modid    Mod ID required for this to be added",
+                "name     Mod name",
+                "key      Used for class lookups, needs to be a unique part of the modded package, e.g. mod.acgaming.*universaltweaks*.mods",
+                "tag      Short tag for logs",
+                "filename Filename to use for the generated config"
+            })
+        public String[] utMoCBiomeMods = new String[]
+            {
+                "pvj;vibrantjourneys;vibrantjourneys;PVJ;ProjectVibrantJourneys.cfg",
+                "traverse;traverse;traverse;TRAV;Traverse.cfg",
+                "dimdoors;dimdoors;dimdoors;DD;DimDoors.cfg"
+            };
     }
 
     public static class TweaksCategory

@@ -71,6 +71,7 @@ dependencies {
     deobfCompile "zone.rong:mixinbooter:7.0"
     deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.55"
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
+    compile "curse.maven:custom-mob-spawner-229261:2859433"
 }
 
 mixin {

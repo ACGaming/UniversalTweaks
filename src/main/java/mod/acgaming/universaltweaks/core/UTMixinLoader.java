@@ -12,15 +12,21 @@ public class UTMixinLoader implements ILateMixinLoader
     @Override
     public List<String> getMixinConfigs()
     {
-        return Lists.newArrayList("mixins.mods.tconstruct.json");
+        return Lists.newArrayList(
+            "mixins.mods.customspawner.json",
+            "mixins.mods.tconstruct.json"
+        );
     }
 
     @Override
     public boolean shouldMixinConfigQueue(String mixinConfig)
     {
-        if (mixinConfig.equals("mixins.mods.tconstruct.json"))
+        switch (mixinConfig)
         {
-            return Loader.isModLoaded("tconstruct");
+            case "mixins.mods.customspawner.json":
+                return Loader.isModLoaded("customspawner");
+            case "mixins.mods.tconstruct.json":
+                return Loader.isModLoaded("tconstruct");
         }
         return false;
     }

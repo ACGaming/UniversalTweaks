@@ -1,9 +1,11 @@
 # 🔧 Universal Tweaks 🔧
+
 ### A one-stop-shop for all bugfixing and tweaking needs
 
 All changes are toggleable via the config file.
 
 **Bugfixes:**
+
 * Block Fire: Prevents fire projectiles burning entities when blocking with shields
 * Block Overlay: Fixes x-ray when standing in non-suffocating blocks
 * Comparator Timing: Fixes inconsistent delays of comparators to prevent redstone timing issues
@@ -23,6 +25,7 @@ All changes are toggleable via the config file.
 * Tile Entity Update Order: Keeps the order of tile entities on chunk load
 
 **Tweaks:**
+
 * AI Improvements: Replaces/removes entity AI for improved server performance
 * Attributes Uncap: Virtually uncaps entity attributes
 * Auto Jump Replacement: Replaces auto jump with an increased step height
@@ -51,3 +54,11 @@ All changes are toggleable via the config file.
 * Stronghold Replacement: Replaces stronghold generation with a safer variant
 * Tidy Chunk: Tidies newly generated chunks by removing scattered item entities
 * Water Fall Damage: Re-implements an improved version of pre-1.4 fall damage in water
+
+**Mod Tweaks:**
+
+* Mo' Creatures
+    * Custom Modded Biomes: Adds support for modded biome spawns via config
+* Tinkers' Construct
+    * Offhand Shuriken: Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand
+    * Projectile Despawning: Despawns unbreakable projectiles faster to improve framerates
