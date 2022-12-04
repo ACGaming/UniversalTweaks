@@ -62,6 +62,10 @@ public class UTConfig
         @Config.Comment("Saves entity bounding boxes to tags to prevent breakouts and suffocation")
         public boolean utEntityAABBToggle = true;
 
+        @Config.Name("Entity Desync Fix")
+        @Config.Comment("Fixes entity motion desyncs most notable with arrows and thrown items")
+        public boolean utEntityDesyncToggle = true;
+
         @Config.Name("Entity Suffocation Fix")
         @Config.Comment("Pushes entities out of blocks when growing up to prevent suffocation")
         public boolean utEntitySuffocationToggle = true;

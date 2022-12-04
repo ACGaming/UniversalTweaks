@@ -5,7 +5,7 @@
     "description": "A one-stop-shop for all bugfixing and tweaking needs",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "url": "",
+    "url": "https://github.com/ACGaming/UniversalTweaks",
     "authorList": [
       "ACGaming"
     ],

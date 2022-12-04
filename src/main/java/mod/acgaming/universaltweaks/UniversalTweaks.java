@@ -55,6 +55,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("configurablecane")) messages.add("Configurable Cane");
         if (Loader.isModLoaded("continousmusic")) messages.add("Infinite Music");
         if (Loader.isModLoaded("damagetilt")) messages.add("Damage Tilt");
+        if (Loader.isModLoaded("entity_desync_fix")) messages.add("EntityDesyncFix");
         if (Loader.isModLoaded("experiencebugfix")) messages.add("Fix Experience Bug");
         if (Loader.isModLoaded("fastleafdecay")) messages.add("Fast Leaf Decay");
         if (Loader.isModLoaded("fencejumper")) messages.add("Fence Jumper");

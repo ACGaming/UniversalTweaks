@@ -71,6 +71,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.destroypacket.json",
             "mixins.bugfixes.dimensionchange.json",
             "mixins.bugfixes.entityaabb.json",
+            "mixins.bugfixes.entitydesync.json",
             "mixins.bugfixes.entitysuffocation.json",
             "mixins.bugfixes.entitytracker.json",
             "mixins.bugfixes.frustumculling.json",
@@ -103,6 +104,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.destroypacket.json",
                 "mixins.bugfixes.dimensionchange.json",
                 "mixins.bugfixes.entityaabb.json",
+                "mixins.bugfixes.entitydesync.json",
                 "mixins.bugfixes.entitysuffocation.json",
                 "mixins.bugfixes.entitytracker.json",
                 "mixins.bugfixes.ladderflying.json",
@@ -171,6 +173,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.bugfixes.utDimensionChangeToggle;
             case "mixins.bugfixes.entityaabb.json":
                 return UTConfig.bugfixes.utEntityAABBToggle;
+            case "mixins.bugfixes.entitydesync.json":
+                return UTConfig.bugfixes.utEntityDesyncToggle;
             case "mixins.bugfixes.entitysuffocation.json":
                 return UTConfig.bugfixes.utEntitySuffocationToggle;
             case "mixins.bugfixes.entitytracker.json":
