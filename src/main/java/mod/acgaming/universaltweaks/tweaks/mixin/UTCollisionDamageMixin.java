@@ -15,9 +15,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EntityLivingBase.class)
-public abstract class UTCollisionDamage extends Entity
+public abstract class UTCollisionDamageMixin extends Entity
 {
-    public UTCollisionDamage(World worldIn)
+    public UTCollisionDamageMixin(World worldIn)
     {
         super(worldIn);
     }

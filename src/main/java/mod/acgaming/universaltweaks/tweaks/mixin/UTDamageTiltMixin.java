@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // Courtesy of Charles445
 @Mixin(Entity.class)
-public class UTDamageTilt
+public class UTDamageTiltMixin
 {
     @Inject(method = "setVelocity", at = @At("HEAD"))
     public void utDamageTilt(double x, double y, double z, CallbackInfo ci)
