@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraft.client.audio.SoundHandler;
 import net.minecraft.client.audio.SoundList;
@@ -34,15 +33,13 @@ public class UTAudioReloadMixin
 {
     @Shadow
     @Final
-    private static final Logger LOGGER = LogManager.getLogger();
-
-    @Shadow
-    @Final
-    private final SoundRegistry soundRegistry = new SoundRegistry();
-
+    private static Logger LOGGER;
     @Shadow
     @Final
     private SoundManager sndManager;
+    @Shadow
+    @Final
+    private SoundRegistry soundRegistry;
 
     @Inject(method = "onResourceManagerReload(Lnet/minecraft/client/resources/IResourceManager;)V", at = @At("HEAD"), cancellable = true)
     public void utOnResourceManagerReload(IResourceManager resourceManager, CallbackInfo info)
