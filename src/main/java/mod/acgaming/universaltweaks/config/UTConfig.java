@@ -181,6 +181,10 @@ public class UTConfig
         @Config.Comment("Switches the selected hotbar slot to a proper tool if required")
         public boolean utAutoSwitchToggle = false;
 
+        @Config.Name("No Attack Cooldown")
+        @Config.Comment("Disables the 1.9 combat update attack cooldown")
+        public boolean utAttackCooldownToggle = false;
+
         @Config.Name("Bed Obstruction Replacement")
         @Config.Comment("Replaces bed obstruction checks with an improved version")
         public boolean utBedObstructionToggle = true;

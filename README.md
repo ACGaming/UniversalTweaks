@@ -50,6 +50,7 @@ All changes are toggleable via the config file.
 * Mending Overpowered: If mending fix is enabled, repairs entire damaged inventory with XP
 * Mending: Only repairs damaged equipment with XP
 * Mob Despawn Improvement: Mobs carrying picked up items will drop their equipment and despawn properly
+* No Attack Cooldown: Disables the 1.9 combat update attack cooldown
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
 * Remove Recipe Book: Removes the recipe book button from GUIs
 * Stronghold Replacement: Replaces stronghold generation with a safer variant

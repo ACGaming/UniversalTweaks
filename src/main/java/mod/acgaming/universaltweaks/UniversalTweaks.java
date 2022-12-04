@@ -51,6 +51,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("bottomsugarcanharvest")) messages.add("Bottom Sugar Cane Harvest");
         if (Loader.isModLoaded("bowinfinityfix")) messages.add("Bow Infinity Fix");
         if (Loader.isModLoaded("chunkgenlimit")) messages.add("Chunk Generation Limiter");
+        if (Loader.isModLoaded("classiccombat")) messages.add("Classic Combat");
         if (Loader.isModLoaded("collisiondamage")) messages.add("Collision Damage");
         if (Loader.isModLoaded("configurablecane")) messages.add("Configurable Cane");
         if (Loader.isModLoaded("continousmusic")) messages.add("Infinite Music");

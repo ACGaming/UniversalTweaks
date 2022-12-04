@@ -82,6 +82,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.skeletonaim.json",
             "mixins.bugfixes.teloadorder.json",
             "mixins.tweaks.ai.json",
+            "mixins.tweaks.attackcooldown.json",
             "mixins.tweaks.attributes.json",
             "mixins.tweaks.audioreload.json",
             "mixins.tweaks.autojump.json",
@@ -113,6 +114,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.skeletonaim.json",
                 "mixins.bugfixes.teloadorder.json",
                 "mixins.tweaks.ai.json",
+                "mixins.tweaks.attackcooldown.json",
                 "mixins.tweaks.attributes.json",
                 "mixins.tweaks.bedobstruction.json",
                 "mixins.tweaks.chunkgenlimit.json",
@@ -191,6 +193,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.bugfixes.utTELoadOrderToggle;
             case "mixins.tweaks.ai.json":
                 return UTConfig.tweaks.utAIReplacementToggle;
+            case "mixins.tweaks.attackcooldown.json":
+                return UTConfig.tweaks.utAttackCooldownToggle;
             case "mixins.tweaks.attributes.json":
                 return UTConfig.tweaks.utAttributesToggle;
             case "mixins.tweaks.bedobstruction.json":
