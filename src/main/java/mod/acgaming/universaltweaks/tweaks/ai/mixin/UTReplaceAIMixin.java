@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(EntityLookHelper.class)
-public class UTReplaceAI
+public class UTReplaceAIMixin
 {
     @Redirect(method = "onUpdateLook", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;atan2(DD)D"))
     public double utReplaceAI(double y, double x)

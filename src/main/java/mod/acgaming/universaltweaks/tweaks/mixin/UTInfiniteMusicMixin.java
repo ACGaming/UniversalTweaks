@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(MusicTicker.class)
-public class UTInfiniteMusic
+public class UTInfiniteMusicMixin
 {
     @Shadow
     @Final

@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 // MC-29375
 // https://bugs.mojang.com/browse/MC-29375
 @Mixin(EntityPlayerMP.class)
-public abstract class UTDestroyPacket extends EntityPlayer
+public abstract class UTDestroyPacketMixin extends EntityPlayer
 {
     @Shadow
     public NetHandlerPlayServer connection;
@@ -31,7 +31,7 @@ public abstract class UTDestroyPacket extends EntityPlayer
     @Final
     private List<Integer> entityRemoveQueue;
 
-    public UTDestroyPacket(World worldIn, GameProfile gameProfileIn)
+    public UTDestroyPacketMixin(World worldIn, GameProfile gameProfileIn)
     {
         super(worldIn, gameProfileIn);
     }
