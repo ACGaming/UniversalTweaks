@@ -201,6 +201,10 @@ public class UTConfig
         @Config.Comment("Bows enchanted with Infinity no longer require arrows")
         public boolean utBowInfinityToggle = true;
 
+        @Config.Name("Better Placement Click Delay")
+        @Config.Comment("Sets the delay in ticks between placing blocks")
+        public int utBPClickDelay = 4;
+
         @Config.Name("Cactus Size")
         @Config.Comment("Determines how tall cacti can grow")
         public int utCactusSize = 3;
@@ -239,7 +243,7 @@ public class UTConfig
 
         @Config.Name("Disable Audio Debug")
         @Config.Comment("Improves loading times by removing debug code for missing sounds and subtitles")
-        public boolean utDisableAudioDebugToggle = false;
+        public boolean utDisableAudioDebugToggle = true;
 
         @Config.Name("Fast Dye Blending")
         @Config.Comment("Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry")
@@ -311,7 +315,7 @@ public class UTConfig
 
         @Config.Name("Water Fall Damage Reduction")
         @Config.Comment("How much fall damage gets reduced by water per tick")
-        public float utFallDamageValue = 2F;
+        public float utFallDamageValue = 2;
     }
 
     @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
