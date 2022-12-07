@@ -34,8 +34,10 @@ All changes are toggleable via the config file.
 * Bed Obstruction Replacement: Replaces bed obstruction checks with an improved version
 * Better Harvest: Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking
 * Better Ignition: Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them
+* Better Placement Click Delay: Sets the delay in ticks between placing blocks
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
 * Chunk Gen Limit: Limits maximum chunk generation per tick for improved server performance
+* Creeper Confetti: Replaces deadly creeper explosions with delightful confetti
 * Damage Tilt: Restores feature to tilt the camera when damaged
 * Dimension Unload: Unloads dimensions not in use to free up resources
 * Disable Animated Models: Improves model load times by removing Forge's animated models

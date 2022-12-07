@@ -92,6 +92,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.betterplacement.json",
             "mixins.tweaks.chunkgenlimit.json",
             "mixins.tweaks.collisiondamage.json",
+            "mixins.tweaks.creeperconfetti.json",
             "mixins.tweaks.damagetilt.json",
             "mixins.tweaks.dyeblending.json",
             "mixins.tweaks.infinitemusic.json",
@@ -122,6 +123,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.bedobstruction.json",
                 "mixins.tweaks.chunkgenlimit.json",
                 "mixins.tweaks.collisiondamage.json",
+                "mixins.tweaks.creeperconfetti.json",
                 "mixins.tweaks.dyeblending.json",
                 "mixins.tweaks.itementity.json",
                 "mixins.tweaks.falldamage.json",
@@ -209,6 +211,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Chunk Gen Limit\"=true");
             case "mixins.tweaks.collisiondamage.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Horizontal Collision Damage\"=true");
+            case "mixins.tweaks.creeperconfetti.json":
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"Creeper Confetti\"=true");
             case "mixins.tweaks.dyeblending.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Fast Dye Blending\"=true");
             case "mixins.tweaks.itementity.json":
