@@ -69,6 +69,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         return isClient ? Arrays.asList(
             "mixins.bugfixes.blockfire.json",
             "mixins.bugfixes.blockoverlay.json",
+            "mixins.bugfixes.boatoffset.json",
             "mixins.bugfixes.comparatortiming.json",
             "mixins.bugfixes.deathtime.json",
             "mixins.bugfixes.destroypacket.json",
@@ -106,6 +107,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.resourcemanager.json") :
             Arrays.asList(
                 "mixins.bugfixes.blockfire.json",
+                "mixins.bugfixes.boatoffset.json",
                 "mixins.bugfixes.comparatortiming.json",
                 "mixins.bugfixes.deathtime.json",
                 "mixins.bugfixes.destroypacket.json",
@@ -177,6 +179,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         {
             case "mixins.bugfixes.blockfire.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Block Fire Fix\"=true");
+            case "mixins.bugfixes.boatoffset.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Boat Riding Offset Fix\"=true");
             case "mixins.bugfixes.comparatortiming.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Comparator Timing Fix\"=true");
             case "mixins.bugfixes.deathtime.json":

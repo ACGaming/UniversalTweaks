@@ -46,6 +46,10 @@ public class UTConfig
         @Config.Comment({"Includes blocks in the block overlay fix", "Syntax: modid:block"})
         public String[] utBlockOverlayWhitelist = new String[] {};
 
+        @Config.Name("Boat Riding Offset Fix")
+        @Config.Comment("Fixes entities glitching through the bottom of boats")
+        public boolean utBoatOffsetToggle = true;
+
         @Config.Name("Comparator Timing Fix")
         @Config.Comment("Fixes inconsistent delays of comparators to prevent redstone timing issues")
         public boolean utComparatorTimingToggle = true;
