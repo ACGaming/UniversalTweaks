@@ -70,6 +70,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.blockfire.json",
             "mixins.bugfixes.blockoverlay.json",
             "mixins.bugfixes.comparatortiming.json",
+            "mixins.bugfixes.deathtime.json",
             "mixins.bugfixes.destroypacket.json",
             "mixins.bugfixes.dimensionchange.json",
             "mixins.bugfixes.entityaabb.json",
@@ -106,6 +107,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             Arrays.asList(
                 "mixins.bugfixes.blockfire.json",
                 "mixins.bugfixes.comparatortiming.json",
+                "mixins.bugfixes.deathtime.json",
                 "mixins.bugfixes.destroypacket.json",
                 "mixins.bugfixes.dimensionchange.json",
                 "mixins.bugfixes.entityaabb.json",
@@ -177,6 +179,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Block Fire Fix\"=true");
             case "mixins.bugfixes.comparatortiming.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Comparator Timing Fix\"=true");
+            case "mixins.bugfixes.deathtime.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Death Time Fix\"=true");
             case "mixins.bugfixes.destroypacket.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Destroy Entity Packets Fix\"=true");
             case "mixins.bugfixes.dimensionchange.json":

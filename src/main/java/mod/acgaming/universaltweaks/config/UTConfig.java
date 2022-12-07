@@ -50,6 +50,10 @@ public class UTConfig
         @Config.Comment("Fixes inconsistent delays of comparators to prevent redstone timing issues")
         public boolean utComparatorTimingToggle = true;
 
+        @Config.Name("Death Time Fix")
+        @Config.Comment("Fixes corrupted mobs exceeding the allowed death time")
+        public boolean utDeathTimeToggle = true;
+
         @Config.Name("Destroy Entity Packets Fix")
         @Config.Comment("Fixes lag caused by dead entities by sending additional packets when the player is not alive")
         public boolean utDestroyPacketToggle = true;

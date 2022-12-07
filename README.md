@@ -9,6 +9,7 @@ All changes are toggleable via the config file.
 * Block Fire: Prevents fire projectiles burning entities when blocking with shields
 * Block Overlay: Fixes x-ray when standing in non-suffocating blocks
 * Comparator Timing: Fixes inconsistent delays of comparators to prevent redstone timing issues
+* Death Time: Fixes corrupted mobs exceeding the allowed death time
 * Destroy Entity Packets: Fixes lag caused by dead entities by sending additional packets when the player is not alive
 * Dimension Change Player States: Fixes missing player states when changing dimensions by sending additional packets
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
