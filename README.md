@@ -17,6 +17,7 @@ All changes are toggleable via the config file.
 * Entity Desync: Fixes entity motion desyncs most notable with arrows and thrown items
 * Entity Suffocation: Pushes entities out of blocks when growing up to prevent suffocation
 * Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
+* Exhaustion: Fixes saturation depleting in peaceful mode
 * Frustum Culling: Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * Help: Replaces the help command, sorts and reports broken commands
 * Ladder Flying Slowdown: Disables climbing movement when flying

@@ -82,6 +82,10 @@ public class UTConfig
         @Config.Comment("Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions")
         public boolean utEntityTrackerToggle = true;
 
+        @Config.Name("Exhaustion Fix")
+        @Config.Comment("Fixes saturation depleting in peaceful mode")
+        public boolean utExhaustionToggle = true;
+
         @Config.Name("Frustum Culling Fix")
         @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
         public boolean utFrustumCullingToggle = true;

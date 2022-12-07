@@ -78,6 +78,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.entitydesync.json",
             "mixins.bugfixes.entitysuffocation.json",
             "mixins.bugfixes.entitytracker.json",
+            "mixins.bugfixes.exhaustion.json",
             "mixins.bugfixes.frustumculling.json",
             "mixins.bugfixes.ladderflying.json",
             "mixins.bugfixes.miningglitch.client.json",
@@ -116,6 +117,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.entitydesync.json",
                 "mixins.bugfixes.entitysuffocation.json",
                 "mixins.bugfixes.entitytracker.json",
+                "mixins.bugfixes.exhaustion.json",
                 "mixins.bugfixes.ladderflying.json",
                 "mixins.bugfixes.miningglitch.server.json",
                 "mixins.bugfixes.pistontile.json",
@@ -197,6 +199,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Suffocation Fix\"=true");
             case "mixins.bugfixes.entitytracker.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Tracker Fix\"=true");
+            case "mixins.bugfixes.exhaustion.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Exhaustion Fix\"=true");
             case "mixins.bugfixes.ladderflying.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Ladder Flying Slowdown Fix\"=true");
             case "mixins.bugfixes.miningglitch.server.json":

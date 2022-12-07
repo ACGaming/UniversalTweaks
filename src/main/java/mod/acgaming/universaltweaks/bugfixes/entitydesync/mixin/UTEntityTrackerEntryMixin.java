@@ -32,7 +32,7 @@ public class UTEntityTrackerEntryMixin
     @Redirect(method = "updatePlayerList", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;getDistanceSq(DDD)D"))
     public double utGetDistanceSq(Entity entity, double x, double y, double z)
     {
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityMixin ::: Get entity distance");
+        //if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityMixin ::: Get entity distance");
         double dx = x - entity.prevPosX;
         double dy = y - entity.prevPosY;
         double dz = z - entity.prevPosZ;
