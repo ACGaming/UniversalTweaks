@@ -1,20 +1,14 @@
 package mod.acgaming.universaltweaks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
-import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.bugfixes.UTHelp;
 import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
@@ -36,75 +30,10 @@ public class UniversalTweaks
     public static final String DEPENDENCIES = "required-after:mixinbooter;after:tconstruct;after:customspawner";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
-    public static void throwIncompatibility()
-    {
-        List<String> messages = new ArrayList<>();
-        messages.add("Universal Tweaks has replaced and improved upon functionalities from the following mods.");
-        messages.add("Therefore, these mods are now incompatible with Universal Tweaks:");
-        messages.add("");
-
-        if (Loader.isModLoaded("aiimprovements")) messages.add("AI Improvements");
-        if (Loader.isModLoaded("attributefix")) messages.add("AttributeFix");
-        if (Loader.isModLoaded("bedbreakbegone")) messages.add("BedBreakBegone");
-        if (Loader.isModLoaded("blockfire")) messages.add("BlockFire");
-        if (Loader.isModLoaded("blockoverlayfix")) messages.add("Block Overlay Fix");
-        if (Loader.isModLoaded("bottomsugarcanharvest")) messages.add("Bottom Sugar Cane Harvest");
-        if (Loader.isModLoaded("bowinfinityfix")) messages.add("Bow Infinity Fix");
-        if (Loader.isModLoaded("chunkgenlimit")) messages.add("Chunk Generation Limiter");
-        if (Loader.isModLoaded("classiccombat")) messages.add("Classic Combat");
-        if (Loader.isModLoaded("collisiondamage")) messages.add("Collision Damage");
-        if (Loader.isModLoaded("configurablecane")) messages.add("Configurable Cane");
-        if (Loader.isModLoaded("continousmusic")) messages.add("Infinite Music");
-        if (Loader.isModLoaded("creeperconfetti")) messages.add("Creeper Confetti");
-        if (Loader.isModLoaded("damagetilt")) messages.add("Damage Tilt");
-        if (Loader.isModLoaded("entity_desync_fix")) messages.add("EntityDesyncFix");
-        if (Loader.isModLoaded("experiencebugfix")) messages.add("Fix Experience Bug");
-        if (Loader.isModLoaded("fastleafdecay")) messages.add("Fast Leaf Decay");
-        if (Loader.isModLoaded("fencejumper")) messages.add("Fence Jumper");
-        if (Loader.isModLoaded("givemebackmyhp")) messages.add("Give Me Back My HP");
-        if (Loader.isModLoaded("helpfixer")) messages.add("HelpFixer");
-        if (Loader.isModLoaded("leafdecay")) messages.add("Leaf Decay Accelerator");
-        if (Loader.isModLoaded("letmedespawn")) messages.add("Let Me Despawn");
-        if (Loader.isModLoaded("loginhpfix")) messages.add("Login HP Fix");
-        if (Loader.isModLoaded("mendingfix")) messages.add("Mending Fix");
-        if (Loader.isModLoaded("norecipebook")) messages.add("No Recipe Book");
-        if (Loader.isModLoaded("overpowered_mending")) messages.add("Overpowered Mending");
-        if (Loader.isModLoaded("quickleafdecay")) messages.add("Quick Leaf Decay");
-        if (Loader.isModLoaded("savemystronghold")) messages.add("Save My Stronghold!");
-        if (Loader.isModLoaded("stepupfix")) messages.add("StepupFixer");
-        if (Loader.isModLoaded("surge")) messages.add("Surge");
-        if (Loader.isModLoaded("tconfixes")) messages.add("TConFixes");
-        if (Loader.isModLoaded("tidychunk")) messages.add("TidyChunk");
-        if (Loader.isModLoaded("unloader")) messages.add("Unloader");
-
-        try
-        {
-            Class.forName("io.github.jikuja.LocaleTweaker");
-            messages.add("LocaleFixer");
-        }
-        catch (ClassNotFoundException ignored) {}
-
-        if (messages.size() > 3)
-        {
-            if (FMLLaunchHandler.side() == Side.CLIENT
-                && UTConfig.debug.utObsoleteModsToggle
-                && !Loader.isModLoaded("enderio")
-                && !Loader.isModLoaded("gregtech"))
-            {
-                UTObsoleteModsHandler.throwException(messages);
-            }
-            else
-            {
-                messages.add("");
-                throw new RuntimeException(String.join(System.lineSeparator(), messages));
-            }
-        }
-    }
-
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        if (!UTConfig.debug.utBypassIncompatibilityToggle) throwIncompatibility();
+        if (!UTConfig.debug.utBypassIncompatibilityToggle) UTObsoleteModsHandler.throwIncompatibility();
         if (UTConfig.tweaks.utAttributesToggle) UTAttributes.utSetAttributes();
         if (UTConfig.tweaks.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
     }
