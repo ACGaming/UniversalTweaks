@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks;
+package mod.acgaming.universaltweaks.util;
 
 import java.util.ArrayList;
 import java.util.List;

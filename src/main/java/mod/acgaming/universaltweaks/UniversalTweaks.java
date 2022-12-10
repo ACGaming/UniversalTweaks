@@ -16,6 +16,8 @@ import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
+import mod.acgaming.universaltweaks.util.UTObsoleteModsHandler;
+import mod.acgaming.universaltweaks.util.UTPacketHandler;
 
 @Mod(modid = UniversalTweaks.MODID,
     name = UniversalTweaks.NAME,
@@ -33,6 +35,7 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+        UTPacketHandler.init();
         if (!UTConfig.debug.utBypassIncompatibilityToggle) UTObsoleteModsHandler.throwIncompatibility();
         if (UTConfig.tweaks.utAttributesToggle) UTAttributes.utSetAttributes();
         if (UTConfig.tweaks.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
