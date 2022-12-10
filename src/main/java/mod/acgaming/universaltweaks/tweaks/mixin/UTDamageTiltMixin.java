@@ -3,10 +3,10 @@ package mod.acgaming.universaltweaks.tweaks.mixin;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.math.MathHelper;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
-import mod.acgaming.universaltweaks.tweaks.ai.UTDiamondAtan2;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -24,7 +24,7 @@ public class UTDamageTiltMixin
         EntityPlayer player = Minecraft.getMinecraft().player;
         if (player != null)
         {
-            float result = (float) (UTDiamondAtan2.atan2(player.motionZ - z, player.motionX - x) * (180 / Math.PI) - player.rotationYaw);
+            float result = (float) (MathHelper.atan2(player.motionZ - z, player.motionX - x) * (180D / Math.PI) - (double) player.rotationYaw);
             if (Float.isFinite(result)) player.attackedAtYaw = result;
         }
     }
