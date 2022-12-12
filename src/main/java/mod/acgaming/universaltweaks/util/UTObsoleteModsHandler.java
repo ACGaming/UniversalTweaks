@@ -36,6 +36,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("continousmusic") && UTConfig.tweaks.utInfiniteMusicToggle) messages.add("Infinite Music");
         if (Loader.isModLoaded("creeperconfetti") && UTConfig.tweaks.utCreeperConfettiToggle) messages.add("Creeper Confetti");
         if (Loader.isModLoaded("damagetilt") && UTConfig.tweaks.utDamageTiltToggle) messages.add("Damage Tilt");
+        if (Loader.isModLoaded("diethopper") && UTConfig.bugfixes.utDietHopperToggle) messages.add("Diet Hopper");
         if (Loader.isModLoaded("entity_desync_fix") && UTConfig.bugfixes.utEntityDesyncToggle) messages.add("EntityDesyncFix");
         if (Loader.isModLoaded("experiencebugfix") && UTConfig.bugfixes.utDimensionChangeToggle) messages.add("Fix Experience Bug");
         if (Loader.isModLoaded("fastleafdecay") && UTConfig.tweaks.utLeafDecayToggle) messages.add("Fast Leaf Decay");

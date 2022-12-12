@@ -20,6 +20,7 @@ All changes are toggleable via the config file.
 * Exhaustion: Fixes saturation depleting in peaceful mode
 * Frustum Culling: Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * Help: Replaces the help command, sorts and reports broken commands
+* Hopper Bounding Box: Slims down the hopper bounding box for easier access of nearby blocks
 * Ladder Flying Slowdown: Disables climbing movement when flying
 * Locale: Prevents various crashes with Turkish locale
 * Max Health: Saves increased player health to tags
