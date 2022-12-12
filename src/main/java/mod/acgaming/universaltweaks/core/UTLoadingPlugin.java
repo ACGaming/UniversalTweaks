@@ -73,6 +73,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.comparatortiming.json",
             "mixins.bugfixes.deathtime.json",
             "mixins.bugfixes.destroypacket.json",
+            "mixins.bugfixes.hopperaabb.json",
             "mixins.bugfixes.dimensionchange.json",
             "mixins.bugfixes.entityaabb.json",
             "mixins.bugfixes.entitydesync.json",
@@ -111,6 +112,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.comparatortiming.json",
                 "mixins.bugfixes.deathtime.json",
                 "mixins.bugfixes.destroypacket.json",
+                "mixins.bugfixes.hopperaabb.json",
                 "mixins.bugfixes.dimensionchange.json",
                 "mixins.bugfixes.entityaabb.json",
                 "mixins.bugfixes.entitydesync.json",
@@ -188,6 +190,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Destroy Entity Packets Fix\"=true");
             case "mixins.bugfixes.dimensionchange.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Dimension Change Player States Fix\"=true");
+            case "mixins.bugfixes.hopperaabb.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Hopper Bounding Box Fix\"=true");
             case "mixins.bugfixes.entityaabb.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Bounding Box Fix\"=true");
             case "mixins.bugfixes.entitydesync.json":

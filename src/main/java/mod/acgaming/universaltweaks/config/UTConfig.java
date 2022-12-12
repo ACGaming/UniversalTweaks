@@ -39,11 +39,19 @@ public class UTConfig
         public boolean utBlockOverlayToggle = true;
 
         @Config.Name("Block Overlay Fix Blacklist")
-        @Config.Comment({"Excludes blocks from the block overlay fix", "Syntax: modid:block"})
+        @Config.Comment
+            ({
+                "Excludes blocks from the block overlay fix",
+                "Syntax: modid:block"
+            })
         public String[] utBlockOverlayBlacklist = new String[] {};
 
         @Config.Name("Block Overlay Fix Whitelist")
-        @Config.Comment({"Includes blocks in the block overlay fix", "Syntax: modid:block"})
+        @Config.Comment
+            ({
+                "Includes blocks in the block overlay fix",
+                "Syntax: modid:block"
+            })
         public String[] utBlockOverlayWhitelist = new String[] {};
 
         @Config.Name("Boat Riding Offset Fix")
@@ -61,6 +69,10 @@ public class UTConfig
         @Config.Name("Destroy Entity Packets Fix")
         @Config.Comment("Fixes lag caused by dead entities by sending additional packets when the player is not alive")
         public boolean utDestroyPacketToggle = true;
+
+        @Config.Name("Hopper Bounding Box Fix")
+        @Config.Comment("Slims down the hopper bounding box for easier access of nearby blocks")
+        public boolean utDietHopperToggle = true;
 
         @Config.Name("Dimension Change Player States Fix")
         @Config.Comment("Fixes missing player states when changing dimensions by sending additional packets")
@@ -153,8 +165,8 @@ public class UTConfig
         public boolean utTConShurikenToggle = true;
 
         @Config.Name("[Mo' Creatures] Custom Modded Biomes")
-        @Config.Comment(
-            {
+        @Config.Comment
+            ({
                 "Adds support for modded biome spawns",
                 "Syntax: modid;name;key;tag;filename",
                 "modid    Mod ID required for this to be added",
@@ -250,8 +262,16 @@ public class UTConfig
         public int utUnloaderInterval = 600;
 
         @Config.Name("Dimension Unload Blacklist")
-        @Config.Comment({"List of dimensions which should not be unloaded", "Can be dimension name or ID", "Uses regular expressions"})
-        public String[] utUnloaderBlacklist = {"0", "overworld"};
+        @Config.Comment
+            ({
+                "List of dimensions which should not be unloaded",
+                "Can be dimension name or ID", "Uses regular expressions"
+            })
+        public String[] utUnloaderBlacklist =
+            {
+                "0",
+                "overworld"
+            };
 
         @Config.Name("Disable Animated Models")
         @Config.Comment("Improves model load times by removing Forge's animated models")
@@ -282,7 +302,11 @@ public class UTConfig
         public boolean utCollisionDamageToggle = false;
 
         @Config.Name("Horizontal Collision Damage Factor")
-        @Config.Comment({"The damage factor that gets multiplied with the player speed", "Vanilla default for elytra damage is 10"})
+        @Config.Comment
+            ({
+                "The damage factor that gets multiplied with the player speed",
+                "Vanilla default for elytra damage is 10"
+            })
         public int utCollisionDamageFactor = 10;
 
         @Config.Name("Infinite Music")
