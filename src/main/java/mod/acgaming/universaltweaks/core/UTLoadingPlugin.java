@@ -22,9 +22,11 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public static final boolean isClient = FMLLaunchHandler.side().isClient();
     public static final boolean isDev = FMLLaunchHandler.isDeobfuscatedEnvironment();
     public static final boolean firstLaunch = UTConfigParser.init();
+    public static long launchTime;
 
     static
     {
+        if (firstLaunch || UTConfigParser.isEnabled("B:\"Show Loading Time\"=true")) launchTime = System.currentTimeMillis();
         if ((firstLaunch || UTConfigParser.isEnabled("B:\"Locale Fix\"=true")) && Locale.getDefault().getLanguage().equals("tr"))
         {
             UniversalTweaks.LOGGER.info("The locale is Turkish, which is unfortunately not supported by some mods. Changing to English...");

@@ -152,6 +152,10 @@ public class UTConfig
         @Config.Name("Bypass Incompatibility Warnings")
         @Config.Comment("For those who live life on the edge, may or may not include Jons")
         public boolean utBypassIncompatibilityToggle = false;
+
+        @Config.Name("Show Loading Time")
+        @Config.Comment("Prints the time the game needed to launch to the log")
+        public boolean utLoadingTimeToggle = true;
     }
 
     public static class ModsCategory
