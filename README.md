@@ -57,6 +57,7 @@ All changes are toggleable via the config file.
 * Mending: Only repairs damaged equipment with XP
 * Mob Despawn Improvement: Mobs carrying picked up items will drop their equipment and despawn properly
 * No Attack Cooldown: Disables the 1.9 combat update attack cooldown
+* No Night Vision Flash: Disables the flashing effect when the night vision potion effect is about to run out
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
 * Remove Recipe Book: Removes the recipe book button from GUIs
 * Stronghold Replacement: Replaces stronghold generation with a safer variant

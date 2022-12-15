@@ -333,6 +333,10 @@ public class UTConfig
         @Config.Comment("Mobs carrying picked up items will drop their equipment and despawn properly")
         public boolean utMobDespawnToggle = true;
 
+        @Config.Name("No Night Vision Flash")
+        @Config.Comment("Disables the flashing effect when the night vision potion effect is about to run out")
+        public boolean utNightVisionFlashToggle = false;
+
         @Config.Name("Offhand Improvement")
         @Config.Comment("Prevents placing offhand blocks when blocks or food are held in the mainhand")
         public boolean utOffhandToggle = true;
