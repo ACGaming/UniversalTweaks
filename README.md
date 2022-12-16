@@ -13,6 +13,7 @@ All changes are toggleable via the config file.
 * Death Time: Fixes corrupted mobs exceeding the allowed death time
 * Destroy Entity Packets: Fixes lag caused by dead entities by sending additional packets when the player is not alive
 * Dimension Change Player States: Fixes missing player states when changing dimensions by sending additional packets
+* Disconnect Dupe: Fixes item dupes when players are dropping items and disconnecting
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * Entity Desync: Fixes entity motion desyncs most notable with arrows and thrown items
 * Entity Suffocation: Pushes entities out of blocks when growing up to prevent suffocation

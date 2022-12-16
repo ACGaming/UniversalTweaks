@@ -70,6 +70,10 @@ public class UTConfig
         @Config.Comment("Fixes lag caused by dead entities by sending additional packets when the player is not alive")
         public boolean utDestroyPacketToggle = true;
 
+        @Config.Name("Disconnect Dupe Fix")
+        @Config.Comment("Fixes item dupes when players are dropping items and disconnecting")
+        public boolean utDisconnectDupeToggle = true;
+
         @Config.Name("Hopper Bounding Box Fix")
         @Config.Comment("Slims down the hopper bounding box for easier access of nearby blocks")
         public boolean utDietHopperToggle = true;
