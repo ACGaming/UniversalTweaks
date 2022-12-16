@@ -233,7 +233,7 @@ public class UTConfig
         @Config.Comment("Bows enchanted with Infinity no longer require arrows")
         public boolean utBowInfinityToggle = true;
 
-        @Config.Name("Better Placement Click Delay")
+        @Config.Name("Block Placement Click Delay")
         @Config.Comment("Sets the delay in ticks between placing blocks")
         public int utBPClickDelay = 4;
 

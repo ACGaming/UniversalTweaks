@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 public class UTBetterPlacementMixin
 {
     @ModifyConstant(method = "rightClickMouse", constant = @Constant(intValue = 4))
-    public int utClickDelay(int constant)
+    public int utBPClickDelay(int constant)
     {
         return UTConfig.tweaks.utBPClickDelay;
     }

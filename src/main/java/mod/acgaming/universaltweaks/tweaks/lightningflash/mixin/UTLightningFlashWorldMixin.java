@@ -15,7 +15,7 @@ public class UTLightningFlashWorldMixin
     public int utLightningFlash(World instance)
     {
         if (!UTConfig.tweaks.utLightningFlashToggle) return instance.getLastLightningBolt();
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLightningFlashEntity ::: Update lightmap");
+        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLightningFlashWorld ::: Update sky color");
         return 0;
     }
 }
