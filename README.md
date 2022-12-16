@@ -54,6 +54,7 @@ All changes are toggleable via the config file.
 * Horizontal Collision Damage: Applies horizontal collision damage to the player akin to elytra collision
 * Infinite Music: Lets background music play continuously without delays
 * Item Entity Combination: Stops combination of item entities if their maximum stack size is reached
+* No Lightning Flash: Disables the flashing of skybox and ground brightness on lightning strikes
 * Mending Overpowered: If mending fix is enabled, repairs entire damaged inventory with XP
 * Mending: Only repairs damaged equipment with XP
 * Mob Despawn Improvement: Mobs carrying picked up items will drop their equipment and despawn properly

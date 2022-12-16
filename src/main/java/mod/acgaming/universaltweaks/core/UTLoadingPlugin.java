@@ -103,6 +103,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.dyeblending.json",
             "mixins.tweaks.infinitemusic.json",
             "mixins.tweaks.itementity.json",
+            "mixins.tweaks.lightningflash.json",
             "mixins.tweaks.falldamage.json",
             "mixins.tweaks.mobdespawn.json",
             "mixins.tweaks.nightvisionflash.json",
@@ -175,6 +176,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return !firstLaunch && !UTConfigParser.isEnabled("I:\"Better Placement Click Delay\"=4");
                 case "mixins.tweaks.infinitemusic.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Infinite Music\"=true");
+                case "mixins.tweaks.lightningflash.json":
+                    return !firstLaunch && UTConfigParser.isEnabled("B:\"No Lightning Flash\"=true");
                 case "mixins.tweaks.nightvisionflash.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"No Night Vision Flash\"=true");
                 case "mixins.tweaks.recipebook.json":

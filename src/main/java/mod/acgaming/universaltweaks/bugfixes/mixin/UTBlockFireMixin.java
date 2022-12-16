@@ -16,7 +16,7 @@ public class UTBlockFireMixin
     @Redirect(method = "onHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;setFire(I)V"))
     public void utBlockFire(Entity instance, int seconds)
     {
-        if (!UTConfig.bugfixes.utBlockFireToggle || !(instance instanceof EntityLivingBase)) instance.setFire(5);
+        if (!UTConfig.bugfixes.utBlockFireToggle || !(instance instanceof EntityLivingBase)) instance.setFire(seconds);
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBlockFireMixin ::: Check blocking");
         if (!((EntityLivingBase) instance).isActiveItemStackBlocking()) instance.setFire(5);
     }

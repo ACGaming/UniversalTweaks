@@ -297,6 +297,10 @@ public class UTConfig
         @Config.Comment("Makes leaves decay faster when trees are chopped")
         public boolean utLeafDecayToggle = true;
 
+        @Config.Name("No Lightning Flash")
+        @Config.Comment("Disables the flashing of skybox and ground brightness on lightning strikes")
+        public boolean utLightningFlashToggle = false;
+
         @Config.Name("Fast Prefix Checking")
         @Config.Comment("Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time")
         public boolean utPrefixCheckToggle = true;
