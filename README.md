@@ -74,5 +74,6 @@ All changes are toggleable via the config file.
 * Mo' Creatures
     * Custom Modded Biomes: Adds support for modded biome spawns via config
 * Tinkers' Construct
+    * Gaseous Fluids: Excludes gaseous fluids from being transferable via faucets
     * Offhand Shuriken: Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand
     * Projectile Despawning: Despawns unbreakable projectiles faster to improve framerates

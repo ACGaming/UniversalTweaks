@@ -172,6 +172,10 @@ public class UTConfig
         @Config.Comment("Fixes rapid inflection of regeneration effects in hot spring water")
         public boolean utBoPHotSpringWaterToggle = true;
 
+        @Config.Name("[Tinkers' Construct] Gaseous Fluids")
+        @Config.Comment("Excludes gaseous fluids from being transferable via faucets")
+        public boolean utTConGaseousFluidsToggle = false;
+
         @Config.Name("[Tinkers' Construct] Projectile Despawning")
         @Config.Comment("Despawns unbreakable projectiles faster to improve framerates")
         public boolean utTConProjectileToggle = true;
