@@ -172,6 +172,14 @@ public class UTConfig
         @Config.Comment("Fixes rapid inflection of regeneration effects in hot spring water")
         public boolean utBoPHotSpringWaterToggle = true;
 
+        @Config.Name("[Storage Drawers] Render Range")
+        @Config.Comment
+            ({
+                "Approximate range in blocks at which drawers render contained items",
+                "0 for default unlimited range"
+            })
+        public int utSDRenderRange = 0;
+
         @Config.Name("[Tinkers' Construct] Gaseous Fluids")
         @Config.Comment("Excludes gaseous fluids from being transferable via faucets")
         public boolean utTConGaseousFluidsToggle = false;

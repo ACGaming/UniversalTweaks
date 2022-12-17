@@ -73,6 +73,8 @@ All changes are toggleable via the config file.
     * Hot Spring Water: Fixes rapid inflection of regeneration effects in hot spring water
 * Mo' Creatures
     * Custom Modded Biomes: Adds support for modded biome spawns via config
+* Storage Drawers
+    * Render Range: Approximate range in blocks at which drawers render contained items
 * Tinkers' Construct
     * Gaseous Fluids: Excludes gaseous fluids from being transferable via faucets
     * Offhand Shuriken: Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand

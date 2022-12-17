@@ -15,6 +15,7 @@ public class UTMixinLoader implements ILateMixinLoader
         return Lists.newArrayList(
             "mixins.mods.biomesoplenty.json",
             "mixins.mods.customspawner.json",
+            "mixins.mods.storagedrawers.json",
             "mixins.mods.tconstruct.json"
         );
     }
@@ -22,6 +23,13 @@ public class UTMixinLoader implements ILateMixinLoader
     @Override
     public boolean shouldMixinConfigQueue(String mixinConfig)
     {
+        if (UTLoadingPlugin.isClient)
+        {
+            if (mixinConfig.equals("mixins.mods.storagedrawers.json"))
+            {
+                return Loader.isModLoaded("storagedrawers");
+            }
+        }
         switch (mixinConfig)
         {
             case "mixins.mods.biomesoplenty.json":

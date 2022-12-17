@@ -73,6 +73,8 @@ dependencies {
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
     implementation "curse.maven:biomes-o-plenty-220318:2842510"
     implementation "curse.maven:custom-mob-spawner-229261:2859433"
+    implementation "curse.maven:chameleon-230497:2450900"
+    implementation "curse.maven:storage-drawers-223852:2952606"
     //implementation 'net.jafama:jafama:2.3.2'
 }
 
