@@ -26,7 +26,7 @@ public abstract class UTFaucetMixin extends TileEntity
     public EnumFacing direction;
 
     @Inject(method = "doTransfer", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/fluids/capability/IFluidHandler;fill(Lnet/minecraftforge/fluids/FluidStack;Z)I", shift = At.Shift.BEFORE), cancellable = true)
-    public void utShouldNotAddExhaustion(CallbackInfo ci)
+    public void utFaucetGaseousFluids(CallbackInfo ci)
     {
         if (!UTConfig.mods.utTConGaseousFluidsToggle) return;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFaucet ::: Check fluid type");
