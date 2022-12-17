@@ -63,7 +63,7 @@ public class UTConfig
         public boolean utComparatorTimingToggle = true;
 
         @Config.Name("Death Time Fix")
-        @Config.Comment("Fixes corrupted mobs exceeding the allowed death time")
+        @Config.Comment("Fixes corrupted entities exceeding the allowed death time")
         public boolean utDeathTimeToggle = true;
 
         @Config.Name("Destroy Entity Packets Fix")
@@ -89,6 +89,10 @@ public class UTConfig
         @Config.Name("Entity Desync Fix")
         @Config.Comment("Fixes entity motion desyncs most notable with arrows and thrown items")
         public boolean utEntityDesyncToggle = true;
+
+        @Config.Name("Entity NaN Fix")
+        @Config.Comment("Prevents corruption of entities caused by invalid health or damage values")
+        public boolean utEntityNaNToggle = true;
 
         @Config.Name("Entity Suffocation Fix")
         @Config.Comment("Pushes entities out of blocks when growing up to prevent suffocation")

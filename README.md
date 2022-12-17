@@ -10,12 +10,13 @@ All changes are toggleable via the config file.
 * Block Overlay: Fixes x-ray when standing in non-suffocating blocks
 * Boat Riding Offset Fix: Fixes entities glitching through the bottom of boats
 * Comparator Timing: Fixes inconsistent delays of comparators to prevent redstone timing issues
-* Death Time: Fixes corrupted mobs exceeding the allowed death time
+* Death Time: Fixes corrupted entities exceeding the allowed death time
 * Destroy Entity Packets: Fixes lag caused by dead entities by sending additional packets when the player is not alive
 * Dimension Change Player States: Fixes missing player states when changing dimensions by sending additional packets
 * Disconnect Dupe: Fixes item dupes when players are dropping items and disconnecting
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * Entity Desync: Fixes entity motion desyncs most notable with arrows and thrown items
+* Entity NaN: Prevents corruption of entities caused by invalid health or damage values
 * Entity Suffocation: Pushes entities out of blocks when growing up to prevent suffocation
 * Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
 * Exhaustion: Fixes saturation depleting in peaceful mode
