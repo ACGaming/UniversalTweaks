@@ -23,7 +23,7 @@ public class UniversalTweaks
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
     public static final String VERSION = "1.12.2-1.1.0";
-    public static final String DEPENDENCIES = "required-after:mixinbooter;after:tconstruct;after:customspawner";
+    public static final String DEPENDENCIES = "required-after:mixinbooter;after:tconstruct;after:customspawner;after:biomesoplenty";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     @Mod.EventHandler

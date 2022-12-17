@@ -69,6 +69,8 @@ All changes are toggleable via the config file.
 
 **Mod Tweaks:**
 
+* Biomes O' Plenty
+    * Hot Spring Water: Fixes rapid inflection of regeneration effects in hot spring water
 * Mo' Creatures
     * Custom Modded Biomes: Adds support for modded biome spawns via config
 * Tinkers' Construct

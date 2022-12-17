@@ -168,6 +168,10 @@ public class UTConfig
 
     public static class ModsCategory
     {
+        @Config.Name("[Biomes O' Plenty] Hot Spring Water")
+        @Config.Comment("Fixes rapid inflection of regeneration effects in hot spring water")
+        public boolean utBoPHotSpringWaterToggle = true;
+
         @Config.Name("[Tinkers' Construct] Projectile Despawning")
         @Config.Comment("Despawns unbreakable projectiles faster to improve framerates")
         public boolean utTConProjectileToggle = true;

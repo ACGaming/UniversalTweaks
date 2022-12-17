@@ -13,6 +13,7 @@ public class UTMixinLoader implements ILateMixinLoader
     public List<String> getMixinConfigs()
     {
         return Lists.newArrayList(
+            "mixins.mods.biomesoplenty.json",
             "mixins.mods.customspawner.json",
             "mixins.mods.tconstruct.json"
         );
@@ -23,6 +24,8 @@ public class UTMixinLoader implements ILateMixinLoader
     {
         switch (mixinConfig)
         {
+            case "mixins.mods.biomesoplenty.json":
+                return Loader.isModLoaded("biomesoplenty");
             case "mixins.mods.customspawner.json":
                 return Loader.isModLoaded("customspawner");
             case "mixins.mods.tconstruct.json":
