@@ -102,6 +102,10 @@ public class UTConfig
         @Config.Comment("Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions")
         public boolean utEntityTrackerToggle = true;
 
+        @Config.Name("Entity UUID Fix")
+        @Config.Comment("Changes UUIDs of loaded entities in case their UUIDs are already assigned (and removes log spam)")
+        public boolean utEntityUUIDToggle = true;
+
         @Config.Name("Exhaustion Fix")
         @Config.Comment("Fixes saturation depleting in peaceful mode")
         public boolean utExhaustionToggle = true;

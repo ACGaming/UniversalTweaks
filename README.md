@@ -19,6 +19,7 @@ All changes are toggleable via the config file.
 * Entity NaN: Prevents corruption of entities caused by invalid health or damage values
 * Entity Suffocation: Pushes entities out of blocks when growing up to prevent suffocation
 * Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
+* Entity UUID: Changes UUIDs of loaded entities in case their UUIDs are already assigned (and removes log spam)
 * Exhaustion: Fixes saturation depleting in peaceful mode
 * Frustum Culling: Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * Help: Replaces the help command, sorts and reports broken commands
