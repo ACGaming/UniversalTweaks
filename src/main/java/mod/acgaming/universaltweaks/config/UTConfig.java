@@ -353,6 +353,10 @@ public class UTConfig
         @Config.Comment("Only repairs damaged equipment with XP")
         public boolean utMendingToggle = true;
 
+        @Config.Name("Mending Fix Ratio")
+        @Config.Comment("Determines the amount of durability mending will repair, on average, per point of experience")
+        public float utMendingRatio = 2.0F;
+
         @Config.Name("Mending Fix Overpowered")
         @Config.Comment("If mending fix is enabled, repairs entire damaged inventory with XP")
         public boolean utMendingOPToggle = false;
@@ -391,7 +395,7 @@ public class UTConfig
 
         @Config.Name("Water Fall Damage Reduction")
         @Config.Comment("How much fall damage gets reduced by water per tick")
-        public float utFallDamageValue = 2;
+        public float utFallDamageValue = 2.0F;
     }
 
     @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)

@@ -24,8 +24,6 @@ import mod.acgaming.universaltweaks.config.UTConfig;
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTMending
 {
-    public static final int DURABILITY_PER_XP = 2;
-
     public static ItemStack getDamagedEnchantedItem(Enchantment ench, EntityPlayer player)
     {
         List<ItemStack> valid = ench.getEntityEquipment(player);
@@ -52,6 +50,12 @@ public class UTMending
             .orElse(ItemStack.EMPTY);
     }
 
+    public static int roundAverage(float value)
+    {
+        double floor = Math.floor(value);
+        return (int) floor + (Math.random() < value - floor ? 1 : 0);
+    }
+
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utPickupXP(PlayerPickupXpEvent event)
     {
@@ -63,12 +67,11 @@ public class UTMending
         ItemStack itemStack = UTConfig.tweaks.utMendingOPToggle ? getDamagedEnchantedItemOP(Enchantments.MENDING, player) : getDamagedEnchantedItem(Enchantments.MENDING, player);
         player.xpCooldown = 2;
         player.onItemPickup(xp, 1);
-        while (!itemStack.isEmpty() && xp.xpValue > 0)
+        if (!itemStack.isEmpty() && xp.xpValue > 0)
         {
-            int realRepair = Math.min(xp.xpValue * DURABILITY_PER_XP, itemStack.getItemDamage());
-            xp.xpValue -= realRepair / DURABILITY_PER_XP;
-            itemStack.setItemDamage(itemStack.getItemDamage() - realRepair);
-            itemStack = UTConfig.tweaks.utMendingOPToggle ? getDamagedEnchantedItemOP(Enchantments.MENDING, player) : getDamagedEnchantedItem(Enchantments.MENDING, player);
+            int i = Math.min(roundAverage(xp.xpValue * UTConfig.tweaks.utMendingRatio), itemStack.getItemDamage());
+            xp.xpValue -= roundAverage(i / UTConfig.tweaks.utMendingRatio);
+            itemStack.setItemDamage(itemStack.getItemDamage() - i);
         }
         if (xp.xpValue > 0) player.addExperience(xp.xpValue);
         xp.setDead();
