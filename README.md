@@ -69,6 +69,7 @@ All changes are toggleable via the config file.
 * Stronghold Replacement: Replaces stronghold generation with a safer variant
 * Swing Through Grass: Allows hitting entities through grass instead of breaking it
 * Tidy Chunk: Tidies newly generated chunks by removing scattered item entities
+* Toggle Cheats Button: Adds a button to the pause menu to toggle cheats
 * Water Fall Damage: Re-implements an improved version of pre-1.4 fall damage in water
 
 **Mod Tweaks:**

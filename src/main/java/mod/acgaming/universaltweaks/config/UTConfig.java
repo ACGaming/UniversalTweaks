@@ -405,6 +405,10 @@ public class UTConfig
         @Config.Comment("Tidies newly generated chunks by removing scattered item entities")
         public boolean utTidyChunkToggle = false;
 
+        @Config.Name("Toggle Cheats Button")
+        @Config.Comment("Adds a button to the pause menu to toggle cheats")
+        public boolean utToggleCheatsToggle = true;
+
         @Config.Name("Water Fall Damage")
         @Config.Comment("Re-implements an improved version of pre-1.4 fall damage in water")
         public boolean utFallDamageToggle = false;

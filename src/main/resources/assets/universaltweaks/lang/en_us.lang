@@ -1,0 +1,5 @@
+# TOGGLE CHEATS
+btn.universaltweaks.cheats.enabled=Cheats: ON
+btn.universaltweaks.cheats.disabled=Cheats: OFF
+msg.universaltweaks.cheats.enabled=Cheats are now §aenabled
+msg.universaltweaks.cheats.disabled=Cheats are now §cdisabled
