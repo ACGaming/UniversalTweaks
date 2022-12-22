@@ -393,6 +393,10 @@ public class UTConfig
         @Config.Comment("Determines how tall sugar cane can grow")
         public int utSugarCaneSize = 3;
 
+        @Config.Name("Swing Through Grass")
+        @Config.Comment("Allows hitting entities through grass instead of breaking it")
+        public boolean utSwingThroughGrassToggle = true;
+
         @Config.Name("Tidy Chunk")
         @Config.Comment("Tidies newly generated chunks by removing scattered item entities")
         public boolean utTidyChunkToggle = false;

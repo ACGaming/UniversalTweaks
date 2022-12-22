@@ -66,6 +66,7 @@ All changes are toggleable via the config file.
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
 * Remove Recipe Book: Removes the recipe book button from GUIs
 * Stronghold Replacement: Replaces stronghold generation with a safer variant
+* Swing Through Grass: Allows hitting entities through grass instead of breaking it
 * Tidy Chunk: Tidies newly generated chunks by removing scattered item entities
 * Water Fall Damage: Re-implements an improved version of pre-1.4 fall damage in water
 
