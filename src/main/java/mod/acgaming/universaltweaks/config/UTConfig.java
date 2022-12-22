@@ -385,6 +385,10 @@ public class UTConfig
         @Config.Comment("Disables lighting of active redstone, repeaters, and comparators to improve performance")
         public boolean utRedstoneLightingToggle = false;
 
+        @Config.Name("No Saddled Wandering")
+        @Config.Comment("Stops horses wandering around when saddled")
+        public boolean utSaddledWanderingToggle = true;
+
         @Config.Name("Stronghold Replacement")
         @Config.Comment("Replaces stronghold generation with a safer variant")
         public boolean utStrongholdToggle = true;

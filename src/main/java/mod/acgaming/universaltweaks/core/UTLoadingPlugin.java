@@ -111,7 +111,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.prefixcheck.json",
             "mixins.tweaks.recipebook.json",
             "mixins.tweaks.redstonelighting.json",
-            "mixins.tweaks.resourcemanager.json") :
+            "mixins.tweaks.resourcemanager.json",
+            "mixins.tweaks.saddledwandering.json") :
             Arrays.asList(
                 "mixins.bugfixes.blockfire.json",
                 "mixins.bugfixes.boatoffset.json",
@@ -144,7 +145,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.mobdespawn.json",
                 "mixins.tweaks.plantables.json",
                 "mixins.tweaks.prefixcheck.json",
-                "mixins.tweaks.redstonelighting.json"
+                "mixins.tweaks.redstonelighting.json",
+                "mixins.tweaks.saddledwandering.json"
             );
     }
 
@@ -254,6 +256,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Fast Prefix Checking\"=true");
             case "mixins.tweaks.redstonelighting.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"No Redstone Lighting\"=true");
+            case "mixins.tweaks.saddledwandering.json":
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"No Saddled Wandering\"=true");
         }
         return true;
     }

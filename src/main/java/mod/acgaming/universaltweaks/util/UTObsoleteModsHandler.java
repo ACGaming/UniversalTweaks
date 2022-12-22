@@ -43,6 +43,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("fencejumper") && UTConfig.tweaks.utFenceWallJumpToggle) messages.add("Fence Jumper");
         if (Loader.isModLoaded("givemebackmyhp") && UTConfig.bugfixes.utMaxHealthToggle) messages.add("Give Me Back My HP");
         if (Loader.isModLoaded("helpfixer") && UTConfig.bugfixes.utHelpToggle) messages.add("HelpFixer");
+        if (Loader.isModLoaded("horsestandstill") && UTConfig.tweaks.utSaddledWanderingToggle) messages.add("Stupid Horse Stand Still");
         if (Loader.isModLoaded("leafdecay") && UTConfig.tweaks.utLeafDecayToggle) messages.add("Leaf Decay Accelerator");
         if (Loader.isModLoaded("letmedespawn") && UTConfig.tweaks.utMobDespawnToggle) messages.add("Let Me Despawn");
         if (Loader.isModLoaded("loginhpfix") && UTConfig.bugfixes.utMaxHealthToggle) messages.add("Login HP Fix");
