@@ -381,6 +381,10 @@ public class UTConfig
         @Config.Comment("Removes the recipe book button from GUIs")
         public boolean utRecipeBookToggle = false;
 
+        @Config.Name("No Redstone Lighting")
+        @Config.Comment("Disables lighting of active redstone, repeaters, and comparators to improve performance")
+        public boolean utRedstoneLightingToggle = false;
+
         @Config.Name("Stronghold Replacement")
         @Config.Comment("Replaces stronghold generation with a safer variant")
         public boolean utStrongholdToggle = true;

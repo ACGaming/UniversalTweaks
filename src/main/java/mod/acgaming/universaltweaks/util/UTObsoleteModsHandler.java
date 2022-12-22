@@ -33,6 +33,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("continousmusic") && UTConfig.tweaks.utInfiniteMusicToggle) messages.add("Infinite Music");
         if (Loader.isModLoaded("creeperconfetti") && UTConfig.tweaks.utCreeperConfettiToggle) messages.add("Creeper Confetti");
         if (Loader.isModLoaded("damagetilt") && UTConfig.tweaks.utDamageTiltToggle) messages.add("Damage Tilt");
+        if (Loader.isModLoaded("darkstone") && UTConfig.tweaks.utRedstoneLightingToggle) messages.add("Dark Redstone");
         if (Loader.isModLoaded("diethopper") && UTConfig.bugfixes.utDietHopperToggle) messages.add("Diet Hopper");
         if (Loader.isModLoaded("drawerfps") && UTConfig.mods.utSDRenderRange > 0) messages.add("DrawerFPS");
         if (Loader.isModLoaded("deuf") && UTConfig.bugfixes.utEntityUUIDToggle) messages.add("Duplicate Entity UUID Fix (DEUF)");

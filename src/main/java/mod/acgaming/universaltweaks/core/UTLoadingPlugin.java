@@ -110,6 +110,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.plantables.json",
             "mixins.tweaks.prefixcheck.json",
             "mixins.tweaks.recipebook.json",
+            "mixins.tweaks.redstonelighting.json",
             "mixins.tweaks.resourcemanager.json") :
             Arrays.asList(
                 "mixins.bugfixes.blockfire.json",
@@ -142,7 +143,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.falldamage.json",
                 "mixins.tweaks.mobdespawn.json",
                 "mixins.tweaks.plantables.json",
-                "mixins.tweaks.prefixcheck.json"
+                "mixins.tweaks.prefixcheck.json",
+                "mixins.tweaks.redstonelighting.json"
             );
     }
 
@@ -250,6 +252,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && (!UTConfigParser.isEnabled("I:\"Cactus Size\"=3") || !UTConfigParser.isEnabled("I:\"Sugar Cane Size\"=3"));
             case "mixins.tweaks.prefixcheck.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Fast Prefix Checking\"=true");
+            case "mixins.tweaks.redstonelighting.json":
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"No Redstone Lighting\"=true");
         }
         return true;
     }
