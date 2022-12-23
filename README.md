@@ -31,6 +31,7 @@ All changes are toggleable via the config file.
 * Piston Progress: Properly saves the last state of pistons to tags
 * Skeleton Aim: Fixes skeletons not looking at their targets when strafing
 * Tile Entity Update Order: Keeps the order of tile entities on chunk load
+* Villager Mantle Fix: Returns missing hoods to villager mantles
 
 **Tweaks:**
 

@@ -63,6 +63,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("tconfixes")) messages.add("TConFixes");
         if (Loader.isModLoaded("tidychunk") && UTConfig.tweaks.utTidyChunkToggle) messages.add("TidyChunk");
         if (Loader.isModLoaded("unloader") && UTConfig.tweaks.utUnloaderToggle) messages.add("Unloader");
+        if (Loader.isModLoaded("villagermantlefix") && UTConfig.bugfixes.utVillagerMantleToggle) messages.add("Villager Mantle Fix");
 
         try
         {

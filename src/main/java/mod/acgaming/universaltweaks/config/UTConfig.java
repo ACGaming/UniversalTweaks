@@ -149,6 +149,10 @@ public class UTConfig
         @Config.Name("Tile Entity Update Order Fix")
         @Config.Comment("Keeps the order of tile entities on chunk load")
         public boolean utTELoadOrderToggle = true;
+
+        @Config.Name("Villager Mantle Fix")
+        @Config.Comment("Returns missing hoods to villager mantles")
+        public boolean utVillagerMantleToggle = true;
     }
 
     public static class DebugCategory

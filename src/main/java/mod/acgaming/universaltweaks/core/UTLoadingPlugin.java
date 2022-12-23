@@ -115,7 +115,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.resourcemanager.json",
             "mixins.tweaks.saddledwandering.json",
             "mixins.tweaks.smoothscrolling.json",
-            "mixins.tweaks.uncapfps.json") :
+            "mixins.tweaks.uncapfps.json",
+            "mixins.bugfixes.villagermantle.json") :
             Arrays.asList(
                 "mixins.bugfixes.blockfire.json",
                 "mixins.bugfixes.boatoffset.json",
@@ -178,6 +179,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Frustum Culling Fix\"=true");
                 case "mixins.bugfixes.miningglitch.client.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Mining Glitch Fix\"=true");
+                case "mixins.bugfixes.villagermantle.json":
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Villager Mantle Fix\"=true");
                 case "mixins.tweaks.autojump.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Auto Jump Replacement\"=true");
                 case "mixins.tweaks.betterplacement.json":
