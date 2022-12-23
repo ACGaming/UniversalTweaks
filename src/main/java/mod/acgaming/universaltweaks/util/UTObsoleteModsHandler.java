@@ -55,6 +55,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("overpowered_mending") && UTConfig.tweaks.utMendingOPToggle) messages.add("Overpowered Mending");
         if (Loader.isModLoaded("quickleafdecay") && UTConfig.tweaks.utLeafDecayToggle) messages.add("Quick Leaf Decay");
         if (Loader.isModLoaded("savemystronghold") && UTConfig.tweaks.utStrongholdToggle) messages.add("Save My Stronghold!");
+        if (Loader.isModLoaded("smooth-scrolling-everywhere") && UTConfig.tweaks.utSmoothScrollingToggle) messages.add("Smooth Scrolling Everywhere");
         if (Loader.isModLoaded("stepupfix") && UTConfig.tweaks.utAutoJumpToggle) messages.add("StepupFixer");
         if (Loader.isModLoaded("stg") && UTConfig.tweaks.utSwingThroughGrassToggle) messages.add("SwingThroughGrass");
         if (Loader.isModLoaded("surge")) messages.add("Surge");

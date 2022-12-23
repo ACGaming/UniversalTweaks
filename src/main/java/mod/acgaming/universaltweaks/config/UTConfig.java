@@ -397,6 +397,19 @@ public class UTConfig
         @Config.Comment("Determines the player's base walk speed")
         public double utPlayerWalkSpeed = 0.1;
 
+        @Config.Name("Smooth Scrolling")
+        @Config.Comment("Adds smooth scrolling to every in-game list")
+        public boolean utSmoothScrollingToggle = true;
+
+        @Config.Name("Smooth Scrolling Bounce Back Multiplier")
+        public double utSmoothScrollingBounce = 0.24;
+
+        @Config.Name("Smooth Scrolling Scroll Duration")
+        public int utSmoothScrollingDuration = 600;
+
+        @Config.Name("Smooth Scrolling Scroll Step")
+        public double utSmoothScrollingStep = 19.0;
+
         @Config.Name("Stronghold Replacement")
         @Config.Comment("Replaces stronghold generation with a safer variant")
         public boolean utStrongholdToggle = true;
@@ -416,6 +429,10 @@ public class UTConfig
         @Config.Name("Toggle Cheats Button")
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
         public boolean utToggleCheatsToggle = true;
+
+        @Config.Name("Uncap FPS")
+        @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
+        public boolean utUncapFPSToggle = true;
 
         @Config.Name("Water Fall Damage")
         @Config.Comment("Re-implements an improved version of pre-1.4 fall damage in water")

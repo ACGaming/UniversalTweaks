@@ -68,10 +68,12 @@ All changes are toggleable via the config file.
 * Plantables: Configurable growth height for sugar cane and cacti
 * Player Speed: Configurable player fly and walk speed
 * Remove Recipe Book: Removes the recipe book button from GUIs
+* Smooth Scrolling: Adds smooth scrolling to every in-game list
 * Stronghold Replacement: Replaces stronghold generation with a safer variant
 * Swing Through Grass: Allows hitting entities through grass instead of breaking it
 * Tidy Chunk: Tidies newly generated chunks by removing scattered item entities
 * Toggle Cheats Button: Adds a button to the pause menu to toggle cheats
+* Uncap FPS: Removes the hardcoded 30 FPS limit in screens like the main menu
 * Water Fall Damage: Re-implements an improved version of pre-1.4 fall damage in water
 
 **Mod Tweaks:**
