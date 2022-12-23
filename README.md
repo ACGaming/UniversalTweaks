@@ -65,6 +65,8 @@ All changes are toggleable via the config file.
 * No Attack Cooldown: Disables the 1.9 combat update attack cooldown
 * No Night Vision Flash: Disables the flashing effect when the night vision potion effect is about to run out
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
+* Plantables: Configurable growth height for sugar cane and cacti
+* Player Speed: Configurable player fly and walk speed
 * Remove Recipe Book: Removes the recipe book button from GUIs
 * Stronghold Replacement: Replaces stronghold generation with a safer variant
 * Swing Through Grass: Allows hitting entities through grass instead of breaking it

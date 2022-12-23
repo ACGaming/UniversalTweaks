@@ -389,6 +389,14 @@ public class UTConfig
         @Config.Comment("Stops horses wandering around when saddled")
         public boolean utSaddledWanderingToggle = true;
 
+        @Config.Name("Player Fly Speed")
+        @Config.Comment("Determines the player's base fly speed")
+        public double utPlayerFlySpeed = 0.05;
+
+        @Config.Name("Player Walk Speed")
+        @Config.Comment("Determines the player's base walk speed")
+        public double utPlayerWalkSpeed = 0.1;
+
         @Config.Name("Stronghold Replacement")
         @Config.Comment("Replaces stronghold generation with a safer variant")
         public boolean utStrongholdToggle = true;
