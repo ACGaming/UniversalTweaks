@@ -37,6 +37,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("diethopper") && UTConfig.bugfixes.utDietHopperToggle) messages.add("Diet Hopper");
         if (Loader.isModLoaded("drawerfps") && UTConfig.mods.utSDRenderRange > 0) messages.add("DrawerFPS");
         if (Loader.isModLoaded("deuf") && UTConfig.bugfixes.utEntityUUIDToggle) messages.add("Duplicate Entity UUID Fix (DEUF)");
+        if (Loader.isModLoaded("easybreeding") && UTConfig.tweaks.utEasyBreedingToggle) messages.add("Easy Breeding");
         if (Loader.isModLoaded("enablecheats") && UTConfig.tweaks.utToggleCheatsToggle) messages.add("Enable Cheats");
         if (Loader.isModLoaded("entity_desync_fix") && UTConfig.bugfixes.utEntityDesyncToggle) messages.add("EntityDesyncFix");
         if (Loader.isModLoaded("experiencebugfix") && UTConfig.bugfixes.utDimensionChangeToggle) messages.add("Fix Experience Bug");

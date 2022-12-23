@@ -313,6 +313,14 @@ public class UTConfig
         @Config.Comment("Improves loading times by removing debug code for missing sounds and subtitles")
         public boolean utDisableAudioDebugToggle = true;
 
+        @Config.Name("Easy Breeding")
+        @Config.Comment("Enables easy breeding of animals by tossing food on the ground")
+        public boolean utEasyBreedingToggle = false;
+
+        @Config.Name("Easy Breeding Search Distance")
+        @Config.Comment("Determines the distance for animals to search for food")
+        public double utEasyBreedingDistance = 10;
+
         @Config.Name("Fast Dye Blending")
         @Config.Comment("Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry")
         public boolean utDyeBlendingToggle = true;
