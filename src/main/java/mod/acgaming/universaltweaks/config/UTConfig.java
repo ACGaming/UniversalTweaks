@@ -418,13 +418,9 @@ public class UTConfig
         @Config.Comment("Disables the flashing effect when the night vision potion effect is about to run out")
         public boolean utNightVisionFlashToggle = false;
 
-        @Config.Name("Offhand Improvement")
-        @Config.Comment("Prevents placing offhand blocks when blocks or food are held in the mainhand")
-        public boolean utOffhandToggle = true;
-
-        @Config.Name("Remove Recipe Book")
-        @Config.Comment("Removes the recipe book button from GUIs")
-        public boolean utRecipeBookToggle = false;
+        @Config.Name("No Potion Shift")
+        @Config.Comment("Disables the inventory shift when potion effects are active")
+        public boolean utPotionShiftToggle = true;
 
         @Config.Name("No Redstone Lighting")
         @Config.Comment("Disables lighting of active redstone, repeaters, and comparators to improve performance")
@@ -433,6 +429,10 @@ public class UTConfig
         @Config.Name("No Saddled Wandering")
         @Config.Comment("Stops horses wandering around when saddled")
         public boolean utSaddledWanderingToggle = true;
+
+        @Config.Name("Offhand Improvement")
+        @Config.Comment("Prevents placing offhand blocks when blocks or food are held in the mainhand")
+        public boolean utOffhandToggle = true;
 
         @Config.Name("Player Fly Speed")
         @Config.Comment("Determines the player's base fly speed")
@@ -445,6 +445,10 @@ public class UTConfig
         @Config.Name("Remove Realms Button")
         @Config.Comment("Removes the redundant Minecraft Realms button from the main menu")
         public boolean utRealmsButtonToggle = true;
+
+        @Config.Name("Remove Recipe Book")
+        @Config.Comment("Removes the recipe book button from GUIs")
+        public boolean utRecipeBookToggle = false;
 
         @Config.Name("Smooth Scrolling")
         @Config.Comment("Adds smooth scrolling to every in-game list")

@@ -24,7 +24,7 @@ All changes are toggleable via the config file.
 * Frustum Culling: Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * Help: Replaces the help command, sorts and reports broken commands
 * Hopper Bounding Box: Slims down the hopper bounding box for easier access of nearby blocks
-* Item Frame Void: Prevents voiding held items when right + left clicking on an item frame simultaneously
+* Item Frame Void: Prevents voiding held items when right + left-clicking on an item frame simultaneously
 * Ladder Flying Slowdown: Disables climbing movement when flying
 * Locale: Prevents various crashes with Turkish locale
 * Max Health: Saves increased player health to tags
@@ -66,6 +66,7 @@ All changes are toggleable via the config file.
 * No Attack Cooldown: Disables the 1.9 combat update attack cooldown
 * No Lightning Flash: Disables the flashing of skybox and ground brightness on lightning strikes
 * No Night Vision Flash: Disables the flashing effect when the night vision potion effect is about to run out
+* No Potion Shift: Disables the inventory shift when potion effects are active
 * No Redstone Lighting: Disables lighting of active redstone, repeaters, and comparators to improve performance
 * No Saddled Wandering: Stops horses wandering around when saddled
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand

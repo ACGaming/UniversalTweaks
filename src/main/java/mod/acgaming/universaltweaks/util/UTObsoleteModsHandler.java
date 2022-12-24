@@ -54,6 +54,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("mendingfix") && UTConfig.tweaks.utMendingToggle) messages.add("Mending Fix");
         if (Loader.isModLoaded("nanfix") && UTConfig.bugfixes.utEntityNaNToggle) messages.add("NaN Entity Health Fix");
         if (Loader.isModLoaded("nonvflash") && UTConfig.tweaks.utNightVisionFlashToggle) messages.add("No Night Vision Flashing");
+        if (Loader.isModLoaded("nopotionshift") && UTConfig.tweaks.utPotionShiftToggle) messages.add("No Potion Shift");
         if (Loader.isModLoaded("norecipebook") && UTConfig.tweaks.utRecipeBookToggle) messages.add("No Recipe Book");
         if (Loader.isModLoaded("overpowered_mending") && UTConfig.tweaks.utMendingOPToggle) messages.add("Overpowered Mending");
         if (Loader.isModLoaded("quickleafdecay") && UTConfig.tweaks.utLeafDecayToggle) messages.add("Quick Leaf Decay");
