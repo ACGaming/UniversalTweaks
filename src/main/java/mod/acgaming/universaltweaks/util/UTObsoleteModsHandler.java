@@ -35,6 +35,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("damagetilt") && UTConfig.tweaks.utDamageTiltToggle) messages.add("Damage Tilt");
         if (Loader.isModLoaded("darkstone") && UTConfig.tweaks.utRedstoneLightingToggle) messages.add("Dark Redstone");
         if (Loader.isModLoaded("diethopper") && UTConfig.bugfixes.utDietHopperToggle) messages.add("Diet Hopper");
+        if (Loader.isModLoaded("ding") && UTConfig.tweaks.utLoadSoundMode != 0) messages.add("Ding");
         if (Loader.isModLoaded("drawerfps") && UTConfig.mods.utSDRenderRange > 0) messages.add("DrawerFPS");
         if (Loader.isModLoaded("deuf") && UTConfig.bugfixes.utEntityUUIDToggle) messages.add("Duplicate Entity UUID Fix (DEUF)");
         if (Loader.isModLoaded("easybreeding") && UTConfig.tweaks.utEasyBreedingToggle) messages.add("Easy Breeding");

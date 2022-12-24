@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
+import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 
 @Config(modid = UniversalTweaks.MODID, name = "UniversalTweaks")
 public class UTConfig
@@ -303,7 +304,7 @@ public class UTConfig
                 "List of dimensions which should not be unloaded",
                 "Can be dimension name or ID", "Uses regular expressions"
             })
-        public String[] utUnloaderBlacklist =
+        public String[] utUnloaderBlacklist = new String[]
             {
                 "0",
                 "overworld"
@@ -364,6 +365,34 @@ public class UTConfig
         @Config.Name("Item Entity Combination")
         @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
         public boolean utCombineItemEntityToggle = true;
+
+        @Config.Name("Load Sounds Mode")
+        @Config.RangeInt(min = 0, max = 3)
+        @Config.Comment
+            ({
+                "Play sound on...",
+                "0 = Nothing",
+                "1 = Minecraft load",
+                "2 = World load",
+                "3 = Minecraft and world load"
+            })
+        public int utLoadSoundMode = 0;
+
+        @Config.Name("Load Sounds Minecraft")
+        @Config.Comment({"Sounds to play when Minecraft is loaded", "Syntax: eventname;pitch"})
+        public String[] utLoadSoundMC = new String[]
+            {
+                "entity.experience_orb.pickup;1.0",
+                "entity.player.levelup;1.0"
+            };
+
+        @Config.Name("Load Sounds World")
+        @Config.Comment({"Sounds to play when the world is loaded", "Syntax: eventname;pitch"})
+        public String[] utLoadSoundWorld = new String[]
+            {
+                "entity.experience_orb.pickup;1.0",
+                "entity.player.levelup;1.0"
+            };
 
         @Config.Name("Mending Fix")
         @Config.Comment("Only repairs damaged equipment with XP")
@@ -465,6 +494,7 @@ public class UTConfig
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
                 if (bugfixes.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
+                if (tweaks.utLoadSoundMode != 0) UTLoadSound.initLists();
                 UniversalTweaks.LOGGER.info("Universal Tweaks config reloaded");
             }
         }

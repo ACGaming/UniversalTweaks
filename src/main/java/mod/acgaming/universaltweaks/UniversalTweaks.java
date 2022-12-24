@@ -12,6 +12,7 @@ import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
+import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
 import mod.acgaming.universaltweaks.util.UTObsoleteModsHandler;
@@ -33,14 +34,22 @@ public class UniversalTweaks
         if (!UTConfig.debug.utBypassIncompatibilityToggle) UTObsoleteModsHandler.throwIncompatibility();
         if (UTConfig.tweaks.utAttributesToggle) UTAttributes.utSetAttributes();
         if (UTConfig.tweaks.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
+        LOGGER.info(NAME + " pre-initialized");
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        if (UTConfig.tweaks.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
         if (UTConfig.bugfixes.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
-        LOGGER.info("Universal Tweaks initialized");
+        if (UTConfig.tweaks.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
+        LOGGER.info(NAME + " initialized");
+    }
+
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+        if (UTConfig.tweaks.utLoadSoundMode != 0) UTLoadSound.initLists();
+        LOGGER.info(NAME + " post-initialized");
     }
 
     @Mod.EventHandler

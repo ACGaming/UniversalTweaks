@@ -31,7 +31,7 @@ All changes are toggleable via the config file.
 * Piston Progress: Properly saves the last state of pistons to tags
 * Skeleton Aim: Fixes skeletons not looking at their targets when strafing
 * Tile Entity Update Order: Keeps the order of tile entities on chunk load
-* Villager Mantle Fix: Returns missing hoods to villager mantles
+* Villager Mantle: Returns missing hoods to villager mantles
 
 **Tweaks:**
 
@@ -58,14 +58,15 @@ All changes are toggleable via the config file.
 * Horizontal Collision Damage: Applies horizontal collision damage to the player akin to elytra collision
 * Infinite Music: Lets background music play continuously without delays
 * Item Entity Combination: Stops combination of item entities if their maximum stack size is reached
-* No Lightning Flash: Disables the flashing of skybox and ground brightness on lightning strikes
-* No Redstone Lighting: Disables lighting of active redstone, repeaters, and comparators to improve performance
-* No Saddled Wandering: Stops horses wandering around when saddled
+* Load Sounds: Plays sounds when the game or the world are loaded
 * Mending Overpowered: If mending fix is enabled, repairs entire damaged inventory with XP
 * Mending: Only repairs damaged equipment with XP
 * Mob Despawn Improvement: Mobs carrying picked up items will drop their equipment and despawn properly
 * No Attack Cooldown: Disables the 1.9 combat update attack cooldown
+* No Lightning Flash: Disables the flashing of skybox and ground brightness on lightning strikes
 * No Night Vision Flash: Disables the flashing effect when the night vision potion effect is about to run out
+* No Redstone Lighting: Disables lighting of active redstone, repeaters, and comparators to improve performance
+* No Saddled Wandering: Stops horses wandering around when saddled
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
 * Plantables: Configurable growth height for sugar cane and cacti
 * Player Speed: Configurable player fly and walk speed
