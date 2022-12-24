@@ -75,7 +75,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.comparatortiming.json",
             "mixins.bugfixes.deathtime.json",
             "mixins.bugfixes.destroypacket.json",
-            "mixins.bugfixes.hopperaabb.json",
             "mixins.bugfixes.dimensionchange.json",
             "mixins.bugfixes.disconnectdupe.json",
             "mixins.bugfixes.entityaabb.json",
@@ -84,12 +83,15 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.entitytracker.json",
             "mixins.bugfixes.exhaustion.json",
             "mixins.bugfixes.frustumculling.json",
+            "mixins.bugfixes.hopperaabb.json",
+            "mixins.bugfixes.itemframevoid.json",
             "mixins.bugfixes.ladderflying.json",
             "mixins.bugfixes.miningglitch.client.json",
             "mixins.bugfixes.miningglitch.server.json",
             "mixins.bugfixes.pistontile.json",
             "mixins.bugfixes.skeletonaim.json",
             "mixins.bugfixes.teloadorder.json",
+            "mixins.bugfixes.villagermantle.json",
             "mixins.tweaks.ai.json",
             "mixins.tweaks.attackcooldown.json",
             "mixins.tweaks.attributes.json",
@@ -101,10 +103,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.collisiondamage.json",
             "mixins.tweaks.creeperconfetti.json",
             "mixins.tweaks.dyeblending.json",
+            "mixins.tweaks.falldamage.json",
             "mixins.tweaks.infinitemusic.json",
             "mixins.tweaks.itementity.json",
             "mixins.tweaks.lightningflash.json",
-            "mixins.tweaks.falldamage.json",
             "mixins.tweaks.mobdespawn.json",
             "mixins.tweaks.nightvisionflash.json",
             "mixins.tweaks.plantables.json",
@@ -116,15 +118,13 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.resourcemanager.json",
             "mixins.tweaks.saddledwandering.json",
             "mixins.tweaks.smoothscrolling.json",
-            "mixins.tweaks.uncapfps.json",
-            "mixins.bugfixes.villagermantle.json") :
+            "mixins.tweaks.uncapfps.json") :
             Arrays.asList(
                 "mixins.bugfixes.blockfire.json",
                 "mixins.bugfixes.boatoffset.json",
                 "mixins.bugfixes.comparatortiming.json",
                 "mixins.bugfixes.deathtime.json",
                 "mixins.bugfixes.destroypacket.json",
-                "mixins.bugfixes.hopperaabb.json",
                 "mixins.bugfixes.dimensionchange.json",
                 "mixins.bugfixes.disconnectdupe.json",
                 "mixins.bugfixes.entityaabb.json",
@@ -132,6 +132,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.entitysuffocation.json",
                 "mixins.bugfixes.entitytracker.json",
                 "mixins.bugfixes.exhaustion.json",
+                "mixins.bugfixes.hopperaabb.json",
+                "mixins.bugfixes.itemframevoid.json",
                 "mixins.bugfixes.ladderflying.json",
                 "mixins.bugfixes.miningglitch.server.json",
                 "mixins.bugfixes.pistontile.json",
@@ -145,8 +147,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.collisiondamage.json",
                 "mixins.tweaks.creeperconfetti.json",
                 "mixins.tweaks.dyeblending.json",
-                "mixins.tweaks.itementity.json",
                 "mixins.tweaks.falldamage.json",
+                "mixins.tweaks.itementity.json",
                 "mixins.tweaks.mobdespawn.json",
                 "mixins.tweaks.plantables.json",
                 "mixins.tweaks.playerspeed.json",
@@ -222,6 +224,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Disconnect Dupe Fix\"=true");
             case "mixins.bugfixes.hopperaabb.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Hopper Bounding Box Fix\"=true");
+            case "mixins.bugfixes.itemframevoid.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Item Frame Void Fix\"=true");
             case "mixins.bugfixes.entityaabb.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Bounding Box Fix\"=true");
             case "mixins.bugfixes.entitydesync.json":

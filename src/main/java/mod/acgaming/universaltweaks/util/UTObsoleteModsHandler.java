@@ -44,6 +44,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("experiencebugfix") && UTConfig.bugfixes.utDimensionChangeToggle) messages.add("Fix Experience Bug");
         if (Loader.isModLoaded("fastleafdecay") && UTConfig.tweaks.utLeafDecayToggle) messages.add("Fast Leaf Decay");
         if (Loader.isModLoaded("fencejumper") && UTConfig.tweaks.utFenceWallJumpToggle) messages.add("Fence Jumper");
+        if (Loader.isModLoaded("framevoidpatch") && UTConfig.bugfixes.utItemFrameVoidToggle) messages.add("Frame Void Patch");
         if (Loader.isModLoaded("givemebackmyhp") && UTConfig.bugfixes.utMaxHealthToggle) messages.add("Give Me Back My HP");
         if (Loader.isModLoaded("helpfixer") && UTConfig.bugfixes.utHelpToggle) messages.add("HelpFixer");
         if (Loader.isModLoaded("horsestandstill") && UTConfig.tweaks.utSaddledWanderingToggle) messages.add("Stupid Horse Stand Still");

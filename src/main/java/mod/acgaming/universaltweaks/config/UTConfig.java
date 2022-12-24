@@ -123,6 +123,10 @@ public class UTConfig
         @Config.Comment("Replaces the help command, sorts and reports broken commands")
         public boolean utHelpToggle = true;
 
+        @Config.Name("Item Frame Void Fix")
+        @Config.Comment("Prevents voiding held items when right + left clicking on an item frame simultaneously")
+        public boolean utItemFrameVoidToggle = true;
+
         @Config.Name("Ladder Flying Slowdown Fix")
         @Config.Comment("Disables climbing movement when flying")
         public boolean utLadderFlyingToggle = true;
