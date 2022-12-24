@@ -70,6 +70,7 @@ All changes are toggleable via the config file.
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
 * Plantables: Configurable growth height for sugar cane and cacti
 * Player Speed: Configurable player fly and walk speed
+* Remove Realms Button: Removes the redundant Minecraft Realms button from the main menu
 * Remove Recipe Book: Removes the recipe book button from GUIs
 * Smooth Scrolling: Adds smooth scrolling to every in-game list
 * Stronghold Replacement: Replaces stronghold generation with a safer variant

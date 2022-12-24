@@ -110,6 +110,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.plantables.json",
             "mixins.tweaks.playerspeed.json",
             "mixins.tweaks.prefixcheck.json",
+            "mixins.tweaks.realmsbutton.json",
             "mixins.tweaks.recipebook.json",
             "mixins.tweaks.redstonelighting.json",
             "mixins.tweaks.resourcemanager.json",
@@ -191,6 +192,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"No Lightning Flash\"=true");
                 case "mixins.tweaks.nightvisionflash.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"No Night Vision Flash\"=true");
+                case "mixins.tweaks.realmsbutton.json":
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Remove Realms Button\"=true");
                 case "mixins.tweaks.recipebook.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Remove Recipe Book\"=true");
                 case "mixins.tweaks.resourcemanager.json":

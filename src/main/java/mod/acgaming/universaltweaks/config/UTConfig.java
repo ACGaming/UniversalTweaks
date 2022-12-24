@@ -438,6 +438,10 @@ public class UTConfig
         @Config.Comment("Determines the player's base walk speed")
         public double utPlayerWalkSpeed = 0.1;
 
+        @Config.Name("Remove Realms Button")
+        @Config.Comment("Removes the redundant Minecraft Realms button from the main menu")
+        public boolean utRealmsButtonToggle = true;
+
         @Config.Name("Smooth Scrolling")
         @Config.Comment("Adds smooth scrolling to every in-game list")
         public boolean utSmoothScrollingToggle = true;
