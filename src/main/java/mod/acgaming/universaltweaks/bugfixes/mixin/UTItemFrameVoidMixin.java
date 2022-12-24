@@ -11,6 +11,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+// MC-59363
+// https://bugs.mojang.com/browse/MC-59363
 // Courtesy of fonnymunkey
 @Mixin(EntityItemFrame.class)
 public abstract class UTItemFrameVoidMixin
