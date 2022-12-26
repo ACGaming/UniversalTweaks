@@ -338,10 +338,6 @@ public class UTConfig
         @Config.Comment("Makes leaves decay faster when trees are chopped")
         public boolean utLeafDecayToggle = true;
 
-        @Config.Name("No Lightning Flash")
-        @Config.Comment("Disables the flashing of skybox and ground brightness on lightning strikes")
-        public boolean utLightningFlashToggle = false;
-
         @Config.Name("Fast Prefix Checking")
         @Config.Comment("Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time")
         public boolean utPrefixCheckToggle = true;
@@ -361,6 +357,10 @@ public class UTConfig
                 "Vanilla default for elytra damage is 10"
             })
         public int utCollisionDamageFactor = 10;
+
+        @Config.Name("Husk & Stray Spawning")
+        @Config.Comment("Lets husks and strays spawn on the surface like regular zombies and skeletons")
+        public boolean utHuskStraySpawningToggle = true;
 
         @Config.Name("Infinite Music")
         @Config.Comment("Lets background music play continuously without delays")
@@ -413,6 +413,10 @@ public class UTConfig
         @Config.Name("Mob Despawn Improvement")
         @Config.Comment("Mobs carrying picked up items will drop their equipment and despawn properly")
         public boolean utMobDespawnToggle = true;
+
+        @Config.Name("No Lightning Flash")
+        @Config.Comment("Disables the flashing of skybox and ground brightness on lightning strikes")
+        public boolean utLightningFlashToggle = false;
 
         @Config.Name("No Night Vision Flash")
         @Config.Comment("Disables the flashing effect when the night vision potion effect is about to run out")

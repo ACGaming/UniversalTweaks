@@ -118,6 +118,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.resourcemanager.json",
             "mixins.tweaks.saddledwandering.json",
             "mixins.tweaks.smoothscrolling.json",
+            "mixins.tweaks.spawning.json",
             "mixins.tweaks.uncapfps.json") :
             Arrays.asList(
                 "mixins.bugfixes.blockfire.json",
@@ -154,7 +155,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.playerspeed.json",
                 "mixins.tweaks.prefixcheck.json",
                 "mixins.tweaks.redstonelighting.json",
-                "mixins.tweaks.saddledwandering.json"
+                "mixins.tweaks.saddledwandering.json",
+                "mixins.tweaks.spawning.json"
             );
     }
 
@@ -278,6 +280,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"No Redstone Lighting\"=true");
             case "mixins.tweaks.saddledwandering.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"No Saddled Wandering\"=true");
+            case "mixins.tweaks.spawning.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Husk & Stray Spawning\"=true");
         }
         return true;
     }
