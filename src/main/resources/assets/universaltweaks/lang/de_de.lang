@@ -1,3 +1,8 @@
+# OBSOLETE MODS SCREEN
+msg.universaltweaks.obsoletemods.warning1=Universal Tweaks hat die Funktionalitäten anderer Mods ersetzt und verbessert.
+msg.universaltweaks.obsoletemods.warning2=Daher sind die folgenden Mods nun nicht mehr mit Universal Tweaks kompatibel:
+msg.universaltweaks.obsoletemods.warning3=Ziehe in Erwägung, diese aus deinem Spiel zu entfernen oder die entsprechenden Funktionen zu deaktivieren.
+
 # TOGGLE CHEATS
 btn.universaltweaks.cheats.enabled=Cheats: AN
 btn.universaltweaks.cheats.disabled=Cheats: AUS

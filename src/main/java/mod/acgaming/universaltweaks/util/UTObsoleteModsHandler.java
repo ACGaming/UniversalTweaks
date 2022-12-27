@@ -3,21 +3,19 @@ package mod.acgaming.universaltweaks.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
-import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.config.UTConfig;
 
 public class UTObsoleteModsHandler
 {
-    public static void throwIncompatibility()
+    public static List<String> obsoleteModsMessage()
     {
         List<String> messages = new ArrayList<>();
-        messages.add("Universal Tweaks has replaced and improved upon functionalities from the following mods.");
-        messages.add("Therefore, these mods are now incompatible with Universal Tweaks:");
+        messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning1").getFormattedText());
+        messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning2").getFormattedText());
         messages.add("");
-
         if (Loader.isModLoaded("aiimprovements") && (UTConfig.tweaks.utAIReplacementToggle || UTConfig.tweaks.utAIRemovalToggle)) messages.add("AI Improvements");
         if (Loader.isModLoaded("attributefix") && UTConfig.tweaks.utAttributesToggle) messages.add("AttributeFix");
         if (Loader.isModLoaded("bedbreakbegone") && UTConfig.tweaks.utBedObstructionToggle) messages.add("BedBreakBegone");
@@ -67,7 +65,6 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("tidychunk") && UTConfig.tweaks.utTidyChunkToggle) messages.add("TidyChunk");
         if (Loader.isModLoaded("unloader") && UTConfig.tweaks.utUnloaderToggle) messages.add("Unloader");
         if (Loader.isModLoaded("villagermantlefix") && UTConfig.bugfixes.utVillagerMantleToggle) messages.add("Villager Mantle Fix");
-
         try
         {
             if (UTConfig.bugfixes.utLocaleToggle)
@@ -77,21 +74,8 @@ public class UTObsoleteModsHandler
             }
         }
         catch (ClassNotFoundException ignored) {}
-
-        if (messages.size() > 3)
-        {
-            if (FMLLaunchHandler.side() == Side.CLIENT
-                && UTConfig.debug.utObsoleteModsToggle
-                && !Loader.isModLoaded("enderio")
-                && !Loader.isModLoaded("gregtech"))
-            {
-                UTObsoleteModsException.throwException(messages);
-            }
-            else
-            {
-                messages.add("");
-                throw new RuntimeException(String.join(System.lineSeparator(), messages));
-            }
-        }
+        messages.add("");
+        messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning3").getFormattedText());
+        return messages;
     }
 }

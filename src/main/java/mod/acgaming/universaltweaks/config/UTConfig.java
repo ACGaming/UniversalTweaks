@@ -359,7 +359,7 @@ public class UTConfig
         public int utCollisionDamageFactor = 10;
 
         @Config.Name("Husk & Stray Spawning")
-        @Config.Comment("Lets husks and strays spawn on the surface like regular zombies and skeletons")
+        @Config.Comment("Lets husks and strays spawn underground like regular zombies and skeletons")
         public boolean utHuskStraySpawningToggle = true;
 
         @Config.Name("Infinite Music")

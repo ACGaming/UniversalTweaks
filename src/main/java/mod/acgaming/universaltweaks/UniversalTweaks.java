@@ -31,7 +31,6 @@ public class UniversalTweaks
     public void preInit(FMLPreInitializationEvent event)
     {
         UTPacketHandler.init();
-        if (!UTConfig.debug.utBypassIncompatibilityToggle) UTObsoleteModsHandler.throwIncompatibility();
         if (UTConfig.tweaks.utAttributesToggle) UTAttributes.utSetAttributes();
         if (UTConfig.tweaks.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
         LOGGER.info(NAME + " pre-initialized");
@@ -68,5 +67,6 @@ public class UniversalTweaks
     public void onLoadComplete(FMLLoadCompleteEvent event)
     {
         if (UTConfig.debug.utLoadingTimeToggle) LOGGER.info("The game loaded in approximately {} seconds", (System.currentTimeMillis() - UTLoadingPlugin.launchTime) / 1000F);
+        UniversalTweaks.LOGGER.warn(String.join(System.lineSeparator(), UTObsoleteModsHandler.obsoleteModsMessage()));
     }
 }
