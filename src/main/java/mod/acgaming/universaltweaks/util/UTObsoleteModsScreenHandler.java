@@ -13,15 +13,19 @@ import mod.acgaming.universaltweaks.config.UTConfig;
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTObsoleteModsScreenHandler
 {
-    public static boolean initialLaunch = true;
+    public static boolean shouldDisplay = true;
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utDisplayObsoleteModsScreen(GuiOpenEvent event)
     {
-        if (initialLaunch && event.getGui() instanceof GuiMainMenu && UTConfig.debug.utObsoleteModsToggle && !UTConfig.debug.utBypassIncompatibilityToggle)
+        if (shouldDisplay
+            && event.getGui() instanceof GuiMainMenu
+            && UTObsoleteModsHandler.obsoleteModsMessage().size() > 5
+            && UTConfig.debug.utObsoleteModsToggle
+            && !UTConfig.debug.utBypassIncompatibilityToggle)
         {
             event.setGui(new UTObsoleteModsScreen(UTObsoleteModsHandler.obsoleteModsMessage()));
-            initialLaunch = false;
+            shouldDisplay = false;
         }
     }
 }
