@@ -60,6 +60,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("smooth-scrolling-everywhere") && UTConfig.tweaks.utSmoothScrollingToggle) messages.add("Smooth Scrolling Everywhere");
         if (Loader.isModLoaded("stepupfix") && UTConfig.tweaks.utAutoJumpToggle) messages.add("StepupFixer");
         if (Loader.isModLoaded("stg") && UTConfig.tweaks.utSwingThroughGrassToggle) messages.add("SwingThroughGrass");
+        if (Loader.isModLoaded("superhot") && UTConfig.tweaks.utSuperHotTorchToggle) messages.add("SuperHot");
         if (Loader.isModLoaded("surge")) messages.add("Surge");
         if (Loader.isModLoaded("tconfixes")) messages.add("TConFixes");
         if (Loader.isModLoaded("tidychunk") && UTConfig.tweaks.utTidyChunkToggle) messages.add("TidyChunk");

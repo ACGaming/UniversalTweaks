@@ -75,6 +75,7 @@ All changes are toggleable via the config file.
 * Remove Realms Button: Removes the redundant Minecraft Realms button from the main menu
 * Remove Recipe Book: Removes the recipe book button from GUIs
 * Smooth Scrolling: Adds smooth scrolling to every in-game list
+* Super Hot Torch: Enables one-time ignition of entities by hitting them with a torch
 * Stronghold Replacement: Replaces stronghold generation with a safer variant
 * Swing Through Grass: Allows hitting entities through grass instead of breaking it
 * Tidy Chunk: Tidies newly generated chunks by removing scattered item entities
