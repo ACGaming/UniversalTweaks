@@ -267,6 +267,16 @@ public class UTConfig
         @Config.Comment("Replaces bed obstruction checks with an improved version")
         public boolean utBedObstructionToggle = true;
 
+        @Config.Name("Better Burning")
+        @Config.Comment
+            ({
+                "Fixes some edge cases where fire damage sources won't cause mobs to drop their cooked items",
+                "Allows skeletons to shoot flaming arrows when on fire (70% chance)",
+                "If entities have fire resistance, they get extinguished right away when on fire",
+                "Allows fire to spread from entity to entity (30% chance)"
+            })
+        public boolean utBetterBurningToggle = true;
+
         @Config.Name("Better Harvest")
         @Config.Comment("Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking")
         public boolean utBetterHarvestToggle = false;

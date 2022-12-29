@@ -41,6 +41,11 @@ All changes are toggleable via the config file.
 * Auto Jump Replacement: Replaces auto jump with an increased step height
 * Auto Switch Tools: Switches the selected hotbar slot to a proper tool if required
 * Bed Obstruction Replacement: Replaces bed obstruction checks with an improved version
+* Better Burning
+    * Fixes some edge cases where fire damage sources won't cause mobs to drop their cooked items
+    * Allows skeletons to shoot flaming arrows when on fire (70% chance)
+    * If entities have fire resistance, they get extinguished right away when on fire
+    * Allows fire to spread from entity to entity (30% chance)
 * Better Harvest: Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking
 * Better Ignition: Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them
 * Block Placement Click Delay: Sets the delay in ticks between placing blocks
