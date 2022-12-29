@@ -42,6 +42,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("experiencebugfix") && UTConfig.bugfixes.utDimensionChangeToggle) messages.add("Fix Experience Bug");
         if (Loader.isModLoaded("fastleafdecay") && UTConfig.tweaks.utLeafDecayToggle) messages.add("Fast Leaf Decay");
         if (Loader.isModLoaded("fencejumper") && UTConfig.tweaks.utFenceWallJumpToggle) messages.add("Fence Jumper");
+        if (Loader.isModLoaded("finite-fluid-control") && UTConfig.tweaks.utFiniteWaterToggle) messages.add("Finite Water Control");
         if (Loader.isModLoaded("framevoidpatch") && UTConfig.bugfixes.utItemFrameVoidToggle) messages.add("Frame Void Patch");
         if (Loader.isModLoaded("givemebackmyhp") && UTConfig.bugfixes.utMaxHealthToggle) messages.add("Give Me Back My HP");
         if (Loader.isModLoaded("helpfixer") && UTConfig.bugfixes.utHelpToggle) messages.add("HelpFixer");
@@ -66,6 +67,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("tidychunk") && UTConfig.tweaks.utTidyChunkToggle) messages.add("TidyChunk");
         if (Loader.isModLoaded("unloader") && UTConfig.tweaks.utUnloaderToggle) messages.add("Unloader");
         if (Loader.isModLoaded("villagermantlefix") && UTConfig.bugfixes.utVillagerMantleToggle) messages.add("Villager Mantle Fix");
+        if (Loader.isModLoaded("watercontrolextreme") && UTConfig.tweaks.utFiniteWaterToggle) messages.add("Water Control Extreme");
         try
         {
             if (UTConfig.bugfixes.utLocaleToggle)

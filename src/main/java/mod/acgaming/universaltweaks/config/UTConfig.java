@@ -347,6 +347,10 @@ public class UTConfig
         @Config.Comment("Allows the player to jump over fences and walls")
         public boolean utFenceWallJumpToggle = true;
 
+        @Config.Name("Finite Water")
+        @Config.Comment("Prevents creation of infinite water sources outside of ocean and river biomes")
+        public boolean utFiniteWaterToggle = false;
+
         @Config.Name("Horizontal Collision Damage")
         @Config.Comment("Applies horizontal collision damage to the player akin to elytra collision")
         public boolean utCollisionDamageToggle = false;

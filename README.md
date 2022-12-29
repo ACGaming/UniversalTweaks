@@ -56,6 +56,7 @@ All changes are toggleable via the config file.
 * Fast Leaf Decay: Makes leaves decay faster when trees are chopped
 * Fast Prefix Checking: Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
 * Fence/Wall Jump: Allows the player to jump over fences and walls
+* Finite Water: Prevents creation of infinite water sources outside of ocean and river biomes
 * Horizontal Collision Damage: Applies horizontal collision damage to the player akin to elytra collision
 * Infinite Music: Lets background music play continuously without delays
 * Item Entity Combination: Stops combination of item entities if their maximum stack size is reached
