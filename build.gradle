@@ -18,7 +18,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
-version = "1.12.2-1.1.0"
+version = "1.12.2-1.2.0"
 group = "mod.acgaming.universaltweaks"
 archivesBaseName = "UniversalTweaks"
 
@@ -68,14 +68,16 @@ repositories {
 }
 
 dependencies {
-    deobfCompile "zone.rong:mixinbooter:7.0"
+    deobfCompile "curse.maven:baubles-227083:2518667"
+    deobfCompile "curse.maven:biomes-o-plenty-220318:2842510"
+    deobfCompile "curse.maven:chameleon-230497:2450900"
+    deobfCompile "curse.maven:storage-drawers-223852:2952606"
+    deobfCompile "curse.maven:thaumcraft-223628:2629023"
     deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.55"
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
-    implementation "curse.maven:biomes-o-plenty-220318:2842510"
+    deobfCompile "zone.rong:mixinbooter:7.0"
     implementation "curse.maven:custom-mob-spawner-229261:2859433"
-    implementation "curse.maven:chameleon-230497:2450900"
-    implementation "curse.maven:storage-drawers-223852:2952606"
-    //implementation 'net.jafama:jafama:2.3.2'
+    //implementation "net.jafama:jafama:2.3.2"
 }
 
 mixin {

@@ -11,10 +11,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(TileEntityDrawersRenderer.class)
+@Mixin(value = TileEntityDrawersRenderer.class, remap = false)
 public class UTDrawersRendererMixin
 {
-    @Inject(method = "render", at = @At(value = "HEAD"), cancellable = true, remap = false)
+    @Inject(method = "render(Lcom/jaquadro/minecraft/storagedrawers/block/tile/TileEntityDrawers;DDDFIF)V", at = @At(value = "HEAD"), cancellable = true)
     public void utDrawersRenderer(TileEntityDrawers tile, double x, double y, double z, float partialTickTime, int destroyStage, float par7, CallbackInfo ci)
     {
         if (UTConfig.mods.utSDRenderRange < 1) return;

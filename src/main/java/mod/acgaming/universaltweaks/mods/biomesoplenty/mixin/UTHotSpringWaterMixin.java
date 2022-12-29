@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(BlockHotSpringWaterFluid.class)
 public class UTHotSpringWaterMixin
 {
-    @Inject(method = "func_180634_a", at = @At(value = "HEAD"), cancellable = true, remap = false)
+    @Inject(method = "onEntityCollision", at = @At(value = "HEAD"), cancellable = true)
     public void utHotSpringWater(World world, BlockPos pos, IBlockState state, Entity entity, CallbackInfo ci)
     {
         if (!UTConfig.mods.utBoPHotSpringWaterToggle) return;
