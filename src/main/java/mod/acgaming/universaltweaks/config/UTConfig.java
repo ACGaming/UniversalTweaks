@@ -194,6 +194,10 @@ public class UTConfig
             })
         public int utSDRenderRange = 0;
 
+        @Config.Name("[Thaumcraft] Firebat Particles")
+        @Config.Comment("Adds particles to firebats similar to legacy versions")
+        public boolean utTCFirebatParticlesToggle = true;
+
         @Config.Name("[Tinkers' Construct] Gaseous Fluids")
         @Config.Comment("Excludes gaseous fluids from being transferable via faucets")
         public boolean utTConGaseousFluidsToggle = false;
