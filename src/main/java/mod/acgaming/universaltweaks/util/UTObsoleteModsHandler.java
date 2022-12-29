@@ -52,6 +52,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("loginhpfix") && UTConfig.bugfixes.utMaxHealthToggle) messages.add("Login HP Fix");
         if (Loader.isModLoaded("mendingfix") && UTConfig.tweaks.utMendingToggle) messages.add("Mending Fix");
         if (Loader.isModLoaded("nanfix") && UTConfig.bugfixes.utEntityNaNToggle) messages.add("NaN Entity Health Fix");
+        if (Loader.isModLoaded("nobounce") && UTConfig.mods.utTCStableThaumometerToggle) messages.add("Stable Thaumometer");
         if (Loader.isModLoaded("nonvflash") && UTConfig.tweaks.utNightVisionFlashToggle) messages.add("No Night Vision Flashing");
         if (Loader.isModLoaded("nopotionshift") && UTConfig.tweaks.utPotionShiftToggle) messages.add("No Potion Shift");
         if (Loader.isModLoaded("norecipebook") && UTConfig.tweaks.utRecipeBookToggle) messages.add("No Recipe Book");

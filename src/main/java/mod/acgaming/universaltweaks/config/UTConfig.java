@@ -198,6 +198,10 @@ public class UTConfig
         @Config.Comment("Adds particles to firebats similar to legacy versions")
         public boolean utTCFirebatParticlesToggle = true;
 
+        @Config.Name("[Thaumcraft] Stable Thaumometer")
+        @Config.Comment("Stops the thaumometer from bobbing rapidly when using it to scan objects")
+        public boolean utTCStableThaumometerToggle = true;
+
         @Config.Name("[Thaumcraft] Wisp Particles")
         @Config.Comment("Increases particle size of wisps similar to legacy versions")
         public boolean utTCWispParticlesToggle = true;
