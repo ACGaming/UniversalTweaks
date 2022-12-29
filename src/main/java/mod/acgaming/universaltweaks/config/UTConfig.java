@@ -198,6 +198,10 @@ public class UTConfig
         @Config.Comment("Adds particles to firebats similar to legacy versions")
         public boolean utTCFirebatParticlesToggle = true;
 
+        @Config.Name("[Thaumcraft] Wisp Particles")
+        @Config.Comment("Increases particle size of wisps similar to legacy versions")
+        public boolean utTCWispParticlesToggle = true;
+
         @Config.Name("[Tinkers' Construct] Gaseous Fluids")
         @Config.Comment("Excludes gaseous fluids from being transferable via faucets")
         public boolean utTConGaseousFluidsToggle = false;
