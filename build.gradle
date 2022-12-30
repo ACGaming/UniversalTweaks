@@ -71,6 +71,7 @@ dependencies {
     deobfCompile "curse.maven:baubles-227083:2518667"
     deobfCompile "curse.maven:biomes-o-plenty-220318:2842510"
     deobfCompile "curse.maven:chameleon-230497:2450900"
+    deobfCompile "curse.maven:epic-siege-mod-229449:3356157"
     deobfCompile "curse.maven:storage-drawers-223852:2952606"
     deobfCompile "curse.maven:thaumcraft-223628:2629023"
     deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.55"

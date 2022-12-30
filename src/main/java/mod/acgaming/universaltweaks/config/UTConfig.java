@@ -186,6 +186,10 @@ public class UTConfig
         @Config.Comment("Fixes rapid inflection of regeneration effects in hot spring water")
         public boolean utBoPHotSpringWaterToggle = true;
 
+        @Config.Name("[Epic Siege Mod] Disable Digger AI Debug")
+        @Config.Comment("Disables leftover debug logging inside the digger AI of the beta builds")
+        public boolean utESMDiggerDebugToggle = true;
+
         @Config.Name("[Storage Drawers] Render Range")
         @Config.Comment
             ({
