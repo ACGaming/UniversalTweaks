@@ -63,6 +63,7 @@ All changes are toggleable via the config file.
 * Fence/Wall Jump: Allows the player to jump over fences and walls
 * Finite Water: Prevents creation of infinite water sources outside of ocean and river biomes
 * Horizontal Collision Damage: Applies horizontal collision damage to the player akin to elytra collision
+* Husk & Stray Spawning: Lets husks and strays spawn underground like regular zombies and skeletons
 * Infinite Music: Lets background music play continuously without delays
 * Item Entity Combination: Stops combination of item entities if their maximum stack size is reached
 * Load Sounds: Plays sounds when the game or the world are loaded
@@ -93,6 +94,8 @@ All changes are toggleable via the config file.
 
 * Biomes O' Plenty
     * Hot Spring Water: Fixes rapid inflection of regeneration effects in hot spring water
+* Epic Siege Mod
+    * Disable Digger AI Debug: Disables leftover debug logging inside the digger AI of the beta builds
 * Mo' Creatures
     * Custom Modded Biomes: Adds support for modded biome spawns via config
 * Storage Drawers
