@@ -275,9 +275,10 @@ public class UTConfig
         @Config.Comment
             ({
                 "Fixes some edge cases where fire damage sources won't cause mobs to drop their cooked items",
-                "Allows skeletons to shoot flaming arrows when on fire (70% chance)",
+                "Allows skeletons to shoot flaming arrows when on fire (30% chance * regional difficulty)",
                 "If entities have fire resistance, they get extinguished right away when on fire",
-                "Allows fire to spread from entity to entity (30% chance)"
+                "Allows fire to spread from entity to entity (30% chance * regional difficulty)",
+                "Prevents the fire animation overlay from being displayed when the player is immune to fire"
             })
         public boolean utBetterBurningToggle = true;
 
