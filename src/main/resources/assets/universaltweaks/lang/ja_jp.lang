@@ -1,0 +1,10 @@
+# OBSOLETE MODS SCREEN
+msg.universaltweaks.obsoletemods.warning1=Universal Tweaksは、他のMOD機能を置き換えて改良したものです。
+msg.universaltweaks.obsoletemods.warning2=そのため以下のMODはUniversal Tweaksと互換性が無くなりました:
+msg.universaltweaks.obsoletemods.warning3=Modsから削除するか、それぞれの機能を無効化することを検討してください。
+
+# TOGGLE CHEATS
+btn.universaltweaks.cheats.enabled=チート: ON
+btn.universaltweaks.cheats.disabled=チート: OFF
+msg.universaltweaks.cheats.enabled=チートを§a有効化§fしました
+msg.universaltweaks.cheats.disabled=チートを§c無効化§fしました
