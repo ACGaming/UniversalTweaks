@@ -8,6 +8,8 @@ import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraftforge.client.event.RenderBlockOverlayEvent;
+import net.minecraftforge.client.event.RenderBlockOverlayEvent.OverlayType;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -42,7 +44,8 @@ public class UTBetterBurning
             if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterBurning ::: Entity join world event");
             final EntityArrow arrowEntity = (EntityArrow) event.getEntity();
             final Entity shooter = arrowEntity.shootingEntity;
-            if (shooter instanceof AbstractSkeleton && shooter.isBurning() && !shooter.isDead && tryPercentage(0.7))
+            float regionalDifficulty = event.getEntity().world.getDifficultyForLocation(new BlockPos(event.getEntity())).getAdditionalDifficulty();
+            if (shooter instanceof AbstractSkeleton && shooter.isBurning() && !shooter.isDead && tryPercentage(regionalDifficulty * 0.3))
             {
                 arrowEntity.setFire(100);
             }
@@ -72,12 +75,24 @@ public class UTBetterBurning
             {
                 final EntityLivingBase sourceLiving = (EntityLivingBase) sourceEntity;
                 final ItemStack heldItem = sourceLiving.getHeldItemMainhand();
-                if (!(sourceLiving instanceof EntityZombie) && heldItem.isEmpty() && sourceLiving.isBurning() && tryPercentage(0.3))
+                float regionalDifficulty = event.getEntity().world.getDifficultyForLocation(new BlockPos(event.getEntity())).getAdditionalDifficulty();
+                if (!(sourceLiving instanceof EntityZombie) && heldItem.isEmpty() && sourceLiving.isBurning() && tryPercentage(regionalDifficulty * 0.3))
                 {
-                    final float damage = Math.max(1, event.getEntityLiving().world.getDifficultyForLocation(new BlockPos(event.getEntity())).getAdditionalDifficulty());
+                    final float damage = Math.max(1, regionalDifficulty);
                     event.getEntityLiving().setFire(2 * (int) damage);
                 }
             }
+        }
+    }
+
+    // Prevents the first person fire overlay from displaying when user is resisted to fire, has fire resistance, or is in creative mode (backported)
+    @SubscribeEvent
+    public static void onBlockOverlay (RenderBlockOverlayEvent event) 
+    {
+        if (UTConfig.tweaks.utBetterBurningToggle && event.getOverlayType() == OverlayType.FIRE && (event.getPlayer().isImmuneToFire() || event.getPlayer().isPotionActive(MobEffects.FIRE_RESISTANCE) || event.getPlayer().isCreative())) 
+		{
+        	if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterBurning ::: Render block overlay event");
+            event.setCanceled(true);
         }
     }
 
