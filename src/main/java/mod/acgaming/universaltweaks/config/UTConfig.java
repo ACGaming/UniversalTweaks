@@ -271,16 +271,25 @@ public class UTConfig
         @Config.Comment("Replaces bed obstruction checks with an improved version")
         public boolean utBedObstructionToggle = true;
 
-        @Config.Name("Better Burning")
-        @Config.Comment
-            ({
-                "Fixes some edge cases where fire damage sources won't cause mobs to drop their cooked items",
-                "Allows skeletons to shoot flaming arrows when on fire (30% chance * regional difficulty)",
-                "If entities have fire resistance, they get extinguished right away when on fire",
-                "Allows fire to spread from entity to entity (30% chance * regional difficulty)",
-                "Prevents the fire animation overlay from being displayed when the player is immune to fire"
-            })
-        public boolean utBetterBurningToggle = true;
+        @Config.Name("Better Burning: Cooked Items")
+        @Config.Comment("Fixes some edge cases where fire damage sources won't cause mobs to drop their cooked items")
+        public boolean utBBCookedToggle = true;
+
+        @Config.Name("Better Burning: Flaming Arrows")
+        @Config.Comment("Allows skeletons to shoot flaming arrows when on fire (30% chance * regional difficulty")
+        public boolean utBBArrowsToggle = true;
+
+        @Config.Name("Better Burning: Extinguishing")
+        @Config.Comment("If entities have fire resistance, they get extinguished right away when on fire")
+        public boolean utBBExtinguishToggle = true;
+
+        @Config.Name("Better Burning: Spreading Fire")
+        @Config.Comment("Allows fire to spread from entity to entity (30% chance * regional difficulty)")
+        public boolean utBBSpreadingToggle = true;
+
+        @Config.Name("Better Burning: Fire Overlay")
+        @Config.Comment("Prevents the fire animation overlay from being displayed when the player is immune to fire")
+        public boolean utBBOverlayToggle = true;
 
         @Config.Name("Better Harvest")
         @Config.Comment("Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking")
