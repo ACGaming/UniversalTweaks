@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks;
+package mod.acgaming.universaltweaks.tweaks.swingthroughgrass;
 
 import java.util.List;
 import java.util.function.Function;
@@ -36,7 +36,8 @@ public class UTSwingThroughGrass
         if (!UTConfig.tweaks.utSwingThroughGrassToggle) return;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSwingThroughGrass ::: Left click block event");
         IBlockState state = event.getWorld().getBlockState(event.getPos()).getActualState(event.getWorld(), event.getPos());
-        if (state.getCollisionBoundingBox(event.getWorld(), event.getPos()) != Block.NULL_AABB) return;
+        Block block = state.getBlock();
+        if ((UTSwingThroughGrassLists.blacklistedBlocks.contains(block) || state.getCollisionBoundingBox(event.getWorld(), event.getPos()) != Block.NULL_AABB) && !UTSwingThroughGrassLists.whitelistedBlocks.contains(block)) return;
         EntityPlayer player = event.getEntityPlayer();
         if (player == null) return;
         float blockReachDistance = 4.5F;

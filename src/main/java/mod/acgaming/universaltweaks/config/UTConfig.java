@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
+import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.util.UTObsoleteModsScreenHandler;
 
 @Config(modid = UniversalTweaks.MODID, name = "UniversalTweaks")
@@ -524,6 +525,22 @@ public class UTConfig
         @Config.Comment("Allows hitting entities through grass instead of breaking it")
         public boolean utSwingThroughGrassToggle = true;
 
+        @Config.Name("Swing Through Grass Blacklist")
+        @Config.Comment
+            ({
+                "Excludes blocks from the swing through grass tweak",
+                "Syntax: modid:block"
+            })
+        public String[] utSwingThroughGrassBlacklist = new String[] {};
+
+        @Config.Name("Swing Through Grass Whitelist")
+        @Config.Comment
+            ({
+                "Includes blocks in the swing through grass tweak",
+                "Syntax: modid:block"
+            })
+        public String[] utSwingThroughGrassWhitelist = new String[] {};
+
         @Config.Name("Tidy Chunk")
         @Config.Comment("Tidies newly generated chunks by removing scattered item entities")
         public boolean utTidyChunkToggle = false;
@@ -555,6 +572,7 @@ public class UTConfig
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
                 if (bugfixes.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
+                if (tweaks.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (tweaks.utLoadSoundMode != 0) UTLoadSound.initLists();
                 UTObsoleteModsScreenHandler.shouldDisplay = true;
                 UniversalTweaks.LOGGER.info("Universal Tweaks config reloaded");

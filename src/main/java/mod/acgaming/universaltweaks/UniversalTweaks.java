@@ -15,6 +15,7 @@ import mod.acgaming.universaltweaks.tweaks.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
+import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.util.UTObsoleteModsHandler;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
 
@@ -40,6 +41,7 @@ public class UniversalTweaks
     public void init(FMLInitializationEvent event)
     {
         if (UTConfig.bugfixes.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
+        if (UTConfig.tweaks.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
         if (UTConfig.tweaks.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
         LOGGER.info(NAME + " initialized");
     }
