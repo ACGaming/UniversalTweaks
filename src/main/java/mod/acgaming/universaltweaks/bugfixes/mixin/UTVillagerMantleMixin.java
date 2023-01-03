@@ -4,6 +4,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.model.ModelVillager;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.EntityVillager;
 
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
@@ -35,7 +36,7 @@ public class UTVillagerMantleMixin extends ModelBase
     @Inject(method = "setRotationAngles", at = @At("TAIL"))
     public void utVillagerMantleRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e, CallbackInfo ci)
     {
-        if (!UTConfig.bugfixes.utVillagerMantleToggle) return;
+        if (!UTConfig.bugfixes.utVillagerMantleToggle || !(e instanceof EntityVillager)) return;
         villagerMantle.rotateAngleY = villagerHead.rotateAngleY;
         villagerMantle.rotateAngleX = villagerHead.rotateAngleX;
     }
@@ -43,7 +44,7 @@ public class UTVillagerMantleMixin extends ModelBase
     @Inject(method = "render", at = @At("TAIL"))
     public void utVillagerMantleRender(Entity e, float f, float f1, float f2, float f3, float f4, float f5, CallbackInfo ci)
     {
-        if (!UTConfig.bugfixes.utVillagerMantleToggle) return;
+        if (!UTConfig.bugfixes.utVillagerMantleToggle || !(e instanceof EntityVillager)) return;
         villagerMantle.render(f5);
     }
 }
