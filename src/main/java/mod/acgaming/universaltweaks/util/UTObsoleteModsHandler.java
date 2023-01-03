@@ -19,7 +19,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("aiimprovements") && (UTConfig.tweaks.utAIReplacementToggle || UTConfig.tweaks.utAIRemovalToggle)) messages.add("AI Improvements");
         if (Loader.isModLoaded("attributefix") && UTConfig.tweaks.utAttributesToggle) messages.add("AttributeFix");
         if (Loader.isModLoaded("bedbreakbegone") && UTConfig.tweaks.utBedObstructionToggle) messages.add("BedBreakBegone");
-        if (Loader.isModLoaded("betterburning") && UTConfig.tweaks.utBetterBurningToggle) messages.add("Better Burning");
+        if (Loader.isModLoaded("betterburning") && (UTConfig.tweaks.utBBArrowsToggle || UTConfig.tweaks.utBBCookedToggle || UTConfig.tweaks.utBBExtinguishToggle || UTConfig.tweaks.utBBOverlayToggle || UTConfig.tweaks.utBBSpreadingToggle)) messages.add("Better Burning");
         if (Loader.isModLoaded("betterplacement") && UTConfig.tweaks.utBPClickDelay != 4) messages.add("Better Placement");
         if (Loader.isModLoaded("blockfire") && UTConfig.bugfixes.utBlockFireToggle) messages.add("BlockFire");
         if (Loader.isModLoaded("blockoverlayfix") && UTConfig.bugfixes.utBlockOverlayToggle) messages.add("Block Overlay Fix");
