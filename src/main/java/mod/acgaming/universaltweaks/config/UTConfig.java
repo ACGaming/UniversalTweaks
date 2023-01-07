@@ -113,6 +113,10 @@ public class UTConfig
         @Config.Comment("Fixes saturation depleting in peaceful mode")
         public boolean utExhaustionToggle = true;
 
+        @Config.Name("Faster Background Startup")
+        @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
+        public boolean utFasterBackgroundStartupToggle = true;
+
         @Config.Name("Frustum Culling Fix")
         @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
         public boolean utFrustumCullingToggle = true;

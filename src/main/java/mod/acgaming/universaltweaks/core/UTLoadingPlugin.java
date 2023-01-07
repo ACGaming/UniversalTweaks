@@ -90,6 +90,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.miningglitch.server.json",
             "mixins.bugfixes.pistontile.json",
             "mixins.bugfixes.skeletonaim.json",
+            "mixins.bugfixes.startup.json",
             "mixins.bugfixes.teloadorder.json",
             "mixins.bugfixes.villagermantle.json",
             "mixins.tweaks.ai.json",
@@ -140,6 +141,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.miningglitch.server.json",
                 "mixins.bugfixes.pistontile.json",
                 "mixins.bugfixes.skeletonaim.json",
+                "mixins.bugfixes.startup.json",
                 "mixins.bugfixes.teloadorder.json",
                 "mixins.tweaks.ai.json",
                 "mixins.tweaks.attackcooldown.json",
@@ -248,6 +250,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Piston Progress Fix\"=true");
             case "mixins.bugfixes.skeletonaim.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Skeleton Aim Fix\"=true");
+            case "mixins.bugfixes.startup.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Faster Background Startup\"=true");
             case "mixins.bugfixes.teloadorder.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Tile Entity Update Order Fix\"=true");
             case "mixins.tweaks.ai.json":
