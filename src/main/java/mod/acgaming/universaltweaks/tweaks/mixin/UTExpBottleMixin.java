@@ -22,7 +22,7 @@ public abstract class UTExpBottleMixin extends EntityThrowable
     }
 
     @Inject(method = "onImpact", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), cancellable = true)
-    public void utRemoveRealmsButton(RayTraceResult result, CallbackInfo ci)
+    public void utExpBottle(RayTraceResult result, CallbackInfo ci)
     {
         if (UTConfig.tweaks.utXPBottleAmount < 0) return;
         if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTExpBottle ::: On impact");
