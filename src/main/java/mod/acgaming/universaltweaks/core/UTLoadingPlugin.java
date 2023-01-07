@@ -119,7 +119,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.saddledwandering.json",
             "mixins.tweaks.smoothscrolling.json",
             "mixins.tweaks.spawning.json",
-            "mixins.tweaks.uncapfps.json") :
+            "mixins.tweaks.uncapfps.json",
+            "mixins.tweaks.xpbottle.json") :
             Arrays.asList(
                 "mixins.bugfixes.blockfire.json",
                 "mixins.bugfixes.boatoffset.json",
@@ -156,7 +157,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.prefixcheck.json",
                 "mixins.tweaks.redstonelighting.json",
                 "mixins.tweaks.saddledwandering.json",
-                "mixins.tweaks.spawning.json"
+                "mixins.tweaks.spawning.json",
+                "mixins.tweaks.xpbottle.json"
             );
     }
 
@@ -282,6 +284,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"No Saddled Wandering\"=true");
             case "mixins.tweaks.spawning.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Husk & Stray Spawning\"=true");
+            case "mixins.tweaks.xpbottle.json":
+                return !firstLaunch && !UTConfigParser.isEnabled("I:\"XP Bottle Amount\"=-1");
         }
         return true;
     }

@@ -560,6 +560,14 @@ public class UTConfig
         @Config.Name("Water Fall Damage Reduction")
         @Config.Comment("How much fall damage gets reduced by water per tick")
         public float utFallDamageValue = 2.0F;
+
+        @Config.Name("XP Bottle Amount")
+        @Config.Comment
+            ({
+                "Sets the amount of experience spawned by bottles o' enchanting",
+                "-1 for vanilla default"
+            })
+        public int utXPBottleAmount = -1;
     }
 
     @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)

@@ -90,6 +90,7 @@ All changes are toggleable via the config file.
 * Toggle Cheats Button: Adds a button to the pause menu to toggle cheats
 * Uncap FPS: Removes the hardcoded 30 FPS limit in screens like the main menu
 * Water Fall Damage: Re-implements an improved version of pre-1.4 fall damage in water
+* XP Bottle Amount: Sets the amount of experience spawned by bottles o' enchanting
 
 **Mod Tweaks:**
 
