@@ -328,6 +328,10 @@ public class UTConfig
         @Config.Comment("Maximum time in ms to spend generating chunks per tick per dimension")
         public int utChunkGenLimitTime = 5;
 
+        @Config.Name("Crafting Cache")
+        @Config.Comment("Adds an IRecipe cache to improve recipe performance in large modpacks")
+        public boolean utCraftingCacheToggle = true;
+
         @Config.Name("Creeper Confetti")
         @Config.Comment("Replaces deadly creeper explosions with delightful confetti")
         public boolean utCreeperConfettiToggle = false;

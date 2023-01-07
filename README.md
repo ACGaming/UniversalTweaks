@@ -53,6 +53,7 @@ All changes are toggleable via the config file.
 * Block Placement Click Delay: Sets the delay in ticks between placing blocks
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
 * Chunk Gen Limit: Limits maximum chunk generation per tick for improved server performance
+* Crafting Cache: Adds an IRecipe cache to improve recipe performance in large modpacks
 * Creeper Confetti: Replaces deadly creeper explosions with delightful confetti
 * Damage Tilt: Restores feature to tilt the camera when damaged
 * Dimension Unload: Unloads dimensions not in use to free up resources
