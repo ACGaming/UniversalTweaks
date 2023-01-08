@@ -69,6 +69,7 @@ All changes are toggleable via the config file.
 * Husk & Stray Spawning: Lets husks and strays spawn underground like regular zombies and skeletons
 * Infinite Music: Lets background music play continuously without delays
 * Item Entity Combination: Stops combination of item entities if their maximum stack size is reached
+* Linear XP Amount: Sets the amount of XP needed for each level, effectively removing the increasing level scaling
 * Load Sounds: Plays sounds when the game or the world are loaded
 * Mending Overpowered: If mending fix is enabled, repairs entire damaged inventory with XP
 * Mending: Only repairs damaged equipment with XP

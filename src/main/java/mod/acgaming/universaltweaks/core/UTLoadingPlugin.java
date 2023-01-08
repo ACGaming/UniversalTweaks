@@ -109,6 +109,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.infinitemusic.json",
             "mixins.tweaks.itementity.json",
             "mixins.tweaks.lightningflash.json",
+            "mixins.tweaks.linearxp.json",
             "mixins.tweaks.mobdespawn.json",
             "mixins.tweaks.nightvisionflash.json",
             "mixins.tweaks.plantables.json",
@@ -154,6 +155,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.dyeblending.json",
                 "mixins.tweaks.falldamage.json",
                 "mixins.tweaks.itementity.json",
+                "mixins.tweaks.linearxp.json",
                 "mixins.tweaks.mobdespawn.json",
                 "mixins.tweaks.plantables.json",
                 "mixins.tweaks.playerspeed.json",
@@ -273,10 +275,12 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Creeper Confetti\"=true");
             case "mixins.tweaks.dyeblending.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Fast Dye Blending\"=true");
-            case "mixins.tweaks.itementity.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Item Entity Combination\"=true");
             case "mixins.tweaks.falldamage.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Water Fall Damage\"=true");
+            case "mixins.tweaks.itementity.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Item Entity Combination\"=true");
+            case "mixins.tweaks.linearxp.json":
+                return !firstLaunch && !UTConfigParser.isEnabled("I:\"Linear XP Amount\"=0");
             case "mixins.tweaks.mobdespawn.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Mob Despawn Improvement\"=true");
             case "mixins.tweaks.plantables.json":

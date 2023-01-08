@@ -420,6 +420,14 @@ public class UTConfig
         @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
         public boolean utCombineItemEntityToggle = true;
 
+        @Config.Name("Linear XP Amount")
+        @Config.Comment
+            ({
+                "Sets the amount of XP needed for each level, effectively removing the increasing level scaling",
+                "0 for vanilla default"
+            })
+        public int utLinearXP = 0;
+
         @Config.Name("Load Sounds Mode")
         @Config.RangeInt(min = 0, max = 3)
         @Config.Comment
