@@ -85,6 +85,7 @@ All changes are toggleable via the config file.
 * Player Speed: Configurable player fly and walk speed
 * Remove Realms Button: Removes the redundant Minecraft Realms button from the main menu
 * Remove Recipe Book: Removes the recipe book button from GUIs
+* Skip Credits: Skips the credits screen after the player goes through the end podium portal
 * Smooth Scrolling: Adds smooth scrolling to every in-game list
 * Super Hot Torch: Enables one-time ignition of entities by hitting them with a torch
 * Stronghold Replacement: Replaces stronghold generation with a safer variant

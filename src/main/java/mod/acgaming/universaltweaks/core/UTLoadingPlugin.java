@@ -120,6 +120,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.redstonelighting.json",
             "mixins.tweaks.resourcemanager.json",
             "mixins.tweaks.saddledwandering.json",
+            "mixins.tweaks.skipcredits.json",
             "mixins.tweaks.smoothscrolling.json",
             "mixins.tweaks.spawning.json",
             "mixins.tweaks.uncapfps.json",
@@ -211,6 +212,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Remove Recipe Book\"=true");
                 case "mixins.tweaks.resourcemanager.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Disable Animated Models\"=true");
+                case "mixins.tweaks.skipcredits.json":
+                    return !firstLaunch && UTConfigParser.isEnabled("B:\"Skip Credits\"=true");
                 case "mixins.tweaks.smoothscrolling.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Smooth Scrolling\"=true");
                 case "mixins.tweaks.uncapfps.json":

@@ -512,6 +512,10 @@ public class UTConfig
         @Config.Comment("Removes the recipe book button from GUIs")
         public boolean utRecipeBookToggle = false;
 
+        @Config.Name("Skip Credits")
+        @Config.Comment("Skips the credits screen after the player goes through the end podium portal")
+        public boolean utSkipCreditsToggle = false;
+
         @Config.Name("Smooth Scrolling")
         @Config.Comment("Adds smooth scrolling to every in-game list")
         public boolean utSmoothScrollingToggle = true;
