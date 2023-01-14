@@ -65,6 +65,7 @@ All changes are toggleable via the config file.
 * Fast Prefix Checking: Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
 * Fence/Wall Jump: Allows the player to jump over fences and walls
 * Finite Water: Prevents creation of infinite water sources outside of ocean and river biomes
+* Hardcore Buckets: Prevents placing of liquid source blocks in the world
 * Horizontal Collision Damage: Applies horizontal collision damage to the player akin to elytra collision
 * Husk & Stray Spawning: Lets husks and strays spawn underground like regular zombies and skeletons
 * Infinite Music: Lets background music play continuously without delays

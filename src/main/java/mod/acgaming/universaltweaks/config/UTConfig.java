@@ -328,9 +328,9 @@ public class UTConfig
         @Config.Comment("Maximum time in ms to spend generating chunks per tick per dimension")
         public int utChunkGenLimitTime = 5;
 
-        @Config.Name("Crafting Cache")
+        @Config.Name("[Experimental] Crafting Cache")
         @Config.Comment("Adds an IRecipe cache to improve recipe performance in large modpacks")
-        public boolean utCraftingCacheToggle = true;
+        public boolean utCraftingCacheToggle = false;
 
         @Config.Name("Creeper Confetti")
         @Config.Comment("Replaces deadly creeper explosions with delightful confetti")
@@ -395,6 +395,10 @@ public class UTConfig
         @Config.Name("Finite Water")
         @Config.Comment("Prevents creation of infinite water sources outside of ocean and river biomes")
         public boolean utFiniteWaterToggle = false;
+
+        @Config.Name("Hardcore Buckets")
+        @Config.Comment("Prevents placing of liquid source blocks in the world")
+        public boolean utHardcoreBucketsToggle = false;
 
         @Config.Name("Horizontal Collision Damage")
         @Config.Comment("Applies horizontal collision damage to the player akin to elytra collision")

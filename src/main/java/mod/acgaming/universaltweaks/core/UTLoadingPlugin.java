@@ -106,6 +106,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.creeperconfetti.json",
             "mixins.tweaks.dyeblending.json",
             "mixins.tweaks.falldamage.json",
+            "mixins.tweaks.hardcorebuckets.json",
             "mixins.tweaks.infinitemusic.json",
             "mixins.tweaks.itementity.json",
             "mixins.tweaks.lightningflash.json",
@@ -155,6 +156,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.creeperconfetti.json",
                 "mixins.tweaks.dyeblending.json",
                 "mixins.tweaks.falldamage.json",
+                "mixins.tweaks.hardcorebuckets.json",
                 "mixins.tweaks.itementity.json",
                 "mixins.tweaks.linearxp.json",
                 "mixins.tweaks.mobdespawn.json",
@@ -273,13 +275,15 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.collisiondamage.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Horizontal Collision Damage\"=true");
             case "mixins.tweaks.craftingcache.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Crafting Cache\"=true");
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"Crafting Cache\"=true");
             case "mixins.tweaks.creeperconfetti.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Creeper Confetti\"=true");
             case "mixins.tweaks.dyeblending.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Fast Dye Blending\"=true");
             case "mixins.tweaks.falldamage.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Water Fall Damage\"=true");
+            case "mixins.tweaks.hardcorebuckets.json":
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"Hardcore Buckets\"=true");
             case "mixins.tweaks.itementity.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Item Entity Combination\"=true");
             case "mixins.tweaks.linearxp.json":
