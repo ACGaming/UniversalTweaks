@@ -1,5 +1,6 @@
 package mod.acgaming.universaltweaks.bugfixes;
 
+import java.util.Locale;
 import java.util.Set;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -54,7 +55,7 @@ public class UTMaxHealth
                     break;
                 }
             }
-            strings.add("loginhp" + String.format("%.2f", player.getHealth() / player.getMaxHealth()));
+            strings.add("loginhp" + String.format(Locale.ENGLISH, "%.2f", player.getHealth() / player.getMaxHealth()));
         }
     }
 }
