@@ -40,7 +40,14 @@ public class UTMaxHealth
                 {
                     if (strings.contains("loginhpgo"))
                     {
-                        player.setHealth(player.getMaxHealth() * Float.parseFloat(s.replace("loginhp", "")));
+                        try
+                        {
+                            player.setHealth(player.getMaxHealth() * Float.parseFloat(s.replace("loginhp", "")));
+                        }
+                        catch (NumberFormatException exception)
+                        {
+                            UniversalTweaks.LOGGER.error("Invalid health value: " + s);
+                        }
                         strings.remove("loginhpgo");
                     }
                     strings.remove(s);
