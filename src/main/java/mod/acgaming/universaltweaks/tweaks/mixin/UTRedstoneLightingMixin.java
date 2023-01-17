@@ -35,12 +35,12 @@ public class UTRedstoneLightingMixin
     @Inject(at = @At(value = "HEAD"), method = "getLightValue()I", cancellable = true)
     public void utGetLightValue(CallbackInfoReturnable<Integer> cir)
     {
-        if (UTConfig.tweaks.utRedstoneLightingToggle && isRedstoneComponent(block)) cir.setReturnValue(0);
+        if (UTConfig.TWEAKS_MISC.utRedstoneLightingToggle && isRedstoneComponent(block)) cir.setReturnValue(0);
     }
 
     @Inject(at = @At(value = "HEAD"), method = "getLightValue(Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;)I", cancellable = true, remap = false)
     public void utGetLightValueWorld(IBlockAccess world, BlockPos pos, CallbackInfoReturnable<Integer> cir)
     {
-        if (UTConfig.tweaks.utRedstoneLightingToggle && isRedstoneComponent(block)) cir.setReturnValue(0);
+        if (UTConfig.TWEAKS_MISC.utRedstoneLightingToggle && isRedstoneComponent(block)) cir.setReturnValue(0);
     }
 }

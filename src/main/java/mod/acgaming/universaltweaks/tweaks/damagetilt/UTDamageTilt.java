@@ -17,8 +17,8 @@ public class UTDamageTilt
     @SubscribeEvent
     public static void utDamageTilt(LivingKnockBackEvent event)
     {
-        if (!UTConfig.tweaks.utDamageTiltToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDamageTilt ::: Tilt view");
+        if (!UTConfig.TWEAKS_MISC.utDamageTiltToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDamageTilt ::: Tilt view");
         if (event.getEntityLiving() instanceof EntityPlayer)
         {
             EntityPlayer player = (EntityPlayer) event.getEntityLiving();

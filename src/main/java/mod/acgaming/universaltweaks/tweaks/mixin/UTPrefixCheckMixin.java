@@ -23,8 +23,8 @@ public class UTPrefixCheckMixin
     @Inject(method = "checkPrefix(Ljava/lang/String;Z)Lnet/minecraft/util/ResourceLocation;", at = @At("HEAD"), cancellable = true, remap = false)
     private static void checkPrefix(String name, boolean warnOverrides, CallbackInfoReturnable<ResourceLocation> info)
     {
-        if (!UTConfig.tweaks.utPrefixCheckToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPrefixCheckMixin ::: Check prefix");
+        if (!UTConfig.TWEAKS_PERFORMANCE.utPrefixCheckToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPrefixCheckMixin ::: Check prefix");
         // Get position of the last separator
         final int separator = name.lastIndexOf(':');
         // Resolve the namespace

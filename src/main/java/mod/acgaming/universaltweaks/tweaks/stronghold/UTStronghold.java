@@ -15,8 +15,8 @@ public class UTStronghold
     @SubscribeEvent(priority = EventPriority.NORMAL)
     public void utOnStrongholdGen(InitMapGenEvent event)
     {
-        if (!UTConfig.tweaks.utStrongholdToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTStronghold ::: Init map gen event");
+        if (!UTConfig.TWEAKS_WORLD.utStrongholdToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTStronghold ::: Init map gen event");
         if (event.getType() == InitMapGenEvent.EventType.STRONGHOLD)
         {
             MapGenSafeStronghold safeStronghold = new MapGenSafeStronghold();

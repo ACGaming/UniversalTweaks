@@ -32,8 +32,8 @@ public class UTFasterBackgroundStartupMixin
     @Inject(method = "onItemTooltip", at = @At(value = "HEAD"), cancellable = true)
     private static void utFasterBackgroundStartup(ItemStack itemStack, EntityPlayer entityPlayer, List<String> toolTip, ITooltipFlag flags, CallbackInfoReturnable<ItemTooltipEvent> cir)
     {
-        if (!UTConfig.bugfixes.utFasterBackgroundStartupToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFasterBackgroundStartup ::: On item tooltip");
+        if (!UTConfig.BUGFIXES_MISC.utFasterBackgroundStartupToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFasterBackgroundStartup ::: On item tooltip");
         ItemTooltipEvent event = new ItemTooltipEvent(itemStack, entityPlayer, toolTip, flags);
         if (!FMLClientHandler.instance().isLoading()) MinecraftForge.EVENT_BUS.post(event);
         cir.setReturnValue(event);

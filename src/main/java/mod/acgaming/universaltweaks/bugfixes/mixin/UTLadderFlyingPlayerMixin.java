@@ -19,8 +19,8 @@ public class UTLadderFlyingPlayerMixin extends UTLadderFlyingMixin
     @Override
     public boolean utIsNotClimbing(boolean isSpectator)
     {
-        if (!UTConfig.bugfixes.utLadderFlyingToggle) return isSpectator;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLadderFlyingPlayer ::: Player climb check");
+        if (!UTConfig.BUGFIXES_BLOCKS.utLadderFlyingToggle) return isSpectator;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLadderFlyingPlayer ::: Player climb check");
         return isSpectator || capabilities.isFlying;
     }
 }

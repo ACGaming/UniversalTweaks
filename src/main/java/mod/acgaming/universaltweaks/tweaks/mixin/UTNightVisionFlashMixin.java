@@ -16,6 +16,6 @@ public class UTNightVisionFlashMixin
     @Inject(method = "getNightVisionBrightness", at = @At("HEAD"), cancellable = true)
     public void utNightVisionFlash(EntityLivingBase entitylivingbaseIn, float partialTicks, CallbackInfoReturnable<Float> cir)
     {
-        if (UTConfig.tweaks.utNightVisionFlashToggle && entitylivingbaseIn.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() > 0) cir.setReturnValue(1F);
+        if (UTConfig.TWEAKS_MISC.utNightVisionFlashToggle && entitylivingbaseIn.getActivePotionEffect(MobEffects.NIGHT_VISION).getDuration() > 0) cir.setReturnValue(1F);
     }
 }

@@ -22,8 +22,8 @@ public abstract class UTHuskSpawningMixin extends EntityZombie
     @Inject(method = "getCanSpawnHere", at = @At("RETURN"), cancellable = true)
     public void utHuskSpawning(CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.tweaks.utHuskStraySpawningToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHuskSpawning ::: Check spawn conditions");
+        if (!UTConfig.TWEAKS_ENTITIES.utHuskStraySpawningToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHuskSpawning ::: Check spawn conditions");
         cir.setReturnValue(super.getCanSpawnHere());
     }
 }

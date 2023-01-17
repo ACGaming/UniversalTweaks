@@ -8,3 +8,16 @@ btn.universaltweaks.cheats.enabled=Cheats: ON
 btn.universaltweaks.cheats.disabled=Cheats: OFF
 msg.universaltweaks.cheats.enabled=Cheats are now §aenabled
 msg.universaltweaks.cheats.disabled=Cheats are now §cdisabled
+
+# CONFIG
+cfg.universaltweaks.bugfixes.blocks=Bugfixes: Blocks
+cfg.universaltweaks.bugfixes.entities=Bugfixes: Entities
+cfg.universaltweaks.bugfixes.misc=Bugfixes: Misc
+cfg.universaltweaks.debug=Debug
+cfg.universaltweaks.modintegration=Mod Integration
+cfg.universaltweaks.tweaks.blocks=Tweaks: Blocks
+cfg.universaltweaks.tweaks.entities=Tweaks: Entities
+cfg.universaltweaks.tweaks.items=Tweaks: Items
+cfg.universaltweaks.tweaks.misc=Tweaks: Misc
+cfg.universaltweaks.tweaks.performance=Tweaks: Performance
+cfg.universaltweaks.tweaks.world=Tweaks: World

@@ -14,14 +14,14 @@ public class UTChunkGenLimitMixin
     @ModifyConstant(method = "tick", constant = @Constant(intValue = 49))
     public int utChunkLimit(int constant)
     {
-        if (!UTConfig.tweaks.utChunkGenLimitToggle) return 49;
-        return UTConfig.tweaks.utChunkGenLimitTicks - 1;
+        if (!UTConfig.TWEAKS_WORLD.utChunkGenLimitToggle) return 49;
+        return UTConfig.TWEAKS_WORLD.utChunkGenLimitTicks - 1;
     }
 
     @ModifyConstant(method = "tick", constant = @Constant(longValue = 50000000L))
     public long utTimeLimit(long constant)
     {
-        if (!UTConfig.tweaks.utChunkGenLimitToggle) return 50000000L;
-        return UTConfig.tweaks.utChunkGenLimitTime * 1000000L;
+        if (!UTConfig.TWEAKS_WORLD.utChunkGenLimitToggle) return 50000000L;
+        return UTConfig.TWEAKS_WORLD.utChunkGenLimitTime * 1000000L;
     }
 }

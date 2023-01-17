@@ -24,10 +24,10 @@ public class UTUnloader
     @SubscribeEvent
     public static void utUnloader(TickEvent.ServerTickEvent event)
     {
-        if (!UTConfig.tweaks.utUnloaderToggle || event.phase != TickEvent.Phase.END) return;
+        if (!UTConfig.TWEAKS_WORLD.utUnloaderToggle || event.phase != TickEvent.Phase.END) return;
         tickCount++;
-        if (tickCount < UTConfig.tweaks.utUnloaderInterval) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTUnloader ::: Server tick event");
+        if (tickCount < UTConfig.TWEAKS_WORLD.utUnloaderInterval) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTUnloader ::: Server tick event");
         tickCount = 0;
         Integer[] dims = DimensionManager.getIDs();
         for (Integer id : dims) utHandleDimUnload(id);
@@ -43,7 +43,7 @@ public class UTUnloader
 
         if (dimensionType != null) dimensionName = dimensionType.getName();
 
-        for (String dimConfig : UTConfig.tweaks.utUnloaderBlacklist)
+        for (String dimConfig : UTConfig.TWEAKS_WORLD.utUnloaderBlacklist)
         {
             if (dimensionName.matches(dimConfig) || Integer.toString(id).matches(dimConfig)) return;
         }

@@ -13,6 +13,6 @@ public class UTSugarCaneSizeMixin
     @ModifyConstant(method = "updateTick", constant = @Constant(intValue = 3))
     public int utSugarCaneSize(int constant)
     {
-        return UTConfig.tweaks.utSugarCaneSize;
+        return UTConfig.TWEAKS_BLOCKS.utSugarCaneSize;
     }
 }

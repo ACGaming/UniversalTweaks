@@ -21,8 +21,8 @@ public class UTHotSpringWaterMixin
     @Inject(method = "onEntityCollision", at = @At(value = "HEAD"), cancellable = true)
     public void utHotSpringWater(World world, BlockPos pos, IBlockState state, Entity entity, CallbackInfo ci)
     {
-        if (!UTConfig.mods.utBoPHotSpringWaterToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHotSpringWater ::: Check regeneration effect");
+        if (!UTConfig.MOD_INTEGRATION.utBoPHotSpringWaterToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHotSpringWater ::: Check regeneration effect");
         if (entity instanceof EntityLivingBase && ((EntityLivingBase) entity).getActivePotionEffect(MobEffects.REGENERATION) != null) ci.cancel();
     }
 }

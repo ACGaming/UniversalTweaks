@@ -26,7 +26,7 @@ public class UTToggleCheats
     @SubscribeEvent
     public static void utToggleCheatsInitGUI(GuiScreenEvent.InitGuiEvent event)
     {
-        if (!UTConfig.tweaks.utToggleCheatsToggle || !isEscMenuSP(event.getGui())) return;
+        if (!UTConfig.TWEAKS_MISC.utToggleCheatsToggle || !isEscMenuSP(event.getGui())) return;
         GuiScreen gui = event.getGui();
         Optional<GuiButton> optionalButton = getButton(event.getButtonList(), 7);
         if (!optionalButton.isPresent()) return;
@@ -40,7 +40,7 @@ public class UTToggleCheats
     @SubscribeEvent
     public static void utToggleCheatsActionPerformed(GuiScreenEvent.ActionPerformedEvent.Post event)
     {
-        if (!UTConfig.tweaks.utToggleCheatsToggle || !isEscMenuSP(event.getGui())) return;
+        if (!UTConfig.TWEAKS_MISC.utToggleCheatsToggle || !isEscMenuSP(event.getGui())) return;
         if (event.getButton().id == 101)
         {
             toggleCheats(!areCheatsEnabled());

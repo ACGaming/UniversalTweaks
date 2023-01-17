@@ -20,8 +20,8 @@ public class UTBetterHarvest
     @SubscribeEvent
     public static void utBetterHarvest(BlockEvent.BreakEvent event)
     {
-        if (!UTConfig.tweaks.utBetterHarvestToggle || event.getPlayer().isSneaking()) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterHarvest ::: Block break event");
+        if (!UTConfig.TWEAKS_BLOCKS.utBetterHarvestToggle || event.getPlayer().isSneaking()) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterHarvest ::: Block break event");
         IBlockState blockState = event.getState();
         Block block = blockState.getBlock();
         World world = event.getWorld();

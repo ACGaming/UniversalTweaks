@@ -26,8 +26,8 @@ public abstract class UTDeathTimeMixin extends Entity
     @ModifyExpressionValue(method = "onDeathUpdate", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/EntityLivingBase;deathTime:I", ordinal = 1, opcode = Opcodes.GETFIELD))
     public int UTModifyDeathTimeCheck(int deathTime)
     {
-        if (!UTConfig.bugfixes.utDeathTimeToggle || this.isPlayer()) return deathTime;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDeathTime ::: Check death time");
+        if (!UTConfig.BUGFIXES_ENTITIES.utDeathTimeToggle || this.isPlayer()) return deathTime;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDeathTime ::: Check death time");
         return Math.min(deathTime, 20);
     }
 

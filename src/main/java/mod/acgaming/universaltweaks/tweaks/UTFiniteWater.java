@@ -20,8 +20,8 @@ public class UTFiniteWater
     @SubscribeEvent
     public static void utFiniteWater(BlockEvent.CreateFluidSourceEvent event)
     {
-        if (!UTConfig.tweaks.utFiniteWaterToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFiniteWater ::: Create fluid source event");
+        if (!UTConfig.TWEAKS_BLOCKS.utFiniteWaterToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFiniteWater ::: Create fluid source event");
         World world = event.getWorld();
         BlockPos pos = event.getPos();
         Biome biome = world.getBiomeForCoordsBody(pos);

@@ -21,9 +21,9 @@ public abstract class UTFrustumCullingMixin
     @Redirect(method = "setupTerrain", at = @At(value = "INVOKE", target = "Ljava/util/Set;size()I", remap = false, ordinal = 0), slice = @Slice(from = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/RenderGlobal;getVisibleFacings(Lnet/minecraft/util/math/BlockPos;)Ljava/util/Set;", ordinal = 0), to = @At(value = "INVOKE", target = "Lnet/minecraft/util/EnumFacing;getFacingFromVector(FFF)Lnet/minecraft/util/EnumFacing;", ordinal = 0)))
     public int utOverrideOpposingSideCheck(Set<EnumFacing> facingSetIn)
     {
-        if (UTConfig.bugfixes.utFrustumCullingToggle)
+        if (UTConfig.BUGFIXES_MISC.utFrustumCullingToggle)
         {
-            if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFrustumCullingMixin ::: Visible facings set size");
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFrustumCullingMixin ::: Visible facings set size");
             return 0;
         }
         else

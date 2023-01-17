@@ -13,6 +13,6 @@ public class UTBetterPlacementMixin
     @ModifyConstant(method = "rightClickMouse", constant = @Constant(intValue = 4))
     public int utBPClickDelay(int constant)
     {
-        return UTConfig.tweaks.utBPClickDelay;
+        return UTConfig.TWEAKS_BLOCKS.utBPClickDelay;
     }
 }

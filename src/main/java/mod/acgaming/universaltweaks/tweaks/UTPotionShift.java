@@ -14,8 +14,8 @@ public class UTPotionShift
     @SubscribeEvent
     public static void utPotionShift(GuiScreenEvent.PotionShiftEvent event)
     {
-        if (!UTConfig.tweaks.utPotionShiftToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPotionShift ::: Potion shift event");
+        if (!UTConfig.TWEAKS_MISC.utPotionShiftToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPotionShift ::: Potion shift event");
         event.setCanceled(true);
     }
 }

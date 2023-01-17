@@ -48,10 +48,10 @@ public class UTPistonTileMixin extends TileEntity
         this.pistonState = Block.getBlockById(compound.getInteger("blockId")).getStateFromMeta(compound.getInteger("blockData"));
         this.pistonFacing = EnumFacing.byIndex(compound.getInteger("facing"));
         this.progress = compound.getFloat("progress");
-        this.lastProgress = UTConfig.bugfixes.utPistonTileToggle ? compound.getFloat("lastProgress") : this.progress;
+        this.lastProgress = UTConfig.BUGFIXES_BLOCKS.utPistonTileToggle ? compound.getFloat("lastProgress") : this.progress;
         this.extending = compound.getBoolean("extending");
         this.shouldHeadBeRendered = compound.getBoolean("source");
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPistonTile ::: Read from NBT");
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPistonTile ::: Read from NBT");
     }
 
     /**
@@ -66,10 +66,10 @@ public class UTPistonTileMixin extends TileEntity
         compound.setInteger("blockData", this.pistonState.getBlock().getMetaFromState(this.pistonState));
         compound.setInteger("facing", this.pistonFacing.getIndex());
         compound.setFloat("progress", this.progress);
-        if (UTConfig.bugfixes.utPistonTileToggle) compound.setFloat("lastProgress", this.lastProgress);
+        if (UTConfig.BUGFIXES_BLOCKS.utPistonTileToggle) compound.setFloat("lastProgress", this.lastProgress);
         compound.setBoolean("extending", this.extending);
         compound.setBoolean("source", this.shouldHeadBeRendered);
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPistonTile ::: Write to NBT");
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPistonTile ::: Write to NBT");
         return compound;
     }
 }

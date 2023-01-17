@@ -23,8 +23,8 @@ public class UTSaddledWanderingMixin
     @Inject(method = "shouldExecute", at = @At("HEAD"), cancellable = true)
     public void utSaddledWandering(CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.tweaks.utSaddledWanderingToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSaddledWandering ::: Should execute check");
+        if (!UTConfig.TWEAKS_ENTITIES.utSaddledWanderingToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSaddledWandering ::: Should execute check");
         if (entity instanceof AbstractHorse && ((AbstractHorse) entity).isHorseSaddled()) cir.setReturnValue(false);
     }
 }

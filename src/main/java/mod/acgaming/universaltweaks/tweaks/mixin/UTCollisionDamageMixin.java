@@ -28,11 +28,11 @@ public abstract class UTCollisionDamageMixin extends Entity
     @Inject(method = "onUpdate", at = @At("TAIL"))
     public void utCollisionDamage(CallbackInfo ci)
     {
-        if (!UTConfig.tweaks.utCollisionDamageToggle) return;
+        if (!UTConfig.TWEAKS_ENTITIES.utCollisionDamageToggle) return;
         if (!this.world.isRemote && this.collidedHorizontally && !this.isElytraFlying())
         {
-            if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCollisionDamage ::: Horizontal collision");
-            float damage = (float) (Math.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ) * UTConfig.tweaks.utCollisionDamageFactor - 3);
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCollisionDamage ::: Horizontal collision");
+            float damage = (float) (Math.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ) * UTConfig.TWEAKS_ENTITIES.utCollisionDamageFactor - 3);
             if (damage > 0)
             {
                 this.playSound(this.getFallSound((int) damage), 1, 1);

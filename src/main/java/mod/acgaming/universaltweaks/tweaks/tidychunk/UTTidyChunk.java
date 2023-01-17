@@ -26,8 +26,8 @@ public class UTTidyChunk
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utOnWorldUnload(WorldEvent.Unload event)
     {
-        if (!UTConfig.tweaks.utTidyChunkToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTTidyChunk ::: World unload event");
+        if (!UTConfig.TWEAKS_WORLD.utTidyChunkToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTTidyChunk ::: World unload event");
         World world = event.getWorld();
         if (world.isRemote) return;
         getWorldContext(world).searchAndDestroy(world);
@@ -37,8 +37,8 @@ public class UTTidyChunk
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utOnWorldTick(TickEvent.WorldTickEvent event)
     {
-        if (!UTConfig.tweaks.utTidyChunkToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTTidyChunk ::: World tick event");
+        if (!UTConfig.TWEAKS_WORLD.utTidyChunkToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTTidyChunk ::: World tick event");
         if (event.side != Side.SERVER || event.phase != Phase.END) return;
         UTWorldContext ctx = getWorldContext(event.world);
         ctx.searchAndDestroy(event.world);
@@ -48,8 +48,8 @@ public class UTTidyChunk
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utOnChunkPopulate(PopulateChunkEvent.Pre event)
     {
-        if (!UTConfig.tweaks.utTidyChunkToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTTidyChunk ::: Populate chunk event");
+        if (!UTConfig.TWEAKS_WORLD.utTidyChunkToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTTidyChunk ::: Populate chunk event");
         if (event.getWorld().isRemote) return;
         UTWorldContext ctx = getWorldContext(event.getWorld());
         ctx.add(new ChunkPos(event.getChunkX(), event.getChunkZ()), event.getWorld());
@@ -58,8 +58,8 @@ public class UTTidyChunk
     @SubscribeEvent
     public static void utOnEntityJoin(EntityJoinWorldEvent event)
     {
-        if (!UTConfig.tweaks.utTidyChunkToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTTidyChunk ::: Entity join event");
+        if (!UTConfig.TWEAKS_WORLD.utTidyChunkToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTTidyChunk ::: Entity join event");
         Entity entity = event.getEntity();
         World world = entity.getEntityWorld();
         if (world.isRemote || !UTWorldContext.isTargetEntity(entity)) return;

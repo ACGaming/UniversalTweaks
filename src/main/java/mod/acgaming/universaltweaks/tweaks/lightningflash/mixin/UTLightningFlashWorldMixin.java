@@ -14,8 +14,8 @@ public class UTLightningFlashWorldMixin
     @Redirect(method = "getSkyColorBody", at = @At(value = "FIELD", target = "Lnet/minecraft/world/World;lastLightningBolt:I"))
     public int utLightningFlash(World instance)
     {
-        if (!UTConfig.tweaks.utLightningFlashToggle) return instance.getLastLightningBolt();
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLightningFlashWorld ::: Update sky color");
+        if (!UTConfig.TWEAKS_MISC.utLightningFlashToggle) return instance.getLastLightningBolt();
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLightningFlashWorld ::: Update sky color");
         return 0;
     }
 }

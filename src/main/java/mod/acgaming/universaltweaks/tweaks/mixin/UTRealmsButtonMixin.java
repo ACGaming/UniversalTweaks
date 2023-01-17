@@ -23,8 +23,8 @@ public abstract class UTRealmsButtonMixin extends GuiScreen
     @Inject(method = "addSingleplayerMultiplayerButtons", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiMainMenu;addButton(Lnet/minecraft/client/gui/GuiButton;)Lnet/minecraft/client/gui/GuiButton;"), cancellable = true)
     public void utRemoveRealmsButton(int p_73969_1_, int p_73969_2_, CallbackInfo ci)
     {
-        if (!UTConfig.tweaks.utRealmsButtonToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRealmsButton ::: Add buttons");
+        if (!UTConfig.TWEAKS_MISC.utRealmsButtonToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRealmsButton ::: Add buttons");
         buttonList.add(modButton = new GuiButton(6, this.width / 2 - 100, p_73969_1_ + p_73969_2_ * 2, I18n.format("fml.menu.mods")));
         ci.cancel();
     }

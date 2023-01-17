@@ -39,8 +39,8 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
     @Inject(method = "explode", at = @At("HEAD"), cancellable = true)
     public void utCreeperConfetti(CallbackInfo ci)
     {
-        if (!UTConfig.tweaks.utCreeperConfettiToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCreeperConfetti ::: Explode");
+        if (!UTConfig.TWEAKS_ENTITIES.utCreeperConfettiToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCreeperConfetti ::: Explode");
         if (this.world.isRemote) spawnParticles(this.getEntityWorld(), this.getPosition(), this.getPowered());
         else
         {

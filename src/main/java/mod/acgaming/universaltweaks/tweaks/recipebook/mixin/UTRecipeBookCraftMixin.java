@@ -15,8 +15,8 @@ public class UTRecipeBookCraftMixin
     @Inject(method = "initGui", at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z"), cancellable = true)
     public void utHideRecipeBook(CallbackInfo ci)
     {
-        if (!UTConfig.tweaks.utRecipeBookToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookCraftMixin ::: Initialize GUI");
+        if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookCraftMixin ::: Initialize GUI");
         ci.cancel();
     }
 }

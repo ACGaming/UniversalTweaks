@@ -28,8 +28,8 @@ public abstract class UTFaucetMixin extends TileEntity
     @Inject(method = "doTransfer", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/fluids/capability/IFluidHandler;fill(Lnet/minecraftforge/fluids/FluidStack;Z)I", shift = At.Shift.BEFORE), cancellable = true)
     public void utFaucetGaseousFluids(CallbackInfo ci)
     {
-        if (!UTConfig.mods.utTConGaseousFluidsToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFaucet ::: Check fluid type");
+        if (!UTConfig.MOD_INTEGRATION.utTConGaseousFluidsToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFaucet ::: Check fluid type");
         FluidStack fluidStack = getFluidHandler(pos.offset(direction), direction.getOpposite()).drain(TRANSACTION_AMOUNT, false);
         if (fluidStack != null && fluidStack.getFluid().isGaseous())
         {

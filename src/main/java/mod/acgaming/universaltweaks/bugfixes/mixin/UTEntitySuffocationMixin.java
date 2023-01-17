@@ -43,7 +43,7 @@ public abstract class UTEntitySuffocationMixin
     @Inject(method = "setSize", at = @At("HEAD"), cancellable = true)
     public void utOnSetSize(float width, float height, CallbackInfo ci)
     {
-        if (!UTConfig.bugfixes.utEntitySuffocationToggle) return;
+        if (!UTConfig.BUGFIXES_ENTITIES.utEntitySuffocationToggle) return;
         //if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntitySuffocationMixin ::: Set entity size");
         if (width != this.width || height != this.height)
         {

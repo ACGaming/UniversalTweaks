@@ -35,9 +35,9 @@ public abstract class UTComparatorTimingMixin extends BlockRedstoneDiode
     @Redirect(method = "calculateOutput", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockRedstoneComparator;calculateInputStrength(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)I", ordinal = 1))
     public int utFixCompareModeOutput(BlockRedstoneComparator that, World worldIn, BlockPos posIn, IBlockState stateIn)
     {
-        if (UTConfig.bugfixes.utComparatorTimingToggle)
+        if (UTConfig.BUGFIXES_BLOCKS.utComparatorTimingToggle)
         {
-            if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTComparatorTimingMixin ::: Calculate output");
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTComparatorTimingMixin ::: Calculate output");
             int inputStrength = this.calculateInputStrength(worldIn, posIn, stateIn);
             if (this.getPowerOnSides(worldIn, posIn, stateIn) > inputStrength) return 0;
             else return inputStrength;
@@ -48,9 +48,9 @@ public abstract class UTComparatorTimingMixin extends BlockRedstoneDiode
     @Inject(method = "shouldBePowered", at = @At("HEAD"), cancellable = true)
     public void utBetterShouldBePowered(World worldIn, BlockPos posIn, IBlockState stateIn, CallbackInfoReturnable<Boolean> cir)
     {
-        if (UTConfig.bugfixes.utComparatorTimingToggle)
+        if (UTConfig.BUGFIXES_BLOCKS.utComparatorTimingToggle)
         {
-            if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTComparatorTimingMixin ::: Should be powered check");
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTComparatorTimingMixin ::: Should be powered check");
             cir.setReturnValue(false);
             int inputStrength = this.calculateInputStrength(worldIn, posIn, stateIn);
             if (inputStrength > 0)

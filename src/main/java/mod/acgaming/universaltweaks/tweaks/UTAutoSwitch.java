@@ -21,8 +21,8 @@ public class UTAutoSwitch
     @SubscribeEvent
     public static void utAutoSwitch(PlayerInteractEvent.LeftClickBlock event)
     {
-        if (!UTConfig.tweaks.utAutoSwitchToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAutoSwitch ::: Left click block event");
+        if (!UTConfig.TWEAKS_ITEMS.utAutoSwitchToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAutoSwitch ::: Left click block event");
         World world = event.getWorld();
         BlockPos blockPos = event.getPos();
         IBlockState blockState = world.getBlockState(blockPos);

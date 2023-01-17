@@ -17,17 +17,17 @@ public class UTEntityNaN
     @SubscribeEvent
     public static void utEntityNaN(LivingEvent.LivingUpdateEvent event)
     {
-        if (UTConfig.bugfixes.utEntityNaNToggle)
+        if (UTConfig.BUGFIXES_ENTITIES.utEntityNaNToggle)
         {
             EntityLivingBase entity = event.getEntityLiving();
             if (Float.isNaN(entity.getHealth()))
             {
-                if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityNaN ::: Fix entity health");
+                if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityNaN ::: Fix entity health");
                 entity.setHealth(entity.getMaxHealth());
             }
             if (Float.isNaN(entity.getAbsorptionAmount()))
             {
-                if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityNaN ::: Fix entity absorption");
+                if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityNaN ::: Fix entity absorption");
                 entity.setAbsorptionAmount(0);
             }
         }
@@ -36,9 +36,9 @@ public class UTEntityNaN
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void utDamageNaN(LivingHurtEvent event)
     {
-        if (UTConfig.bugfixes.utEntityNaNToggle && Float.isNaN(event.getAmount()))
+        if (UTConfig.BUGFIXES_ENTITIES.utEntityNaNToggle && Float.isNaN(event.getAmount()))
         {
-            if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityNaN ::: Deny invalid damage");
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityNaN ::: Deny invalid damage");
             event.setResult(Event.Result.DENY);
             event.setCanceled(true);
         }

@@ -40,7 +40,7 @@ public class UTDamageTiltMessage implements IMessage
         @SideOnly(Side.CLIENT)
         public static void fromMessage(UTDamageTiltMessage message)
         {
-            if (!UTConfig.tweaks.utDamageTiltToggle) return;
+            if (!UTConfig.TWEAKS_MISC.utDamageTiltToggle) return;
             Minecraft.getMinecraft().player.attackedAtYaw = message.attackedAtYaw;
         }
 

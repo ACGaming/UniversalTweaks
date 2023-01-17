@@ -36,7 +36,7 @@ public class UTBlockOverlay
     @SuppressWarnings("deprecation")
     public static void renderNearbyBlocks(float partialTicks)
     {
-        if (!UTConfig.bugfixes.utBlockOverlayToggle) return;
+        if (!UTConfig.BUGFIXES_BLOCKS.utBlockOverlayToggle) return;
         Minecraft mc = Minecraft.getMinecraft();
         EntityPlayerSP player = mc.player;
         if (player.isPlayerSleeping() || player.isSpectator()) return;

@@ -29,8 +29,8 @@ public abstract class UTEntityProjectileBaseMixin extends EntityArrow
     @Inject(method = "onUpdate", at = @At(value = "HEAD"))
     public void utTConProjectileLifetime(CallbackInfo ci)
     {
-        if (!UTConfig.mods.utTConProjectileToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityProjectileBase ::: On update");
+        if (!UTConfig.MOD_INTEGRATION.utTConProjectileToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityProjectileBase ::: On update");
         if (!this.getEntityWorld().isRemote
             && this.inGround
             && this.arrowShake <= 0

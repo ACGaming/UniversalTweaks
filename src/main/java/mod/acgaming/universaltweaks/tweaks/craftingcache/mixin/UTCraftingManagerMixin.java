@@ -27,8 +27,8 @@ public class UTCraftingManagerMixin
     @Inject(method = "findMatchingRecipe", at = @At("HEAD"), cancellable = true)
     private static void utFindMatchingRecipe(InventoryCrafting craftMatrix, World worldIn, CallbackInfoReturnable<IRecipe> cir)
     {
-        if (!UTConfig.tweaks.utCraftingCacheToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCraftingManager ::: Find matching recipe");
+        if (!UTConfig.TWEAKS_PERFORMANCE.utCraftingCacheToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCraftingManager ::: Find matching recipe");
         cir.setReturnValue(UTCraftingCache.findMatchingRecipe(craftMatrix, worldIn));
     }
 
@@ -40,8 +40,8 @@ public class UTCraftingManagerMixin
     @Inject(method = "getRemainingItems", at = @At("HEAD"), cancellable = true)
     private static void utGetRemainingItems(InventoryCrafting craftMatrix, World worldIn, CallbackInfoReturnable<NonNullList<ItemStack>> cir)
     {
-        if (!UTConfig.tweaks.utCraftingCacheToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCraftingManager ::: Get remaining items");
+        if (!UTConfig.TWEAKS_PERFORMANCE.utCraftingCacheToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCraftingManager ::: Get remaining items");
         IRecipe iRecipe = UTCraftingCache.findMatchingRecipe(craftMatrix, worldIn);
         if (iRecipe != null) cir.setReturnValue(iRecipe.getRemainingItems(craftMatrix));
         NonNullList<ItemStack> nonnulllist = NonNullList.withSize(craftMatrix.getSizeInventory(), ItemStack.EMPTY);

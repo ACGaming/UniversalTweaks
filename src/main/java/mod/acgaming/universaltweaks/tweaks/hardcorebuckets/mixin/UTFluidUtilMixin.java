@@ -21,8 +21,8 @@ public class UTFluidUtilMixin
     @Inject(method = "tryPlaceFluid(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/capability/IFluidHandler;Lnet/minecraftforge/fluids/FluidStack;)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;playSound(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/SoundEvent;Lnet/minecraft/util/SoundCategory;FF)V"))
     private static void utFluidUtil(EntityPlayer player, World world, BlockPos pos, IFluidHandler fluidSource, FluidStack resource, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.tweaks.utHardcoreBucketsToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFluidUtil ::: Replace liquid");
+        if (!UTConfig.TWEAKS_BLOCKS.utHardcoreBucketsToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFluidUtil ::: Replace liquid");
         try
         {
             world.setBlockState(pos, resource.getFluid().getBlock().getDefaultState().withProperty(BlockLiquid.LEVEL, 1));

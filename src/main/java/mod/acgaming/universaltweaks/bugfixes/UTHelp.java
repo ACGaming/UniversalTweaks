@@ -63,7 +63,7 @@ public class UTHelp
 
     public static void onServerStarting(FMLServerStartingEvent event)
     {
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHelp ::: Server starting event");
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHelp ::: Server starting event");
         event.registerServerCommand(new CommandHelp()
         {
             @SuppressWarnings("ConstantConditions")
@@ -101,7 +101,7 @@ public class UTHelp
 
     public static void onServerStarted(FMLServerStartedEvent event)
     {
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHelp ::: Server started event");
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHelp ::: Server started event");
         Collection<ICommand> commands = FMLCommonHandler.instance().getMinecraftServerInstance().getCommandManager().getCommands().values();
         for (final ICommand command : commands)
         {

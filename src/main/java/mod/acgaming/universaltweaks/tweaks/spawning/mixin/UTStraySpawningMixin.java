@@ -22,8 +22,8 @@ public abstract class UTStraySpawningMixin extends AbstractSkeleton
     @Inject(method = "getCanSpawnHere", at = @At("RETURN"), cancellable = true)
     public void utStraySpawning(CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.tweaks.utHuskStraySpawningToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTStraySpawning ::: Check spawn conditions");
+        if (!UTConfig.TWEAKS_ENTITIES.utHuskStraySpawningToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTStraySpawning ::: Check spawn conditions");
         cir.setReturnValue(super.getCanSpawnHere());
     }
 }

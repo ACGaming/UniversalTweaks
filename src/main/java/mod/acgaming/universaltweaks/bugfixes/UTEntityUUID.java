@@ -21,7 +21,7 @@ public class UTEntityUUID
     @SubscribeEvent
     public static void utFixDuplicateUUID(EntityJoinWorldEvent event)
     {
-        if (UTConfig.bugfixes.utEntityUUIDToggle && event.getWorld() instanceof WorldServer)
+        if (UTConfig.BUGFIXES_ENTITIES.utEntityUUIDToggle && event.getWorld() instanceof WorldServer)
         {
             Entity entity = event.getEntity();
             if (entity instanceof EntityPlayer) return;

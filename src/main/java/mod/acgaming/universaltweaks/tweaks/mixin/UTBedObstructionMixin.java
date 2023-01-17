@@ -22,8 +22,8 @@ public class UTBedObstructionMixin
     @Inject(at = @At("HEAD"), method = "getBedSpawnLocation(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Z)Lnet/minecraft/util/math/BlockPos;", cancellable = true)
     private static void utBedSpawnLocation(World worldIn, BlockPos bedLocation, boolean forceSpawn, CallbackInfoReturnable<BlockPos> callback)
     {
-        if (!UTConfig.tweaks.utBedObstructionToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBedObstruction ::: Get bed spawn location");
+        if (!UTConfig.TWEAKS_BLOCKS.utBedObstructionToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBedObstruction ::: Get bed spawn location");
         IBlockState state = worldIn.getBlockState(bedLocation);
         Block block = state.getBlock();
         if (!block.isBed(state, worldIn, bedLocation, null))

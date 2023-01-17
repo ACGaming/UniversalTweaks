@@ -22,8 +22,8 @@ public class UTOffhand
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void utOffhandBlock(PlayerInteractEvent.RightClickBlock event)
     {
-        if (!UTConfig.tweaks.utOffhandToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTOffhand ::: Right click block event");
+        if (!UTConfig.TWEAKS_MISC.utOffhandToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTOffhand ::: Right click block event");
         EntityPlayer player = event.getEntityPlayer();
         Item heldItemMainhand = player.getHeldItemMainhand().getItem();
         Item heldItemOffhand = player.getHeldItemOffhand().getItem();
@@ -37,8 +37,8 @@ public class UTOffhand
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void utOffhandEntity(PlayerInteractEvent.EntityInteract event)
     {
-        if (!UTConfig.tweaks.utOffhandToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTOffhand ::: Right click entity event");
+        if (!UTConfig.TWEAKS_MISC.utOffhandToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTOffhand ::: Right click entity event");
         EntityPlayer player = event.getEntityPlayer();
         Item heldItemMainhand = player.getHeldItemMainhand().getItem();
         Item heldItemOffhand = player.getHeldItemOffhand().getItem();

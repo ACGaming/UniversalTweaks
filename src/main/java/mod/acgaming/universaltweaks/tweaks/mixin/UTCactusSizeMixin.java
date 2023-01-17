@@ -13,6 +13,6 @@ public class UTCactusSizeMixin
     @ModifyConstant(method = "updateTick", constant = @Constant(intValue = 3))
     public int utCactusSize(int constant)
     {
-        return UTConfig.tweaks.utCactusSize;
+        return UTConfig.TWEAKS_BLOCKS.utCactusSize;
     }
 }

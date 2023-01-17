@@ -20,6 +20,6 @@ public class UTUncapFPSMixin
     @Inject(method = "getLimitFramerate", at = @At("HEAD"), cancellable = true)
     public void utUncapFPS(CallbackInfoReturnable<Integer> info)
     {
-        if (UTConfig.tweaks.utUncapFPSToggle) info.setReturnValue(this.gameSettings.limitFramerate);
+        if (UTConfig.TWEAKS_MISC.utUncapFPSToggle) info.setReturnValue(this.gameSettings.limitFramerate);
     }
 }

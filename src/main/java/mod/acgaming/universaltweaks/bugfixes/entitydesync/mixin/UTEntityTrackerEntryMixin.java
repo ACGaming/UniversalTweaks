@@ -20,7 +20,7 @@ public class UTEntityTrackerEntryMixin
     @Inject(method = "<init>", at = @At("RETURN"))
     public void utInit(Entity entityIn, int rangeIn, int maxRangeIn, int updateFrequencyIn, boolean sendVelocityUpdatesIn, CallbackInfo info)
     {
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityMixin ::: Entity tracker init");
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityMixin ::: Entity tracker init");
         entityIn.prevPosX = entityIn.posX;
         entityIn.prevPosY = entityIn.posY;
         entityIn.prevPosZ = entityIn.posZ;

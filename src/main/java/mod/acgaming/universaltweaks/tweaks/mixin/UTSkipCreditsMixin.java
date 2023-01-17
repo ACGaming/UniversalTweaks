@@ -23,8 +23,8 @@ public class UTSkipCreditsMixin
     @Inject(method = "handleChangeGameState", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;floor(F)I", shift = At.Shift.AFTER), cancellable = true)
     public void utSkipCredits(SPacketChangeGameState packetIn, CallbackInfo ci)
     {
-        if (!UTConfig.tweaks.utSkipCreditsToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSkipCredits ::: Handle change game state");
+        if (!UTConfig.TWEAKS_MISC.utSkipCreditsToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSkipCredits ::: Handle change game state");
         if (packetIn.getGameState() == 4 && MathHelper.floor(packetIn.getValue() + 0.5F) == 1) this.client.player.connection.sendPacket(new CPacketClientStatus(CPacketClientStatus.State.PERFORM_RESPAWN));
         ci.cancel();
     }

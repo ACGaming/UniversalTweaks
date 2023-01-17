@@ -21,8 +21,8 @@ public class UTObsoleteModsScreenHandler
         if (shouldDisplay
             && event.getGui() instanceof GuiMainMenu
             && UTObsoleteModsHandler.obsoleteModsMessage().size() > 5
-            && UTConfig.debug.utObsoleteModsToggle
-            && !UTConfig.debug.utBypassIncompatibilityToggle)
+            && UTConfig.DEBUG.utObsoleteModsToggle
+            && !UTConfig.DEBUG.utBypassIncompatibilityToggle)
         {
             event.setGui(new UTObsoleteModsScreen(UTObsoleteModsHandler.obsoleteModsMessage()));
             shouldDisplay = false;

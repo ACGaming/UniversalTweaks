@@ -59,8 +59,8 @@ public class UTFenceWallJump
     @SubscribeEvent
     public static void utOnJump(LivingEvent.LivingJumpEvent event)
     {
-        if (!UTConfig.tweaks.utFenceWallJumpToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFenceWallJump ::: Jump event");
+        if (!UTConfig.TWEAKS_BLOCKS.utFenceWallJumpToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFenceWallJump ::: Jump event");
         if (event.getEntity() instanceof EntityPlayerSP)
         {
             EntityPlayerSP player = (EntityPlayerSP) event.getEntity();

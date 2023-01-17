@@ -20,9 +20,9 @@ public abstract class UTItemFrameVoidMixin
     @Inject(method = "processInitialInteract", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/item/EntityItemFrame;setDisplayedItem(Lnet/minecraft/item/ItemStack;)V"), cancellable = true)
     public void utItemFrameVoid(EntityPlayer player, EnumHand hand, CallbackInfoReturnable<Boolean> cir)
     {
-        if (UTConfig.bugfixes.utItemFrameVoidToggle && ((EntityItemFrame) (Object) this).isDead)
+        if (UTConfig.BUGFIXES_BLOCKS.utItemFrameVoidToggle && ((EntityItemFrame) (Object) this).isDead)
         {
-            if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTItemFrameVoid ::: Process initial interact");
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTItemFrameVoid ::: Process initial interact");
             cir.setReturnValue(false);
         }
     }

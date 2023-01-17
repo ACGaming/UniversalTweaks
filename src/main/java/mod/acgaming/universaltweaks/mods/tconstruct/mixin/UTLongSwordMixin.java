@@ -22,8 +22,8 @@ public class UTLongSwordMixin
     @Inject(method = "onItemRightClick", at = @At(value = "HEAD"), cancellable = true)
     public void utTConLongSwordOffhand(World worldIn, EntityPlayer playerIn, EnumHand hand, CallbackInfoReturnable<ActionResult<ItemStack>> cir)
     {
-        if (!UTConfig.mods.utTConShurikenToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLongSword ::: On item right click");
+        if (!UTConfig.MOD_INTEGRATION.utTConShurikenToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLongSword ::: On item right click");
         if (!playerIn.getHeldItemOffhand().isEmpty() && (playerIn.getHeldItemOffhand().getItem() == TinkerRangedWeapons.shuriken))
         {
             cir.setReturnValue(ActionResult.newResult(EnumActionResult.PASS, playerIn.getHeldItem(hand)));

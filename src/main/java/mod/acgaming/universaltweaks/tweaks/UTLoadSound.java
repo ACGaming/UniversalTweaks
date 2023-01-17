@@ -36,7 +36,7 @@ public class UTLoadSound
         soundListWorld.clear();
         pitchListMC.clear();
         pitchListWorld.clear();
-        for (String sound : UTConfig.tweaks.utLoadSoundMC)
+        for (String sound : UTConfig.TWEAKS_MISC.utLoadSoundMC)
         {
             String[] soundEntries = sound.split(";");
             SoundEvent soundEvent = SoundEvent.REGISTRY.getObject(new ResourceLocation(soundEntries[0]));
@@ -51,7 +51,7 @@ public class UTLoadSound
                 UniversalTweaks.LOGGER.warn("Unable to find sound: {}", new ResourceLocation(soundEntries[0]));
             }
         }
-        for (String sound : UTConfig.tweaks.utLoadSoundWorld)
+        for (String sound : UTConfig.TWEAKS_MISC.utLoadSoundWorld)
         {
             String[] soundEntries = sound.split(";");
             SoundEvent soundEvent = SoundEvent.REGISTRY.getObject(new ResourceLocation(soundEntries[0]));
@@ -91,7 +91,7 @@ public class UTLoadSound
     {
         if (!played && event.getGui() instanceof GuiMainMenu)
         {
-            if (UTConfig.tweaks.utLoadSoundMode == 1 || UTConfig.tweaks.utLoadSoundMode == 3) playRandomSoundMC();
+            if (UTConfig.TWEAKS_MISC.utLoadSoundMode == 1 || UTConfig.TWEAKS_MISC.utLoadSoundMode == 3) playRandomSoundMC();
             played = true;
         }
     }
@@ -101,7 +101,7 @@ public class UTLoadSound
     {
         if (event.getEntity() instanceof EntityPlayerSP)
         {
-            if (UTConfig.tweaks.utLoadSoundMode == 2 || UTConfig.tweaks.utLoadSoundMode == 3) playRandomSoundWorld();
+            if (UTConfig.TWEAKS_MISC.utLoadSoundMode == 2 || UTConfig.TWEAKS_MISC.utLoadSoundMode == 3) playRandomSoundWorld();
         }
     }
 }

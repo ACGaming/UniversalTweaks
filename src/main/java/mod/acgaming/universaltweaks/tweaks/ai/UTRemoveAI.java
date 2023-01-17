@@ -21,8 +21,8 @@ public class UTRemoveAI
     @SubscribeEvent
     public static void utRemoveAI(EntityJoinWorldEvent event)
     {
-        if (!UTConfig.tweaks.utAIRemovalToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRemoveAI ::: Entity join world event");
+        if (!UTConfig.TWEAKS_ENTITIES.utAIRemovalToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRemoveAI ::: Entity join world event");
         Entity entity = event.getEntity();
         if (entity instanceof EntityLiving)
         {

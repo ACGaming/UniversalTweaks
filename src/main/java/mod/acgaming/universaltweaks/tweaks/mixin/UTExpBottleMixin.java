@@ -24,9 +24,9 @@ public abstract class UTExpBottleMixin extends EntityThrowable
     @Inject(method = "onImpact", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), cancellable = true)
     public void utExpBottle(RayTraceResult result, CallbackInfo ci)
     {
-        if (UTConfig.tweaks.utXPBottleAmount < 0) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTExpBottle ::: On impact");
-        int xp = UTConfig.tweaks.utXPBottleAmount;
+        if (UTConfig.TWEAKS_ITEMS.utXPBottleAmount < 0) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTExpBottle ::: On impact");
+        int xp = UTConfig.TWEAKS_ITEMS.utXPBottleAmount;
         while (xp > 0)
         {
             int split = EntityXPOrb.getXPSplit(xp);

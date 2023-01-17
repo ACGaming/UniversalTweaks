@@ -22,8 +22,8 @@ public class UTSuperHotTorch
     @SubscribeEvent
     public static void utSuperHotTorch(AttackEntityEvent event)
     {
-        if (!UTConfig.tweaks.utSuperHotTorchToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSuperHotTorch ::: Attack entity event");
+        if (!UTConfig.TWEAKS_ITEMS.utSuperHotTorchToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSuperHotTorch ::: Attack entity event");
         Entity target = event.getTarget();
         EntityPlayer player = event.getEntityPlayer();
         ItemStack stackMainhand = player.getHeldItemMainhand();

@@ -21,8 +21,8 @@ public class UTBetterIgnition
     @SubscribeEvent
     public static void utBetterIgnition(PlayerInteractEvent.EntityInteract event)
     {
-        if (!UTConfig.tweaks.utBetterIgnitionToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterIgnition ::: Right click entity event");
+        if (!UTConfig.TWEAKS_ENTITIES.utBetterIgnitionToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterIgnition ::: Right click entity event");
         EnumHand hand = event.getHand();
         EntityPlayer player = event.getEntityPlayer();
         ItemStack stackMainhand = player.getHeldItemMainhand();

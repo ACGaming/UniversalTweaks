@@ -15,8 +15,8 @@ public class UTLightningFlashEntityMixin
     @Redirect(method = "updateLightmap", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getLastLightningBolt()I"))
     public int utLightningFlash(World instance)
     {
-        if (!UTConfig.tweaks.utLightningFlashToggle) return instance.getLastLightningBolt();
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLightningFlashEntity ::: Update lightmap");
+        if (!UTConfig.TWEAKS_MISC.utLightningFlashToggle) return instance.getLastLightningBolt();
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLightningFlashEntity ::: Update lightmap");
         return 0;
     }
 }

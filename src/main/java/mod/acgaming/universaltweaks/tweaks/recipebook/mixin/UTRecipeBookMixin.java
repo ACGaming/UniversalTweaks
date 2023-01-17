@@ -17,8 +17,8 @@ public abstract class UTRecipeBookMixin
     @Inject(method = "initVisuals", at = @At(value = "TAIL"))
     public void utHideRecipeBook(boolean p_193014_1_, InventoryCrafting p_193014_2_, CallbackInfo ci)
     {
-        if (!UTConfig.tweaks.utRecipeBookToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookMixin ::: Initialize visuals");
+        if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookMixin ::: Initialize visuals");
         setVisible(false);
     }
 

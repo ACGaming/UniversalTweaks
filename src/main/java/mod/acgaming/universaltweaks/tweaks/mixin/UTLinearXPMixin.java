@@ -15,8 +15,8 @@ public class UTLinearXPMixin
     @Inject(method = "xpBarCap", at = @At("HEAD"), cancellable = true)
     public void utLinearXP(CallbackInfoReturnable<Integer> cir)
     {
-        if (UTConfig.tweaks.utLinearXP < 1) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLinearXP ::: XP bar cap");
-        cir.setReturnValue(UTConfig.tweaks.utLinearXP);
+        if (UTConfig.TWEAKS_MISC.utLinearXP < 1) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLinearXP ::: XP bar cap");
+        cir.setReturnValue(UTConfig.TWEAKS_MISC.utLinearXP);
     }
 }

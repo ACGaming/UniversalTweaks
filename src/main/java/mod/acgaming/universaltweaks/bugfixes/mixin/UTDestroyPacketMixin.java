@@ -39,8 +39,8 @@ public abstract class UTDestroyPacketMixin extends EntityPlayer
     @Inject(method = "onUpdateEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/EntityPlayer;onUpdate()V", shift = At.Shift.AFTER))
     public void utSendDestroyPacket(CallbackInfo ci)
     {
-        if (!UTConfig.bugfixes.utDestroyPacketToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDestroyPacket ::: Send SPacketDestroyEntities");
+        if (!UTConfig.BUGFIXES_ENTITIES.utDestroyPacketToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDestroyPacket ::: Send SPacketDestroyEntities");
         if (!this.isEntityAlive())
         {
             while (!this.entityRemoveQueue.isEmpty())

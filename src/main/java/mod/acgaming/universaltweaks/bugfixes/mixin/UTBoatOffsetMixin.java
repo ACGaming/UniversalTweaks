@@ -16,8 +16,8 @@ public class UTBoatOffsetMixin
     @ModifyConstant(method = "getMountedYOffset", constant = @Constant(doubleValue = -0.1))
     public double utBoatOffset(double offset)
     {
-        if (!UTConfig.bugfixes.utBoatOffsetToggle) return offset;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBoatOffset ::: Return offset");
+        if (!UTConfig.BUGFIXES_ENTITIES.utBoatOffsetToggle) return offset;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBoatOffset ::: Return offset");
         return 0;
     }
 }

@@ -39,9 +39,9 @@ public abstract class UTEntityAABBMixin
     @Inject(method = "writeToNBT", at = @At(value = "INVOKE", target = "Lnet/minecraft/nbt/NBTTagCompound;setUniqueId(Ljava/lang/String;Ljava/util/UUID;)V", shift = At.Shift.AFTER, ordinal = 0))
     public void utSaveAABBToNBT(NBTTagCompound compound, CallbackInfoReturnable<NBTTagCompound> ci)
     {
-        if (UTConfig.bugfixes.utEntityAABBToggle)
+        if (UTConfig.BUGFIXES_ENTITIES.utEntityAABBToggle)
         {
-            if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityAABB ::: Write AABB to NBT");
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityAABB ::: Write AABB to NBT");
             AxisAlignedBB aabb = this.getEntityBoundingBox();
             compound.setTag("AABB", this.newDoubleNBTList(aabb.minX, aabb.minY, aabb.minZ, aabb.maxX, aabb.maxY, aabb.maxZ));
         }
@@ -51,9 +51,9 @@ public abstract class UTEntityAABBMixin
     public boolean utReadAABBFromNBT(Entity entity, NBTTagCompound compound)
     {
         if (this.shouldSetPosAfterLoading()) this.setPosition(this.posX, this.posY, this.posZ);
-        if (UTConfig.bugfixes.utEntityAABBToggle && compound.hasKey("AABB", 9))
+        if (UTConfig.BUGFIXES_ENTITIES.utEntityAABBToggle && compound.hasKey("AABB", 9))
         {
-            if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityAABB ::: Read AABB from NBT");
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityAABB ::: Read AABB from NBT");
             NBTTagList aabb_tag = compound.getTagList("AABB", 6);
             AxisAlignedBB aabb = new AxisAlignedBB(aabb_tag.getDoubleAt(0), aabb_tag.getDoubleAt(1), aabb_tag.getDoubleAt(2), aabb_tag.getDoubleAt(3), aabb_tag.getDoubleAt(4), aabb_tag.getDoubleAt(5));
             double deltaX = ((aabb.minX + aabb.maxX) / 2.0D) - this.posX;

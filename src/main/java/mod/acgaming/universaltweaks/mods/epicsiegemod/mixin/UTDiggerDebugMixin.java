@@ -14,6 +14,6 @@ public class UTDiggerDebugMixin
     @WrapWithCondition(method = "isValid", at = @At(value = "INVOKE", target = "Ljava/io/PrintStream;println(Ljava/lang/String;)V"), remap = false)
     private boolean utDiggerDebug(PrintStream instance, String s)
     {
-        return !UTConfig.mods.utESMDiggerDebugToggle;
+        return !UTConfig.MOD_INTEGRATION.utESMDiggerDebugToggle;
     }
 }

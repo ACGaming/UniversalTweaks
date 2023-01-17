@@ -23,8 +23,8 @@ public abstract class UTAttackCooldownMixin extends EntityLivingBase
     @Inject(method = "resetCooldown", at = @At("TAIL"))
     public void utResetCooldown(CallbackInfo ci)
     {
-        if (!UTConfig.tweaks.utAttackCooldownToggle || this.ticksSinceLastSwing >= 20) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAttackCooldown ::: Reset cooldown");
+        if (!UTConfig.TWEAKS_ITEMS.utAttackCooldownToggle || this.ticksSinceLastSwing >= 20) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAttackCooldown ::: Reset cooldown");
         this.ticksSinceLastSwing = 20;
     }
 }

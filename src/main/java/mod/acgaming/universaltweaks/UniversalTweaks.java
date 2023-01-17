@@ -32,43 +32,43 @@ public class UniversalTweaks
     public void preInit(FMLPreInitializationEvent event)
     {
         UTPacketHandler.init();
-        if (UTConfig.tweaks.utAttributesToggle) UTAttributes.utSetAttributes();
-        if (UTConfig.tweaks.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
+        if (UTConfig.TWEAKS_ENTITIES.utAttributesToggle) UTAttributes.utSetAttributes();
+        if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
         LOGGER.info(NAME + " pre-initialized");
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        if (UTConfig.bugfixes.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
-        if (UTConfig.tweaks.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
-        if (UTConfig.tweaks.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
+        if (UTConfig.BUGFIXES_BLOCKS.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
+        if (UTConfig.TWEAKS_MISC.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
+        if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
         LOGGER.info(NAME + " initialized");
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-        if (UTConfig.tweaks.utLoadSoundMode != 0) UTLoadSound.initLists();
+        if (UTConfig.TWEAKS_MISC.utLoadSoundMode != 0) UTLoadSound.initLists();
         LOGGER.info(NAME + " post-initialized");
     }
 
     @Mod.EventHandler
     public void onServerStarting(FMLServerStartingEvent event)
     {
-        if (UTConfig.bugfixes.utHelpToggle) UTHelp.onServerStarting(event);
+        if (UTConfig.BUGFIXES_MISC.utHelpToggle) UTHelp.onServerStarting(event);
     }
 
     @Mod.EventHandler
     public void onServerStarted(FMLServerStartedEvent event)
     {
-        if (UTConfig.bugfixes.utHelpToggle) UTHelp.onServerStarted(event);
+        if (UTConfig.BUGFIXES_MISC.utHelpToggle) UTHelp.onServerStarted(event);
     }
 
     @Mod.EventHandler
     public void onLoadComplete(FMLLoadCompleteEvent event)
     {
-        if (UTConfig.debug.utLoadingTimeToggle) LOGGER.info("The game loaded in approximately {} seconds", (System.currentTimeMillis() - UTLoadingPlugin.launchTime) / 1000F);
+        if (UTConfig.DEBUG.utLoadingTimeToggle) LOGGER.info("The game loaded in approximately {} seconds", (System.currentTimeMillis() - UTLoadingPlugin.launchTime) / 1000F);
         if (UTObsoleteModsHandler.obsoleteModsMessage().size() > 5) UniversalTweaks.LOGGER.warn(String.join(System.lineSeparator(), UTObsoleteModsHandler.obsoleteModsMessage()));
     }
 }

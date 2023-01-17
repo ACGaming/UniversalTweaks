@@ -27,7 +27,7 @@ public class UTVillagerMantleMixin extends ModelBase
     @Inject(method = "<init>(FFII)V", at = @At("TAIL"))
     public void utVillagerMantleInit(float f, float f1, int i, int i1, CallbackInfo ci)
     {
-        if (!UTConfig.bugfixes.utVillagerMantleToggle) return;
+        if (!UTConfig.BUGFIXES_ENTITIES.utVillagerMantleToggle) return;
         villagerMantle = new ModelRenderer(this).setTextureSize(i, i1);
         villagerMantle.setTextureOffset(32, 0).addBox(-4.0F, -10.0F, -4.0F, 8, 10, 8, f + 0.5F);
         villagerMantle.setRotationPoint(0.0F, 0.0F + f1, 0.0F);
@@ -36,7 +36,7 @@ public class UTVillagerMantleMixin extends ModelBase
     @Inject(method = "setRotationAngles", at = @At("TAIL"))
     public void utVillagerMantleRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e, CallbackInfo ci)
     {
-        if (!UTConfig.bugfixes.utVillagerMantleToggle || !(e instanceof EntityVillager)) return;
+        if (!UTConfig.BUGFIXES_ENTITIES.utVillagerMantleToggle || !(e instanceof EntityVillager)) return;
         villagerMantle.rotateAngleY = villagerHead.rotateAngleY;
         villagerMantle.rotateAngleX = villagerHead.rotateAngleX;
     }
@@ -44,7 +44,7 @@ public class UTVillagerMantleMixin extends ModelBase
     @Inject(method = "render", at = @At("TAIL"))
     public void utVillagerMantleRender(Entity e, float f, float f1, float f2, float f3, float f4, float f5, CallbackInfo ci)
     {
-        if (!UTConfig.bugfixes.utVillagerMantleToggle || !(e instanceof EntityVillager)) return;
+        if (!UTConfig.BUGFIXES_ENTITIES.utVillagerMantleToggle || !(e instanceof EntityVillager)) return;
         villagerMantle.render(f5);
     }
 }

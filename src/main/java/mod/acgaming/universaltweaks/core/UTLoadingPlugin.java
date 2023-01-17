@@ -27,7 +27,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     static
     {
         if (firstLaunch || UTConfigParser.isEnabled("B:\"Show Loading Time\"=true")) launchTime = System.currentTimeMillis();
-        if ((firstLaunch || UTConfigParser.isEnabled("B:\"Locale Fix\"=true")) && Locale.getDefault().getLanguage().equals("tr"))
+        if ((firstLaunch || UTConfigParser.isEnabled("B:\"Locale Crash\"=true")) && Locale.getDefault().getLanguage().equals("tr"))
         {
             UniversalTweaks.LOGGER.info("The locale is Turkish, which is unfortunately not supported by some mods. Changing to English...");
             Locale.setDefault(Locale.ENGLISH);
@@ -189,19 +189,19 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                         return firstLaunch || UTConfigParser.isEnabled("B:\"Disable Audio Debug\"=true");
                     }
                 case "mixins.bugfixes.blockoverlay.json":
-                    return firstLaunch || UTConfigParser.isEnabled("B:\"Block Overlay Fix\"=true");
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Block Overlay\"=true");
                 case "mixins.bugfixes.frustumculling.json":
-                    return firstLaunch || UTConfigParser.isEnabled("B:\"Frustum Culling Fix\"=true");
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Frustum Culling\"=true");
                 case "mixins.bugfixes.miningglitch.client.json":
-                    return firstLaunch || UTConfigParser.isEnabled("B:\"Mining Glitch Fix\"=true");
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Mining Glitch\"=true");
                 case "mixins.bugfixes.startup.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Faster Background Startup\"=true");
                 case "mixins.bugfixes.villagermantle.json":
-                    return firstLaunch || UTConfigParser.isEnabled("B:\"Villager Mantle Fix\"=true");
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Villager Mantle Hoods\"=true");
                 case "mixins.tweaks.autojump.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Auto Jump Replacement\"=true");
                 case "mixins.tweaks.betterplacement.json":
-                    return !firstLaunch && !UTConfigParser.isEnabled("I:\"Better Placement Click Delay\"=4");
+                    return !firstLaunch && !UTConfigParser.isEnabled("I:\"Block Placement Click Delay\"=4");
                 case "mixins.tweaks.infinitemusic.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Infinite Music\"=true");
                 case "mixins.tweaks.lightningflash.json":
@@ -225,43 +225,43 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         switch (mixinConfig)
         {
             case "mixins.bugfixes.blockfire.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Block Fire Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Block Fire\"=true");
             case "mixins.bugfixes.boatoffset.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Boat Riding Offset Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Boat Riding Offset\"=true");
             case "mixins.bugfixes.comparatortiming.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Comparator Timing Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Comparator Timing\"=true");
             case "mixins.bugfixes.deathtime.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Death Time Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Death Time\"=true");
             case "mixins.bugfixes.destroypacket.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Destroy Entity Packets Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Destroy Entity Packets\"=true");
             case "mixins.bugfixes.dimensionchange.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Dimension Change Player States Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Dimension Change Player States\"=true");
             case "mixins.bugfixes.disconnectdupe.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Disconnect Dupe Fix\"=true");
-            case "mixins.bugfixes.hopperaabb.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Hopper Bounding Box Fix\"=true");
-            case "mixins.bugfixes.itemframevoid.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Item Frame Void Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Disconnect Dupe\"=true");
             case "mixins.bugfixes.entityaabb.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Bounding Box Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Bounding Box\"=true");
             case "mixins.bugfixes.entitydesync.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Desync Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Desync\"=true");
             case "mixins.bugfixes.entitysuffocation.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Suffocation Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Suffocation\"=true");
             case "mixins.bugfixes.entitytracker.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Tracker Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Tracker\"=true");
             case "mixins.bugfixes.exhaustion.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Exhaustion Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Player Saturation\"=true");
+            case "mixins.bugfixes.hopperaabb.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Hopper Bounding Box\"=true");
+            case "mixins.bugfixes.itemframevoid.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Item Frame Void\"=true");
             case "mixins.bugfixes.ladderflying.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Ladder Flying Slowdown Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Ladder Flying Slowdown\"=true");
             case "mixins.bugfixes.miningglitch.server.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Mining Glitch Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Mining Glitch\"=true");
             case "mixins.bugfixes.pistontile.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Piston Progress Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Piston Progress\"=true");
             case "mixins.bugfixes.skeletonaim.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Skeleton Aim Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Skeleton Aim\"=true");
             case "mixins.bugfixes.teloadorder.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Tile Entity Update Order Fix\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Tile Entity Update Order\"=true");
             case "mixins.tweaks.ai.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"AI Replacement\"=true");
             case "mixins.tweaks.attackcooldown.json":
@@ -275,7 +275,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.collisiondamage.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Horizontal Collision Damage\"=true");
             case "mixins.tweaks.craftingcache.json":
-                return !firstLaunch && UTConfigParser.isEnabled("B:\"Crafting Cache\"=true");
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"[Experimental] Crafting Cache\"=true");
             case "mixins.tweaks.creeperconfetti.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Creeper Confetti\"=true");
             case "mixins.tweaks.dyeblending.json":

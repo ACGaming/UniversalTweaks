@@ -21,12 +21,12 @@ public class UTBlockOverlayLists
         whitelistedBlocks.clear();
         try
         {
-            for (String entry : UTConfig.bugfixes.utBlockOverlayBlacklist)
+            for (String entry : UTConfig.BUGFIXES_BLOCKS.utBlockOverlayBlacklist)
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
                 if (ForgeRegistries.BLOCKS.containsKey(resLoc)) blacklistedBlocks.add(ForgeRegistries.BLOCKS.getValue(resLoc));
             }
-            for (String entry : UTConfig.bugfixes.utBlockOverlayWhitelist)
+            for (String entry : UTConfig.BUGFIXES_BLOCKS.utBlockOverlayWhitelist)
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
                 if (ForgeRegistries.BLOCKS.containsKey(resLoc)) whitelistedBlocks.add(ForgeRegistries.BLOCKS.getValue(resLoc));

@@ -25,8 +25,8 @@ public abstract class UTExhaustionMixin extends EntityLivingBase
     @ModifyExpressionValue(method = "addExhaustion", at = @At(value = "FIELD", target = "Lnet/minecraft/world/World;isRemote:Z"))
     public boolean utShouldNotAddExhaustion(boolean isRemote)
     {
-        if (!UTConfig.bugfixes.utExhaustionToggle) return isRemote;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTExhaustion ::: Exhaustion check");
+        if (!UTConfig.BUGFIXES_ENTITIES.utExhaustionToggle) return isRemote;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTExhaustion ::: Exhaustion check");
         return isRemote || this.world.getDifficulty() == EnumDifficulty.PEACEFUL;
     }
 }

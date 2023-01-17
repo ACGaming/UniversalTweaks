@@ -27,8 +27,8 @@ public abstract class UTSkeletonAimMixin<T extends EntityMob & IRangedAttackMob>
     @Inject(method = "updateTask", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ai/EntityLookHelper;setLookPositionWithEntity(Lnet/minecraft/entity/Entity;FF)V", shift = At.Shift.AFTER))
     public void utLookAtTarget(CallbackInfo ci)
     {
-        if (!UTConfig.bugfixes.utSkeletonAimToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSkeletonAim ::: Look at target");
+        if (!UTConfig.BUGFIXES_ENTITIES.utSkeletonAimToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSkeletonAim ::: Look at target");
         this.entity.getLookHelper().setLookPositionWithEntity(this.entity.getAttackTarget(), 30.0F, 30.0F);
     }
 }

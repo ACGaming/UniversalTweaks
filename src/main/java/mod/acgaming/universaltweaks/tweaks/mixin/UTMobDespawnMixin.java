@@ -32,8 +32,8 @@ public abstract class UTMobDespawnMixin extends EntityLivingBase
     @Inject(at = @At("TAIL"), method = "updateEquipmentIfNeeded")
     public void utUpdateEquipmentIfNeeded(CallbackInfo info)
     {
-        if (!UTConfig.tweaks.utMobDespawnToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Update equipment");
+        if (!UTConfig.TWEAKS_ENTITIES.utMobDespawnToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Update equipment");
         this.pickedItems = true;
         this.persistenceRequired = this.hasCustomName();
     }
@@ -41,8 +41,8 @@ public abstract class UTMobDespawnMixin extends EntityLivingBase
     @Redirect(method = "despawnEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/EntityLiving;setDead()V"))
     public void utDespawnEntity(EntityLiving instance)
     {
-        if (!UTConfig.tweaks.utMobDespawnToggle) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Despawn entity");
+        if (!UTConfig.TWEAKS_ENTITIES.utMobDespawnToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Despawn entity");
         if (this.pickedItems) this.dropEquipmentOnDespawn();
         this.setDead();
     }

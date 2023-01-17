@@ -19,8 +19,8 @@ public class UTDisconnectDupe
     @SubscribeEvent
     public static void utDisconnectDupe(PlayerEvent.PlayerLoggedOutEvent event)
     {
-        if (!UTConfig.bugfixes.utDisconnectDupeToggle || event.player.world.isRemote) return;
-        if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDisconnectDupe ::: Player logged out event");
+        if (!UTConfig.BUGFIXES_ENTITIES.utDisconnectDupeToggle || event.player.world.isRemote) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDisconnectDupe ::: Player logged out event");
         MinecraftServer server = event.player.getServer();
         if (server != null)
         {
