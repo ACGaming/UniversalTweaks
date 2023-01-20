@@ -37,11 +37,11 @@ public class UTCraftingManagerMixin
      * @reason Cache NON_NBT Crafting Matrix by [Item and Meta],
      * to prevent dispendious time on large modpacks with thousands of craftings
      */
-    @Inject(method = "getRemainingItems", at = @At("HEAD"), cancellable = true)
-    private static void utGetRemainingItems(InventoryCrafting craftMatrix, World worldIn, CallbackInfoReturnable<NonNullList<ItemStack>> cir)
+    @Inject(method = "findMatchingResult", at = @At("HEAD"), cancellable = true)
+    private static void utFindMatchingResult(InventoryCrafting craftMatrix, World worldIn, CallbackInfoReturnable<NonNullList<ItemStack>> cir)
     {
         if (!UTConfig.TWEAKS_PERFORMANCE.utCraftingCacheToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCraftingManager ::: Get remaining items");
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCraftingManager ::: Find matching result");
         IRecipe iRecipe = UTCraftingCache.findMatchingRecipe(craftMatrix, worldIn);
         if (iRecipe != null) cir.setReturnValue(iRecipe.getRemainingItems(craftMatrix));
         NonNullList<ItemStack> nonnulllist = NonNullList.withSize(craftMatrix.getSizeInventory(), ItemStack.EMPTY);

@@ -41,6 +41,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("enablecheats") && UTConfig.TWEAKS_MISC.utToggleCheatsToggle) messages.add("Enable Cheats");
         if (Loader.isModLoaded("entity_desync_fix") && UTConfig.BUGFIXES_ENTITIES.utEntityDesyncToggle) messages.add("EntityDesyncFix");
         if (Loader.isModLoaded("experiencebugfix") && UTConfig.BUGFIXES_ENTITIES.utDimensionChangeToggle) messages.add("Fix Experience Bug");
+        if (Loader.isModLoaded("fastbench") && UTConfig.TWEAKS_PERFORMANCE.utCraftingCacheToggle) messages.add("FastWorkbench");
         if (Loader.isModLoaded("fastleafdecay") && UTConfig.TWEAKS_BLOCKS.utLeafDecayToggle) messages.add("Fast Leaf Decay");
         if (Loader.isModLoaded("fencejumper") && UTConfig.TWEAKS_BLOCKS.utFenceWallJumpToggle) messages.add("Fence Jumper");
         if (Loader.isModLoaded("finite-fluid-control") && UTConfig.TWEAKS_BLOCKS.utFiniteWaterToggle) messages.add("Finite Water Control");

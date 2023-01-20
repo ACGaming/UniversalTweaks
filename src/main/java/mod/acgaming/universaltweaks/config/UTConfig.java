@@ -499,9 +499,9 @@ public class UTConfig
 
     public static class TweaksPerformanceCategory
     {
-        @Config.Name("[Experimental] Crafting Cache")
-        @Config.Comment("Adds an IRecipe cache to improve recipe performance in large modpacks")
-        public boolean utCraftingCacheToggle = false;
+        @Config.Name("Crafting Cache")
+        @Config.Comment("Adds an IRecipe cache to improve recipe performance in larger modpacks")
+        public boolean utCraftingCacheToggle = true;
 
         @Config.Name("Disable Animated Models")
         @Config.Comment("Improves model load times by removing Forge's animated models")

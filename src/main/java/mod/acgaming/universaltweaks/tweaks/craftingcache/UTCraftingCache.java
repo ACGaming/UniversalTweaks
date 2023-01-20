@@ -7,6 +7,8 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfig;
 
 // Courtesy of EverNife
 public class UTCraftingCache
@@ -31,17 +33,17 @@ public class UTCraftingCache
 
     public static IRecipe findMatchingRecipe(InventoryCrafting craftMatrix, World worldIn)
     {
-        boolean hasNBT = UTCraftingCache.hasAnyNBT(craftMatrix);
+        boolean hasNBT = hasAnyNBT(craftMatrix);
         if (!hasNBT)
         {
-            UTOptionalContent<IRecipe> optionalContent = UTCraftingCache.getOrCreateCachedRecipe(craftMatrix, worldIn);
+            UTOptionalContent<IRecipe> optionalContent = getOrCreateCachedRecipe(craftMatrix);
             if (!optionalContent.hasContent()) optionalContent.setContent(default_findMatchingRecipe(craftMatrix, worldIn));
             return optionalContent.getContent();
         }
         return default_findMatchingRecipe(craftMatrix, worldIn);
     }
 
-    public static UTOptionalContent<IRecipe> getOrCreateCachedRecipe(InventoryCrafting craftMatrix, World worldInIgnored)
+    public static UTOptionalContent<IRecipe> getOrCreateCachedRecipe(InventoryCrafting craftMatrix)
     {
         UTCraftMatrixCacheKey matrixKey = new UTCraftMatrixCacheKey(craftMatrix);
         UTOptionalContent<IRecipe> optionalContent = NON_NBT_CRAFT_CACHE.getAndMoveToFirst(matrixKey.hashCode());
@@ -50,6 +52,7 @@ public class UTCraftingCache
             optionalContent = new UTOptionalContent<>();
             NON_NBT_CRAFT_CACHE.putAndMoveToFirst(matrixKey.hashCode(), optionalContent);
         }
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("Recipe HashCode: " + matrixKey.hashCode());
         return optionalContent;
     }
 }
