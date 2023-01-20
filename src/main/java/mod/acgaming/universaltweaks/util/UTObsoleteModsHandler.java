@@ -48,6 +48,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("givemebackmyhp") && UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle) messages.add("Give Me Back My HP");
         if (Loader.isModLoaded("helpfixer") && UTConfig.BUGFIXES_MISC.utHelpToggle) messages.add("HelpFixer");
         if (Loader.isModLoaded("horsestandstill") && UTConfig.TWEAKS_ENTITIES.utSaddledWanderingToggle) messages.add("Stupid Horse Stand Still");
+        if (Loader.isModLoaded("ikwid") && UTConfig.TWEAKS_MISC.utTutorialHintsToggle) messages.add("I Know What I'm Doing");
         if (Loader.isModLoaded("leafdecay") && UTConfig.TWEAKS_BLOCKS.utLeafDecayToggle) messages.add("Leaf Decay Accelerator");
         if (Loader.isModLoaded("letmedespawn") && UTConfig.TWEAKS_ENTITIES.utMobDespawnToggle) messages.add("Let Me Despawn");
         if (Loader.isModLoaded("loginhpfix") && UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle) messages.add("Login HP Fix");

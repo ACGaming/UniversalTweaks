@@ -464,6 +464,10 @@ public class UTConfig
         @Config.Name("Smooth Scrolling Scroll Step")
         public double utSmoothScrollingStep = 19.0;
 
+        @Config.Name("Suppress Tutorial Hints")
+        @Config.Comment("Suppresses in-game tutorial hint tabs in the right-hand corner")
+        public boolean utTutorialHintsToggle = true;
+
         @Config.Name("Swing Through Grass")
         @Config.Comment("Allows hitting entities through grass instead of breaking it")
         public boolean utSwingThroughGrassToggle = true;

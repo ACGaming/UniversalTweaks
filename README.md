@@ -90,6 +90,7 @@ All changes are toggleable via the config file.
 * Smooth Scrolling: Adds smooth scrolling to every in-game list
 * Super Hot Torch: Enables one-time ignition of entities by hitting them with a torch
 * Stronghold Replacement: Replaces stronghold generation with a safer variant
+* Suppress Tutorial Hints: Suppresses in-game tutorial hint tabs in the right-hand corner
 * Swing Through Grass: Allows hitting entities through grass instead of breaking it
 * Tidy Chunk: Tidies newly generated chunks by removing scattered item entities
 * Toggle Cheats Button: Adds a button to the pause menu to toggle cheats

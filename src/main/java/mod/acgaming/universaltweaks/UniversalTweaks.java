@@ -6,6 +6,8 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import mod.acgaming.universaltweaks.bugfixes.UTHelp;
 import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
@@ -13,6 +15,7 @@ import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
+import mod.acgaming.universaltweaks.tweaks.UTTutorialHints;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
 import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
@@ -51,6 +54,13 @@ public class UniversalTweaks
     {
         if (UTConfig.TWEAKS_MISC.utLoadSoundMode != 0) UTLoadSound.initLists();
         LOGGER.info(NAME + " post-initialized");
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Mod.EventHandler
+    public void postInitClient(FMLPostInitializationEvent event)
+    {
+        UTTutorialHints.utTutorialHints();
     }
 
     @Mod.EventHandler
