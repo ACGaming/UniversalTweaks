@@ -52,7 +52,6 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-        if (UTConfig.TWEAKS_MISC.utLoadSoundMode != 0) UTLoadSound.initLists();
         LOGGER.info(NAME + " post-initialized");
     }
 
@@ -60,7 +59,8 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void postInitClient(FMLPostInitializationEvent event)
     {
-        UTTutorialHints.utTutorialHints();
+        if (UTConfig.TWEAKS_MISC.utLoadSoundMode != 0) UTLoadSound.initLists();
+        if (UTConfig.TWEAKS_MISC.utTutorialHintsToggle) UTTutorialHints.utTutorialHints();
     }
 
     @Mod.EventHandler

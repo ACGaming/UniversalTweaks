@@ -11,7 +11,6 @@ public class UTTutorialHints
 {
     public static void utTutorialHints()
     {
-        if (!UTConfig.TWEAKS_MISC.utTutorialHintsToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTTutorialHints ::: Set tutorial step");
         Minecraft.getMinecraft().getTutorial().setStep(TutorialSteps.NONE);
     }
