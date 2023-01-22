@@ -596,7 +596,7 @@ public class UTConfig
         @Config.Comment
             ({
                 "Adds custom emerald to germling trades to the arborist villager",
-                "Syntax:        level;emeralds_min;emeralds_max;items_min;items_max;complexity_min;complexity_max",
+                "Syntax:        level;emeralds_min;emeralds_max;germlings_min;germlings_max;type;complexity_min;complexity_max",
                 "level          Level when this trade becomes available (how much trading needs to be done)",
                 "emeralds_min   Lower random limit for emeralds",
                 "emeralds_max   Upper random limit for emeralds",
