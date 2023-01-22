@@ -592,6 +592,25 @@ public class UTConfig
         @Config.Comment("Disables leftover debug logging inside the digger AI of the beta builds")
         public boolean utESMDiggerDebugToggle = true;
 
+        @Config.Name("[Forestry] Arborist Villager Trades")
+        @Config.Comment
+            ({
+                "Adds custom emerald to germling trades to the arborist villager",
+                "Syntax:        level;emeralds_min;emeralds_max;items_min;items_max;complexity_min;complexity_max",
+                "level          Level when this trade becomes available (how much trading needs to be done)",
+                "emeralds_min   Lower random limit for emeralds",
+                "emeralds_max   Upper random limit for emeralds",
+                "germlings_min  Lower random limit for germlings",
+                "germlings_max  Upper random limit for germlings",
+                "type           Type of germling, can be either pollen or sapling",
+                "complexity_min Lower limit of allele complexity",
+                "complexity_max Upper limit of allele complexity",
+                "",
+                "Example for a level 5 trade for a single sapling with a complexity between 6 and 10, costing between 10 to 40 emeralds:",
+                "5;10;40;1;1;sapling;6;10"
+            })
+        public String[] utFOArboristDeals = new String[] {};
+
         @Config.Name("[Storage Drawers] Render Range")
         @Config.Comment
             ({

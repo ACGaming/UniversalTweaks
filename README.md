@@ -104,6 +104,8 @@ All changes are toggleable via the config file.
     * Hot Spring Water: Fixes rapid inflection of regeneration effects in hot spring water
 * Epic Siege Mod
     * Disable Digger AI Debug: Disables leftover debug logging inside the digger AI of the beta builds
+* Forestry
+    * Arborist Villager Trades: Adds custom emerald to germling trades to the arborist villager
 * Mo' Creatures
     * Custom Modded Biomes: Adds support for modded biome spawns via config
 * Storage Drawers
