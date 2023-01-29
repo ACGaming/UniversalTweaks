@@ -391,6 +391,10 @@ public class UTConfig
         @Config.Comment("Restores feature to tilt the camera when damaged")
         public boolean utDamageTiltToggle = true;
 
+        @Config.Name("End Portal Parallax")
+        @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
+        public boolean utEndPortalParallaxToggle = true;
+
         @Config.Name("Infinite Music")
         @Config.Comment("Lets background music play continuously without delays")
         public boolean utInfiniteMusicToggle = false;

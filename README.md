@@ -60,6 +60,7 @@ All changes are toggleable via the config file.
 * Disable Animated Models: Improves model load times by removing Forge's animated models
 * Disable Audio Debug: Improves loading times by removing debug code for missing sounds and subtitles
 * Easy Breeding: Enables easy breeding of animals by tossing food on the ground
+* End Portal Parallax: Re-implements parallax rendering of the end portal from 1.11 and older
 * Fast Dye Blending: Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry
 * Fast Leaf Decay: Makes leaves decay faster when trees are chopped
 * Fast Prefix Checking: Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
@@ -111,9 +112,9 @@ All changes are toggleable via the config file.
     * Custom Modded Biomes: Adds support for modded biome spawns via config
 * Storage Drawers
     * Item Handlers:
-      * Fixes voiding of items when nearing full capacity
-      * Fixes slotless item handler implementation not allowing the extraction from compacting item drawers with the vending upgrade",
-      * Caches the drawer controller tile to avoid getting the TE from the world every time a drawer slave is interacted with"
+        * Fixes voiding of items when nearing full capacity
+        * Fixes slotless item handler implementation not allowing the extraction from compacting item drawers with the vending upgrade",
+        * Caches the drawer controller tile to avoid getting the TE from the world every time a drawer slave is interacted with"
     * Render Range: Approximate range in blocks at which drawers render contained items
 * Thaumcraft
     * Firebat Particles: Adds particles to firebats similar to legacy versions

@@ -16,6 +16,7 @@ import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.UTTutorialHints;
+import mod.acgaming.universaltweaks.tweaks.endportal.UTEndPortalParallax;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
 import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
@@ -61,6 +62,13 @@ public class UniversalTweaks
     {
         if (UTConfig.TWEAKS_MISC.utLoadSoundMode != 0) UTLoadSound.initLists();
         if (UTConfig.TWEAKS_MISC.utTutorialHintsToggle) UTTutorialHints.utTutorialHints();
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Mod.EventHandler
+    public void initClient(FMLInitializationEvent event)
+    {
+        if (UTConfig.TWEAKS_MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
     }
 
     @Mod.EventHandler
