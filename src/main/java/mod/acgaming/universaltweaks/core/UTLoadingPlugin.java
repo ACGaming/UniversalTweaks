@@ -112,6 +112,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.lightningflash.json",
             "mixins.tweaks.linearxp.json",
             "mixins.tweaks.mobdespawn.json",
+            "mixins.tweaks.narrator.json",
             "mixins.tweaks.nogolems.json",
             "mixins.tweaks.nightvisionflash.json",
             "mixins.tweaks.plantables.json",
@@ -208,6 +209,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Infinite Music\"=true");
                 case "mixins.tweaks.lightningflash.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"No Lightning Flash\"=true");
+                case "mixins.tweaks.narrator.json":
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Disable Narrator\"=true");
                 case "mixins.tweaks.nightvisionflash.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"No Night Vision Flash\"=true");
                 case "mixins.tweaks.realmsbutton.json":

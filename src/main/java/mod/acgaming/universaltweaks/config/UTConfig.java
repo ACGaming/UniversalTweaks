@@ -391,6 +391,10 @@ public class UTConfig
         @Config.Comment("Restores feature to tilt the camera when damaged")
         public boolean utDamageTiltToggle = true;
 
+        @Config.Name("Disable Narrator")
+        @Config.Comment("Disables the narrator functionality entirely")
+        public boolean utDisableNarratorToggle = true;
+
         @Config.Name("End Portal Parallax")
         @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
         public boolean utEndPortalParallaxToggle = true;
