@@ -17,7 +17,8 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.customspawner.json",
             "mixins.mods.epicsiegemod.json",
             "mixins.mods.forestry.json",
-            "mixins.mods.storagedrawers.json",
+            "mixins.mods.storagedrawers.client.json",
+            "mixins.mods.storagedrawers.server.json",
             "mixins.mods.thaumcraft.json",
             "mixins.mods.tconstruct.json"
         );
@@ -28,7 +29,7 @@ public class UTMixinLoader implements ILateMixinLoader
     {
         if (UTLoadingPlugin.isClient)
         {
-            if (mixinConfig.equals("mixins.mods.storagedrawers.json"))
+            if (mixinConfig.equals("mixins.mods.storagedrawers.client.json"))
             {
                 return Loader.isModLoaded("storagedrawers");
             }
@@ -43,6 +44,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("epicsiegemod");
             case "mixins.mods.forestry.json":
                 return Loader.isModLoaded("forestry");
+            case "mixins.mods.storagedrawers.server.json":
+                return Loader.isModLoaded("storagedrawers");
             case "mixins.mods.thaumcraft.json":
                 return Loader.isModLoaded("thaumcraft");
             case "mixins.mods.tconstruct.json":

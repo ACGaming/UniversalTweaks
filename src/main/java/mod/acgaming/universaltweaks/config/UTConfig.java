@@ -623,6 +623,15 @@ public class UTConfig
             })
         public String[] utFOArboristDeals = new String[] {};
 
+        @Config.Name("[Storage Drawers] Item Handlers")
+        @Config.Comment
+            ({
+                "Fixes voiding of items when nearing full capacity",
+                "Fixes slotless item handler implementation not allowing the extraction from compacting item drawers with the vending upgrade",
+                "Caches the drawer controller tile to avoid getting the TE from the world every time a drawer slave is interacted with"
+            })
+        public boolean utSDItemHandlers = true;
+
         @Config.Name("[Storage Drawers] Render Range")
         @Config.Comment
             ({

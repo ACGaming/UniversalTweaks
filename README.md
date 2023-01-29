@@ -110,6 +110,10 @@ All changes are toggleable via the config file.
 * Mo' Creatures
     * Custom Modded Biomes: Adds support for modded biome spawns via config
 * Storage Drawers
+    * Item Handlers:
+      * Fixes voiding of items when nearing full capacity
+      * Fixes slotless item handler implementation not allowing the extraction from compacting item drawers with the vending upgrade",
+      * Caches the drawer controller tile to avoid getting the TE from the world every time a drawer slave is interacted with"
     * Render Range: Approximate range in blocks at which drawers render contained items
 * Thaumcraft
     * Firebat Particles: Adds particles to firebats similar to legacy versions
