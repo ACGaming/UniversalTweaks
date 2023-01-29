@@ -112,6 +112,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.lightningflash.json",
             "mixins.tweaks.linearxp.json",
             "mixins.tweaks.mobdespawn.json",
+            "mixins.tweaks.nogolems.json",
             "mixins.tweaks.nightvisionflash.json",
             "mixins.tweaks.plantables.json",
             "mixins.tweaks.playerspeed.json",
@@ -160,6 +161,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.itementity.json",
                 "mixins.tweaks.linearxp.json",
                 "mixins.tweaks.mobdespawn.json",
+                "mixins.tweaks.nogolems.json",
                 "mixins.tweaks.plantables.json",
                 "mixins.tweaks.playerspeed.json",
                 "mixins.tweaks.prefixcheck.json",
@@ -290,6 +292,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && !UTConfigParser.isEnabled("I:\"Linear XP Amount\"=0");
             case "mixins.tweaks.mobdespawn.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Mob Despawn Improvement\"=true");
+            case "mixins.tweaks.nogolems.json":
+                return !firstLaunch && (UTConfigParser.isEnabled("B:\"No Golems: Iron Golem\"=true") || UTConfigParser.isEnabled("B:\"No Golems: Snow Golem\"=true") || UTConfigParser.isEnabled("B:\"No Golems: Wither\"=true"));
             case "mixins.tweaks.plantables.json":
                 return !firstLaunch && (!UTConfigParser.isEnabled("I:\"Cactus Size\"=3") || !UTConfigParser.isEnabled("I:\"Sugar Cane Size\"=3"));
             case "mixins.tweaks.playerspeed.json":

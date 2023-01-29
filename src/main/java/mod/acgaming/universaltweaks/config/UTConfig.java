@@ -309,6 +309,18 @@ public class UTConfig
         @Config.Comment("Mobs carrying picked up items will drop their equipment and despawn properly")
         public boolean utMobDespawnToggle = true;
 
+        @Config.Name("No Golems: Iron Golem")
+        @Config.Comment("Disables the manual creation of iron golems")
+        public boolean utNGIronGolemToggle = false;
+
+        @Config.Name("No Golems: Snow Golem")
+        @Config.Comment("Disables the manual creation of snow golems")
+        public boolean utNGSnowGolemToggle = false;
+
+        @Config.Name("No Golems: Wither")
+        @Config.Comment("Disables the manual creation of withers")
+        public boolean utNGWitherToggle = false;
+
         @Config.Name("No Saddled Wandering")
         @Config.Comment("Stops horses wandering around when saddled")
         public boolean utSaddledWanderingToggle = true;
