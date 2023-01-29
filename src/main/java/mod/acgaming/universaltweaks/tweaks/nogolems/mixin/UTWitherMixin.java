@@ -22,7 +22,7 @@ public abstract class UTWitherMixin
     {
         if (UTConfig.TWEAKS_ENTITIES.utNGWitherToggle && this.getWitherPattern().match(worldIn, pos) != null)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTGolems ::: No wither spawn");
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTNoGolems ::: No wither spawn");
             ci.cancel();
         }
     }

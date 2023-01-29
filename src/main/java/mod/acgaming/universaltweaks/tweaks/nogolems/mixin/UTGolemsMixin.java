@@ -21,12 +21,12 @@ public abstract class UTGolemsMixin
     {
         if (UTConfig.TWEAKS_ENTITIES.utNGSnowGolemToggle && this.getSnowmanPattern().match(worldIn, pos) != null)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTGolems ::: No snow golem spawn");
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTNoGolems ::: No snow golem spawn");
             ci.cancel();
         }
         if (UTConfig.TWEAKS_ENTITIES.utNGIronGolemToggle && this.getGolemPattern().match(worldIn, pos) != null)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTGolems ::: No iron golem spawn");
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTNoGolems ::: No iron golem spawn");
             ci.cancel();
         }
     }
