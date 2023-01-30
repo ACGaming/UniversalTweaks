@@ -29,9 +29,11 @@ public class UTMixinLoader implements ILateMixinLoader
     {
         if (UTLoadingPlugin.isClient)
         {
-            if (mixinConfig.equals("mixins.mods.storagedrawers.client.json"))
+            switch (mixinConfig)
             {
-                return Loader.isModLoaded("storagedrawers");
+                case "mixins.mods.storagedrawers.client.json":
+                case "mixins.mods.storagedrawers.server.json":
+                    return Loader.isModLoaded("storagedrawers");
             }
         }
         switch (mixinConfig)
