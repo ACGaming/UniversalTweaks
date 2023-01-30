@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.mixin;
+package mod.acgaming.universaltweaks.tweaks.realms.mixin;
 
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiMainMenu;
@@ -15,16 +15,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // Courtesy of Robitobi01
 @Mixin(GuiMainMenu.class)
-public abstract class UTRealmsButtonMixin extends GuiScreen
+public class UTRealmsButtonMainMenuMixin extends GuiScreen
 {
     @Shadow(remap = false)
     private GuiButton modButton;
 
     @Inject(method = "addSingleplayerMultiplayerButtons", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiMainMenu;addButton(Lnet/minecraft/client/gui/GuiButton;)Lnet/minecraft/client/gui/GuiButton;"), cancellable = true)
-    public void utRemoveRealmsButton(int p_73969_1_, int p_73969_2_, CallbackInfo ci)
+    public void utRemoveRealmsButtonMainMenu(int p_73969_1_, int p_73969_2_, CallbackInfo ci)
     {
         if (!UTConfig.TWEAKS_MISC.utRealmsButtonToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRealmsButton ::: Add buttons");
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRealmsButtonMainMenu ::: Initialize buttons");
         buttonList.add(modButton = new GuiButton(6, this.width / 2 - 100, p_73969_1_ + p_73969_2_ * 2, I18n.format("fml.menu.mods")));
         ci.cancel();
     }
