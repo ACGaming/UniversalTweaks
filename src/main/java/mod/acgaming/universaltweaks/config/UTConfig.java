@@ -281,6 +281,10 @@ public class UTConfig
         @Config.Comment("Replaces deadly creeper explosions with delightful confetti")
         public boolean utCreeperConfettiToggle = false;
 
+        @Config.Name("Disable Sleeping")
+        @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")
+        public boolean utSleepingToggle = false;
+
         @Config.Name("Easy Breeding")
         @Config.Comment("Enables easy breeding of animals by tossing food on the ground")
         public boolean utEasyBreedingToggle = false;

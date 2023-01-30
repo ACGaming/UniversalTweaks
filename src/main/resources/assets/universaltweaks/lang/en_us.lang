@@ -21,3 +21,6 @@ cfg.universaltweaks.tweaks.items=Tweaks: Items
 cfg.universaltweaks.tweaks.misc=Tweaks: Misc
 cfg.universaltweaks.tweaks.performance=Tweaks: Performance
 cfg.universaltweaks.tweaks.world=Tweaks: World
+
+# DISABLE SLEEPING
+msg.universaltweaks.sleep.spawnpoint=Spawn point set
