@@ -90,6 +90,7 @@ All changes are toggleable via the config file.
 * Player Speed: Configurable player fly and walk speed
 * Remove Realms Button: Removes the redundant Minecraft Realms button from the main menu
 * Remove Recipe Book: Removes the recipe book button from GUIs
+* Remove Snooper: Forcefully turns off the snooper and hides the snooper settings button from the options menu
 * Skip Credits: Skips the credits screen after the player goes through the end podium portal
 * Smooth Scrolling: Adds smooth scrolling to every in-game list
 * Super Hot Torch: Enables one-time ignition of entities by hitting them with a torch

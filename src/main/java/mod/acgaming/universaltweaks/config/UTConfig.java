@@ -471,6 +471,10 @@ public class UTConfig
         @Config.Comment("Removes the recipe book button from GUIs")
         public boolean utRecipeBookToggle = false;
 
+        @Config.Name("Remove Snooper")
+        @Config.Comment("Forcefully turns off the snooper and hides the snooper settings button from the options menu")
+        public boolean utSnooperToggle = true;
+
         @Config.Name("Skip Credits")
         @Config.Comment("Skips the credits screen after the player goes through the end podium portal")
         public boolean utSkipCreditsToggle = false;

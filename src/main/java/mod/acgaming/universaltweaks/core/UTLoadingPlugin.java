@@ -125,6 +125,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.saddledwandering.json",
             "mixins.tweaks.skipcredits.json",
             "mixins.tweaks.smoothscrolling.json",
+            "mixins.tweaks.snooper.client.json",
             "mixins.tweaks.spawning.json",
             "mixins.tweaks.uncapfps.json",
             "mixins.tweaks.xpbottle.json") :
@@ -168,6 +169,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.prefixcheck.json",
                 "mixins.tweaks.redstonelighting.json",
                 "mixins.tweaks.saddledwandering.json",
+                "mixins.tweaks.snooper.server.json",
                 "mixins.tweaks.spawning.json",
                 "mixins.tweaks.xpbottle.json"
             );
@@ -223,6 +225,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Skip Credits\"=true");
                 case "mixins.tweaks.smoothscrolling.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Smooth Scrolling\"=true");
+                case "mixins.tweaks.snooper.client.json":
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Remove Snooper\"=true");
                 case "mixins.tweaks.uncapfps.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Uncap FPS\"=true");
             }
@@ -307,6 +311,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"No Redstone Lighting\"=true");
             case "mixins.tweaks.saddledwandering.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"No Saddled Wandering\"=true");
+            case "mixins.tweaks.snooper.server.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Remove Snooper\"=true");
             case "mixins.tweaks.spawning.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Husk & Stray Spawning\"=true");
             case "mixins.tweaks.xpbottle.json":
