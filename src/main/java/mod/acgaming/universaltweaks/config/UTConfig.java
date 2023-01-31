@@ -140,6 +140,10 @@ public class UTConfig
         @Config.Comment("Fixes entity motion desyncs most notable with arrows and thrown items")
         public boolean utEntityDesyncToggle = true;
 
+        @Config.Name("Entity Layers")
+        @Config.Comment("Fixes entity layer rendering of invisible mobs by restoring the depth mask")
+        public boolean utEntityLayersToggle = true;
+
         @Config.Name("Entity NaN Values")
         @Config.Comment("Prevents corruption of entities caused by invalid health or damage values")
         public boolean utEntityNaNToggle = true;

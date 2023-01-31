@@ -16,6 +16,7 @@ All changes are toggleable via the config file.
 * Disconnect Dupe: Fixes item dupes when players are dropping items and disconnecting
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * Entity Desync: Fixes entity motion desyncs most notable with arrows and thrown items
+* Entity Layers: Fixes entity layer rendering of invisible mobs by restoring the depth mask
 * Entity NaN: Prevents corruption of entities caused by invalid health or damage values
 * Entity Suffocation: Pushes entities out of blocks when growing up to prevent suffocation
 * Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
