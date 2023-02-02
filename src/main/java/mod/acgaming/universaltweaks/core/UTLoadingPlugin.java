@@ -80,7 +80,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.disconnectdupe.json",
             "mixins.bugfixes.entityaabb.json",
             "mixins.bugfixes.entitydesync.json",
-            "mixins.bugfixes.entitylayer.json",
+            "mixins.bugfixes.depthmask.json",
             "mixins.bugfixes.entitysuffocation.json",
             "mixins.bugfixes.entitytracker.json",
             "mixins.bugfixes.exhaustion.json",
@@ -200,8 +200,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Block Overlay\"=true");
                 case "mixins.bugfixes.frustumculling.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Frustum Culling\"=true");
-                case "mixins.bugfixes.entitylayer.json":
-                    return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Layers\"=true");
+                case "mixins.bugfixes.depthmask.json":
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Depth Mask\"=true");
                 case "mixins.bugfixes.miningglitch.client.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Mining Glitch\"=true");
                 case "mixins.bugfixes.startup.json":

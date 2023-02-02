@@ -140,10 +140,6 @@ public class UTConfig
         @Config.Comment("Fixes entity motion desyncs most notable with arrows and thrown items")
         public boolean utEntityDesyncToggle = true;
 
-        @Config.Name("Entity Layers")
-        @Config.Comment("Fixes entity layer rendering of invisible mobs by restoring the depth mask")
-        public boolean utEntityLayersToggle = true;
-
         @Config.Name("Entity NaN Values")
         @Config.Comment("Prevents corruption of entities caused by invalid health or damage values")
         public boolean utEntityNaNToggle = true;
@@ -182,6 +178,10 @@ public class UTConfig
         @Config.Name("Block Fire")
         @Config.Comment("Prevents fire projectiles burning entities when blocking with shields")
         public boolean utBlockFireToggle = true;
+
+        @Config.Name("Depth Mask")
+        @Config.Comment("Fixes entity and particle rendering issues by enabling depth buffer writing")
+        public boolean utDepthMaskToggle = true;
 
         @Config.Name("Faster Background Startup")
         @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")

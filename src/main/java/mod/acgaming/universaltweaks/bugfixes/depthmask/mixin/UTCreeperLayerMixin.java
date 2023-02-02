@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.bugfixes.entitylayer.mixin;
+package mod.acgaming.universaltweaks.bugfixes.depthmask.mixin;
 
 import net.minecraft.client.renderer.entity.layers.LayerCreeperCharge;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
@@ -17,7 +17,7 @@ public abstract class UTCreeperLayerMixin implements LayerRenderer<EntityCreeper
     @ModifyArg(method = "doRenderLayer(Lnet/minecraft/entity/monster/EntityCreeper;FFFFFFF)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/GlStateManager;depthMask(Z)V", ordinal = 1))
     public boolean utCreeperLayer(boolean flagIn)
     {
-        if (UTConfig.BUGFIXES_ENTITIES.utEntityLayersToggle) return true;
+        if (UTConfig.BUGFIXES_MISC.utDepthMaskToggle) return true;
         else return flagIn;
     }
 }

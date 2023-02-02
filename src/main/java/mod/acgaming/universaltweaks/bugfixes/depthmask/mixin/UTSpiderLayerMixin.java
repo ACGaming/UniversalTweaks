@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.bugfixes.entitylayer.mixin;
+package mod.acgaming.universaltweaks.bugfixes.depthmask.mixin;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
@@ -19,6 +19,6 @@ public abstract class UTSpiderLayerMixin<T extends EntitySpider> implements Laye
     @Inject(method = "doRenderLayer(Lnet/minecraft/entity/monster/EntitySpider;FFFFFFF)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/GlStateManager;enableAlpha()V", shift = At.Shift.AFTER))
     public void utSpiderLayer(T entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale, CallbackInfo ci)
     {
-        if (UTConfig.BUGFIXES_ENTITIES.utEntityLayersToggle) GlStateManager.depthMask(true);
+        if (UTConfig.BUGFIXES_MISC.utDepthMaskToggle) GlStateManager.depthMask(true);
     }
 }
