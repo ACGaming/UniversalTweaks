@@ -9,6 +9,7 @@ All changes are toggleable via the config file.
 * Block Fire: Prevents fire projectiles burning entities when blocking with shields
 * Block Overlay: Fixes x-ray when standing in non-suffocating blocks
 * Boat Riding Offset Fix: Fixes entities glitching through the bottom of boats
+* Chunk Saving: Fixes loading of outdated chunks to prevent duplications, deletions and data corruption
 * Comparator Timing: Fixes inconsistent delays of comparators to prevent redstone timing issues
 * Death Time: Fixes corrupted entities exceeding the allowed death time
 * Destroy Entity Packets: Fixes lag caused by dead entities by sending additional packets when the player is not alive

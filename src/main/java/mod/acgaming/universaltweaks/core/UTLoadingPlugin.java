@@ -72,6 +72,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.blockfire.json",
             "mixins.bugfixes.blockoverlay.json",
             "mixins.bugfixes.boatoffset.json",
+            "mixins.bugfixes.chunksaving.json",
             "mixins.bugfixes.comparatortiming.json",
             "mixins.bugfixes.deathtime.json",
             "mixins.bugfixes.destroypacket.json",
@@ -133,6 +134,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             Arrays.asList(
                 "mixins.bugfixes.blockfire.json",
                 "mixins.bugfixes.boatoffset.json",
+                "mixins.bugfixes.chunksaving.json",
                 "mixins.bugfixes.comparatortiming.json",
                 "mixins.bugfixes.deathtime.json",
                 "mixins.bugfixes.destroypacket.json",
@@ -242,6 +244,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Boat Riding Offset\"=true");
             case "mixins.bugfixes.comparatortiming.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Comparator Timing\"=true");
+            case "mixins.bugfixes.chunksaving.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Chunk Saving\"=true");
             case "mixins.bugfixes.deathtime.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Death Time\"=true");
             case "mixins.bugfixes.destroypacket.json":

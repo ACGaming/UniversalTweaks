@@ -27,6 +27,10 @@ public class UTConfig
     @Config.Name("Bugfixes: Misc")
     public static final BugfixesMiscCategory BUGFIXES_MISC = new BugfixesMiscCategory();
 
+    @Config.LangKey("cfg.universaltweaks.bugfixes.world")
+    @Config.Name("Bugfixes: World")
+    public static final BugfixesWorldCategory BUGFIXES_WORLD = new BugfixesWorldCategory();
+
     @Config.LangKey("cfg.universaltweaks.debug")
     @Config.Name("Debug")
     public static final DebugCategory DEBUG = new DebugCategory();
@@ -104,10 +108,6 @@ public class UTConfig
         @Config.Name("Piston Progress")
         @Config.Comment("Properly saves the last state of pistons to tags")
         public boolean utPistonTileToggle = true;
-
-        @Config.Name("Tile Entity Update Order")
-        @Config.Comment("Keeps the order of tile entities on chunk load")
-        public boolean utTELoadOrderToggle = true;
     }
 
     public static class BugfixesEntitiesCategory
@@ -198,6 +198,17 @@ public class UTConfig
         @Config.Name("Locale Crash")
         @Config.Comment("Prevents various crashes with Turkish locale")
         public boolean utLocaleToggle = true;
+    }
+
+    public static class BugfixesWorldCategory
+    {
+        @Config.Name("Chunk Saving")
+        @Config.Comment("Fixes loading of outdated chunks to prevent duplications, deletions and data corruption")
+        public boolean utChunkSavingToggle = true;
+
+        @Config.Name("Tile Entity Update Order")
+        @Config.Comment("Keeps the order of tile entities on chunk load")
+        public boolean utTELoadOrderToggle = true;
     }
 
     public static class TweaksBlocksCategory
