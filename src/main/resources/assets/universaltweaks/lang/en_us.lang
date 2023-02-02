@@ -13,6 +13,7 @@ msg.universaltweaks.cheats.disabled=Cheats are now §cdisabled
 cfg.universaltweaks.bugfixes.blocks=Bugfixes: Blocks
 cfg.universaltweaks.bugfixes.entities=Bugfixes: Entities
 cfg.universaltweaks.bugfixes.misc=Bugfixes: Misc
+cfg.universaltweaks.bugfixes.world=Bugfixes: World
 cfg.universaltweaks.debug=Debug
 cfg.universaltweaks.modintegration=Mod Integration
 cfg.universaltweaks.tweaks.blocks=Tweaks: Blocks
