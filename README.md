@@ -68,6 +68,7 @@ All changes are toggleable via the config file.
 * Fast Dye Blending: Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry
 * Fast Leaf Decay: Makes leaves decay faster when trees are chopped
 * Fast Prefix Checking: Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
+* Fast World Loading: Skips initial world chunk loading & garbage collection to speed up world loading
 * Fence/Wall Jump: Allows the player to jump over fences and walls
 * Finite Water: Prevents creation of infinite water sources outside of ocean and river biomes
 * Hardcore Buckets: Prevents placing of liquid source blocks in the world

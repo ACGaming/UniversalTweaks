@@ -561,6 +561,10 @@ public class UTConfig
         @Config.Name("Fast Prefix Checking")
         @Config.Comment("Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time")
         public boolean utPrefixCheckToggle = true;
+
+        @Config.Name("Fast World Loading")
+        @Config.Comment("Skips initial world chunk loading & garbage collection to speed up world loading")
+        public boolean utWorldLoadingToggle = true;
     }
 
     public static class TweaksWorldCategory

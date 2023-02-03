@@ -130,6 +130,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.snooper.client.json",
             "mixins.tweaks.spawning.json",
             "mixins.tweaks.uncapfps.json",
+            "mixins.tweaks.worldloading.client.json",
+            "mixins.tweaks.worldloading.server.json",
             "mixins.tweaks.xpbottle.json") :
             Arrays.asList(
                 "mixins.bugfixes.blockfire.json",
@@ -174,6 +176,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.saddledwandering.json",
                 "mixins.tweaks.snooper.server.json",
                 "mixins.tweaks.spawning.json",
+                "mixins.tweaks.worldloading.server.json",
                 "mixins.tweaks.xpbottle.json"
             );
     }
@@ -234,6 +237,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Remove Snooper\"=true");
                 case "mixins.tweaks.uncapfps.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Uncap FPS\"=true");
+                case "mixins.tweaks.worldloading.client.json":
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Fast World Loading\"=true");
             }
         }
         switch (mixinConfig)
@@ -322,6 +327,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Remove Snooper\"=true");
             case "mixins.tweaks.spawning.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Husk & Stray Spawning\"=true");
+            case "mixins.tweaks.worldloading.server.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Fast World Loading\"=true");
             case "mixins.tweaks.xpbottle.json":
                 return !firstLaunch && !UTConfigParser.isEnabled("I:\"XP Bottle Amount\"=-1");
         }
