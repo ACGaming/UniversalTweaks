@@ -1,7 +1,9 @@
 package mod.acgaming.universaltweaks.bugfixes.mixin;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.PlayerCapabilities;
+import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
@@ -11,16 +13,24 @@ import org.spongepowered.asm.mixin.Shadow;
 // MC-12829
 // https://bugs.mojang.com/browse/MC-12829
 @Mixin(EntityPlayer.class)
-public class UTLadderFlyingPlayerMixin extends UTLadderFlyingMixin
+public abstract class UTLadderFlyingPlayerMixin extends EntityLivingBase
 {
     @Shadow
     public PlayerCapabilities capabilities;
 
-    @Override
-    public boolean utIsNotClimbing(boolean isSpectator)
+    public UTLadderFlyingPlayerMixin(World worldIn)
     {
-        if (!UTConfig.BUGFIXES_BLOCKS.utLadderFlyingToggle) return isSpectator;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLadderFlyingPlayer ::: Player climb check");
-        return isSpectator || capabilities.isFlying;
+        super(worldIn);
+    }
+
+    @Override
+    public boolean isOnLadder()
+    {
+        if (UTConfig.BUGFIXES_BLOCKS.utLadderFlyingToggle)
+        {
+            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLadderFlyingPlayer ::: Player climb check");
+            if (capabilities.isFlying) return false;
+        }
+        return super.isOnLadder();
     }
 }
