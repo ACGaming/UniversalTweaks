@@ -22,7 +22,7 @@ public class UTRapierMixin
     @Inject(method = "onItemRightClick", at = @At(value = "HEAD"), cancellable = true)
     public void utTConRapierOffhand(World worldIn, EntityPlayer playerIn, EnumHand hand, CallbackInfoReturnable<ActionResult<ItemStack>> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.utTConShurikenToggle) return;
+        if (!UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConShurikenToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRapier ::: On item right click");
         if (!playerIn.getHeldItemOffhand().isEmpty() && (playerIn.getHeldItemOffhand().getItem() == TinkerRangedWeapons.shuriken))
         {

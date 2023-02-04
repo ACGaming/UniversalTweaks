@@ -6,6 +6,7 @@
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "https://github.com/ACGaming/UniversalTweaks",
+    "logoFile": "logo.png",
     "authorList": [
       "ACGaming"
     ],

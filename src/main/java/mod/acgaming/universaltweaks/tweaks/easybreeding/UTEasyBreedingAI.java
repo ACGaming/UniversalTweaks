@@ -66,7 +66,7 @@ public class UTEasyBreedingAI extends EntityAIBase
 
     List<EntityItem> getItems()
     {
-        double distance = UTConfig.TWEAKS_ENTITIES.utEasyBreedingDistance;
+        double distance = UTConfig.TWEAKS_ENTITIES.EASY_BREEDING.utEasyBreedingDistance;
         return world.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(animal.posX - distance, animal.posY - distance, animal.posZ - distance, animal.posX + distance, animal.posY + distance, animal.posZ + distance));
     }
 }

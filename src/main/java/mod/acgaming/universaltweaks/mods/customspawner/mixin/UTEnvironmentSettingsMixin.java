@@ -34,7 +34,7 @@ public class UTEnvironmentSettingsMixin
     @Inject(method = "genModConfiguration", at = @At("HEAD"))
     public void utGenModConfiguration(CallbackInfo ci)
     {
-        for (String mod : UTConfig.MOD_INTEGRATION.utMoCBiomeMods)
+        for (String mod : UTConfig.MOD_INTEGRATION.MO_CREATURES.utMoCBiomeMods)
         {
             String[] modEntries = mod.split(";");
             addDefaultCreaturesIfPresent(modEntries[0], modEntries[1], modEntries[2], modEntries[3], modEntries[4]);

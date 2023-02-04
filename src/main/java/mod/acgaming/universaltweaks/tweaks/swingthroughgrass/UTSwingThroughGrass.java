@@ -29,7 +29,7 @@ public class UTSwingThroughGrass
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void utSwingThroughGrass(PlayerInteractEvent.LeftClickBlock event)
     {
-        if (!UTConfig.TWEAKS_MISC.utSwingThroughGrassToggle) return;
+        if (!UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSwingThroughGrass ::: Left click block event");
         IBlockState state = event.getWorld().getBlockState(event.getPos()).getActualState(event.getWorld(), event.getPos());
         Block block = state.getBlock();

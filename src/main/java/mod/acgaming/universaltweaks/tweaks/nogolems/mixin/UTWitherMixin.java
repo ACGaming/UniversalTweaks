@@ -20,7 +20,7 @@ public abstract class UTWitherMixin
     @Inject(method = "checkWitherSpawn", at = @At("HEAD"), cancellable = true)
     public void utWitherSpawnCheck(World worldIn, BlockPos pos, TileEntitySkull te, CallbackInfo ci)
     {
-        if (UTConfig.TWEAKS_ENTITIES.utNGWitherToggle && this.getWitherPattern().match(worldIn, pos) != null)
+        if (UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGWitherToggle && this.getWitherPattern().match(worldIn, pos) != null)
         {
             if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTNoGolems ::: No wither spawn");
             ci.cancel();

@@ -25,7 +25,7 @@ public class UTControllerDataMixin
     @Inject(method = "getController", at = @At(value = "HEAD"), cancellable = true)
     void utGetController(TileEntity host, CallbackInfoReturnable<TileEntityController> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.utSDItemHandlers) return;
+        if (!UTConfig.MOD_INTEGRATION.STORAGE_DRAWERS.utSDItemHandlers) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTControllerData ::: Get controller");
         if (controller != null)
         {
@@ -44,7 +44,7 @@ public class UTControllerDataMixin
     @Inject(method = "bindCoord", at = @At(value = "RETURN"))
     void utBindCoord(BlockPos pos, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.utSDItemHandlers) return;
+        if (!UTConfig.MOD_INTEGRATION.STORAGE_DRAWERS.utSDItemHandlers) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTControllerData ::: Bind coordinates");
         controller = null;
     }

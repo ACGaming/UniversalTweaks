@@ -13,12 +13,12 @@ public class UTPlayerSpeedMixin
     @Redirect(method = "getFlySpeed", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/PlayerCapabilities;flySpeed:F"))
     public float utModifyFlySpeed(PlayerCapabilities instance)
     {
-        return (float) UTConfig.TWEAKS_ENTITIES.utPlayerFlySpeed;
+        return (float) UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerFlySpeed;
     }
 
     @Redirect(method = "getWalkSpeed", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/PlayerCapabilities;walkSpeed:F"))
     public float utModifyWalkSpeed(PlayerCapabilities instance)
     {
-        return (float) UTConfig.TWEAKS_ENTITIES.utPlayerWalkSpeed;
+        return (float) UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerWalkSpeed;
     }
 }

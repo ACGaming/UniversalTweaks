@@ -44,8 +44,8 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        if (UTConfig.BUGFIXES_BLOCKS.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
-        if (UTConfig.TWEAKS_MISC.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
+        if (UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
+        if (UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
         LOGGER.info(NAME + " initialized");
     }
@@ -60,7 +60,7 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void postInitClient(FMLPostInitializationEvent event)
     {
-        if (UTConfig.TWEAKS_MISC.utLoadSoundMode != 0) UTLoadSound.initLists();
+        if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != 0) UTLoadSound.initLists();
         if (UTConfig.TWEAKS_MISC.utTutorialHintsToggle) UTTutorialHints.utTutorialHints();
     }
 

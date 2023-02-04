@@ -20,7 +20,7 @@ public class UTStableThaumometerMixin
     @Inject(method = "onItemRightClick", at = @At(value = "RETURN"), cancellable = true)
     public void utStableThaumometer(World world, EntityPlayer p, EnumHand hand, CallbackInfoReturnable<ActionResult<ItemStack>> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.utTCStableThaumometerToggle) return;
+        if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT.utTCStableThaumometerToggle) return;
         cir.setReturnValue(new ActionResult<>(EnumActionResult.FAIL, p.getHeldItem(hand)));
     }
 }

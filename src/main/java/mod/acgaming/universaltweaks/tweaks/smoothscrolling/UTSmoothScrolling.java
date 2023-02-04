@@ -18,17 +18,17 @@ public class UTSmoothScrolling
 
     public static long getScrollDuration()
     {
-        return UTConfig.TWEAKS_MISC.utSmoothScrollingDuration;
+        return UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingDuration;
     }
 
     public static float getScrollStep()
     {
-        return (float) UTConfig.TWEAKS_MISC.utSmoothScrollingStep;
+        return (float) UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingStep;
     }
 
     public static float getBounceBackMultiplier()
     {
-        return (float) UTConfig.TWEAKS_MISC.utSmoothScrollingBounce;
+        return (float) UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingBounce;
     }
 
     public static float handleScrollingPosition(float[] target, float scroll, float maxScroll, float delta, double start, double duration)

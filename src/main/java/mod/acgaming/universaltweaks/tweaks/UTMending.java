@@ -59,18 +59,18 @@ public class UTMending
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utPickupXP(PlayerPickupXpEvent event)
     {
-        if (!UTConfig.TWEAKS_ITEMS.utMendingToggle) return;
+        if (!UTConfig.TWEAKS_ITEMS.MENDING.utMendingToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMending ::: Player pick up XP event");
         event.setCanceled(true);
         EntityPlayer player = event.getEntityPlayer();
         EntityXPOrb xp = event.getOrb();
-        ItemStack itemStack = UTConfig.TWEAKS_ITEMS.utMendingOPToggle ? getDamagedEnchantedItemOP(Enchantments.MENDING, player) : getDamagedEnchantedItem(Enchantments.MENDING, player);
+        ItemStack itemStack = UTConfig.TWEAKS_ITEMS.MENDING.utMendingOPToggle ? getDamagedEnchantedItemOP(Enchantments.MENDING, player) : getDamagedEnchantedItem(Enchantments.MENDING, player);
         player.xpCooldown = 2;
         player.onItemPickup(xp, 1);
         if (!itemStack.isEmpty() && xp.xpValue > 0)
         {
-            int i = Math.min(roundAverage(xp.xpValue * UTConfig.TWEAKS_ITEMS.utMendingRatio), itemStack.getItemDamage());
-            xp.xpValue -= roundAverage(i / UTConfig.TWEAKS_ITEMS.utMendingRatio);
+            int i = Math.min(roundAverage(xp.xpValue * UTConfig.TWEAKS_ITEMS.MENDING.utMendingRatio), itemStack.getItemDamage());
+            xp.xpValue -= roundAverage(i / UTConfig.TWEAKS_ITEMS.MENDING.utMendingRatio);
             itemStack.setItemDamage(itemStack.getItemDamage() - i);
         }
         if (xp.xpValue > 0) player.addExperience(xp.xpValue);

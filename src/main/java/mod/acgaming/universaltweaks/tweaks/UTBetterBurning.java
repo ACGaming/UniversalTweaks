@@ -28,7 +28,7 @@ public class UTBetterBurning
     @SubscribeEvent
     public static void utLivingDeath(LivingDeathEvent event)
     {
-        if (event.getSource().isFireDamage() && UTConfig.TWEAKS_ENTITIES.utBBCookedToggle && !event.getEntityLiving().isBurning() && !event.getEntity().world.isRemote)
+        if (event.getSource().isFireDamage() && UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBCookedToggle && !event.getEntityLiving().isBurning() && !event.getEntity().world.isRemote)
         {
             if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterBurning ::: Living death event");
             event.getEntityLiving().setFire(1);
@@ -39,7 +39,7 @@ public class UTBetterBurning
     @SubscribeEvent
     public static void utEntityJoinWorld(EntityJoinWorldEvent event)
     {
-        if (UTConfig.TWEAKS_ENTITIES.utBBArrowsToggle && event.getEntity() instanceof EntityArrow && !event.getEntity().world.isRemote)
+        if (UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBArrowsToggle && event.getEntity() instanceof EntityArrow && !event.getEntity().world.isRemote)
         {
             if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterBurning ::: Entity join world event");
             final EntityArrow arrowEntity = (EntityArrow) event.getEntity();
@@ -56,7 +56,7 @@ public class UTBetterBurning
     @SubscribeEvent
     public static void utLivingTick(LivingUpdateEvent event)
     {
-        if (UTConfig.TWEAKS_ENTITIES.utBBExtinguishToggle && !event.getEntityLiving().world.isRemote && event.getEntityLiving().isBurning() && event.getEntityLiving().isPotionActive(MobEffects.FIRE_RESISTANCE))
+        if (UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBExtinguishToggle && !event.getEntityLiving().world.isRemote && event.getEntityLiving().isBurning() && event.getEntityLiving().isPotionActive(MobEffects.FIRE_RESISTANCE))
         {
             if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterBurning ::: Living update event");
             event.getEntityLiving().extinguish();
@@ -67,7 +67,7 @@ public class UTBetterBurning
     @SubscribeEvent
     public static void utLivingAttack(LivingAttackEvent event)
     {
-        if (UTConfig.TWEAKS_ENTITIES.utBBSpreadingToggle && !event.getEntity().world.isRemote)
+        if (UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBSpreadingToggle && !event.getEntity().world.isRemote)
         {
             if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterBurning ::: Living attack event");
             final Entity sourceEntity = event.getSource().getTrueSource();
@@ -89,7 +89,7 @@ public class UTBetterBurning
     @SubscribeEvent
     public static void utBlockOverlay(RenderBlockOverlayEvent event)
     {
-        if (UTConfig.TWEAKS_ENTITIES.utBBOverlayToggle && event.getOverlayType() == OverlayType.FIRE && (event.getPlayer().isImmuneToFire() || event.getPlayer().isPotionActive(MobEffects.FIRE_RESISTANCE) || event.getPlayer().isCreative()))
+        if (UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBOverlayToggle && event.getOverlayType() == OverlayType.FIRE && (event.getPlayer().isImmuneToFire() || event.getPlayer().isPotionActive(MobEffects.FIRE_RESISTANCE) || event.getPlayer().isCreative()))
         {
             if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterBurning ::: Render block overlay event");
             event.setCanceled(true);

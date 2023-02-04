@@ -17,8 +17,8 @@ public class UTDrawersRendererMixin
     @Inject(method = "render(Lcom/jaquadro/minecraft/storagedrawers/block/tile/TileEntityDrawers;DDDFIF)V", at = @At(value = "HEAD"), cancellable = true)
     public void utDrawersRenderer(TileEntityDrawers tile, double x, double y, double z, float partialTickTime, int destroyStage, float par7, CallbackInfo ci)
     {
-        if (UTConfig.MOD_INTEGRATION.utSDRenderRange < 1) return;
+        if (UTConfig.MOD_INTEGRATION.STORAGE_DRAWERS.utSDRenderRange < 1) return;
         EntityPlayer player = Minecraft.getMinecraft().player;
-        if (player != null && player.getPosition().distanceSq(tile.getPos()) > UTConfig.MOD_INTEGRATION.utSDRenderRange * UTConfig.MOD_INTEGRATION.utSDRenderRange) ci.cancel();
+        if (player != null && player.getPosition().distanceSq(tile.getPos()) > UTConfig.MOD_INTEGRATION.STORAGE_DRAWERS.utSDRenderRange * UTConfig.MOD_INTEGRATION.STORAGE_DRAWERS.utSDRenderRange) ci.cancel();
     }
 }

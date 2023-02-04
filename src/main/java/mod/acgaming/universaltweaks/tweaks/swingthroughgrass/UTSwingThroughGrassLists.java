@@ -21,12 +21,12 @@ public class UTSwingThroughGrassLists
         whitelistedBlocks.clear();
         try
         {
-            for (String entry : UTConfig.TWEAKS_MISC.utSwingThroughGrassBlacklist)
+            for (String entry : UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassBlacklist)
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
                 if (ForgeRegistries.BLOCKS.containsKey(resLoc)) blacklistedBlocks.add(ForgeRegistries.BLOCKS.getValue(resLoc));
             }
-            for (String entry : UTConfig.TWEAKS_MISC.utSwingThroughGrassWhitelist)
+            for (String entry : UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassWhitelist)
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
                 if (ForgeRegistries.BLOCKS.containsKey(resLoc)) whitelistedBlocks.add(ForgeRegistries.BLOCKS.getValue(resLoc));

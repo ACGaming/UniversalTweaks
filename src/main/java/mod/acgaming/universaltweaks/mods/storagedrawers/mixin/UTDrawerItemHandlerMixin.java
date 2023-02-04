@@ -20,7 +20,7 @@ public abstract class UTDrawerItemHandlerMixin
     @Inject(method = "insertItem", at = @At("HEAD"), cancellable = true)
     public void utInsertItem(int slot, ItemStack stack, boolean simulate, CallbackInfoReturnable<ItemStack> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.utSDItemHandlers) return;
+        if (!UTConfig.MOD_INTEGRATION.STORAGE_DRAWERS.utSDItemHandlers) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDrawerItemHandler ::: Insert item");
         if (slot == 0)
         {

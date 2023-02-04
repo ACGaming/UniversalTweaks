@@ -200,11 +200,11 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                         return firstLaunch || UTConfigParser.isEnabled("B:\"Disable Audio Debug\"=true");
                     }
                 case "mixins.bugfixes.blockoverlay.json":
-                    return firstLaunch || UTConfigParser.isEnabled("B:\"Block Overlay\"=true");
-                case "mixins.bugfixes.frustumculling.json":
-                    return firstLaunch || UTConfigParser.isEnabled("B:\"Frustum Culling\"=true");
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Block Overlay Toggle\"=true");
                 case "mixins.bugfixes.depthmask.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Depth Mask\"=true");
+                case "mixins.bugfixes.frustumculling.json":
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Frustum Culling\"=true");
                 case "mixins.bugfixes.miningglitch.client.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Mining Glitch\"=true");
                 case "mixins.bugfixes.startup.json":
@@ -232,7 +232,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.tweaks.skipcredits.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Skip Credits\"=true");
                 case "mixins.tweaks.smoothscrolling.json":
-                    return firstLaunch || UTConfigParser.isEnabled("B:\"Smooth Scrolling\"=true");
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Smooth Scrolling Toggle\"=true");
                 case "mixins.tweaks.snooper.client.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Remove Snooper\"=true");
                 case "mixins.tweaks.uncapfps.json":
@@ -292,17 +292,17 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.bedobstruction.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Bed Obstruction Replacement\"=true");
             case "mixins.tweaks.chunkgenlimit.json":
-                return !firstLaunch && UTConfigParser.isEnabled("B:\"Chunk Gen Limit\"=true");
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"[1] Chunk Gen Limit Toggle\"=true");
             case "mixins.tweaks.collisiondamage.json":
-                return !firstLaunch && UTConfigParser.isEnabled("B:\"Horizontal Collision Damage\"=true");
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"[1] Collision Damage Toggle\"=true");
             case "mixins.tweaks.craftingcache.json":
-                return !firstLaunch && UTConfigParser.isEnabled("B:\"[Experimental] Crafting Cache\"=true");
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"Crafting Cache\"=true");
             case "mixins.tweaks.creeperconfetti.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Creeper Confetti\"=true");
             case "mixins.tweaks.dyeblending.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Fast Dye Blending\"=true");
             case "mixins.tweaks.falldamage.json":
-                return !firstLaunch && UTConfigParser.isEnabled("B:\"Water Fall Damage\"=true");
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"[1] Water Fall Damage Toggle\"=true");
             case "mixins.tweaks.hardcorebuckets.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Hardcore Buckets\"=true");
             case "mixins.tweaks.itementity.json":
@@ -312,11 +312,11 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.mobdespawn.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Mob Despawn Improvement\"=true");
             case "mixins.tweaks.nogolems.json":
-                return !firstLaunch && (UTConfigParser.isEnabled("B:\"No Golems: Iron Golem\"=true") || UTConfigParser.isEnabled("B:\"No Golems: Snow Golem\"=true") || UTConfigParser.isEnabled("B:\"No Golems: Wither\"=true"));
+                return !firstLaunch && (UTConfigParser.isEnabled("B:\"[1] Iron Golem Toggle\"=true") || UTConfigParser.isEnabled("B:\"[2] Snow Golem Toggle\"=true") || UTConfigParser.isEnabled("B:\"[3] Wither Toggle\"=true"));
             case "mixins.tweaks.plantables.json":
                 return !firstLaunch && (!UTConfigParser.isEnabled("I:\"Cactus Size\"=3") || !UTConfigParser.isEnabled("I:\"Sugar Cane Size\"=3"));
             case "mixins.tweaks.playerspeed.json":
-                return !firstLaunch && (!UTConfigParser.isEnabled("D:\"Player Fly Speed\"=0.05") || !UTConfigParser.isEnabled("D:\"Player Walk Speed\"=0.1"));
+                return !firstLaunch && (!UTConfigParser.isEnabled("D:\"[1] Walk Speed\"=0.1") || !UTConfigParser.isEnabled("D:\"[2] Fly Speed\"=0.05"));
             case "mixins.tweaks.prefixcheck.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Fast Prefix Checking\"=true");
             case "mixins.tweaks.redstonelighting.json":

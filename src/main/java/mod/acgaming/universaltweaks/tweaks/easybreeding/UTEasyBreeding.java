@@ -14,7 +14,7 @@ public class UTEasyBreeding
     @SubscribeEvent
     public static void utEasyBreeding(EntityJoinWorldEvent event)
     {
-        if (UTConfig.TWEAKS_ENTITIES.utEasyBreedingToggle && event.getEntity() instanceof EntityAnimal)
+        if (UTConfig.TWEAKS_ENTITIES.EASY_BREEDING.utEasyBreedingToggle && event.getEntity() instanceof EntityAnimal)
         {
             if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEasyBreeding ::: Entity join world event");
             EntityAnimal animal = (EntityAnimal) event.getEntity();

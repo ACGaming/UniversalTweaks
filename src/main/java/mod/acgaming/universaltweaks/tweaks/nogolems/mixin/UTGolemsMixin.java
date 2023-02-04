@@ -19,12 +19,12 @@ public abstract class UTGolemsMixin
     @Inject(method = "trySpawnGolem", at = @At("HEAD"), cancellable = true)
     public void utGolemSpawnCheck(World worldIn, BlockPos pos, CallbackInfo ci)
     {
-        if (UTConfig.TWEAKS_ENTITIES.utNGSnowGolemToggle && this.getSnowmanPattern().match(worldIn, pos) != null)
+        if (UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGSnowGolemToggle && this.getSnowmanPattern().match(worldIn, pos) != null)
         {
             if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTNoGolems ::: No snow golem spawn");
             ci.cancel();
         }
-        if (UTConfig.TWEAKS_ENTITIES.utNGIronGolemToggle && this.getGolemPattern().match(worldIn, pos) != null)
+        if (UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGIronGolemToggle && this.getGolemPattern().match(worldIn, pos) != null)
         {
             if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTNoGolems ::: No iron golem spawn");
             ci.cancel();

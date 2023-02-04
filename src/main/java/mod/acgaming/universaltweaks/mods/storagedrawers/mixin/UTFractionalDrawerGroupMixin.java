@@ -19,7 +19,7 @@ public class UTFractionalDrawerGroupMixin
     @Inject(method = {"adjustStoredItemCount"}, at = @At(value = "HEAD"), cancellable = true)
     public void utAdjustStoredItemCount(int slot, int amount, CallbackInfoReturnable<Integer> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.utSDItemHandlers) return;
+        if (!UTConfig.MOD_INTEGRATION.STORAGE_DRAWERS.utSDItemHandlers) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFractionalDrawerGroup ::: Adjust stored item count");
         if (this.attrs.isUnlimitedVending()) cir.setReturnValue(0);
     }
