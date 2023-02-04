@@ -68,21 +68,27 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.bugfixes.blocks.blockoverlay")
         @Config.Name("Block Overlay")
         public final BlockOverlayCategory BLOCK_OVERLAY = new BlockOverlayCategory();
+
         @Config.Name("Comparator Timing")
         @Config.Comment("Fixes inconsistent delays of comparators to prevent redstone timing issues")
         public boolean utComparatorTimingToggle = true;
+
         @Config.Name("Hopper Bounding Box")
         @Config.Comment("Slims down the hopper bounding box for easier access of nearby blocks")
         public boolean utDietHopperToggle = true;
+
         @Config.Name("Item Frame Void")
         @Config.Comment("Prevents voiding held items when right + left clicking on an item frame simultaneously")
         public boolean utItemFrameVoidToggle = true;
+
         @Config.Name("Ladder Flying Slowdown")
         @Config.Comment("Disables climbing movement when flying")
         public boolean utLadderFlyingToggle = true;
+
         @Config.Name("Mining Glitch")
         @Config.Comment("Avoids the need for multiple mining attempts by sending additional movement packets")
         public boolean utMiningGlitchToggle = true;
+
         @Config.Name("Piston Progress")
         @Config.Comment("Properly saves the last state of pistons to tags")
         public boolean utPistonTileToggle = true;
@@ -256,42 +262,55 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.betterburning")
         @Config.Name("Better Burning")
         public final BetterBurningCategory BETTER_BURNING = new BetterBurningCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.easybreeding")
         @Config.Name("Easy Breeding")
         public final EasyBreedingCategory EASY_BREEDING = new EasyBreedingCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.collisiondamage")
         @Config.Name("Collision Damage")
         public final CollisionDamageCategory COLLISION_DAMAGE = new CollisionDamageCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.nogolems")
         @Config.Name("No Golems")
         public final NoGolemsCategory NO_GOLEMS = new NoGolemsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.playerspeed")
         @Config.Name("Player Speed")
         public final PlayerSpeedCategory PLAYER_SPEED = new PlayerSpeedCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.waterfalldamage")
         @Config.Name("Water Fall Damage")
         public final WaterFallDamageCategory WATER_FALL_DAMAGE = new WaterFallDamageCategory();
+
         @Config.Name("AI Replacement")
         @Config.Comment("Replaces entity AI for improved server performance")
         public boolean utAIReplacementToggle = true;
+
         @Config.Name("AI Removal")
         @Config.Comment("Removes entity AI for improved server performance")
         public boolean utAIRemovalToggle = false;
+
         @Config.Name("Attributes Uncap")
         @Config.Comment("Virtually uncaps entity attributes")
         public boolean utAttributesToggle = true;
+
         @Config.Name("Auto Jump Replacement")
         @Config.Comment("Replaces auto jump with an increased step height")
         public boolean utAutoJumpToggle = true;
+
         @Config.Name("Better Ignition")
         @Config.Comment("Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them")
         public boolean utBetterIgnitionToggle = true;
+
         @Config.Name("Creeper Confetti")
         @Config.Comment("Replaces deadly creeper explosions with delightful confetti")
         public boolean utCreeperConfettiToggle = false;
+
         @Config.Name("Disable Sleeping")
         @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")
         public boolean utSleepingToggle = false;
+
         @Config.Name("Husk & Stray Spawning")
         @Config.Comment("Lets husks and strays spawn underground like regular zombies and skeletons")
         public boolean utHuskStraySpawningToggle = true;
@@ -299,6 +318,7 @@ public class UTConfig
         @Config.Name("Mob Despawn Improvement")
         @Config.Comment("Mobs carrying picked up items will drop their equipment and despawn properly")
         public boolean utMobDespawnToggle = true;
+
         @Config.Name("No Saddled Wandering")
         @Config.Comment("Stops horses wandering around when saddled")
         public boolean utSaddledWanderingToggle = true;
@@ -395,21 +415,27 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.tweaks.items.mending")
         @Config.Name("Mending")
         public final PlayerSpeedCategory MENDING = new PlayerSpeedCategory();
+
         @Config.Name("Auto Switch Tools")
         @Config.Comment("Switches the selected hotbar slot to a proper tool if required")
         public boolean utAutoSwitchToggle = false;
+
         @Config.Name("No Attack Cooldown")
         @Config.Comment("Disables the 1.9 combat update attack cooldown")
         public boolean utAttackCooldownToggle = false;
+
         @Config.Name("Bow Infinity")
         @Config.Comment("Bows enchanted with Infinity no longer require arrows")
         public boolean utBowInfinityToggle = true;
+
         @Config.Name("Item Entity Combination")
         @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
         public boolean utCombineItemEntityToggle = true;
+
         @Config.Name("Super Hot Torch")
         @Config.Comment("Enables one-time ignition of entities by hitting them with a torch")
         public boolean utSuperHotTorchToggle = false;
+
         @Config.Name("XP Bottle Amount")
         @Config.Comment
             ({
@@ -439,24 +465,31 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.loadsounds")
         @Config.Name("Load Sounds")
         public final LoadSoundsCategory LOAD_SOUNDS = new LoadSoundsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.smoothscrolling")
         @Config.Name("Smooth Scrolling")
         public final SmoothScrollingCategory SMOOTH_SCROLLING = new SmoothScrollingCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.stg")
         @Config.Name("Swing Through Grass")
         public final SwingThroughGrassCategory SWING_THROUGH_GRASS = new SwingThroughGrassCategory();
+
         @Config.Name("Damage Tilt")
         @Config.Comment("Restores feature to tilt the camera when damaged")
         public boolean utDamageTiltToggle = true;
+
         @Config.Name("Disable Narrator")
         @Config.Comment("Disables the narrator functionality entirely")
         public boolean utDisableNarratorToggle = true;
+
         @Config.Name("End Portal Parallax")
         @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
         public boolean utEndPortalParallaxToggle = true;
+
         @Config.Name("Infinite Music")
         @Config.Comment("Lets background music play continuously without delays")
         public boolean utInfiniteMusicToggle = false;
+
         @Config.Name("Linear XP Amount")
         @Config.Comment
             ({
@@ -464,39 +497,51 @@ public class UTConfig
                 "0 for vanilla default"
             })
         public int utLinearXP = 0;
+
         @Config.Name("No Lightning Flash")
         @Config.Comment("Disables the flashing of skybox and ground brightness on lightning strikes")
         public boolean utLightningFlashToggle = false;
+
         @Config.Name("No Night Vision Flash")
         @Config.Comment("Disables the flashing effect when the night vision potion effect is about to run out")
         public boolean utNightVisionFlashToggle = false;
+
         @Config.Name("No Potion Shift")
         @Config.Comment("Disables the inventory shift when potion effects are active")
         public boolean utPotionShiftToggle = true;
+
         @Config.Name("No Redstone Lighting")
         @Config.Comment("Disables lighting of active redstone, repeaters, and comparators to improve performance")
         public boolean utRedstoneLightingToggle = false;
+
         @Config.Name("Offhand Improvement")
         @Config.Comment("Prevents placing offhand blocks when blocks or food are held in the mainhand")
         public boolean utOffhandToggle = true;
+
         @Config.Name("Remove Realms Button")
         @Config.Comment("Removes the redundant Minecraft Realms button from the main menu")
         public boolean utRealmsButtonToggle = true;
+
         @Config.Name("Remove Recipe Book")
         @Config.Comment("Removes the recipe book button from GUIs")
         public boolean utRecipeBookToggle = false;
+
         @Config.Name("Remove Snooper")
         @Config.Comment("Forcefully turns off the snooper and hides the snooper settings button from the options menu")
         public boolean utSnooperToggle = true;
+
         @Config.Name("Skip Credits")
         @Config.Comment("Skips the credits screen after the player goes through the end podium portal")
         public boolean utSkipCreditsToggle = false;
+
         @Config.Name("Suppress Tutorial Hints")
         @Config.Comment("Suppresses in-game tutorial hint tabs in the right-hand corner")
         public boolean utTutorialHintsToggle = true;
+
         @Config.Name("Toggle Cheats Button")
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
         public boolean utToggleCheatsToggle = true;
+
         @Config.Name("Uncap FPS")
         @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
         public boolean utUncapFPSToggle = true;
@@ -504,17 +549,8 @@ public class UTConfig
         public static class LoadSoundsCategory
         {
             @Config.Name("[1] Mode")
-            @Config.RangeInt(min = 0, max = 3)
-            @Config.Comment
-                ({
-                    "Play sound on...",
-                    "0 = Nothing",
-                    "1 = Minecraft load",
-                    "2 = World load",
-                    "3 = Minecraft and world load"
-                })
-            public int utLoadSoundMode = 0;
-
+            @Config.Comment("Play load sound on...")
+            public EnumSoundModes utLoadSoundMode = EnumSoundModes.NOTHING;
             @Config.Name("[2] Minecraft Loaded Sounds")
             @Config.Comment({"Sounds to play when Minecraft is loaded", "Syntax: eventname;pitch"})
             public String[] utLoadSoundMC = new String[]
@@ -522,7 +558,6 @@ public class UTConfig
                     "entity.experience_orb.pickup;1.0",
                     "entity.player.levelup;1.0"
                 };
-
             @Config.Name("[3] World Loaded Sounds")
             @Config.Comment({"Sounds to play when the world is loaded", "Syntax: eventname;pitch"})
             public String[] utLoadSoundWorld = new String[]
@@ -530,6 +565,14 @@ public class UTConfig
                     "entity.experience_orb.pickup;1.0",
                     "entity.player.levelup;1.0"
                 };
+
+            public enum EnumSoundModes
+            {
+                NOTHING,
+                MINECRAFT,
+                WORLD,
+                MINECRAFT_AND_WORLD
+            }
         }
 
         public static class SmoothScrollingCategory
@@ -678,21 +721,27 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.bop")
         @Config.Name("Biomes O' Plenty")
         public final BiomesOPlentyCategory BIOMES_O_PLENTY = new BiomesOPlentyCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.esm")
         @Config.Name("Epic Siege Mod")
         public final EpicSiegeModCategory EPIC_SIEGE_MOD = new EpicSiegeModCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.forestry")
         @Config.Name("Forestry")
         public final ForestryCategory FORESTRY = new ForestryCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.moc")
         @Config.Name("Mo' Creatures")
         public final MoCreaturesCategory MO_CREATURES = new MoCreaturesCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.sd")
         @Config.Name("Storage Drawers")
         public final StorageDrawersCategory STORAGE_DRAWERS = new StorageDrawersCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.tc")
         @Config.Name("Thaumcraft")
         public final ThaumcraftCategory THAUMCRAFT = new ThaumcraftCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.tcon")
         @Config.Name("Tinkers' Construct")
         public final TinkersConstructCategory TINKERS_CONSTRUCT = new TinkersConstructCategory();
@@ -816,7 +865,7 @@ public class UTConfig
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
                 if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
-                if (TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != 0) UTLoadSound.initLists();
+                if (TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
                 UTObsoleteModsScreenHandler.shouldDisplay = true;
                 UniversalTweaks.LOGGER.info("Universal Tweaks config reloaded");
             }

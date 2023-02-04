@@ -60,7 +60,7 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void postInitClient(FMLPostInitializationEvent event)
     {
-        if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != 0) UTLoadSound.initLists();
+        if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfig.TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
         if (UTConfig.TWEAKS_MISC.utTutorialHintsToggle) UTTutorialHints.utTutorialHints();
     }
 
