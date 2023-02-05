@@ -1,5 +1,7 @@
 package mod.acgaming.universaltweaks.tweaks.craftingcache.mixin;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -11,9 +13,7 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.tweaks.craftingcache.UTCraftingCache;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.Overwrite;
 
 // Courtesy of EverNife
 @Mixin(CraftingManager.class)
@@ -21,31 +21,28 @@ public class UTCraftingManagerMixin
 {
     /**
      * @author EverNife
-     * @reason Cache NON_NBT Crafting Matrix by [Item and Meta],
-     * to prevent dispendious time on large modpacks with thousands of craftings
+     * @reason Crafting cache
      */
-    @Inject(method = "findMatchingRecipe", at = @At("HEAD"), cancellable = true)
-    private static void utFindMatchingRecipe(InventoryCrafting craftMatrix, World worldIn, CallbackInfoReturnable<IRecipe> cir)
+    @Overwrite
+    @Nullable
+    public static IRecipe findMatchingRecipe(InventoryCrafting craftMatrix, World worldIn)
     {
-        if (!UTConfig.TWEAKS_PERFORMANCE.utCraftingCacheToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCraftingManager ::: Find matching recipe");
-        cir.setReturnValue(UTCraftingCache.findMatchingRecipe(craftMatrix, worldIn));
+        return UTCraftingCache.findMatchingRecipe(craftMatrix, worldIn);
     }
 
     /**
      * @author EverNife
-     * @reason Cache NON_NBT Crafting Matrix by [Item and Meta],
-     * to prevent dispendious time on large modpacks with thousands of craftings
+     * @reason Crafting cache
      */
-    @Inject(method = "findMatchingResult", at = @At("HEAD"), cancellable = true)
-    private static void utFindMatchingResult(InventoryCrafting craftMatrix, World worldIn, CallbackInfoReturnable<NonNullList<ItemStack>> cir)
+    @Overwrite
+    public static NonNullList<ItemStack> getRemainingItems(InventoryCrafting craftMatrix, World worldIn)
     {
-        if (!UTConfig.TWEAKS_PERFORMANCE.utCraftingCacheToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCraftingManager ::: Find matching result");
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCraftingManager ::: Get remaining items");
         IRecipe iRecipe = UTCraftingCache.findMatchingRecipe(craftMatrix, worldIn);
-        if (iRecipe != null) cir.setReturnValue(iRecipe.getRemainingItems(craftMatrix));
+        if (iRecipe != null) return iRecipe.getRemainingItems(craftMatrix);
         NonNullList<ItemStack> nonnulllist = NonNullList.withSize(craftMatrix.getSizeInventory(), ItemStack.EMPTY);
-        for (int i = 0; i < nonnulllist.size(); ++i) nonnulllist.set(i, craftMatrix.getStackInSlot(i));
-        cir.setReturnValue(nonnulllist);
+        for (int i = 0; i < nonnulllist.size(); i++) nonnulllist.set(i, craftMatrix.getStackInSlot(i));
+        return nonnulllist;
     }
 }

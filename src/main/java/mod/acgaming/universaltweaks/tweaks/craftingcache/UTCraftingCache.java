@@ -13,7 +13,7 @@ import mod.acgaming.universaltweaks.config.UTConfig;
 // Courtesy of EverNife
 public class UTCraftingCache
 {
-    public static final Int2ObjectLinkedOpenHashMap<UTOptionalContent<IRecipe>> NON_NBT_CRAFT_CACHE = new Int2ObjectLinkedOpenHashMap<>();
+    public static Int2ObjectLinkedOpenHashMap<UTOptionalContent<IRecipe>> NON_NBT_CRAFT_CACHE = new Int2ObjectLinkedOpenHashMap<>();
 
     public static boolean hasAnyNBT(InventoryCrafting craftMatrix)
     {
@@ -25,7 +25,7 @@ public class UTCraftingCache
         return false;
     }
 
-    public static IRecipe default_findMatchingRecipe(InventoryCrafting craftMatrix, World worldIn)
+    public static IRecipe findMatchingRecipeDefault(InventoryCrafting craftMatrix, World worldIn)
     {
         for (IRecipe irecipe : CraftingManager.REGISTRY) if (irecipe.matches(craftMatrix, worldIn)) return irecipe;
         return null;
@@ -37,10 +37,10 @@ public class UTCraftingCache
         if (!hasNBT)
         {
             UTOptionalContent<IRecipe> optionalContent = getOrCreateCachedRecipe(craftMatrix);
-            if (!optionalContent.hasContent()) optionalContent.setContent(default_findMatchingRecipe(craftMatrix, worldIn));
+            if (!optionalContent.hasContent()) optionalContent.setContent(findMatchingRecipeDefault(craftMatrix, worldIn));
             return optionalContent.getContent();
         }
-        return default_findMatchingRecipe(craftMatrix, worldIn);
+        return findMatchingRecipeDefault(craftMatrix, worldIn);
     }
 
     public static UTOptionalContent<IRecipe> getOrCreateCachedRecipe(InventoryCrafting craftMatrix)
