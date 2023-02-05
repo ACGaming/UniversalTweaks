@@ -819,6 +819,10 @@ public class UTConfig
                     "5;10;40;1;1;sapling;6;10"
                 })
             public String[] utFOArboristDeals = new String[] {};
+
+            @Config.Name("Disable Bee Damage Armor Bypass")
+            @Config.Comment("Disables damage caused by bees bypassing player armor")
+            public boolean utBeeDamageArmorBypassToggle = true;
         }
 
         public static class MoCreaturesCategory

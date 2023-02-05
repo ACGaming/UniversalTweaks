@@ -115,6 +115,7 @@ All changes are toggleable via the config file.
     * Disable Digger AI Debug: Disables leftover debug logging inside the digger AI of the beta builds
 * Forestry
     * Arborist Villager Trades: Adds custom emerald to germling trades to the arborist villager
+    * Disable Bee Damage Armor Bypass: Disables damage caused by bees bypassing player armor
 * Mo' Creatures
     * Custom Modded Biomes: Adds support for modded biome spawns via config
 * Storage Drawers
