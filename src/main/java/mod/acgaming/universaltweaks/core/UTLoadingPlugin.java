@@ -90,6 +90,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.ladderflying.json",
             "mixins.bugfixes.miningglitch.client.json",
             "mixins.bugfixes.miningglitch.server.json",
+            "mixins.bugfixes.modelgap.json",
             "mixins.bugfixes.pistontile.json",
             "mixins.bugfixes.skeletonaim.json",
             "mixins.bugfixes.startup.json",
@@ -207,6 +208,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Frustum Culling\"=true");
                 case "mixins.bugfixes.miningglitch.client.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Mining Glitch\"=true");
+                case "mixins.bugfixes.modelgap.json":
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Model Gap Toggle\"=true");
                 case "mixins.bugfixes.startup.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Faster Background Startup\"=true");
                 case "mixins.bugfixes.villagermantle.json":

@@ -17,6 +17,7 @@ cfg.universaltweaks.bugfixes.blocks=Bugfixes: Blocks
 cfg.universaltweaks.bugfixes.blocks.blockoverlay=Block Overlay
 cfg.universaltweaks.bugfixes.entities=Bugfixes: Entities
 cfg.universaltweaks.bugfixes.misc=Bugfixes: Misc
+cfg.universaltweaks.bugfixes.misc.modelgap=Model Gap
 cfg.universaltweaks.bugfixes.world=Bugfixes: World
 cfg.universaltweaks.debug=Debug
 cfg.universaltweaks.modintegration=Mod Integration

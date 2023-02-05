@@ -45,6 +45,7 @@ jar {
         attributes 'FMLCorePlugin': 'mod.acgaming.universaltweaks.core.UTLoadingPlugin'
         attributes 'FMLCorePluginContainsFMLMod': 'true'
         attributes 'ForceLoadAsMod': 'true'
+        attributes 'FMLAT': 'universaltweaks_at.cfg'
     }
 }
 
@@ -113,4 +114,6 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+
+    rename '(.+_at.cfg)', 'META-INF/$1'
 }

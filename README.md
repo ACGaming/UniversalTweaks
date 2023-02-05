@@ -32,6 +32,7 @@ All changes are toggleable via the config file.
 * Locale: Prevents various crashes with Turkish locale
 * Max Health: Saves increased player health to tags
 * Mining Glitch: Avoids the need for multiple mining attempts by sending additional movement packets
+* Model Gap: Fixes transparent gaps in all 3D models of blocks and items
 * Piston Progress: Properly saves the last state of pistons to tags
 * Skeleton Aim: Fixes skeletons not looking at their targets when strafing
 * Tile Entity Update Order: Keeps the order of tile entities on chunk load

@@ -68,7 +68,7 @@ public class UTLoadSound
                 UniversalTweaks.LOGGER.warn("Unable to find sound: {}", new ResourceLocation(soundEntries[0]));
             }
         }
-        UniversalTweaks.LOGGER.info("Load sound lists initialized");
+        UniversalTweaks.LOGGER.info("Load Sound lists initialized");
     }
 
     public static void playRandomSoundMC()

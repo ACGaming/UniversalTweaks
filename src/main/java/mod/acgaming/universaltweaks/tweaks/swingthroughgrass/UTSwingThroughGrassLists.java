@@ -36,6 +36,6 @@ public class UTSwingThroughGrassLists
         {
             e.printStackTrace();
         }
-        UniversalTweaks.LOGGER.info("Swing through grass lists initialized");
+        UniversalTweaks.LOGGER.info("Swing Through Grass lists initialized");
     }
 }

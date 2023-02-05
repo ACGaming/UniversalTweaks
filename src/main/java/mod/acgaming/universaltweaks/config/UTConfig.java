@@ -182,6 +182,10 @@ public class UTConfig
 
     public static class BugfixesMiscCategory
     {
+        @Config.LangKey("cfg.universaltweaks.bugfixes.misc.modelgap")
+        @Config.Name("Model Gap")
+        public final ModelGapCategory MODEL_GAP = new ModelGapCategory();
+
         @Config.Name("Block Fire")
         @Config.Comment("Prevents fire projectiles burning entities when blocking with shields")
         public boolean utBlockFireToggle = true;
@@ -205,6 +209,31 @@ public class UTConfig
         @Config.Name("Locale Crash")
         @Config.Comment("Prevents various crashes with Turkish locale")
         public boolean utLocaleToggle = true;
+
+        public static class ModelGapCategory
+        {
+            @Config.Name("[1] Model Gap Toggle")
+            @Config.Comment("Fixes transparent gaps in all 3D models of blocks and items")
+            public boolean utModelGapToggle = true;
+
+            @Config.Name("[2] Recess Value")
+            @Config.Comment
+                ({
+                    "Quad X/Y offset",
+                    "Moves the quad toward the center of the item",
+                    "Use to hide gaps, keep as close to 0 as possible"
+                })
+            public double utModelGapRecess = 0.007D;
+
+            @Config.Name("[3] Expansion Value")
+            @Config.Comment
+                ({
+                    "Quad expansion increment",
+                    "Enlarges each quad",
+                    "Use to hide gaps, keep as close to 0 as possible"
+                })
+            public double utModelGapExpansion = 0.008D;
+        }
     }
 
     public static class BugfixesWorldCategory
@@ -551,6 +580,7 @@ public class UTConfig
             @Config.Name("[1] Mode")
             @Config.Comment("Play load sound on...")
             public EnumSoundModes utLoadSoundMode = EnumSoundModes.NOTHING;
+
             @Config.Name("[2] Minecraft Loaded Sounds")
             @Config.Comment({"Sounds to play when Minecraft is loaded", "Syntax: eventname;pitch"})
             public String[] utLoadSoundMC = new String[]
@@ -558,6 +588,7 @@ public class UTConfig
                     "entity.experience_orb.pickup;1.0",
                     "entity.player.levelup;1.0"
                 };
+
             @Config.Name("[3] World Loaded Sounds")
             @Config.Comment({"Sounds to play when the world is loaded", "Syntax: eventname;pitch"})
             public String[] utLoadSoundWorld = new String[]
@@ -699,6 +730,14 @@ public class UTConfig
 
     public static class DebugCategory
     {
+        @Config.Name("Config Version")
+        @Config.Comment
+            ({
+                "Version number of the config file",
+                "Do not touch!",
+            })
+        public String utConfigVersion = UniversalTweaks.VERSION;
+
         @Config.Name("Debug Logging")
         @Config.Comment("Enables debug logging")
         public boolean utDebugToggle = false;

@@ -29,7 +29,7 @@ public class UniversalTweaks
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
     public static final String VERSION = "1.12.2-1.3.0";
-    public static final String DEPENDENCIES = "required-after:mixinbooter;after:tconstruct;after:customspawner;after:biomesoplenty;after:storagedrawers";
+    public static final String DEPENDENCIES = "required-after:mixinbooter;after:biomesoplenty;after:customspawner;after:epicsiegemod;after:forestry;after:storagedrawers;after:tconstruct;after:thaumcraft";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     @Mod.EventHandler

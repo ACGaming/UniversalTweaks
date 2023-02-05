@@ -36,6 +36,6 @@ public class UTBlockOverlayLists
         {
             e.printStackTrace();
         }
-        UniversalTweaks.LOGGER.info("Block overlay lists initialized");
+        UniversalTweaks.LOGGER.info("Block Overlay lists initialized");
     }
 }
