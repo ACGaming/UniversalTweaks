@@ -12,12 +12,12 @@ All changes are toggleable via the config file.
 * Chunk Saving: Fixes loading of outdated chunks to prevent duplications, deletions and data corruption
 * Comparator Timing: Fixes inconsistent delays of comparators to prevent redstone timing issues
 * Death Time: Fixes corrupted entities exceeding the allowed death time
+* Depth Mask: Fixes entity and particle rendering issues by enabling depth buffer writing
 * Destroy Entity Packets: Fixes lag caused by dead entities by sending additional packets when the player is not alive
 * Dimension Change Player States: Fixes missing player states when changing dimensions by sending additional packets
 * Disconnect Dupe: Fixes item dupes when players are dropping items and disconnecting
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * Entity Desync: Fixes entity motion desyncs most notable with arrows and thrown items
-* Entity Layers: Fixes entity layer rendering of invisible mobs by restoring the depth mask
 * Entity NaN: Prevents corruption of entities caused by invalid health or damage values
 * Entity Suffocation: Pushes entities out of blocks when growing up to prevent suffocation
 * Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
