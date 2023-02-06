@@ -16,7 +16,7 @@ public class UTRecipeBookInvMixin
     public void utHideRecipeBook(CallbackInfo ci)
     {
         if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookInvMixin ::: Initialize GUI");
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookInv ::: Initialize GUI");
         ci.cancel();
     }
 }

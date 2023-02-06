@@ -12,13 +12,13 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(GuiRecipeBook.class)
-public abstract class UTRecipeBookMixin
+public abstract class UTRecipeBookGUIMixin
 {
     @Inject(method = "initVisuals", at = @At(value = "TAIL"))
     public void utHideRecipeBook(boolean p_193014_1_, InventoryCrafting p_193014_2_, CallbackInfo ci)
     {
         if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookMixin ::: Initialize visuals");
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookGUI ::: Initialize visuals");
         setVisible(false);
     }
 
