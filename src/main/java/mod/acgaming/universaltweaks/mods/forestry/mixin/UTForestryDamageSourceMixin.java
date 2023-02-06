@@ -12,6 +12,6 @@ public class UTForestryDamageSourceMixin
     @WrapWithCondition(method = "<init>", at = @At(value = "INVOKE", target = "Lforestry/core/utils/DamageSourceForestry;setDamageBypassesArmor()Lnet/minecraft/util/DamageSource;"))
     public boolean utForestryDamageSource(DamageSourceForestry instance)
     {
-        return !UTConfig.MOD_INTEGRATION.FORESTRY.utBeeDamageArmorBypassToggle;
+        return !UTConfig.MOD_INTEGRATION.FORESTRY.utFOBeeDamageArmorBypassToggle;
     }
 }

@@ -822,7 +822,7 @@ public class UTConfig
 
             @Config.Name("Disable Bee Damage Armor Bypass")
             @Config.Comment("Disables damage caused by bees bypassing player armor")
-            public boolean utBeeDamageArmorBypassToggle = true;
+            public boolean utFOBeeDamageArmorBypassToggle = true;
         }
 
         public static class MoCreaturesCategory
