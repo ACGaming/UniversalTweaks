@@ -98,7 +98,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.villagermantle.json",
             "mixins.tweaks.ai.json",
             "mixins.tweaks.attackcooldown.json",
-            "mixins.tweaks.attributes.json",
             "mixins.tweaks.audioreload.json",
             "mixins.tweaks.autojump.json",
             "mixins.tweaks.bedobstruction.json",
@@ -157,7 +156,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.teloadorder.json",
                 "mixins.tweaks.ai.json",
                 "mixins.tweaks.attackcooldown.json",
-                "mixins.tweaks.attributes.json",
                 "mixins.tweaks.bedobstruction.json",
                 "mixins.tweaks.chunkgenlimit.json",
                 "mixins.tweaks.collisiondamage.json",
@@ -290,8 +288,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"AI Replacement\"=true");
             case "mixins.tweaks.attackcooldown.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"No Attack Cooldown\"=true");
-            case "mixins.tweaks.attributes.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Attributes Uncap\"=true");
             case "mixins.tweaks.bedobstruction.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Bed Obstruction Replacement\"=true");
             case "mixins.tweaks.chunkgenlimit.json":

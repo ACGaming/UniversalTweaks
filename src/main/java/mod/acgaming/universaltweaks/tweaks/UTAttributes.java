@@ -1,11 +1,10 @@
-package mod.acgaming.universaltweaks.tweaks.attributes;
+package mod.acgaming.universaltweaks.tweaks;
 
 import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.entity.ai.attributes.RangedAttribute;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
-import mod.acgaming.universaltweaks.tweaks.attributes.mixin.RangedAttributeAccessor;
 
 import static net.minecraft.entity.SharedMonsterAttributes.*;
 
@@ -30,11 +29,18 @@ public class UTAttributes
 
     public static void setValues(IAttribute attribute, double minValue, double maxValue)
     {
-        if (attribute instanceof RangedAttribute)
+        try
         {
-            ((RangedAttributeAccessor) attribute).setMinimumValue(minValue);
-            ((RangedAttributeAccessor) attribute).setMaximumValue(maxValue);
-            UniversalTweaks.LOGGER.info("UTAttributes ::: Successfully altered attribute {} with {} as minimum and {} as maximum", attribute.getName(), minValue, maxValue);
+            if (attribute instanceof RangedAttribute)
+            {
+                ((RangedAttribute) attribute).minimumValue = minValue;
+                ((RangedAttribute) attribute).maximumValue = maxValue;
+                UniversalTweaks.LOGGER.info("UTAttributes ::: Successfully altered attribute {} with {} as minimum and {} as maximum", attribute.getName(), minValue, maxValue);
+            }
+        }
+        catch (Exception e)
+        {
+            UniversalTweaks.LOGGER.error("UTAttributes ::: Couldn't alter attribute {}", attribute.getName());
         }
     }
 }
