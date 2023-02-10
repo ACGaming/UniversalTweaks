@@ -27,7 +27,7 @@ public abstract class UTDrawerItemHandlerMixin
             cir.setReturnValue(stack);
             return;
         }
-        cir.setReturnValue(this.insertItemInternal(slot, stack, simulate));
+        cir.setReturnValue(this.insertItemInternal(--slot, stack, simulate));
     }
 
     @Shadow
