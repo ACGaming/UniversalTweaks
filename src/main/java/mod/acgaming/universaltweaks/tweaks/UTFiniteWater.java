@@ -20,12 +20,13 @@ public class UTFiniteWater
     @SubscribeEvent
     public static void utFiniteWater(BlockEvent.CreateFluidSourceEvent event)
     {
-        if (!UTConfig.TWEAKS_BLOCKS.utFiniteWaterToggle) return;
+        if (!UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFiniteWater ::: Create fluid source event");
         World world = event.getWorld();
         BlockPos pos = event.getPos();
+        if (pos.getY() >= UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterInfMin && pos.getY() <= UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterInfMax) return;
         Biome biome = world.getBiomeForCoordsBody(pos);
-        if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN) || BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER)) return;
+        if (UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterWaterBiomes && (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN) || BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))) return;
         IBlockState state = event.getState();
         if (state.getMaterial() == Material.WATER) event.setResult(Event.Result.DENY);
     }

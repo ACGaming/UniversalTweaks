@@ -249,6 +249,10 @@ public class UTConfig
 
     public static class TweaksBlocksCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.finite_water")
+        @Config.Name("Finite Water")
+        public final FiniteWaterCategory FINITE_WATER = new FiniteWaterCategory();
+
         @Config.Name("Bed Obstruction Replacement")
         @Config.Comment("Replaces bed obstruction checks with an improved version")
         public boolean utBedObstructionToggle = true;
@@ -272,18 +276,31 @@ public class UTConfig
         @Config.Name("Fence/Wall Jump")
         @Config.Comment("Allows the player to jump over fences and walls")
         public boolean utFenceWallJumpToggle = true;
-
-        @Config.Name("Finite Water")
-        @Config.Comment("Prevents creation of infinite water sources outside of ocean and river biomes")
-        public boolean utFiniteWaterToggle = false;
-
         @Config.Name("Hardcore Buckets")
         @Config.Comment("Prevents placing of liquid source blocks in the world")
         public boolean utHardcoreBucketsToggle = false;
-
         @Config.Name("Sugar Cane Size")
         @Config.Comment("Determines how tall sugar cane can grow")
         public int utSugarCaneSize = 3;
+
+        public static class FiniteWaterCategory
+        {
+            @Config.Name("[1] Finite Water Toggle")
+            @Config.Comment("Prevents creation of infinite water sources")
+            public boolean utFiniteWaterToggle = false;
+
+            @Config.Name("[2] Allow Water Biomes")
+            @Config.Comment("Allows creation of infinite water sources in ocean and river biomes")
+            public boolean utFiniteWaterWaterBiomes = true;
+
+            @Config.Name("[3] Minimum Altitude")
+            @Config.Comment("Inclusive minimum altitude at which water is infinite")
+            public int utFiniteWaterInfMin = 0;
+
+            @Config.Name("[4] Maximum Altitude")
+            @Config.Comment("Inclusive maximum altitude at which water is infinite")
+            public int utFiniteWaterInfMax = 63;
+        }
     }
 
     public static class TweaksEntitiesCategory
@@ -757,31 +774,31 @@ public class UTConfig
 
     public static class ModIntegrationCategory
     {
-        @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.bop")
+        @Config.LangKey("cfg.universaltweaks.modintegration.bop")
         @Config.Name("Biomes O' Plenty")
         public final BiomesOPlentyCategory BIOMES_O_PLENTY = new BiomesOPlentyCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.esm")
+        @Config.LangKey("cfg.universaltweaks.modintegration.esm")
         @Config.Name("Epic Siege Mod")
         public final EpicSiegeModCategory EPIC_SIEGE_MOD = new EpicSiegeModCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.forestry")
+        @Config.LangKey("cfg.universaltweaks.modintegration.forestry")
         @Config.Name("Forestry")
         public final ForestryCategory FORESTRY = new ForestryCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.moc")
+        @Config.LangKey("cfg.universaltweaks.modintegration.moc")
         @Config.Name("Mo' Creatures")
         public final MoCreaturesCategory MO_CREATURES = new MoCreaturesCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.sd")
+        @Config.LangKey("cfg.universaltweaks.modintegration.sd")
         @Config.Name("Storage Drawers")
         public final StorageDrawersCategory STORAGE_DRAWERS = new StorageDrawersCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.tc")
+        @Config.LangKey("cfg.universaltweaks.modintegration.tc")
         @Config.Name("Thaumcraft")
         public final ThaumcraftCategory THAUMCRAFT = new ThaumcraftCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.modintegration.tcon")
+        @Config.LangKey("cfg.universaltweaks.modintegration.tcon")
         @Config.Name("Tinkers' Construct")
         public final TinkersConstructCategory TINKERS_CONSTRUCT = new TinkersConstructCategory();
 
