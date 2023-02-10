@@ -41,7 +41,7 @@ All changes are toggleable via the config file.
 **Tweaks:**
 
 * AI Improvements: Replaces/removes entity AI for improved server performance
-* Attributes Uncap: Virtually uncaps entity attributes
+* Attributes: Sets custom ranges for entity attributes
 * Auto Jump Replacement: Replaces auto jump with an increased step height
 * Auto Switch Tools: Switches the selected hotbar slot to a proper tool if required
 * Bed Obstruction Replacement: Replaces bed obstruction checks with an improved version

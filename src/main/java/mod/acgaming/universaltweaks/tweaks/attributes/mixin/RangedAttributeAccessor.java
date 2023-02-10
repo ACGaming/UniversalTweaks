@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.mixin;
+package mod.acgaming.universaltweaks.tweaks.attributes.mixin;
 
 import net.minecraft.entity.ai.attributes.RangedAttribute;
 

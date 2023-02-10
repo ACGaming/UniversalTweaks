@@ -13,9 +13,9 @@ import mod.acgaming.universaltweaks.bugfixes.UTHelp;
 import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
-import mod.acgaming.universaltweaks.tweaks.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.UTTutorialHints;
+import mod.acgaming.universaltweaks.tweaks.attributes.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.endportal.UTEndPortalParallax;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
@@ -36,7 +36,7 @@ public class UniversalTweaks
     public void preInit(FMLPreInitializationEvent event)
     {
         UTPacketHandler.init();
-        if (UTConfig.TWEAKS_ENTITIES.utAttributesToggle) UTAttributes.utSetAttributes();
+        if (UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
         LOGGER.info(NAME + " pre-initialized");
     }

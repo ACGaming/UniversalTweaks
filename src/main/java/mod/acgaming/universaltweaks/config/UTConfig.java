@@ -305,6 +305,10 @@ public class UTConfig
 
     public static class TweaksEntitiesCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.attributes")
+        @Config.Name("Attributes")
+        public final AttributesCategory ATTRIBUTES = new AttributesCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.betterburning")
         @Config.Name("Better Burning")
         public final BetterBurningCategory BETTER_BURNING = new BetterBurningCategory();
@@ -337,10 +341,6 @@ public class UTConfig
         @Config.Comment("Removes entity AI for improved server performance")
         public boolean utAIRemovalToggle = false;
 
-        @Config.Name("Attributes Uncap")
-        @Config.Comment("Virtually uncaps entity attributes")
-        public boolean utAttributesToggle = true;
-
         @Config.Name("Auto Jump Replacement")
         @Config.Comment("Replaces auto jump with an increased step height")
         public boolean utAutoJumpToggle = true;
@@ -368,6 +368,73 @@ public class UTConfig
         @Config.Name("No Saddled Wandering")
         @Config.Comment("Stops horses wandering around when saddled")
         public boolean utSaddledWanderingToggle = true;
+
+        public static class AttributesCategory
+        {
+            @Config.Name("[01] Attributes Toggle")
+            @Config.Comment("Sets custom ranges for entity attributes")
+            public boolean utAttributesToggle = true;
+
+            @Config.Name("[02] Max Health Min")
+            public double utAttributeMaxHealthMin = -65536;
+
+            @Config.Name("[03] Max Health Max")
+            public double utAttributeMaxHealthMax = 65536;
+
+            @Config.Name("[04] Follow Range Min")
+            public double utAttributeFollowRangeMin = -65536;
+
+            @Config.Name("[05] Follow Range Max")
+            public double utAttributeFollowRangeMax = 65536;
+
+            @Config.Name("[06] Knockback Resistance Min")
+            public double utAttributeKnockbackResistanceMin = -65536;
+
+            @Config.Name("[07] Knockback Resistance Max")
+            public double utAttributeKnockbackResistanceMax = 65536;
+
+            @Config.Name("[08] Movement Speed Min")
+            public double utAttributeMovementSpeedMin = -65536;
+
+            @Config.Name("[09] Movement Speed Max")
+            public double utAttributeMovementSpeedMax = 65536;
+
+            @Config.Name("[10] Flying Speed Min")
+            public double utAttributeFlyingSpeedMin = -65536;
+
+            @Config.Name("[11] Flying Speed Max")
+            public double utAttributeFlyingSpeedMax = 65536;
+
+            @Config.Name("[12] Attack Damage Min")
+            public double utAttributeAttackDamageMin = -65536;
+
+            @Config.Name("[13] Attack Damage Max")
+            public double utAttributeAttackDamageMax = 65536;
+
+            @Config.Name("[14] Attack Speed Min")
+            public double utAttributeAttackSpeedMin = -65536;
+
+            @Config.Name("[15] Attack Speed Max")
+            public double utAttributeAttackSpeedMax = 65536;
+
+            @Config.Name("[16] Armor Min")
+            public double utAttributeArmorMin = -65536;
+
+            @Config.Name("[17] Armor Max")
+            public double utAttributeArmorMax = 65536;
+
+            @Config.Name("[18] Armor Toughness Min")
+            public double utAttributeArmorToughnessMin = -65536;
+
+            @Config.Name("[19] Armor Toughness Max")
+            public double utAttributeArmorToughnessMax = 65536;
+
+            @Config.Name("[20] Luck Min")
+            public double utAttributeLuckMin = -65536;
+
+            @Config.Name("[21] Luck Max")
+            public double utAttributeLuckMax = 65536;
+        }
 
         public static class BetterBurningCategory
         {
