@@ -16,6 +16,7 @@ import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.UTTutorialHints;
+import mod.acgaming.universaltweaks.tweaks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.endportal.UTEndPortalParallax;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
@@ -28,7 +29,7 @@ public class UniversalTweaks
 {
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
-    public static final String VERSION = "1.12.2-1.3.2";
+    public static final String VERSION = "1.12.2-1.4.0";
     public static final String DEPENDENCIES = "required-after:mixinbooter;after:biomesoplenty;after:customspawner;after:epicsiegemod;after:forestry;after:storagedrawers;after:tconstruct;after:thaumcraft";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
@@ -45,6 +46,7 @@ public class UniversalTweaks
     public void init(FMLInitializationEvent event)
     {
         if (UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
+        if (UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initLists();
         if (UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
         LOGGER.info(NAME + " initialized");

@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
+import mod.acgaming.universaltweaks.tweaks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.util.UTObsoleteModsScreenHandler;
 
@@ -249,6 +250,10 @@ public class UTConfig
 
     public static class TweaksBlocksCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.breakablebedrock")
+        @Config.Name("Breakable Bedrock")
+        public final BreakableBedrockCategory BREAKABLE_BEDROCK = new BreakableBedrockCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.finitewater")
         @Config.Name("Finite Water")
         public final FiniteWaterCategory FINITE_WATER = new FiniteWaterCategory();
@@ -282,6 +287,31 @@ public class UTConfig
         @Config.Name("Sugar Cane Size")
         @Config.Comment("Determines how tall sugar cane can grow")
         public int utSugarCaneSize = 3;
+
+        public static class BreakableBedrockCategory
+        {
+            @Config.Name("[1] Breakable Bedrock Toggle")
+            @Config.Comment("Allows customizable mining of bedrock")
+            public boolean utBreakableBedrockToggle = false;
+
+            @Config.Name("[2] Hardness")
+            public float utBreakableBedrockHardness = 200.0F;
+
+            @Config.Name("[3] Resistance")
+            public float utBreakableBedrockResistance = 6000000.0F;
+
+            @Config.Name("[4] Harvest Level")
+            public int utBreakableBedrockHarvestLevel = 3;
+
+            @Config.Name("[5] Tool Whitelist")
+            @Config.Comment
+                ({
+                    "Whitelist of tools for mining bedrock",
+                    "If empty, allows every tool matching the harvest level",
+                    "Syntax: modid:tool"
+                })
+            public String[] utBreakableBedrockWhitelist = new String[] {};
+        }
 
         public static class FiniteWaterCategory
         {
@@ -991,6 +1021,7 @@ public class UTConfig
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
                 if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
+                if (TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initLists();
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
                 UTObsoleteModsScreenHandler.shouldDisplay = true;

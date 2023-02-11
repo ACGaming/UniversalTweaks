@@ -55,6 +55,7 @@ All changes are toggleable via the config file.
 * Better Ignition: Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them
 * Block Placement Click Delay: Sets the delay in ticks between placing blocks
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
+* Breakable Bedrock: Allows customizable mining of bedrock
 * Chunk Gen Limit: Limits maximum chunk generation per tick for improved server performance
 * Crafting Cache: Adds an IRecipe cache to improve recipe performance in large modpacks
 * Creeper Confetti: Replaces deadly creeper explosions with delightful confetti
