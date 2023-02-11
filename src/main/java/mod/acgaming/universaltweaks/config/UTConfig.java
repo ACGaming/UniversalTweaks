@@ -249,7 +249,7 @@ public class UTConfig
 
     public static class TweaksBlocksCategory
     {
-        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.finite_water")
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.finitewater")
         @Config.Name("Finite Water")
         public final FiniteWaterCategory FINITE_WATER = new FiniteWaterCategory();
 
