@@ -14,6 +14,7 @@ public class UTMixinLoader implements ILateMixinLoader
     {
         return Lists.newArrayList(
             "mixins.mods.biomesoplenty.json",
+            "mixins.mods.crafttweaker.json",
             "mixins.mods.customspawner.json",
             "mixins.mods.epicsiegemod.json",
             "mixins.mods.forestry.json",
@@ -31,6 +32,8 @@ public class UTMixinLoader implements ILateMixinLoader
         {
             switch (mixinConfig)
             {
+                case "mixins.mods.crafttweaker.json":
+                    return Loader.isModLoaded("crafttweaker");
                 case "mixins.mods.storagedrawers.client.json":
                 case "mixins.mods.storagedrawers.server.json":
                     return Loader.isModLoaded("storagedrawers");
@@ -53,6 +56,6 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.tconstruct.json":
                 return Loader.isModLoaded("tconstruct");
         }
-        return false;
+        return true;
     }
 }
