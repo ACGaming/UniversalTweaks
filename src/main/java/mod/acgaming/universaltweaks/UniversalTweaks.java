@@ -3,6 +3,7 @@ package mod.acgaming.universaltweaks;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -13,6 +14,7 @@ import mod.acgaming.universaltweaks.bugfixes.UTHelp;
 import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
+import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.UTTutorialHints;
@@ -39,6 +41,7 @@ public class UniversalTweaks
         UTPacketHandler.init();
         if (UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
+        if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
         LOGGER.info(NAME + " pre-initialized");
     }
 
@@ -88,6 +91,7 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void onLoadComplete(FMLLoadCompleteEvent event)
     {
+        if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.onLoadComplete();
         if (UTConfig.DEBUG.utLoadingTimeToggle) LOGGER.info("The game loaded in approximately {} seconds", (System.currentTimeMillis() - UTLoadingPlugin.launchTime) / 1000F);
         if (UTObsoleteModsHandler.obsoleteModsMessage().size() > 5) UniversalTweaks.LOGGER.warn(String.join(System.lineSeparator(), UTObsoleteModsHandler.obsoleteModsMessage()));
     }

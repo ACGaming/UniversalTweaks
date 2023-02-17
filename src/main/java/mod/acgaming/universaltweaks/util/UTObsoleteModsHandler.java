@@ -70,6 +70,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("surge")) messages.add("Surge");
         if (Loader.isModLoaded("tconfixes")) messages.add("TConFixes");
         if (Loader.isModLoaded("tidychunk") && UTConfig.TWEAKS_WORLD.utTidyChunkToggle) messages.add("TidyChunk");
+        if (Loader.isModLoaded("tinkersoredictcache") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) messages.add("TinkersOreDictCache");
         if (Loader.isModLoaded("unloader") && UTConfig.TWEAKS_WORLD.DIMENSION_UNLOAD.utUnloaderToggle) messages.add("Unloader");
         if (Loader.isModLoaded("villagermantlefix") && UTConfig.BUGFIXES_ENTITIES.utVillagerMantleToggle) messages.add("Villager Mantle Fix");
         if (Loader.isModLoaded("watercontrolextreme") && UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterToggle) messages.add("Water Control Extreme");

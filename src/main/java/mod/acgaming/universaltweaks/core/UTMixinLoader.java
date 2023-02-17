@@ -5,6 +5,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 import net.minecraftforge.fml.common.Loader;
 
+import mod.acgaming.universaltweaks.config.UTConfig;
 import zone.rong.mixinbooter.ILateMixinLoader;
 
 public class UTMixinLoader implements ILateMixinLoader
@@ -21,7 +22,8 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.storagedrawers.client.json",
             "mixins.mods.storagedrawers.server.json",
             "mixins.mods.thaumcraft.json",
-            "mixins.mods.tconstruct.json"
+            "mixins.mods.tconstruct.json",
+            "mixins.mods.tconstruct.oredictcache.json"
         );
     }
 
@@ -55,6 +57,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("thaumcraft");
             case "mixins.mods.tconstruct.json":
                 return Loader.isModLoaded("tconstruct");
+            case "mixins.mods.tconstruct.oredictcache.json":
+                return Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle;
         }
         return true;
     }

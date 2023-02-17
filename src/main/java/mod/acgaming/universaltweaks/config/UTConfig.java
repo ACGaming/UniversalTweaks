@@ -1008,6 +1008,10 @@ public class UTConfig
             @Config.Name("Offhand Shuriken")
             @Config.Comment("Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand")
             public boolean utTConShurikenToggle = true;
+
+            @Config.Name("Ore Dictionary Cache")
+            @Config.Comment("Caches all ore dictionary smelting recipes to speed up game loading")
+            public boolean utTConOreDictCacheToggle = true;
         }
     }
 
