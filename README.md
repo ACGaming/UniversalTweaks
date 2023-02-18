@@ -27,6 +27,7 @@ All changes are toggleable via the config file.
 * Frustum Culling: Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * Help: Replaces the help command, sorts and reports broken commands
 * Hopper Bounding Box: Slims down the hopper bounding box for easier access of nearby blocks
+* Hopper Insert Safety Check: Prevents crashes when the destination tile entity becomes unavailable during the item insert process
 * Item Frame Void: Prevents voiding held items when right + left-clicking on an item frame simultaneously
 * Ladder Flying Slowdown: Disables climbing movement when flying
 * Locale: Prevents various crashes with Turkish locale

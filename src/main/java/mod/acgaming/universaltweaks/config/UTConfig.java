@@ -78,6 +78,14 @@ public class UTConfig
         @Config.Comment("Slims down the hopper bounding box for easier access of nearby blocks")
         public boolean utDietHopperToggle = true;
 
+        @Config.Name("Hopper Insert Safety Check")
+        @Config.Comment
+            ({
+                "Prevents crashes when the destination tile entity becomes unavailable during the item insert process",
+                "Mainly utilized to suppress edge case symptoms with Thaumcraft's Thaumatorium"
+            })
+        public boolean utHopperInsertToggle = true;
+
         @Config.Name("Item Frame Void")
         @Config.Comment("Prevents voiding held items when right + left clicking on an item frame simultaneously")
         public boolean utItemFrameVoidToggle = true;

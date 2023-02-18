@@ -86,6 +86,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.exhaustion.json",
             "mixins.bugfixes.frustumculling.json",
             "mixins.bugfixes.hopperaabb.json",
+            "mixins.bugfixes.hopperinsert.json",
             "mixins.bugfixes.itemframevoid.json",
             "mixins.bugfixes.ladderflying.json",
             "mixins.bugfixes.miningglitch.client.json",
@@ -148,6 +149,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.entitytracker.json",
                 "mixins.bugfixes.exhaustion.json",
                 "mixins.bugfixes.hopperaabb.json",
+                "mixins.bugfixes.hopperinsert.json",
                 "mixins.bugfixes.itemframevoid.json",
                 "mixins.bugfixes.ladderflying.json",
                 "mixins.bugfixes.miningglitch.server.json",
@@ -272,6 +274,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Player Saturation\"=true");
             case "mixins.bugfixes.hopperaabb.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Hopper Bounding Box\"=true");
+            case "mixins.bugfixes.hopperinsert.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Hopper Insert Safety Check\"=true");
             case "mixins.bugfixes.itemframevoid.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Item Frame Void\"=true");
             case "mixins.bugfixes.ladderflying.json":
