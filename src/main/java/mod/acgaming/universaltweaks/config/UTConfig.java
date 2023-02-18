@@ -565,7 +565,7 @@ public class UTConfig
     {
         @Config.LangKey("cfg.universaltweaks.tweaks.items.mending")
         @Config.Name("Mending")
-        public final PlayerSpeedCategory MENDING = new PlayerSpeedCategory();
+        public final MendingCategory MENDING = new MendingCategory();
 
         @Config.Name("Auto Switch Tools")
         @Config.Comment("Switches the selected hotbar slot to a proper tool if required")
@@ -595,7 +595,7 @@ public class UTConfig
             })
         public int utXPBottleAmount = -1;
 
-        public static class PlayerSpeedCategory
+        public static class MendingCategory
         {
             @Config.Name("[1] Mending Toggle")
             @Config.Comment("Implements modern mending behavior to only repair damaged equipment with XP")
