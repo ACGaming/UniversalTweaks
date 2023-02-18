@@ -668,6 +668,10 @@ public class UTConfig
         @Config.Name("Load Sounds")
         public final LoadSoundsCategory LOAD_SOUNDS = new LoadSoundsCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.rallyhealth")
+        @Config.Name("Rally Health")
+        public final RallyHealthCategory RALLY_HEALTH = new RallyHealthCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.smoothscrolling")
         @Config.Name("Smooth Scrolling")
         public final SmoothScrollingCategory SMOOTH_SCROLLING = new SmoothScrollingCategory();
@@ -777,6 +781,29 @@ public class UTConfig
                 WORLD,
                 MINECRAFT_AND_WORLD
             }
+        }
+
+        public static class RallyHealthCategory
+        {
+            @Config.Name("[1] Rally Health Toggle")
+            @Config.Comment
+                ({
+                    "Adds Bloodborne's Rally system to Minecraft",
+                    "Regain lost health when attacking back within the risk time"
+                })
+            public boolean utRallyHealthToggle = false;
+
+            @Config.Name("[2] Risk Time")
+            @Config.Comment("Determines the risk time in ticks")
+            public int utRallyHealthRiskTime = 60;
+
+            @Config.Name("[3] Heal Chance")
+            @Config.Comment("Determines the chance to regain health in percent")
+            public int utRallyHealthHealChance = 80;
+
+            @Config.Name("[4] Indication Sound")
+            @Config.Comment("Plays an indication sound effect when health is regained")
+            public boolean utRallyHealthSound = false;
         }
 
         public static class SmoothScrollingCategory

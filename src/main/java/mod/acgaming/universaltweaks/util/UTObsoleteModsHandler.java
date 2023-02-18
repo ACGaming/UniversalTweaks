@@ -63,6 +63,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("overpowered_mending") && UTConfig.TWEAKS_ITEMS.MENDING.utMendingOPToggle) messages.add("Overpowered Mending");
         if (Loader.isModLoaded("parry") && UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) messages.add("Shield Parry");
         if (Loader.isModLoaded("quickleafdecay") && UTConfig.TWEAKS_BLOCKS.utLeafDecayToggle) messages.add("Quick Leaf Decay");
+        if (Loader.isModLoaded("rallyhealth") && UTConfig.TWEAKS_MISC.RALLY_HEALTH.utRallyHealthToggle) messages.add("Rally Health");
         if (Loader.isModLoaded("savemystronghold") && UTConfig.TWEAKS_WORLD.utStrongholdToggle) messages.add("Save My Stronghold!");
         if (Loader.isModLoaded("smooth-scrolling-everywhere") && UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle) messages.add("Smooth Scrolling Everywhere");
         if (Loader.isModLoaded("stepupfix") && UTConfig.TWEAKS_ENTITIES.utAutoJumpToggle) messages.add("StepupFixer");
