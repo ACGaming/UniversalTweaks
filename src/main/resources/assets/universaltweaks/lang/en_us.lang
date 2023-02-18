@@ -12,6 +12,9 @@ msg.universaltweaks.cheats.disabled=Cheats are now §cdisabled
 # DISABLE SLEEPING
 msg.universaltweaks.sleep.spawnpoint=Spawn point set
 
+# PARRY
+enchantment.parry=Rebound
+
 # CONFIG
 cfg.universaltweaks.bugfixes.blocks=Bugfixes: Blocks
 cfg.universaltweaks.bugfixes.blocks.blockoverlay=Block Overlay
@@ -41,6 +44,7 @@ cfg.universaltweaks.tweaks.entities.playerspeed=Player Speed
 cfg.universaltweaks.tweaks.entities.waterfalldamage=Water Fall Damage
 cfg.universaltweaks.tweaks.items=Tweaks: Items
 cfg.universaltweaks.tweaks.items.mending=Mending
+cfg.universaltweaks.tweaks.items.parry=Shield Parry
 cfg.universaltweaks.tweaks.misc=Tweaks: Misc
 cfg.universaltweaks.tweaks.misc.loadsounds=Load Sounds
 cfg.universaltweaks.tweaks.misc.smoothscrolling=Smooth Scrolling

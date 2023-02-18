@@ -567,6 +567,10 @@ public class UTConfig
         @Config.Name("Mending")
         public final MendingCategory MENDING = new MendingCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.items.parry")
+        @Config.Name("Shield Parry")
+        public final ParryCategory PARRY = new ParryCategory();
+
         @Config.Name("Auto Switch Tools")
         @Config.Comment("Switches the selected hotbar slot to a proper tool if required")
         public boolean utAutoSwitchToggle = false;
@@ -608,6 +612,53 @@ public class UTConfig
             @Config.Name("[3] Overpowered")
             @Config.Comment("Repairs damaged items from the entire inventory with XP")
             public boolean utMendingOPToggle = false;
+        }
+
+        public static class ParryCategory
+        {
+            @Config.Name("[1] Shield Parry Toggle")
+            @Config.Comment("Allows parrying of projectiles with shields")
+            public boolean utParryToggle = false;
+
+            @Config.Name("[2] Arrow Time Window")
+            @Config.Comment
+                ({
+                    "Determines the amount of time an arrow can be parried after raising the shield",
+                    "Measured in ticks"
+                })
+            public int utParryArrowTimeWindow = 40;
+
+            @Config.Name("[3] Fireball Time Window")
+            @Config.Comment
+                ({
+                    "Determines the amount of time a fireball can be parried after raising the shield",
+                    "Measured in ticks"
+                })
+            public int utParryFireballTimeWindow = 40;
+
+            @Config.Name("[4] Throwable Time Window")
+            @Config.Comment
+                ({
+                    "Determines the amount of time a throwable can be parried after raising the shield",
+                    "Measured in ticks"
+                })
+            public int utParryThrowableTimeWindow = 40;
+
+            @Config.Name("[5] Rebound Enchantment")
+            @Config.Comment("Adds the Rebound enchantment for extended parry time windows")
+            public boolean utParryReboundToggle = true;
+
+            @Config.Name("[6] Rebound Treasure Enchantment")
+            @Config.Comment("Makes the Rebound enchantment exclusive to enchanted books as loot")
+            public boolean utParryReboundTreasure = false;
+
+            @Config.Name("[7] Rebound Max Level")
+            @Config.Comment("Maximum enchantment level for the Rebound enchantment")
+            public int utParryReboundMaxLevel = 5;
+
+            @Config.Name("[8] Rebound Multiplier")
+            @Config.Comment("Multiplier for the parry time windows")
+            public float utParryReboundMultiplier = 0.25F;
         }
     }
 

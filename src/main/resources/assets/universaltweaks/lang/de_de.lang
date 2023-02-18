@@ -11,3 +11,6 @@ msg.universaltweaks.cheats.disabled=Cheats sind nun §cdeaktiviert
 
 # DISABLE SLEEPING
 msg.universaltweaks.sleep.spawnpoint=Spawnpunkt gesetzt
+
+# PARRY
+enchantment.parry=Rückschlag
