@@ -848,13 +848,13 @@ public class UTConfig
 
     public static class TweaksPerformanceCategory
     {
+        @Config.Name("Check Animated Models")
+        @Config.Comment("Improves model load times by checking if an animated model exists before trying to load it")
+        public boolean utCheckAnimatedModelsToggle = true;
+
         @Config.Name("Crafting Cache")
         @Config.Comment("Adds an IRecipe cache to improve recipe performance in larger modpacks")
         public boolean utCraftingCacheToggle = true;
-
-        @Config.Name("Disable Animated Models")
-        @Config.Comment("Improves model load times by removing Forge's animated models")
-        public boolean utDisableAnimatedModelsToggle = false;
 
         @Config.Name("Disable Audio Debug")
         @Config.Comment("Improves loading times by removing debug code for missing sounds and subtitles")

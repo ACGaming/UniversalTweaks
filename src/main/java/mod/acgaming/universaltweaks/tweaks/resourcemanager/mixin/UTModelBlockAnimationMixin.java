@@ -25,7 +25,7 @@ public class UTModelBlockAnimationMixin
     @Inject(method = "loadVanillaAnimation(Lnet/minecraft/client/resources/IResourceManager;Lnet/minecraft/util/ResourceLocation;)Lnet/minecraftforge/client/model/animation/ModelBlockAnimation;", at = @At("HEAD"), cancellable = true, remap = false)
     private static void utLoadVanillaAnimation(IResourceManager manager, ResourceLocation location, CallbackInfoReturnable<ModelBlockAnimation> info)
     {
-        if (!UTConfig.TWEAKS_PERFORMANCE.utDisableAnimatedModelsToggle) return;
+        if (!UTConfig.TWEAKS_PERFORMANCE.utCheckAnimatedModelsToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTModelBlockAnimationMixin ::: Load vanilla animation");
         if (manager instanceof ICheckableResourceManager && !((ICheckableResourceManager) manager).hasResource(location))
         {

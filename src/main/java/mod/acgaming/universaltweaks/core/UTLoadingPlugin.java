@@ -231,7 +231,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.tweaks.recipebook.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Remove Recipe Book\"=true");
                 case "mixins.tweaks.resourcemanager.json":
-                    return !firstLaunch && UTConfigParser.isEnabled("B:\"Disable Animated Models\"=true");
+                    return !firstLaunch && UTConfigParser.isEnabled("B:\"Check Animated Models\"=true");
                 case "mixins.tweaks.skipcredits.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Skip Credits\"=true");
                 case "mixins.tweaks.smoothscrolling.json":
