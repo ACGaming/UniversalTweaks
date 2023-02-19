@@ -20,7 +20,6 @@ public class UTRecipeBookInvMixin
     @Redirect(method = "initGui", at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/inventory/GuiInventory;recipeButton:Lnet/minecraft/client/gui/GuiButtonImage;", ordinal = 0))
     public void utHideRecipeBook(GuiInventory instance, GuiButtonImage value)
     {
-        if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookInv ::: Initialize GUI");
         this.recipeButton = new GuiButtonImage(10, 0, 0, 0, 0, 0, 0, 0, new ResourceLocation("textures/gui/container/inventory.png"));
     }
