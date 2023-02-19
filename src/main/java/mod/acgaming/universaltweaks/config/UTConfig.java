@@ -563,6 +563,10 @@ public class UTConfig
 
     public static class TweaksItemsCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.items.itementities")
+        @Config.Name("Item Entities")
+        public final ItemEntitiesCategory ITEM_ENTITIES = new ItemEntitiesCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.items.mending")
         @Config.Name("Mending")
         public final MendingCategory MENDING = new MendingCategory();
@@ -583,10 +587,6 @@ public class UTConfig
         @Config.Comment("Bows enchanted with Infinity no longer require arrows")
         public boolean utBowInfinityToggle = true;
 
-        @Config.Name("Item Entity Combination")
-        @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
-        public boolean utCombineItemEntityToggle = true;
-
         @Config.Name("Super Hot Torch")
         @Config.Comment("Enables one-time ignition of entities by hitting them with a torch")
         public boolean utSuperHotTorchToggle = false;
@@ -598,6 +598,69 @@ public class UTConfig
                 "-1 for vanilla default"
             })
         public int utXPBottleAmount = -1;
+
+        public static class ItemEntitiesCategory
+        {
+            @Config.Name("[01] Item Entities Toggle")
+            @Config.Comment("Enables the modification of item entity properties")
+            public boolean utItemEntitiesToggle = true;
+
+            @Config.Name("[02] Physics")
+            @Config.Comment("Adds physical aspects such as collision boxes to item entities")
+            public boolean utIEPhysicsToggle = false;
+
+            @Config.Name("[03] Automatic Pickup")
+            @Config.Comment
+                ({
+                    "Item entities can be picked up automatically",
+                    "When disabled, item entities can be picked up by right-clicking (requires 'Physics' option)"
+                })
+            public boolean utIEAutomaticPickupToggle = true;
+
+            @Config.Name("[04] Sneaking Pickup")
+            @Config.Comment("Item entities can only be picked up when sneaking")
+            public boolean utIESneakingPickupToggle = false;
+
+            @Config.Name("[05] Collection Tool")
+            @Config.Comment
+                ({
+                    "Tools which enable picking up items automatically",
+                    "Example -> minecraft:bucket"
+                })
+            public String[] utIECollectionTools = new String[] {};
+
+            @Config.Name("[06] Pickup Delay")
+            @Config.Comment
+                ({
+                    "Determines the delay in ticks until item entities can be picked up",
+                    "-1 for vanilla default"
+                })
+            public int utIEPickupDelay = -1;
+
+            @Config.Name("[07] Lifespan")
+            @Config.Comment
+                ({
+                    "Determines the time in ticks until item entities get despawned",
+                    "-1 for vanilla default"
+                })
+            public int utIELifespan = -1;
+
+            @Config.Name("[08] No Combination")
+            @Config.Comment("Stops combination of item entities")
+            public boolean utIENoCombinationToggle = false;
+
+            @Config.Name("[09] Smart Combination")
+            @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
+            public boolean utIESmartCombinationToggle = true;
+
+            @Config.Name("[10] Rotation")
+            @Config.Comment("Enables the rotation effect")
+            public boolean utIERotation = true;
+
+            @Config.Name("[11] Bobbing")
+            @Config.Comment("Enables the bobbing effect")
+            public boolean utIEBobbing = true;
+        }
 
         public static class MendingCategory
         {

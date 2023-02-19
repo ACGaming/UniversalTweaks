@@ -111,7 +111,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.falldamage.json",
             "mixins.tweaks.hardcorebuckets.json",
             "mixins.tweaks.infinitemusic.json",
-            "mixins.tweaks.itementity.json",
+            "mixins.tweaks.itementities.client.json",
+            "mixins.tweaks.itementities.server.json",
             "mixins.tweaks.lightningflash.json",
             "mixins.tweaks.linearxp.json",
             "mixins.tweaks.mobdespawn.json",
@@ -166,7 +167,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.dyeblending.json",
                 "mixins.tweaks.falldamage.json",
                 "mixins.tweaks.hardcorebuckets.json",
-                "mixins.tweaks.itementity.json",
+                "mixins.tweaks.itementities.server.json",
                 "mixins.tweaks.linearxp.json",
                 "mixins.tweaks.mobdespawn.json",
                 "mixins.tweaks.nogolems.json",
@@ -220,6 +221,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return !firstLaunch && !UTConfigParser.isEnabled("I:\"Block Placement Click Delay\"=4");
                 case "mixins.tweaks.infinitemusic.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Infinite Music\"=true");
+                case "mixins.tweaks.itementities.client.json":
+                    return !firstLaunch && UTConfigParser.isEnabled("B:\"[01] Item Entities Toggle\"=true");
                 case "mixins.tweaks.lightningflash.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"No Lightning Flash\"=true");
                 case "mixins.tweaks.narrator.json":
@@ -233,7 +236,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.tweaks.resourcemanager.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Check Animated Models\"=true");
                 case "mixins.tweaks.skipcredits.json":
-                    return !firstLaunch && UTConfigParser.isEnabled("B:\"Skip Credits\"=true");
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Skip Credits\"=true");
                 case "mixins.tweaks.smoothscrolling.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Smooth Scrolling Toggle\"=true");
                 case "mixins.tweaks.snooper.client.json":
@@ -308,8 +311,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"[1] Water Fall Damage Toggle\"=true");
             case "mixins.tweaks.hardcorebuckets.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Hardcore Buckets\"=true");
-            case "mixins.tweaks.itementity.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Item Entity Combination\"=true");
+            case "mixins.tweaks.itementities.server.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"[01] Item Entities Toggle\"=true");
             case "mixins.tweaks.linearxp.json":
                 return !firstLaunch && !UTConfigParser.isEnabled("I:\"Linear XP Amount\"=0");
             case "mixins.tweaks.mobdespawn.json":

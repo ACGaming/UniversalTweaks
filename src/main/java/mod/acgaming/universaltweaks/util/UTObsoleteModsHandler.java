@@ -26,6 +26,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("bottomsugarcanharvest") && UTConfig.TWEAKS_BLOCKS.utSugarCaneSize != 3) messages.add("Bottom Sugar Cane Harvest");
         if (Loader.isModLoaded("bowinfinityfix") && UTConfig.TWEAKS_ITEMS.utBowInfinityToggle) messages.add("Bow Infinity Fix");
         if (Loader.isModLoaded("chunkgenlimit") && UTConfig.TWEAKS_WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) messages.add("Chunk Generation Limiter");
+        if (Loader.isModLoaded("cie") && UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utItemEntitiesToggle) messages.add("Configurable Item Entities (CIE)");
         if (Loader.isModLoaded("classiccombat") && UTConfig.TWEAKS_ITEMS.utAttackCooldownToggle) messages.add("Classic Combat");
         if (Loader.isModLoaded("collisiondamage") && UTConfig.TWEAKS_ENTITIES.COLLISION_DAMAGE.utCollisionDamageToggle) messages.add("Collision Damage");
         if (Loader.isModLoaded("configurablecane") && UTConfig.TWEAKS_BLOCKS.utSugarCaneSize != 3) messages.add("Configurable Cane");
@@ -33,10 +34,10 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("creeperconfetti") && UTConfig.TWEAKS_ENTITIES.utCreeperConfettiToggle) messages.add("Creeper Confetti");
         if (Loader.isModLoaded("damagetilt") && UTConfig.TWEAKS_MISC.utDamageTiltToggle) messages.add("Damage Tilt");
         if (Loader.isModLoaded("darkstone") && UTConfig.TWEAKS_MISC.utRedstoneLightingToggle) messages.add("Dark Redstone");
+        if (Loader.isModLoaded("deuf") && UTConfig.BUGFIXES_ENTITIES.utEntityUUIDToggle) messages.add("Duplicate Entity UUID Fix (DEUF)");
         if (Loader.isModLoaded("diethopper") && UTConfig.BUGFIXES_BLOCKS.utDietHopperToggle) messages.add("Diet Hopper");
         if (Loader.isModLoaded("ding") && UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfig.TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) messages.add("Ding");
         if (Loader.isModLoaded("drawerfps") && UTConfig.MOD_INTEGRATION.STORAGE_DRAWERS.utSDRenderRange > 0) messages.add("DrawerFPS");
-        if (Loader.isModLoaded("deuf") && UTConfig.BUGFIXES_ENTITIES.utEntityUUIDToggle) messages.add("Duplicate Entity UUID Fix (DEUF)");
         if (Loader.isModLoaded("easybreeding") && UTConfig.TWEAKS_ENTITIES.EASY_BREEDING.utEasyBreedingToggle) messages.add("Easy Breeding");
         if (Loader.isModLoaded("enablecheats") && UTConfig.TWEAKS_MISC.utToggleCheatsToggle) messages.add("Enable Cheats");
         if (Loader.isModLoaded("endportalparallax") && UTConfig.TWEAKS_MISC.utEndPortalParallaxToggle) messages.add("End Portal Parallax");
