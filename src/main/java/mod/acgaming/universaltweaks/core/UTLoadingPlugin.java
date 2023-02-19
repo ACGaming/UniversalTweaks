@@ -222,7 +222,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.tweaks.infinitemusic.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Infinite Music\"=true");
                 case "mixins.tweaks.itementities.client.json":
-                    return !firstLaunch && UTConfigParser.isEnabled("B:\"[01] Item Entities Toggle\"=true");
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"[01] Item Entities Toggle\"=true");
                 case "mixins.tweaks.lightningflash.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"No Lightning Flash\"=true");
                 case "mixins.tweaks.narrator.json":
@@ -236,7 +236,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.tweaks.resourcemanager.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Check Animated Models\"=true");
                 case "mixins.tweaks.skipcredits.json":
-                    return firstLaunch || UTConfigParser.isEnabled("B:\"Skip Credits\"=true");
+                    return !firstLaunch && UTConfigParser.isEnabled("B:\"Skip Credits\"=true");
                 case "mixins.tweaks.smoothscrolling.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Smooth Scrolling Toggle\"=true");
                 case "mixins.tweaks.snooper.client.json":
