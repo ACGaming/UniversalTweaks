@@ -13,6 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import mod.acgaming.universaltweaks.bugfixes.UTHelp;
 import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigParser;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
@@ -38,6 +39,7 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+        if (!UTConfigParser.mayday.isEmpty()) throw new IllegalArgumentException(UTConfigParser.mayday);
         UTPacketHandler.init();
         if (UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);

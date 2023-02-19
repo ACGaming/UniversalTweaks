@@ -28,7 +28,8 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 */
 public class UTConfigParser
 {
-    public static String configString;
+    public static String configString = "";
+    public static String mayday = "";
 
     public static boolean init()
     {
@@ -52,6 +53,9 @@ public class UTConfigParser
 
     public static boolean isEnabled(String setting)
     {
-        return configString.contains(setting);
+        String[] settingSplits = setting.split("=");
+        if (configString.contains(settingSplits[0])) return configString.contains(setting);
+        mayday = "Invalid setting name: " + settingSplits[0];
+        return false;
     }
 }
