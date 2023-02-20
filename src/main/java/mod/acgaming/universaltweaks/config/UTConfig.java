@@ -540,13 +540,41 @@ public class UTConfig
 
         public static class PlayerSpeedCategory
         {
-            @Config.Name("[1] Walk Speed")
+            @Config.Name("[1] Player Speed Toggle")
+            @Config.Comment("Enables the modification of base and maximum player speeds")
+            public boolean utPlayerSpeedToggle = false;
+
+            @Config.Name("[2] Walk Speed")
             @Config.Comment("Determines the player's base walk speed")
             public double utPlayerWalkSpeed = 0.1;
 
-            @Config.Name("[2] Fly Speed")
+            @Config.Name("[3] Fly Speed")
             @Config.Comment("Determines the player's base fly speed")
             public double utPlayerFlySpeed = 0.05;
+
+            @Config.Name("[4] Max Speed")
+            @Config.Comment
+                ({
+                    "Determines the player's maximum speed",
+                    "Increase if you get the infamous 'Player moved too quickly' messages"
+                })
+            public double utPlayerMaxSpeed = 100;
+
+            @Config.Name("[5] Max Elytra Speed")
+            @Config.Comment
+                ({
+                    "Determines the player's maximum speed when flying with elytra",
+                    "Increase if you get the infamous 'Player moved too quickly' messages"
+                })
+            public double utPlayerMaxElytraSpeed = 300;
+
+            @Config.Name("[6] Max Vehicle Speed")
+            @Config.Comment
+                ({
+                    "Determines the player's maximum speed when riding a vehicle or mount",
+                    "Increase if you get the infamous 'Player moved too quickly' messages"
+                })
+            public double utPlayerVehicleSpeed = 100;
         }
 
         public static class WaterFallDamageCategory

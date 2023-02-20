@@ -322,7 +322,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.plantables.json":
                 return !firstLaunch && (!UTConfigParser.isEnabled("I:\"Cactus Size\"=3") || !UTConfigParser.isEnabled("I:\"Sugar Cane Size\"=3"));
             case "mixins.tweaks.playerspeed.json":
-                return !firstLaunch && (!UTConfigParser.isEnabled("D:\"[1] Walk Speed\"=0.1") || !UTConfigParser.isEnabled("D:\"[2] Fly Speed\"=0.05"));
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"[1] Player Speed Toggle\"=true");
             case "mixins.tweaks.prefixcheck.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Fast Prefix Checking\"=true");
             case "mixins.tweaks.redstonelighting.json":

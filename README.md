@@ -93,7 +93,7 @@ All changes are toggleable via the config file.
 * No Saddled Wandering: Stops horses wandering around when saddled
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
 * Plantables: Configurable growth height for sugar cane and cacti
-* Player Speed: Configurable player fly and walk speed
+* Player Speed: Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
 * Rally Health: Adds Bloodborne's Rally system to Minecraft, regain lost health when attacking back within the risk time
 * Remove Realms Button: Removes the redundant Minecraft Realms button from the main menu
 * Remove Recipe Book: Removes the recipe book button from GUIs

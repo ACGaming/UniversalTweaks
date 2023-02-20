@@ -49,6 +49,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("finite-fluid-control") && UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterToggle) messages.add("Finite Water Control");
         if (Loader.isModLoaded("framevoidpatch") && UTConfig.BUGFIXES_BLOCKS.utItemFrameVoidToggle) messages.add("Frame Void Patch");
         if (Loader.isModLoaded("givemebackmyhp") && UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle) messages.add("Give Me Back My HP");
+        if (Loader.isModLoaded("gottagofast") && UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("Gotta Go Fast");
         if (Loader.isModLoaded("helpfixer") && UTConfig.BUGFIXES_MISC.utHelpToggle) messages.add("HelpFixer");
         if (Loader.isModLoaded("horsestandstill") && UTConfig.TWEAKS_ENTITIES.utSaddledWanderingToggle) messages.add("Stupid Horse Stand Still");
         if (Loader.isModLoaded("ikwid") && UTConfig.TWEAKS_MISC.utTutorialHintsToggle) messages.add("I Know What I'm Doing");
@@ -56,6 +57,8 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("letmedespawn") && UTConfig.TWEAKS_ENTITIES.utMobDespawnToggle) messages.add("Let Me Despawn");
         if (Loader.isModLoaded("loginhpfix") && UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle) messages.add("Login HP Fix");
         if (Loader.isModLoaded("mendingfix") && UTConfig.TWEAKS_ITEMS.MENDING.utMendingToggle) messages.add("Mending Fix");
+        if (Loader.isModLoaded("movingquickly") && UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("MovingQuickly");
+        if (Loader.isModLoaded("mtqfix") && UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("MTQFix");
         if (Loader.isModLoaded("nanfix") && UTConfig.BUGFIXES_ENTITIES.utEntityNaNToggle) messages.add("NaN Entity Health Fix");
         if (Loader.isModLoaded("nobounce") && UTConfig.MOD_INTEGRATION.THAUMCRAFT.utTCStableThaumometerToggle) messages.add("Stable Thaumometer");
         if (Loader.isModLoaded("nonvflash") && UTConfig.TWEAKS_MISC.utNightVisionFlashToggle) messages.add("No Night Vision Flashing");

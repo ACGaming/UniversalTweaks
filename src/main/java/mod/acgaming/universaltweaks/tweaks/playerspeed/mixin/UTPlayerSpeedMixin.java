@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.mixin;
+package mod.acgaming.universaltweaks.tweaks.playerspeed.mixin;
 
 import net.minecraft.entity.player.PlayerCapabilities;
 
