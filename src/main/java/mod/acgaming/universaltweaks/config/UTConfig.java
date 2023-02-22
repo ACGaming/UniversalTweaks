@@ -8,6 +8,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
+import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
+import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
@@ -1052,6 +1054,10 @@ public class UTConfig
         @Config.Name("Biomes O' Plenty")
         public final BiomesOPlentyCategory BIOMES_O_PLENTY = new BiomesOPlentyCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.botania")
+        @Config.Name("Botania")
+        public final BotaniaCategory BOTANIA = new BotaniaCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.esm")
         @Config.Name("Epic Siege Mod")
         public final EpicSiegeModCategory EPIC_SIEGE_MOD = new EpicSiegeModCategory();
@@ -1081,6 +1087,18 @@ public class UTConfig
             @Config.Name("Hot Spring Water")
             @Config.Comment("Fixes rapid inflection of regeneration effects in hot spring water")
             public boolean utBoPHotSpringWaterToggle = true;
+        }
+
+        public static class BotaniaCategory
+        {
+            @Config.Name("Fancy Skybox")
+            @Config.Comment
+                ({
+                    "Enables the Botania Garden of Glass skybox for custom dimensions",
+                    "Abides by Botania's 'enableFancySkybox' config option",
+                    "Example: 43"
+                })
+            public Integer[] utBotaniaSkyboxDims = new Integer[] {};
         }
 
         public static class EpicSiegeModCategory
@@ -1201,10 +1219,14 @@ public class UTConfig
             if (event.getModID().equals(UniversalTweaks.MODID))
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
-                if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
                 if (TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initLists();
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
-                if (TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
+                if (UTLoadingPlugin.isClient)
+                {
+                    if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
+                    if (MOD_INTEGRATION.BOTANIA.utBotaniaSkyboxDims.length > 0) UTBotaniaFancySkybox.initDimList();
+                    if (TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
+                }
                 UTObsoleteModsScreenHandler.shouldDisplay = true;
                 UniversalTweaks.LOGGER.info("Universal Tweaks config reloaded");
             }

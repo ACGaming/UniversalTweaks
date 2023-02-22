@@ -25,6 +25,7 @@ cfg.universaltweaks.bugfixes.world=Bugfixes: World
 cfg.universaltweaks.debug=Debug
 cfg.universaltweaks.modintegration=Mod Integration
 cfg.universaltweaks.modintegration.bop=Biomes O' Plenty
+cfg.universaltweaks.modintegration.botania=Botania
 cfg.universaltweaks.modintegration.esm=Epic Siege Mod
 cfg.universaltweaks.modintegration.forestry=Forestry
 cfg.universaltweaks.modintegration.moc=Mo' Creatures

@@ -15,6 +15,7 @@ import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.config.UTConfigParser;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
+import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
@@ -33,7 +34,7 @@ public class UniversalTweaks
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
     public static final String VERSION = "1.12.2-1.4.0";
-    public static final String DEPENDENCIES = "required-after:mixinbooter;after:biomesoplenty;after:customspawner;after:epicsiegemod;after:forestry;after:storagedrawers;after:tconstruct;after:thaumcraft";
+    public static final String DEPENDENCIES = "required-after:mixinbooter;after:biomesoplenty;after:botania;after:customspawner;after:epicsiegemod;after:forestry;after:storagedrawers;after:tconstruct;after:thaumcraft";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     @Mod.EventHandler
@@ -50,11 +51,18 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        if (UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
         if (UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initLists();
         if (UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
         LOGGER.info(NAME + " initialized");
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Mod.EventHandler
+    public void initClient(FMLInitializationEvent event)
+    {
+        if (UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
+        if (UTConfig.TWEAKS_MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
     }
 
     @Mod.EventHandler
@@ -67,15 +75,9 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void postInitClient(FMLPostInitializationEvent event)
     {
+        if (UTConfig.MOD_INTEGRATION.BOTANIA.utBotaniaSkyboxDims.length > 0) UTBotaniaFancySkybox.initDimList();
         if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfig.TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
         if (UTConfig.TWEAKS_MISC.utTutorialHintsToggle) UTTutorialHints.utTutorialHints();
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Mod.EventHandler
-    public void initClient(FMLInitializationEvent event)
-    {
-        if (UTConfig.TWEAKS_MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
     }
 
     @Mod.EventHandler
