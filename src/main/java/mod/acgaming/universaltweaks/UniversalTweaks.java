@@ -22,6 +22,7 @@ import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.UTTutorialHints;
 import mod.acgaming.universaltweaks.tweaks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.endportal.UTEndPortalParallax;
+import mod.acgaming.universaltweaks.tweaks.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
 import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
@@ -51,8 +52,6 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        if (UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initLists();
-        if (UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
         LOGGER.info(NAME + " initialized");
     }
@@ -68,6 +67,9 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
+        if (UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initLists();
+        if (UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
+        if (UTConfig.TWEAKS_MISC.utIncurablePotions.length > 0) UTIncurablePotions.initPotionList();
         LOGGER.info(NAME + " post-initialized");
     }
 

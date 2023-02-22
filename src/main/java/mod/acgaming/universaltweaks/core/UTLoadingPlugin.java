@@ -110,6 +110,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.dyeblending.json",
             "mixins.tweaks.falldamage.json",
             "mixins.tweaks.hardcorebuckets.json",
+            "mixins.tweaks.incurablepotions.json",
             "mixins.tweaks.infinitemusic.json",
             "mixins.tweaks.itementities.client.json",
             "mixins.tweaks.itementities.server.json",
@@ -167,6 +168,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.dyeblending.json",
                 "mixins.tweaks.falldamage.json",
                 "mixins.tweaks.hardcorebuckets.json",
+                "mixins.tweaks.incurablepotions.json",
                 "mixins.tweaks.itementities.server.json",
                 "mixins.tweaks.linearxp.json",
                 "mixins.tweaks.mobdespawn.json",
@@ -311,6 +313,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"[1] Water Fall Damage Toggle\"=true");
             case "mixins.tweaks.hardcorebuckets.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Hardcore Buckets\"=true");
+            case "mixins.tweaks.incurablepotions.json":
+                return true;
             case "mixins.tweaks.itementities.server.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"[01] Item Entities Toggle\"=true");
             case "mixins.tweaks.linearxp.json":

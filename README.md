@@ -77,6 +77,7 @@ All changes are toggleable via the config file.
 * Hardcore Buckets: Prevents placing of liquid source blocks in the world
 * Horizontal Collision Damage: Applies horizontal collision damage to the player akin to elytra collision
 * Husk & Stray Spawning: Lets husks and strays spawn underground like regular zombies and skeletons
+* Incurable Potions: Excludes potion effects from being curable with curative items like buckets of milk
 * Infinite Music: Lets background music play continuously without delays
 * Item Entities: Enables the modification of item entity properties
 * Linear XP Amount: Sets the amount of XP needed for each level, effectively removing the increasing level scaling
@@ -115,6 +116,8 @@ All changes are toggleable via the config file.
 
 * Biomes O' Plenty
     * Hot Spring Water: Fixes rapid inflection of regeneration effects in hot spring water
+* Botania
+    * Fancy Skybox: Enables the Botania Garden of Glass skybox for custom dimensions
 * Epic Siege Mod
     * Disable Digger AI Debug: Disables leftover debug logging inside the digger AI of the beta builds
 * Forestry

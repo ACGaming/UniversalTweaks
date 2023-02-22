@@ -12,6 +12,7 @@ import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.breakablebedrock.UTBreakableBedrock;
+import mod.acgaming.universaltweaks.tweaks.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.util.UTObsoleteModsScreenHandler;
 
@@ -785,6 +786,14 @@ public class UTConfig
         @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
         public boolean utEndPortalParallaxToggle = true;
 
+        @Config.Name("Incurable Potions")
+        @Config.Comment
+            ({
+                "Excludes potion effects from being curable with curative items like buckets of milk",
+                "Syntax: modid:potioneffect"
+            })
+        public String[] utIncurablePotions = new String[] {};
+
         @Config.Name("Infinite Music")
         @Config.Comment("Lets background music play continuously without delays")
         public boolean utInfiniteMusicToggle = false;
@@ -1221,6 +1230,7 @@ public class UTConfig
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
                 if (TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initLists();
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
+                if (TWEAKS_MISC.utIncurablePotions.length > 0) UTIncurablePotions.initPotionList();
                 if (UTLoadingPlugin.isClient)
                 {
                     if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
