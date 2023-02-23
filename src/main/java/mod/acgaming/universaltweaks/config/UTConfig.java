@@ -870,7 +870,7 @@ public class UTConfig
             @Config.Comment
                 ({
                     "Blacklist Mode: Potion effects incurable by curative items, rest is curable",
-                    "Whitelist Mode: Potions effects curable by curative items, rest is incurable"
+                    "Whitelist Mode: Potion effects curable by curative items, rest is incurable"
                 })
             public EnumLists utIncurablePotionsListMode = EnumLists.BLACKLIST;
         }

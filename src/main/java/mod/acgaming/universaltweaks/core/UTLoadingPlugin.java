@@ -314,7 +314,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.hardcorebuckets.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Hardcore Buckets\"=true");
             case "mixins.tweaks.incurablepotions.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Incurable Potions Toggle");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Incurable Potions Toggle\"=true");
             case "mixins.tweaks.itementities.server.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"[01] Item Entities Toggle\"=true");
             case "mixins.tweaks.linearxp.json":
