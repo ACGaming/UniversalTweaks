@@ -320,14 +320,22 @@ public class UTConfig
             @Config.Name("[4] Harvest Level")
             public int utBreakableBedrockHarvestLevel = 3;
 
-            @Config.Name("[5] Tool Whitelist")
+            @Config.Name("[5] Tool List")
             @Config.Comment
                 ({
-                    "Whitelist of tools for mining bedrock",
+                    "List of tools concerning mining bedrock",
                     "If empty, allows every tool matching the harvest level",
                     "Syntax: modid:tool"
                 })
-            public String[] utBreakableBedrockWhitelist = new String[] {};
+            public String[] utBreakableBedrockToolList = new String[] {};
+
+            @Config.Name("[6] List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Tools which can't mine bedrock, others can",
+                    "Whitelist Mode: Tools which can mine bedrock, others can't"
+                })
+            public EnumLists utBreakableBedrockToolListMode = EnumLists.BLACKLIST;
         }
 
         public static class FiniteWaterCategory
@@ -869,8 +877,8 @@ public class UTConfig
             @Config.Name("[3] List Mode")
             @Config.Comment
                 ({
-                    "Blacklist Mode: Potion effects incurable by curative items, rest is curable",
-                    "Whitelist Mode: Potion effects curable by curative items, rest is incurable"
+                    "Blacklist Mode: Potion effects incurable by curative items, others are curable",
+                    "Whitelist Mode: Potion effects curable by curative items, others are incurable"
                 })
             public EnumLists utIncurablePotionsListMode = EnumLists.BLACKLIST;
         }
@@ -1249,7 +1257,7 @@ public class UTConfig
             if (event.getModID().equals(UniversalTweaks.MODID))
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
-                if (TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initLists();
+                if (TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
                 if (UTLoadingPlugin.isClient)
