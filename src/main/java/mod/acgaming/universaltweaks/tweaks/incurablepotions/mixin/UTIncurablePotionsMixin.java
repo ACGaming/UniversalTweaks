@@ -17,8 +17,9 @@ public class UTIncurablePotionsMixin
     @Redirect(method = "curePotionEffects", at = @At(value = "INVOKE", target = "Lnet/minecraft/potion/PotionEffect;isCurativeItem(Lnet/minecraft/item/ItemStack;)Z"))
     public boolean utCurePotionEffects(PotionEffect effect, ItemStack curativeItem)
     {
-        if (UTConfig.TWEAKS_MISC.utIncurablePotions.length < 1) return effect.isCurativeItem(curativeItem);
+        if (!UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) return effect.isCurativeItem(curativeItem);
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTIncurablePotions ::: Check potion effect");
-        return effect.isCurativeItem(curativeItem) && !UTIncurablePotions.incurablePotions.contains(effect.getPotion().getRegistryName().toString());
+        boolean isWhitelist = UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsListMode == UTConfig.EnumLists.WHITELIST;
+        return effect.isCurativeItem(curativeItem) && UTIncurablePotions.potionList.contains(effect.getPotion().getRegistryName().toString()) == isWhitelist;
     }
 }

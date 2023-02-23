@@ -11,17 +11,17 @@ import mod.acgaming.universaltweaks.config.UTConfig;
 
 public class UTIncurablePotions
 {
-    public static List<String> incurablePotions = new ArrayList<>();
+    public static List<String> potionList = new ArrayList<>();
 
     public static void initPotionList()
     {
-        incurablePotions.clear();
+        potionList.clear();
         try
         {
-            for (String entry : UTConfig.TWEAKS_MISC.utIncurablePotions)
+            for (String entry : UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsList)
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
-                if (ForgeRegistries.POTIONS.containsKey(resLoc)) incurablePotions.add(ForgeRegistries.POTIONS.getValue(resLoc).getRegistryName().toString());
+                if (ForgeRegistries.POTIONS.containsKey(resLoc)) potionList.add(ForgeRegistries.POTIONS.getValue(resLoc).getRegistryName().toString());
             }
         }
         catch (Exception e)

@@ -67,6 +67,12 @@ public class UTConfig
     @Config.Name("Tweaks: World")
     public static final TweaksWorldCategory TWEAKS_WORLD = new TweaksWorldCategory();
 
+    public enum EnumLists
+    {
+        WHITELIST,
+        BLACKLIST
+    }
+
     public static class BugfixesBlocksCategory
     {
         @Config.LangKey("cfg.universaltweaks.bugfixes.blocks.blockoverlay")
@@ -758,6 +764,10 @@ public class UTConfig
 
     public static class TweaksMiscCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.incurablepotions")
+        @Config.Name("Incurable Potions")
+        public final IncurablePotionsCategory INCURABLE_POTIONS = new IncurablePotionsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.loadsounds")
         @Config.Name("Load Sounds")
         public final LoadSoundsCategory LOAD_SOUNDS = new LoadSoundsCategory();
@@ -785,14 +795,6 @@ public class UTConfig
         @Config.Name("End Portal Parallax")
         @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
         public boolean utEndPortalParallaxToggle = true;
-
-        @Config.Name("Incurable Potions")
-        @Config.Comment
-            ({
-                "Excludes potion effects from being curable with curative items like buckets of milk",
-                "Syntax: modid:potioneffect"
-            })
-        public String[] utIncurablePotions = new String[] {};
 
         @Config.Name("Infinite Music")
         @Config.Comment("Lets background music play continuously without delays")
@@ -853,6 +855,25 @@ public class UTConfig
         @Config.Name("Uncap FPS")
         @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
         public boolean utUncapFPSToggle = true;
+
+        public static class IncurablePotionsCategory
+        {
+            @Config.Name("[1] Incurable Potions Toggle")
+            @Config.Comment("Determines if potion effects are curable with curative items like buckets of milk")
+            public boolean utIncurablePotionsToggle = true;
+
+            @Config.Name("[2] Potion Effect List")
+            @Config.Comment("Syntax: modid:potioneffect")
+            public String[] utIncurablePotionsList = new String[] {};
+
+            @Config.Name("[3] List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Potion effects incurable by curative items, rest is curable",
+                    "Whitelist Mode: Potions effects curable by curative items, rest is incurable"
+                })
+            public EnumLists utIncurablePotionsListMode = EnumLists.BLACKLIST;
+        }
 
         public static class LoadSoundsCategory
         {
@@ -1230,7 +1251,7 @@ public class UTConfig
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
                 if (TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initLists();
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
-                if (TWEAKS_MISC.utIncurablePotions.length > 0) UTIncurablePotions.initPotionList();
+                if (TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
                 if (UTLoadingPlugin.isClient)
                 {
                     if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();

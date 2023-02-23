@@ -69,7 +69,7 @@ public class UniversalTweaks
     {
         if (UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initLists();
         if (UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
-        if (UTConfig.TWEAKS_MISC.utIncurablePotions.length > 0) UTIncurablePotions.initPotionList();
+        if (UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
         LOGGER.info(NAME + " post-initialized");
     }
 
