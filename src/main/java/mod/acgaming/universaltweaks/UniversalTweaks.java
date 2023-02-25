@@ -62,6 +62,7 @@ public class UniversalTweaks
     {
         if (UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
         if (UTConfig.TWEAKS_MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
+        if (Loader.isModLoaded("botania")) MinecraftForge.EVENT_BUS.register(UTBotaniaFancySkybox.class);
     }
 
     @Mod.EventHandler
@@ -77,9 +78,9 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void postInitClient(FMLPostInitializationEvent event)
     {
-        if (UTConfig.MOD_INTEGRATION.BOTANIA.utBotaniaSkyboxDims.length > 0) UTBotaniaFancySkybox.initDimList();
         if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfig.TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
         if (UTConfig.TWEAKS_MISC.utTutorialHintsToggle) UTTutorialHints.utTutorialHints();
+        if (Loader.isModLoaded("botania") && UTConfig.MOD_INTEGRATION.BOTANIA.utBotaniaSkyboxDims.length > 0) UTBotaniaFancySkybox.initDimList();
     }
 
     @Mod.EventHandler

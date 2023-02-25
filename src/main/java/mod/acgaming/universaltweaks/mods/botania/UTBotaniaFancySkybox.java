@@ -7,16 +7,13 @@ import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.WorldProvider;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import vazkii.botania.client.render.world.SkyblockSkyRenderer;
 import vazkii.botania.common.core.handler.ConfigHandler;
 
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTBotaniaFancySkybox
 {
     public static List<Integer> dimList = new ArrayList<>();

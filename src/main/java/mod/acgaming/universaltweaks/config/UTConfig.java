@@ -3,6 +3,7 @@ package mod.acgaming.universaltweaks.config;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -1279,7 +1280,7 @@ public class UTConfig
                 if (UTLoadingPlugin.isClient)
                 {
                     if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
-                    if (MOD_INTEGRATION.BOTANIA.utBotaniaSkyboxDims.length > 0) UTBotaniaFancySkybox.initDimList();
+                    if (Loader.isModLoaded("botania") && MOD_INTEGRATION.BOTANIA.utBotaniaSkyboxDims.length > 0) UTBotaniaFancySkybox.initDimList();
                     if (TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
                 }
                 UTObsoleteModsScreenHandler.shouldDisplay = true;
