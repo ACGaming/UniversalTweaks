@@ -236,7 +236,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.tweaks.recipebook.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Remove Recipe Book\"=true");
                 case "mixins.tweaks.resourcemanager.json":
-                    return !firstLaunch && UTConfigParser.isEnabled("B:\"Check Animated Models\"=true");
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Check Animated Models\"=true");
                 case "mixins.tweaks.skipcredits.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Skip Credits\"=true");
                 case "mixins.tweaks.smoothscrolling.json":
@@ -304,7 +304,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.collisiondamage.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"[1] Collision Damage Toggle\"=true");
             case "mixins.tweaks.craftingcache.json":
-                return !firstLaunch && UTConfigParser.isEnabled("B:\"Crafting Cache\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Crafting Cache\"=true");
             case "mixins.tweaks.creeperconfetti.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"Creeper Confetti\"=true");
             case "mixins.tweaks.dyeblending.json":
