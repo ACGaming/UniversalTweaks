@@ -64,7 +64,7 @@ public class UTBreakableBedrock
     @SubscribeEvent
     public static void utMineBedrock(PlayerInteractEvent.LeftClickBlock event)
     {
-        if (!UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle || toolList.isEmpty()) return;
+        if (!UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBreakableBedrock ::: Left click block event");
         Item heldTool = event.getEntityPlayer().getHeldItemMainhand().getItem();
         boolean isWhitelist = UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToolListMode == UTConfig.EnumLists.WHITELIST;
