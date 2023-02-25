@@ -1,8 +1,7 @@
 package mod.acgaming.universaltweaks.mods.botania;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.LinkedList;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.WorldProvider;
@@ -16,12 +15,13 @@ import vazkii.botania.common.core.handler.ConfigHandler;
 
 public class UTBotaniaFancySkybox
 {
-    public static List<Integer> dimList = new ArrayList<>();
+    public static LinkedList<Integer> dimList = new LinkedList<>();
 
     public static void initDimList()
     {
+        if (UTConfig.MOD_INTEGRATION.BOTANIA.utBotaniaSkyboxDims.length < 1) return;
         dimList.clear();
-        dimList = Arrays.asList(UTConfig.MOD_INTEGRATION.BOTANIA.utBotaniaSkyboxDims);
+        dimList.addAll(Arrays.asList(UTConfig.MOD_INTEGRATION.BOTANIA.utBotaniaSkyboxDims));
         UniversalTweaks.LOGGER.info("Botania Fancy Skybox dimension list initialized");
     }
 

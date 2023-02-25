@@ -1280,7 +1280,7 @@ public class UTConfig
                 if (UTLoadingPlugin.isClient)
                 {
                     if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
-                    if (Loader.isModLoaded("botania") && MOD_INTEGRATION.BOTANIA.utBotaniaSkyboxDims.length > 0) UTBotaniaFancySkybox.initDimList();
+                    if (Loader.isModLoaded("botania")) UTBotaniaFancySkybox.initDimList();
                     if (TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
                 }
                 UTObsoleteModsScreenHandler.shouldDisplay = true;

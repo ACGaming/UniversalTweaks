@@ -80,7 +80,7 @@ public class UniversalTweaks
     {
         if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfig.TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
         if (UTConfig.TWEAKS_MISC.utTutorialHintsToggle) UTTutorialHints.utTutorialHints();
-        if (Loader.isModLoaded("botania") && UTConfig.MOD_INTEGRATION.BOTANIA.utBotaniaSkyboxDims.length > 0) UTBotaniaFancySkybox.initDimList();
+        if (Loader.isModLoaded("botania")) UTBotaniaFancySkybox.initDimList();
     }
 
     @Mod.EventHandler
