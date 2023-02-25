@@ -112,18 +112,6 @@ public abstract class UTEntityItemMixin extends Entity
         }
     }
 
-    @Inject(method = "searchForOtherItemsNearby", at = @At("HEAD"), cancellable = true)
-    public void utIENoCombinationSearch(CallbackInfo ci)
-    {
-        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIENoCombinationToggle) ci.cancel();
-    }
-
-    @Inject(method = "combineItems", at = @At("HEAD"), cancellable = true)
-    public void utIENoCombinationCombine(EntityItem other, CallbackInfoReturnable<Boolean> cir)
-    {
-        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIENoCombinationToggle) cir.setReturnValue(false);
-    }
-
     @Inject(method = "setPickupDelay", at = @At("TAIL"))
     public void utIESetPickupDelay(int ticks, CallbackInfo ci)
     {
@@ -136,21 +124,36 @@ public abstract class UTEntityItemMixin extends Entity
         if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEPickupDelay > -1) this.pickupDelay = UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEPickupDelay;
     }
 
-    // Courtesy of Darkhax
+    // Courtesy of Darkhax, bl4ckscor3
     @Inject(method = "searchForOtherItemsNearby", at = @At("HEAD"), cancellable = true)
-    public void utIESmartCombinationSearch(CallbackInfo ci)
+    public void utIECombinationSearch(CallbackInfo ci)
     {
-        if (!UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESmartCombinationToggle) return;
-        final ItemStack stack = this.getItem();
-        if (stack.getCount() >= stack.getMaxStackSize()) ci.cancel();
+        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIENoCombinationToggle) ci.cancel();
+        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESmartCombinationToggle)
+        {
+            // Check maximum stack size
+            final ItemStack stack = this.getItem();
+            if (stack.getCount() >= stack.getMaxStackSize()) ci.cancel();
+            // Check configurable radius
+            EntityItem entityItem = (EntityItem) (Object) this;
+            if (entityItem.ticksExisted < 20) return;
+            double radius = UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESmartCombinationRadius;
+            boolean checkY = UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESmartCombinationYAxis;
+            for (EntityItem i : entityItem.world.getEntitiesWithinAABB(EntityItem.class, entityItem.getEntityBoundingBox().grow(radius, checkY ? radius : 0, radius))) entityItem.combineItems(i);
+            ci.cancel();
+        }
     }
 
     // Courtesy of Darkhax
     @Inject(method = "combineItems", at = @At("HEAD"), cancellable = true)
-    public void utIESmartCombinationCombine(EntityItem other, CallbackInfoReturnable<Boolean> cir)
+    public void utIECombinationCombine(EntityItem other, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESmartCombinationToggle) return;
-        final ItemStack stack = this.getItem();
-        if (stack.getCount() >= stack.getMaxStackSize()) cir.setReturnValue(false);
+        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIENoCombinationToggle) cir.setReturnValue(false);
+        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESmartCombinationToggle)
+        {
+            // Check maximum stack size
+            final ItemStack stack = this.getItem();
+            if (stack.getCount() >= stack.getMaxStackSize()) cir.setReturnValue(false);
+        }
     }
 }

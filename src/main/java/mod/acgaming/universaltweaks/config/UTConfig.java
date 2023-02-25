@@ -698,11 +698,27 @@ public class UTConfig
             @Config.Comment("Stops combination of item entities if their maximum stack size is reached")
             public boolean utIESmartCombinationToggle = true;
 
-            @Config.Name("[10] Rotation")
+            @Config.Name("[10] Smart Combination Radius")
+            @Config.Comment
+                ({
+                    "The radius (in blocks) that dropped items should check around them for other dropped items to combine with",
+                    "Depends on the Smart Combination toggle"
+                })
+            public double utIESmartCombinationRadius = 2;
+
+            @Config.Name("[11] Smart Combination Y-Axis Check")
+            @Config.Comment
+                ({
+                    "Allows dropped items to also check above and below them for combination",
+                    "Depends on the Smart Combination toggle"
+                })
+            public boolean utIESmartCombinationYAxis = true;
+
+            @Config.Name("[12] Rotation")
             @Config.Comment("Enables the rotation effect")
             public boolean utIERotation = true;
 
-            @Config.Name("[11] Bobbing")
+            @Config.Name("[13] Bobbing")
             @Config.Comment("Enables the bobbing effect")
             public boolean utIEBobbing = true;
         }

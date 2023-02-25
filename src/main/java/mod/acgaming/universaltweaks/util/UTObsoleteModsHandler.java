@@ -48,6 +48,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("fencejumper") && UTConfig.TWEAKS_BLOCKS.utFenceWallJumpToggle) messages.add("Fence Jumper");
         if (Loader.isModLoaded("finite-fluid-control") && UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterToggle) messages.add("Finite Water Control");
         if (Loader.isModLoaded("framevoidpatch") && UTConfig.BUGFIXES_BLOCKS.utItemFrameVoidToggle) messages.add("Frame Void Patch");
+        if (Loader.isModLoaded("getittogetherdrops") && UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utItemEntitiesToggle) messages.add("Get It Together, Drops!");
         if (Loader.isModLoaded("givemebackmyhp") && UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle) messages.add("Give Me Back My HP");
         if (Loader.isModLoaded("gottagofast") && UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("Gotta Go Fast");
         if (Loader.isModLoaded("helpfixer") && UTConfig.BUGFIXES_MISC.utHelpToggle) messages.add("HelpFixer");
