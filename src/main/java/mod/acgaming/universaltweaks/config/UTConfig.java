@@ -312,25 +312,16 @@ public class UTConfig
             @Config.Comment("Allows customizable mining of bedrock")
             public boolean utBreakableBedrockToggle = false;
 
-            @Config.Name("[2] Hardness")
-            public float utBreakableBedrockHardness = 200.0F;
-
-            @Config.Name("[3] Resistance")
-            public float utBreakableBedrockResistance = 6000000.0F;
-
-            @Config.Name("[4] Harvest Level")
-            public int utBreakableBedrockHarvestLevel = 3;
-
-            @Config.Name("[5] Tool List")
+            @Config.Name("[2] Tool List")
             @Config.Comment
                 ({
                     "List of tools concerning mining bedrock",
-                    "If empty, allows every tool matching the harvest level",
+                    "If empty, allows every tool to be used",
                     "Syntax: modid:tool"
                 })
             public String[] utBreakableBedrockToolList = new String[] {};
 
-            @Config.Name("[6] List Mode")
+            @Config.Name("[3] List Mode")
             @Config.Comment
                 ({
                     "Blacklist Mode: Tools which can't mine bedrock, others can",

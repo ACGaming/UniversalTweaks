@@ -4,17 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
@@ -44,23 +41,6 @@ public class UTBreakableBedrock
         UniversalTweaks.LOGGER.info("Breakable Bedrock tool list initialized");
     }
 
-    @SubscribeEvent(priority = EventPriority.LOWEST)
-    public static void utReplaceBedrock(RegistryEvent.Register<Block> event)
-    {
-        if (!UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBreakableBedrock ::: Register block event");
-        Block block = new UTBlockBedrock().setRegistryName("minecraft", "bedrock");
-        event.getRegistry().register(block);
-        ForgeRegistries.ITEMS.register(new ItemBlock(block)
-        {
-            @Override
-            public String getCreatorModId(ItemStack itemStack)
-            {
-                return UniversalTweaks.MODID;
-            }
-        }.setRegistryName(block.getRegistryName()));
-    }
-
     @SubscribeEvent
     public static void utMineBedrock(PlayerInteractEvent.LeftClickBlock event)
     {
@@ -72,7 +52,7 @@ public class UTBreakableBedrock
         World world = event.getWorld();
         BlockPos blockPos = event.getPos();
         Block block = world.getBlockState(blockPos).getBlock();
-        if (block instanceof UTBlockBedrock)
+        if (block == Blocks.BEDROCK)
         {
             event.setUseBlock(Event.Result.DENY);
             event.setUseItem(Event.Result.DENY);
