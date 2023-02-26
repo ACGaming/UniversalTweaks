@@ -36,7 +36,14 @@ public class UTBlockOverlayMixin
         Block block = world.getBlockState(mc.player.getPosition().up()).getBlock();
         if ((blockLayerIn == BlockRenderLayer.SOLID && !UTBlockOverlayLists.blacklistedBlocks.contains(block)) || UTBlockOverlayLists.whitelistedBlocks.contains(block))
         {
-            UTBlockOverlay.renderNearbyBlocks(Minecraft.getMinecraft().getRenderPartialTicks());
+            try
+            {
+                UTBlockOverlay.renderNearbyBlocks(Minecraft.getMinecraft().getRenderPartialTicks());
+            }
+            catch (Exception e)
+            {
+                UniversalTweaks.LOGGER.error("UTBlockOverlay ::: Error rendering nearby blocks", e);
+            }
         }
     }
 }
