@@ -54,7 +54,7 @@ All changes are toggleable via the config file.
     * Prevents the fire animation overlay from being displayed when the player is immune to fire
 * Better Harvest: Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking
 * Better Ignition: Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them
-* Block Placement Click Delay: Sets the delay in ticks between placing blocks
+* Better Placement: Removes the delay between placing blocks
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
 * Breakable Bedrock: Allows customizable mining of bedrock
 * Check Animated Models: Improves model load times by checking if an animated model exists before trying to load it

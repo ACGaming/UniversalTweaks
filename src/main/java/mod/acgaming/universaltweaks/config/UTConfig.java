@@ -268,6 +268,10 @@ public class UTConfig
 
     public static class TweaksBlocksCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.betterplacement")
+        @Config.Name("Better Placement")
+        public final BetterPlacementCategory BETTER_PLACEMENT = new BetterPlacementCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.breakablebedrock")
         @Config.Name("Breakable Bedrock")
         public final BreakableBedrockCategory BREAKABLE_BEDROCK = new BreakableBedrockCategory();
@@ -283,10 +287,6 @@ public class UTConfig
         @Config.Name("Better Harvest")
         @Config.Comment("Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking")
         public boolean utBetterHarvestToggle = false;
-
-        @Config.Name("Block Placement Click Delay")
-        @Config.Comment("Sets the delay in ticks between placing blocks")
-        public int utBPClickDelay = 4;
 
         @Config.Name("Cactus Size")
         @Config.Comment("Determines how tall cacti can grow")
@@ -305,6 +305,21 @@ public class UTConfig
         @Config.Name("Sugar Cane Size")
         @Config.Comment("Determines how tall sugar cane can grow")
         public int utSugarCaneSize = 3;
+
+        public static class BetterPlacementCategory
+        {
+            @Config.Name("[1] Better Placement Toggle")
+            @Config.Comment("Removes the delay between placing blocks")
+            public boolean utBetterPlacementToggle = false;
+
+            @Config.Name("[2] Force New Location")
+            @Config.Comment("If the cursor must be moved to a new location before placing another block")
+            public boolean utBetterPlacementNewLoc = true;
+
+            @Config.Name("[3] Creative Mode Only")
+            @Config.Comment("Only affects block placement in creative mode")
+            public boolean utBetterPlacementCreative = false;
+        }
 
         public static class BreakableBedrockCategory
         {

@@ -18,6 +18,7 @@ import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
+import mod.acgaming.universaltweaks.tweaks.UTBetterPlacement;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.UTTutorialHints;
 import mod.acgaming.universaltweaks.tweaks.breakablebedrock.UTBreakableBedrock;
@@ -61,6 +62,7 @@ public class UniversalTweaks
     public void initClient(FMLInitializationEvent event)
     {
         if (UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
+        if (UTConfig.TWEAKS_BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle) MinecraftForge.EVENT_BUS.register(UTBetterPlacement.class);
         if (UTConfig.TWEAKS_MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
         if (Loader.isModLoaded("botania")) MinecraftForge.EVENT_BUS.register(UTBotaniaFancySkybox.class);
     }

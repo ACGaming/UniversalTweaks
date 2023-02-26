@@ -102,7 +102,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.audioreload.json",
             "mixins.tweaks.autojump.json",
             "mixins.tweaks.bedobstruction.json",
-            "mixins.tweaks.betterplacement.json",
             "mixins.tweaks.breakablebedrock.json",
             "mixins.tweaks.chunkgenlimit.json",
             "mixins.tweaks.collisiondamage.json",
@@ -221,8 +220,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Villager Mantle Hoods\"=true");
                 case "mixins.tweaks.autojump.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Auto Jump Replacement\"=true");
-                case "mixins.tweaks.betterplacement.json":
-                    return !firstLaunch && !UTConfigParser.isEnabled("I:\"Block Placement Click Delay\"=4");
                 case "mixins.tweaks.infinitemusic.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Infinite Music\"=true");
                 case "mixins.tweaks.itementities.client.json":
