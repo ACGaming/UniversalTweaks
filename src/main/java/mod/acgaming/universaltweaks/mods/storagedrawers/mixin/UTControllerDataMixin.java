@@ -37,15 +37,15 @@ public class UTControllerDataMixin
             controller = null;
             host.markDirty();
         }
-
-        if (controllerCoord != null) {
+        if (controllerCoord != null)
+        {
             TileEntity te = host.getWorld().getTileEntity(controllerCoord);
-            if (!(te instanceof TileEntityController)) {
+            if (!(te instanceof TileEntityController))
+            {
                 controllerCoord = null;
                 controller = null;
-            } else {
-                controller = (TileEntityController) te;
             }
+            else controller = (TileEntityController) te;
             host.markDirty();
         }
         cir.setReturnValue(controller);
