@@ -37,7 +37,7 @@ public class UTConfigParser
         try
         {
             configString = FileUtils.readFileToString(configFile, "UTF-8");
-            if (!configString.contains("S:\"Config Version\"=" + UniversalTweaks.VERSION))
+            if (UTConfigParser.isEnabled("B:\"Bypass Config Versioning\"=false") && !configString.contains("S:\"Config Version\"=" + UniversalTweaks.VERSION))
             {
                 File configFileOld = new File(Launch.minecraftHome, "config" + File.separator + "UniversalTweaks.old");
                 Files.move(configFile, configFileOld);

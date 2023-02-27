@@ -1084,6 +1084,18 @@ public class UTConfig
 
     public static class DebugCategory
     {
+        @Config.Name("Bypass Config Versioning")
+        @Config.Comment
+            ({
+                "Disables config resets on mod updates",
+                "Please note that you will face duplicate/invalid config settings"
+            })
+        public boolean utBypassConfigVersioningToggle = false;
+
+        @Config.Name("Bypass Incompatibility Warnings")
+        @Config.Comment("For those who live life on the edge, may or may not include Jons")
+        public boolean utBypassIncompatibilityToggle = false;
+
         @Config.Name("Config Version")
         @Config.Comment
             ({
@@ -1099,10 +1111,6 @@ public class UTConfig
         @Config.Name("Obsolete Mods Screen")
         @Config.Comment("Enables a screen displaying incompatible mods on game load")
         public boolean utObsoleteModsToggle = true;
-
-        @Config.Name("Bypass Incompatibility Warnings")
-        @Config.Comment("For those who live life on the edge, may or may not include Jons")
-        public boolean utBypassIncompatibilityToggle = false;
 
         @Config.Name("Show Loading Time")
         @Config.Comment("Prints the time the game needed to launch to the log")
