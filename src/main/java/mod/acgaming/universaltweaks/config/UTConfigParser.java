@@ -55,7 +55,7 @@ public class UTConfigParser
     {
         String[] settingSplits = setting.split("=");
         if (configString.contains(settingSplits[0])) return configString.contains(setting);
-        mayday = "Invalid setting name: " + settingSplits[0];
+        mayday = "Config setting not found: " + settingSplits[0];
         return false;
     }
 }
