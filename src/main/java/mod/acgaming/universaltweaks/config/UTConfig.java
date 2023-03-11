@@ -1201,6 +1201,10 @@ public class UTConfig
             @Config.Name("Disable Bee Damage Armor Bypass")
             @Config.Comment("Disables damage caused by bees bypassing player armor")
             public boolean utFOBeeDamageArmorBypassToggle = true;
+
+            @Config.Name("Extra Trees: Gather Windfall")
+            @Config.Comment("Allows Forestry farms to pick up ExtraTrees fruit")
+            public boolean utFOGatherWindfallToggle = true;
         }
 
         public static class MoCreaturesCategory
