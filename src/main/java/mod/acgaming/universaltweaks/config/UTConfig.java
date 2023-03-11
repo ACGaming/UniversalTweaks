@@ -1024,7 +1024,7 @@ public class UTConfig
 
         @Config.Name("Fast World Loading")
         @Config.Comment("Skips initial world chunk loading & garbage collection to speed up world loading")
-        public boolean utWorldLoadingToggle = true;
+        public boolean utWorldLoadingToggle = false;
     }
 
     public static class TweaksWorldCategory
