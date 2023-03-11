@@ -1,7 +1,5 @@
 package mod.acgaming.universaltweaks.tweaks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -25,16 +23,12 @@ public class UTAutoSwitch
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAutoSwitch ::: Left click block event");
         World world = event.getWorld();
         BlockPos blockPos = event.getPos();
-        IBlockState blockState = world.getBlockState(blockPos);
-        Block block = blockState.getBlock();
         EntityPlayer player = event.getEntityPlayer();
-
-        if (ForgeHooks.canHarvestBlock(block, player, world, blockPos)) return;
 
         for (int i = 0; i < 9; i++)
         {
             ItemStack itemStack = player.inventory.getStackInSlot(i);
-            if (ForgeHooks.canToolHarvestBlock(world, blockPos, itemStack))
+            if (ForgeHooks.canToolHarvestBlock(world, blockPos, itemStack) && ForgeHooks.isToolEffective(world, blockPos, itemStack))
             {
                 player.inventory.currentItem = i;
                 return;
