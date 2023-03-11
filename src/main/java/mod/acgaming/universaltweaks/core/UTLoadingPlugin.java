@@ -245,7 +245,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.tweaks.uncapfps.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Uncap FPS\"=true");
                 case "mixins.tweaks.worldloading.client.json":
-                    return firstLaunch || UTConfigParser.isEnabled("B:\"Fast World Loading\"=true");
+                    return !firstLaunch && UTConfigParser.isEnabled("B:\"Fast World Loading\"=true");
             }
         }
         switch (mixinConfig)
@@ -339,7 +339,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.spawning.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Husk & Stray Spawning\"=true");
             case "mixins.tweaks.worldloading.server.json":
-                return firstLaunch || UTConfigParser.isEnabled("B:\"Fast World Loading\"=true");
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"Fast World Loading\"=true");
             case "mixins.tweaks.xpbottle.json":
                 return !firstLaunch && !UTConfigParser.isEnabled("I:\"XP Bottle Amount\"=-1");
         }
