@@ -24,6 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = ChickenModule.class, remap = false)
 public abstract class UTChickenModuleMixin extends ModuleBase{
+    private boolean initComplete = false;
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
@@ -68,13 +69,13 @@ public abstract class UTChickenModuleMixin extends ModuleBase{
 
     // finish setting up chickens in init, after registries/resources are loaded
     private void utInitChickens() {
-        for (ChickenRepresentation chickenRepresentation : ChickenFactory.CHICKEN_REPRESENTATIONS) {
-            if (UTConfig.DEBUG.utDebugToggle) {
-                CraftTweakerAPI.logInfo("UTChickenModuleMixin ::: Dumping chicken registry! (in init)");
-                for (ChickensRegistryItem chicken : ChickensRegistry.getItems()) {
-                    CraftTweakerAPI.logInfo("UTChickenModuleMixin ::: " + chicken.getRegistryName().toString());
-                }
+        if (UTConfig.DEBUG.utDebugToggle) {
+            CraftTweakerAPI.logInfo("UTChickenModuleMixin ::: Dumping chicken registry! (in init)");
+            for (ChickensRegistryItem chicken : ChickensRegistry.getItems()) {
+                CraftTweakerAPI.logInfo("UTChickenModuleMixin ::: " + chicken.getRegistryName().toString());
             }
+        }
+        for (ChickenRepresentation chickenRepresentation : ChickenFactory.CHICKEN_REPRESENTATIONS) {
             ResourceLocation registryName = new ResourceLocation(ContentTweaker.MOD_ID, chickenRepresentation.name);
             ChickensRegistryItem item = ChickensRegistry.getByRegistryName(registryName.toString());
             if (item == null) {
