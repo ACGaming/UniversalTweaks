@@ -24,7 +24,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = ChickenModule.class, remap = false)
 public abstract class UTChickenModuleMixin extends ModuleBase{
-    private boolean initComplete = false;
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
