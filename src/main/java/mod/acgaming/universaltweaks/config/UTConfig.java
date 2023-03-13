@@ -1139,6 +1139,10 @@ public class UTConfig
         @Config.Name("Mo' Creatures")
         public final MoCreaturesCategory MO_CREATURES = new MoCreaturesCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.roost")
+        @Config.Name("Roost")
+        public final RoostCategory ROOST = new RoostCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.sd")
         @Config.Name("Storage Drawers")
         public final StorageDrawersCategory STORAGE_DRAWERS = new StorageDrawersCategory();
@@ -1226,6 +1230,27 @@ public class UTConfig
                     "traverse;traverse;traverse;TRAV;Traverse.cfg",
                     "dimdoors;dimdoors;dimdoors;DD;DimDoors.cfg"
                 };
+        }
+
+        public static class RoostCategory
+        {
+            @Config.Name("ContentTweaker: Early Register CT Chickens")
+            @Config.Comment
+                ({
+                    "Improves load time by registering CT chickens early for Roost to detect them",
+                    "Note: All CT chickens must be specified in \"Custom Chickens\" for this tweak to work!",
+                    "Note: The .zs files creating custom chickens must be loaded with \'#loader preinit\', not \'#loader contenttweaker\'!"
+                })
+            public boolean utRoostEarlyRegisterCTChickens = true;
+
+            @Config.Name("Custom Chickens")
+            @Config.Comment
+                    ({
+                            "Adds custom chickens from mods (e.g. ContentTweaker) to Roost's stock texture check",
+                            "Syntax: name",
+                            "name     Chicken name",
+                    })
+            public String[] utRoostChickenMods = new String[] {};
         }
 
         public static class StorageDrawersCategory
