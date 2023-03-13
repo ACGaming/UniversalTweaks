@@ -1245,11 +1245,11 @@ public class UTConfig
 
             @Config.Name("Custom Chickens")
             @Config.Comment
-                    ({
-                            "Adds custom chickens from mods (e.g. ContentTweaker) to Roost's stock texture check",
-                            "Syntax: name",
-                            "name     Chicken name",
-                    })
+                ({
+                    "Adds custom chickens from mods (e.g. ContentTweaker) to Roost's stock texture check",
+                    "Syntax: name",
+                    "name     Chicken name",
+                })
             public String[] utRoostChickenMods = new String[] {};
         }
 
