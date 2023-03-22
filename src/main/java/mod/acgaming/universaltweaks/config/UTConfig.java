@@ -526,7 +526,7 @@ public class UTConfig
             public boolean utBBOverlayToggle = true;
 
             @Config.Name("[4] Flaming Arrows")
-            @Config.Comment("Allows skeletons to shoot flaming arrows when on fire (30% chance * regional difficulty")
+            @Config.Comment("Allows skeletons to shoot flaming arrows when on fire (30% chance * regional difficulty)")
             public boolean utBBArrowsToggle = true;
 
             @Config.Name("[5] Spreading Fire")
@@ -647,6 +647,10 @@ public class UTConfig
         @Config.Name("No Attack Cooldown")
         @Config.Comment("Disables the 1.9 combat update attack cooldown")
         public boolean utAttackCooldownToggle = false;
+		
+		@Config.Name("No Leftover Breath Bottles")
+        @Config.Comment("Disables Dragon's Breath from being a container item and leaving off empty bottles when a stack is brewed with")
+        public boolean utLeftoverBreathBottleToggle = true;
 
         @Config.Name("Bow Infinity")
         @Config.Comment("Bows enchanted with Infinity no longer require arrows")
