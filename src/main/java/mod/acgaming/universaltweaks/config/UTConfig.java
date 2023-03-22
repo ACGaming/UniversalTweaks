@@ -215,7 +215,7 @@ public class UTConfig
 
         @Config.Name("Faster Background Startup")
         @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
-        public boolean utFasterBackgroundStartupToggle = true;
+        public boolean utFasterBackgroundStartupToggle = false;
 
         @Config.Name("Frustum Culling")
         @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
@@ -421,8 +421,8 @@ public class UTConfig
 
         @Config.Name("Charged Creeper Spawning Chance")
         @Config.Comment("Chance for creepers to spawn charged")
-        @Config.RangeDouble(min = 0.0d, max = 1.0d)
-        public double utChargedCreeperSpawnChance = 0.0d;
+        @Config.RangeDouble(min = 0.0D, max = 1.0D)
+        public double utChargedCreeperSpawnChance = 0.0D;
 
         @Config.Name("Disable Sleeping")
         @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")

@@ -217,7 +217,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.bugfixes.modelgap.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Model Gap Toggle\"=true");
                 case "mixins.bugfixes.startup.json":
-                    return firstLaunch || UTConfigParser.isEnabled("B:\"Faster Background Startup\"=true");
+                    return !firstLaunch && UTConfigParser.isEnabled("B:\"Faster Background Startup\"=true");
                 case "mixins.bugfixes.villagermantle.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Villager Mantle Hoods\"=true");
                 case "mixins.tweaks.autojump.json":
