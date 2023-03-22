@@ -19,6 +19,7 @@ import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
 import mod.acgaming.universaltweaks.tweaks.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.UTBetterPlacement;
+import mod.acgaming.universaltweaks.tweaks.UTNoLeftoverBreath;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.UTTutorialHints;
 import mod.acgaming.universaltweaks.tweaks.breakablebedrock.UTBreakableBedrock;
@@ -73,6 +74,7 @@ public class UniversalTweaks
         if (UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
         if (UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
         if (UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
+		if (UTConfig.TWEAKS_ITEMS.utLeftoverBreathBottleToggle) UTNoLeftoverBreath.postInit();
         LOGGER.info(NAME + " post-initialized");
     }
 
