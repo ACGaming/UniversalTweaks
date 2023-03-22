@@ -205,6 +205,10 @@ public class UTConfig
         @Config.Name("Model Gap")
         public final ModelGapCategory MODEL_GAP = new ModelGapCategory();
 
+        @Config.Name("Accurate Smooth Lighting")
+        @Config.Comment("Improves the accuracy of smooth lighting by checking for suffocation and light opacity")
+        public boolean utAccurateSmoothLighting = true;
+
         @Config.Name("Block Fire")
         @Config.Comment("Prevents fire projectiles burning entities when blocking with shields")
         public boolean utBlockFireToggle = true;
