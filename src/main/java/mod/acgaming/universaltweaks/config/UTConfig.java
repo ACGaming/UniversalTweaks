@@ -1244,7 +1244,7 @@ public class UTConfig
                 ({
                     "Improves load time by registering CT chickens early for Roost to detect them",
                     "Note: All CT chickens must be specified in \"Custom Chickens\" for this tweak to work!",
-                    "Note: The .zs files creating custom chickens must be loaded with \'#loader preinit\', not \'#loader contenttweaker\'!"
+                    "Note: The .zs files creating custom chickens must be loaded with '#loader preinit', not '#loader contenttweaker'!"
                 })
             public boolean utRoostEarlyRegisterCTChickens = true;
 
