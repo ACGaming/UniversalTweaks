@@ -415,6 +415,11 @@ public class UTConfig
         @Config.Comment("Replaces deadly creeper explosions with delightful confetti")
         public boolean utCreeperConfettiToggle = false;
 
+        @Config.Name("Charged Creeper Spawning Chance")
+        @Config.Comment("Chance for creepers to spawn charged")
+        @Config.RangeDouble(min = 0.0d, max = 1.0d)
+        public double utChargedCreeperSpawnChance = 0.0d;
+
         @Config.Name("Disable Sleeping")
         @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")
         public boolean utSleepingToggle = false;
