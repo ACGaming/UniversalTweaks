@@ -102,6 +102,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.audioreload.json",
             "mixins.tweaks.autojump.json",
             "mixins.tweaks.bedobstruction.json",
+            "mixins.tweaks.boatspeed.json",
             "mixins.tweaks.breakablebedrock.json",
             "mixins.tweaks.chunkgenlimit.json",
             "mixins.tweaks.collisiondamage.json",
@@ -161,6 +162,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.ai.json",
                 "mixins.tweaks.attackcooldown.json",
                 "mixins.tweaks.bedobstruction.json",
+                "mixins.tweaks.boatspeed.json",
                 "mixins.tweaks.breakablebedrock.json",
                 "mixins.tweaks.chunkgenlimit.json",
                 "mixins.tweaks.collisiondamage.json",
@@ -298,6 +300,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"No Attack Cooldown\"=true");
             case "mixins.tweaks.bedobstruction.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Bed Obstruction Replacement\"=true");
+            case "mixins.tweaks.boatspeed.json":
+                return !firstLaunch && !UTConfigParser.isEnabled("D:\"Boat Speed\"=0.04");
             case "mixins.tweaks.breakablebedrock.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"[1] Breakable Bedrock Toggle\"=true");
             case "mixins.tweaks.chunkgenlimit.json":

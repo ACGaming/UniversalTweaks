@@ -411,6 +411,10 @@ public class UTConfig
         @Config.Comment("Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them")
         public boolean utBetterIgnitionToggle = true;
 
+        @Config.Name("Boat Speed")
+        @Config.Comment("Sets the acceleration value for controlling boats")
+        public double utBoatSpeed = 0.04D;
+
         @Config.Name("Creeper Confetti")
         @Config.Comment("Replaces deadly creeper explosions with delightful confetti")
         public boolean utCreeperConfettiToggle = false;

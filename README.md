@@ -8,7 +8,7 @@ All changes are toggleable via the config file.
 
 * Block Fire: Prevents fire projectiles burning entities when blocking with shields
 * Block Overlay: Fixes x-ray when standing in non-suffocating blocks
-* Boat Riding Offset Fix: Fixes entities glitching through the bottom of boats
+* Boat Riding Offset: Fixes entities glitching through the bottom of boats
 * Chunk Saving: Fixes loading of outdated chunks to prevent duplications, deletions and data corruption
 * Comparator Timing: Fixes inconsistent delays of comparators to prevent redstone timing issues
 * Death Time: Fixes corrupted entities exceeding the allowed death time
@@ -55,6 +55,7 @@ All changes are toggleable via the config file.
 * Better Harvest: Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking
 * Better Ignition: Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them
 * Better Placement: Removes the delay between placing blocks
+* Boat Speed: Sets the acceleration value for controlling boats
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
 * Breakable Bedrock: Allows customizable mining of bedrock
 * Check Animated Models: Improves model load times by checking if an animated model exists before trying to load it
