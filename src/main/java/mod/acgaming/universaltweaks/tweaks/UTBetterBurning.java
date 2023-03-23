@@ -85,7 +85,7 @@ public class UTBetterBurning
         }
     }
 
-    // Prevents the first person fire overlay from displaying when user is resisted to fire, has fire resistance, or is in creative mode (backported)
+    // Prevents the first person fire overlay from displaying when the player is immune to fire, has fire resistance, or is in creative mode (backported)
     @SubscribeEvent
     public static void utBlockOverlay(RenderBlockOverlayEvent event)
     {
