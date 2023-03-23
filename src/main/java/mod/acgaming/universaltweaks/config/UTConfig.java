@@ -649,7 +649,7 @@ public class UTConfig
         public boolean utAttackCooldownToggle = false;
 		
 		@Config.Name("No Leftover Breath Bottles")
-        @Config.Comment("Disables Dragon's Breath from being a container item and leaving off empty bottles when brewed with")
+        @Config.Comment("Disables Dragon's Breath from being a container item and leaving off empty bottles when a stack is brewed with")
         public boolean utLeftoverBreathBottleToggle = true;
 
         @Config.Name("Bow Infinity")
