@@ -745,6 +745,18 @@ public class UTConfig
             @Config.Name("[13] Bobbing")
             @Config.Comment("Enables the bobbing effect")
             public boolean utIEBobbing = true;
+
+            @Config.Name("[14] Clear Despawn")
+            @Config.Comment("Makes item entities flash when they're about to despawn")
+            public boolean utIEClearDespawn = false;
+
+            @Config.Name("[15] Clear Despawn: Flashing Time")
+            @Config.Comment("Determines the time in seconds item entities have left before despawn to start flashing")
+            public int utIEClearDespawnTime = 20;
+
+            @Config.Name("[16] Clear Despawn: Urgent Flashing")
+            @Config.Comment("Makes item entities flash faster as they get closer to despawning")
+            public boolean utIEClearDespawnUrgent = true;
         }
 
         public static class MendingCategory
