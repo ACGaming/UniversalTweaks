@@ -424,7 +424,7 @@ public class UTConfig
         public boolean utCreeperConfettiToggle = false;
 
         @Config.Name("Charged Creeper Spawning Chance")
-        @Config.Comment("Chance for creepers to spawn charged")
+        @Config.Comment("Sets the chance for creepers to spawn charged")
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
         public double utChargedCreeperSpawnChance = 0.0D;
 
@@ -647,8 +647,8 @@ public class UTConfig
         @Config.Name("No Attack Cooldown")
         @Config.Comment("Disables the 1.9 combat update attack cooldown")
         public boolean utAttackCooldownToggle = false;
-		
-		@Config.Name("No Leftover Breath Bottles")
+
+        @Config.Name("No Leftover Breath Bottles")
         @Config.Comment("Disables Dragon's Breath from being a container item and leaving off empty bottles when a stack is brewed with")
         public boolean utLeftoverBreathBottleToggle = true;
 
