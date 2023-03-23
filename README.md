@@ -88,7 +88,7 @@ All changes are toggleable via the config file.
 * Mob Despawn Improvement: Mobs carrying picked up items will drop their equipment and despawn properly
 * No Attack Cooldown: Disables the 1.9 combat update attack cooldown
 * No Golems: Disables the manual creation of golems and withers
-* No Leftover Breath Bottles: Disables Dragon's Breath from being a container item and leaving off empty bottles when brewed with
+* No Leftover Breath Bottles: Disables Dragon's Breath from leaving off empty bottles when a stack is brewed with
 * No Lightning Flash: Disables the flashing of skybox and ground brightness on lightning strikes
 * No Night Vision Flash: Disables the flashing effect when the night vision potion effect is about to run out
 * No Potion Shift: Disables the inventory shift when potion effects are active
