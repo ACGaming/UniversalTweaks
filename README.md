@@ -58,6 +58,7 @@ All changes are toggleable via the config file.
 * Boat Speed: Sets the acceleration value for controlling boats
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
 * Breakable Bedrock: Allows customizable mining of bedrock
+* Charged Creeper Spawning Chance: Sets the chance for creepers to spawn charged
 * Check Animated Models: Improves model load times by checking if an animated model exists before trying to load it
 * Chunk Gen Limit: Limits maximum chunk generation per tick for improved server performance
 * Crafting Cache: Adds an IRecipe cache to improve recipe performance in large modpacks
@@ -127,6 +128,8 @@ All changes are toggleable via the config file.
     * Disable Bee Damage Armor Bypass: Disables damage caused by bees bypassing player armor
 * Mo' Creatures
     * Custom Modded Biomes: Adds support for modded biome spawns via config
+* Roost
+    * Early Register CT Chickens: Improves load time by registering CT chickens early for Roost to detect them
 * Storage Drawers
     * Item Handlers:
         * Fixes voiding of items when nearing full capacity

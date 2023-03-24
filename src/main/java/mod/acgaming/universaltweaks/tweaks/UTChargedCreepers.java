@@ -12,6 +12,7 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.util.UTRandomUtil;
 
+// Courtesy of UeberallGebannt
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTChargedCreepers
 {
@@ -29,7 +30,7 @@ public class UTChargedCreepers
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChargedCreepers ::: Creeper Spawn Event");
 
         double chargedChance = UTConfig.TWEAKS_ENTITIES.utChargedCreeperSpawnChance;
-        if (chargedChance <= 0.0d) return;
+        if (chargedChance <= 0.0D) return;
 
         if (event.getEntity().getTags().contains(SPAWNED_CHECK_TAG) || event.getEntity().getTags().contains(NCC_CHECK_TAG)) return;
         event.getEntity().addTag(SPAWNED_CHECK_TAG);

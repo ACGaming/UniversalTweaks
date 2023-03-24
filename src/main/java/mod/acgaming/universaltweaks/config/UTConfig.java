@@ -424,7 +424,7 @@ public class UTConfig
         public boolean utCreeperConfettiToggle = false;
 
         @Config.Name("Charged Creeper Spawning Chance")
-        @Config.Comment("Chance for creepers to spawn charged")
+        @Config.Comment("Sets the chance for creepers to spawn charged")
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
         public double utChargedCreeperSpawnChance = 0.0D;
 
@@ -647,8 +647,8 @@ public class UTConfig
         @Config.Name("No Attack Cooldown")
         @Config.Comment("Disables the 1.9 combat update attack cooldown")
         public boolean utAttackCooldownToggle = false;
-		
-		@Config.Name("No Leftover Breath Bottles")
+
+        @Config.Name("No Leftover Breath Bottles")
         @Config.Comment("Disables Dragon's Breath from being a container item and leaving off empty bottles when a stack is brewed with")
         public boolean utLeftoverBreathBottleToggle = true;
 
@@ -745,6 +745,18 @@ public class UTConfig
             @Config.Name("[13] Bobbing")
             @Config.Comment("Enables the bobbing effect")
             public boolean utIEBobbing = true;
+
+            @Config.Name("[14] Clear Despawn")
+            @Config.Comment("Makes item entities flash when they're about to despawn")
+            public boolean utIEClearDespawn = false;
+
+            @Config.Name("[15] Clear Despawn: Flashing Time")
+            @Config.Comment("Determines the time in seconds item entities have left before despawn to start flashing")
+            public int utIEClearDespawnTime = 20;
+
+            @Config.Name("[16] Clear Despawn: Urgent Flashing")
+            @Config.Comment("Makes item entities flash faster as they get closer to despawning")
+            public boolean utIEClearDespawnUrgent = true;
         }
 
         public static class MendingCategory

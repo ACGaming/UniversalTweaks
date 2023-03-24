@@ -2,6 +2,7 @@ package mod.acgaming.universaltweaks.util;
 
 import java.util.Random;
 
+// Courtesy of UeberallGebannt
 public class UTRandomUtil
 {
     /**
