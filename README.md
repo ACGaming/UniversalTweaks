@@ -138,6 +138,7 @@ All changes are toggleable via the config file.
     * Render Range: Approximate range in blocks at which drawers render contained items
 * Thaumcraft
     * Firebat Particles: Adds particles to firebats similar to legacy versions
+    * Flower Bounding Box: Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs
     * Stable Thaumometer: Stops the thaumometer from bobbing rapidly when using it to scan objects
     * Wisp Particles: Increases particle size of wisps similar to legacy versions
 * Tinkers' Construct

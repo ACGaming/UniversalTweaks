@@ -1308,6 +1308,10 @@ public class UTConfig
             @Config.Comment("Adds particles to firebats similar to legacy versions")
             public boolean utTCFirebatParticlesToggle = true;
 
+            @Config.Name("Flower Bounding Box")
+            @Config.Comment("Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs")
+            public boolean utTCFlowerBoundingBoxToggle = true;
+
             @Config.Name("Stable Thaumometer")
             @Config.Comment("Stops the thaumometer from bobbing rapidly when using it to scan objects")
             public boolean utTCStableThaumometerToggle = true;
