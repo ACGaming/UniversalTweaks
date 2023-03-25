@@ -16,6 +16,7 @@ All changes are toggleable via the config file.
 * Destroy Entity Packets: Fixes lag caused by dead entities by sending additional packets when the player is not alive
 * Dimension Change Player States: Fixes missing player states when changing dimensions by sending additional packets
 * Disconnect Dupe: Fixes item dupes when players are dropping items and disconnecting
+* Double Consumption: Fixes consuming an item having a chance of also consuming a second item without any animation
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * Entity Desync: Fixes entity motion desyncs most notable with arrows and thrown items
 * Entity NaN: Prevents corruption of entities caused by invalid health or damage values
