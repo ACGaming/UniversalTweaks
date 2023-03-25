@@ -3,5 +3,5 @@
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
-  "mixins": ["UTFirebatParticlesMixin", "UTCinderpearlMixin", "UTShimmerleafMixin", "UTStableThaumometerMixin", "UTWispParticlesMixin"]
+  "mixins": ["UTCinderpearlMixin", "UTFirebatParticlesMixin", "UTShimmerleafMixin", "UTStableThaumometerMixin", "UTWispParticlesMixin"]
 }

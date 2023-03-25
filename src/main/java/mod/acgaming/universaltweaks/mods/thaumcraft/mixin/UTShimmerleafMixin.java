@@ -2,7 +2,6 @@ package mod.acgaming.universaltweaks.mods.thaumcraft.mixin;
 
 import javax.annotation.Nonnull;
 
-import org.spongepowered.asm.mixin.Mixin;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -15,18 +14,18 @@ import thaumcraft.common.blocks.world.plants.BlockPlantShimmerleaf;
 
 // Courtesy of Turkey9002
 @Mixin(BlockPlantShimmerleaf.class)
-public class UTShimmerleafMixin extends BlockBush 
+public class UTShimmerleafMixin extends BlockBush
 {
-	public UTShimmerleafMixin() 
-	{
-		super();
-	}
+    public UTShimmerleafMixin()
+    {
+        super();
+    }
 
-	@Nonnull
-	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos) 
-	{
-		if (UTConfig.MOD_INTEGRATION.THAUMCRAFT.utTCFlowerBoundingBoxToggle) return BUSH_AABB.offset(state.getOffset(world, pos));
-		else return BUSH_AABB;
-	}
+    @Nonnull
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos)
+    {
+        if (UTConfig.MOD_INTEGRATION.THAUMCRAFT.utTCFlowerBoundingBoxToggle) return BUSH_AABB.offset(state.getOffset(world, pos));
+        else return BUSH_AABB;
+    }
 }
