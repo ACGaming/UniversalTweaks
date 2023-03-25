@@ -80,6 +80,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.entities.disconnectdupe.json",
             "mixins.bugfixes.entities.boundingbox.json",
             "mixins.bugfixes.entities.desync.json",
+            "mixins.bugfixes.entities.maxhealth.json",
             "mixins.bugfixes.misc.depthmask.json",
             "mixins.bugfixes.entities.suffocation.json",
             "mixins.bugfixes.entities.tracker.json",
@@ -148,6 +149,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.entities.dimensionchange.json",
                 "mixins.bugfixes.entities.disconnectdupe.json",
                 "mixins.bugfixes.entities.boundingbox.json",
+                "mixins.bugfixes.entities.maxhealth.json",
                 "mixins.bugfixes.entities.desync.json",
                 "mixins.bugfixes.entities.suffocation.json",
                 "mixins.bugfixes.entities.tracker.json",
@@ -275,6 +277,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Bounding Box\"=true");
             case "mixins.bugfixes.entities.desync.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Desync\"=true");
+            case "mixins.bugfixes.entities.maxhealth.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Max Player Health\"=true");
             case "mixins.bugfixes.entities.suffocation.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Suffocation\"=true");
             case "mixins.bugfixes.entities.tracker.json":

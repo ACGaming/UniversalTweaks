@@ -191,7 +191,7 @@ public class UTConfig
         public boolean utEntityUUIDToggle = true;
 
         @Config.Name("Max Player Health")
-        @Config.Comment("Saves increased player health to tags")
+        @Config.Comment("Corrects maximum player health on joining by setting the last saved health value")
         public boolean utMaxHealthToggle = true;
 
         @Config.Name("Player Saturation")

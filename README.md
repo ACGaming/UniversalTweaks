@@ -32,7 +32,7 @@ All changes are toggleable via the config file.
 * Item Frame Void: Prevents voiding held items when right + left-clicking on an item frame simultaneously
 * Ladder Flying Slowdown: Disables climbing movement when flying
 * Locale: Prevents various crashes with Turkish locale
-* Max Health: Saves increased player health to tags
+* Max Health: Corrects maximum player health on joining by setting the last saved health value
 * Mining Glitch: Avoids the need for multiple mining attempts by sending additional movement packets
 * Model Gap: Fixes transparent gaps in all 3D models of blocks and items
 * Piston Progress: Properly saves the last state of pistons to tags
