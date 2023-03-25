@@ -217,6 +217,10 @@ public class UTConfig
         @Config.Comment("Fixes entity and particle rendering issues by enabling depth buffer writing")
         public boolean utDepthMaskToggle = true;
 
+        @Config.Name("Double Consumption")
+        @Config.Comment("Fixes consuming an item having a chance of also consuming a second item without any animation")
+        public boolean utDoubleConsumptionToggle = true;
+
         @Config.Name("Faster Background Startup")
         @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
         public boolean utFasterBackgroundStartupToggle = false;
