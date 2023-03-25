@@ -28,7 +28,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("chunkgenlimit") && UTConfig.TWEAKS_WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) messages.add("Chunk Generation Limiter");
         if (Loader.isModLoaded("cie") && UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utItemEntitiesToggle) messages.add("Configurable Item Entities (CIE)");
         if (Loader.isModLoaded("classiccombat") && UTConfig.TWEAKS_ITEMS.utAttackCooldownToggle) messages.add("Classic Combat");
-        if (Loader.isModLoaded("cleardespawn") && UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEClearDespawn) messages.add("Clear Despawn");
+        if (Loader.isModLoaded("cleardespawn") && UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEClearDespawnToggle) messages.add("Clear Despawn");
         if (Loader.isModLoaded("collisiondamage") && UTConfig.TWEAKS_ENTITIES.COLLISION_DAMAGE.utCollisionDamageToggle) messages.add("Collision Damage");
         if (Loader.isModLoaded("configurablecane") && UTConfig.TWEAKS_BLOCKS.utSugarCaneSize != 3) messages.add("Configurable Cane");
         if (Loader.isModLoaded("continousmusic") && UTConfig.TWEAKS_MISC.utInfiniteMusicToggle) messages.add("Infinite Music");
