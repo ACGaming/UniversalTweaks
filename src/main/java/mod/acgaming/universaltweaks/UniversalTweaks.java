@@ -10,8 +10,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import mod.acgaming.universaltweaks.bugfixes.UTHelp;
-import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
+import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
+import mod.acgaming.universaltweaks.bugfixes.misc.help.UTHelp;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.config.UTConfigParser;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;

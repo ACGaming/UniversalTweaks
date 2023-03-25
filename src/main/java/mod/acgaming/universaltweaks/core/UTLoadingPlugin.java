@@ -69,35 +69,35 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public List<String> getMixinConfigs()
     {
         return isClient ? Arrays.asList(
-            "mixins.bugfixes.blockfire.json",
-            "mixins.bugfixes.blockoverlay.json",
-            "mixins.bugfixes.boatoffset.json",
-            "mixins.bugfixes.chunksaving.json",
-            "mixins.bugfixes.comparatortiming.json",
-            "mixins.bugfixes.deathtime.json",
-            "mixins.bugfixes.destroypacket.json",
-            "mixins.bugfixes.dimensionchange.json",
-            "mixins.bugfixes.disconnectdupe.json",
-            "mixins.bugfixes.entityaabb.json",
-            "mixins.bugfixes.entitydesync.json",
-            "mixins.bugfixes.depthmask.json",
-            "mixins.bugfixes.entitysuffocation.json",
-            "mixins.bugfixes.entitytracker.json",
-            "mixins.bugfixes.exhaustion.json",
-            "mixins.bugfixes.frustumculling.json",
-            "mixins.bugfixes.hopperaabb.json",
-            "mixins.bugfixes.hopperinsert.json",
-            "mixins.bugfixes.itemframevoid.json",
-            "mixins.bugfixes.ladderflying.json",
-            "mixins.bugfixes.miningglitch.client.json",
-            "mixins.bugfixes.miningglitch.server.json",
-            "mixins.bugfixes.modelgap.json",
-            "mixins.bugfixes.pistontile.json",
-            "mixins.bugfixes.skeletonaim.json",
-            "mixins.bugfixes.smoothlighting.json",
-            "mixins.bugfixes.startup.json",
-            "mixins.bugfixes.teloadorder.json",
-            "mixins.bugfixes.villagermantle.json",
+            "mixins.bugfixes.entities.blockfire.json",
+            "mixins.bugfixes.blocks.blockoverlay.json",
+            "mixins.bugfixes.entities.boatoffset.json",
+            "mixins.bugfixes.world.chunksaving.json",
+            "mixins.bugfixes.blocks.comparatortiming.json",
+            "mixins.bugfixes.entities.deathtime.json",
+            "mixins.bugfixes.entities.destroypacket.json",
+            "mixins.bugfixes.entities.dimensionchange.json",
+            "mixins.bugfixes.entities.disconnectdupe.json",
+            "mixins.bugfixes.entities.boundingbox.json",
+            "mixins.bugfixes.entities.desync.json",
+            "mixins.bugfixes.misc.depthmask.json",
+            "mixins.bugfixes.entities.suffocation.json",
+            "mixins.bugfixes.entities.tracker.json",
+            "mixins.bugfixes.entities.saturation.json",
+            "mixins.bugfixes.world.frustumculling.json",
+            "mixins.bugfixes.blocks.hopper.boundingbox.json",
+            "mixins.bugfixes.blocks.hopper.tile.json",
+            "mixins.bugfixes.blocks.itemframevoid.json",
+            "mixins.bugfixes.blocks.ladderflying.json",
+            "mixins.bugfixes.blocks.miningglitch.client.json",
+            "mixins.bugfixes.blocks.miningglitch.server.json",
+            "mixins.bugfixes.misc.modelgap.json",
+            "mixins.bugfixes.blocks.pistontile.json",
+            "mixins.bugfixes.entities.skeletonaim.json",
+            "mixins.bugfixes.misc.smoothlighting.json",
+            "mixins.bugfixes.misc.startup.json",
+            "mixins.bugfixes.world.teloadorder.json",
+            "mixins.bugfixes.entities.villagermantle.json",
             "mixins.tweaks.ai.json",
             "mixins.tweaks.attackcooldown.json",
             "mixins.tweaks.audioreload.json",
@@ -139,27 +139,27 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.worldloading.server.json",
             "mixins.tweaks.xpbottle.json") :
             Arrays.asList(
-                "mixins.bugfixes.blockfire.json",
-                "mixins.bugfixes.boatoffset.json",
-                "mixins.bugfixes.chunksaving.json",
-                "mixins.bugfixes.comparatortiming.json",
-                "mixins.bugfixes.deathtime.json",
-                "mixins.bugfixes.destroypacket.json",
-                "mixins.bugfixes.dimensionchange.json",
-                "mixins.bugfixes.disconnectdupe.json",
-                "mixins.bugfixes.entityaabb.json",
-                "mixins.bugfixes.entitydesync.json",
-                "mixins.bugfixes.entitysuffocation.json",
-                "mixins.bugfixes.entitytracker.json",
-                "mixins.bugfixes.exhaustion.json",
-                "mixins.bugfixes.hopperaabb.json",
-                "mixins.bugfixes.hopperinsert.json",
-                "mixins.bugfixes.itemframevoid.json",
-                "mixins.bugfixes.ladderflying.json",
-                "mixins.bugfixes.miningglitch.server.json",
-                "mixins.bugfixes.pistontile.json",
-                "mixins.bugfixes.skeletonaim.json",
-                "mixins.bugfixes.teloadorder.json",
+                "mixins.bugfixes.entities.blockfire.json",
+                "mixins.bugfixes.entities.boatoffset.json",
+                "mixins.bugfixes.world.chunksaving.json",
+                "mixins.bugfixes.blocks.comparatortiming.json",
+                "mixins.bugfixes.entities.deathtime.json",
+                "mixins.bugfixes.entities.destroypacket.json",
+                "mixins.bugfixes.entities.dimensionchange.json",
+                "mixins.bugfixes.entities.disconnectdupe.json",
+                "mixins.bugfixes.entities.boundingbox.json",
+                "mixins.bugfixes.entities.desync.json",
+                "mixins.bugfixes.entities.suffocation.json",
+                "mixins.bugfixes.entities.tracker.json",
+                "mixins.bugfixes.entities.saturation.json",
+                "mixins.bugfixes.blocks.hopper.boundingbox.json",
+                "mixins.bugfixes.blocks.hopper.tile.json",
+                "mixins.bugfixes.blocks.itemframevoid.json",
+                "mixins.bugfixes.blocks.ladderflying.json",
+                "mixins.bugfixes.blocks.miningglitch.server.json",
+                "mixins.bugfixes.blocks.pistontile.json",
+                "mixins.bugfixes.entities.skeletonaim.json",
+                "mixins.bugfixes.world.teloadorder.json",
                 "mixins.tweaks.ai.json",
                 "mixins.tweaks.attackcooldown.json",
                 "mixins.tweaks.bedobstruction.json",
@@ -207,21 +207,21 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     {
                         return firstLaunch || UTConfigParser.isEnabled("B:\"Disable Audio Debug\"=true");
                     }
-                case "mixins.bugfixes.blockoverlay.json":
+                case "mixins.bugfixes.blocks.blockoverlay.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Block Overlay Toggle\"=true");
-                case "mixins.bugfixes.depthmask.json":
+                case "mixins.bugfixes.misc.depthmask.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Depth Mask\"=true");
-                case "mixins.bugfixes.frustumculling.json":
+                case "mixins.bugfixes.world.frustumculling.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Frustum Culling\"=true");
-                case "mixins.bugfixes.miningglitch.client.json":
+                case "mixins.bugfixes.blocks.miningglitch.client.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Mining Glitch\"=true");
-                case "mixins.bugfixes.modelgap.json":
+                case "mixins.bugfixes.misc.modelgap.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Model Gap Toggle\"=true");
-                case "mixins.bugfixes.smoothlighting.json":
+                case "mixins.bugfixes.misc.smoothlighting.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Accurate Smooth Lighting\"=true");
-                case "mixins.bugfixes.startup.json":
+                case "mixins.bugfixes.misc.startup.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Faster Background Startup\"=true");
-                case "mixins.bugfixes.villagermantle.json":
+                case "mixins.bugfixes.entities.villagermantle.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Villager Mantle Hoods\"=true");
                 case "mixins.tweaks.autojump.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Auto Jump Replacement\"=true");
@@ -255,47 +255,47 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         }
         switch (mixinConfig)
         {
-            case "mixins.bugfixes.blockfire.json":
+            case "mixins.bugfixes.entities.blockfire.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Block Fire\"=true");
-            case "mixins.bugfixes.boatoffset.json":
+            case "mixins.bugfixes.entities.boatoffset.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Boat Riding Offset\"=true");
-            case "mixins.bugfixes.comparatortiming.json":
+            case "mixins.bugfixes.blocks.comparatortiming.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Comparator Timing\"=true");
-            case "mixins.bugfixes.chunksaving.json":
+            case "mixins.bugfixes.world.chunksaving.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Chunk Saving\"=true");
-            case "mixins.bugfixes.deathtime.json":
+            case "mixins.bugfixes.entities.deathtime.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Death Time\"=true");
-            case "mixins.bugfixes.destroypacket.json":
+            case "mixins.bugfixes.entities.destroypacket.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Destroy Entity Packets\"=true");
-            case "mixins.bugfixes.dimensionchange.json":
+            case "mixins.bugfixes.entities.dimensionchange.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Dimension Change Player States\"=true");
-            case "mixins.bugfixes.disconnectdupe.json":
+            case "mixins.bugfixes.entities.disconnectdupe.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Disconnect Dupe\"=true");
-            case "mixins.bugfixes.entityaabb.json":
+            case "mixins.bugfixes.entities.boundingbox.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Bounding Box\"=true");
-            case "mixins.bugfixes.entitydesync.json":
+            case "mixins.bugfixes.entities.desync.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Desync\"=true");
-            case "mixins.bugfixes.entitysuffocation.json":
+            case "mixins.bugfixes.entities.suffocation.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Suffocation\"=true");
-            case "mixins.bugfixes.entitytracker.json":
+            case "mixins.bugfixes.entities.tracker.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Entity Tracker\"=true");
-            case "mixins.bugfixes.exhaustion.json":
+            case "mixins.bugfixes.entities.saturation.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Player Saturation\"=true");
-            case "mixins.bugfixes.hopperaabb.json":
+            case "mixins.bugfixes.blocks.hopper.boundingbox.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Hopper Bounding Box\"=true");
-            case "mixins.bugfixes.hopperinsert.json":
+            case "mixins.bugfixes.blocks.hopper.tile.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Hopper Insert Safety Check\"=true");
-            case "mixins.bugfixes.itemframevoid.json":
+            case "mixins.bugfixes.blocks.itemframevoid.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Item Frame Void\"=true");
-            case "mixins.bugfixes.ladderflying.json":
+            case "mixins.bugfixes.blocks.ladderflying.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Ladder Flying Slowdown\"=true");
-            case "mixins.bugfixes.miningglitch.server.json":
+            case "mixins.bugfixes.blocks.miningglitch.server.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Mining Glitch\"=true");
-            case "mixins.bugfixes.pistontile.json":
+            case "mixins.bugfixes.blocks.pistontile.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Piston Progress\"=true");
-            case "mixins.bugfixes.skeletonaim.json":
+            case "mixins.bugfixes.entities.skeletonaim.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Skeleton Aim\"=true");
-            case "mixins.bugfixes.teloadorder.json":
+            case "mixins.bugfixes.world.teloadorder.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Tile Entity Update Order\"=true");
             case "mixins.tweaks.ai.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"AI Replacement\"=true");

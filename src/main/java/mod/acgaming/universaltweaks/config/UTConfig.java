@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.bugfixes.blockoverlay.UTBlockOverlayLists;
+import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
@@ -138,6 +138,10 @@ public class UTConfig
 
     public static class BugfixesEntitiesCategory
     {
+        @Config.Name("Block Fire")
+        @Config.Comment("Prevents fire projectiles burning entities when blocking with shields")
+        public boolean utBlockFireToggle = true;
+
         @Config.Name("Boat Riding Offset")
         @Config.Comment("Fixes entities glitching through the bottom of boats")
         public boolean utBoatOffsetToggle = true;
@@ -157,6 +161,10 @@ public class UTConfig
         @Config.Name("Dimension Change Player States")
         @Config.Comment("Fixes missing player states when changing dimensions by sending additional packets")
         public boolean utDimensionChangeToggle = true;
+
+        @Config.Name("Double Consumption")
+        @Config.Comment("Fixes consuming an item having a chance of also consuming a second item without any animation")
+        public boolean utDoubleConsumptionToggle = true;
 
         @Config.Name("Entity Bounding Box")
         @Config.Comment("Saves entity bounding boxes to tags to prevent breakouts and suffocation")
@@ -209,25 +217,13 @@ public class UTConfig
         @Config.Comment("Improves the accuracy of smooth lighting by checking for suffocation and light opacity")
         public boolean utAccurateSmoothLighting = true;
 
-        @Config.Name("Block Fire")
-        @Config.Comment("Prevents fire projectiles burning entities when blocking with shields")
-        public boolean utBlockFireToggle = true;
-
         @Config.Name("Depth Mask")
         @Config.Comment("Fixes entity and particle rendering issues by enabling depth buffer writing")
         public boolean utDepthMaskToggle = true;
 
-        @Config.Name("Double Consumption")
-        @Config.Comment("Fixes consuming an item having a chance of also consuming a second item without any animation")
-        public boolean utDoubleConsumptionToggle = true;
-
         @Config.Name("Faster Background Startup")
         @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
         public boolean utFasterBackgroundStartupToggle = false;
-
-        @Config.Name("Frustum Culling")
-        @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
-        public boolean utFrustumCullingToggle = true;
 
         @Config.Name("Help Command")
         @Config.Comment("Replaces the help command, sorts and reports broken commands")
@@ -268,6 +264,10 @@ public class UTConfig
         @Config.Name("Chunk Saving")
         @Config.Comment("Fixes loading of outdated chunks to prevent duplications, deletions and data corruption")
         public boolean utChunkSavingToggle = true;
+
+        @Config.Name("Frustum Culling")
+        @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
+        public boolean utFrustumCullingToggle = true;
 
         @Config.Name("Tile Entity Update Order")
         @Config.Comment("Keeps the order of tile entities on chunk load")
