@@ -55,7 +55,7 @@ public class UTMaxHealth
                     break;
                 }
             }
-            strings.add("loginhp" + String.format(Locale.ENGLISH, "%.2f", player.getHealth() / player.getMaxHealth()));
+            strings.add("loginhp" + String.format(Locale.ENGLISH, "%.2f", Math.max(player.getHealth() / player.getMaxHealth(), 1.00F)));
         }
     }
 }
