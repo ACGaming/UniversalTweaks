@@ -69,36 +69,36 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public List<String> getMixinConfigs()
     {
         return isClient ? Arrays.asList(
-            "mixins.bugfixes.entities.blockfire.json",
             "mixins.bugfixes.blocks.blockoverlay.json",
-            "mixins.bugfixes.entities.boatoffset.json",
-            "mixins.bugfixes.world.chunksaving.json",
             "mixins.bugfixes.blocks.comparatortiming.json",
-            "mixins.bugfixes.entities.deathtime.json",
-            "mixins.bugfixes.entities.destroypacket.json",
-            "mixins.bugfixes.entities.dimensionchange.json",
-            "mixins.bugfixes.entities.disconnectdupe.json",
-            "mixins.bugfixes.entities.boundingbox.json",
-            "mixins.bugfixes.entities.desync.json",
-            "mixins.bugfixes.entities.maxhealth.json",
-            "mixins.bugfixes.misc.depthmask.json",
-            "mixins.bugfixes.entities.suffocation.json",
-            "mixins.bugfixes.entities.tracker.json",
-            "mixins.bugfixes.entities.saturation.json",
-            "mixins.bugfixes.world.frustumculling.json",
             "mixins.bugfixes.blocks.hopper.boundingbox.json",
             "mixins.bugfixes.blocks.hopper.tile.json",
             "mixins.bugfixes.blocks.itemframevoid.json",
             "mixins.bugfixes.blocks.ladderflying.json",
             "mixins.bugfixes.blocks.miningglitch.client.json",
             "mixins.bugfixes.blocks.miningglitch.server.json",
-            "mixins.bugfixes.misc.modelgap.json",
             "mixins.bugfixes.blocks.pistontile.json",
+            "mixins.bugfixes.entities.blockfire.json",
+            "mixins.bugfixes.entities.boatoffset.json",
+            "mixins.bugfixes.entities.boundingbox.json",
+            "mixins.bugfixes.entities.deathtime.json",
+            "mixins.bugfixes.entities.destroypacket.json",
+            "mixins.bugfixes.entities.desync.json",
+            "mixins.bugfixes.entities.dimensionchange.json",
+            "mixins.bugfixes.entities.disconnectdupe.json",
+            "mixins.bugfixes.entities.maxhealth.json",
+            "mixins.bugfixes.entities.saturation.json",
             "mixins.bugfixes.entities.skeletonaim.json",
+            "mixins.bugfixes.entities.suffocation.json",
+            "mixins.bugfixes.entities.tracker.json",
+            "mixins.bugfixes.entities.villagermantle.json",
+            "mixins.bugfixes.misc.depthmask.json",
+            "mixins.bugfixes.misc.modelgap.json",
             "mixins.bugfixes.misc.smoothlighting.json",
             "mixins.bugfixes.misc.startup.json",
+            "mixins.bugfixes.world.chunksaving.json",
+            "mixins.bugfixes.world.frustumculling.json",
             "mixins.bugfixes.world.teloadorder.json",
-            "mixins.bugfixes.entities.villagermantle.json",
             "mixins.tweaks.ai.json",
             "mixins.tweaks.attackcooldown.json",
             "mixins.tweaks.audioreload.json",
@@ -121,13 +121,14 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.linearxp.json",
             "mixins.tweaks.mobdespawn.json",
             "mixins.tweaks.narrator.json",
-            "mixins.tweaks.nogolems.json",
             "mixins.tweaks.nightvisionflash.json",
+            "mixins.tweaks.nogolems.json",
             "mixins.tweaks.plantables.json",
             "mixins.tweaks.playerspeed.json",
             "mixins.tweaks.prefixcheck.json",
             "mixins.tweaks.realmsbutton.json",
-            "mixins.tweaks.recipebook.json",
+            "mixins.tweaks.recipebook.client.json",
+            "mixins.tweaks.recipebook.server.json",
             "mixins.tweaks.redstonelighting.json",
             "mixins.tweaks.resourcemanager.json",
             "mixins.tweaks.saddledwandering.json",
@@ -140,27 +141,27 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.worldloading.server.json",
             "mixins.tweaks.xpbottle.json") :
             Arrays.asList(
-                "mixins.bugfixes.entities.blockfire.json",
-                "mixins.bugfixes.entities.boatoffset.json",
-                "mixins.bugfixes.world.chunksaving.json",
                 "mixins.bugfixes.blocks.comparatortiming.json",
-                "mixins.bugfixes.entities.deathtime.json",
-                "mixins.bugfixes.entities.destroypacket.json",
-                "mixins.bugfixes.entities.dimensionchange.json",
-                "mixins.bugfixes.entities.disconnectdupe.json",
-                "mixins.bugfixes.entities.boundingbox.json",
-                "mixins.bugfixes.entities.maxhealth.json",
-                "mixins.bugfixes.entities.desync.json",
-                "mixins.bugfixes.entities.suffocation.json",
-                "mixins.bugfixes.entities.tracker.json",
-                "mixins.bugfixes.entities.saturation.json",
                 "mixins.bugfixes.blocks.hopper.boundingbox.json",
                 "mixins.bugfixes.blocks.hopper.tile.json",
                 "mixins.bugfixes.blocks.itemframevoid.json",
                 "mixins.bugfixes.blocks.ladderflying.json",
                 "mixins.bugfixes.blocks.miningglitch.server.json",
                 "mixins.bugfixes.blocks.pistontile.json",
+                "mixins.bugfixes.entities.blockfire.json",
+                "mixins.bugfixes.entities.boatoffset.json",
+                "mixins.bugfixes.entities.boundingbox.json",
+                "mixins.bugfixes.entities.deathtime.json",
+                "mixins.bugfixes.entities.destroypacket.json",
+                "mixins.bugfixes.entities.desync.json",
+                "mixins.bugfixes.entities.dimensionchange.json",
+                "mixins.bugfixes.entities.disconnectdupe.json",
+                "mixins.bugfixes.entities.maxhealth.json",
+                "mixins.bugfixes.entities.saturation.json",
                 "mixins.bugfixes.entities.skeletonaim.json",
+                "mixins.bugfixes.entities.suffocation.json",
+                "mixins.bugfixes.entities.tracker.json",
+                "mixins.bugfixes.world.chunksaving.json",
                 "mixins.bugfixes.world.teloadorder.json",
                 "mixins.tweaks.ai.json",
                 "mixins.tweaks.attackcooldown.json",
@@ -182,6 +183,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.plantables.json",
                 "mixins.tweaks.playerspeed.json",
                 "mixins.tweaks.prefixcheck.json",
+                "mixins.tweaks.recipebook.server.json",
                 "mixins.tweaks.redstonelighting.json",
                 "mixins.tweaks.saddledwandering.json",
                 "mixins.tweaks.snooper.server.json",
@@ -239,7 +241,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"No Night Vision Flash\"=true");
                 case "mixins.tweaks.realmsbutton.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Remove Realms Button\"=true");
-                case "mixins.tweaks.recipebook.json":
+                case "mixins.tweaks.recipebook.client.json":
                     return !firstLaunch && UTConfigParser.isEnabled("B:\"Remove Recipe Book\"=true");
                 case "mixins.tweaks.resourcemanager.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Check Animated Models\"=true");
@@ -341,6 +343,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"[1] Player Speed Toggle\"=true");
             case "mixins.tweaks.prefixcheck.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Fast Prefix Checking\"=true");
+            case "mixins.tweaks.recipebook.server.json":
+                return !firstLaunch && UTConfigParser.isEnabled("B:\"Remove Recipe Book\"=true");
             case "mixins.tweaks.redstonelighting.json":
                 return !firstLaunch && UTConfigParser.isEnabled("B:\"No Redstone Lighting\"=true");
             case "mixins.tweaks.saddledwandering.json":

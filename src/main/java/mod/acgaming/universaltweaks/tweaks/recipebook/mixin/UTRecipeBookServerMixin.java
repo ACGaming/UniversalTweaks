@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.stats.RecipeBookServer;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
@@ -12,6 +13,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(RecipeBookServer.class)
 public class UTRecipeBookServerMixin
@@ -37,6 +39,28 @@ public class UTRecipeBookServerMixin
     {
         if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Remove");
+        ci.cancel();
+    }
+
+    /**
+     * Fallback inject for {@link UTRecipeBookPlayerMixin#utRecipeBookReadEntityFromNBT(NBTTagCompound, CallbackInfo)} ()}
+     */
+    @Inject(method = "write", at = @At("HEAD"), cancellable = true)
+    public void utRecipeBookWrite(CallbackInfoReturnable<NBTTagCompound> cir)
+    {
+        if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Write");
+        cir.setReturnValue(new NBTTagCompound());
+    }
+
+    /**
+     * Fallback inject for {@link UTRecipeBookPlayerMixin#utRecipeBookWriteEntityToNBT(NBTTagCompound, CallbackInfo)} ()}
+     */
+    @Inject(method = "read", at = @At("HEAD"), cancellable = true)
+    public void utRecipeBookRead(NBTTagCompound tag, CallbackInfo ci)
+    {
+        if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Read");
         ci.cancel();
     }
 }
