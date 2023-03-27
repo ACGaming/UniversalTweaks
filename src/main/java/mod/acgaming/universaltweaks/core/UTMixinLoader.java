@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 import net.minecraftforge.fml.common.Loader;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigParser;
 import zone.rong.mixinbooter.ILateMixinLoader;
 
 public class UTMixinLoader implements ILateMixinLoader
@@ -67,7 +67,7 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.tconstruct.json":
                 return Loader.isModLoaded("tconstruct");
             case "mixins.mods.tconstruct.oredictcache.json":
-                return Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle;
+                return Loader.isModLoaded("tconstruct") && (UTLoadingPlugin.firstLaunch || UTConfigParser.isEnabled("B:\"Ore Dictionary Cache\"=true"));
         }
         return true;
     }
