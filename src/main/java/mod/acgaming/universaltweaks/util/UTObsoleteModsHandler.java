@@ -54,7 +54,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("gottagofast") && UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("Gotta Go Fast");
         if (Loader.isModLoaded("helpfixer") && UTConfig.BUGFIXES_MISC.utHelpToggle) messages.add("HelpFixer");
         if (Loader.isModLoaded("horsestandstill") && UTConfig.TWEAKS_ENTITIES.utSaddledWanderingToggle) messages.add("Stupid Horse Stand Still");
-        if (Loader.isModLoaded("ikwid") && UTConfig.TWEAKS_MISC.utTutorialHintsToggle) messages.add("I Know What I'm Doing");
+        if (Loader.isModLoaded("ikwid") && UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlTutorialToggle) messages.add("I Know What I'm Doing");
         if (Loader.isModLoaded("leafdecay") && UTConfig.TWEAKS_BLOCKS.utLeafDecayToggle) messages.add("Leaf Decay Accelerator");
         if (Loader.isModLoaded("letmedespawn") && UTConfig.TWEAKS_ENTITIES.utMobDespawnToggle) messages.add("Let Me Despawn");
         if (Loader.isModLoaded("loginhpfix") && UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle) messages.add("Login HP Fix");
@@ -83,6 +83,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("tconfixes")) messages.add("TConFixes");
         if (Loader.isModLoaded("tidychunk") && UTConfig.TWEAKS_WORLD.utTidyChunkToggle) messages.add("TidyChunk");
         if (Loader.isModLoaded("tinkersoredictcache") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) messages.add("TinkersOreDictCache");
+        if (Loader.isModLoaded("toastcontrol") && UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlToggle) messages.add("Toast Control");
         if (Loader.isModLoaded("unloader") && UTConfig.TWEAKS_WORLD.DIMENSION_UNLOAD.utUnloaderToggle) messages.add("Unloader");
         if (Loader.isModLoaded("villagermantlefix") && UTConfig.BUGFIXES_ENTITIES.utVillagerMantleToggle) messages.add("Villager Mantle Fix");
         if (Loader.isModLoaded("watercontrolextreme") && UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterToggle) messages.add("Water Control Extreme");

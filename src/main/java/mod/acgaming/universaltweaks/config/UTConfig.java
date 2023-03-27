@@ -848,6 +848,10 @@ public class UTConfig
         @Config.Name("Swing Through Grass")
         public final SwingThroughGrassCategory SWING_THROUGH_GRASS = new SwingThroughGrassCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.toastcontrol")
+        @Config.Name("Toast Control")
+        public final ToastControlCategory TOAST_CONTROL = new ToastControlCategory();
+
         @Config.Name("Damage Tilt")
         @Config.Comment("Restores feature to tilt the camera when damaged")
         public boolean utDamageTiltToggle = true;
@@ -907,10 +911,6 @@ public class UTConfig
         @Config.Name("Skip Credits")
         @Config.Comment("Skips the credits screen after the player goes through the end podium portal")
         public boolean utSkipCreditsToggle = false;
-
-        @Config.Name("Suppress Tutorial Hints")
-        @Config.Comment("Suppresses in-game tutorial hint tabs in the right-hand corner")
-        public boolean utTutorialHintsToggle = true;
 
         @Config.Name("Toggle Cheats Button")
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
@@ -1030,6 +1030,31 @@ public class UTConfig
                     "Syntax: modid:block"
                 })
             public String[] utSwingThroughGrassWhitelist = new String[] {};
+        }
+
+        public static class ToastControlCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Toast Control Toggle")
+            @Config.Comment("Enables the control of toasts (pop-up text boxes)")
+            public boolean utToastControlToggle = true;
+
+            @Config.Name("[2] Disable Advancement Toasts")
+            @Config.Comment("Determines if advancement toasts are blocked. Enabling will block ALL advancements.")
+            public boolean utToastControlAdvancementsToggle = false;
+
+            @Config.Name("[3] Disable Recipe Toasts")
+            @Config.Comment("Determines if recipe unlock toasts are blocked. Blocks \"you have unlocked a new recipe\" toasts.")
+            public boolean utToastControlRecipesToggle = true;
+
+            @Config.Name("[4] Disable System Toasts")
+            @Config.Comment("Determines if system toasts are blocked. This is used only for the narrator toggle notification right now.")
+            public boolean utToastControlSystemToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[5] Disable Tutorial Toasts")
+            @Config.Comment("Determines if tutorial toasts are blocked. Blocks useless things like use WASD to move.")
+            public boolean utToastControlTutorialToggle = true;
         }
     }
 

@@ -24,6 +24,7 @@ import mod.acgaming.universaltweaks.tweaks.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
 import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
+import mod.acgaming.universaltweaks.tweaks.toastcontrol.UTTutorialToast;
 import mod.acgaming.universaltweaks.util.UTObsoleteModsHandler;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
 
@@ -79,7 +80,7 @@ public class UniversalTweaks
     public void postInitClient(FMLPostInitializationEvent event)
     {
         if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfig.TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
-        if (UTConfig.TWEAKS_MISC.utTutorialHintsToggle) UTTutorialHints.utTutorialHints();
+        if (UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlTutorialToggle) UTTutorialToast.utTutorialToast();
         if (Loader.isModLoaded("botania")) UTBotaniaFancySkybox.initDimList();
     }
 

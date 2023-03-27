@@ -136,6 +136,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.smoothscrolling.json",
             "mixins.tweaks.snooper.client.json",
             "mixins.tweaks.spawning.json",
+            "mixins.tweaks.toastcontrol.json",
             "mixins.tweaks.uncapfps.json",
             "mixins.tweaks.worldloading.client.json",
             "mixins.tweaks.worldloading.server.json",
@@ -251,6 +252,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Smooth Scrolling Toggle\"=true");
                 case "mixins.tweaks.snooper.client.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Remove Snooper\"=true");
+                case "mixins.tweaks.toastcontrol.json":
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Toast Control Toggle\"=true");
                 case "mixins.tweaks.uncapfps.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Uncap FPS\"=true");
                 case "mixins.tweaks.worldloading.client.json":

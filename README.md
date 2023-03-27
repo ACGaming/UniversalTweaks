@@ -108,9 +108,9 @@ All changes are toggleable via the config file.
 * Smooth Scrolling: Adds smooth scrolling to every in-game list
 * Super Hot Torch: Enables one-time ignition of entities by hitting them with a torch
 * Stronghold Replacement: Replaces stronghold generation with a safer variant
-* Suppress Tutorial Hints: Suppresses in-game tutorial hint tabs in the right-hand corner
 * Swing Through Grass: Allows hitting entities through grass instead of breaking it
 * Tidy Chunk: Tidies newly generated chunks by removing scattered item entities
+* Toast Control: Enables the control of toasts (pop-up text boxes)
 * Toggle Cheats Button: Adds a button to the pause menu to toggle cheats
 * Uncap FPS: Removes the hardcoded 30 FPS limit in screens like the main menu
 * Water Fall Damage: Re-implements an improved version of pre-1.4 fall damage in water

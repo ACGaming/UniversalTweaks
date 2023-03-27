@@ -55,6 +55,7 @@ cfg.universaltweaks.tweaks.misc.loadsounds=Load Sounds
 cfg.universaltweaks.tweaks.misc.rallyhealth=Rally Health
 cfg.universaltweaks.tweaks.misc.smoothscrolling=Smooth Scrolling
 cfg.universaltweaks.tweaks.misc.stg=Swing Through Grass
+cfg.universaltweaks.tweaks.misc.toastcontrol=Toast Control
 cfg.universaltweaks.tweaks.performance=Tweaks: Performance
 cfg.universaltweaks.tweaks.world=Tweaks: World
 cfg.universaltweaks.tweaks.world.chunkgenlimit=Chunk Gen Limit
