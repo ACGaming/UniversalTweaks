@@ -1209,6 +1209,10 @@ public class UTConfig
         @Config.Name("Thaumcraft")
         public final ThaumcraftCategory THAUMCRAFT = new ThaumcraftCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.te")
+        @Config.Name("Thermal Expansion")
+        public final ThermalExpansionCategory THERMAL_EXPANSION = new ThermalExpansionCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.tcon")
         @Config.Name("Tinkers' Construct")
         public final TinkersConstructCategory TINKERS_CONSTRUCT = new TinkersConstructCategory();
@@ -1348,6 +1352,19 @@ public class UTConfig
             @Config.Name("Wisp Particles")
             @Config.Comment("Increases particle size of wisps similar to legacy versions")
             public boolean utTCWispParticlesToggle = true;
+        }
+
+        public static class ThermalExpansionCategory
+        {
+            @Config.Name("Insolator Custom Monoculture")
+            @Config.Comment
+                ({
+                    "Adds Monoculture Cycle integration to desired phytogenic insolator recipes added by Modtweaker",
+                    "Register the recipe with Insolator.addRecipeMonoculture() instead of Insolator.addRecipe() in .zs files",
+                    "(and Insolator.addRecipeMonocultureSaplingInfuser() instead of Insolator.addRecipeSaplingInfuser())",
+                    "Note: Make sure the 'fertilizer' is specified as the secondaryInput arg in the function"
+                })
+            public boolean utTEInsolatorCustomMonoculture = true;
         }
 
         public static class TinkersConstructCategory

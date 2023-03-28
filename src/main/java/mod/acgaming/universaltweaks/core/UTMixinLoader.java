@@ -25,6 +25,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.storagedrawers.client.json",
             "mixins.mods.storagedrawers.server.json",
             "mixins.mods.thaumcraft.json",
+            "mixins.mods.thermalexpansion.json",
             "mixins.mods.tconstruct.json",
             "mixins.mods.tconstruct.oredictcache.json"
         );
@@ -64,6 +65,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("storagedrawers");
             case "mixins.mods.thaumcraft.json":
                 return Loader.isModLoaded("thaumcraft");
+            case "mixins.mods.thermalexpansion.json":
+                return Loader.isModLoaded("thermalexpansion");
             case "mixins.mods.tconstruct.json":
                 return Loader.isModLoaded("tconstruct");
             case "mixins.mods.tconstruct.oredictcache.json":
