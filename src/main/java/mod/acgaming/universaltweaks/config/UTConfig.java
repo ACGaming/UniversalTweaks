@@ -424,8 +424,9 @@ public class UTConfig
         public double utBoatSpeed = 0.04D;
 
         @Config.Name("Creeper Confetti")
-        @Config.Comment("Replaces deadly creeper explosions with delightful confetti")
-        public boolean utCreeperConfettiToggle = false;
+        @Config.Comment("Sets the chance to replace deadly creeper explosions with delightful confetti")
+        @Config.RangeDouble(min = 0.0D, max = 1.0D)
+        public double utCreeperConfettiChance = 0.0D;
 
         @Config.Name("Charged Creeper Spawning Chance")
         @Config.Comment("Sets the chance for creepers to spawn charged")

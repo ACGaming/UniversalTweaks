@@ -63,7 +63,7 @@ All changes are toggleable via the config file.
 * Check Animated Models: Improves model load times by checking if an animated model exists before trying to load it
 * Chunk Gen Limit: Limits maximum chunk generation per tick for improved server performance
 * Crafting Cache: Adds an IRecipe cache to improve recipe performance in large modpacks
-* Creeper Confetti: Replaces deadly creeper explosions with delightful confetti
+* Creeper Confetti: Replaces deadly creeper explosions with delightful confetti (with a configurable chance)
 * Damage Tilt: Restores feature to tilt the camera when damaged
 * Dimension Unload: Unloads dimensions not in use to free up resources
 * Disable Audio Debug: Improves loading times by removing debug code for missing sounds and subtitles

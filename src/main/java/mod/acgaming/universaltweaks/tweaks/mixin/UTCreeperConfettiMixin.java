@@ -1,6 +1,7 @@
 package mod.acgaming.universaltweaks.tweaks.mixin;
 
 import java.util.List;
+import java.util.Random;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
@@ -18,8 +19,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.util.UTRandomUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -39,7 +42,8 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
     @Inject(method = "explode", at = @At("HEAD"), cancellable = true)
     public void utCreeperConfetti(CallbackInfo ci)
     {
-        if (!UTConfig.TWEAKS_ENTITIES.utCreeperConfettiToggle) return;
+        double chargedChance = UTConfig.TWEAKS_ENTITIES.utCreeperConfettiChance;
+        if (chargedChance <= 0.0D || !UTRandomUtil.chance(chargedChance, new Random(this.getUniqueID().getMostSignificantBits() & Long.MAX_VALUE))) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCreeperConfetti ::: Explode");
         if (this.world.isRemote) spawnParticles(this.getEntityWorld(), this.getPosition(), this.getPowered());
         else
@@ -51,6 +55,7 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
         ci.cancel();
     }
 
+    @Unique
     @SideOnly(Side.CLIENT)
     public void spawnParticles(World world, BlockPos pos, boolean powered)
     {
@@ -58,6 +63,7 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
         particleManager.addEffect(new ParticleFirework.Starter(world, pos.getX(), pos.getY() + (powered ? 2.5F : 0.5F), pos.getZ(), 0, 0, 0, particleManager, generateTag(powered)));
     }
 
+    @Unique
     public NBTTagCompound generateTag(boolean powered)
     {
         NBTTagCompound fireworkTag = new NBTTagCompound();

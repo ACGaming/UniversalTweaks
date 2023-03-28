@@ -31,7 +31,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("collisiondamage") && UTConfig.TWEAKS_ENTITIES.COLLISION_DAMAGE.utCollisionDamageToggle) messages.add("Collision Damage");
         if (Loader.isModLoaded("configurablecane") && UTConfig.TWEAKS_BLOCKS.utSugarCaneSize != 3) messages.add("Configurable Cane");
         if (Loader.isModLoaded("continousmusic") && UTConfig.TWEAKS_MISC.utInfiniteMusicToggle) messages.add("Infinite Music");
-        if (Loader.isModLoaded("creeperconfetti") && UTConfig.TWEAKS_ENTITIES.utCreeperConfettiToggle) messages.add("Creeper Confetti");
+        if (Loader.isModLoaded("creeperconfetti") && UTConfig.TWEAKS_ENTITIES.utCreeperConfettiChance > 0) messages.add("Creeper Confetti");
         if (Loader.isModLoaded("damagetilt") && UTConfig.TWEAKS_MISC.utDamageTiltToggle) messages.add("Damage Tilt");
         if (Loader.isModLoaded("darkstone") && UTConfig.TWEAKS_MISC.utRedstoneLightingToggle) messages.add("Dark Redstone");
         if (Loader.isModLoaded("deuf") && UTConfig.BUGFIXES_ENTITIES.utEntityUUIDToggle) messages.add("Duplicate Entity UUID Fix (DEUF)");
