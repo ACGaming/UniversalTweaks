@@ -142,6 +142,8 @@ All changes are toggleable via the config file.
     * Flower Bounding Box: Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs
     * Stable Thaumometer: Stops the thaumometer from bobbing rapidly when using it to scan objects
     * Wisp Particles: Increases particle size of wisps similar to legacy versions
+* Thermal Expansion
+    * Insolator Custom Monoculture: Adds Monoculture Cycle integration to desired phytogenic insolator recipes added by ModTweaker
 * Tinkers' Construct
     * Gaseous Fluids: Excludes gaseous fluids from being transferable via faucets
     * Offhand Shuriken: Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand

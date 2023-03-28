@@ -1359,7 +1359,7 @@ public class UTConfig
             @Config.Name("Insolator Custom Monoculture")
             @Config.Comment
                 ({
-                    "Adds Monoculture Cycle integration to desired phytogenic insolator recipes added by Modtweaker",
+                    "Adds Monoculture Cycle integration to desired phytogenic insolator recipes added by ModTweaker",
                     "Register the recipe with Insolator.addRecipeMonoculture() instead of Insolator.addRecipe() in .zs files",
                     "(and Insolator.addRecipeMonocultureSaplingInfuser() instead of Insolator.addRecipeSaplingInfuser())",
                     "Note: Make sure the 'fertilizer' is specified as the secondaryInput arg in the function"

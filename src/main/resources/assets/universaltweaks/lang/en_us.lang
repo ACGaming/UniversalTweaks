@@ -33,6 +33,7 @@ cfg.universaltweaks.modintegration.roost=Roost
 cfg.universaltweaks.modintegration.sd=Storage Drawers
 cfg.universaltweaks.modintegration.tc=Thaumcraft
 cfg.universaltweaks.modintegration.tcon=Tinkers' Construct
+cfg.universaltweaks.modintegration.te=Thermal Expansion
 cfg.universaltweaks.tweaks.blocks=Tweaks: Blocks
 cfg.universaltweaks.tweaks.blocks.betterplacement=Better Placement
 cfg.universaltweaks.tweaks.blocks.breakablebedrock=Breakable Bedrock
