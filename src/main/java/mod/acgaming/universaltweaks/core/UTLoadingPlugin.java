@@ -323,7 +323,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.craftingcache.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Crafting Cache\"=true");
             case "mixins.tweaks.creeperconfetti.json":
-                return !firstLaunch && UTConfigParser.isEnabled("B:\"Creeper Confetti\"=true");
+                return !firstLaunch && !UTConfigParser.isEnabled("D:\"Creeper Confetti\"=0.0");
             case "mixins.tweaks.dyeblending.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Fast Dye Blending\"=true");
             case "mixins.tweaks.falldamage.json":
