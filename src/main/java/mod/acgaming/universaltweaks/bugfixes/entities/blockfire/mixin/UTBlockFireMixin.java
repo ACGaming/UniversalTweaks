@@ -14,10 +14,17 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class UTBlockFireMixin
 {
     @Redirect(method = "onHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;setFire(I)V"))
-    public void utBlockFire(Entity instance, int seconds)
+    public void utBlockFire(Entity entity, int seconds)
     {
-        if (!UTConfig.BUGFIXES_ENTITIES.utBlockFireToggle || !(instance instanceof EntityLivingBase)) instance.setFire(seconds);
+        if (!UTConfig.BUGFIXES_ENTITIES.utBlockFireToggle || !(entity instanceof EntityLivingBase)) entity.setFire(seconds);
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBlockFireMixin ::: Check blocking");
-        if (!((EntityLivingBase) instance).isActiveItemStackBlocking()) instance.setFire(5);
+        try
+        {
+            if (!((EntityLivingBase) entity).isActiveItemStackBlocking()) entity.setFire(seconds);
+        }
+        catch (Exception e)
+        {
+            entity.setFire(seconds);
+        }
     }
 }
