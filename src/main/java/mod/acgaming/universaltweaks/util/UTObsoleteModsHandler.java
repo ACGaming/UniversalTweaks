@@ -25,7 +25,6 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("blockoverlayfix") && UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) messages.add("Block Overlay Fix");
         if (Loader.isModLoaded("bottomsugarcanharvest") && UTConfig.TWEAKS_BLOCKS.utSugarCaneSize != 3) messages.add("Bottom Sugar Cane Harvest");
         if (Loader.isModLoaded("bowinfinityfix") && UTConfig.TWEAKS_ITEMS.utBowInfinityToggle) messages.add("Bow Infinity Fix");
-        if (Loader.isModLoaded("chunkgenlimit") && UTConfig.TWEAKS_WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) messages.add("Chunk Generation Limiter");
         if (Loader.isModLoaded("cie") && UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utItemEntitiesToggle) messages.add("Configurable Item Entities (CIE)");
         if (Loader.isModLoaded("classiccombat") && UTConfig.TWEAKS_ITEMS.utAttackCooldownToggle) messages.add("Classic Combat");
         if (Loader.isModLoaded("cleardespawn") && UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEClearDespawnToggle) messages.add("Clear Despawn");
@@ -93,6 +92,11 @@ public class UTObsoleteModsHandler
             {
                 Class.forName("io.github.jikuja.LocaleTweaker");
                 messages.add("LocaleFixer");
+            }
+            if (UTConfig.TWEAKS_WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle)
+            {
+                Class.forName("io.github.barteks2x.chunkgenlimiter.ChunkGenLimitMod");
+                messages.add("Chunk Generation Limiter");
             }
         }
         catch (ClassNotFoundException ignored) {}
