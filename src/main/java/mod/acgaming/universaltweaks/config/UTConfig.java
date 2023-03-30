@@ -13,6 +13,7 @@ import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.breakablebedrock.UTBreakableBedrock;
+import mod.acgaming.universaltweaks.tweaks.customrarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.util.UTObsoleteModsScreenHandler;
@@ -660,6 +661,16 @@ public class UTConfig
         @Config.Name("Bow Infinity")
         @Config.Comment("Bows enchanted with Infinity no longer require arrows")
         public boolean utBowInfinityToggle = true;
+
+        @Config.Name("Custom Rarity")
+        @Config.Comment
+            ({
+                "Sets custom rarities for items, affecting tooltip colors",
+                "Syntax: modid:item;rarity",
+                "Available rarities: common, uncommon, rare, epic",
+                "Example -> minecraft:diamond;rare"
+            })
+        public String[] utCustomRarities = new String[] {};
 
         @Config.Name("Super Hot Torch")
         @Config.Comment("Enables one-time ignition of entities by hitting them with a torch")
@@ -1400,6 +1411,7 @@ public class UTConfig
                 if (TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
+                if (UTConfig.TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initRarityItemList();
                 if (UTLoadingPlugin.isClient)
                 {
                     if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();

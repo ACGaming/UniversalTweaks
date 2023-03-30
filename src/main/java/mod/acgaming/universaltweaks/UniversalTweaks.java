@@ -24,6 +24,7 @@ import mod.acgaming.universaltweaks.tweaks.UTNoLeftoverBreath;
 import mod.acgaming.universaltweaks.tweaks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.endportal.UTEndPortalParallax;
 import mod.acgaming.universaltweaks.tweaks.incurablepotions.UTIncurablePotions;
+import mod.acgaming.universaltweaks.tweaks.customrarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
 import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
@@ -75,6 +76,7 @@ public class UniversalTweaks
         if (UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
         if (UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
         if (UTConfig.TWEAKS_ITEMS.utLeftoverBreathBottleToggle) UTNoLeftoverBreath.postInit();
+        if (UTConfig.TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initRarityItemList();
         LOGGER.info(NAME + " post-initialized");
     }
 
