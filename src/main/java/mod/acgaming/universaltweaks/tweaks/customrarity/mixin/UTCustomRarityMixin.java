@@ -17,14 +17,26 @@ public class UTCustomRarityMixin
     @Inject(method = "getRarity", at = @At("RETURN"), cancellable = true)
     public void utGetCustomRarity(ItemStack stack, CallbackInfoReturnable<EnumRarity> cir)
     {
+        Integer meta = UTCustomRarity.itemMetaMap.get(stack.getItem());
         EnumRarity rarity = UTCustomRarity.itemRarityMap.get(stack.getItem());
+        try
+        {
+            if (stack.getHasSubtypes() && stack.getMetadata() != meta) return;
+        }
+        catch (Exception ignored) {}
         if (rarity != null) cir.setReturnValue(rarity);
     }
 
     @Inject(method = "getForgeRarity", at = @At("RETURN"), cancellable = true, remap = false)
     public void utGetCustomForgeRarity(ItemStack stack, CallbackInfoReturnable<IRarity> cir)
     {
+        Integer meta = UTCustomRarity.itemMetaMap.get(stack.getItem());
         EnumRarity rarity = UTCustomRarity.itemRarityMap.get(stack.getItem());
+        try
+        {
+            if (stack.getHasSubtypes() && stack.getMetadata() != meta) return;
+        }
+        catch (Exception ignored) {}
         if (rarity != null) cir.setReturnValue(rarity);
     }
 }
