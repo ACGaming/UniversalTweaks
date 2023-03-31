@@ -75,6 +75,19 @@ public class UTConfig
         BLACKLIST
     }
 
+    public enum EnumDrawPosition
+    {
+        BOTTOM_RIGHT,
+        BOTTOM,
+        BOTTOM_LEFT,
+        LEFT,
+        TOP_LEFT,
+        TOP,
+        TOP_RIGHT,
+        RIGHT,
+        CENTER
+    }
+
     public static class BugfixesBlocksCategory
     {
         @Config.LangKey("cfg.universaltweaks.bugfixes.blocks.blockoverlay")
@@ -878,6 +891,10 @@ public class UTConfig
         @Config.Name("Load Sounds")
         public final LoadSoundsCategory LOAD_SOUNDS = new LoadSoundsCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.pickupnotification")
+        @Config.Name("Pickup Notification")
+        public final PickupNotificationCategory PICKUP_NOTIFICATION = new PickupNotificationCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.rallyhealth")
         @Config.Name("Rally Health")
         public final RallyHealthCategory RALLY_HEALTH = new RallyHealthCategory();
@@ -1010,6 +1027,90 @@ public class UTConfig
                 WORLD,
                 MINECRAFT_AND_WORLD
             }
+        }
+
+        public static class PickupNotificationCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[01] Pickup Notification Toggle")
+            @Config.Comment("Displays notifications when the player obtains or loses items")
+            public boolean utPickupNotificationToggle = false;
+
+            @Config.Name("[02] Display Item Additions")
+            @Config.Comment("Displays item additions when a player obtains an item")
+            public boolean utPUNItemAdditions = true;
+
+            @Config.Name("[03] Display Item Removals")
+            @Config.Comment("Displays item removals when a player loses an item")
+            public boolean utPUNItemRemovals = true;
+
+            @Config.Name("[04] Display Experience")
+            @Config.Comment("Displays changes in player experience")
+            public boolean utPUNExperience = true;
+
+            @Config.Name("[05] Display Icon")
+            @Config.Comment("Displays the icon of the respective item")
+            public boolean utPUNDisplayIcon = true;
+
+            @Config.Name("[06] Display Name")
+            @Config.Comment("Displays the name of the respective item")
+            public boolean utPUNDisplayName = true;
+
+            @Config.Name("[07] Display Background")
+            @Config.Comment("Displays a dark rectangle behind changed items")
+            public boolean utPUNDisplayBackground = false;
+
+            @Config.Name("[08] Display Offset Horizontal")
+            @Config.Comment("Sets the horizontal offset of the notification")
+            public int utPUNOffsetHorizontal = 0;
+
+            @Config.Name("[09] Display Offset Vertical")
+            @Config.Comment("Sets the vertical offset of the notification")
+            public int utPUNOffsetVertical = 18;
+
+            @Config.Name("[10] Snap Position")
+            @Config.Comment("Sets the edge/corner of the screen to use as the base location")
+            public EnumDrawPosition utPUNSnapPosition = EnumDrawPosition.BOTTOM_RIGHT;
+
+            @Config.Name("[11] Name Scale")
+            @Config.Comment("Sets the scaling of item names")
+            public double utPUNScaleName = 0.8;
+
+            @Config.Name("[12] Icon Scale")
+            @Config.Comment("Sets the scaling of item icons")
+            public double utPUNScaleIcon = 0.8;
+
+            @Config.Name("[13] Soft Limit")
+            @Config.Comment("Sets the maximum number of items in the queue before they start fading out artificially")
+            public int utPUNSoftLimit = 6;
+
+            @Config.Name("[14] Fade Limit")
+            @Config.Comment("Sets the number of items that will be faded out after the soft limit is reached")
+            public int utPUNFadeLimit = 3;
+
+            @Config.Name("[15] Display Duration")
+            @Config.Comment("Sets the duration in ticks how long the notification will be displayed")
+            public int utPUNDisplayDuration = 120;
+
+            @Config.Name("[16] Fade Duration")
+            @Config.Comment("Sets the duration in ticks how long the notification fades out")
+            public int utPUNFadeDuration = 20;
+
+            @Config.Name("[17] Blacklist: Ignore Item Changes")
+            @Config.Comment
+                ({
+                    "List of item registry names to ignore when displaying changes",
+                    "Syntax: modid:item"
+                })
+            public String[] utPUNBlacklistItem = new String[] {};
+
+            @Config.Name("[18] Blacklist: Ignore Subitem Changes")
+            @Config.Comment
+                ({
+                    "List of item registry names for which to ignore subitem changes",
+                    "Syntax: modid:item"
+                })
+            public String[] utPUNBlacklistSubitem = new String[] {};
         }
 
         public static class RallyHealthCategory

@@ -14,3 +14,6 @@ msg.universaltweaks.sleep.spawnpoint=Spawnpunkt gesetzt
 
 # PARRY
 enchantment.parry=Rückschlag
+
+# PICKUP NOTIFICATION
+msg.universaltweaks.tweaks.pickupnotification.xp=Erfahrung
