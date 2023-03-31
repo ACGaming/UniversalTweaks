@@ -655,7 +655,7 @@ public class UTConfig
         public boolean utAttackCooldownToggle = false;
 
         @Config.Name("No Leftover Breath Bottles")
-        @Config.Comment("Disables Dragon's Breath from being a container item and leaving off empty bottles when a stack is brewed with")
+        @Config.Comment("Disables dragon's breath from being a container item and leaving off empty bottles when a stack is brewed with")
         public boolean utLeftoverBreathBottleToggle = true;
 
         @Config.Name("Bow Infinity")
@@ -670,7 +670,37 @@ public class UTConfig
                 "Available rarities: common, uncommon, rare, epic",
                 "Example -> minecraft:diamond;rare"
             })
-        public String[] utCustomRarities = new String[] {};
+        public String[] utCustomRarities = new String[] 
+            {
+                "minecraft:dragon_breath;uncommon",
+                "minecraft:elytra;uncommon",
+                "minecraft:experience_bottle;uncommon",
+                "minecraft:nether_star;uncommon",
+                "minecraft:skull;uncommon",
+                "minecraft:totem_of_undying;uncommon",
+                "minecraft:beacon;rare",
+                "minecraft:end_crystal;rare",
+                "minecraft:barrier;epic",
+                "minecraft:chain_command_block;epic",
+                "minecraft:command_block;epic",
+                "minecraft:command_block_minecart;epic",
+                "minecraft:dragon_egg;epic",
+                "minecraft:knowledge_book;epic",
+                "minecraft:repeating_command_block;epic",
+                "minecraft:structure_block;epic",
+                "minecraft:structure_void;epic",
+                "thaumcraft:thaumium_axe;uncommon",
+                "thaumcraft:thaumium_hoe;uncommon",
+                "thaumcraft:thaumium_pick;uncommon",
+                "thaumcraft:thaumium_shovel;uncommon",
+                "thaumcraft:thaumium_sword;uncommon",
+                "thaumcraft:void_axe;uncommon",
+                "thaumcraft:void_hoe;uncommon",
+                "thaumcraft:void_pick;uncommon",
+                "thaumcraft:void_shovel;uncommon",
+                "thaumcraft:void_sword;uncommon",
+                "thaumcraft:primal_crusher;epic"
+            };
 
         @Config.Name("Super Hot Torch")
         @Config.Comment("Enables one-time ignition of entities by hitting them with a torch")
