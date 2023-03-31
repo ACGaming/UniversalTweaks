@@ -52,7 +52,7 @@ public class UTEnvironmentSettingsMixin
     {
         if (Loader.isModLoaded(modid))
         {
-            LogManager.getLogger().info("Loaded default creatures from Universal Tweaks " + CREATURES_FILE_PATH + "" + filename);
+            LogManager.getLogger().info("Loaded default creatures from Universal Tweaks " + CREATURES_FILE_PATH + filename);
             this.defaultModMap.put(name, new EntityModData(key, tag, new CMSConfiguration(new File(this.CMSEnvironmentConfig.file.getParent(), CREATURES_FILE_PATH + filename))));
         }
     }
