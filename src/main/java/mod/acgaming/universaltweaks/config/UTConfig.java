@@ -237,7 +237,7 @@ public class UTConfig
 
         @Config.Name("Faster Background Startup")
         @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
-        public boolean utFasterBackgroundStartupToggle = false;
+        public boolean utFasterBackgroundStartupToggle = true;
 
         @Config.Name("Help Command")
         @Config.Comment("Replaces the help command, sorts and reports broken commands")
@@ -321,9 +321,11 @@ public class UTConfig
         @Config.Name("Fence/Wall Jump")
         @Config.Comment("Allows the player to jump over fences and walls")
         public boolean utFenceWallJumpToggle = true;
+
         @Config.Name("Hardcore Buckets")
         @Config.Comment("Prevents placing of liquid source blocks in the world")
         public boolean utHardcoreBucketsToggle = false;
+
         @Config.Name("Sugar Cane Size")
         @Config.Comment("Determines how tall sugar cane can grow")
         public int utSugarCaneSize = 3;
@@ -1225,7 +1227,7 @@ public class UTConfig
 
         @Config.Name("Fast World Loading")
         @Config.Comment("Skips initial world chunk loading & garbage collection to speed up world loading")
-        public boolean utWorldLoadingToggle = false;
+        public boolean utWorldLoadingToggle = true;
     }
 
     public static class TweaksWorldCategory
@@ -1467,7 +1469,7 @@ public class UTConfig
                     "Fixes slotless item handler implementation not allowing the extraction from compacting item drawers with the vending upgrade",
                     "Caches the drawer controller tile to avoid getting the TE from the world every time a drawer slave is interacted with"
                 })
-            public boolean utSDItemHandlers = true;
+            public boolean utSDItemHandlers = false;
 
             @Config.Name("Render Range")
             @Config.Comment

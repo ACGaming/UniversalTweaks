@@ -227,7 +227,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.bugfixes.misc.smoothlighting.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Accurate Smooth Lighting\"=true");
                 case "mixins.bugfixes.misc.startup.json":
-                    return !firstLaunch && UTConfigParser.isEnabled("B:\"Faster Background Startup\"=true");
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Faster Background Startup\"=true");
                 case "mixins.bugfixes.entities.villagermantle.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Villager Mantle Hoods\"=true");
                 case "mixins.tweaks.autojump.json":
@@ -259,7 +259,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.tweaks.uncapfps.json":
                     return firstLaunch || UTConfigParser.isEnabled("B:\"Uncap FPS\"=true");
                 case "mixins.tweaks.worldloading.client.json":
-                    return !firstLaunch && UTConfigParser.isEnabled("B:\"Fast World Loading\"=true");
+                    return firstLaunch || UTConfigParser.isEnabled("B:\"Fast World Loading\"=true");
             }
         }
         switch (mixinConfig)
@@ -359,7 +359,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.spawning.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"Husk & Stray Spawning\"=true");
             case "mixins.tweaks.worldloading.server.json":
-                return !firstLaunch && UTConfigParser.isEnabled("B:\"Fast World Loading\"=true");
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Fast World Loading\"=true");
             case "mixins.tweaks.xpbottle.json":
                 return !firstLaunch && !UTConfigParser.isEnabled("I:\"XP Bottle Amount\"=-1");
         }
