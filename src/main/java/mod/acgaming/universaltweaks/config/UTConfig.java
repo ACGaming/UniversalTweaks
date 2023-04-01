@@ -188,6 +188,10 @@ public class UTConfig
         @Config.Comment("Fixes entity motion desyncs most notable with arrows and thrown items")
         public boolean utEntityDesyncToggle = true;
 
+        @Config.Name("Entity ID")
+        @Config.Comment("Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0")
+        public boolean utEntityIDToggle = true;
+
         @Config.Name("Entity NaN Values")
         @Config.Comment("Prevents corruption of entities caused by invalid health or damage values")
         public boolean utEntityNaNToggle = true;

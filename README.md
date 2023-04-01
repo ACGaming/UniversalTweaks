@@ -19,6 +19,7 @@ All changes are toggleable via the config file.
 * Double Consumption: Fixes consuming an item having a chance of also consuming a second item without any animation
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * Entity Desync: Fixes entity motion desyncs most notable with arrows and thrown items
+* Entity ID: Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0
 * Entity NaN: Prevents corruption of entities caused by invalid health or damage values
 * Entity Suffocation: Pushes entities out of blocks when growing up to prevent suffocation
 * Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
