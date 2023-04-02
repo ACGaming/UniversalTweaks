@@ -1,5 +1,6 @@
 package mod.acgaming.universaltweaks.tweaks.items.itementities.mixin;
 
+import org.lwjgl.util.vector.Vector3f;
 import net.minecraft.client.renderer.entity.RenderEntityItem;
 import net.minecraft.entity.item.EntityItem;
 
@@ -7,6 +8,7 @@ import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import zone.rong.mixinextras.injector.WrapWithCondition;
@@ -18,6 +20,13 @@ public abstract class UTRenderEntityItemMixin
     public void utIEBobbing(CallbackInfoReturnable<Boolean> cir)
     {
         if (!UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEBobbingToggle) cir.setReturnValue(false);
+    }
+
+    @Redirect(method = "transformModelCount", at = @At(value = "FIELD", target = "Lorg/lwjgl/util/vector/Vector3f;y:F"), remap = false)
+    public float utIEBobbing2(Vector3f scale)
+    {
+        if (!UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEBobbingToggle) return -0.25F;
+        return scale.y;
     }
 
     @WrapWithCondition(method = "transformModelCount", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/GlStateManager;rotate(FFFF)V"))
