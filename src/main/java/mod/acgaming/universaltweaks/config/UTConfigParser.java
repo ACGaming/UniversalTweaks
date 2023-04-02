@@ -37,7 +37,7 @@ public class UTConfigParser
         try
         {
             configString = FileUtils.readFileToString(configFile, "UTF-8");
-            if (UTConfigParser.isEnabled("B:\"Bypass Config Versioning\"=false") && !configString.contains("S:\"Config Version\"=" + UniversalTweaks.VERSION))
+            if (!UTConfigParser.isPresent("B:\"Bypass Config Versioning\"=true") && !configString.contains("S:\"Config Version\"=" + UniversalTweaks.VERSION))
             {
                 File configFileOld = new File(Launch.minecraftHome, "config" + File.separator + "UniversalTweaks.old");
                 Files.move(configFile, configFileOld);
@@ -51,7 +51,7 @@ public class UTConfigParser
         }
     }
 
-    public static boolean isEnabled(String setting)
+    public static boolean isPresent(String setting)
     {
         String[] settingSplits = setting.split("=");
         if (configString.contains(settingSplits[0])) return configString.contains(setting);

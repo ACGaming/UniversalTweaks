@@ -70,7 +70,7 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.tconstruct.json":
                 return Loader.isModLoaded("tconstruct");
             case "mixins.mods.tconstruct.oredictcache.json":
-                return Loader.isModLoaded("tconstruct") && (UTLoadingPlugin.firstLaunch || UTConfigParser.isEnabled("B:\"Ore Dictionary Cache\"=true"));
+                return Loader.isModLoaded("tconstruct") && (UTLoadingPlugin.firstLaunch || UTConfigParser.isPresent("B:\"Ore Dictionary Cache\"=true"));
         }
         return true;
     }

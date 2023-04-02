@@ -11,12 +11,12 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
-import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
-import mod.acgaming.universaltweaks.tweaks.breakablebedrock.UTBreakableBedrock;
-import mod.acgaming.universaltweaks.tweaks.customrarity.UTCustomRarity;
-import mod.acgaming.universaltweaks.tweaks.incurablepotions.UTIncurablePotions;
-import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
-import mod.acgaming.universaltweaks.util.UTObsoleteModsScreenHandler;
+import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
+import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
+import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
+import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
+import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
+import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsScreenHandler;
 
 @Config(modid = UniversalTweaks.MODID, name = "UniversalTweaks")
 public class UTConfig
@@ -239,10 +239,6 @@ public class UTConfig
         @Config.Comment("Fixes entity and particle rendering issues by enabling depth buffer writing")
         public boolean utDepthMaskToggle = true;
 
-        @Config.Name("Faster Background Startup")
-        @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
-        public boolean utFasterBackgroundStartupToggle = true;
-
         @Config.Name("Help Command")
         @Config.Comment("Replaces the help command, sorts and reports broken commands")
         public boolean utHelpToggle = true;
@@ -325,10 +321,6 @@ public class UTConfig
         @Config.Name("Fence/Wall Jump")
         @Config.Comment("Allows the player to jump over fences and walls")
         public boolean utFenceWallJumpToggle = true;
-
-        @Config.Name("Hardcore Buckets")
-        @Config.Comment("Prevents placing of liquid source blocks in the world")
-        public boolean utHardcoreBucketsToggle = false;
 
         @Config.Name("Lenient Paths")
         @Config.Comment("Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)")
@@ -422,6 +414,10 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.playerspeed")
         @Config.Name("Player Speed")
         public final PlayerSpeedCategory PLAYER_SPEED = new PlayerSpeedCategory();
+
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.rallyhealth")
+        @Config.Name("Rally Health")
+        public final RallyHealthCategory RALLY_HEALTH = new RallyHealthCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.waterfalldamage")
         @Config.Name("Water Fall Damage")
@@ -643,6 +639,29 @@ public class UTConfig
             public double utPlayerVehicleSpeed = 100;
         }
 
+        public static class RallyHealthCategory
+        {
+            @Config.Name("[1] Rally Health Toggle")
+            @Config.Comment
+                ({
+                    "Adds Bloodborne's Rally system to Minecraft",
+                    "Regain lost health when attacking back within the risk time"
+                })
+            public boolean utRallyHealthToggle = false;
+
+            @Config.Name("[2] Risk Time")
+            @Config.Comment("Determines the risk time in ticks")
+            public int utRallyHealthRiskTime = 60;
+
+            @Config.Name("[3] Heal Chance")
+            @Config.Comment("Determines the chance to regain health in percent")
+            public int utRallyHealthHealChance = 80;
+
+            @Config.Name("[4] Indication Sound")
+            @Config.Comment("Plays an indication sound effect when health is regained")
+            public boolean utRallyHealthSound = false;
+        }
+
         public static class WaterFallDamageCategory
         {
             @Config.Name("[1] Water Fall Damage Toggle")
@@ -676,6 +695,10 @@ public class UTConfig
         @Config.Name("No Attack Cooldown")
         @Config.Comment("Disables the 1.9 combat update attack cooldown")
         public boolean utAttackCooldownToggle = false;
+
+        @Config.Name("Hardcore Buckets")
+        @Config.Comment("Prevents placing of liquid source blocks in the world")
+        public boolean utHardcoreBucketsToggle = false;
 
         @Config.Name("No Leftover Breath Bottles")
         @Config.Comment("Disables dragon's breath from being a container item and leaving off empty bottles when a stack is brewed with")
@@ -905,10 +928,6 @@ public class UTConfig
         @Config.Name("Pickup Notification")
         public final PickupNotificationCategory PICKUP_NOTIFICATION = new PickupNotificationCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.misc.rallyhealth")
-        @Config.Name("Rally Health")
-        public final RallyHealthCategory RALLY_HEALTH = new RallyHealthCategory();
-
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.smoothscrolling")
         @Config.Name("Smooth Scrolling")
         public final SmoothScrollingCategory SMOOTH_SCROLLING = new SmoothScrollingCategory();
@@ -946,7 +965,7 @@ public class UTConfig
         public int utLinearXP = 0;
 
         @Config.Name("No Lightning Flash")
-        @Config.Comment("Disables the flashing of skybox and ground brightness on lightning strikes")
+        @Config.Comment("Disables the flashing of skybox and ground brightness on lightningflash strikes")
         public boolean utLightningFlashToggle = false;
 
         @Config.Name("No Night Vision Flash")
@@ -956,10 +975,6 @@ public class UTConfig
         @Config.Name("No Potion Shift")
         @Config.Comment("Disables the inventory shift when potion effects are active")
         public boolean utPotionShiftToggle = true;
-
-        @Config.Name("No Redstone Lighting")
-        @Config.Comment("Disables lighting of active redstone, repeaters, and comparators to improve performance")
-        public boolean utRedstoneLightingToggle = false;
 
         @Config.Name("Offhand Improvement")
         @Config.Comment("Prevents placing offhand blocks when blocks or food are held in the mainhand")
@@ -984,10 +999,6 @@ public class UTConfig
         @Config.Name("Toggle Cheats Button")
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
         public boolean utToggleCheatsToggle = true;
-
-        @Config.Name("Uncap FPS")
-        @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
-        public boolean utUncapFPSToggle = true;
 
         public static class IncurablePotionsCategory
         {
@@ -1123,29 +1134,6 @@ public class UTConfig
             public String[] utPUNBlacklistSubitem = new String[] {};
         }
 
-        public static class RallyHealthCategory
-        {
-            @Config.Name("[1] Rally Health Toggle")
-            @Config.Comment
-                ({
-                    "Adds Bloodborne's Rally system to Minecraft",
-                    "Regain lost health when attacking back within the risk time"
-                })
-            public boolean utRallyHealthToggle = false;
-
-            @Config.Name("[2] Risk Time")
-            @Config.Comment("Determines the risk time in ticks")
-            public int utRallyHealthRiskTime = 60;
-
-            @Config.Name("[3] Heal Chance")
-            @Config.Comment("Determines the chance to regain health in percent")
-            public int utRallyHealthHealChance = 80;
-
-            @Config.Name("[4] Indication Sound")
-            @Config.Comment("Plays an indication sound effect when health is regained")
-            public boolean utRallyHealthSound = false;
-        }
-
         public static class SmoothScrollingCategory
         {
             @Config.Name("[1] Smooth Scrolling Toggle")
@@ -1225,6 +1213,10 @@ public class UTConfig
         @Config.Comment("Improves loading times by removing debug code for missing sounds and subtitles")
         public boolean utDisableAudioDebugToggle = true;
 
+        @Config.Name("Faster Background Startup")
+        @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
+        public boolean utFasterBackgroundStartupToggle = true;
+
         @Config.Name("Fast Dye Blending")
         @Config.Comment("Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry")
         public boolean utDyeBlendingToggle = true;
@@ -1236,6 +1228,14 @@ public class UTConfig
         @Config.Name("Fast World Loading")
         @Config.Comment("Skips initial world chunk loading & garbage collection to speed up world loading")
         public boolean utWorldLoadingToggle = true;
+
+        @Config.Name("No Redstone Lighting")
+        @Config.Comment("Disables lighting of active redstone, repeaters, and comparators to improve performance")
+        public boolean utRedstoneLightingToggle = false;
+
+        @Config.Name("Uncap FPS")
+        @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
+        public boolean utUncapFPSToggle = true;
     }
 
     public static class TweaksWorldCategory

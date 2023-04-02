@@ -17,21 +17,21 @@ import mod.acgaming.universaltweaks.config.UTConfigParser;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
-import mod.acgaming.universaltweaks.tweaks.UTAttributes;
-import mod.acgaming.universaltweaks.tweaks.UTBetterPlacement;
-import mod.acgaming.universaltweaks.tweaks.UTLoadSound;
-import mod.acgaming.universaltweaks.tweaks.UTNoLeftoverBreath;
-import mod.acgaming.universaltweaks.tweaks.breakablebedrock.UTBreakableBedrock;
-import mod.acgaming.universaltweaks.tweaks.customrarity.UTCustomRarity;
-import mod.acgaming.universaltweaks.tweaks.endportal.UTEndPortalParallax;
-import mod.acgaming.universaltweaks.tweaks.incurablepotions.UTIncurablePotions;
-import mod.acgaming.universaltweaks.tweaks.pickupnotification.UTPickupNotificationOverlay;
-import mod.acgaming.universaltweaks.tweaks.stronghold.UTStronghold;
-import mod.acgaming.universaltweaks.tweaks.stronghold.worldgen.SafeStrongholdWorldGenerator;
-import mod.acgaming.universaltweaks.tweaks.swingthroughgrass.UTSwingThroughGrassLists;
-import mod.acgaming.universaltweaks.tweaks.toastcontrol.UTTutorialToast;
-import mod.acgaming.universaltweaks.util.UTObsoleteModsHandler;
+import mod.acgaming.universaltweaks.tweaks.blocks.betterplacement.UTBetterPlacement;
+import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
+import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributes;
+import mod.acgaming.universaltweaks.tweaks.items.dragonbreath.UTLeftoverDragonBreath;
+import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
+import mod.acgaming.universaltweaks.tweaks.misc.endportal.UTEndPortalParallax;
+import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
+import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
+import mod.acgaming.universaltweaks.tweaks.misc.pickupnotification.UTPickupNotificationOverlay;
+import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
+import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTTutorialToast;
+import mod.acgaming.universaltweaks.tweaks.world.stronghold.UTStronghold;
+import mod.acgaming.universaltweaks.tweaks.world.stronghold.worldgen.SafeStrongholdWorldGenerator;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
+import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
 
 @Mod(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME, version = UniversalTweaks.VERSION, acceptedMinecraftVersions = "[1.12.2]", dependencies = UniversalTweaks.DEPENDENCIES)
 public class UniversalTweaks
@@ -77,7 +77,7 @@ public class UniversalTweaks
         if (UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
         if (UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
         if (UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
-        if (UTConfig.TWEAKS_ITEMS.utLeftoverBreathBottleToggle) UTNoLeftoverBreath.postInit();
+        if (UTConfig.TWEAKS_ITEMS.utLeftoverBreathBottleToggle) UTLeftoverDragonBreath.postInit();
         if (UTConfig.TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initCustomRarityLists();
         LOGGER.info(NAME + " post-initialized");
     }
@@ -108,6 +108,6 @@ public class UniversalTweaks
     {
         if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.onLoadComplete();
         if (UTConfig.DEBUG.utLoadingTimeToggle) LOGGER.info("The game loaded in approximately {} seconds", (System.currentTimeMillis() - UTLoadingPlugin.launchTime) / 1000F);
-        if (UTObsoleteModsHandler.obsoleteModsMessage().size() > 5) UniversalTweaks.LOGGER.warn(String.join(System.lineSeparator(), UTObsoleteModsHandler.obsoleteModsMessage()));
+        if (!UTConfig.DEBUG.utBypassIncompatibilityToggle && UTObsoleteModsHandler.obsoleteModsMessage().size() > 5) UniversalTweaks.LOGGER.warn(String.join(System.lineSeparator(), UTObsoleteModsHandler.obsoleteModsMessage()));
     }
 }
