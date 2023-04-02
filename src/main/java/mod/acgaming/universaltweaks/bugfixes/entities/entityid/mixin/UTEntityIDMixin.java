@@ -11,18 +11,18 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+// MC-85177
+// https://bugs.mojang.com/browse/MC-85177
 // MC-111480
 // https://bugs.mojang.com/browse/MC-111480
-// MC-181129
-// https://bugs.mojang.com/browse/MC-181129
 @Mixin(Entity.class)
 public abstract class UTEntityIDMixin
 {
     @Shadow
-    private int entityId;
+    private static int nextEntityID;
 
     @Shadow
-    private static int nextEntityID;
+    private int entityId;
 
     @Inject(method = "<init>", at = @At("TAIL"))
     public void utEntityID(World worldIn, CallbackInfo ci)
