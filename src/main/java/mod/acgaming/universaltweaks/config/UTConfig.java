@@ -330,6 +330,10 @@ public class UTConfig
         @Config.Comment("Prevents placing of liquid source blocks in the world")
         public boolean utHardcoreBucketsToggle = false;
 
+        @Config.Name("Lenient Paths")
+        @Config.Comment("Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)")
+        public boolean utLenientPathsToggle = true;
+
         @Config.Name("Sugar Cane Size")
         @Config.Comment("Determines how tall sugar cane can grow")
         public int utSugarCaneSize = 3;

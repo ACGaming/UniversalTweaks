@@ -85,6 +85,7 @@ All changes are toggleable via the config file.
 * Incurable Potions: Excludes potion effects from being curable with curative items like buckets of milk
 * Infinite Music: Lets background music play continuously without delays
 * Item Entities: Enables the modification of item entity properties
+* Lenient Paths: Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)
 * Linear XP Amount: Sets the amount of XP needed for each level, effectively removing the increasing level scaling
 * Load Sounds: Plays sounds when the game or the world are loaded
 * Mending Overpowered: If mending fix is enabled, repairs entire damaged inventory with XP

@@ -71,6 +71,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("norecipebook") && UTConfig.TWEAKS_MISC.utRecipeBookToggle) messages.add("No Recipe Book");
         if (Loader.isModLoaded("overpowered_mending") && UTConfig.TWEAKS_ITEMS.MENDING.utMendingOPToggle) messages.add("Overpowered Mending");
         if (Loader.isModLoaded("parry") && UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) messages.add("Shield Parry");
+        if (Loader.isModLoaded("pathundergates") && UTConfig.TWEAKS_BLOCKS.utLenientPathsToggle) messages.add("Path Under Gates");
         if (Loader.isModLoaded("pickupnotifier") && UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) messages.add("Pick Up Notifier");
         if (Loader.isModLoaded("preventghost") && UTConfig.BUGFIXES_BLOCKS.utMiningGlitchToggle) messages.add("Prevent Ghost Blocks");
         if (Loader.isModLoaded("quickleafdecay") && UTConfig.TWEAKS_BLOCKS.utLeafDecayToggle) messages.add("Quick Leaf Decay");

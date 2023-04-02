@@ -119,6 +119,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.infinitemusic.json",
             "mixins.tweaks.itementities.client.json",
             "mixins.tweaks.itementities.server.json",
+            "mixins.tweaks.lenientpaths.json",
             "mixins.tweaks.lightningflash.json",
             "mixins.tweaks.linearxp.json",
             "mixins.tweaks.mobdespawn.json",
@@ -182,6 +183,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.hardcorebuckets.json",
                 "mixins.tweaks.incurablepotions.json",
                 "mixins.tweaks.itementities.server.json",
+                "mixins.tweaks.lenientpaths.json",
                 "mixins.tweaks.linearxp.json",
                 "mixins.tweaks.mobdespawn.json",
                 "mixins.tweaks.nogolems.json",
@@ -340,6 +342,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isEnabled("B:\"[1] Incurable Potions Toggle\"=true");
             case "mixins.tweaks.itementities.server.json":
                 return firstLaunch || UTConfigParser.isEnabled("B:\"[01] Item Entities Toggle\"=true");
+            case "mixins.tweaks.lenientpaths.json":
+                return firstLaunch || UTConfigParser.isEnabled("B:\"Lenient Paths\"=true");
             case "mixins.tweaks.linearxp.json":
                 return !firstLaunch && !UTConfigParser.isEnabled("I:\"Linear XP Amount\"=0");
             case "mixins.tweaks.mobdespawn.json":
