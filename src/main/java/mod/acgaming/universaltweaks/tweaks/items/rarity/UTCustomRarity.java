@@ -3,23 +3,19 @@ package mod.acgaming.universaltweaks.tweaks.items.rarity;
 import java.util.Map;
 
 import net.minecraft.item.EnumRarity;
-import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
 
 public class UTCustomRarity
 {
-    public static Map<Item, Integer> itemMetaMap = new Object2IntOpenHashMap<>();
-    public static Map<Item, EnumRarity> itemRarityMap = new Object2ObjectOpenHashMap<>();
+    public static Map<String, EnumRarity> itemRarityMap = new Object2ObjectOpenHashMap<>();
 
-    public static void initCustomRarityLists()
+    public static void initItemRarityMap()
     {
-        itemMetaMap.clear();
         itemRarityMap.clear();
         try
         {
@@ -45,11 +41,7 @@ public class UTCustomRarity
                     default:
                         rarity = EnumRarity.COMMON;
                 }
-                if (ForgeRegistries.ITEMS.containsKey(resLoc))
-                {
-                    itemMetaMap.put(ForgeRegistries.ITEMS.getValue(resLoc), meta);
-                    itemRarityMap.put(ForgeRegistries.ITEMS.getValue(resLoc), rarity);
-                }
+                if (ForgeRegistries.ITEMS.containsKey(resLoc)) itemRarityMap.put(ForgeRegistries.ITEMS.getValue(resLoc).toString() + meta, rarity);
             }
         }
         catch (Exception e)

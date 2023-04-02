@@ -78,7 +78,7 @@ public class UniversalTweaks
         if (UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
         if (UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
         if (UTConfig.TWEAKS_ITEMS.utLeftoverBreathBottleToggle) UTLeftoverDragonBreath.postInit();
-        if (UTConfig.TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initCustomRarityLists();
+        if (UTConfig.TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
         LOGGER.info(NAME + " post-initialized");
     }
 
