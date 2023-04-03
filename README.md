@@ -19,6 +19,7 @@ All changes are toggleable via the config file.
 * Double Consumption: Fixes consuming an item having a chance of also consuming a second item without any animation
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * Entity Desync: Fixes entity motion desyncs most notable with arrows and thrown items
+* Entity ID: Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0
 * Entity NaN: Prevents corruption of entities caused by invalid health or damage values
 * Entity Suffocation: Pushes entities out of blocks when growing up to prevent suffocation
 * Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
@@ -84,6 +85,7 @@ All changes are toggleable via the config file.
 * Incurable Potions: Excludes potion effects from being curable with curative items like buckets of milk
 * Infinite Music: Lets background music play continuously without delays
 * Item Entities: Enables the modification of item entity properties
+* Lenient Paths: Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)
 * Linear XP Amount: Sets the amount of XP needed for each level, effectively removing the increasing level scaling
 * Load Sounds: Plays sounds when the game or the world are loaded
 * Mending Overpowered: If mending fix is enabled, repairs entire damaged inventory with XP
@@ -99,6 +101,7 @@ All changes are toggleable via the config file.
 * No Saddled Wandering: Stops horses wandering around when saddled
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
 * Plantables: Configurable growth height for sugar cane and cacti
+* Pickup Notification: Displays highly configurable notifications when the player obtains or loses items
 * Player Speed: Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
 * Rally Health: Adds Bloodborne's Rally system to Minecraft, regain lost health when attacking back within the risk time
 * Remove Realms Button: Removes the redundant Minecraft Realms button from the main menu

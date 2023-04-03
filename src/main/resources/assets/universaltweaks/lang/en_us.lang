@@ -15,6 +15,9 @@ msg.universaltweaks.sleep.spawnpoint=Spawn point set
 # PARRY
 enchantment.parry=Rebound
 
+# PICKUP NOTIFICATION
+msg.universaltweaks.tweaks.pickupnotification.xp=Experience
+
 # CONFIG
 cfg.universaltweaks.bugfixes.blocks=Bugfixes: Blocks
 cfg.universaltweaks.bugfixes.blocks.blockoverlay=Block Overlay
@@ -45,6 +48,7 @@ cfg.universaltweaks.tweaks.entities.collisiondamage=Collision Damage
 cfg.universaltweaks.tweaks.entities.easybreeding=Easy Breeding
 cfg.universaltweaks.tweaks.entities.nogolems=No Golems
 cfg.universaltweaks.tweaks.entities.playerspeed=Player Speed
+cfg.universaltweaks.tweaks.entities.rallyhealth=Rally Health
 cfg.universaltweaks.tweaks.entities.waterfalldamage=Water Fall Damage
 cfg.universaltweaks.tweaks.items=Tweaks: Items
 cfg.universaltweaks.tweaks.items.itementities=Item Entities
@@ -53,7 +57,7 @@ cfg.universaltweaks.tweaks.items.parry=Shield Parry
 cfg.universaltweaks.tweaks.misc=Tweaks: Misc
 cfg.universaltweaks.tweaks.misc.incurablepotions=Incurable Potions
 cfg.universaltweaks.tweaks.misc.loadsounds=Load Sounds
-cfg.universaltweaks.tweaks.misc.rallyhealth=Rally Health
+cfg.universaltweaks.tweaks.misc.pickupnotification=Pickup Notification
 cfg.universaltweaks.tweaks.misc.smoothscrolling=Smooth Scrolling
 cfg.universaltweaks.tweaks.misc.stg=Swing Through Grass
 cfg.universaltweaks.tweaks.misc.toastcontrol=Toast Control
