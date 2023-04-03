@@ -294,6 +294,10 @@ public class UTConfig
         @Config.Name("Better Placement")
         public final BetterPlacementCategory BETTER_PLACEMENT = new BetterPlacementCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.blockdispenser")
+        @Config.Name("Breakable Bedrock")
+        public final BlockDispenserCategory BLOCK_DISPENSER = new BlockDispenserCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.breakablebedrock")
         @Config.Name("Breakable Bedrock")
         public final BreakableBedrockCategory BREAKABLE_BEDROCK = new BreakableBedrockCategory();
@@ -345,6 +349,42 @@ public class UTConfig
             public boolean utBetterPlacementCreative = false;
         }
 
+        public static class BlockDispenserCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Block Dispenser Toggle")
+            @Config.Comment("Allows dispensers to place blocks")
+            public boolean utBlockDispenserToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[2] Block List")
+            @Config.Comment
+                ({
+                    "List of blocks concerning dispensing",
+                    "Behavior depends on the list mode",
+                    "Syntax: modid:block"
+                })
+            public String[] utBlockDispenserBlockList = new String[]
+                {
+                    "minecraft:water",
+                    "minecraft:flowing_water",
+                    "minecraft:lava",
+                    "minecraft:flowing_lava",
+                    "minecraft:fire",
+                    "minecraft:web",
+                    "thermalexpansion:strongbox"
+                };
+
+            @Config.RequiresMcRestart
+            @Config.Name("[3] List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Blocks which can't be placed, others can",
+                    "Whitelist Mode: Blocks which can be placed, others can't"
+                })
+            public EnumLists utBlockDispenserBlockListMode = EnumLists.BLACKLIST;
+        }
+
         public static class BreakableBedrockCategory
         {
             @Config.Name("[1] Breakable Bedrock Toggle")
@@ -355,7 +395,7 @@ public class UTConfig
             @Config.Comment
                 ({
                     "List of tools concerning mining bedrock",
-                    "If empty, allows every tool to be used",
+                    "Behavior depends on the list mode",
                     "Syntax: modid:tool"
                 })
             public String[] utBreakableBedrockToolList = new String[] {};
@@ -1557,7 +1597,7 @@ public class UTConfig
                 if (TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
-                if (UTConfig.TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
+                if (TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
                 if (UTLoadingPlugin.isClient)
                 {
                     if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();

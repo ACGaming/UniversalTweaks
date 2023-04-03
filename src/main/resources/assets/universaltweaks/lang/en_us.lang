@@ -39,6 +39,7 @@ cfg.universaltweaks.modintegration.tcon=Tinkers' Construct
 cfg.universaltweaks.modintegration.te=Thermal Expansion
 cfg.universaltweaks.tweaks.blocks=Tweaks: Blocks
 cfg.universaltweaks.tweaks.blocks.betterplacement=Better Placement
+cfg.universaltweaks.tweaks.blocks.blockdispenser=Block Dispenser
 cfg.universaltweaks.tweaks.blocks.breakablebedrock=Breakable Bedrock
 cfg.universaltweaks.tweaks.blocks.finitewater=Finite Water
 cfg.universaltweaks.tweaks.entities=Tweaks: Entities

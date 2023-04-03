@@ -57,6 +57,7 @@ All changes are toggleable via the config file.
 * Better Harvest: Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking
 * Better Ignition: Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them
 * Better Placement: Removes the delay between placing blocks
+* Block Dispenser: Allows dispensers to place blocks
 * Boat Speed: Sets the acceleration value for controlling boats
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
 * Breakable Bedrock: Allows customizable mining of bedrock
