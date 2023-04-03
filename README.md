@@ -6,6 +6,7 @@ All changes are toggleable via the config file.
 
 **Bugfixes:**
 
+* Accurate Smooth Lighting: Improves the accuracy of smooth lighting by checking for suffocation and light opacity
 * Block Fire: Prevents fire projectiles burning entities when blocking with shields
 * Block Overlay: Fixes x-ray when standing in non-suffocating blocks
 * Boat Riding Offset: Fixes entities glitching through the bottom of boats
@@ -61,7 +62,7 @@ All changes are toggleable via the config file.
 * Boat Speed: Sets the acceleration value for controlling boats
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
 * Breakable Bedrock: Allows customizable mining of bedrock
-* Charged Creeper Spawning Chance: Sets the chance for creepers to spawn charged
+* Charged Creeper Spawning: Sets the chance for creepers to spawn charged
 * Check Animated Models: Improves model load times by checking if an animated model exists before trying to load it
 * Chunk Gen Limit: Limits maximum chunk generation per tick for improved server performance
 * Crafting Cache: Adds an IRecipe cache to improve recipe performance in large modpacks
@@ -123,6 +124,8 @@ All changes are toggleable via the config file.
 
 **Mod Tweaks:**
 
+* Binnie's Mods
+    * Gather Windfall: Allows Forestry farms to pick up ExtraTrees fruit
 * Biomes O' Plenty
     * Hot Spring Water: Fixes rapid inflection of regeneration effects in hot spring water
 * Botania
