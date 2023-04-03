@@ -148,6 +148,7 @@ All changes are toggleable via the config file.
 * Thaumcraft
     * Firebat Particles: Adds particles to firebats similar to legacy versions
     * Flower Bounding Box: Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs
+    * Spiderlike Eldritch Crabs: Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders
     * Stable Thaumometer: Stops the thaumometer from bobbing rapidly when using it to scan objects
     * Wisp Particles: Increases particle size of wisps similar to legacy versions
 * Thermal Expansion

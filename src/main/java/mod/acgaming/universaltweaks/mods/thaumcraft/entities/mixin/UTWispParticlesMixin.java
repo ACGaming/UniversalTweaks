@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.thaumcraft.mixin;
+package mod.acgaming.universaltweaks.mods.thaumcraft.entities.mixin;
 
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,7 +12,7 @@ public class UTWispParticlesMixin
     @ModifyConstant(method = "onDeath", constant = @Constant(floatValue = 1.0F))
     public float utWispParticles(float constant)
     {
-        if (UTConfig.MOD_INTEGRATION.THAUMCRAFT.utTCWispParticlesToggle) return 10;
+        if (UTConfig.MOD_INTEGRATION.THAUMCRAFT_ENTITIES.utTCWispParticlesToggle) return 10;
         else return constant;
     }
 }
