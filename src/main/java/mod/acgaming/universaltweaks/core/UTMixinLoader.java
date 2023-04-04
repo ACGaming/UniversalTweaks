@@ -45,8 +45,9 @@ public class UTMixinLoader implements ILateMixinLoader
                 case "mixins.mods.roost.json":
                     return Loader.isModLoaded("roost");
                 case "mixins.mods.storagedrawers.client.json":
-                case "mixins.mods.storagedrawers.server.json":
                     return Loader.isModLoaded("storagedrawers");
+                case "mixins.mods.thaumcraft.entities.client.json":
+                    return Loader.isModLoaded("thaumcraft");
             }
         }
         switch (mixinConfig)
@@ -66,9 +67,6 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.storagedrawers.server.json":
                 return Loader.isModLoaded("storagedrawers");
             case "mixins.mods.thaumcraft.json":
-                return Loader.isModLoaded("thaumcraft");
-            case "mixins.mods.thaumcraft.entities.client.json":
-                return Loader.isModLoaded("thaumcraft");
             case "mixins.mods.thaumcraft.entities.server.json":
                 return Loader.isModLoaded("thaumcraft");
             case "mixins.mods.thermalexpansion.json":
