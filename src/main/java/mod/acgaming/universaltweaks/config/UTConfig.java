@@ -1407,6 +1407,10 @@ public class UTConfig
         @Config.Name("Thaumcraft")
         public final ThaumcraftCategory THAUMCRAFT = new ThaumcraftCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.tc.entities")
+        @Config.Name("Thaumcraft: Entities")
+        public final ThaumcraftEntitiesCategory THAUMCRAFT_ENTITIES = new ThaumcraftEntitiesCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.te")
         @Config.Name("Thermal Expansion")
         public final ThermalExpansionCategory THERMAL_EXPANSION = new ThermalExpansionCategory();
@@ -1535,10 +1539,6 @@ public class UTConfig
 
         public static class ThaumcraftCategory
         {
-            @Config.Name("Firebat Particles")
-            @Config.Comment("Adds particles to firebats similar to legacy versions")
-            public boolean utTCFirebatParticlesToggle = true;
-
             @Config.Name("Flower Bounding Box")
             @Config.Comment("Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs")
             public boolean utTCFlowerBoundingBoxToggle = true;
@@ -1546,6 +1546,17 @@ public class UTConfig
             @Config.Name("Stable Thaumometer")
             @Config.Comment("Stops the thaumometer from bobbing rapidly when using it to scan objects")
             public boolean utTCStableThaumometerToggle = true;
+        }
+
+        public static class ThaumcraftEntitiesCategory
+        {
+            @Config.Name("Firebat Particles")
+            @Config.Comment("Adds particles to firebats similar to legacy versions")
+            public boolean utTCFirebatParticlesToggle = true;
+
+            @Config.Name("Spiderlike Eldritch Crabs")
+            @Config.Comment("Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders")
+            public boolean utTCSpiderlikeEldritchCrabToggle = true;
 
             @Config.Name("Wisp Particles")
             @Config.Comment("Increases particle size of wisps similar to legacy versions")
