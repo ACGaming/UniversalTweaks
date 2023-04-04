@@ -1,8 +1,7 @@
 package mod.acgaming.universaltweaks.tweaks.entities.creepers.charged;
 
-import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.monster.EntityCreeper;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -40,9 +39,9 @@ public class UTChargedCreepers
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChargedCreepers ::: Creeper Spawn Event Charged");
 
         EntityCreeper creeper = (EntityCreeper) event.getEntity();
-        BlockPos pos = creeper.getPosition();
-
-        creeper.onStruckByLightning(new EntityLightningBolt(event.getWorld(), pos.getX(), pos.getY(), pos.getZ(), true));
-        creeper.extinguish();
+        NBTTagCompound tags = new NBTTagCompound();
+        creeper.writeEntityToNBT(tags);
+        tags.setByte("powered", (byte) 1);
+        creeper.readEntityFromNBT(tags);
     }
 }
