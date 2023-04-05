@@ -1539,9 +1539,17 @@ public class UTConfig
 
         public static class ThaumcraftCategory
         {
+            @Config.Name("Bolt Focus Medium Cast Sound")
+            @Config.Comment("Plays an additional cast sound when using any bolt focus medium to add an extra layer of pow")
+            public boolean utTCBoltMediumSoundToggle = true;
+
             @Config.Name("Flower Bounding Box")
             @Config.Comment("Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs")
             public boolean utTCFlowerBoundingBoxToggle = true;
+
+            @Config.Name("Frost Focus Cast Sound Revamp")
+            @Config.Comment("Overhauls the frost focus cast sound to make it a lot less plangent")
+            public boolean utTCFrostFocusSoundRevampToggle = true;
 
             @Config.Name("Stable Thaumometer")
             @Config.Comment("Stops the thaumometer from bobbing rapidly when using it to scan objects")
