@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.entities.creepers.charged;
+package mod.acgaming.universaltweaks.tweaks.entities.spawning.creepers.charged;
 
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.nbt.NBTTagCompound;

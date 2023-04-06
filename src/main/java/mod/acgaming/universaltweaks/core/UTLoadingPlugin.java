@@ -107,12 +107,14 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.entities.ai.json",
             "mixins.tweaks.entities.ai.saddledwandering.json",
             "mixins.tweaks.entities.autojump.json",
-            "mixins.tweaks.entities.creepers.confetti.json",
+            "mixins.tweaks.entities.burning.horses.json",
             "mixins.tweaks.entities.damage.collision.json",
             "mixins.tweaks.entities.damage.falling.json",
             "mixins.tweaks.entities.despawning.json",
-            "mixins.tweaks.entities.golems.json",
-            "mixins.tweaks.entities.spawning.json",
+            "mixins.tweaks.entities.spawning.creepers.confetti.json",
+            "mixins.tweaks.entities.spawning.golems.json",
+            "mixins.tweaks.entities.spawning.husk.json",
+            "mixins.tweaks.entities.spawning.stray.json",
             "mixins.tweaks.entities.speed.boat.json",
             "mixins.tweaks.entities.speed.player.json",
             "mixins.tweaks.items.attackcooldown.json",
@@ -175,12 +177,14 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.blocks.lenientpaths.json",
                 "mixins.tweaks.entities.ai.json",
                 "mixins.tweaks.entities.ai.saddledwandering.json",
-                "mixins.tweaks.entities.creepers.confetti.json",
+                "mixins.tweaks.entities.burning.horses.json",
                 "mixins.tweaks.entities.damage.collision.json",
                 "mixins.tweaks.entities.damage.falling.json",
                 "mixins.tweaks.entities.despawning.json",
-                "mixins.tweaks.entities.golems.json",
-                "mixins.tweaks.entities.spawning.json",
+                "mixins.tweaks.entities.spawning.creepers.confetti.json",
+                "mixins.tweaks.entities.spawning.golems.json",
+                "mixins.tweaks.entities.spawning.husk.json",
+                "mixins.tweaks.entities.spawning.stray.json",
                 "mixins.tweaks.entities.speed.boat.json",
                 "mixins.tweaks.entities.speed.player.json",
                 "mixins.tweaks.items.attackcooldown.json",
@@ -328,17 +332,20 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isPresent("B:\"AI Replacement\"=true");
             case "mixins.tweaks.entities.ai.saddledwandering.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"No Saddled Wandering\"=true");
-            case "mixins.tweaks.entities.creepers.confetti.json":
-                return !firstLaunch && !UTConfigParser.isPresent("D:\"Creeper Confetti\"=0.0");
+            case "mixins.tweaks.entities.burning.horses.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Burning Undead Horses\"=true");
             case "mixins.tweaks.entities.damage.collision.json":
                 return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Collision Damage Toggle\"=true");
             case "mixins.tweaks.entities.damage.falling.json":
                 return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Water Fall Damage Toggle\"=true");
             case "mixins.tweaks.entities.despawning.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Mob Despawn Improvement\"=true");
-            case "mixins.tweaks.entities.golems.json":
+            case "mixins.tweaks.entities.spawning.creepers.confetti.json":
+                return !firstLaunch && !UTConfigParser.isPresent("D:\"Creeper Confetti\"=0.0");
+            case "mixins.tweaks.entities.spawning.golems.json":
                 return !firstLaunch && (UTConfigParser.isPresent("B:\"[1] Iron Golem Toggle\"=true") || UTConfigParser.isPresent("B:\"[2] Snow Golem Toggle\"=true") || UTConfigParser.isPresent("B:\"[3] Wither Toggle\"=true"));
-            case "mixins.tweaks.entities.spawning.json":
+            case "mixins.tweaks.entities.spawning.husk.json":
+            case "mixins.tweaks.entities.spawning.stray.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Husk & Stray Spawning\"=true");
             case "mixins.tweaks.entities.speed.boat.json":
                 return !firstLaunch && !UTConfigParser.isPresent("D:\"Boat Speed\"=0.04");

@@ -1,5 +1,5 @@
 {
-  "package": "mod.acgaming.universaltweaks.tweaks.entities.golems.mixin",
+  "package": "mod.acgaming.universaltweaks.tweaks.entities.spawning.golems.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

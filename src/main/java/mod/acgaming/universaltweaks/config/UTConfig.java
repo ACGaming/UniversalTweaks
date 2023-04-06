@@ -485,6 +485,10 @@ public class UTConfig
         @Config.Comment("Sets the acceleration value for controlling boats")
         public double utBoatSpeed = 0.04D;
 
+        @Config.Name("Burning Undead Horses")
+        @Config.Comment("Lets untamed undead horses burn in daylight like their biped counterparts")
+        public boolean utBurningUndeadHorsesToggle = true;
+
         @Config.Name("Creeper Charged Spawning Chance")
         @Config.Comment("Sets the chance for creepers to spawn charged")
         @Config.RangeDouble(min = 0.0D, max = 1.0D)

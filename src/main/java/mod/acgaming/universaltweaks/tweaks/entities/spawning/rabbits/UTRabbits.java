@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.entities.rabbits;
+package mod.acgaming.universaltweaks.tweaks.entities.spawning.rabbits;
 
 import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;

@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.entities.spawning.mixin;
+package mod.acgaming.universaltweaks.tweaks.entities.spawning.skeletons.mixin;
 
 import net.minecraft.entity.monster.AbstractSkeleton;
 import net.minecraft.entity.monster.EntityStray;

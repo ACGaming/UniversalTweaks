@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.entities.golems.mixin;
+package mod.acgaming.universaltweaks.tweaks.entities.spawning.golems.mixin;
 
 import net.minecraft.block.BlockPumpkin;
 import net.minecraft.block.state.pattern.BlockPattern;

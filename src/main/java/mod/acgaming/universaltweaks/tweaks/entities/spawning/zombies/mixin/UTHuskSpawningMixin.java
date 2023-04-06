@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.entities.spawning.mixin;
+package mod.acgaming.universaltweaks.tweaks.entities.spawning.zombies.mixin;
 
 import net.minecraft.entity.monster.EntityHusk;
 import net.minecraft.entity.monster.EntityZombie;

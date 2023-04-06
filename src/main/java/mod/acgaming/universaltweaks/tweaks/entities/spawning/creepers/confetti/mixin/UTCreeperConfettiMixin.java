@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.entities.creepers.confetti.mixin;
+package mod.acgaming.universaltweaks.tweaks.entities.spawning.creepers.confetti.mixin;
 
 import java.util.List;
 import java.util.Random;
