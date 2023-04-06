@@ -12,6 +12,7 @@ import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayL
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
+import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
@@ -924,11 +925,11 @@ public class UTConfig
 
         public static class ParryCategory
         {
-            @Config.Name("[1] Shield Parry Toggle")
+            @Config.Name("[01] Shield Parry Toggle")
             @Config.Comment("Allows parrying of projectiles with shields")
             public boolean utParryToggle = false;
 
-            @Config.Name("[2] Arrow Time Window")
+            @Config.Name("[02] Arrow Time Window")
             @Config.Comment
                 ({
                     "Determines the amount of time an arrow can be parried after raising the shield",
@@ -936,7 +937,7 @@ public class UTConfig
                 })
             public int utParryArrowTimeWindow = 40;
 
-            @Config.Name("[3] Fireball Time Window")
+            @Config.Name("[03] Fireball Time Window")
             @Config.Comment
                 ({
                     "Determines the amount of time a fireball can be parried after raising the shield",
@@ -944,7 +945,7 @@ public class UTConfig
                 })
             public int utParryFireballTimeWindow = 40;
 
-            @Config.Name("[4] Throwable Time Window")
+            @Config.Name("[04] Throwable Time Window")
             @Config.Comment
                 ({
                     "Determines the amount of time a throwable can be parried after raising the shield",
@@ -952,21 +953,45 @@ public class UTConfig
                 })
             public int utParryThrowableTimeWindow = 40;
 
-            @Config.Name("[5] Rebound Enchantment")
+            @Config.Name("[05] Projectile List")
+            @Config.Comment
+                ({
+                    "Syntax:  modid:entity",
+                    "Example: minecraft:arrow"
+                })
+            public String[] utParryProjectileList = new String[] {};
+
+            @Config.Name("[06] List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Projectiles which can't be parried, others can be parried",
+                    "Whitelist Mode: Projectiles which can be parried, others can't be parried"
+                })
+            public EnumLists utParryProjectileListMode = EnumLists.BLACKLIST;
+
+            @Config.Name("[07] Indication Sound")
+            @Config.Comment("Plays an indication sound effect when projectiles are parried")
+            public boolean utParrySound = false;
+
+            @Config.Name("[08] Rebound Enchantment")
             @Config.Comment("Adds the Rebound enchantment for extended parry time windows")
             public boolean utParryReboundToggle = true;
 
-            @Config.Name("[6] Rebound Treasure Enchantment")
+            @Config.Name("[09] Rebound Treasure Enchantment")
             @Config.Comment("Makes the Rebound enchantment exclusive to enchanted books as loot")
             public boolean utParryReboundTreasure = false;
 
-            @Config.Name("[7] Rebound Max Level")
+            @Config.Name("[10] Rebound Max Level")
             @Config.Comment("Maximum enchantment level for the Rebound enchantment")
             public int utParryReboundMaxLevel = 5;
 
-            @Config.Name("[8] Rebound Multiplier")
+            @Config.Name("[11] Rebound Multiplier")
             @Config.Comment("Multiplier for the parry time windows")
             public float utParryReboundMultiplier = 0.25F;
+
+            @Config.Name("[12] Require Rebound Enchantment")
+            @Config.Comment("Requires the rebound enchantment for parrying")
+            public boolean utParryReboundRequire = false;
         }
     }
 
@@ -1633,6 +1658,7 @@ public class UTConfig
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
                 if (TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
+                if (TWEAKS_ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
                 if (UTLoadingPlugin.isClient)
                 {
                     if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();

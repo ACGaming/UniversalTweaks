@@ -22,6 +22,7 @@ import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBe
 import mod.acgaming.universaltweaks.tweaks.blocks.dispenser.UTBlockDispenser;
 import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.items.dragonbreath.UTLeftoverDragonBreath;
+import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.misc.endportal.UTEndPortalParallax;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
@@ -83,6 +84,7 @@ public class UniversalTweaks
         if (UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
         if (UTConfig.TWEAKS_ITEMS.utLeftoverBreathBottleToggle) UTLeftoverDragonBreath.postInit();
         if (UTConfig.TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
+        if (UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
         LOGGER.info(NAME + " post-initialized");
     }
 

@@ -1,5 +1,8 @@
 package mod.acgaming.universaltweaks.tweaks.items.parry;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.Entity;
@@ -22,6 +25,9 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
@@ -32,6 +38,25 @@ public class UTParry
 {
     public static Enchantment enchantment;
     public static EnumEnchantmentType enchantmentTypeShield;
+    public static List<EntityEntry> projectileList = new ArrayList<>();
+
+    public static void initProjectileList()
+    {
+        projectileList.clear();
+        try
+        {
+            for (String entry : UTConfig.TWEAKS_ITEMS.PARRY.utParryProjectileList)
+            {
+                ResourceLocation resLoc = new ResourceLocation(entry);
+                if (ForgeRegistries.ENTITIES.containsKey(resLoc)) projectileList.add(ForgeRegistries.ENTITIES.getValue(resLoc));
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        UniversalTweaks.LOGGER.info("Parry projectile list initialized");
+    }
 
     @SubscribeEvent
     public static void utRegisterEnchantment(RegistryEvent.Register<Enchantment> event)
@@ -49,6 +74,9 @@ public class UTParry
         if (!UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry arrow");
         final EntityArrow projectile = event.getArrow();
+        final EntityEntry projectileEntity = EntityRegistry.getEntry(projectile.getClass());
+        boolean isBlacklist = UTConfig.TWEAKS_ITEMS.PARRY.utParryProjectileListMode == UTConfig.EnumLists.BLACKLIST;
+        if (projectileList.contains(projectileEntity) == isBlacklist) return;
         if (!projectile.getEntityWorld().isRemote)
         {
             Entity entity = event.getRayTraceResult().entityHit;
@@ -57,6 +85,7 @@ public class UTParry
                 if (entity instanceof EntityLivingBase)
                 {
                     EntityLivingBase entityBlocking = (EntityLivingBase) entity;
+                    if (UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
                     if (entityBlocking.canBlockDamageSource(new DamageSource("parry_this")
                     {
                         public Vec3d getDamageLocation()
@@ -69,6 +98,7 @@ public class UTParry
                         projectile.shoot(playerVec3.x, playerVec3.y, playerVec3.z, 1.1F, 0.1F);
                         projectile.shootingEntity = entityBlocking;
                         entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.PLAYERS, 1.0F, 0.8F + entityBlocking.world.rand.nextFloat() * 0.4F);
+                        if (UTConfig.TWEAKS_ITEMS.PARRY.utParrySound) entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 0.5F, 2.0F);
                         event.setCanceled(true);
                     }
                 }
@@ -82,6 +112,9 @@ public class UTParry
         if (!UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry fireball");
         final EntityFireball projectile = event.getFireball();
+        final EntityEntry projectileEntity = EntityRegistry.getEntry(projectile.getClass());
+        boolean isBlacklist = UTConfig.TWEAKS_ITEMS.PARRY.utParryProjectileListMode == UTConfig.EnumLists.BLACKLIST;
+        if (projectileList.contains(projectileEntity) == isBlacklist) return;
         if (!projectile.getEntityWorld().isRemote)
         {
             Entity entity = event.getRayTraceResult().entityHit;
@@ -90,6 +123,7 @@ public class UTParry
                 if (entity instanceof EntityLivingBase)
                 {
                     EntityLivingBase entityBlocking = (EntityLivingBase) entity;
+                    if (UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
                     if (entityBlocking.canBlockDamageSource(new DamageSource("parry_this")
                     {
                         public Vec3d getDamageLocation()
@@ -107,6 +141,7 @@ public class UTParry
                         projectile.accelerationZ = projectile.motionZ * 0.1D;
                         projectile.shootingEntity = entityBlocking;
                         entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.PLAYERS, 1.0F, 0.8F + entityBlocking.world.rand.nextFloat() * 0.4F);
+                        if (UTConfig.TWEAKS_ITEMS.PARRY.utParrySound) entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 0.5F, 2.0F);
                         event.setCanceled(true);
                     }
                 }
@@ -120,12 +155,16 @@ public class UTParry
         if (!UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry throwable");
         final EntityThrowable projectile = event.getThrowable();
+        final EntityEntry projectileEntity = EntityRegistry.getEntry(projectile.getClass());
+        boolean isBlacklist = UTConfig.TWEAKS_ITEMS.PARRY.utParryProjectileListMode == UTConfig.EnumLists.BLACKLIST;
+        if (projectileList.contains(projectileEntity) == isBlacklist) return;
         if (!projectile.getEntityWorld().isRemote)
         {
             Entity entity = event.getRayTraceResult().entityHit;
             if (event.getEntity() != null && entity instanceof EntityLivingBase)
             {
                 EntityLivingBase entityBlocking = (EntityLivingBase) entity;
+                if (UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
                 if (entityBlocking.canBlockDamageSource(new DamageSource("parry_this")
                 {
                     public Vec3d getDamageLocation()
@@ -138,6 +177,7 @@ public class UTParry
                     projectile.shoot(playerVec3.x, playerVec3.y, playerVec3.z, 1.1F, 0.1F);
                     projectile.thrower = entityBlocking;
                     entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.PLAYERS, 1.0F, 0.8F + entityBlocking.world.rand.nextFloat() * 0.4F);
+                    if (UTConfig.TWEAKS_ITEMS.PARRY.utParrySound) entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 0.5F, 2.0F);
                     event.setCanceled(true);
                 }
             }
