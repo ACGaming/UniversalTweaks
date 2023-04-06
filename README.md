@@ -82,6 +82,7 @@ All changes are toggleable via the config file.
 * Fast World Loading: Skips initial world chunk loading & garbage collection to speed up world loading
 * Fence/Wall Jump: Allows the player to jump over fences and walls
 * Finite Water: Prevents creation of infinite water sources outside of ocean and river biomes
+* Growth Size: Configurable growth height for sugar cane and cacti
 * Hardcore Buckets: Prevents placing of liquid source blocks in the world
 * Horizontal Collision Damage: Applies horizontal collision damage to the player akin to elytra collision
 * Husk & Stray Spawning: Lets husks and strays spawn underground like regular zombies and skeletons
@@ -103,7 +104,6 @@ All changes are toggleable via the config file.
 * No Redstone Lighting: Disables lighting of active redstone, repeaters, and comparators to improve performance
 * No Saddled Wandering: Stops horses wandering around when saddled
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
-* Plantables: Configurable growth height for sugar cane and cacti
 * Pickup Notification: Displays highly configurable notifications when the player obtains or loses items
 * Player Speed: Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
 * Rabbit Killer Spawning: Configurable chance for rabbits to spawn as the killer bunny variant
