@@ -16,6 +16,7 @@ import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
+import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsScreenHandler;
 
 @Config(modid = UniversalTweaks.MODID, name = "UniversalTweaks")
@@ -1246,6 +1247,11 @@ public class UTConfig
 
     public static class TweaksPerformanceCategory
     {
+        @Config.RequiresMcRestart
+        @Config.Name("Auto Save Interval")
+        @Config.Comment("Determines the interval in ticks between world auto saves")
+        public int utAutoSaveInterval = 900;
+
         @Config.Name("Check Animated Models")
         @Config.Comment("Improves model load times by checking if an animated model exists before trying to load it")
         public boolean utCheckAnimatedModelsToggle = true;
@@ -1622,6 +1628,7 @@ public class UTConfig
                     if (BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
                     if (Loader.isModLoaded("botania")) UTBotaniaFancySkybox.initDimList();
                     if (TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
+                    UTAutoSaveOFCompat.updateOFConfig();
                 }
                 UTObsoleteModsScreenHandler.shouldDisplay = true;
                 UniversalTweaks.LOGGER.info("Universal Tweaks config reloaded");

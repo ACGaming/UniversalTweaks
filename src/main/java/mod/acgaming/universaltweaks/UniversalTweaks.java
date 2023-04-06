@@ -29,6 +29,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.pickupnotification.UTPickupNotificationOverlay;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTTutorialToast;
+import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.world.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.world.stronghold.worldgen.SafeStrongholdWorldGenerator;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
@@ -39,7 +40,7 @@ public class UniversalTweaks
 {
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
-    public static final String VERSION = "1.12.2-1.5.0";
+    public static final String VERSION = "1.12.2-1.5.1";
     public static final String DEPENDENCIES = "required-after:mixinbooter;after:biomesoplenty;after:botania;after:contenttweaker;after:customspawner;after:epicsiegemod;after:extratrees;after:forestry;after:roost;after:storagedrawers;after:tconstruct;after:thaumcraft;after:thermalexpansion";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
@@ -49,6 +50,7 @@ public class UniversalTweaks
         if (!UTConfigParser.mayday.isEmpty()) UniversalTweaks.LOGGER.fatal(UTConfigParser.mayday);
         UTPacketHandler.init();
         if (UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
+        UTAutoSaveOFCompat.updateOFConfig();
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
         if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
         LOGGER.info(NAME + " pre-initialized");

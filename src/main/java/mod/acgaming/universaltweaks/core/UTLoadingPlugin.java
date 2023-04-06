@@ -100,50 +100,51 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.world.chunksaving.json",
             "mixins.bugfixes.world.frustumculling.json",
             "mixins.bugfixes.world.teloadorder.json",
-            "mixins.tweaks.entities.ai.json",
-            "mixins.tweaks.items.attackcooldown.json",
-            "mixins.tweaks.performance.audioreload.json",
-            "mixins.tweaks.entities.autojump.json",
             "mixins.tweaks.blocks.bedobstruction.json",
-            "mixins.tweaks.entities.speed.boat.json",
             "mixins.tweaks.blocks.breakablebedrock.json",
-            "mixins.tweaks.world.chunks.gen.json",
-            "mixins.tweaks.entities.damage.collision.json",
-            "mixins.tweaks.performance.craftingcache.json",
+            "mixins.tweaks.blocks.growthsize.json",
+            "mixins.tweaks.blocks.lenientpaths.json",
+            "mixins.tweaks.entities.ai.json",
+            "mixins.tweaks.entities.ai.saddledwandering.json",
+            "mixins.tweaks.entities.autojump.json",
             "mixins.tweaks.entities.creepers.confetti.json",
-            "mixins.tweaks.items.rarity.json",
-            "mixins.tweaks.performance.dyeblending.json",
+            "mixins.tweaks.entities.damage.collision.json",
             "mixins.tweaks.entities.damage.falling.json",
+            "mixins.tweaks.entities.despawning.json",
+            "mixins.tweaks.entities.golems.json",
+            "mixins.tweaks.entities.spawning.json",
+            "mixins.tweaks.entities.speed.boat.json",
+            "mixins.tweaks.entities.speed.player.json",
+            "mixins.tweaks.items.attackcooldown.json",
             "mixins.tweaks.items.hardcorebuckets.json",
-            "mixins.tweaks.misc.incurablepotions.json",
-            "mixins.tweaks.misc.music.json",
             "mixins.tweaks.items.itementities.client.json",
             "mixins.tweaks.items.itementities.server.json",
-            "mixins.tweaks.blocks.lenientpaths.json",
+            "mixins.tweaks.items.rarity.json",
+            "mixins.tweaks.items.xpbottle.json",
+            "mixins.tweaks.misc.buttons.realms.json",
+            "mixins.tweaks.misc.buttons.snooper.client.json",
+            "mixins.tweaks.misc.credits.json",
+            "mixins.tweaks.misc.incurablepotions.json",
             "mixins.tweaks.misc.lightningflash.json",
             "mixins.tweaks.misc.linearxp.json",
-            "mixins.tweaks.entities.despawning.json",
+            "mixins.tweaks.misc.music.json",
             "mixins.tweaks.misc.narrator.json",
             "mixins.tweaks.misc.nightvisionflash.json",
-            "mixins.tweaks.entities.golems.json",
-            "mixins.tweaks.blocks.growthsize.json",
-            "mixins.tweaks.entities.speed.player.json",
-            "mixins.tweaks.performance.prefixcheck.json",
-            "mixins.tweaks.misc.buttons.realms.json",
             "mixins.tweaks.misc.recipebook.client.json",
             "mixins.tweaks.misc.recipebook.server.json",
+            "mixins.tweaks.misc.smoothscrolling.json",
+            "mixins.tweaks.misc.toastcontrol.json",
+            "mixins.tweaks.performance.audioreload.json",
+            "mixins.tweaks.performance.autosave.json",
+            "mixins.tweaks.performance.craftingcache.json",
+            "mixins.tweaks.performance.dyeblending.json",
+            "mixins.tweaks.performance.fps.json",
+            "mixins.tweaks.performance.prefixcheck.json",
             "mixins.tweaks.performance.redstone.json",
             "mixins.tweaks.performance.resourcemanager.json",
-            "mixins.tweaks.entities.ai.saddledwandering.json",
-            "mixins.tweaks.misc.credits.json",
-            "mixins.tweaks.misc.smoothscrolling.json",
-            "mixins.tweaks.misc.buttons.snooper.client.json",
-            "mixins.tweaks.entities.spawning.json",
-            "mixins.tweaks.misc.toastcontrol.json",
-            "mixins.tweaks.performance.fps.json",
+            "mixins.tweaks.world.chunks.gen.json",
             "mixins.tweaks.world.loading.client.json",
-            "mixins.tweaks.world.loading.server.json",
-            "mixins.tweaks.items.xpbottle.json") :
+            "mixins.tweaks.world.loading.server.json") :
             Arrays.asList(
                 "mixins.bugfixes.blocks.comparatortiming.json",
                 "mixins.bugfixes.blocks.hopper.boundingbox.json",
@@ -168,35 +169,36 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.entities.tracker.json",
                 "mixins.bugfixes.world.chunksaving.json",
                 "mixins.bugfixes.world.teloadorder.json",
-                "mixins.tweaks.entities.ai.json",
-                "mixins.tweaks.items.attackcooldown.json",
                 "mixins.tweaks.blocks.bedobstruction.json",
-                "mixins.tweaks.entities.speed.boat.json",
                 "mixins.tweaks.blocks.breakablebedrock.json",
-                "mixins.tweaks.world.chunks.gen.json",
-                "mixins.tweaks.entities.damage.collision.json",
-                "mixins.tweaks.performance.craftingcache.json",
-                "mixins.tweaks.entities.creepers.confetti.json",
-                "mixins.tweaks.items.rarity.json",
-                "mixins.tweaks.performance.dyeblending.json",
-                "mixins.tweaks.entities.damage.falling.json",
-                "mixins.tweaks.items.hardcorebuckets.json",
-                "mixins.tweaks.misc.incurablepotions.json",
-                "mixins.tweaks.items.itementities.server.json",
+                "mixins.tweaks.blocks.growthsize.json",
                 "mixins.tweaks.blocks.lenientpaths.json",
-                "mixins.tweaks.misc.linearxp.json",
+                "mixins.tweaks.entities.ai.json",
+                "mixins.tweaks.entities.ai.saddledwandering.json",
+                "mixins.tweaks.entities.creepers.confetti.json",
+                "mixins.tweaks.entities.damage.collision.json",
+                "mixins.tweaks.entities.damage.falling.json",
                 "mixins.tweaks.entities.despawning.json",
                 "mixins.tweaks.entities.golems.json",
-                "mixins.tweaks.blocks.growthsize.json",
-                "mixins.tweaks.entities.speed.player.json",
-                "mixins.tweaks.performance.prefixcheck.json",
-                "mixins.tweaks.misc.recipebook.server.json",
-                "mixins.tweaks.performance.redstone.json",
-                "mixins.tweaks.entities.ai.saddledwandering.json",
-                "mixins.tweaks.misc.buttons.snooper.server.json",
                 "mixins.tweaks.entities.spawning.json",
-                "mixins.tweaks.world.loading.server.json",
-                "mixins.tweaks.items.xpbottle.json"
+                "mixins.tweaks.entities.speed.boat.json",
+                "mixins.tweaks.entities.speed.player.json",
+                "mixins.tweaks.items.attackcooldown.json",
+                "mixins.tweaks.items.hardcorebuckets.json",
+                "mixins.tweaks.items.itementities.server.json",
+                "mixins.tweaks.items.rarity.json",
+                "mixins.tweaks.items.xpbottle.json",
+                "mixins.tweaks.misc.buttons.snooper.server.json",
+                "mixins.tweaks.misc.incurablepotions.json",
+                "mixins.tweaks.misc.linearxp.json",
+                "mixins.tweaks.misc.recipebook.server.json",
+                "mixins.tweaks.performance.autosave.json",
+                "mixins.tweaks.performance.craftingcache.json",
+                "mixins.tweaks.performance.dyeblending.json",
+                "mixins.tweaks.performance.prefixcheck.json",
+                "mixins.tweaks.performance.redstone.json",
+                "mixins.tweaks.world.chunks.gen.json",
+                "mixins.tweaks.world.loading.server.json"
             );
     }
 
@@ -220,84 +222,56 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     }
                 case "mixins.bugfixes.blocks.blockoverlay.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"[1] Block Overlay Toggle\"=true");
-                case "mixins.bugfixes.misc.depthmask.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Depth Mask\"=true");
-                case "mixins.bugfixes.world.frustumculling.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Frustum Culling\"=true");
                 case "mixins.bugfixes.blocks.miningglitch.client.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Mining Glitch\"=true");
+                case "mixins.bugfixes.entities.villagermantle.json":
+                    return firstLaunch || UTConfigParser.isPresent("B:\"Villager Mantle Hoods\"=true");
+                case "mixins.bugfixes.misc.depthmask.json":
+                    return firstLaunch || UTConfigParser.isPresent("B:\"Depth Mask\"=true");
                 case "mixins.bugfixes.misc.modelgap.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"[1] Model Gap Toggle\"=true");
                 case "mixins.bugfixes.misc.smoothlighting.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Accurate Smooth Lighting\"=true");
                 case "mixins.bugfixes.misc.startup.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Faster Background Startup\"=true");
-                case "mixins.bugfixes.entities.villagermantle.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Villager Mantle Hoods\"=true");
+                case "mixins.bugfixes.world.frustumculling.json":
+                    return firstLaunch || UTConfigParser.isPresent("B:\"Frustum Culling\"=true");
                 case "mixins.tweaks.entities.autojump.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Auto Jump Replacement\"=true");
-                case "mixins.tweaks.misc.music.json":
-                    return !firstLaunch && UTConfigParser.isPresent("B:\"Infinite Music\"=true");
                 case "mixins.tweaks.items.itementities.client.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"[01] Item Entities Toggle\"=true");
+                case "mixins.tweaks.misc.buttons.realms.json":
+                    return firstLaunch || UTConfigParser.isPresent("B:\"Remove Realms Button\"=true");
+                case "mixins.tweaks.misc.buttons.snooper.client.json":
+                    return firstLaunch || UTConfigParser.isPresent("B:\"Remove Snooper\"=true");
+                case "mixins.tweaks.misc.credits.json":
+                    return !firstLaunch && UTConfigParser.isPresent("B:\"Skip Credits\"=true");
                 case "mixins.tweaks.misc.lightningflash.json":
                     return !firstLaunch && UTConfigParser.isPresent("B:\"No Lightning Flash\"=true");
+                case "mixins.tweaks.misc.music.json":
+                    return !firstLaunch && UTConfigParser.isPresent("B:\"Infinite Music\"=true");
                 case "mixins.tweaks.misc.narrator.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Disable Narrator\"=true");
                 case "mixins.tweaks.misc.nightvisionflash.json":
                     return !firstLaunch && UTConfigParser.isPresent("B:\"No Night Vision Flash\"=true");
-                case "mixins.tweaks.misc.buttons.realms.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Remove Realms Button\"=true");
                 case "mixins.tweaks.misc.recipebook.client.json":
                     return !firstLaunch && UTConfigParser.isPresent("B:\"Remove Recipe Book\"=true");
-                case "mixins.tweaks.performance.resourcemanager.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Check Animated Models\"=true");
-                case "mixins.tweaks.misc.credits.json":
-                    return !firstLaunch && UTConfigParser.isPresent("B:\"Skip Credits\"=true");
                 case "mixins.tweaks.misc.smoothscrolling.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"[1] Smooth Scrolling Toggle\"=true");
-                case "mixins.tweaks.misc.buttons.snooper.client.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Remove Snooper\"=true");
                 case "mixins.tweaks.misc.toastcontrol.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"[1] Toast Control Toggle\"=true");
                 case "mixins.tweaks.performance.fps.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Uncap FPS\"=true");
+                case "mixins.tweaks.performance.resourcemanager.json":
+                    return firstLaunch || UTConfigParser.isPresent("B:\"Check Animated Models\"=true");
                 case "mixins.tweaks.world.loading.client.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Fast World Loading\"=true");
             }
         }
         switch (mixinConfig)
         {
-            case "mixins.bugfixes.entities.blockfire.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Block Fire\"=true");
-            case "mixins.bugfixes.entities.boatoffset.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Boat Riding Offset\"=true");
             case "mixins.bugfixes.blocks.comparatortiming.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Comparator Timing\"=true");
-            case "mixins.bugfixes.world.chunksaving.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Chunk Saving\"=true");
-            case "mixins.bugfixes.entities.deathtime.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Death Time\"=true");
-            case "mixins.bugfixes.entities.destroypacket.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Destroy Entity Packets\"=true");
-            case "mixins.bugfixes.entities.dimensionchange.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Dimension Change Player States\"=true");
-            case "mixins.bugfixes.entities.disconnectdupe.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Disconnect Dupe\"=true");
-            case "mixins.bugfixes.entities.boundingbox.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Bounding Box\"=true");
-            case "mixins.bugfixes.entities.desync.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Desync\"=true");
-            case "mixins.bugfixes.entities.entityid.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Entity ID\"=true");
-            case "mixins.bugfixes.entities.maxhealth.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Max Player Health\"=true");
-            case "mixins.bugfixes.entities.suffocation.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Suffocation\"=true");
-            case "mixins.bugfixes.entities.tracker.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Tracker\"=true");
-            case "mixins.bugfixes.entities.saturation.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Player Saturation\"=true");
             case "mixins.bugfixes.blocks.hopper.boundingbox.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Hopper Bounding Box\"=true");
             case "mixins.bugfixes.blocks.hopper.tile.json":
@@ -310,66 +284,96 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isPresent("B:\"Mining Glitch\"=true");
             case "mixins.bugfixes.blocks.pistontile.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Piston Progress\"=true");
+            case "mixins.bugfixes.entities.blockfire.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Block Fire\"=true");
+            case "mixins.bugfixes.entities.boatoffset.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Boat Riding Offset\"=true");
+            case "mixins.bugfixes.entities.boundingbox.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Bounding Box\"=true");
+            case "mixins.bugfixes.entities.deathtime.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Death Time\"=true");
+            case "mixins.bugfixes.entities.destroypacket.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Destroy Entity Packets\"=true");
+            case "mixins.bugfixes.entities.desync.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Desync\"=true");
+            case "mixins.bugfixes.entities.dimensionchange.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Dimension Change Player States\"=true");
+            case "mixins.bugfixes.entities.disconnectdupe.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Disconnect Dupe\"=true");
+            case "mixins.bugfixes.entities.entityid.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Entity ID\"=true");
+            case "mixins.bugfixes.entities.maxhealth.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Max Player Health\"=true");
+            case "mixins.bugfixes.entities.saturation.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Player Saturation\"=true");
             case "mixins.bugfixes.entities.skeletonaim.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Skeleton Aim\"=true");
+            case "mixins.bugfixes.entities.suffocation.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Suffocation\"=true");
+            case "mixins.bugfixes.entities.tracker.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Tracker\"=true");
+            case "mixins.bugfixes.world.chunksaving.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Chunk Saving\"=true");
             case "mixins.bugfixes.world.teloadorder.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Tile Entity Update Order\"=true");
-            case "mixins.tweaks.entities.ai.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"AI Replacement\"=true");
-            case "mixins.tweaks.items.attackcooldown.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"No Attack Cooldown\"=true");
             case "mixins.tweaks.blocks.bedobstruction.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Bed Obstruction Replacement\"=true");
-            case "mixins.tweaks.entities.speed.boat.json":
-                return !firstLaunch && !UTConfigParser.isPresent("D:\"Boat Speed\"=0.04");
             case "mixins.tweaks.blocks.breakablebedrock.json":
                 return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Breakable Bedrock Toggle\"=true");
-            case "mixins.tweaks.world.chunks.gen.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Chunk Gen Limit Toggle\"=true");
-            case "mixins.tweaks.entities.damage.collision.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Collision Damage Toggle\"=true");
-            case "mixins.tweaks.performance.craftingcache.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Crafting Cache\"=true");
-            case "mixins.tweaks.entities.creepers.confetti.json":
-                return !firstLaunch && !UTConfigParser.isPresent("D:\"Creeper Confetti\"=0.0");
-            case "mixins.tweaks.performance.dyeblending.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Fast Dye Blending\"=true");
-            case "mixins.tweaks.entities.damage.falling.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Water Fall Damage Toggle\"=true");
-            case "mixins.tweaks.items.hardcorebuckets.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"Hardcore Buckets\"=true");
-            case "mixins.tweaks.misc.incurablepotions.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"[1] Incurable Potions Toggle\"=true");
-            case "mixins.tweaks.items.itementities.server.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"[01] Item Entities Toggle\"=true");
+            case "mixins.tweaks.blocks.growthsize.json":
+                return !firstLaunch && (!UTConfigParser.isPresent("I:\"Cactus Size\"=3") || !UTConfigParser.isPresent("I:\"Sugar Cane Size\"=3"));
             case "mixins.tweaks.blocks.lenientpaths.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Lenient Paths\"=true");
-            case "mixins.tweaks.misc.linearxp.json":
-                return !firstLaunch && !UTConfigParser.isPresent("I:\"Linear XP Amount\"=0");
+            case "mixins.tweaks.entities.ai.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"AI Replacement\"=true");
+            case "mixins.tweaks.entities.ai.saddledwandering.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"No Saddled Wandering\"=true");
+            case "mixins.tweaks.entities.creepers.confetti.json":
+                return !firstLaunch && !UTConfigParser.isPresent("D:\"Creeper Confetti\"=0.0");
+            case "mixins.tweaks.entities.damage.collision.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Collision Damage Toggle\"=true");
+            case "mixins.tweaks.entities.damage.falling.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Water Fall Damage Toggle\"=true");
             case "mixins.tweaks.entities.despawning.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Mob Despawn Improvement\"=true");
             case "mixins.tweaks.entities.golems.json":
                 return !firstLaunch && (UTConfigParser.isPresent("B:\"[1] Iron Golem Toggle\"=true") || UTConfigParser.isPresent("B:\"[2] Snow Golem Toggle\"=true") || UTConfigParser.isPresent("B:\"[3] Wither Toggle\"=true"));
-            case "mixins.tweaks.blocks.growthsize.json":
-                return !firstLaunch && (!UTConfigParser.isPresent("I:\"Cactus Size\"=3") || !UTConfigParser.isPresent("I:\"Sugar Cane Size\"=3"));
-            case "mixins.tweaks.entities.speed.player.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Player Speed Toggle\"=true");
-            case "mixins.tweaks.performance.prefixcheck.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Fast Prefix Checking\"=true");
-            case "mixins.tweaks.misc.recipebook.server.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"Remove Recipe Book\"=true");
-            case "mixins.tweaks.performance.redstone.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"No Redstone Lighting\"=true");
-            case "mixins.tweaks.entities.ai.saddledwandering.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"No Saddled Wandering\"=true");
-            case "mixins.tweaks.misc.buttons.snooper.server.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Remove Snooper\"=true");
             case "mixins.tweaks.entities.spawning.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Husk & Stray Spawning\"=true");
-            case "mixins.tweaks.world.loading.server.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Fast World Loading\"=true");
+            case "mixins.tweaks.entities.speed.boat.json":
+                return !firstLaunch && !UTConfigParser.isPresent("D:\"Boat Speed\"=0.04");
+            case "mixins.tweaks.entities.speed.player.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Player Speed Toggle\"=true");
+            case "mixins.tweaks.items.attackcooldown.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"No Attack Cooldown\"=true");
+            case "mixins.tweaks.items.hardcorebuckets.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"Hardcore Buckets\"=true");
+            case "mixins.tweaks.items.itementities.server.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"[01] Item Entities Toggle\"=true");
             case "mixins.tweaks.items.xpbottle.json":
                 return !firstLaunch && !UTConfigParser.isPresent("I:\"XP Bottle Amount\"=-1");
+            case "mixins.tweaks.misc.buttons.snooper.server.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Remove Snooper\"=true");
+            case "mixins.tweaks.misc.incurablepotions.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"[1] Incurable Potions Toggle\"=true");
+            case "mixins.tweaks.misc.linearxp.json":
+                return !firstLaunch && !UTConfigParser.isPresent("I:\"Linear XP Amount\"=0");
+            case "mixins.tweaks.misc.recipebook.server.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"Remove Recipe Book\"=true");
+            case "mixins.tweaks.performance.autosave.json":
+                return !firstLaunch && !UTConfigParser.isPresent("I:\"Auto Save Interval\"=900");
+            case "mixins.tweaks.performance.craftingcache.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Crafting Cache\"=true");
+            case "mixins.tweaks.performance.dyeblending.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Fast Dye Blending\"=true");
+            case "mixins.tweaks.performance.prefixcheck.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Fast Prefix Checking\"=true");
+            case "mixins.tweaks.performance.redstone.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"No Redstone Lighting\"=true");
+            case "mixins.tweaks.world.chunks.gen.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Chunk Gen Limit Toggle\"=true");
+            case "mixins.tweaks.world.loading.server.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Fast World Loading\"=true");
         }
         return true;
     }
