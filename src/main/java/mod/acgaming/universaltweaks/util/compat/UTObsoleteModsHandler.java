@@ -63,7 +63,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("mendingfix") && UTConfig.TWEAKS_ITEMS.MENDING.utMendingToggle) messages.add("Mending Fix");
         if (Loader.isModLoaded("movingquickly") && UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("MovingQuickly");
         if (Loader.isModLoaded("mtqfix") && UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("MTQFix");
-        if (Loader.isModLoaded("naturallychargedcreepers") && UTConfig.TWEAKS_ENTITIES.utChargedCreeperSpawnChance > 0) messages.add("Naturally Charged Creepers");
+        if (Loader.isModLoaded("naturallychargedcreepers") && UTConfig.TWEAKS_ENTITIES.utCreeperChargedChance > 0) messages.add("Naturally Charged Creepers");
         if (Loader.isModLoaded("nanfix") && UTConfig.BUGFIXES_ENTITIES.utEntityNaNToggle) messages.add("NaN Entity Health Fix");
         if (Loader.isModLoaded("nobounce") && UTConfig.MOD_INTEGRATION.THAUMCRAFT.utTCStableThaumometerToggle) messages.add("Stable Thaumometer");
         if (Loader.isModLoaded("nonvflash") && UTConfig.TWEAKS_MISC.utNightVisionFlashToggle) messages.add("No Night Vision Flashing");

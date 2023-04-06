@@ -484,15 +484,15 @@ public class UTConfig
         @Config.Comment("Sets the acceleration value for controlling boats")
         public double utBoatSpeed = 0.04D;
 
-        @Config.Name("Creeper Confetti")
+        @Config.Name("Creeper Charged Spawning Chance")
+        @Config.Comment("Sets the chance for creepers to spawn charged")
+        @Config.RangeDouble(min = 0.0D, max = 1.0D)
+        public double utCreeperChargedChance = 0.0D;
+
+        @Config.Name("Creeper Confetti Spawning Chance")
         @Config.Comment("Sets the chance to replace deadly creeper explosions with delightful confetti")
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
         public double utCreeperConfettiChance = 0.0D;
-
-        @Config.Name("Charged Creeper Spawning Chance")
-        @Config.Comment("Sets the chance for creepers to spawn charged")
-        @Config.RangeDouble(min = 0.0D, max = 1.0D)
-        public double utChargedCreeperSpawnChance = 0.0D;
 
         @Config.Name("Disable Sleeping")
         @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")

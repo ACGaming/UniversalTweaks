@@ -28,7 +28,7 @@ public class UTChargedCreepers
 
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChargedCreepers ::: Creeper Spawn Event");
 
-        double chargedChance = UTConfig.TWEAKS_ENTITIES.utChargedCreeperSpawnChance;
+        double chargedChance = UTConfig.TWEAKS_ENTITIES.utCreeperChargedChance;
         if (chargedChance <= 0.0D) return;
 
         if (event.getEntity().getTags().contains(SPAWNED_CHECK_TAG) || event.getEntity().getTags().contains(NCC_CHECK_TAG)) return;
