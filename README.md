@@ -106,6 +106,8 @@ All changes are toggleable via the config file.
 * Plantables: Configurable growth height for sugar cane and cacti
 * Pickup Notification: Displays highly configurable notifications when the player obtains or loses items
 * Player Speed: Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
+* Rabbit Killer Spawning: Configurable chance for rabbits to spawn as the killer bunny variant
+* Rabbit Toast Spawning: Configurable chance for rabbits to spawn as the Toast variant
 * Rally Health: Adds Bloodborne's Rally system to Minecraft, regain lost health when attacking back within the risk time
 * Remove Realms Button: Removes the redundant Minecraft Realms button from the main menu
 * Remove Recipe Book: Removes the recipe book button from GUIs

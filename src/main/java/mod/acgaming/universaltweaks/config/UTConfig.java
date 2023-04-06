@@ -510,6 +510,16 @@ public class UTConfig
         @Config.Comment("Stops horses wandering around when saddled")
         public boolean utSaddledWanderingToggle = true;
 
+        @Config.Name("Rabbit Killer Spawning Chance")
+        @Config.Comment("Sets the chance for rabbits to spawn as the killer bunny variant")
+        @Config.RangeDouble(min = 0.0D, max = 1.0D)
+        public double utRabbitKillerChance = 0.0D;
+
+        @Config.Name("Rabbit Toast Spawning Chance")
+        @Config.Comment("Sets the chance for rabbits to spawn as the Toast variant")
+        @Config.RangeDouble(min = 0.0D, max = 1.0D)
+        public double utRabbitToastChance = 0.0D;
+
         public static class AttributesCategory
         {
             @Config.Name("[01] Attributes Toggle")
