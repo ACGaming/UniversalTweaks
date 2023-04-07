@@ -317,7 +317,7 @@ public class UTConfig
         public final BetterPlacementCategory BETTER_PLACEMENT = new BetterPlacementCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.blockdispenser")
-        @Config.Name("Breakable Bedrock")
+        @Config.Name("Block Dispenser")
         public final BlockDispenserCategory BLOCK_DISPENSER = new BlockDispenserCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.breakablebedrock")
