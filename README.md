@@ -150,9 +150,9 @@ All changes are toggleable via the config file.
         * Caches the drawer controller tile to avoid getting the TE from the world every time a drawer slave is interacted with
     * Render Range: Approximate range in blocks at which drawers render contained items
 * Thaumcraft
-    * Bolt Focus Medium Cast Sound: Plays an additional cast sound when using any bolt focus medium to add an extra layer of pow
     * Firebat Particles: Adds particles to firebats similar to legacy versions
     * Flower Bounding Box: Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs
+    * Focus Mediums: Makes several of Thaumcraft's focus mediums play new sounds to stand out more
     * Frost Focus Cast Sound Revamp: Overhauls the frost focus cast sound to make it a lot less plangent
     * Spiderlike Eldritch Crabs: Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders
     * Stable Thaumometer: Stops the thaumometer from bobbing rapidly when using it to scan objects

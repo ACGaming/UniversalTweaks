@@ -25,6 +25,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.storagedrawers.client.json",
             "mixins.mods.storagedrawers.server.json",
             "mixins.mods.thaumcraft.json",
+            "mixins.mods.thaumcraft.focusmediums.json",
             "mixins.mods.thaumcraft.entities.client.json",
             "mixins.mods.thaumcraft.entities.server.json",
             "mixins.mods.thermalexpansion.json",
@@ -67,6 +68,7 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.storagedrawers.server.json":
                 return Loader.isModLoaded("storagedrawers");
             case "mixins.mods.thaumcraft.json":
+            case "mixins.mods.thaumcraft.focusmediums.json":
             case "mixins.mods.thaumcraft.entities.server.json":
                 return Loader.isModLoaded("thaumcraft");
             case "mixins.mods.thermalexpansion.json":
