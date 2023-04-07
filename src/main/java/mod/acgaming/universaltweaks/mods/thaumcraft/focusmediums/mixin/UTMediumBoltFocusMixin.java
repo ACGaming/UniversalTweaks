@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.thaumcraft.mixin;
+package mod.acgaming.universaltweaks.mods.thaumcraft.focusmediums.mixin;
 
 import net.minecraft.util.SoundCategory;
 
@@ -20,7 +20,7 @@ public class UTMediumBoltFocusMixin extends FocusMediumTouch
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
     public void utMediumBoltFocusSound(Trajectory trajectory, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT.utTCBoltMediumSoundToggle) return;
+        if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT.FOCUS_MEDIUMS.utTCBoltMediumSoundToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumBoltFocus ::: Execute");
         this.getPackage().world.playSound(null, this.getPackage().getCaster().getPosition().up(), SoundsTC.shock, SoundCategory.PLAYERS, 0.175F, 1.0F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
     }

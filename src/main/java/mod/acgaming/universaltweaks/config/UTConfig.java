@@ -1584,9 +1584,9 @@ public class UTConfig
 
         public static class ThaumcraftCategory
         {
-            @Config.Name("Bolt Focus Medium Cast Sound")
-            @Config.Comment("Plays an additional cast sound when using any bolt focus medium to add an extra layer of pow")
-            public boolean utTCBoltMediumSoundToggle = true;
+            @Config.LangKey("cfg.universaltweaks.modintegration.tc.focusmediums")
+            @Config.Name("Focus Mediums")
+            public final FocusMediumsCategory FOCUS_MEDIUMS = new FocusMediumsCategory();
 
             @Config.Name("Flower Bounding Box")
             @Config.Comment("Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs")
@@ -1599,6 +1599,25 @@ public class UTConfig
             @Config.Name("Stable Thaumometer")
             @Config.Comment("Stops the thaumometer from bobbing rapidly when using it to scan objects")
             public boolean utTCStableThaumometerToggle = true;
+
+            public static class FocusMediumsCategory
+            {
+                @Config.Name("[01] Bolt Focus Medium Cast Sound")
+                @Config.Comment("Plays an additional cast sound when using any bolt focus medium to add an extra layer of pow")
+                public boolean utTCBoltMediumSoundToggle = true;
+
+                @Config.Name("[02] Cloud Focus Medium Cast Sound")
+                @Config.Comment("Plays an additional cast sound when using any cloud focus medium")
+                public boolean utTCCloudMediumSoundToggle = true;
+
+                @Config.Name("[03] Mine Focus Medium Sounds")
+                @Config.Comment("Adds additional cast, despawn, and setup sounds when using any mine focus medium")
+                public boolean utTCMineMediumSoundToggle = true;
+
+                @Config.Name("[04] Spellbat Focus Medium Cast Sound")
+                @Config.Comment("Plays an additional cast sound when summoning any type of spellbat")
+                public boolean utTCSpellBatMediumSoundToggle = true;
+            }
         }
 
         public static class ThaumcraftEntitiesCategory
