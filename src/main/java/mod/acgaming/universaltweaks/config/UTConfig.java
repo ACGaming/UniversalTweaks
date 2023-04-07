@@ -289,6 +289,7 @@ public class UTConfig
         @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
         public boolean utFrustumCullingToggle = true;
 
+        @Config.RequiresWorldRestart
         @Config.Name("Tile Entity Map")
         @Config.Comment
             ({
@@ -480,6 +481,10 @@ public class UTConfig
         @Config.Name("Rally Health")
         public final RallyHealthCategory RALLY_HEALTH = new RallyHealthCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.undeadhorses")
+        @Config.Name("Undead Horses")
+        public final UndeadHorsesCategory UNDEAD_HORSES = new UndeadHorsesCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.waterfalldamage")
         @Config.Name("Water Fall Damage")
         public final WaterFallDamageCategory WATER_FALL_DAMAGE = new WaterFallDamageCategory();
@@ -503,10 +508,6 @@ public class UTConfig
         @Config.Name("Boat Speed")
         @Config.Comment("Sets the acceleration value for controlling boats")
         public double utBoatSpeed = 0.04D;
-
-        @Config.Name("Burning Undead Horses")
-        @Config.Comment("Lets untamed undead horses burn in daylight like their biped counterparts")
-        public boolean utBurningUndeadHorsesToggle = true;
 
         @Config.Name("Creeper Charged Spawning Chance")
         @Config.Comment("Sets the chance for creepers to spawn charged")
@@ -735,6 +736,17 @@ public class UTConfig
             @Config.Name("[4] Indication Sound")
             @Config.Comment("Plays an indication sound effect when health is regained")
             public boolean utRallyHealthSound = false;
+        }
+
+        public static class UndeadHorsesCategory
+        {
+            @Config.Name("Burning Undead Horses")
+            @Config.Comment("Lets untamed undead horses burn in daylight")
+            public boolean utBurningUndeadHorsesToggle = true;
+
+            @Config.Name("Taming Undead Horses")
+            @Config.Comment("Allows taming of undead horses")
+            public boolean utTamingUndeadHorsesToggle = true;
         }
 
         public static class WaterFallDamageCategory

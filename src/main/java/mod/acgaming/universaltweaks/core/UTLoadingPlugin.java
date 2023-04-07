@@ -118,6 +118,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.entities.spawning.stray.json",
             "mixins.tweaks.entities.speed.boat.json",
             "mixins.tweaks.entities.speed.player.json",
+            "mixins.tweaks.entities.taming.horses.json",
             "mixins.tweaks.items.attackcooldown.json",
             "mixins.tweaks.items.hardcorebuckets.json",
             "mixins.tweaks.items.itementities.client.json",
@@ -189,6 +190,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.entities.spawning.stray.json",
                 "mixins.tweaks.entities.speed.boat.json",
                 "mixins.tweaks.entities.speed.player.json",
+                "mixins.tweaks.entities.taming.horses.json",
                 "mixins.tweaks.items.attackcooldown.json",
                 "mixins.tweaks.items.hardcorebuckets.json",
                 "mixins.tweaks.items.itementities.server.json",
@@ -355,6 +357,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && !UTConfigParser.isPresent("D:\"Boat Speed\"=0.04");
             case "mixins.tweaks.entities.speed.player.json":
                 return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Player Speed Toggle\"=true");
+            case "mixins.tweaks.entities.taming.horses.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Taming Undead Horses\"=true");
             case "mixins.tweaks.items.attackcooldown.json":
                 return !firstLaunch && UTConfigParser.isPresent("B:\"No Attack Cooldown\"=true");
             case "mixins.tweaks.items.hardcorebuckets.json":

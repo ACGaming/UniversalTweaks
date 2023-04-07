@@ -64,7 +64,6 @@ All changes are toggleable via the config file.
 * Boat Speed: Sets the acceleration value for controlling boats
 * Bow Infinity Remedy: Bows enchanted with Infinity no longer require arrows
 * Breakable Bedrock: Allows customizable mining of bedrock
-* Burning Undead Horses: Lets untamed undead horses burn in daylight like their biped counterparts
 * Charged Creeper Spawning: Sets the chance for creepers to spawn charged
 * Check Animated Models: Improves model load times by checking if an animated model exists before trying to load it
 * Chunk Gen Limit: Limits maximum chunk generation per tick for improved server performance
@@ -124,6 +123,9 @@ All changes are toggleable via the config file.
 * Toast Control: Enables the control of toasts (pop-up text boxes)
 * Toggle Cheats Button: Adds a button to the pause menu to toggle cheats
 * Uncap FPS: Removes the hardcoded 30 FPS limit in screens like the main menu
+* Undead Horses:
+    * Burning: Lets untamed undead horses burn in daylight
+    * Taming: Allows taming of undead horses
 * Water Fall Damage: Re-implements an improved version of pre-1.4 fall damage in water
 * XP Bottle Amount: Sets the amount of experience spawned by bottles o' enchanting
 
