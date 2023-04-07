@@ -40,7 +40,7 @@ All changes are toggleable via the config file.
 * Model Gap: Fixes transparent gaps in all 3D models of blocks and items
 * Piston Progress: Properly saves the last state of pistons to tags
 * Skeleton Aim: Fixes skeletons not looking at their targets when strafing
-* Tile Entity Update Order: Keeps the order of tile entities on chunk load
+* Tile Entity Map: Replaces the chunk position data table to prevent tile entity related issues
 * Villager Mantle: Returns missing hoods to villager mantles
 
 **Tweaks:**

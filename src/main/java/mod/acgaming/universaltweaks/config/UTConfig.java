@@ -289,9 +289,24 @@ public class UTConfig
         @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
         public boolean utFrustumCullingToggle = true;
 
-        @Config.Name("Tile Entity Update Order")
-        @Config.Comment("Keeps the order of tile entities on chunk load")
-        public boolean utTELoadOrderToggle = true;
+        @Config.Name("Tile Entity Map")
+        @Config.Comment
+            ({
+                "Changes the data table of tile entities to resolve issues",
+                "HASHMAP:                   Vanilla default",
+                "LINKED_HASHMAP:            Keeps the loading order of tile entities to prevent issues during the first ticks of chunk loading",
+                "CONCURRENT_HASHMAP:        Allows simultaneous access to tile entities to prevent concurrent modification exceptions",
+                "CONCURRENT_LINKED_HASHMAP: Combines LINKED_HASHMAP and CONCURRENT_HASHMAP",
+            })
+        public EnumMaps utTileEntityMap = EnumMaps.CONCURRENT_LINKED_HASHMAP;
+
+        public enum EnumMaps
+        {
+            HASHMAP,
+            LINKED_HASHMAP,
+            CONCURRENT_HASHMAP,
+            CONCURRENT_LINKED_HASHMAP
+        }
     }
 
     public static class TweaksBlocksCategory

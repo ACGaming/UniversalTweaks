@@ -100,7 +100,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.misc.startup.json",
             "mixins.bugfixes.world.chunksaving.json",
             "mixins.bugfixes.world.frustumculling.json",
-            "mixins.bugfixes.world.teloadorder.json",
+            "mixins.bugfixes.world.tileentities.json",
             "mixins.tweaks.blocks.bedobstruction.json",
             "mixins.tweaks.blocks.breakablebedrock.json",
             "mixins.tweaks.blocks.growthsize.json",
@@ -172,7 +172,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.entities.suffocation.json",
                 "mixins.bugfixes.entities.tracker.json",
                 "mixins.bugfixes.world.chunksaving.json",
-                "mixins.bugfixes.world.teloadorder.json",
+                "mixins.bugfixes.world.tileentities.json",
                 "mixins.tweaks.blocks.bedobstruction.json",
                 "mixins.tweaks.blocks.breakablebedrock.json",
                 "mixins.tweaks.blocks.growthsize.json",
@@ -322,8 +322,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isPresent("B:\"Entity Tracker\"=true");
             case "mixins.bugfixes.world.chunksaving.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Chunk Saving\"=true");
-            case "mixins.bugfixes.world.teloadorder.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Tile Entity Update Order\"=true");
+            case "mixins.bugfixes.world.tileentities.json":
+                return firstLaunch || !UTConfigParser.isPresent("S:\"Tile Entity Map\"=HASHMAP");
             case "mixins.tweaks.blocks.bedobstruction.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Bed Obstruction Replacement\"=true");
             case "mixins.tweaks.blocks.breakablebedrock.json":
@@ -345,7 +345,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.entities.despawning.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Mob Despawn Improvement\"=true");
             case "mixins.tweaks.entities.spawning.creepers.confetti.json":
-                return !firstLaunch && !UTConfigParser.isPresent("D:\"Creeper Confetti\"=0.0");
+                return !firstLaunch && !UTConfigParser.isPresent("D:\"Creeper Confetti Spawning Chance\"=0.0");
             case "mixins.tweaks.entities.spawning.golems.json":
                 return !firstLaunch && (UTConfigParser.isPresent("B:\"[1] Iron Golem Toggle\"=true") || UTConfigParser.isPresent("B:\"[2] Snow Golem Toggle\"=true") || UTConfigParser.isPresent("B:\"[3] Wither Toggle\"=true"));
             case "mixins.tweaks.entities.spawning.husk.json":

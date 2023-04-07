@@ -18,7 +18,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
-version = "1.12.2-1.5.1"
+version = "1.12.2-1.6.0"
 group = "mod.acgaming.universaltweaks"
 archivesBaseName = "UniversalTweaks"
 
@@ -93,6 +93,7 @@ dependencies {
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
     deobfCompile "zone.rong:mixinbooter:7.0"
     implementation "curse.maven:custom-mob-spawner-229261:2859433"
+    implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
     //implementation "net.jafama:jafama:2.3.2"
 }
 
@@ -100,20 +101,20 @@ mixin {
     add sourceSets.main, "universaltweaks.refmap.json"
 }
 
-//configurations {
-//    embed
-//    compile.extendsFrom(embed)
-//}
-//
-//dependencies {
-//    embed 'net.jafama:jafama:2.3.2'
-//}
-//
-//jar {
-//    from(configurations.embed.collect {
-//        it.isDirectory() ? it : zipTree(it)
-//    })
-//}
+configurations {
+    embed
+    compile.extendsFrom(embed)
+}
+
+dependencies {
+    embed "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
+}
+
+jar {
+    from(configurations.embed.collect {
+        it.isDirectory() ? it : zipTree(it)
+    })
+}
 
 processResources {
     inputs.property "version", project.version
