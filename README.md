@@ -7,6 +7,7 @@ All changes are toggleable via the config file.
 **Bugfixes:**
 
 * Accurate Smooth Lighting: Improves the accuracy of smooth lighting by checking for suffocation and light opacity
+* Attack Radius: Improves the attack radius of hostile mobs by checking the line of sight with raytracing
 * Block Fire: Prevents fire projectiles burning entities when blocking with shields
 * Block Overlay: Fixes x-ray when standing in non-suffocating blocks
 * Boat Riding Offset: Fixes entities glitching through the bottom of boats

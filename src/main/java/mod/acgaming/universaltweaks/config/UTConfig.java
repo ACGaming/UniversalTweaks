@@ -154,6 +154,10 @@ public class UTConfig
 
     public static class BugfixesEntitiesCategory
     {
+        @Config.Name("Attack Radius")
+        @Config.Comment("Improves the attack radius of hostile mobs by checking the line of sight with raytracing")
+        public boolean utAttackRadiusToggle = true;
+
         @Config.Name("Block Fire")
         @Config.Comment("Prevents fire projectiles burning entities when blocking with shields")
         public boolean utBlockFireToggle = true;
