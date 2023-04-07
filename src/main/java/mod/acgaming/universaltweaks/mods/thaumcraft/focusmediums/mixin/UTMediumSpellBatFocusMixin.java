@@ -1,7 +1,7 @@
 package mod.acgaming.universaltweaks.mods.thaumcraft.focusmediums.mixin;
 
-import net.minecraft.util.SoundCategory;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.util.SoundCategory;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;

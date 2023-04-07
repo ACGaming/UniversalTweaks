@@ -15,7 +15,7 @@ import thaumcraft.common.lib.SoundsTC;
 
 // Courtesy of Turkey9002
 @Mixin(FocusMediumBolt.class)
-public class UTMediumBoltFocusMixin extends FocusMediumTouch
+public abstract class UTMediumBoltFocusMixin extends FocusMediumTouch
 {
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
     public void utMediumBoltFocusSound(Trajectory trajectory, CallbackInfoReturnable<Boolean> cir)

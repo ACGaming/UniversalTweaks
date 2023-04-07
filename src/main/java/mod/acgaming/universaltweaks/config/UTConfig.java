@@ -1602,19 +1602,19 @@ public class UTConfig
 
             public static class FocusMediumsCategory
             {
-                @Config.Name("[01] Bolt Focus Medium Cast Sound")
+                @Config.Name("[1] Bolt Focus Medium Cast Sound")
                 @Config.Comment("Plays an additional cast sound when using any bolt focus medium to add an extra layer of pow")
                 public boolean utTCBoltMediumSoundToggle = true;
 
-                @Config.Name("[02] Cloud Focus Medium Cast Sound")
+                @Config.Name("[2] Cloud Focus Medium Cast Sound")
                 @Config.Comment("Plays an additional cast sound when using any cloud focus medium")
                 public boolean utTCCloudMediumSoundToggle = true;
 
-                @Config.Name("[03] Mine Focus Medium Sounds")
+                @Config.Name("[3] Mine Focus Medium Sounds")
                 @Config.Comment("Adds additional cast, despawn, and setup sounds when using any mine focus medium")
                 public boolean utTCMineMediumSoundToggle = true;
 
-                @Config.Name("[04] Spellbat Focus Medium Cast Sound")
+                @Config.Name("[4] Spellbat Focus Medium Cast Sound")
                 @Config.Comment("Plays an additional cast sound when summoning any type of spellbat")
                 public boolean utTCSpellBatMediumSoundToggle = true;
             }
