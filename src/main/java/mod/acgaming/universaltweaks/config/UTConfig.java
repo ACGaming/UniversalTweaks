@@ -783,6 +783,10 @@ public class UTConfig
         @Config.Comment("Disables the 1.9 combat update attack cooldown")
         public boolean utAttackCooldownToggle = false;
 
+        @Config.Name("No Crafting Repair")
+        @Config.Comment("Disables crafting recipes for repairing tools")
+        public boolean utCraftingRepairToggle = false;
+
         @Config.Name("Hardcore Buckets")
         @Config.Comment("Prevents placing of liquid source blocks in the world")
         public boolean utHardcoreBucketsToggle = false;

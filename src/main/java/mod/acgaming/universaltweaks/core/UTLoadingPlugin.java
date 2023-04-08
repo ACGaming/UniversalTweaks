@@ -124,6 +124,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.items.itementities.client.json",
             "mixins.tweaks.items.itementities.server.json",
             "mixins.tweaks.items.rarity.json",
+            "mixins.tweaks.items.repairing.json",
             "mixins.tweaks.items.xpbottle.json",
             "mixins.tweaks.misc.buttons.realms.json",
             "mixins.tweaks.misc.buttons.snooper.client.json",
@@ -195,6 +196,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.items.hardcorebuckets.json",
                 "mixins.tweaks.items.itementities.server.json",
                 "mixins.tweaks.items.rarity.json",
+                "mixins.tweaks.items.repairing.json",
                 "mixins.tweaks.items.xpbottle.json",
                 "mixins.tweaks.misc.buttons.snooper.server.json",
                 "mixins.tweaks.misc.incurablepotions.json",
@@ -365,6 +367,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && UTConfigParser.isPresent("B:\"Hardcore Buckets\"=true");
             case "mixins.tweaks.items.itementities.server.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"[01] Item Entities Toggle\"=true");
+            case "mixins.tweaks.items.repairing.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"No Crafting Repair\"=true");
             case "mixins.tweaks.items.xpbottle.json":
                 return !firstLaunch && !UTConfigParser.isPresent("I:\"XP Bottle Amount\"=-1");
             case "mixins.tweaks.misc.buttons.snooper.server.json":

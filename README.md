@@ -97,6 +97,7 @@ All changes are toggleable via the config file.
 * Mending: Only repairs damaged equipment with XP
 * Mob Despawn Improvement: Mobs carrying picked up items will drop their equipment and despawn properly
 * No Attack Cooldown: Disables the 1.9 combat update attack cooldown
+* No Crafting Repair: Disables crafting recipes for repairing tools
 * No Golems: Disables the manual creation of golems and withers
 * No Leftover Breath Bottles: Disables dragon's breath from leaving off empty bottles when a stack is brewed with
 * No Lightning Flash: Disables the flashing of skybox and ground brightness on lightning strikes
