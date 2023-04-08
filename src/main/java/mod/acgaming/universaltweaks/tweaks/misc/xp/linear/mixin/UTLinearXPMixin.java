@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.misc.linearxp.mixin;
+package mod.acgaming.universaltweaks.tweaks.misc.xp.linear.mixin;
 
 import net.minecraft.entity.player.EntityPlayer;
 

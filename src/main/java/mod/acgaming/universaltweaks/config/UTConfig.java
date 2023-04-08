@@ -1096,6 +1096,10 @@ public class UTConfig
         @Config.Comment("Disables the inventory shift when potion effects are active")
         public boolean utPotionShiftToggle = true;
 
+        @Config.Name("No Smelting XP")
+        @Config.Comment("Disables the experience reward when smelting items in furnaces")
+        public boolean utSmeltingXPToggle = false;
+
         @Config.Name("Offhand Improvement")
         @Config.Comment("Prevents placing offhand blocks when blocks or food are held in the mainhand")
         public boolean utOffhandToggle = true;

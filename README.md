@@ -105,6 +105,7 @@ All changes are toggleable via the config file.
 * No Potion Shift: Disables the inventory shift when potion effects are active
 * No Redstone Lighting: Disables lighting of active redstone, repeaters, and comparators to improve performance
 * No Saddled Wandering: Stops horses wandering around when saddled
+* No Smelting XP: Disables the experience reward when smelting items in furnaces
 * Offhand Improvement: Prevents placing offhand blocks when blocks or food are held in the mainhand
 * Pickup Notification: Displays highly configurable notifications when the player obtains or loses items
 * Player Speed: Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages

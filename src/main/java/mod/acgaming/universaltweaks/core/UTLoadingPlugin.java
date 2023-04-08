@@ -131,7 +131,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.misc.credits.json",
             "mixins.tweaks.misc.incurablepotions.json",
             "mixins.tweaks.misc.lightningflash.json",
-            "mixins.tweaks.misc.linearxp.json",
+            "mixins.tweaks.misc.xp.linear.json",
+            "mixins.tweaks.misc.xp.smelting.json",
             "mixins.tweaks.misc.music.json",
             "mixins.tweaks.misc.narrator.json",
             "mixins.tweaks.misc.nightvisionflash.json",
@@ -200,7 +201,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.items.xpbottle.json",
                 "mixins.tweaks.misc.buttons.snooper.server.json",
                 "mixins.tweaks.misc.incurablepotions.json",
-                "mixins.tweaks.misc.linearxp.json",
+                "mixins.tweaks.misc.xp.linear.json",
+                "mixins.tweaks.misc.xp.smelting.json",
                 "mixins.tweaks.misc.recipebook.server.json",
                 "mixins.tweaks.performance.autosave.json",
                 "mixins.tweaks.performance.craftingcache.json",
@@ -375,10 +377,12 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isPresent("B:\"Remove Snooper\"=true");
             case "mixins.tweaks.misc.incurablepotions.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"[1] Incurable Potions Toggle\"=true");
-            case "mixins.tweaks.misc.linearxp.json":
+            case "mixins.tweaks.misc.xp.linear.json":
                 return !firstLaunch && !UTConfigParser.isPresent("I:\"Linear XP Amount\"=0");
             case "mixins.tweaks.misc.recipebook.server.json":
                 return !firstLaunch && UTConfigParser.isPresent("B:\"Remove Recipe Book\"=true");
+            case "mixins.tweaks.misc.xp.smelting.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"No Smelting XP\"=true");
             case "mixins.tweaks.performance.autosave.json":
                 return !firstLaunch && !UTConfigParser.isPresent("I:\"Auto Save Interval\"=900");
             case "mixins.tweaks.performance.craftingcache.json":
