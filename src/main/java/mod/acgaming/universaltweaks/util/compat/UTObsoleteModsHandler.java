@@ -65,6 +65,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("mtqfix") && UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("MTQFix");
         if (Loader.isModLoaded("naturallychargedcreepers") && UTConfig.TWEAKS_ENTITIES.utCreeperChargedChance > 0) messages.add("Naturally Charged Creepers");
         if (Loader.isModLoaded("nanfix") && UTConfig.BUGFIXES_ENTITIES.utEntityNaNToggle) messages.add("NaN Entity Health Fix");
+        if (Loader.isModLoaded("nanpolice") && UTConfig.BUGFIXES_ENTITIES.utEntityNaNToggle) messages.add("NaNPolice");
         if (Loader.isModLoaded("nobounce") && UTConfig.MOD_INTEGRATION.THAUMCRAFT.utTCStableThaumometerToggle) messages.add("Stable Thaumometer");
         if (Loader.isModLoaded("nonvflash") && UTConfig.TWEAKS_MISC.utNightVisionFlashToggle) messages.add("No Night Vision Flashing");
         if (Loader.isModLoaded("nopotionshift") && UTConfig.TWEAKS_MISC.utPotionShiftToggle) messages.add("No Potion Shift");
@@ -96,6 +97,11 @@ public class UTObsoleteModsHandler
             {
                 Class.forName("io.github.jikuja.LocaleTweaker");
                 messages.add("LocaleFixer");
+            }
+            if (UTConfig.TWEAKS_BLOCKS.utBlockHitDelay != 5)
+            {
+                Class.forName("com.cleanroommc.blockdelayremover.BlockDelayRemoverCore");
+                messages.add("Block Delay Remover");
             }
             if (UTConfig.TWEAKS_WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle)
             {

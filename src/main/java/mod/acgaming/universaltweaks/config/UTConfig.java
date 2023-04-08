@@ -336,6 +336,10 @@ public class UTConfig
         @Config.Comment("Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking")
         public boolean utBetterHarvestToggle = false;
 
+        @Config.Name("Block Hit Delay")
+        @Config.Comment("Sets the delay in ticks between breaking blocks")
+        public int utBlockHitDelay = 5;
+
         @Config.Name("Cactus Size")
         @Config.Comment("Determines how tall cacti can grow")
         public int utCactusSize = 3;

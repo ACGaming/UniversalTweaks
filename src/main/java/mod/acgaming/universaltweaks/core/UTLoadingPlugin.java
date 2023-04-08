@@ -104,6 +104,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.blocks.bedobstruction.json",
             "mixins.tweaks.blocks.breakablebedrock.json",
             "mixins.tweaks.blocks.growthsize.json",
+            "mixins.tweaks.blocks.hitdelay.json",
             "mixins.tweaks.blocks.lenientpaths.json",
             "mixins.tweaks.entities.ai.json",
             "mixins.tweaks.entities.ai.saddledwandering.json",
@@ -179,6 +180,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.blocks.bedobstruction.json",
                 "mixins.tweaks.blocks.breakablebedrock.json",
                 "mixins.tweaks.blocks.growthsize.json",
+                "mixins.tweaks.blocks.hitdelay.json",
                 "mixins.tweaks.blocks.lenientpaths.json",
                 "mixins.tweaks.entities.ai.json",
                 "mixins.tweaks.entities.ai.saddledwandering.json",
@@ -336,6 +338,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Breakable Bedrock Toggle\"=true");
             case "mixins.tweaks.blocks.growthsize.json":
                 return !firstLaunch && (!UTConfigParser.isPresent("I:\"Cactus Size\"=3") || !UTConfigParser.isPresent("I:\"Sugar Cane Size\"=3"));
+            case "mixins.tweaks.blocks.hitdelay.json":
+                return !firstLaunch && !UTConfigParser.isPresent("I:\"Block Hit Delay\"=5");
             case "mixins.tweaks.blocks.lenientpaths.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Lenient Paths\"=true");
             case "mixins.tweaks.entities.ai.json":
