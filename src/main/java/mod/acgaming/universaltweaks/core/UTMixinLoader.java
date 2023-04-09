@@ -14,7 +14,7 @@ public class UTMixinLoader implements ILateMixinLoader
     public List<String> getMixinConfigs()
     {
         return Lists.newArrayList(
-                "mixins.mods.aoa3.json",
+            "mixins.mods.aoa3.json",
             "mixins.mods.biomesoplenty.json",
             "mixins.mods.crafttweaker.json",
             "mixins.mods.customspawner.json",

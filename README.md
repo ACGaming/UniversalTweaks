@@ -134,6 +134,8 @@ All changes are toggleable via the config file.
 
 **Mod Tweaks:**
 
+* Advent of Ascension
+    * Inventory-less GUI Compatibility: Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks GUI)
 * Binnie's Mods
     * Gather Windfall: Allows Forestry farms to pick up ExtraTrees fruit
 * Biomes O' Plenty
