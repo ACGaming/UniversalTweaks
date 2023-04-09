@@ -1463,6 +1463,10 @@ public class UTConfig
 
     public static class ModIntegrationCategory
     {
+        @Config.LangKey("cfg.universaltweaks.modintegration.aoa")
+        @Config.Name("Advent of Ascension")
+        public final AOACategory AOA = new AOACategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.bop")
         @Config.Name("Biomes O' Plenty")
         public final BiomesOPlentyCategory BIOMES_O_PLENTY = new BiomesOPlentyCategory();
@@ -1506,6 +1510,13 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.modintegration.tcon")
         @Config.Name("Tinkers' Construct")
         public final TinkersConstructCategory TINKERS_CONSTRUCT = new TinkersConstructCategory();
+
+        public static class AOACategory
+        {
+            @Config.Name("Inventory-less GUI Compatibility")
+            @Config.Comment("Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks GUI)")
+            public boolean utFixPlayerTickInInventorylessGui = false;
+        }
 
         public static class BiomesOPlentyCategory
         {

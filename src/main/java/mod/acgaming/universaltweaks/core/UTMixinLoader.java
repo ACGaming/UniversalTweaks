@@ -14,6 +14,7 @@ public class UTMixinLoader implements ILateMixinLoader
     public List<String> getMixinConfigs()
     {
         return Lists.newArrayList(
+                "mixins.mods.aoa3.json",
             "mixins.mods.biomesoplenty.json",
             "mixins.mods.crafttweaker.json",
             "mixins.mods.customspawner.json",
@@ -41,6 +42,8 @@ public class UTMixinLoader implements ILateMixinLoader
         {
             switch (mixinConfig)
             {
+                case "mixins.mods.aoa3.json":
+                    return Loader.isModLoaded("aoa3") && Loader.isModLoaded("fluxnetworks");
                 case "mixins.mods.crafttweaker.json":
                     return Loader.isModLoaded("crafttweaker");
                 case "mixins.mods.roost.json":

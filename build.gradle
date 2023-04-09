@@ -80,6 +80,7 @@ dependencies {
     deobfCompile "curse.maven:chameleon-230497:2450900"
     deobfCompile "curse.maven:chickens-241941:2537643"
     deobfCompile "curse.maven:epic-siege-mod-229449:3356157"
+    deobfCompile "curse.maven:fluxnetworks-248020:3178199"
     deobfCompile "curse.maven:forestry-59751:2918418"
     deobfCompile "curse.maven:modtweaker-220954:3840577"
     deobfCompile "curse.maven:roost-277711:2702080"
