@@ -80,6 +80,7 @@ dependencies {
     deobfCompile "curse.maven:chameleon-230497:2450900"
     deobfCompile "curse.maven:chickens-241941:2537643"
     deobfCompile "curse.maven:epic-siege-mod-229449:3356157"
+    deobfCompile "curse.maven:fluxnetworks-248020:3178199"
     deobfCompile "curse.maven:forestry-59751:2918418"
     deobfCompile "curse.maven:modtweaker-220954:3840577"
     deobfCompile "curse.maven:roost-277711:2702080"
@@ -95,6 +96,15 @@ dependencies {
     implementation "curse.maven:custom-mob-spawner-229261:2859433"
     implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
     //implementation "net.jafama:jafama:2.3.2"
+
+    // for testing mods
+    deobfCompile "curse.maven:aoa3-311054:3054253"
+    implementation "curse.maven:mtlib-253211:3308160"
+    implementation "curse.maven:codechickenlib-242818:2779848"
+    implementation "curse.maven:thermalfoundation-222880:2926428"
+    implementation "curse.maven:cofhcore-69162:2920433"
+    implementation "curse.maven:cofhworld-271384:2920434"
+    implementation "curse.maven:redstoneflux-270789:2920436"
 }
 
 mixin {
