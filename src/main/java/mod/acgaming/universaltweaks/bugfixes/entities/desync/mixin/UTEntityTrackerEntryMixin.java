@@ -2,11 +2,10 @@ package mod.acgaming.universaltweaks.bugfixes.entities.desync.mixin;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityTrackerEntry;
+import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayerMP;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.bugfixes.entities.desync.IPrevMotion;
-import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -20,7 +19,7 @@ public class UTEntityTrackerEntryMixin
     @Inject(method = "<init>", at = @At("RETURN"))
     public void utInit(Entity entityIn, int rangeIn, int maxRangeIn, int updateFrequencyIn, boolean sendVelocityUpdatesIn, CallbackInfo info)
     {
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityMixin ::: Entity tracker init");
+        if (entityIn instanceof EntityMinecart) return;
         entityIn.prevPosX = entityIn.posX;
         entityIn.prevPosY = entityIn.posY;
         entityIn.prevPosZ = entityIn.posZ;
@@ -32,7 +31,7 @@ public class UTEntityTrackerEntryMixin
     @Redirect(method = "updatePlayerList", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;getDistanceSq(DDD)D"))
     public double utGetDistanceSq(Entity entity, double x, double y, double z)
     {
-        //if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityMixin ::: Get entity distance");
+        if (entity instanceof EntityMinecart) return entity.getDistanceSq(x, y, z);
         double dx = x - entity.prevPosX;
         double dy = y - entity.prevPosY;
         double dz = z - entity.prevPosZ;
@@ -42,55 +41,55 @@ public class UTEntityTrackerEntryMixin
     @Redirect(method = "updatePlayerList", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/Entity;posX:D"))
     public double utGetPosX1(Entity entity)
     {
-        return entity.prevPosX;
+        return entity instanceof EntityMinecart ? entity.posX : entity.prevPosX;
     }
 
     @Redirect(method = "updatePlayerList", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/Entity;posY:D"))
     public double utGetPosY1(Entity entity)
     {
-        return entity.prevPosY;
+        return entity instanceof EntityMinecart ? entity.posY : entity.prevPosY;
     }
 
     @Redirect(method = "updatePlayerList", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/Entity;posZ:D"))
     public double utGetPosZ1(Entity entity)
     {
-        return entity.prevPosZ;
+        return entity instanceof EntityMinecart ? entity.posZ : entity.prevPosZ;
     }
 
     @Redirect(method = "updatePlayerList", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/Entity;motionX:D"))
     public double utGetMotionX1(Entity entity)
     {
-        return ((IPrevMotion) entity).getPrevMotionX();
+        return entity instanceof EntityMinecart ? entity.motionX : ((IPrevMotion) entity).getPrevMotionX();
     }
 
     @Redirect(method = "updatePlayerList", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/Entity;motionY:D"))
     public double utGetMotionY1(Entity entity)
     {
-        return ((IPrevMotion) entity).getPrevMotionY();
+        return entity instanceof EntityMinecart ? entity.motionY : ((IPrevMotion) entity).getPrevMotionY();
     }
 
     @Redirect(method = "updatePlayerList", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/Entity;motionZ:D"))
     public double utGetMotionZ1(Entity entity)
     {
-        return ((IPrevMotion) entity).getPrevMotionZ();
+        return entity instanceof EntityMinecart ? entity.motionZ : ((IPrevMotion) entity).getPrevMotionZ();
     }
 
     @Redirect(method = "updatePlayerEntity", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/Entity;motionX:D"))
     public double utGetMotionX2(Entity entity)
     {
-        return ((IPrevMotion) entity).getPrevMotionX();
+        return entity instanceof EntityMinecart ? entity.motionX : ((IPrevMotion) entity).getPrevMotionX();
     }
 
     @Redirect(method = "updatePlayerEntity", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/Entity;motionY:D"))
     public double utGetMotionY2(Entity entity)
     {
-        return ((IPrevMotion) entity).getPrevMotionY();
+        return entity instanceof EntityMinecart ? entity.motionY : ((IPrevMotion) entity).getPrevMotionY();
     }
 
     @Redirect(method = "updatePlayerEntity", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/Entity;motionZ:D"))
     public double utGetMotionZ2(Entity entity)
     {
-        return ((IPrevMotion) entity).getPrevMotionZ();
+        return entity instanceof EntityMinecart ? entity.motionZ : ((IPrevMotion) entity).getPrevMotionZ();
     }
 
     @Redirect(method = "isVisibleTo", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/player/EntityPlayerMP;posX:D"))

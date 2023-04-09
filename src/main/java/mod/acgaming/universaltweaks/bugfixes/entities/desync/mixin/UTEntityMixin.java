@@ -30,7 +30,6 @@ public class UTEntityMixin implements IPrevMotion
     @Inject(method = "onUpdate", at = @At("HEAD"))
     public void utOnUpdate(CallbackInfo info)
     {
-        //if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityMixin ::: Motion update");
         prevMotionX = motionX;
         prevMotionY = motionY;
         prevMotionZ = motionZ;
