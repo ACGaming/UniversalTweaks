@@ -44,6 +44,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("endportalparallax") && UTConfig.TWEAKS_MISC.utEndPortalParallaxToggle) messages.add("End Portal Parallax");
         if (Loader.isModLoaded("entity_desync_fix") && UTConfig.BUGFIXES_ENTITIES.utEntityDesyncToggle) messages.add("EntityDesyncFix");
         if (Loader.isModLoaded("experiencebugfix") && UTConfig.BUGFIXES_ENTITIES.utDimensionChangeToggle) messages.add("Fix Experience Bug");
+        if (Loader.isModLoaded("eyltrafix") && UTConfig.BUGFIXES_ENTITIES.utElytraDeploymentLandingToggle) messages.add("Elytra-Fix");
         if (Loader.isModLoaded("fastbench") && UTConfig.TWEAKS_PERFORMANCE.utCraftingCacheToggle) messages.add("FastWorkbench");
         if (Loader.isModLoaded("fastleafdecay") && UTConfig.TWEAKS_BLOCKS.utLeafDecayToggle) messages.add("Fast Leaf Decay");
         if (Loader.isModLoaded("fencejumper") && UTConfig.TWEAKS_BLOCKS.utFenceWallJumpToggle) messages.add("Fence Jumper");

@@ -19,6 +19,7 @@ All changes are toggleable via the config file.
 * Dimension Change Player States: Fixes missing player states when changing dimensions by sending additional packets
 * Disconnect Dupe: Fixes item dupes when players are dropping items and disconnecting
 * Double Consumption: Fixes consuming an item having a chance of also consuming a second item without any animation
+* Elytra Deployment & Landing: Relocate elytra deployment and landing to client side to prevent issues with high latencies
 * Entity Bounding Boxes: Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * Entity Desync: Fixes entity motion desyncs most notable with arrows and thrown items
 * Entity ID: Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0

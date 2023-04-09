@@ -186,6 +186,10 @@ public class UTConfig
         @Config.Comment("Fixes consuming an item having a chance of also consuming a second item without any animation")
         public boolean utDoubleConsumptionToggle = true;
 
+        @Config.Name("Elytra Deployment & Landing")
+        @Config.Comment("Relocate elytra deployment and landing to client side to prevent issues with high latencies")
+        public boolean utElytraDeploymentLandingToggle = true;
+
         @Config.Name("Entity Bounding Box")
         @Config.Comment("Saves entity bounding boxes to tags to prevent breakouts and suffocation")
         public boolean utEntityAABBToggle = true;

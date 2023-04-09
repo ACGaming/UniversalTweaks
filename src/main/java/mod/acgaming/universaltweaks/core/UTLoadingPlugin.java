@@ -87,6 +87,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.entities.desync.json",
             "mixins.bugfixes.entities.dimensionchange.json",
             "mixins.bugfixes.entities.disconnectdupe.json",
+            "mixins.bugfixes.entities.elytra.json",
             "mixins.bugfixes.entities.entityid.json",
             "mixins.bugfixes.entities.maxhealth.json",
             "mixins.bugfixes.entities.saturation.json",
@@ -238,6 +239,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return firstLaunch || UTConfigParser.isPresent("B:\"[1] Block Overlay Toggle\"=true");
                 case "mixins.bugfixes.blocks.miningglitch.client.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Mining Glitch\"=true");
+                case "mixins.bugfixes.entities.elytra.json":
+                    return firstLaunch || UTConfigParser.isPresent("B:\"Elytra Deployment & Landing\"=true");
                 case "mixins.bugfixes.entities.villagermantle.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Villager Mantle Hoods\"=true");
                 case "mixins.bugfixes.misc.depthmask.json":
