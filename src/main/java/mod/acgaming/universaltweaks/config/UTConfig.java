@@ -1514,7 +1514,7 @@ public class UTConfig
         public static class AOACategory
         {
             @Config.Name("Inventory-less GUI Compatibility")
-            @Config.Comment("Fixes player ticking in certain GUIs without player inventories (i.e. Flux Networks GUI)")
+            @Config.Comment("Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks GUI)")
             public boolean utFixPlayerTickInInventorylessGui = false;
         }
 

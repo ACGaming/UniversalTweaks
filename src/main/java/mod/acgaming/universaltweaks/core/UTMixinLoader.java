@@ -43,7 +43,7 @@ public class UTMixinLoader implements ILateMixinLoader
             switch (mixinConfig)
             {
                 case "mixins.mods.aoa3.json":
-                    return Loader.isModLoaded("aoa3");
+                    return Loader.isModLoaded("aoa3") && Loader.isModLoaded("fluxnetworks");
                 case "mixins.mods.crafttweaker.json":
                     return Loader.isModLoaded("crafttweaker");
                 case "mixins.mods.roost.json":
