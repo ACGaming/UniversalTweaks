@@ -18,6 +18,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.biomesoplenty.json",
             "mixins.mods.crafttweaker.json",
             "mixins.mods.customspawner.json",
+            "mixins.mods.elenaidodge2.json",
             "mixins.mods.epicsiegemod.json",
             "mixins.mods.forestry.json",
             "mixins.mods.forestry.extratrees.json",
@@ -60,6 +61,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("biomesoplenty");
             case "mixins.mods.customspawner.json":
                 return Loader.isModLoaded("customspawner");
+            case "mixins.mods.elenaidodge2.json":
+                return Loader.isModLoaded("elenaidodge2");
             case "mixins.mods.epicsiegemod.json":
                 return Loader.isModLoaded("epicsiegemod");
             case "mixins.mods.forestry.json":

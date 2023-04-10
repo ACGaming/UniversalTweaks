@@ -143,6 +143,8 @@ All changes are toggleable via the config file.
     * Hot Spring Water: Fixes rapid inflection of regeneration effects in hot spring water
 * Botania
     * Fancy Skybox: Enables the Botania Garden of Glass skybox for custom dimensions
+* Elenai Dodge 2
+    * Feathers Helper API Fix: Fixes server-sided crashes when the Feathers Helper API is utilized
 * Epic Siege Mod
     * Disable Digger AI Debug: Disables leftover debug logging inside the digger AI of the beta builds
 * Forestry

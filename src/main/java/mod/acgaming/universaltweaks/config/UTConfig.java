@@ -1479,6 +1479,10 @@ public class UTConfig
         @Config.Name("Botania")
         public final BotaniaCategory BOTANIA = new BotaniaCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.elenaidodge2")
+        @Config.Name("Elenai Dodge 2")
+        public final ElenaiDodge2Category ELENAI_DODGE_2 = new ElenaiDodge2Category();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.esm")
         @Config.Name("Epic Siege Mod")
         public final EpicSiegeModCategory EPIC_SIEGE_MOD = new EpicSiegeModCategory();
@@ -1539,6 +1543,13 @@ public class UTConfig
                     "Example: 43"
                 })
             public Integer[] utBotaniaSkyboxDims = new Integer[] {};
+        }
+
+        public static class ElenaiDodge2Category
+        {
+            @Config.Name("Feathers Helper API Fix")
+            @Config.Comment("Fixes server-sided crashes when the Feathers Helper API is utilized")
+            public boolean utED2FeathersHelperToggle = true;
         }
 
         public static class EpicSiegeModCategory
