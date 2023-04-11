@@ -79,6 +79,7 @@ dependencies {
     deobfCompile "curse.maven:botania-225643:3330934"
     deobfCompile "curse.maven:chameleon-230497:2450900"
     deobfCompile "curse.maven:chickens-241941:2537643"
+    deobfCompile "curse.maven:elementary-staffs-346007:2995593"
     deobfCompile "curse.maven:elenaidodge2-442962:3343308"
     deobfCompile "curse.maven:epic-siege-mod-229449:3356157"
     deobfCompile "curse.maven:fluxnetworks-248020:3178199"

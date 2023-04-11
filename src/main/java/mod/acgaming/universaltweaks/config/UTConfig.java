@@ -1479,6 +1479,10 @@ public class UTConfig
         @Config.Name("Botania")
         public final BotaniaCategory BOTANIA = new BotaniaCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.elementarystaffs")
+        @Config.Name("Elementary Staffs")
+        public final ElementaryStaffsCategory ELEMENTARY_STAFFS = new ElementaryStaffsCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.elenaidodge2")
         @Config.Name("Elenai Dodge 2")
         public final ElenaiDodge2Category ELENAI_DODGE_2 = new ElenaiDodge2Category();
@@ -1543,6 +1547,13 @@ public class UTConfig
                     "Example: 43"
                 })
             public Integer[] utBotaniaSkyboxDims = new Integer[] {};
+        }
+
+        public static class ElementaryStaffsCategory
+        {
+            @Config.Name("Electric Staff Port")
+            @Config.Comment("Reintroduces the 1.5 electric staff behavior along with some subtle particles")
+            public boolean utESElectricStaffToggle = true;
         }
 
         public static class ElenaiDodge2Category
