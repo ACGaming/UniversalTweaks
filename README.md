@@ -69,6 +69,7 @@ All changes are toggleable via the config file.
 * Charged Creeper Spawning: Sets the chance for creepers to spawn charged
 * Check Animated Models: Improves model load times by checking if an animated model exists before trying to load it
 * Chunk Gen Limit: Limits maximum chunk generation per tick for improved server performance
+* Copy World Seed: Enables clicking of `/seed` world seed in chat to copy to clipboard
 * Crafting Cache: Adds an IRecipe cache to improve recipe performance in large modpacks
 * Creeper Confetti: Replaces deadly creeper explosions with delightful confetti (with a configurable chance)
 * Custom Rarity: Sets custom rarities for items, affecting tooltip colors

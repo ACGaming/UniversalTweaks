@@ -1068,6 +1068,10 @@ public class UTConfig
         @Config.Name("Toast Control")
         public final ToastControlCategory TOAST_CONTROL = new ToastControlCategory();
 
+        @Config.Name("Copy World Seed")
+        @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
+        public boolean utCopyWorldSeedToggle = false;
+
         @Config.Name("Damage Tilt")
         @Config.Comment("Restores feature to tilt the camera when damaged")
         public boolean utDamageTiltToggle = true;
@@ -1131,10 +1135,6 @@ public class UTConfig
         @Config.Name("Toggle Cheats Button")
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
         public boolean utToggleCheatsToggle = true;
-
-        @Config.Name("Copy World Seed")
-        @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
-        public boolean utCopyWorldSeedToggle = false;
 
         public static class IncurablePotionsCategory
         {
