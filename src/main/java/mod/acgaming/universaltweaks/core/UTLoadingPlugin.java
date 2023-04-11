@@ -130,6 +130,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.items.xpbottle.json",
             "mixins.tweaks.misc.buttons.realms.json",
             "mixins.tweaks.misc.buttons.snooper.client.json",
+            "mixins.tweaks.misc.commands.seed.json",
             "mixins.tweaks.misc.credits.json",
             "mixins.tweaks.misc.incurablepotions.json",
             "mixins.tweaks.misc.lightningflash.json",
@@ -261,6 +262,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return firstLaunch || UTConfigParser.isPresent("B:\"Remove Realms Button\"=true");
                 case "mixins.tweaks.misc.buttons.snooper.client.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Remove Snooper\"=true");
+                case "mixins.tweaks.misc.commands.seed.json":
+                    return firstLaunch || UTConfigParser.isPresent("B:\"Copy Seed\"=true");
                 case "mixins.tweaks.misc.credits.json":
                     return !firstLaunch && UTConfigParser.isPresent("B:\"Skip Credits\"=true");
                 case "mixins.tweaks.misc.lightningflash.json":

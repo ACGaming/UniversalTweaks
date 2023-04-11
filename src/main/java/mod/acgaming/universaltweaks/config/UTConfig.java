@@ -1132,6 +1132,10 @@ public class UTConfig
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
         public boolean utToggleCheatsToggle = true;
 
+        @Config.Name("Copy World Seed")
+        @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
+        public boolean utCopyWorldSeedToggle = true;
+
         public static class IncurablePotionsCategory
         {
             @Config.Name("[1] Incurable Potions Toggle")
