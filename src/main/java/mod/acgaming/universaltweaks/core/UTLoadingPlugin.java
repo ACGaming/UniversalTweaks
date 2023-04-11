@@ -263,7 +263,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.tweaks.misc.buttons.snooper.client.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Remove Snooper\"=true");
                 case "mixins.tweaks.misc.commands.seed.json":
-                    return !firstLaunch && UTConfigParser.isPresent("B:\"Copy Seed\"=true");
+                    return !firstLaunch && UTConfigParser.isPresent("B:\"Copy World Seed\"=true");
                 case "mixins.tweaks.misc.credits.json":
                     return !firstLaunch && UTConfigParser.isPresent("B:\"Skip Credits\"=true");
                 case "mixins.tweaks.misc.lightningflash.json":
