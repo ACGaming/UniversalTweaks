@@ -1134,7 +1134,7 @@ public class UTConfig
 
         @Config.Name("Copy World Seed")
         @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
-        public boolean utCopyWorldSeedToggle = true;
+        public boolean utCopyWorldSeedToggle = false;
 
         public static class IncurablePotionsCategory
         {
