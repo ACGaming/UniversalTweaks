@@ -143,6 +143,8 @@ All changes are toggleable via the config file.
     * Hot Spring Water: Fixes rapid inflection of regeneration effects in hot spring water
 * Botania
     * Fancy Skybox: Enables the Botania Garden of Glass skybox for custom dimensions
+* Elementary Staffs
+    * Electric Staff Port: Reintroduces the 1.5 electric staff behavior along with some subtle particles
 * Elenai Dodge 2
     * Feathers Helper API Fix: Fixes server-sided crashes when the Feathers Helper API is utilized
 * Epic Siege Mod
