@@ -48,7 +48,7 @@ All changes are toggleable via the config file.
 
 * AI Improvements: Replaces/removes entity AI for improved server performance
 * Attributes: Sets custom ranges for entity attributes
-* Auto Jump Replacement: Replaces auto jump with an increased step height
+* Auto Jump Replacement: Replaces auto jump with an increased step height (singleplayer only)
 * Auto Save Interval: Configurable interval in ticks between world auto saves
 * Auto Switch Tools: Switches the selected hotbar slot to a proper tool if required
 * Bed Obstruction Replacement: Replaces bed obstruction checks with an improved version

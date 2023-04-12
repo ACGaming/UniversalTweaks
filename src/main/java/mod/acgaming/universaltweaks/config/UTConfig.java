@@ -506,7 +506,7 @@ public class UTConfig
         public boolean utAIRemovalToggle = false;
 
         @Config.Name("Auto Jump Replacement")
-        @Config.Comment("Replaces auto jump with an increased step height")
+        @Config.Comment("Replaces auto jump with an increased step height (singleplayer only)")
         public boolean utAutoJumpToggle = true;
 
         @Config.Name("Better Ignition")
