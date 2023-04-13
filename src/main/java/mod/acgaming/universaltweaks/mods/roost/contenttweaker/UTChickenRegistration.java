@@ -1,5 +1,8 @@
 package mod.acgaming.universaltweaks.mods.roost.contenttweaker;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+
 import com.setycz.chickens.handler.SpawnType;
 import com.setycz.chickens.registry.ChickensRegistry;
 import com.setycz.chickens.registry.ChickensRegistryItem;
@@ -9,9 +12,8 @@ import com.teamacronymcoders.contenttweaker.modules.chickens.ChickenRepresentati
 import crafttweaker.CraftTweakerAPI;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import mod.acgaming.universaltweaks.config.UTConfig;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 
+// Courtesy of jchung01
 public class UTChickenRegistration {
     // register barebone chickens to registry
     public static void utRegisterChickens()
