@@ -402,6 +402,7 @@ public class UTConfig
                     "minecraft:flowing_lava",
                     "minecraft:fire",
                     "minecraft:web",
+                    "botania:specialflower",
                     "thermalexpansion:strongbox"
                 };
 
@@ -1519,6 +1520,10 @@ public class UTConfig
         @Config.Name("Thaumcraft: Entities")
         public final ThaumcraftEntitiesCategory THAUMCRAFT_ENTITIES = new ThaumcraftEntitiesCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.tc.foci")
+        @Config.Name("Thaumcraft: Foci")
+        public final ThaumcraftFociCategory THAUMCRAFT_FOCI = new ThaumcraftFociCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.te")
         @Config.Name("Thermal Expansion")
         public final ThermalExpansionCategory THERMAL_EXPANSION = new ThermalExpansionCategory();
@@ -1668,40 +1673,13 @@ public class UTConfig
 
         public static class ThaumcraftCategory
         {
-            @Config.LangKey("cfg.universaltweaks.modintegration.tc.focusmediums")
-            @Config.Name("Focus Mediums")
-            public final FocusMediumsCategory FOCUS_MEDIUMS = new FocusMediumsCategory();
-
             @Config.Name("Flower Bounding Box")
             @Config.Comment("Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs")
             public boolean utTCFlowerBoundingBoxToggle = true;
 
-            @Config.Name("Frost Focus Cast Sound Revamp")
-            @Config.Comment("Overhauls the frost focus cast sound to make it a lot less plangent")
-            public boolean utTCFrostFocusSoundRevampToggle = true;
-
             @Config.Name("Stable Thaumometer")
             @Config.Comment("Stops the thaumometer from bobbing rapidly when using it to scan objects")
             public boolean utTCStableThaumometerToggle = true;
-
-            public static class FocusMediumsCategory
-            {
-                @Config.Name("[1] Bolt Focus Medium Cast Sound")
-                @Config.Comment("Plays an additional cast sound when using any bolt focus medium to add an extra layer of pow")
-                public boolean utTCBoltMediumSoundToggle = true;
-
-                @Config.Name("[2] Cloud Focus Medium Cast Sound")
-                @Config.Comment("Plays an additional cast sound when using any cloud focus medium")
-                public boolean utTCCloudMediumSoundToggle = true;
-
-                @Config.Name("[3] Mine Focus Medium Sounds")
-                @Config.Comment("Adds additional cast, despawn, and setup sounds when using any mine focus medium")
-                public boolean utTCMineMediumSoundToggle = true;
-
-                @Config.Name("[4] Spellbat Focus Medium Cast Sound")
-                @Config.Comment("Plays an additional cast sound when summoning any type of spellbat")
-                public boolean utTCSpellBatMediumSoundToggle = true;
-            }
         }
 
         public static class ThaumcraftEntitiesCategory
@@ -1717,6 +1695,87 @@ public class UTConfig
             @Config.Name("Wisp Particles")
             @Config.Comment("Increases particle size of wisps similar to legacy versions")
             public boolean utTCWispParticlesToggle = true;
+        }
+
+        public static class ThaumcraftFociCategory
+        {
+            @Config.LangKey("cfg.universaltweaks.modintegration.tc.foci.focuseffects")
+            @Config.Name("Focus Effects")
+            public final FocusEffectsCategory FOCUS_EFFECTS = new FocusEffectsCategory();
+
+            @Config.LangKey("cfg.universaltweaks.modintegration.tc.foci.focusmediums")
+            @Config.Name("Focus Mediums")
+            public final FocusMediumsCategory FOCUS_MEDIUMS = new FocusMediumsCategory();
+
+            public static class FocusEffectsCategory
+            {
+                @Config.Name("[01] Break: Cast Sound Revamp")
+                @Config.Comment("Overhauls the break focus effect cast sound")
+                public boolean utTCBreakFocusSoundRevampToggle = true;
+
+                @Config.Name("[02] Break: Impact Sound")
+                @Config.Comment("Adds an impact sound to the break focus effect")
+                public boolean utTCBreakFocusImpactSoundToggle = true;
+
+                @Config.Name("[03] Earth: Cast Sound Revamp")
+                @Config.Comment("Overhauls the earth focus effect cast sound")
+                public boolean utTCEarthFocusSoundRevampToggle = true;
+
+                @Config.Name("[04] Earth: Impact Sound")
+                @Config.Comment("Adds an impact sound to the earth focus effect")
+                public boolean utTCEarthFocusImpactSoundToggle = true;
+
+                @Config.Name("[05] Fire: Impact Sound")
+                @Config.Comment("Adds an impact sound to the fire focus effect")
+                public boolean utTCFireFocusImpactSoundToggle = true;
+
+                @Config.Name("[06] Flux: Impact Sound")
+                @Config.Comment("Adds an impact sound to the flux focus effect")
+                public boolean utTCFluxFocusImpactSoundToggle = true;
+
+                @Config.Name("[07] Frost: Cast Sound Revamp")
+                @Config.Comment("Overhauls the frost focus effect cast sound to make it a lot less plangent")
+                public boolean utTCFrostFocusSoundRevampToggle = true;
+
+                @Config.Name("[08] Frost: Impact Sound")
+                @Config.Comment("Adds an impact sound to the frost focus effect")
+                public boolean utTCFrostFocusImpactSoundToggle = true;
+
+                @Config.Name("[09] Heal: Cast Sound Revamp")
+                @Config.Comment("Overhauls the heal focus effect cast sound")
+                public boolean utTCHealFocusSoundRevampToggle = true;
+
+                @Config.Name("[10] Heal: Impact Sound")
+                @Config.Comment("Adds an impact sound to the heal focus effect")
+                public boolean utTCHealFocusImpactSoundToggle = true;
+                
+                @Config.Name("[11] Rift: Cast Sound Revamp")
+                @Config.Comment("Overhauls the rift focus effect cast sound")
+                public boolean utTCRiftFocusSoundRevampToggle = true;
+
+                @Config.Name("[12] Rift: Impact Sound")
+                @Config.Comment("Adds an impact sound to the rift focus effect")
+                public boolean utTCRiftFocusImpactSoundToggle = true; 
+            }
+
+            public static class FocusMediumsCategory
+            {
+                @Config.Name("[1] Bolt: Cast Sound")
+                @Config.Comment("Plays an additional cast sound when using any bolt focus medium to add an extra layer of pow")
+                public boolean utTCBoltMediumSoundToggle = true;
+
+                @Config.Name("[2] Cloud: Cast Sound")
+                @Config.Comment("Plays an additional cast sound when using any cloud focus medium")
+                public boolean utTCCloudMediumSoundToggle = true;
+
+                @Config.Name("[3] Mine: Sound Overhaul")
+                @Config.Comment("Adds additional cast, despawn, and setup sounds when using any mine focus medium")
+                public boolean utTCMineMediumSoundToggle = true;
+
+                @Config.Name("[4] Spellbat: Cast Sound")
+                @Config.Comment("Plays an additional cast sound when summoning any type of spellbat")
+                public boolean utTCSpellBatMediumSoundToggle = true;
+            }
         }
 
         public static class ThermalExpansionCategory
