@@ -1,5 +1,5 @@
 {
-  "package": "mod.acgaming.universaltweaks.mods.thaumcraft.focusmediums.mixin",
+  "package": "mod.acgaming.universaltweaks.mods.thaumcraft.foci.focusmediums.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

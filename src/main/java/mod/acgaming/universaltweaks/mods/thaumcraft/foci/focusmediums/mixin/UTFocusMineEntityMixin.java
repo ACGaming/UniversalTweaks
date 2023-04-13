@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.thaumcraft.focusmediums.mixin;
+package mod.acgaming.universaltweaks.mods.thaumcraft.foci.focusmediums.mixin;
 
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.math.RayTraceResult;
@@ -33,7 +33,7 @@ public abstract class UTFocusMineEntityMixin extends EntityThrowable
     @Inject(method = "onUpdate", at = @At(value = "HEAD"))
     public void utUpdateSounds(CallbackInfo ci)
     {
-        if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT.FOCUS_MEDIUMS.utTCMineMediumSoundToggle) return;
+        if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCMineMediumSoundToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumMineFocus ::: On update");
         if (this.ticksExisted > 1200 || (!this.world.isRemote && this.getThrower() == null))
         {
@@ -52,7 +52,7 @@ public abstract class UTFocusMineEntityMixin extends EntityThrowable
     @Inject(method = "onImpact", at = @At(value = "HEAD"))
     protected void utImpactSound(final RayTraceResult mop, CallbackInfo ci)
     {
-        if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT.FOCUS_MEDIUMS.utTCMineMediumSoundToggle) return;
+        if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCMineMediumSoundToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumMineFocus ::: On impact");
         if (this.counter > 0)
         {
