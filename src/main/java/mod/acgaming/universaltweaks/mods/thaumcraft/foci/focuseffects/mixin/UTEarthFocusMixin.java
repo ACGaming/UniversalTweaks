@@ -3,6 +3,7 @@ package mod.acgaming.universaltweaks.mods.thaumcraft.foci.focuseffects.mixin;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.RayTraceResult;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
@@ -10,7 +11,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import net.minecraft.util.math.RayTraceResult;
 import thaumcraft.api.casters.FocusEffect;
 import thaumcraft.api.casters.Trajectory;
 import thaumcraft.common.items.casters.foci.FocusEffectEarth;

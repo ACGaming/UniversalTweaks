@@ -14,21 +14,22 @@ import crafttweaker.api.minecraft.CraftTweakerMC;
 import mod.acgaming.universaltweaks.config.UTConfig;
 
 // Courtesy of jchung01
-public class UTChickenRegistration {
+public class UTChickenRegistration
+{
     // register barebone chickens to registry
     public static void utRegisterChickens()
     {
         for (ChickenRepresentation chickenRepresentation : ChickenFactory.CHICKEN_REPRESENTATIONS)
         {
             ChickensRegistryItem item = new ChickensRegistryItem(
-                    new ResourceLocation(ContentTweaker.MOD_ID, chickenRepresentation.name),
-                    chickenRepresentation.name,
-                    chickenRepresentation.textureLocation.getInternal(),
-                    ItemStack.EMPTY,
-                    chickenRepresentation.backgroundColor.getIntColor(),
-                    chickenRepresentation.foregroundColor.getIntColor(),
-                    null,
-                    null
+                new ResourceLocation(ContentTweaker.MOD_ID, chickenRepresentation.name),
+                chickenRepresentation.name,
+                chickenRepresentation.textureLocation.getInternal(),
+                ItemStack.EMPTY,
+                chickenRepresentation.backgroundColor.getIntColor(),
+                chickenRepresentation.foregroundColor.getIntColor(),
+                null,
+                null
             );
             ChickensRegistry.register(item);
         }
@@ -64,9 +65,9 @@ public class UTChickenRegistration {
             }
 
             ChickensRegistryItem parentOneItem = chickenRepresentation.parentOne != null ?
-                    ChickensRegistry.getByResourceLocation(chickenRepresentation.parentOne.getInternal()) : null;
+                ChickensRegistry.getByResourceLocation(chickenRepresentation.parentOne.getInternal()) : null;
             ChickensRegistryItem parentTwoItem = chickenRepresentation.parentTwo != null ?
-                    ChickensRegistry.getByResourceLocation(chickenRepresentation.parentTwo.getInternal()) : null;
+                ChickensRegistry.getByResourceLocation(chickenRepresentation.parentTwo.getInternal()) : null;
             if (parentOneItem != null && parentTwoItem != null)
             {
                 item.setParentsNew(parentOneItem, parentTwoItem);

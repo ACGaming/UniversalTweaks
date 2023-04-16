@@ -1750,14 +1750,14 @@ public class UTConfig
                 @Config.Name("[10] Heal: Impact Sound")
                 @Config.Comment("Adds an impact sound to the heal focus effect")
                 public boolean utTCHealFocusImpactSoundToggle = true;
-                
+
                 @Config.Name("[11] Rift: Cast Sound Revamp")
                 @Config.Comment("Overhauls the rift focus effect cast sound")
                 public boolean utTCRiftFocusSoundRevampToggle = true;
 
                 @Config.Name("[12] Rift: Impact Sound")
                 @Config.Comment("Adds an impact sound to the rift focus effect")
-                public boolean utTCRiftFocusImpactSoundToggle = true; 
+                public boolean utTCRiftFocusImpactSoundToggle = true;
             }
 
             public static class FocusMediumsCategory
