@@ -14,6 +14,7 @@ import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
+import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
@@ -812,7 +813,8 @@ public class UTConfig
         @Config.Comment
             ({
                 "Sets custom rarities for items, affecting tooltip colors",
-                "Syntax: modid:item;rarity",
+                "Syntax: modid:item:meta;rarity",
+                "'meta' is optional and defaults to 0",
                 "Available rarities: common, uncommon, rare, epic",
                 "Example -> minecraft:diamond;rare"
             })
@@ -852,6 +854,17 @@ public class UTConfig
                 "thaumcraft:void_sword;uncommon",
                 "thaumcraft:primal_crusher;epic"
             };
+
+        @Config.Name("Custom Use Duration")
+        @Config.Comment
+            ({
+                "Sets custom use durations for items like shields, affecting the maximum block time",
+                "Syntax: modid:item:meta;duration;cooldown",
+                "'meta' and 'cooldown' are optional and default to 0, 'duration' and 'cooldown' in ticks",
+                "Examples -> minecraft:shield;69",
+                "         -> custommod:customshield:1;42;69"
+            })
+        public String[] utCustomUseDurations = new String[] {};
 
         @Config.Name("Super Hot Torch")
         @Config.Comment("Enables one-time ignition of entities by hitting them with a torch")
@@ -1826,6 +1839,7 @@ public class UTConfig
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
                 if (TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
+                if (TWEAKS_ITEMS.utCustomUseDurations.length > 0) UTCustomUseDuration.initItemUseMaps();
                 if (TWEAKS_ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
                 if (UTLoadingPlugin.isClient)
                 {
