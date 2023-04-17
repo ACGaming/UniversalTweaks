@@ -17,6 +17,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.aoa3.json",
             "mixins.mods.biomesoplenty.json",
             "mixins.mods.crafttweaker.json",
+            "mixins.mods.cqrepoured.json",
             "mixins.mods.customspawner.json",
             "mixins.mods.elementarystaffs.json",
             "mixins.mods.elenaidodge2.json",
@@ -61,6 +62,8 @@ public class UTMixinLoader implements ILateMixinLoader
         {
             case "mixins.mods.biomesoplenty.json":
                 return Loader.isModLoaded("biomesoplenty");
+            case "mixins.mods.cqrepoured.json":
+                return Loader.isModLoaded("cqrepoured");
             case "mixins.mods.customspawner.json":
                 return Loader.isModLoaded("customspawner");
             case "mixins.mods.elementarystaffs.json":

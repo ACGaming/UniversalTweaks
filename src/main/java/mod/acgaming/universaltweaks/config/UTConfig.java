@@ -1497,6 +1497,10 @@ public class UTConfig
         @Config.Name("Botania")
         public final BotaniaCategory BOTANIA = new BotaniaCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.cqrepoured")
+        @Config.Name("Chocolate Quest Repoured")
+        public final ChocolateQuestCategory CHOCOLATE_QUEST = new ChocolateQuestCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.elementarystaffs")
         @Config.Name("Elementary Staffs")
         public final ElementaryStaffsCategory ELEMENTARY_STAFFS = new ElementaryStaffsCategory();
@@ -1569,6 +1573,13 @@ public class UTConfig
                     "Example: 43"
                 })
             public Integer[] utBotaniaSkyboxDims = new Integer[] {};
+        }
+
+        public static class ChocolateQuestCategory
+        {
+            @Config.Name("Legacy Golden Feather")
+            @Config.Comment("Restores the golden feather behavior from the original Better Dungeons mod")
+            public boolean utCQRGoldenFeatherToggle = true;
         }
 
         public static class ElementaryStaffsCategory
