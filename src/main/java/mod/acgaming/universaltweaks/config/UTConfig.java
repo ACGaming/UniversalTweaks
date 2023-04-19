@@ -1485,6 +1485,10 @@ public class UTConfig
 
     public static class ModIntegrationCategory
     {
+        @Config.LangKey("cfg.universaltweaks.modintegration.abyssalcraft")
+        @Config.Name("AbyssalCraft")
+        public final AbyssalCraftCategory ABYSSALCRAFT = new AbyssalCraftCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.aoa")
         @Config.Name("Advent of Ascension")
         public final AOACategory AOA = new AOACategory();
@@ -1548,6 +1552,13 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.modintegration.tcon")
         @Config.Name("Tinkers' Construct")
         public final TinkersConstructCategory TINKERS_CONSTRUCT = new TinkersConstructCategory();
+
+        public static class AbyssalCraftCategory
+        {
+            @Config.Name("Optimized Item Transport")
+            @Config.Comment("Makes an optimization to reduce tick overhead of AbyssalCraft's item transport system")
+            public boolean utOptimizedItemTransferToggle = true;
+        }
 
         public static class AOACategory
         {
