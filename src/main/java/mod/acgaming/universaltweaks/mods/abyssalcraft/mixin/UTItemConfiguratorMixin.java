@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // Courtesy of jchung01
-@Mixin(value = ItemConfigurator.class, remap = false)
+@Mixin(ItemConfigurator.class) // Remapping needed!
 public class UTItemConfiguratorMixin
 {
     // Item is called "Spirit Tablet"
