@@ -17,8 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // Courtesy of jchung01
-// remap = false causes issues?
-@Mixin(value = ItemConfigurator.class)
+@Mixin(value = ItemConfigurator.class, remap = false)
 public class UTItemConfiguratorMixin
 {
     // Item is called "Spirit Tablet"
@@ -37,7 +36,6 @@ public class UTItemConfiguratorMixin
     private void utAddConfiguredTileEntity(EntityPlayer player, World w, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ, CallbackInfoReturnable<EnumActionResult> cir)
     {
         if (!UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
-
         Chunk chunk = w.getChunk(pos);
         UTWorldDataCapability.getCap(w).addConfigured(chunk, pos, w.getTileEntity(pos));
         // Not sure if this is necessary?
@@ -49,7 +47,6 @@ public class UTItemConfiguratorMixin
     private void utRemoveConfiguredTileEntity(EntityPlayer player, World w, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ, CallbackInfoReturnable<EnumActionResult> cir)
     {
         if (!UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
-
         Chunk chunk = w.getChunk(pos);
         UTWorldDataCapability.getCap(w).removeConfigured(w.getChunk(pos), pos);
         // Not sure if this is necessary?

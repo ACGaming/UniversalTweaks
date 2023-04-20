@@ -137,6 +137,8 @@ All changes are toggleable via the config file.
 
 **Mod Tweaks:**
 
+* AbyssalCraft
+    * Optimized Item Transport: Makes an optimization to reduce tick overhead of AbyssalCraft's item transport system
 * Advent of Ascension
     * Inventory-less GUI Compatibility: Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks GUI)
 * Binnie's Mods

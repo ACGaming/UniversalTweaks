@@ -121,60 +121,57 @@ public class UTItemTransferEventHandlerMixin
             if (world.getTotalWorldTime() % 20 != 0) return;
             if (UTWorldDataCapability.getCap(world).isEmpty()) return;
             // Process a map of all configured tile entities instead of using stream
-            UTWorldDataCapability.getCap(world).getFlattenedView()
-                    .forEach((pos, tile) ->
-                    {
-                        // Get tile entity if it was unknown at add time
-                        if (tile == null)
-                        {
-                            tile = world.getTileEntity(pos);
-                            UTWorldDataCapability.getCap(world).updateConfigured(world.getChunk(pos), pos, tile);
-                        }
-                        // Could be disabled by spell
-                        if (!hasCap(tile)) return;
+            UTWorldDataCapability.getCap(world).getFlattenedView().forEach((pos, tile) -> {
+                // Get tile entity if it was unknown at add time
+                if (tile == null)
+                {
+                    tile = world.getTileEntity(pos);
+                    UTWorldDataCapability.getCap(world).updateConfigured(world.getChunk(pos), pos, tile);
+                }
+                // Could be disabled by spell
+                if (!hasCap(tile)) return;
 
-                        IItemTransferCapability cap = ItemTransferCapability.getCap(tile);
-                        for (ItemTransferConfiguration cfg : cap.getTransferConfigurations())
+                IItemTransferCapability cap = ItemTransferCapability.getCap(tile);
+                for (ItemTransferConfiguration cfg : cap.getTransferConfigurations())
+                {
+                    IItemHandler inventory = ItemTransferEventHandler.getInventory(tile, cfg.getExitFacing());
+                    // Sided inventories, you never know
+                    if (inventory != null)
+                    {
+                        boolean hasFilter = !cfg.getFilter().isEmpty() && cfg.getFilter().stream().anyMatch(i -> !i.isEmpty());
+                        ItemStack stack = ItemStack.EMPTY;
+                        int slot = -1;
+                        for (int i = 0; i < inventory.getSlots(); i++)
                         {
-                            IItemHandler inventory = ItemTransferEventHandler.getInventory(tile, cfg.getExitFacing());
-                            // Sided inventories, you never know
-                            if (inventory != null)
+                            stack = inventory.getStackInSlot(i);
+                            if (!stack.isEmpty()) if (!hasFilter || isInFilter(cfg.getFilter(), stack, cfg.filterByNBT()))
                             {
-                                boolean hasFilter = !cfg.getFilter().isEmpty() && cfg.getFilter().stream().anyMatch(i -> !i.isEmpty());
-                                ItemStack stack = ItemStack.EMPTY;
-                                int slot = -1;
-                                for (int i = 0; i < inventory.getSlots(); i++)
+                                stack = inventory.extractItem(i, 1, true);
+                                slot = i;
+                                break;
+                            }
+                        }
+                        if (!stack.isEmpty() && slot > -1)
+                        {
+                            BlockPos exitPos = cfg.getRoute()[cfg.getRoute().length - 1];
+                            TileEntity te = world.getTileEntity(exitPos);
+                            if (te != null)
+                            {
+                                IItemHandler exitInv = ItemTransferEventHandler.getInventory(te, cfg.getEntryFacing());
+                                // Insertion worked
+                                if (exitInv != null && ItemHandlerHelper.insertItem(exitInv, stack, true).isEmpty())
                                 {
-                                    stack = inventory.getStackInSlot(i);
-                                    if (!stack.isEmpty())
-                                        if (!hasFilter || isInFilter(cfg.getFilter(), stack, cfg.filterByNBT()))
-                                        {
-                                            stack = inventory.extractItem(i, 1, true);
-                                            slot = i;
-                                            break;
-                                        }
-                                }
-                                if (!stack.isEmpty() && slot > -1)
-                                {
-                                    BlockPos exitPos = cfg.getRoute()[cfg.getRoute().length - 1];
-                                    TileEntity te = world.getTileEntity(exitPos);
-                                    if (te != null)
-                                    {
-                                        IItemHandler exitInv = ItemTransferEventHandler.getInventory(te, cfg.getEntryFacing());
-                                        // Insertion worked
-                                        if (exitInv != null && ItemHandlerHelper.insertItem(exitInv, stack, true).isEmpty())
-                                        {
-                                            stack = inventory.extractItem(slot, 1, false);
-                                            EntitySpiritItem spirit = new EntitySpiritItem(world, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, stack.copy());
-                                            spirit.setRoute(cfg.getRoute());
-                                            spirit.setFacing(cfg.getEntryFacing());
-                                            world.spawnEntity(spirit);
-                                        }
-                                    }
+                                    stack = inventory.extractItem(slot, 1, false);
+                                    EntitySpiritItem spirit = new EntitySpiritItem(world, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, stack.copy());
+                                    spirit.setRoute(cfg.getRoute());
+                                    spirit.setFacing(cfg.getEntryFacing());
+                                    world.spawnEntity(spirit);
                                 }
                             }
                         }
-                    });
+                    }
+                }
+            });
         }
     }
 
