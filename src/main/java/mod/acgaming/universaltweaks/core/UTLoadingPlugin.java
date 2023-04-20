@@ -78,6 +78,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.blocks.miningglitch.client.json",
             "mixins.bugfixes.blocks.miningglitch.server.json",
             "mixins.bugfixes.blocks.pistontile.json",
+            "mixins.bugfixes.entities.ai.json",
             "mixins.bugfixes.entities.attackradius.json",
             "mixins.bugfixes.entities.blockfire.json",
             "mixins.bugfixes.entities.boatoffset.json",
@@ -162,6 +163,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.blocks.ladderflying.json",
                 "mixins.bugfixes.blocks.miningglitch.server.json",
                 "mixins.bugfixes.blocks.pistontile.json",
+                "mixins.bugfixes.entities.ai.json",
                 "mixins.bugfixes.entities.attackradius.json",
                 "mixins.bugfixes.entities.blockfire.json",
                 "mixins.bugfixes.entities.boatoffset.json",
@@ -304,6 +306,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isPresent("B:\"Mining Glitch\"=true");
             case "mixins.bugfixes.blocks.pistontile.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Piston Progress\"=true");
+            case "mixins.bugfixes.entities.ai.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Concurrent Entity AI Tasks\"=true");
             case "mixins.bugfixes.entities.attackradius.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Attack Radius\"=true");
             case "mixins.bugfixes.entities.blockfire.json":

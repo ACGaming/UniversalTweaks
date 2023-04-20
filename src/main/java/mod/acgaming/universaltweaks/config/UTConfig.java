@@ -167,6 +167,15 @@ public class UTConfig
         @Config.Comment("Fixes entities glitching through the bottom of boats")
         public boolean utBoatOffsetToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Concurrent Entity AI Tasks")
+        @Config.Comment
+            ({
+                "Replaces linked entity AI task sets with concurrent sets to avoid mod exception concerning entity AI",
+                "Only enable this if you're facing concurrent modification exceptions with entity AI tasks, for example Thaumcraft's Pechs"
+            })
+        public boolean utEntityAITasksToggle = false;
+
         @Config.Name("Death Time")
         @Config.Comment("Fixes corrupted entities exceeding the allowed death time")
         public boolean utDeathTimeToggle = true;
