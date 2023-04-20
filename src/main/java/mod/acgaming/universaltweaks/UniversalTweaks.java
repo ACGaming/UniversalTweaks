@@ -1,5 +1,6 @@
 package mod.acgaming.universaltweaks;
 
+import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
@@ -55,6 +56,7 @@ public class UniversalTweaks
         UTAutoSaveOFCompat.updateOFConfig();
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
         if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
+        if (Loader.isModLoaded("abyssalcraft") && UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) UTWorldDataCapability.register();
         LOGGER.info(NAME + " pre-initialized");
     }
 

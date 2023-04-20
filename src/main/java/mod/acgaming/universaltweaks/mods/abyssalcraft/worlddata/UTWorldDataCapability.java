@@ -1,35 +1,58 @@
-package mod.acgaming.universaltweaks.mods.abyssalcraft;
+package mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata;
 
 import java.util.Map;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
+
+import net.minecraftforge.common.capabilities.CapabilityManager;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 
-// Intermediary class, based off of Pneumaticraft's SemiblockManager
-public class UTItemTransferManager
+// Courtesy of jchung01
+/**
+ * Based off of Pneumaticraft's SemiblockManager and Abyssalcraft's ItemTransferCapability,
+ * Per-world manager of tile entities configured for AbyssalCraft's item transfer system.
+  */
+public class UTWorldDataCapability implements IUTWorldDataCapability
 {
-    public static final UTItemTransferManager INSTANCE = new UTItemTransferManager();
-    /*
-     * Holds map of configured tile entities' positions per (loaded) chunk
-     * Existing configurations before tweak was enabled need to be reconfigured
+    /**
+     * Holds map of configured tile entities' positions per (loaded) chunk.
+     * Existing configurations before tweak was enabled must be reconfigured using the "Spirit Tablet".
      */
-    private final Map<Chunk, Map<BlockPos, TileEntity>> configuredTileEntities = new Object2ObjectOpenHashMap<>();
+    private final Map<Chunk, Map<BlockPos, TileEntity>> configuredTileEntities;
 
+    public UTWorldDataCapability()
+    {
+        configuredTileEntities = new Object2ObjectOpenHashMap<>();
+    }
+
+    public static void register()
+    {
+        CapabilityManager.INSTANCE.register(IUTWorldDataCapability.class, UTWorldDataCapabilityStorage.INSTANCE, UTWorldDataCapability::new);
+    }
+
+    public static IUTWorldDataCapability getCap(World world)
+    {
+        return world.getCapability(UTWorldDataCapabilityProvider.WORLD_DATA_CAP, null);
+    }
+
+    @Override
     public boolean isEmpty()
     {
         return configuredTileEntities.isEmpty();
     }
 
+    @Override
     public boolean contains(Chunk chunk)
     {
         return configuredTileEntities.containsKey(chunk);
     }
 
-    // Get a map of tile entities for this chunk or create a new one if it doesn't exist
-    private Map<BlockPos, TileEntity> getOrCreateMap(Chunk chunk)
+    @Override
+    public Map<BlockPos, TileEntity> getOrCreateMap(Chunk chunk)
     {
         Map<BlockPos, TileEntity> positions = configuredTileEntities.get(chunk);
         if (positions == null)
@@ -40,12 +63,13 @@ public class UTItemTransferManager
         return positions;
     }
 
+    @Override
     public Map<BlockPos, TileEntity> getChunkMap(Chunk chunk)
     {
         return configuredTileEntities.get(chunk);
     }
 
-    // Gets a flattened view of all (BlockPos, TileEntity)s loaded
+    @Override
     public Map<BlockPos, TileEntity> getFlattenedView()
     {
         Map<BlockPos, TileEntity> flattenedMap = new Object2ObjectOpenHashMap<>();
@@ -56,19 +80,19 @@ public class UTItemTransferManager
         return flattenedMap;
     }
 
-    // Add the configured tile entity to chunk's map (if it doesn't exist)
+    @Override
     public void addConfigured(Chunk chunk, BlockPos pos, TileEntity te)
     {
         getOrCreateMap(chunk).putIfAbsent(pos, te);
     }
 
-    // Update the configured tile entity to chunk's map
+    @Override
     public void updateConfigured(Chunk chunk, BlockPos pos, TileEntity te)
     {
         getOrCreateMap(chunk).put(pos, te);
     }
 
-    // Remove the configured tile entity's position from chunk's map
+    @Override
     public void removeConfigured(Chunk chunk, BlockPos pos)
     {
         Map<BlockPos, TileEntity> map = getOrCreateMap(chunk);
@@ -77,7 +101,7 @@ public class UTItemTransferManager
         if (map.isEmpty()) removeChunk(chunk);
     }
 
-    // Remove chunk entry from parent map
+    @Override
     public void removeChunk(Chunk chunk)
     {
         configuredTileEntities.remove(chunk);

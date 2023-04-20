@@ -7,12 +7,13 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.common.util.Constants;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.world.ChunkDataEvent;
-import net.minecraftforge.event.world.ChunkEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -22,21 +23,32 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import com.shinoow.abyssalcraft.api.transfer.ItemTransferConfiguration;
 import com.shinoow.abyssalcraft.api.transfer.caps.IItemTransferCapability;
 import com.shinoow.abyssalcraft.api.transfer.caps.ItemTransferCapability;
+import com.shinoow.abyssalcraft.api.transfer.caps.ItemTransferCapabilityProvider;
 import com.shinoow.abyssalcraft.common.entity.EntitySpiritItem;
 import com.shinoow.abyssalcraft.common.handlers.ItemTransferEventHandler;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
-import mod.acgaming.universaltweaks.mods.abyssalcraft.UTItemTransferManager;
+import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
+import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapabilityProvider;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+// Courtesy of jchung01
 @Mixin(value = ItemTransferEventHandler.class, remap = false)
 public class UTItemTransferEventHandlerMixin
 {
     private static final String CHECK_ID = UniversalTweaks.MODID + "AbyssalConfigurations";
+
+    @SubscribeEvent
+    public void attachCapabilityWorld(AttachCapabilitiesEvent<World> event)
+    {
+        if (!UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
+
+        event.addCapability(new ResourceLocation("universaltweaks", "WorldDataCapability"), new UTWorldDataCapabilityProvider());
+    }
 
     // Save data from memory to nbt
     @SubscribeEvent
@@ -45,7 +57,7 @@ public class UTItemTransferEventHandlerMixin
         if (!UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
 
         Chunk chunk = event.getChunk();
-        Map<BlockPos, TileEntity> set = UTItemTransferManager.INSTANCE.getChunkMap(chunk);
+        Map<BlockPos, TileEntity> set = UTWorldDataCapability.getCap(event.getWorld()).getChunkMap(chunk);
         // Save configured tile entity positions to nbt
         if (set != null && !set.isEmpty())
         {
@@ -54,7 +66,7 @@ public class UTItemTransferEventHandlerMixin
             {
                 TileEntity te = event.getWorld().getTileEntity(pos);
                 // Skip blocks that are no longer the expected tile entity (block was broken/replaced)
-                if (te != null && !hasCap(te)) continue;
+                if (te != null && !te.hasCapability(ItemTransferCapabilityProvider.ITEM_TRANSFER_CAP, null)) continue;
                 NBTTagCompound tag = new NBTTagCompound();
                 tag.setInteger("x", pos.getX());
                 tag.setInteger("y", pos.getY());
@@ -64,7 +76,7 @@ public class UTItemTransferEventHandlerMixin
             // Cleanup unloaded/invalid chunks from memory
             if (!event.getChunk().isLoaded() || tagList.isEmpty())
             {
-                UTItemTransferManager.INSTANCE.removeChunk(event.getChunk());
+                UTWorldDataCapability.getCap(event.getWorld()).removeChunk(event.getChunk());
                 if (tagList.isEmpty()) return;
             }
 
@@ -90,7 +102,7 @@ public class UTItemTransferEventHandlerMixin
 
                 // Add entry to memory (Tile entity is unknown if world is still loading)
                 TileEntity te = world.isBlockLoaded(pos) ? world.getTileEntity(pos) : null;
-                UTItemTransferManager.INSTANCE.addConfigured(event.getChunk(), pos, te);
+                UTWorldDataCapability.getCap(world).addConfigured(event.getChunk(), pos, te);
             }
         }
     }
@@ -105,19 +117,21 @@ public class UTItemTransferEventHandlerMixin
         // Mostly copied from original onTick()
         if (event.side == Side.SERVER && event.type == TickEvent.Type.WORLD && event.phase == TickEvent.Phase.END)
         {
-            if (UTItemTransferManager.INSTANCE.isEmpty()) return;
             World world = event.world;
             if (world.getTotalWorldTime() % 20 != 0) return;
-            // Get a map of all configured tile entities instead of using stream
-            UTItemTransferManager.INSTANCE.getFlattenedView()
+            if (UTWorldDataCapability.getCap(world).isEmpty()) return;
+            // Process a map of all configured tile entities instead of using stream
+            UTWorldDataCapability.getCap(world).getFlattenedView()
                     .forEach((pos, tile) ->
                     {
                         // Get tile entity if it was unknown at add time
                         if (tile == null)
                         {
                             tile = world.getTileEntity(pos);
-                            UTItemTransferManager.INSTANCE.updateConfigured(world.getChunk(pos), pos, tile);
+                            UTWorldDataCapability.getCap(world).updateConfigured(world.getChunk(pos), pos, tile);
                         }
+                        // Could be disabled by spell
+                        if (!hasCap(tile)) return;
 
                         IItemTransferCapability cap = ItemTransferCapability.getCap(tile);
                         for (ItemTransferConfiguration cfg : cap.getTransferConfigurations())

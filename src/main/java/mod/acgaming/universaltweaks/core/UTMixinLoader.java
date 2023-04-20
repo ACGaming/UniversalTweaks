@@ -61,7 +61,7 @@ public class UTMixinLoader implements ILateMixinLoader
         }
         switch (mixinConfig)
         {
-            case "mixins.mods.abyssalcraft.json" :
+            case "mixins.mods.abyssalcraft.json":
                 return Loader.isModLoaded("abyssalcraft");
             case "mixins.mods.biomesoplenty.json":
                 return Loader.isModLoaded("biomesoplenty");
