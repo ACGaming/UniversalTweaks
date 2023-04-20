@@ -1,5 +1,6 @@
 package mod.acgaming.universaltweaks;
 
+import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
@@ -43,7 +44,7 @@ public class UniversalTweaks
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
     public static final String VERSION = "1.12.2-1.6.0";
-    public static final String DEPENDENCIES = "required-after:mixinbooter;after:aoa3;after:biomesoplenty;after:botania;after:contenttweaker;after:customspawner;after:element;after:elenaidodge2;after:epicsiegemod;after:extratrees;after:forestry;after:roost;after:storagedrawers;after:tconstruct;after:thaumcraft;after:thermalexpansion";
+    public static final String DEPENDENCIES = "required-after:mixinbooter;after:abyssalcraft;after:aoa3;after:biomesoplenty;after:botania;after:contenttweaker;after:customspawner;after:element;after:elenaidodge2;after:epicsiegemod;after:extratrees;after:forestry;after:roost;after:storagedrawers;after:tconstruct;after:thaumcraft;after:thermalexpansion";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     @Mod.EventHandler
@@ -55,6 +56,7 @@ public class UniversalTweaks
         UTAutoSaveOFCompat.updateOFConfig();
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
         if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
+        if (Loader.isModLoaded("abyssalcraft") && UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) UTWorldDataCapability.register();
         LOGGER.info(NAME + " pre-initialized");
     }
 
