@@ -347,7 +347,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.blocks.breakablebedrock.json":
                 return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Breakable Bedrock Toggle\"=true");
             case "mixins.tweaks.blocks.growthsize.json":
-                return !firstLaunch && (!UTConfigParser.isPresent("I:\"Cactus Size\"=3") || !UTConfigParser.isPresent("I:\"Sugar Cane Size\"=3"));
+                return !firstLaunch && (!UTConfigParser.isPresent("I:\"Cactus Size\"=3") || !UTConfigParser.isPresent("I:\"Sugar Cane Size\"=3") || !UTConfigParser.isPresent("I:\"Vine Size\"=0"));
             case "mixins.tweaks.blocks.hitdelay.json":
                 return !firstLaunch && !UTConfigParser.isPresent("I:\"Block Hit Delay\"=5");
             case "mixins.tweaks.blocks.lenientpaths.json":

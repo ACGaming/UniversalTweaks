@@ -374,6 +374,14 @@ public class UTConfig
         @Config.Comment("Determines how tall sugar cane can grow")
         public int utSugarCaneSize = 3;
 
+        @Config.Name("Vine Size")
+        @Config.Comment
+            ({
+                "Determines how long vines can grow",
+                "0 = Infinite (vanilla default)"
+            })
+        public int utVineSize = 0;
+
         public static class BetterPlacementCategory
         {
             @Config.Name("[1] Better Placement Toggle")

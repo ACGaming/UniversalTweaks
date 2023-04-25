@@ -88,7 +88,7 @@ All changes are toggleable via the config file.
 * Fast World Loading: Skips initial world chunk loading & garbage collection to speed up world loading
 * Fence/Wall Jump: Allows the player to jump over fences and walls
 * Finite Water: Prevents creation of infinite water sources outside of ocean and river biomes
-* Growth Size: Configurable growth height for sugar cane and cacti
+* Growth Size: Configurable growth height/length for sugar cane, cacti and vines
 * Hardcore Buckets: Prevents placing of liquid source blocks in the world
 * Horizontal Collision Damage: Applies horizontal collision damage to the player akin to elytra collision
 * Husk & Stray Spawning: Lets husks and strays spawn underground like regular zombies and skeletons
