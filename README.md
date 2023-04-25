@@ -78,6 +78,7 @@ All changes are toggleable via the config file.
 * Damage Tilt: Restores feature to tilt the camera when damaged
 * Dimension Unload: Unloads dimensions not in use to free up resources
 * Disable Audio Debug: Improves loading times by removing debug code for missing sounds and subtitles
+* Disable Creeper Music Discs: Disables creepers dropping music discs when slain by skeletons
 * Disable Narrator: Disables the narrator functionality entirely
 * Disable Sleeping: Disables skipping night by using a bed while making it still able to set spawn
 * Easy Breeding: Enables easy breeding of animals by tossing food on the ground

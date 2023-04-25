@@ -546,6 +546,11 @@ public class UTConfig
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
         public double utCreeperConfettiChance = 0.0D;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Creeper Music Discs")
+        @Config.Comment("Disables creepers dropping music discs when slain by skeletons")
+        public boolean utCreeperMusicDiscsToggle = false;
+
         @Config.Name("Disable Sleeping")
         @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")
         public boolean utSleepingToggle = false;
