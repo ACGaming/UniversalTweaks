@@ -21,7 +21,7 @@ public class UTVineSizeMixin
     {
         if (UTConfig.TWEAKS_BLOCKS.utVineSize < 1) return;
         int i;
-        for (i = 1; i < UTConfig.TWEAKS_BLOCKS.utVineSize && worldIn.getBlockState(pos.up(i)) instanceof BlockVine; i++) {}
+        for (i = 1; i < UTConfig.TWEAKS_BLOCKS.utVineSize && worldIn.getBlockState(pos.up(i)).getBlock() instanceof BlockVine; i++) {}
         if (i >= UTConfig.TWEAKS_BLOCKS.utVineSize) ci.cancel();
     }
 }
