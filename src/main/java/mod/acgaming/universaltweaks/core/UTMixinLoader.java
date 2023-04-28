@@ -29,6 +29,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.roost.contenttweaker.json",
             "mixins.mods.storagedrawers.client.json",
             "mixins.mods.storagedrawers.server.json",
+            "mixins.mods.techreborn.json",
             "mixins.mods.thaumcraft.json",
             "mixins.mods.thaumcraft.foci.focuseffects.json",
             "mixins.mods.thaumcraft.foci.focusmediums.json",
@@ -83,6 +84,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("contenttweaker");
             case "mixins.mods.storagedrawers.server.json":
                 return Loader.isModLoaded("storagedrawers");
+            case "mixins.mods.techreborn.json":
+                return Loader.isModLoaded("techreborn");
             case "mixins.mods.thaumcraft.json":
             case "mixins.mods.thaumcraft.foci.focuseffects.json":
             case "mixins.mods.thaumcraft.foci.focusmediums.json":

@@ -46,6 +46,7 @@ cfg.universaltweaks.modintegration.tc.foci.focuseffects=Focus Effects
 cfg.universaltweaks.modintegration.tc.foci.focusmediums=Focus Mediums
 cfg.universaltweaks.modintegration.tcon=Tinkers' Construct
 cfg.universaltweaks.modintegration.te=Thermal Expansion
+cfg.universaltweaks.modintegration.tr=Tech Reborn
 cfg.universaltweaks.tweaks.blocks=Tweaks: Blocks
 cfg.universaltweaks.tweaks.blocks.betterplacement=Better Placement
 cfg.universaltweaks.tweaks.blocks.blockdispenser=Block Dispenser
