@@ -122,6 +122,7 @@ public class UTItemTransferEventHandlerMixin
             if (UTWorldDataCapability.getCap(world).isEmpty()) return;
             // Process a map of all configured tile entities instead of using stream
             UTWorldDataCapability.getCap(world).getFlattenedView().forEach((pos, tile) -> {
+                if (!world.isBlockLoaded(pos)) return;
                 // Get tile entity if it was unknown at add time
                 if (tile == null)
                 {
