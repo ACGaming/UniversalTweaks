@@ -1555,6 +1555,10 @@ public class UTConfig
         @Config.Name("Storage Drawers")
         public final StorageDrawersCategory STORAGE_DRAWERS = new StorageDrawersCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.tr")
+        @Config.Name("Tech Reborn")
+        public final TechRebornCategory TECH_REBORN = new TechRebornCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.tc")
         @Config.Name("Thaumcraft")
         public final ThaumcraftCategory THAUMCRAFT = new ThaumcraftCategory();
@@ -1728,6 +1732,13 @@ public class UTConfig
                     "0 for default unlimited range"
                 })
             public int utSDRenderRange = 0;
+        }
+
+        public static class TechRebornCategory
+        {
+            @Config.Name("Optimized Rolling Machine")
+            @Config.Comment("Optimizes the Rolling Machine to reduce tick time")
+            public boolean utOptimizeRollingMachineToggle = true;
         }
 
         public static class ThaumcraftCategory
