@@ -20,6 +20,7 @@ public class UTLeafDecay
     {
         if (!UTConfig.TWEAKS_BLOCKS.utLeafDecayToggle) return;
         World world = event.getWorld();
+        if (!world.isAreaLoaded(event.getPos(), 1)) return;
         for (EnumFacing facing : event.getNotifiedSides())
         {
             BlockPos pos = event.getPos().offset(facing);
