@@ -49,31 +49,58 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
     @Shadow
     public IRecipe currentRecipe;
     @Shadow
-    private int outputSlot;
-    @Shadow
     public boolean locked;
+    IRecipe utLastRecipe = null;
     // endregion
+    @Shadow
+    private int outputSlot;
+    private List<Item> utCachedInventoryStructure = null;
+    private boolean utForceRefresh = false;
 
     // region Shadow methods
     @Shadow
     public abstract void setIsActive(boolean active);
+    // endregion
 
     @Shadow
     public abstract Optional<InventoryCrafting> balanceRecipe(InventoryCrafting craftCache);
+
+    @Shadow
+    public abstract boolean canMake(InventoryCrafting craftMatrix);
+
+    public ItemStack utFindMatchingRecipeOutput(InventoryCrafting inv, World world)
+    {
+        // Don't need to call RollingMachineRecipe.instance.findMatchingRecipeOutput(), just use utFindMatchingRecipe()
+        IRecipe recipe = utFindMatchingRecipe(inv, world);
+        if (recipe == null) return ItemStack.EMPTY;
+        return recipe.getCraftingResult(inv);
+    }
+
+    /**
+     * Wrapper for RollingMachineRecipe.instance.findMatchingRecipe() to use caching
+     */
+    public IRecipe utFindMatchingRecipe(InventoryCrafting inv, World world)
+    {
+        if (utIsCorrectCachedInventory())
+        {
+            return utLastRecipe;
+        }
+        utCachedInventoryStructure = utFastInvLayout();
+        IRecipe foundRecipe = RollingMachineRecipe.instance.findMatchingRecipe(inv, world);
+        if (foundRecipe != null)
+        {
+            utLastRecipe = foundRecipe;
+            return foundRecipe;
+        }
+        utLastRecipe = null;
+        return null;
+    }
 
     @Shadow
     private InventoryCrafting getCraftingMatrix()
     {
         return null;
     }
-
-    @Shadow
-    public abstract boolean canMake(InventoryCrafting craftMatrix);
-    // endregion
-
-    IRecipe utLastRecipe = null;
-    private List<Item> utCachedInventoryStructure = null;
-    private boolean utForceRefresh = false;
 
     /**
      * Mimics getCraftingMatrix(boolean forceRefresh) in newer versions.
@@ -84,6 +111,7 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
     {
         return UTConfig.MOD_INTEGRATION.TECH_REBORN.utOptimizeRollingMachineToggle ? utForceRefresh || original : original;
     }
+    // endregion
 
     // region For utCheckForceRefresh
     @Inject(method = "balanceRecipe", at = @At(value = "HEAD"), require = 1)
@@ -99,7 +127,6 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
         if (!UTConfig.MOD_INTEGRATION.TECH_REBORN.utOptimizeRollingMachineToggle) return;
         utForceRefresh = false;
     }
-    // endregion
 
     /**
      * Rewrittten version of update().
@@ -131,7 +158,8 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
                 balanceRecipe(craftMatrix);
             }
             currentRecipeOutput = currentRecipe.getCraftingResult(craftMatrix);
-        } else
+        }
+        else
         {
             currentRecipeOutput = ItemStack.EMPTY;
         }
@@ -146,14 +174,13 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
             return;
         }
         // Now we ensured we can make something. Check energy state.
-        if (canUseEnergy(getEuPerTick(energyPerTick))
-                && canMake(craftMatrix)
-                && tickTime < Math.max((int) (runTime * (1.0 - getSpeedMultiplier())), 1))
+        if (canUseEnergy(getEuPerTick(energyPerTick)) && canMake(craftMatrix) && tickTime < Math.max((int) (runTime * (1.0 - getSpeedMultiplier())), 1))
         {
             setIsActive(true);
             useEnergy(getEuPerTick(energyPerTick));
             tickTime++;
-        } else
+        }
+        else
         {
             setIsActive(false);
             return;
@@ -166,7 +193,8 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
             if (inventory.getStackInSlot(outputSlot).isEmpty())
             {
                 inventory.setInventorySlotContents(outputSlot, currentRecipeOutput);
-            } else
+            }
+            else
             {
                 // We checked stack can fit in output slot in canMake()
                 inventory.getStackInSlot(outputSlot).grow(currentRecipeOutput.getCount());
@@ -247,7 +275,8 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
                 }
             }
             return returnValue;
-        } else
+        }
+        else
         {
             for (int i = 0; i < craftMatrix.getSizeInventory(); i++)
             {
@@ -273,34 +302,6 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
             arrayList.add(this.inventory.getStackInSlot(i).getItem());
         }
         return arrayList;
-    }
-
-    public ItemStack utFindMatchingRecipeOutput(InventoryCrafting inv, World world)
-    {
-        // Don't need to call RollingMachineRecipe.instance.findMatchingRecipeOutput(), just use utFindMatchingRecipe()
-        IRecipe recipe = utFindMatchingRecipe(inv, world);
-        if (recipe == null) return ItemStack.EMPTY;
-        return recipe.getCraftingResult(inv);
-    }
-
-    /**
-     * Wrapper for RollingMachineRecipe.instance.findMatchingRecipe() to use caching
-     */
-    public IRecipe utFindMatchingRecipe(InventoryCrafting inv, World world)
-    {
-        if (utIsCorrectCachedInventory())
-        {
-            return utLastRecipe;
-        }
-        utCachedInventoryStructure = utFastInvLayout();
-        IRecipe foundRecipe = RollingMachineRecipe.instance.findMatchingRecipe(inv, world);
-        if (foundRecipe != null)
-        {
-            utLastRecipe = foundRecipe;
-            return foundRecipe;
-        }
-        utLastRecipe = null;
-        return null;
     }
 
     /**

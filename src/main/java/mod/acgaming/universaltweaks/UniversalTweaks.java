@@ -1,6 +1,5 @@
 package mod.acgaming.universaltweaks;
 
-import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,6 +15,7 @@ import mod.acgaming.universaltweaks.bugfixes.misc.help.UTHelp;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.config.UTConfigParser;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
+import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
 import mod.acgaming.universaltweaks.tweaks.blocks.betterplacement.UTBetterPlacement;

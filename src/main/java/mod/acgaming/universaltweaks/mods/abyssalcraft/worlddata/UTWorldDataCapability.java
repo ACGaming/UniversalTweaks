@@ -6,18 +6,28 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
-
 import net.minecraftforge.common.capabilities.CapabilityManager;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 
 // Courtesy of jchung01
+
 /**
  * Based off of Pneumaticraft's SemiblockManager and Abyssalcraft's ItemTransferCapability,
  * Per-world manager of tile entities configured for AbyssalCraft's item transfer system.
-  */
+ */
 public class UTWorldDataCapability implements IUTWorldDataCapability
 {
+    public static void register()
+    {
+        CapabilityManager.INSTANCE.register(IUTWorldDataCapability.class, UTWorldDataCapabilityStorage.INSTANCE, UTWorldDataCapability::new);
+    }
+
+    public static IUTWorldDataCapability getCap(World world)
+    {
+        return world.getCapability(UTWorldDataCapabilityProvider.WORLD_DATA_CAP, null);
+    }
+
     /**
      * Holds map of configured tile entities' positions per (loaded) chunk.
      * Existing configurations before tweak was enabled must be reconfigured using the "Spirit Tablet".
@@ -27,16 +37,6 @@ public class UTWorldDataCapability implements IUTWorldDataCapability
     public UTWorldDataCapability()
     {
         configuredTileEntities = new Object2ObjectOpenHashMap<>();
-    }
-
-    public static void register()
-    {
-        CapabilityManager.INSTANCE.register(IUTWorldDataCapability.class, UTWorldDataCapabilityStorage.INSTANCE, UTWorldDataCapability::new);
-    }
-
-    public static IUTWorldDataCapability getCap(World world)
-    {
-        return world.getCapability(UTWorldDataCapabilityProvider.WORLD_DATA_CAP, null);
     }
 
     @Override

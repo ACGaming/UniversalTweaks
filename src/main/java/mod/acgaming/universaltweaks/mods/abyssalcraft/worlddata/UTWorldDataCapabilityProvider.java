@@ -32,8 +32,7 @@ public class UTWorldDataCapabilityProvider implements ICapabilityProvider
     @SuppressWarnings("unchecked")
     public <T> T getCapability(@Nonnull Capability<T> capability, @Nullable EnumFacing enumFacing)
     {
-        if(capability == WORLD_DATA_CAP)
-            return (T) this.capability;
+        if (capability == WORLD_DATA_CAP) return (T) this.capability;
 
         return null;
     }
