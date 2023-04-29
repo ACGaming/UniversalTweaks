@@ -97,14 +97,17 @@ public class UTConfig
         @Config.Name("Block Overlay")
         public final BlockOverlayCategory BLOCK_OVERLAY = new BlockOverlayCategory();
 
+        @Config.RequiresMcRestart
         @Config.Name("Comparator Timing")
         @Config.Comment("Fixes inconsistent delays of comparators to prevent redstone timing issues")
         public boolean utComparatorTimingToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Hopper Bounding Box")
         @Config.Comment("Slims down the hopper bounding box for easier access of nearby blocks")
         public boolean utDietHopperToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Hopper Insert Safety Check")
         @Config.Comment
             ({
@@ -113,24 +116,29 @@ public class UTConfig
             })
         public boolean utHopperInsertToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Item Frame Void")
         @Config.Comment("Prevents voiding held items when right + left clicking on an item frame simultaneously")
         public boolean utItemFrameVoidToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Ladder Flying Slowdown")
         @Config.Comment("Disables climbing movement when flying")
         public boolean utLadderFlyingToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Mining Glitch")
         @Config.Comment("Avoids the need for multiple mining attempts by sending additional movement packets")
         public boolean utMiningGlitchToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Piston Progress")
         @Config.Comment("Properly saves the last state of pistons to tags")
         public boolean utPistonTileToggle = true;
 
         public static class BlockOverlayCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Block Overlay Toggle")
             @Config.Comment("Fixes x-ray when standing in non-suffocating blocks")
             public boolean utBlockOverlayToggle = true;
@@ -155,14 +163,17 @@ public class UTConfig
 
     public static class BugfixesEntitiesCategory
     {
+        @Config.RequiresMcRestart
         @Config.Name("Attack Radius")
         @Config.Comment("Improves the attack radius of hostile mobs by checking the line of sight with raytracing")
         public boolean utAttackRadiusToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Block Fire")
         @Config.Comment("Prevents fire projectiles burning entities when blocking with shields")
         public boolean utBlockFireToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Boat Riding Offset")
         @Config.Comment("Fixes entities glitching through the bottom of boats")
         public boolean utBoatOffsetToggle = true;
@@ -176,10 +187,12 @@ public class UTConfig
             })
         public boolean utEntityAITasksToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Death Time")
         @Config.Comment("Fixes corrupted entities exceeding the allowed death time")
         public boolean utDeathTimeToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Destroy Entity Packets")
         @Config.Comment("Fixes lag caused by dead entities by sending additional packets when the player is not alive")
         public boolean utDestroyPacketToggle = true;
@@ -188,6 +201,7 @@ public class UTConfig
         @Config.Comment("Fixes item dupes when players are dropping items and disconnecting")
         public boolean utDisconnectDupeToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Dimension Change Player States")
         @Config.Comment("Fixes missing player states when changing dimensions by sending additional packets")
         public boolean utDimensionChangeToggle = true;
@@ -196,18 +210,22 @@ public class UTConfig
         @Config.Comment("Fixes consuming an item having a chance of also consuming a second item without any animation")
         public boolean utDoubleConsumptionToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Elytra Deployment & Landing")
         @Config.Comment("Relocate elytra deployment and landing to client side to prevent issues with high latencies")
         public boolean utElytraDeploymentLandingToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Entity Bounding Box")
         @Config.Comment("Saves entity bounding boxes to tags to prevent breakouts and suffocation")
         public boolean utEntityAABBToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Entity Desync")
         @Config.Comment("Fixes entity motion desyncs most notable with arrows and thrown items")
         public boolean utEntityDesyncToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Entity ID")
         @Config.Comment("Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0")
         public boolean utEntityIDToggle = true;
@@ -216,10 +234,12 @@ public class UTConfig
         @Config.Comment("Prevents corruption of entities caused by invalid health or damage values")
         public boolean utEntityNaNToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Entity Suffocation")
         @Config.Comment("Pushes entities out of blocks when growing up to prevent suffocation")
         public boolean utEntitySuffocationToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Entity Tracker")
         @Config.Comment("Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions")
         public boolean utEntityTrackerToggle = true;
@@ -228,18 +248,22 @@ public class UTConfig
         @Config.Comment("Changes UUIDs of loaded entities in case their UUIDs are already assigned (and removes log spam)")
         public boolean utEntityUUIDToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Max Player Health")
         @Config.Comment("Corrects maximum player health on joining by setting the last saved health value")
         public boolean utMaxHealthToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Player Saturation")
         @Config.Comment("Fixes saturation depleting in peaceful mode")
         public boolean utExhaustionToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Skeleton Aim")
         @Config.Comment("Fixes skeletons not looking at their targets when strafing")
         public boolean utSkeletonAimToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Villager Mantle Hoods")
         @Config.Comment("Returns missing hoods to villager mantles")
         public boolean utVillagerMantleToggle = true;
@@ -251,10 +275,12 @@ public class UTConfig
         @Config.Name("Model Gap")
         public final ModelGapCategory MODEL_GAP = new ModelGapCategory();
 
+        @Config.RequiresMcRestart
         @Config.Name("Accurate Smooth Lighting")
         @Config.Comment("Improves the accuracy of smooth lighting by checking for suffocation and light opacity")
         public boolean utAccurateSmoothLighting = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Depth Mask")
         @Config.Comment("Fixes entity and particle rendering issues by enabling depth buffer writing")
         public boolean utDepthMaskToggle = true;
@@ -263,12 +289,14 @@ public class UTConfig
         @Config.Comment("Replaces the help command, sorts and reports broken commands")
         public boolean utHelpToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Locale Crash")
         @Config.Comment("Prevents various crashes with Turkish locale")
         public boolean utLocaleToggle = true;
 
         public static class ModelGapCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Model Gap Toggle")
             @Config.Comment("Fixes transparent gaps in all 3D models of blocks and items")
             public boolean utModelGapToggle = true;
@@ -295,15 +323,17 @@ public class UTConfig
 
     public static class BugfixesWorldCategory
     {
+        @Config.RequiresMcRestart
         @Config.Name("Chunk Saving")
         @Config.Comment("Fixes loading of outdated chunks to prevent duplications, deletions and data corruption")
         public boolean utChunkSavingToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Frustum Culling")
         @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
         public boolean utFrustumCullingToggle = true;
 
-        @Config.RequiresWorldRestart
+        @Config.RequiresMcRestart
         @Config.Name("Tile Entity Map")
         @Config.Comment
             ({
@@ -342,6 +372,7 @@ public class UTConfig
         @Config.Name("Finite Water")
         public final FiniteWaterCategory FINITE_WATER = new FiniteWaterCategory();
 
+        @Config.RequiresMcRestart
         @Config.Name("Bed Obstruction Replacement")
         @Config.Comment("Replaces bed obstruction checks with an improved version")
         public boolean utBedObstructionToggle = true;
@@ -350,30 +381,37 @@ public class UTConfig
         @Config.Comment("Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking")
         public boolean utBetterHarvestToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Block Hit Delay")
         @Config.Comment("Sets the delay in ticks between breaking blocks")
         public int utBlockHitDelay = 5;
 
+        @Config.RequiresMcRestart
         @Config.Name("Cactus Size")
         @Config.Comment("Determines how tall cacti can grow")
         public int utCactusSize = 3;
 
+        @Config.RequiresMcRestart
         @Config.Name("Fast Leaf Decay")
         @Config.Comment("Makes leaves decay faster when trees are chopped")
         public boolean utLeafDecayToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Fence/Wall Jump")
         @Config.Comment("Allows the player to jump over fences and walls")
         public boolean utFenceWallJumpToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Lenient Paths")
         @Config.Comment("Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)")
         public boolean utLenientPathsToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Sugar Cane Size")
         @Config.Comment("Determines how tall sugar cane can grow")
         public int utSugarCaneSize = 3;
 
+        @Config.RequiresMcRestart
         @Config.Name("Vine Size")
         @Config.Comment
             ({
@@ -384,6 +422,7 @@ public class UTConfig
 
         public static class BetterPlacementCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Better Placement Toggle")
             @Config.Comment("Removes the delay between placing blocks")
             public boolean utBetterPlacementToggle = false;
@@ -404,7 +443,6 @@ public class UTConfig
             @Config.Comment("Allows dispensers to place blocks")
             public boolean utBlockDispenserToggle = true;
 
-            @Config.RequiresMcRestart
             @Config.Name("[2] Block List")
             @Config.Comment
                 ({
@@ -424,7 +462,6 @@ public class UTConfig
                     "thermalexpansion:strongbox"
                 };
 
-            @Config.RequiresMcRestart
             @Config.Name("[3] List Mode")
             @Config.Comment
                 ({
@@ -436,6 +473,7 @@ public class UTConfig
 
         public static class BreakableBedrockCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Breakable Bedrock Toggle")
             @Config.Comment("Allows customizable mining of bedrock")
             public boolean utBreakableBedrockToggle = false;
@@ -460,6 +498,7 @@ public class UTConfig
 
         public static class FiniteWaterCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Finite Water Toggle")
             @Config.Comment("Prevents creation of infinite water sources")
             public boolean utFiniteWaterToggle = false;
@@ -516,6 +555,7 @@ public class UTConfig
         @Config.Name("Water Fall Damage")
         public final WaterFallDamageCategory WATER_FALL_DAMAGE = new WaterFallDamageCategory();
 
+        @Config.RequiresMcRestart
         @Config.Name("AI Replacement")
         @Config.Comment("Replaces entity AI for improved server performance")
         public boolean utAIReplacementToggle = true;
@@ -524,6 +564,7 @@ public class UTConfig
         @Config.Comment("Removes entity AI for improved server performance")
         public boolean utAIRemovalToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Auto Jump Replacement")
         @Config.Comment("Replaces auto jump with an increased step height (singleplayer only)")
         public boolean utAutoJumpToggle = true;
@@ -532,6 +573,7 @@ public class UTConfig
         @Config.Comment("Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them")
         public boolean utBetterIgnitionToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Boat Speed")
         @Config.Comment("Sets the acceleration value for controlling boats")
         public double utBoatSpeed = 0.04D;
@@ -541,6 +583,7 @@ public class UTConfig
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
         public double utCreeperChargedChance = 0.0D;
 
+        @Config.RequiresMcRestart
         @Config.Name("Creeper Confetti Spawning Chance")
         @Config.Comment("Sets the chance to replace deadly creeper explosions with delightful confetti")
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
@@ -555,14 +598,17 @@ public class UTConfig
         @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")
         public boolean utSleepingToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Husk & Stray Spawning")
         @Config.Comment("Lets husks and strays spawn underground like regular zombies and skeletons")
         public boolean utHuskStraySpawningToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Mob Despawn Improvement")
         @Config.Comment("Mobs carrying picked up items will drop their equipment and despawn properly")
         public boolean utMobDespawnToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("No Saddled Wandering")
         @Config.Comment("Stops horses wandering around when saddled")
         public boolean utSaddledWanderingToggle = true;
@@ -579,6 +625,7 @@ public class UTConfig
 
         public static class AttributesCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[01] Attributes Toggle")
             @Config.Comment("Sets custom ranges for entity attributes")
             public boolean utAttributesToggle = true;
@@ -680,6 +727,7 @@ public class UTConfig
 
         public static class CollisionDamageCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Collision Damage Toggle")
             @Config.Comment("Applies horizontal collision damage to the player akin to elytra collision")
             public boolean utCollisionDamageToggle = false;
@@ -695,14 +743,17 @@ public class UTConfig
 
         public static class NoGolemsCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Iron Golem Toggle")
             @Config.Comment("Disables the manual creation of iron golems")
             public boolean utNGIronGolemToggle = false;
 
+            @Config.RequiresMcRestart
             @Config.Name("[2] Snow Golem Toggle")
             @Config.Comment("Disables the manual creation of snow golems")
             public boolean utNGSnowGolemToggle = false;
 
+            @Config.RequiresMcRestart
             @Config.Name("[3] Wither Toggle")
             @Config.Comment("Disables the manual creation of withers")
             public boolean utNGWitherToggle = false;
@@ -710,6 +761,7 @@ public class UTConfig
 
         public static class PlayerSpeedCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Player Speed Toggle")
             @Config.Comment("Enables the modification of base and maximum player speeds")
             public boolean utPlayerSpeedToggle = false;
@@ -772,10 +824,12 @@ public class UTConfig
 
         public static class UndeadHorsesCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Burning Undead Horses")
             @Config.Comment("Lets untamed undead horses burn in daylight")
             public boolean utBurningUndeadHorsesToggle = true;
 
+            @Config.RequiresMcRestart
             @Config.Name("Taming Undead Horses")
             @Config.Comment("Allows taming of undead horses")
             public boolean utTamingUndeadHorsesToggle = true;
@@ -783,6 +837,7 @@ public class UTConfig
 
         public static class WaterFallDamageCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Water Fall Damage Toggle")
             @Config.Comment("Re-implements an improved version of pre-1.4 fall damage in water")
             public boolean utFallDamageToggle = false;
@@ -811,18 +866,22 @@ public class UTConfig
         @Config.Comment("Switches the selected hotbar slot to a proper tool if required")
         public boolean utAutoSwitchToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("No Attack Cooldown")
         @Config.Comment("Disables the 1.9 combat update attack cooldown")
         public boolean utAttackCooldownToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("No Crafting Repair")
         @Config.Comment("Disables crafting recipes for repairing tools")
         public boolean utCraftingRepairToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Hardcore Buckets")
         @Config.Comment("Prevents placing of liquid source blocks in the world")
         public boolean utHardcoreBucketsToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("No Leftover Breath Bottles")
         @Config.Comment("Disables dragon's breath from being a container item and leaving off empty bottles when a stack is brewed with")
         public boolean utLeftoverBreathBottleToggle = true;
@@ -877,6 +936,7 @@ public class UTConfig
                 "thaumcraft:primal_crusher;epic"
             };
 
+        @Config.RequiresMcRestart
         @Config.Name("Custom Use Duration")
         @Config.Comment
             ({
@@ -892,6 +952,7 @@ public class UTConfig
         @Config.Comment("Enables one-time ignition of entities by hitting them with a torch")
         public boolean utSuperHotTorchToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("XP Bottle Amount")
         @Config.Comment
             ({
@@ -902,6 +963,7 @@ public class UTConfig
 
         public static class ItemEntitiesCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[01] Item Entities Toggle")
             @Config.Comment("Enables the modification of item entity properties")
             public boolean utItemEntitiesToggle = true;
@@ -1104,6 +1166,7 @@ public class UTConfig
         @Config.Name("Toast Control")
         public final ToastControlCategory TOAST_CONTROL = new ToastControlCategory();
 
+        @Config.RequiresMcRestart
         @Config.Name("Copy World Seed")
         @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
         public boolean utCopyWorldSeedToggle = false;
@@ -1112,18 +1175,22 @@ public class UTConfig
         @Config.Comment("Restores feature to tilt the camera when damaged")
         public boolean utDamageTiltToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Disable Narrator")
         @Config.Comment("Disables the narrator functionality entirely")
         public boolean utDisableNarratorToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("End Portal Parallax")
         @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
         public boolean utEndPortalParallaxToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Infinite Music")
         @Config.Comment("Lets background music play continuously without delays")
         public boolean utInfiniteMusicToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Linear XP Amount")
         @Config.Comment
             ({
@@ -1132,10 +1199,12 @@ public class UTConfig
             })
         public int utLinearXP = 0;
 
+        @Config.RequiresMcRestart
         @Config.Name("No Lightning Flash")
         @Config.Comment("Disables the flashing of skybox and ground brightness on lightningflash strikes")
         public boolean utLightningFlashToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("No Night Vision Flash")
         @Config.Comment("Disables the flashing effect when the night vision potion effect is about to run out")
         public boolean utNightVisionFlashToggle = false;
@@ -1144,6 +1213,7 @@ public class UTConfig
         @Config.Comment("Disables the inventory shift when potion effects are active")
         public boolean utPotionShiftToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("No Smelting XP")
         @Config.Comment("Disables the experience reward when smelting items in furnaces")
         public boolean utSmeltingXPToggle = false;
@@ -1152,18 +1222,22 @@ public class UTConfig
         @Config.Comment("Prevents placing offhand blocks when blocks or food are held in the mainhand")
         public boolean utOffhandToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Remove Realms Button")
         @Config.Comment("Removes the redundant Minecraft Realms button from the main menu")
         public boolean utRealmsButtonToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Remove Recipe Book")
         @Config.Comment("Removes the recipe book button from GUIs")
         public boolean utRecipeBookToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Remove Snooper")
         @Config.Comment("Forcefully turns off the snooper and hides the snooper settings button from the options menu")
         public boolean utSnooperToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Skip Credits")
         @Config.Comment("Skips the credits screen after the player goes through the end podium portal")
         public boolean utSkipCreditsToggle = false;
@@ -1174,6 +1248,7 @@ public class UTConfig
 
         public static class IncurablePotionsCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Incurable Potions Toggle")
             @Config.Comment("Determines if potion effects are curable with curative items like buckets of milk")
             public boolean utIncurablePotionsToggle = true;
@@ -1193,6 +1268,7 @@ public class UTConfig
 
         public static class LoadSoundsCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Mode")
             @Config.Comment("Play load sound on...")
             public EnumSoundModes utLoadSoundMode = EnumSoundModes.NOTHING;
@@ -1308,6 +1384,7 @@ public class UTConfig
 
         public static class SmoothScrollingCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Smooth Scrolling Toggle")
             @Config.Comment("Adds smooth scrolling to in-game lists")
             public boolean utSmoothScrollingToggle = true;
@@ -1378,38 +1455,47 @@ public class UTConfig
         @Config.Comment("Determines the interval in ticks between world auto saves")
         public int utAutoSaveInterval = 900;
 
+        @Config.RequiresMcRestart
         @Config.Name("Check Animated Models")
         @Config.Comment("Improves model load times by checking if an animated model exists before trying to load it")
         public boolean utCheckAnimatedModelsToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Crafting Cache")
         @Config.Comment("Adds an IRecipe cache to improve recipe performance in larger modpacks")
         public boolean utCraftingCacheToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Disable Audio Debug")
         @Config.Comment("Improves loading times by removing debug code for missing sounds and subtitles")
         public boolean utDisableAudioDebugToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Faster Background Startup")
         @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
         public boolean utFasterBackgroundStartupToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Fast Dye Blending")
         @Config.Comment("Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry")
         public boolean utDyeBlendingToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Fast Prefix Checking")
         @Config.Comment("Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time")
         public boolean utPrefixCheckToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Fast World Loading")
         @Config.Comment("Skips initial world chunk loading & garbage collection to speed up world loading")
         public boolean utWorldLoadingToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("No Redstone Lighting")
         @Config.Comment("Disables lighting of active redstone, repeaters, and comparators to improve performance")
         public boolean utRedstoneLightingToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Uncap FPS")
         @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
         public boolean utUncapFPSToggle = true;
@@ -1420,18 +1506,23 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.tweaks.world.chunkgenlimit")
         @Config.Name("Chunk Gen Limit")
         public final ChunkGenLimitCategory CHUNK_GEN_LIMIT = new ChunkGenLimitCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.world.dimensionunload")
         @Config.Name("Dimension Unload")
         public final DimensionUnloadCategory DIMENSION_UNLOAD = new DimensionUnloadCategory();
+
+        @Config.RequiresMcRestart
         @Config.Name("Stronghold Replacement")
         @Config.Comment("Replaces stronghold generation with a safer variant")
         public boolean utStrongholdToggle = true;
+
         @Config.Name("Tidy Chunk")
         @Config.Comment("Tidies newly generated chunks by removing scattered item entities")
         public boolean utTidyChunkToggle = false;
 
         public static class ChunkGenLimitCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Chunk Gen Limit Toggle")
             @Config.Comment("Limits maximum chunk generation per tick for improved server performance")
             public boolean utChunkGenLimitToggle = false;
@@ -1581,6 +1672,7 @@ public class UTConfig
 
         public static class AbyssalCraftCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Optimized Item Transport")
             @Config.Comment("Makes an optimization to reduce tick overhead of AbyssalCraft's item transport system")
             public boolean utOptimizedItemTransferToggle = true;
@@ -1588,6 +1680,7 @@ public class UTConfig
 
         public static class AOACategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Inventory-less GUI Compatibility")
             @Config.Comment("Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks GUI)")
             public boolean utFixPlayerTickInInventorylessGui = false;
@@ -1595,6 +1688,7 @@ public class UTConfig
 
         public static class BiomesOPlentyCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Hot Spring Water")
             @Config.Comment("Fixes rapid inflection of regeneration effects in hot spring water")
             public boolean utBoPHotSpringWaterToggle = true;
@@ -1602,6 +1696,7 @@ public class UTConfig
 
         public static class BotaniaCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Fancy Skybox")
             @Config.Comment
                 ({
@@ -1614,6 +1709,7 @@ public class UTConfig
 
         public static class ChocolateQuestCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Legacy Golden Feather")
             @Config.Comment("Restores the golden feather behavior from the original Better Dungeons mod")
             public boolean utCQRGoldenFeatherToggle = true;
@@ -1621,6 +1717,7 @@ public class UTConfig
 
         public static class ElementaryStaffsCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Electric Staff Port")
             @Config.Comment("Reintroduces the 1.5 electric staff behavior along with some subtle particles")
             public boolean utESElectricStaffToggle = true;
@@ -1628,6 +1725,7 @@ public class UTConfig
 
         public static class ElenaiDodge2Category
         {
+            @Config.RequiresMcRestart
             @Config.Name("Feathers Helper API Fix")
             @Config.Comment("Fixes server-sided crashes when the Feathers Helper API is utilized")
             public boolean utED2FeathersHelperToggle = true;
@@ -1635,6 +1733,7 @@ public class UTConfig
 
         public static class EpicSiegeModCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Disable Digger AI Debug")
             @Config.Comment("Disables leftover debug logging inside the digger AI of the beta builds")
             public boolean utESMDiggerDebugToggle = true;
@@ -1642,6 +1741,7 @@ public class UTConfig
 
         public static class ForestryCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Arborist Villager Trades")
             @Config.Comment
                 ({
@@ -1661,10 +1761,12 @@ public class UTConfig
                 })
             public String[] utFOArboristDeals = new String[] {};
 
+            @Config.RequiresMcRestart
             @Config.Name("Disable Bee Damage Armor Bypass")
             @Config.Comment("Disables damage caused by bees bypassing player armor")
             public boolean utFOBeeDamageArmorBypassToggle = true;
 
+            @Config.RequiresMcRestart
             @Config.Name("Extra Trees: Gather Windfall")
             @Config.Comment("Allows Forestry farms to pick up ExtraTrees fruit")
             public boolean utFOGatherWindfallToggle = true;
@@ -1672,6 +1774,7 @@ public class UTConfig
 
         public static class MoCreaturesCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Custom Modded Biomes")
             @Config.Comment
                 ({
@@ -1693,6 +1796,7 @@ public class UTConfig
 
         public static class RoostCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("ContentTweaker: Early Register CT Chickens")
             @Config.Comment
                 ({
@@ -1704,6 +1808,7 @@ public class UTConfig
                 })
             public boolean utRoostEarlyRegisterCTChickens = false;
 
+            @Config.RequiresMcRestart
             @Config.Name("Custom Chickens")
             @Config.Comment
                 ({
@@ -1716,6 +1821,7 @@ public class UTConfig
 
         public static class StorageDrawersCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Item Handlers")
             @Config.Comment
                 ({
@@ -1725,6 +1831,7 @@ public class UTConfig
                 })
             public boolean utSDItemHandlers = false;
 
+            @Config.RequiresMcRestart
             @Config.Name("Render Range")
             @Config.Comment
                 ({
@@ -1736,6 +1843,7 @@ public class UTConfig
 
         public static class TechRebornCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Optimized Rolling Machine")
             @Config.Comment("Optimizes the Rolling Machine to reduce tick time")
             public boolean utOptimizeRollingMachineToggle = true;
@@ -1743,10 +1851,12 @@ public class UTConfig
 
         public static class ThaumcraftCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Flower Bounding Box")
             @Config.Comment("Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs")
             public boolean utTCFlowerBoundingBoxToggle = true;
 
+            @Config.RequiresMcRestart
             @Config.Name("Stable Thaumometer")
             @Config.Comment("Stops the thaumometer from bobbing rapidly when using it to scan objects")
             public boolean utTCStableThaumometerToggle = true;
@@ -1754,14 +1864,17 @@ public class UTConfig
 
         public static class ThaumcraftEntitiesCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Firebat Particles")
             @Config.Comment("Adds particles to firebats similar to legacy versions")
             public boolean utTCFirebatParticlesToggle = true;
 
+            @Config.RequiresMcRestart
             @Config.Name("Spiderlike Eldritch Crabs")
             @Config.Comment("Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders")
             public boolean utTCSpiderlikeEldritchCrabToggle = true;
 
+            @Config.RequiresMcRestart
             @Config.Name("Wisp Particles")
             @Config.Comment("Increases particle size of wisps similar to legacy versions")
             public boolean utTCWispParticlesToggle = true;
@@ -1779,50 +1892,62 @@ public class UTConfig
 
             public static class FocusEffectsCategory
             {
+                @Config.RequiresMcRestart
                 @Config.Name("[01] Break: Cast Sound Revamp")
                 @Config.Comment("Overhauls the break focus effect cast sound")
                 public boolean utTCBreakFocusSoundRevampToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[02] Break: Impact Sound")
                 @Config.Comment("Adds an impact sound to the break focus effect")
                 public boolean utTCBreakFocusImpactSoundToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[03] Earth: Cast Sound Revamp")
                 @Config.Comment("Overhauls the earth focus effect cast sound")
                 public boolean utTCEarthFocusSoundRevampToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[04] Earth: Impact Sound")
                 @Config.Comment("Adds an impact sound to the earth focus effect")
                 public boolean utTCEarthFocusImpactSoundToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[05] Fire: Impact Sound")
                 @Config.Comment("Adds an impact sound to the fire focus effect")
                 public boolean utTCFireFocusImpactSoundToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[06] Flux: Impact Sound")
                 @Config.Comment("Adds an impact sound to the flux focus effect")
                 public boolean utTCFluxFocusImpactSoundToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[07] Frost: Cast Sound Revamp")
                 @Config.Comment("Overhauls the frost focus effect cast sound to make it a lot less plangent")
                 public boolean utTCFrostFocusSoundRevampToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[08] Frost: Impact Sound")
                 @Config.Comment("Adds an impact sound to the frost focus effect")
                 public boolean utTCFrostFocusImpactSoundToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[09] Heal: Cast Sound Revamp")
                 @Config.Comment("Overhauls the heal focus effect cast sound")
                 public boolean utTCHealFocusSoundRevampToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[10] Heal: Impact Sound")
                 @Config.Comment("Adds an impact sound to the heal focus effect")
                 public boolean utTCHealFocusImpactSoundToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[11] Rift: Cast Sound Revamp")
                 @Config.Comment("Overhauls the rift focus effect cast sound")
                 public boolean utTCRiftFocusSoundRevampToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[12] Rift: Impact Sound")
                 @Config.Comment("Adds an impact sound to the rift focus effect")
                 public boolean utTCRiftFocusImpactSoundToggle = true;
@@ -1830,18 +1955,22 @@ public class UTConfig
 
             public static class FocusMediumsCategory
             {
+                @Config.RequiresMcRestart
                 @Config.Name("[1] Bolt: Cast Sound")
                 @Config.Comment("Plays an additional cast sound when using any bolt focus medium to add an extra layer of pow")
                 public boolean utTCBoltMediumSoundToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[2] Cloud: Cast Sound")
                 @Config.Comment("Plays an additional cast sound when using any cloud focus medium")
                 public boolean utTCCloudMediumSoundToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[3] Mine: Sound Overhaul")
                 @Config.Comment("Adds additional cast, despawn, and setup sounds when using any mine focus medium")
                 public boolean utTCMineMediumSoundToggle = true;
 
+                @Config.RequiresMcRestart
                 @Config.Name("[4] Spellbat: Cast Sound")
                 @Config.Comment("Plays an additional cast sound when summoning any type of spellbat")
                 public boolean utTCSpellBatMediumSoundToggle = true;
@@ -1850,6 +1979,7 @@ public class UTConfig
 
         public static class ThermalExpansionCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Insolator Custom Monoculture")
             @Config.Comment
                 ({
@@ -1863,18 +1993,22 @@ public class UTConfig
 
         public static class TinkersConstructCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("Gaseous Fluids")
             @Config.Comment("Excludes gaseous fluids from being transferable via faucets")
             public boolean utTConGaseousFluidsToggle = false;
 
+            @Config.RequiresMcRestart
             @Config.Name("Projectile Despawning")
             @Config.Comment("Despawns unbreakable projectiles faster to improve framerates")
             public boolean utTConProjectileToggle = true;
 
+            @Config.RequiresMcRestart
             @Config.Name("Offhand Shuriken")
             @Config.Comment("Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand")
             public boolean utTConShurikenToggle = true;
 
+            @Config.RequiresMcRestart
             @Config.Name("Ore Dictionary Cache")
             @Config.Comment("Caches all ore dictionary smelting recipes to speed up game loading")
             public boolean utTConOreDictCacheToggle = true;
