@@ -9,7 +9,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.anatawa12.forge:ForgeGradle:2.3-1.0.7'
+        classpath 'com.anatawa12.forge:ForgeGradle:2.3-1.0.8'
         classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
     }
 }
@@ -68,9 +68,16 @@ repositories {
         name = "jaredlll08 Maven"
         url = "https://maven.blamejared.com"
     }
+    maven {
+        name = "Fabric Maven"
+        url = "https://maven.fabricmc.net"
+    }
 }
 
 dependencies {
+    deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684"
+    deobfCompile "com.teamacronymcoders.base:base:1.12.2-3.14.0"
+    deobfCompile "com.teamacronymcoders:ContentTweaker:1.12.2-4.10.0"
     deobfCompile "curse.maven:abyssalcraft-53686:3425234"
     deobfCompile "curse.maven:baubles-227083:2518667"
     deobfCompile "curse.maven:binnies-mods-223525:2916129"
@@ -91,14 +98,12 @@ dependencies {
     deobfCompile "curse.maven:tech-reborn-233564:2966851"
     deobfCompile "curse.maven:thaumcraft-223628:2629023"
     deobfCompile "curse.maven:thermal-expansion-69163:2926431"
-    deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684"
-    deobfCompile "com.teamacronymcoders:ContentTweaker:1.12.2-4.10.0"
-    deobfCompile "com.teamacronymcoders.base:base:1.12.2-3.14.0"
     deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.55"
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
     deobfCompile "zone.rong:mixinbooter:7.0"
-    implementation "curse.maven:custom-mob-spawner-229261:2859433"
+    implementation "TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal"
     implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
+    implementation "curse.maven:custom-mob-spawner-229261:2859433"
     //implementation "net.jafama:jafama:2.3.2"
 }
 
