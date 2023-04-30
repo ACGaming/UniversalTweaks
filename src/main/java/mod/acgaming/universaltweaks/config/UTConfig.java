@@ -1,5 +1,6 @@
 package mod.acgaming.universaltweaks.config;
 
+import net.minecraft.world.EnumDifficulty;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -1174,6 +1175,10 @@ public class UTConfig
         @Config.Name("Damage Tilt")
         @Config.Comment("Restores feature to tilt the camera when damaged")
         public boolean utDamageTiltToggle = true;
+
+        @Config.Name("Default Difficulty")
+        @Config.Comment("Sets the default difficulty for newly generated worlds")
+        public EnumDifficulty utDefaultDifficulty = EnumDifficulty.NORMAL;
 
         @Config.RequiresMcRestart
         @Config.Name("Disable Narrator")
