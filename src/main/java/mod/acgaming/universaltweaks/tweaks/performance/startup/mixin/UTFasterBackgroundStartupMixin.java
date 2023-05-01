@@ -24,7 +24,7 @@ public class UTFasterBackgroundStartupMixin
      * if the user is pressing a Keyboard button to show some info, but, as you are on alt-tab
      * this process can take a looong time (a modpack startup from 3 min can go up to 9 min)
      */
-    @WrapWithCondition(method = "getTooltip", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/event/ForgeEventFactory;onItemTooltip(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/player/EntityPlayer;Ljava/util/List;Lnet/minecraft/client/util/ITooltipFlag;)Lnet/minecraftforge/event/entity/player/ItemTooltipEvent;"), remap = false)
+    @WrapWithCondition(method = "getTooltip", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/event/ForgeEventFactory;onItemTooltip(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/player/EntityPlayer;Ljava/util/List;Lnet/minecraft/client/util/ITooltipFlag;)Lnet/minecraftforge/event/entity/player/ItemTooltipEvent;"))
     public boolean utFasterBackgroundStartup(ItemStack itemStack, EntityPlayer entityPlayer, List<String> toolTip, ITooltipFlag flags)
     {
         return !UTConfig.TWEAKS_PERFORMANCE.utFasterBackgroundStartupToggle || !FMLClientHandler.instance().isLoading();
