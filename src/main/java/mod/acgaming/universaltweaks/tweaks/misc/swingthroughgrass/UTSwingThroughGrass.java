@@ -4,6 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -22,16 +24,33 @@ public class UTSwingThroughGrass
     {
         if (!UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSwingThroughGrass ::: Left click block event");
-        IBlockState state = event.getWorld().getBlockState(event.getPos()).getActualState(event.getWorld(), event.getPos());
-        Block block = state.getBlock();
-        if ((UTSwingThroughGrassLists.blacklistedBlocks.contains(block) || state.getCollisionBoundingBox(event.getWorld(), event.getPos()) != Block.NULL_AABB) && !UTSwingThroughGrassLists.whitelistedBlocks.contains(block)) return;
-        EntityPlayer player = event.getEntityPlayer();
-        if (player == null) return;
-        Entity entity = UTRayTraceEntity.rayTraceEntityAsPlayer(player);
+        Entity entity = getEntityBehindGrass(event.getWorld(), event.getPos(), event.getEntityPlayer());
         if (entity != null)
         {
-            player.attackTargetEntityWithCurrentItem(entity);
+            event.getEntityPlayer().attackTargetEntityWithCurrentItem(entity);
             event.setCanceled(true);
         }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void utInteractThroughGrass(PlayerInteractEvent.RightClickBlock event)
+    {
+        if (!UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSwingThroughGrass ::: Right click block event");
+        Entity entity = getEntityBehindGrass(event.getWorld(), event.getPos(), event.getEntityPlayer());
+        if (entity != null)
+        {
+            entity.processInitialInteract(event.getEntityPlayer(), event.getHand());
+            event.setCanceled(true);
+        }
+    }
+
+    public static Entity getEntityBehindGrass(World world, BlockPos pos, EntityPlayer player)
+    {
+        if (player == null) return null;
+        IBlockState state = world.getBlockState(pos).getActualState(world, pos);
+        Block block = state.getBlock();
+        if ((UTSwingThroughGrassLists.blacklistedBlocks.contains(block) || state.getCollisionBoundingBox(world, pos) != Block.NULL_AABB) && !UTSwingThroughGrassLists.whitelistedBlocks.contains(block)) return null;
+        return UTRayTraceEntity.rayTraceEntityAsPlayer(player);
     }
 }
