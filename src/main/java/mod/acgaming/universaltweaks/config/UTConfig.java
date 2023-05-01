@@ -1797,6 +1797,11 @@ public class UTConfig
                     "traverse;traverse;traverse;TRAV;Traverse.cfg",
                     "dimdoors;dimdoors;dimdoors;DD;DimDoors.cfg"
                 };
+
+            @Config.RequiresMcRestart
+            @Config.Name("Disable Flame Wraith Burning")
+            @Config.Comment("Disables the flickering burning effect of flame wraiths")
+            public boolean utFlameWraithBurningToggle = true;
         }
 
         public static class RoostCategory

@@ -104,6 +104,7 @@ dependencies {
     implementation "TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal"
     implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
     implementation "curse.maven:custom-mob-spawner-229261:2859433"
+    implementation "curse.maven:mo-creatures-229260:2628698"
     //implementation "net.jafama:jafama:2.3.2"
 }
 
