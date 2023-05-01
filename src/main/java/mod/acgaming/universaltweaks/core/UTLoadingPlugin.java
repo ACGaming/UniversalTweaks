@@ -91,6 +91,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.entities.elytra.json",
             "mixins.bugfixes.entities.entityid.json",
             "mixins.bugfixes.entities.maxhealth.json",
+            "mixins.bugfixes.entities.mount.json",
             "mixins.bugfixes.entities.saturation.json",
             "mixins.bugfixes.entities.skeletonaim.json",
             "mixins.bugfixes.entities.suffocation.json",
@@ -178,6 +179,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.entities.disconnectdupe.json",
                 "mixins.bugfixes.entities.entityid.json",
                 "mixins.bugfixes.entities.maxhealth.json",
+                "mixins.bugfixes.entities.mount.json",
                 "mixins.bugfixes.entities.saturation.json",
                 "mixins.bugfixes.entities.skeletonaim.json",
                 "mixins.bugfixes.entities.suffocation.json",
@@ -336,6 +338,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isPresent("B:\"Entity ID\"=true");
             case "mixins.bugfixes.entities.maxhealth.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Max Player Health\"=true");
+            case "mixins.bugfixes.entities.mount.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Mount Desync\"=true");
             case "mixins.bugfixes.entities.saturation.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Player Saturation\"=true");
             case "mixins.bugfixes.entities.skeletonaim.json":

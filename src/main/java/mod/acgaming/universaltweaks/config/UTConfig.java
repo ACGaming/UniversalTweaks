@@ -255,6 +255,11 @@ public class UTConfig
         public boolean utMaxHealthToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Mount Desync")
+        @Config.Comment("Fixes mounts and boats sometimes disappearing after dismounting")
+        public boolean utMountDesyncToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Player Saturation")
         @Config.Comment("Fixes saturation depleting in peaceful mode")
         public boolean utExhaustionToggle = true;
