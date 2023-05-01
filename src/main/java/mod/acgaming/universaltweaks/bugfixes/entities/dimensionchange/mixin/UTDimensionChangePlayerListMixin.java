@@ -6,6 +6,8 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.PlayerList;
 import net.minecraftforge.common.util.ITeleporter;
 
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -25,6 +27,8 @@ public class UTDimensionChangePlayerListMixin
     @Inject(method = "transferPlayerToDimension(Lnet/minecraft/entity/player/EntityPlayerMP;ILnet/minecraftforge/common/util/ITeleporter;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/management/PlayerList;updatePermissionLevel(Lnet/minecraft/entity/player/EntityPlayerMP;)V"))
     public void utTransferPlayerToDimension(EntityPlayerMP player, int dimensionIn, ITeleporter teleporter, CallbackInfo ci)
     {
+        if (!UTConfig.BUGFIXES_ENTITIES.utDimensionChangeToggle) return;
+        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDimensionChangePlayerList ::: Change dimension");
         player.connection.sendPacket(new SPacketServerDifficulty(this.server.getWorld(player.dimension).getWorldInfo().getDifficulty(), this.server.getWorld(player.dimension).getWorldInfo().isDifficultyLocked()));
     }
 }
