@@ -553,6 +553,10 @@ public class UTConfig
         @Config.Name("Rally Health")
         public final RallyHealthCategory RALLY_HEALTH = new RallyHealthCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.spawncaps")
+        @Config.Name("Spawn Caps")
+        public final SpawnCapsCategory SPAWN_CAPS = new SpawnCapsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.undeadhorses")
         @Config.Name("Undead Horses")
         public final UndeadHorsesCategory UNDEAD_HORSES = new UndeadHorsesCategory();
@@ -826,6 +830,34 @@ public class UTConfig
             @Config.Name("[4] Indication Sound")
             @Config.Comment("Plays an indication sound effect when health is regained")
             public boolean utRallyHealthSound = false;
+        }
+
+        public static class SpawnCapsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Spawn Caps Toggle")
+            @Config.Comment("Sets maximum spawning limits for different entity types")
+            public boolean utSpawnCapsToggle = false;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[2] Monster Cap")
+            @Config.Comment("Maximum amount of monsters (IMob)")
+            public int utSpawnCapsMonster = 70;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[3] Creature Cap")
+            @Config.Comment("Maximum amount of creatures (EntityAnimal)")
+            public int utSpawnCapsCreature = 10;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[4] Ambient Cap")
+            @Config.Comment("Maximum amount of ambients (EntityAmbientCreature)")
+            public int utSpawnCapsAmbient = 15;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[5] Water Creature Cap")
+            @Config.Comment("Maximum amount of water creatures (EntityWaterMob)")
+            public int utSpawnCapsWaterCreature = 5;
         }
 
         public static class UndeadHorsesCategory

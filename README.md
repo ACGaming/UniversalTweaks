@@ -126,6 +126,7 @@ All changes are toggleable via the config file.
 * Shield Parry: Allows parrying of projectiles with shields
 * Skip Credits: Skips the credits screen after the player goes through the end podium portal
 * Smooth Scrolling: Adds smooth scrolling to every in-game list
+* Spawn Caps: Sets maximum spawning limits for different entity types
 * Super Hot Torch: Enables one-time ignition of entities by hitting them with a torch
 * Stronghold Replacement: Replaces stronghold generation with a safer variant
 * Swing Through Grass: Allows hitting entities through grass instead of breaking it

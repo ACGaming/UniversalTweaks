@@ -118,6 +118,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.entities.damage.falling.json",
             "mixins.tweaks.entities.despawning.json",
             "mixins.tweaks.entities.loot.json",
+            "mixins.tweaks.entities.spawning.caps.json",
             "mixins.tweaks.entities.spawning.creepers.confetti.json",
             "mixins.tweaks.entities.spawning.golems.json",
             "mixins.tweaks.entities.spawning.husk.json",
@@ -199,6 +200,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.entities.damage.falling.json",
                 "mixins.tweaks.entities.despawning.json",
                 "mixins.tweaks.entities.loot.json",
+                "mixins.tweaks.entities.spawning.caps.json",
                 "mixins.tweaks.entities.spawning.creepers.confetti.json",
                 "mixins.tweaks.entities.spawning.golems.json",
                 "mixins.tweaks.entities.spawning.husk.json",
@@ -378,6 +380,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isPresent("B:\"Mob Despawn Improvement\"=true");
             case "mixins.tweaks.entities.loot.json":
                 return !firstLaunch && UTConfigParser.isPresent("B:\"Disable Creeper Music Discs\"=true");
+            case "mixins.tweaks.entities.spawning.caps.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Spawn Caps Toggle\"=true");
             case "mixins.tweaks.entities.spawning.creepers.confetti.json":
                 return !firstLaunch && !UTConfigParser.isPresent("D:\"Creeper Confetti Spawning Chance\"=0.0");
             case "mixins.tweaks.entities.spawning.golems.json":
