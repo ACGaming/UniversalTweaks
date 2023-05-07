@@ -9,6 +9,8 @@ import net.minecraft.world.World;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.LoaderState;
 
 // Courtesy of EverNife
 public class UTCraftingCache
@@ -34,7 +36,7 @@ public class UTCraftingCache
     public static IRecipe findMatchingRecipe(InventoryCrafting craftMatrix, World worldIn)
     {
         boolean hasNBT = hasAnyNBT(craftMatrix);
-        if (!hasNBT)
+        if (!hasNBT && Loader.instance().hasReachedState(LoaderState.SERVER_STARTING))
         {
             UTOptionalContent<IRecipe> optionalContent = getOrCreateCachedRecipe(craftMatrix);
             if (!optionalContent.hasContent()) optionalContent.setContent(findMatchingRecipeDefault(craftMatrix, worldIn));
