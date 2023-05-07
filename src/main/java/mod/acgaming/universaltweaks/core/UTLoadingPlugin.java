@@ -154,6 +154,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.performance.craftingcache.json",
             "mixins.tweaks.performance.dyeblending.json",
             "mixins.tweaks.performance.fps.json",
+            "mixins.tweaks.performance.missingmodel.json",
             "mixins.tweaks.performance.prefixcheck.json",
             "mixins.tweaks.performance.redstone.json",
             "mixins.tweaks.performance.resourcemanager.json",
@@ -294,6 +295,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return firstLaunch || UTConfigParser.isPresent("B:\"[1] Toast Control Toggle\"=true");
                 case "mixins.tweaks.performance.fps.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Uncap FPS\"=true");
+                case "mixins.tweaks.performance.missingmodel.json":
+                    return firstLaunch || UTConfigParser.isPresent("B:\"Disable Fancy Missing Model\"=true");
                 case "mixins.tweaks.performance.resourcemanager.json":
                     return firstLaunch || UTConfigParser.isPresent("B:\"Check Animated Models\"=true");
                 case "mixins.tweaks.world.loading.client.json":

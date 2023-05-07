@@ -1513,6 +1513,11 @@ public class UTConfig
         public boolean utDisableAudioDebugToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Fancy Missing Model")
+        @Config.Comment("Improves rendering performance by removing the resource location text on missing models")
+        public boolean utDisableFancyMissingModelToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Faster Background Startup")
         @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
         public boolean utFasterBackgroundStartupToggle = true;
