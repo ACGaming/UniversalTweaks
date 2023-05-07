@@ -28,6 +28,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.mocreatures.json",
             "mixins.mods.roost.json",
             "mixins.mods.roost.contenttweaker.json",
+            "mixins.mods.simpledifficulty.json",
             "mixins.mods.storagedrawers.client.json",
             "mixins.mods.storagedrawers.server.json",
             "mixins.mods.techreborn.json",
@@ -85,6 +86,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("mocreatures");
             case "mixins.mods.roost.contenttweaker.json":
                 return Loader.isModLoaded("contenttweaker");
+            case "mixins.mods.simpledifficulty.json":
+                return Loader.isModLoaded("simpledifficulty");
             case "mixins.mods.storagedrawers.server.json":
                 return Loader.isModLoaded("storagedrawers");
             case "mixins.mods.techreborn.json":

@@ -1684,6 +1684,10 @@ public class UTConfig
         @Config.Name("Roost")
         public final RoostCategory ROOST = new RoostCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.simpledifficulty")
+        @Config.Name("Simple Difficulty")
+        public final SimpleDifficultyCategory SIMPLE_DIFFICULTY = new SimpleDifficultyCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.sd")
         @Config.Name("Storage Drawers")
         public final StorageDrawersCategory STORAGE_DRAWERS = new StorageDrawersCategory();
@@ -1864,6 +1868,14 @@ public class UTConfig
                     "name     Chicken name",
                 })
             public String[] utRoostChickenMods = new String[] {};
+        }
+
+        public static class SimpleDifficultyCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Iron Canteen Interaction Fix")
+            @Config.Comment("Fixes the interaction of iron canteens with rain collectors")
+            public boolean utRainCollectorCanteenToggle = true;
         }
 
         public static class StorageDrawersCategory

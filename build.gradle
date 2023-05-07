@@ -94,6 +94,7 @@ dependencies {
     deobfCompile "curse.maven:modtweaker-220954:3840577"
     deobfCompile "curse.maven:reborn-core-237903:3330308"
     deobfCompile "curse.maven:roost-277711:2702080"
+    deobfCompile "curse.maven:simpledifficulty-360779:3613814"
     deobfCompile "curse.maven:storage-drawers-223852:2952606"
     deobfCompile "curse.maven:tech-reborn-233564:2966851"
     deobfCompile "curse.maven:thaumcraft-223628:2629023"

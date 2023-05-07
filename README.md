@@ -168,6 +168,8 @@ All changes are toggleable via the config file.
     * Disable Flame Wraith Burning: Disables the flickering burning effect of flame wraiths
 * Roost
     * Early Register CT Chickens: Improves load time by registering CT chickens early for Roost to detect them
+* Simple Difficulty
+    * Iron Canteen Interaction Fix: Fixes the interaction of iron canteens with rain collectors
 * Storage Drawers
     * Item Handlers:
         * Fixes voiding of items when nearing full capacity
