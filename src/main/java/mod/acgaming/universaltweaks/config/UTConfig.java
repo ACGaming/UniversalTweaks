@@ -609,6 +609,11 @@ public class UTConfig
         public boolean utSleepingToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Wither Targeting AI")
+        @Config.Comment("Disables withers targeting animals")
+        public boolean utWitherAIToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Husk & Stray Spawning")
         @Config.Comment("Lets husks and strays spawn underground like regular zombies and skeletons")
         public boolean utHuskStraySpawningToggle = true;

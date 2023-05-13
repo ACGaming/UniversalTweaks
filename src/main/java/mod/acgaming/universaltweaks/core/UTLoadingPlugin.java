@@ -112,6 +112,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.blocks.lenientpaths.json",
             "mixins.tweaks.entities.ai.json",
             "mixins.tweaks.entities.ai.saddledwandering.json",
+            "mixins.tweaks.entities.ai.wither.json",
             "mixins.tweaks.entities.autojump.json",
             "mixins.tweaks.entities.burning.horses.json",
             "mixins.tweaks.entities.damage.collision.json",
@@ -196,6 +197,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.blocks.lenientpaths.json",
                 "mixins.tweaks.entities.ai.json",
                 "mixins.tweaks.entities.ai.saddledwandering.json",
+                "mixins.tweaks.entities.ai.wither.json",
                 "mixins.tweaks.entities.burning.horses.json",
                 "mixins.tweaks.entities.damage.collision.json",
                 "mixins.tweaks.entities.damage.falling.json",
@@ -373,6 +375,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return firstLaunch || UTConfigParser.isPresent("B:\"AI Replacement\"=true");
             case "mixins.tweaks.entities.ai.saddledwandering.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"No Saddled Wandering\"=true");
+            case "mixins.tweaks.entities.ai.wither.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"Disable Wither Targeting AI\"=true");
             case "mixins.tweaks.entities.burning.horses.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Burning Undead Horses\"=true");
             case "mixins.tweaks.entities.damage.collision.json":

@@ -84,6 +84,7 @@ All changes are toggleable via the config file.
 * Disable Fancy Missing Model: Improves rendering performance by removing the resource location text on missing models
 * Disable Narrator: Disables the narrator functionality entirely
 * Disable Sleeping: Disables skipping night by using a bed while making it still able to set spawn
+* Disable Wither Targeting AI: Disables withers targeting animals
 * Easy Breeding: Enables easy breeding of animals by tossing food on the ground
 * End Portal Parallax: Re-implements parallax rendering of the end portal from 1.11 and older
 * Fast Dye Blending: Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry
