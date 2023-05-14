@@ -23,8 +23,12 @@ public abstract class UTEarthFocusMixin extends FocusEffect
     @Override
     public void onCast(final Entity caster)
     {
-        if (UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCEarthFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.grind, SoundCategory.PLAYERS, 1.0F, 0.7F + (float) (caster.world.rand.nextGaussian() * 0.05F));
-        else caster.world.playSound(null, caster.getPosition().up(), SoundEvents.ENTITY_ENDERDRAGON_FIREBALL_EPLD, SoundCategory.PLAYERS, 0.25F, 1.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+        try
+        {
+            if (UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCEarthFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.grind, SoundCategory.PLAYERS, 1.0F, 0.7F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+            else caster.world.playSound(null, caster.getPosition().up(), SoundEvents.ENTITY_ENDERDRAGON_FIREBALL_EPLD, SoundCategory.PLAYERS, 0.25F, 1.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+        }
+        catch (Exception ignored) {}
     }
 
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
@@ -32,6 +36,10 @@ public abstract class UTEarthFocusMixin extends FocusEffect
     {
         if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCEarthFocusImpactSoundToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEffectEarthFocus ::: Execute");
-        this.getPackage().world.playSound(null, target.hitVec.x, target.hitVec.y, target.hitVec.z, SoundEvents.ENTITY_FIREWORK_LARGE_BLAST, SoundCategory.PLAYERS, 0.55F, 0.7F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        try
+        {
+            this.getPackage().world.playSound(null, target.hitVec.x, target.hitVec.y, target.hitVec.z, SoundEvents.ENTITY_FIREWORK_LARGE_BLAST, SoundCategory.PLAYERS, 0.55F, 0.7F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        }
+        catch (Exception ignored) {}
     }
 }

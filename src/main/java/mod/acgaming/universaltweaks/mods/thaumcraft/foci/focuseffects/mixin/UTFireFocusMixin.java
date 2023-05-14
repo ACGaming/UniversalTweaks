@@ -23,6 +23,10 @@ public abstract class UTFireFocusMixin extends FocusEffect
     {
         if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCFireFocusImpactSoundToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEffectFireFocus ::: Execute");
-        this.getPackage().world.playSound(null, target.hitVec.x, target.hitVec.y, target.hitVec.z, SoundEvents.ENTITY_FIREWORK_BLAST, SoundCategory.PLAYERS, 0.525F, 0.3F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        try
+        {
+            this.getPackage().world.playSound(null, target.hitVec.x, target.hitVec.y, target.hitVec.z, SoundEvents.ENTITY_FIREWORK_BLAST, SoundCategory.PLAYERS, 0.525F, 0.3F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        }
+        catch (Exception ignored) {}
     }
 }

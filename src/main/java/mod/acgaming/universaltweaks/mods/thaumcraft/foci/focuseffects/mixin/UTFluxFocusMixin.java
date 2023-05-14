@@ -23,6 +23,10 @@ public abstract class UTFluxFocusMixin extends FocusEffect
     {
         if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCFluxFocusImpactSoundToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEffectFluxFocus ::: Execute");
-        this.getPackage().world.playSound(null, target.hitVec.x, target.hitVec.y, target.hitVec.z, SoundEvents.BLOCK_CHORUS_FLOWER_DEATH, SoundCategory.PLAYERS, 1.5F, 2.0F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        try
+        {
+            this.getPackage().world.playSound(null, target.hitVec.x, target.hitVec.y, target.hitVec.z, SoundEvents.BLOCK_CHORUS_FLOWER_DEATH, SoundCategory.PLAYERS, 1.5F, 2.0F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        }
+        catch (Exception ignored) {}
     }
 }

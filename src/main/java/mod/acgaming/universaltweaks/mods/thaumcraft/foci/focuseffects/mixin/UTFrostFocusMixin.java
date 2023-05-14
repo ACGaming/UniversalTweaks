@@ -23,8 +23,12 @@ public abstract class UTFrostFocusMixin extends FocusEffect
     @Override
     public void onCast(final Entity caster)
     {
-        if (UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCFrostFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.ice, SoundCategory.PLAYERS, 0.6F, 1.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
-        else caster.world.playSound(null, caster.getPosition().up(), SoundEvents.ENTITY_ZOMBIE_VILLAGER_CURE, SoundCategory.PLAYERS, 0.2F, 1.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+        try
+        {
+            if (UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCFrostFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.ice, SoundCategory.PLAYERS, 0.6F, 1.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+            else caster.world.playSound(null, caster.getPosition().up(), SoundEvents.ENTITY_ZOMBIE_VILLAGER_CURE, SoundCategory.PLAYERS, 0.2F, 1.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+        }
+        catch (Exception ignored) {}
     }
 
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
@@ -32,6 +36,10 @@ public abstract class UTFrostFocusMixin extends FocusEffect
     {
         if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCFrostFocusImpactSoundToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEffectFrostFocus ::: Execute");
-        this.getPackage().world.playSound(null, target.hitVec.x, target.hitVec.y, target.hitVec.z, SoundEvents.BLOCK_GLASS_BREAK, SoundCategory.PLAYERS, 0.55F, 0.86F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        try
+        {
+            this.getPackage().world.playSound(null, target.hitVec.x, target.hitVec.y, target.hitVec.z, SoundEvents.BLOCK_GLASS_BREAK, SoundCategory.PLAYERS, 0.55F, 0.86F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        }
+        catch (Exception ignored) {}
     }
 }

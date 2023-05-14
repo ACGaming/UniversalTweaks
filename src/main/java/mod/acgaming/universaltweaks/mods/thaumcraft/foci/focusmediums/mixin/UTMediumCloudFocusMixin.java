@@ -22,6 +22,10 @@ public abstract class UTMediumCloudFocusMixin extends FocusMedium
     {
         if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCCloudMediumSoundToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumCloudFocus ::: Execute");
-        this.getPackage().world.playSound(null, this.getPackage().getCaster().getPosition().up(), SoundsTC.egscreech, SoundCategory.PLAYERS, 0.25F, 1.25F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        try
+        {
+            this.getPackage().world.playSound(null, this.getPackage().getCaster().getPosition().up(), SoundsTC.egscreech, SoundCategory.PLAYERS, 0.25F, 1.25F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        }
+        catch (Exception ignored) {}
     }
 }

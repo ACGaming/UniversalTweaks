@@ -22,6 +22,10 @@ public abstract class UTMediumMineFocusMixin extends FocusMedium
     {
         if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCMineMediumSoundToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumMineFocus ::: Execute");
-        this.getPackage().world.playSound(null, this.getPackage().getCaster().getPosition().up(), SoundsTC.upgrade, SoundCategory.PLAYERS, 0.6F, 1.0F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        try
+        {
+            this.getPackage().world.playSound(null, this.getPackage().getCaster().getPosition().up(), SoundsTC.upgrade, SoundCategory.PLAYERS, 0.6F, 1.0F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        }
+        catch (Exception ignored) {}
     }
 }

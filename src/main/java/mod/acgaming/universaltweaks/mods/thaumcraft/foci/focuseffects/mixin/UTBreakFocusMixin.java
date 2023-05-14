@@ -23,8 +23,12 @@ public abstract class UTBreakFocusMixin extends FocusEffect
     @Override
     public void onCast(final Entity caster)
     {
-        if (UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCBreakFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.rumble, SoundCategory.PLAYERS, 0.6F, 3.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
-        else caster.world.playSound(null, caster.getPosition().up(), SoundEvents.BLOCK_END_GATEWAY_SPAWN, SoundCategory.PLAYERS, 0.1F, 2.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+        try
+        {
+            if (UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCBreakFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.rumble, SoundCategory.PLAYERS, 0.6F, 3.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+            else caster.world.playSound(null, caster.getPosition().up(), SoundEvents.BLOCK_END_GATEWAY_SPAWN, SoundCategory.PLAYERS, 0.1F, 2.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+        }
+        catch (Exception ignored) {}
     }
 
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
@@ -32,6 +36,10 @@ public abstract class UTBreakFocusMixin extends FocusEffect
     {
         if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCBreakFocusImpactSoundToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEffectBreakFocus ::: Execute");
-        this.getPackage().world.playSound(null, target.hitVec.x, target.hitVec.y, target.hitVec.z, SoundEvents.ENTITY_FIREWORK_TWINKLE, SoundCategory.PLAYERS, 0.4F, 1.5F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        try
+        {
+            this.getPackage().world.playSound(null, target.hitVec.x, target.hitVec.y, target.hitVec.z, SoundEvents.ENTITY_FIREWORK_TWINKLE, SoundCategory.PLAYERS, 0.4F, 1.5F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        }
+        catch (Exception ignored) {}
     }
 }

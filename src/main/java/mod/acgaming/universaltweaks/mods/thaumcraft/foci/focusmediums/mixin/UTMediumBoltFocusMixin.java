@@ -22,6 +22,10 @@ public abstract class UTMediumBoltFocusMixin extends FocusMediumTouch
     {
         if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCBoltMediumSoundToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumBoltFocus ::: Execute");
-        this.getPackage().world.playSound(null, this.getPackage().getCaster().getPosition().up(), SoundsTC.shock, SoundCategory.PLAYERS, 0.175F, 1.0F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        try
+        {
+            this.getPackage().world.playSound(null, this.getPackage().getCaster().getPosition().up(), SoundsTC.shock, SoundCategory.PLAYERS, 0.175F, 1.0F + (float) (this.getPackage().getCaster().world.rand.nextGaussian() * 0.05F));
+        }
+        catch (Exception ignored) {}
     }
 }
