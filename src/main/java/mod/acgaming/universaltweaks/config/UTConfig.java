@@ -1826,6 +1826,11 @@ public class UTConfig
             @Config.Name("Extra Trees: Gather Windfall")
             @Config.Comment("Allows Forestry farms to pick up ExtraTrees fruit")
             public boolean utFOGatherWindfallToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Replanting Cocoa Beans")
+            @Config.Comment("Allows Forestry farms to automatically replant cocoa beans")
+            public boolean utFOCocoaBeansToggle = true;
         }
 
         public static class MoCreaturesCategory

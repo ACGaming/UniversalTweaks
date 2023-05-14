@@ -24,6 +24,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.elenaidodge2.json",
             "mixins.mods.epicsiegemod.json",
             "mixins.mods.forestry.json",
+            "mixins.mods.forestry.cocoa.json",
             "mixins.mods.forestry.extratrees.json",
             "mixins.mods.mocreatures.json",
             "mixins.mods.roost.json",
@@ -80,6 +81,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("epicsiegemod");
             case "mixins.mods.forestry.json":
                 return Loader.isModLoaded("forestry");
+            case "mixins.mods.forestry.cocoa.json":
+                return Loader.isModLoaded("forestry") && (UTLoadingPlugin.firstLaunch || UTConfigParser.isPresent("B:\"Replanting Cocoa Beans\"=true"));
             case "mixins.mods.forestry.extratrees.json":
                 return Loader.isModLoaded("extratrees");
             case "mixins.mods.mocreatures.json":
