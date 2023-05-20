@@ -12,7 +12,7 @@ import mod.acgaming.universaltweaks.tweaks.world.stronghold.worldgen.SafeStrongh
 // Courtesy of yungnickyoung
 public class UTStronghold
 {
-    @SubscribeEvent(priority = EventPriority.NORMAL)
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     public void utOnStrongholdGen(InitMapGenEvent event)
     {
         if (!UTConfig.TWEAKS_WORLD.utStrongholdToggle) return;
