@@ -17,14 +17,17 @@ public class UTCraftingCache
 {
     public static Int2ObjectLinkedOpenHashMap<UTOptionalContent<IRecipe>> NON_NBT_CRAFT_CACHE = new Int2ObjectLinkedOpenHashMap<>();
 
-    public static boolean hasAnyNBT(InventoryCrafting craftMatrix)
+    public static boolean isValid(InventoryCrafting craftMatrix)
     {
         for (int i = 0; i < craftMatrix.getSizeInventory(); i++)
         {
             ItemStack itemStack = craftMatrix.getStackInSlot(i);
-            if (itemStack.hasTagCompound()) return true;
+            // Skip NBT items
+            if (itemStack.hasTagCompound()) return false;
+            // Skip IC2C's stacked items
+            if (Loader.isModLoaded("ic2-classic-spmod") && itemStack.getCount() > 1) return false;
         }
-        return false;
+        return true;
     }
 
     public static IRecipe findMatchingRecipeDefault(InventoryCrafting craftMatrix, World worldIn)
@@ -35,8 +38,7 @@ public class UTCraftingCache
 
     public static IRecipe findMatchingRecipe(InventoryCrafting craftMatrix, World worldIn)
     {
-        boolean hasNBT = hasAnyNBT(craftMatrix);
-        if (!hasNBT && Loader.instance().hasReachedState(LoaderState.SERVER_STARTING))
+        if (isValid(craftMatrix) && Loader.instance().hasReachedState(LoaderState.SERVER_STARTING))
         {
             UTOptionalContent<IRecipe> optionalContent = getOrCreateCachedRecipe(craftMatrix);
             if (!optionalContent.hasContent()) optionalContent.setContent(findMatchingRecipeDefault(craftMatrix, worldIn));
