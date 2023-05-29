@@ -71,6 +71,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         return isClient ? Arrays.asList(
             "mixins.bugfixes.blocks.blockoverlay.json",
             "mixins.bugfixes.blocks.comparatortiming.json",
+            "mixins.bugfixes.blocks.fallingblockdamage.json",
             "mixins.bugfixes.blocks.hopper.boundingbox.json",
             "mixins.bugfixes.blocks.hopper.tile.json",
             "mixins.bugfixes.blocks.itemframevoid.json",
@@ -166,6 +167,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.world.loading.server.json") :
             Arrays.asList(
                 "mixins.bugfixes.blocks.comparatortiming.json",
+                "mixins.bugfixes.blocks.fallingblockdamage.json",
                 "mixins.bugfixes.blocks.hopper.boundingbox.json",
                 "mixins.bugfixes.blocks.hopper.tile.json",
                 "mixins.bugfixes.blocks.itemframevoid.json",
@@ -313,6 +315,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         {
             case "mixins.bugfixes.blocks.comparatortiming.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Comparator Timing\"=true");
+            case "mixins.bugfixes.blocks.fallingblockdamage.json":
+                return firstLaunch || UTConfigParser.isPresent("B:\"Falling Block Entity Damage\"=true");
             case "mixins.bugfixes.blocks.hopper.boundingbox.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Hopper Bounding Box\"=true");
             case "mixins.bugfixes.blocks.hopper.tile.json":

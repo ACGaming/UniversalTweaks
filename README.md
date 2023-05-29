@@ -29,6 +29,7 @@ All changes are toggleable via the config file.
 * Entity Tracker: Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
 * Entity UUID: Changes UUIDs of loaded entities in case their UUIDs are already assigned (and removes log spam)
 * Exhaustion: Fixes saturation depleting in peaceful mode
+* Falling Block Entity Damage: Only damage living entities hit by falling blocks, prevents killing items and XP
 * Faster Background Startup: Fixes slow background startup edge case caused by checking tooltips during the loading process
 * Frustum Culling: Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * Help: Replaces the help command, sorts and reports broken commands

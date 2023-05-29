@@ -104,6 +104,11 @@ public class UTConfig
         public boolean utComparatorTimingToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Falling Block Entity Damage")
+        @Config.Comment("Only damage living entities hit by falling blocks, prevents killing items and XP")
+        public boolean utFallingBlockDamageToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Hopper Bounding Box")
         @Config.Comment("Slims down the hopper bounding box for easier access of nearby blocks")
         public boolean utDietHopperToggle = true;
