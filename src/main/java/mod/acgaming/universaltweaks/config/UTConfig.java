@@ -1326,7 +1326,7 @@ public class UTConfig
 
             @Config.RequiresMcRestart
             @Config.Name("No Lightning Fire")
-            @Config.Comment("Disables the creation of fire around lightning bolt strikes")
+            @Config.Comment("Disables the creation of fire around lightning strikes")
             public boolean utLightningFireToggle = false;
 
             @Config.RequiresMcRestart

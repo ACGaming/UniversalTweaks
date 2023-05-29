@@ -140,6 +140,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.misc.credits.json",
             "mixins.tweaks.misc.difficulty.client.json",
             "mixins.tweaks.misc.incurablepotions.json",
+            "mixins.tweaks.misc.lightning.damage.json",
+            "mixins.tweaks.misc.lightning.fire.json",
             "mixins.tweaks.misc.lightning.flash.json",
             "mixins.tweaks.misc.xp.linear.json",
             "mixins.tweaks.misc.xp.smelting.json",

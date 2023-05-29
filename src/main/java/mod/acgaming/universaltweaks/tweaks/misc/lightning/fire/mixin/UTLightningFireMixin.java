@@ -14,7 +14,13 @@ import zone.rong.mixinextras.injector.WrapWithCondition;
 public class UTLightningFireMixin
 {
     @WrapWithCondition(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;setBlockState(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z"))
-    public boolean utLightningFire(World instance, BlockPos pos, IBlockState state)
+    public boolean utLightningFireInit(World instance, BlockPos pos, IBlockState state)
+    {
+        return !UTConfig.TWEAKS_MISC.LIGHTNING.utLightningFireToggle;
+    }
+
+    @WrapWithCondition(method = "onUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;setBlockState(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z"))
+    public boolean utLightningFireUpdate(World instance, BlockPos pos, IBlockState state)
     {
         return !UTConfig.TWEAKS_MISC.LIGHTNING.utLightningFireToggle;
     }

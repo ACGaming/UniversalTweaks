@@ -104,7 +104,7 @@ All changes are toggleable via the config file.
 * Lightning
     * Lightning Damage: Sets the damage lightning bolts deal to entities
     * Lightning Fire Ticks: Sets the duration in ticks lightning bolts set entities on fire
-    * No Lightning Fire: Disables the creation of fire around lightning bolt strikes
+    * No Lightning Fire: Disables the creation of fire around lightning strikes
     * No Lightning Flash: Disables the flashing of skybox and ground brightness on lightning strikes
 * Linear XP Amount: Sets the amount of XP needed for each level, effectively removing the increasing level scaling
 * Load Sounds: Plays sounds when the game or the world are loaded
