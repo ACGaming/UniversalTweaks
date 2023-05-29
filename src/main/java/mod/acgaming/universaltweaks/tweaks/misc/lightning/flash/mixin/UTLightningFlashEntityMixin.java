@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.misc.lightningflash.mixin;
+package mod.acgaming.universaltweaks.tweaks.misc.lightning.flash.mixin;
 
 import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.world.World;
@@ -15,7 +15,7 @@ public class UTLightningFlashEntityMixin
     @Redirect(method = "updateLightmap", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getLastLightningBolt()I"))
     public int utLightningFlash(World instance)
     {
-        if (!UTConfig.TWEAKS_MISC.utLightningFlashToggle) return instance.getLastLightningBolt();
+        if (!UTConfig.TWEAKS_MISC.LIGHTNING.utLightningFlashToggle) return instance.getLastLightningBolt();
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLightningFlashEntity ::: Update lightmap");
         return 0;
     }

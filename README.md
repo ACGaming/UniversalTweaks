@@ -101,6 +101,11 @@ All changes are toggleable via the config file.
 * Infinite Music: Lets background music play continuously without delays
 * Item Entities: Enables the modification of item entity properties
 * Lenient Paths: Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)
+* Lightning
+    * Lightning Damage: Sets the damage lightning bolts deal to entities
+    * Lightning Fire Ticks: Sets the duration in ticks lightning bolts set entities on fire
+    * No Lightning Fire: Disables the creation of fire around lightning bolt strikes
+    * No Lightning Flash: Disables the flashing of skybox and ground brightness on lightning strikes
 * Linear XP Amount: Sets the amount of XP needed for each level, effectively removing the increasing level scaling
 * Load Sounds: Plays sounds when the game or the world are loaded
 * Mending Overpowered: If mending fix is enabled, repairs entire damaged inventory with XP
@@ -110,7 +115,6 @@ All changes are toggleable via the config file.
 * No Crafting Repair: Disables crafting recipes for repairing tools
 * No Golems: Disables the manual creation of golems and withers
 * No Leftover Breath Bottles: Disables dragon's breath from leaving off empty bottles when a stack is brewed with
-* No Lightning Flash: Disables the flashing of skybox and ground brightness on lightning strikes
 * No Night Vision Flash: Disables the flashing effect when the night vision potion effect is about to run out
 * No Potion Shift: Disables the inventory shift when potion effects are active
 * No Redstone Lighting: Disables lighting of active redstone, repeaters, and comparators to improve performance

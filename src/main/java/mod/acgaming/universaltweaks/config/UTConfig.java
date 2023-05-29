@@ -1189,6 +1189,10 @@ public class UTConfig
         @Config.Name("Incurable Potions")
         public final IncurablePotionsCategory INCURABLE_POTIONS = new IncurablePotionsCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.lightning")
+        @Config.Name("Lightning")
+        public final LightningCategory LIGHTNING = new LightningCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.loadsounds")
         @Config.Name("Load Sounds")
         public final LoadSoundsCategory LOAD_SOUNDS = new LoadSoundsCategory();
@@ -1245,11 +1249,6 @@ public class UTConfig
                 "0 for vanilla default"
             })
         public int utLinearXP = 0;
-
-        @Config.RequiresMcRestart
-        @Config.Name("No Lightning Flash")
-        @Config.Comment("Disables the flashing of skybox and ground brightness on lightningflash strikes")
-        public boolean utLightningFlashToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("No Night Vision Flash")
@@ -1311,6 +1310,29 @@ public class UTConfig
                     "Whitelist Mode: Potion effects curable by curative items, others are incurable"
                 })
             public EnumLists utIncurablePotionsListMode = EnumLists.BLACKLIST;
+        }
+
+        public static class LightningCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Lightning Damage")
+            @Config.Comment("Sets the damage lightning bolts deal to entities")
+            public double utLightningDamage = 5.0D;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Lightning Fire Ticks")
+            @Config.Comment("Sets the duration in ticks lightning bolts set entities on fire")
+            public int utLightningFireTicks = 8;
+
+            @Config.RequiresMcRestart
+            @Config.Name("No Lightning Fire")
+            @Config.Comment("Disables the creation of fire around lightning bolt strikes")
+            public boolean utLightningFireToggle = false;
+
+            @Config.RequiresMcRestart
+            @Config.Name("No Lightning Flash")
+            @Config.Comment("Disables the flashing of skybox and ground brightness on lightning bolt strikes")
+            public boolean utLightningFlashToggle = false;
         }
 
         public static class LoadSoundsCategory

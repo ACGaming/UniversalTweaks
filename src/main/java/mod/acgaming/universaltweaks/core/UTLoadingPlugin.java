@@ -140,7 +140,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.misc.credits.json",
             "mixins.tweaks.misc.difficulty.client.json",
             "mixins.tweaks.misc.incurablepotions.json",
-            "mixins.tweaks.misc.lightningflash.json",
+            "mixins.tweaks.misc.lightning.flash.json",
             "mixins.tweaks.misc.xp.linear.json",
             "mixins.tweaks.misc.xp.smelting.json",
             "mixins.tweaks.misc.music.json",
@@ -220,6 +220,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.misc.buttons.snooper.server.json",
                 "mixins.tweaks.misc.difficulty.server.json",
                 "mixins.tweaks.misc.incurablepotions.json",
+                "mixins.tweaks.misc.lightning.damage.json",
+                "mixins.tweaks.misc.lightning.fire.json",
                 "mixins.tweaks.misc.xp.linear.json",
                 "mixins.tweaks.misc.xp.smelting.json",
                 "mixins.tweaks.misc.recipebook.server.json",
@@ -281,7 +283,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return !firstLaunch && UTConfigParser.isPresent("B:\"Copy World Seed\"=true");
                 case "mixins.tweaks.misc.credits.json":
                     return !firstLaunch && UTConfigParser.isPresent("B:\"Skip Credits\"=true");
-                case "mixins.tweaks.misc.lightningflash.json":
+                case "mixins.tweaks.misc.lightning.flash.json":
                     return !firstLaunch && UTConfigParser.isPresent("B:\"No Lightning Flash\"=true");
                 case "mixins.tweaks.misc.music.json":
                     return !firstLaunch && UTConfigParser.isPresent("B:\"Infinite Music\"=true");
@@ -414,6 +416,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && !UTConfigParser.isPresent("I:\"XP Bottle Amount\"=-1");
             case "mixins.tweaks.misc.buttons.snooper.server.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Remove Snooper\"=true");
+            case "mixins.tweaks.misc.lightning.damage.json":
+                return !firstLaunch && (!UTConfigParser.isPresent("D:\"Lightning Damage\"=5.0") || !UTConfigParser.isPresent("I:\"Lightning Fire Ticks\"=8"));
+            case "mixins.tweaks.misc.lightning.fire.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"No Lightning Fire\"=true");
             case "mixins.tweaks.misc.incurablepotions.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"[1] Incurable Potions Toggle\"=true");
             case "mixins.tweaks.misc.xp.linear.json":
