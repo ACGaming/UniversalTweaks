@@ -75,6 +75,7 @@ All changes are toggleable via the config file.
 * Copy World Seed: Enables clicking of `/seed` world seed in chat to copy to clipboard
 * Crafting Cache: Adds an IRecipe cache to improve recipe performance in large modpacks
 * Creeper Confetti: Replaces deadly creeper explosions with delightful confetti (with a configurable chance)
+* Critical Arrow Damage: Sets the additional damage that critical arrows deal
 * Custom Rarity: Sets custom rarities for items, affecting tooltip colors
 * Custom Use Duration: Sets custom use durations for items like shields, affecting the maximum block time
 * Damage Tilt: Restores feature to tilt the camera when damaged

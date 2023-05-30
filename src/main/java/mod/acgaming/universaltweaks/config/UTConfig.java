@@ -605,6 +605,15 @@ public class UTConfig
         public double utCreeperConfettiChance = 0.0D;
 
         @Config.RequiresMcRestart
+        @Config.Name("Critical Arrow Damage")
+        @Config.Comment
+            ({
+                "Sets the additional damage that critical arrows deal",
+                "-1 for vanilla random default"
+            })
+        public int utCriticalArrowDamage = -1;
+
+        @Config.RequiresMcRestart
         @Config.Name("Disable Creeper Music Discs")
         @Config.Comment("Disables creepers dropping music discs when slain by skeletons")
         public boolean utCreeperMusicDiscsToggle = false;
