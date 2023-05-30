@@ -1,10 +1,10 @@
 # OBSOLETE MODS SCREEN
-msg.universaltweaks.obsoletemods.warning1=通用修改已經取代並改進了其他模組的功能。
-msg.universaltweaks.obsoletemods.warning2=因此，以下模組現在與通用修改不相容：
-msg.universaltweaks.obsoletemods.warning3=請考慮從你的遊戲中刪除它們，或禁用相應的功能。
+msg.universaltweaks.obsoletemods.warning1=通用調整已經取代或改進了其他模組的功能。
+msg.universaltweaks.obsoletemods.warning2=因此，以下模組現在與通用調整不相容：
+msg.universaltweaks.obsoletemods.warning3=請考慮從你的遊戲中移除它們，或禁用相應的功能。
 
 # TOGGLE CHEATS
 btn.universaltweaks.cheats.enabled=作弊模式：開啟
 btn.universaltweaks.cheats.disabled=作弊模式：關閉
-msg.universaltweaks.cheats.enabled=作弊模式現已§a執行
-msg.universaltweaks.cheats.disabled=作弊模式現已§c停用
+msg.universaltweaks.cheats.enabled=作弊模式已§a執行
+msg.universaltweaks.cheats.disabled=作弊模式已§c停用
