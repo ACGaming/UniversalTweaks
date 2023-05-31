@@ -79,6 +79,7 @@ All changes are toggleable via the config file.
 * Custom Rarity: Sets custom rarities for items, affecting tooltip colors
 * Custom Use Duration: Sets custom use durations for items like shields, affecting the maximum block time
 * Damage Tilt: Restores feature to tilt the camera when damaged
+* Damage Velocity: Enables the modification of damage sources that change the entity's velocity
 * Default Difficulty: Sets the default difficulty for newly generated worlds
 * Dimension Unload: Unloads dimensions not in use to free up resources
 * Disable Audio Debug: Improves loading times by removing debug code for missing sounds and subtitles

@@ -538,13 +538,17 @@ public class UTConfig
         @Config.Name("Better Burning")
         public final BetterBurningCategory BETTER_BURNING = new BetterBurningCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.entities.easybreeding")
-        @Config.Name("Easy Breeding")
-        public final EasyBreedingCategory EASY_BREEDING = new EasyBreedingCategory();
-
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.collisiondamage")
         @Config.Name("Collision Damage")
         public final CollisionDamageCategory COLLISION_DAMAGE = new CollisionDamageCategory();
+
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.damagevelocity")
+        @Config.Name("Damage Velocity")
+        public final DamageVelocityCategory DAMAGE_VELOCITY = new DamageVelocityCategory();
+
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.easybreeding")
+        @Config.Name("Easy Breeding")
+        public final EasyBreedingCategory EASY_BREEDING = new EasyBreedingCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.nogolems")
         @Config.Name("No Golems")
@@ -768,6 +772,30 @@ public class UTConfig
                     "Vanilla default for elytra damage is 10"
                 })
             public int utCollisionDamageFactor = 10;
+        }
+
+        public static class DamageVelocityCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Damage Velocity Toggle")
+            @Config.Comment("Enables the modification of damage sources that change the entity's velocity")
+            public boolean utDamageVelocityToggle = false;
+
+            @Config.Name("[2] Damage Velocity List")
+            @Config.Comment("Syntax: damagetype")
+            public String[] utDamageVelocityList = new String[]
+                {
+                    "inFire",
+                    "onFire"
+                };
+
+            @Config.Name("[3] List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Damage sources that don't change velocity, others do",
+                    "Whitelist Mode: Damage sources that change velocity, others don't"
+                })
+            public EnumLists utDamageVelocityListMode = EnumLists.BLACKLIST;
         }
 
         public static class NoGolemsCategory

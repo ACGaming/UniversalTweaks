@@ -119,6 +119,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.entities.damage.arrow.json",
             "mixins.tweaks.entities.damage.collision.json",
             "mixins.tweaks.entities.damage.falling.json",
+            "mixins.tweaks.entities.damage.velocity.json",
             "mixins.tweaks.entities.despawning.json",
             "mixins.tweaks.entities.loot.json",
             "mixins.tweaks.entities.spawning.caps.json",
@@ -207,6 +208,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.entities.damage.arrow.json",
                 "mixins.tweaks.entities.damage.collision.json",
                 "mixins.tweaks.entities.damage.falling.json",
+                "mixins.tweaks.entities.damage.velocity.json",
                 "mixins.tweaks.entities.despawning.json",
                 "mixins.tweaks.entities.loot.json",
                 "mixins.tweaks.entities.spawning.caps.json",
@@ -395,6 +397,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Collision Damage Toggle\"=true");
             case "mixins.tweaks.entities.damage.falling.json":
                 return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Water Fall Damage Toggle\"=true");
+            case "mixins.tweaks.entities.damage.velocity.json":
+                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Damage Velocity Toggle\"=true");
             case "mixins.tweaks.entities.despawning.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Mob Despawn Improvement\"=true");
             case "mixins.tweaks.entities.loot.json":
