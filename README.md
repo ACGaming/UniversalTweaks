@@ -173,9 +173,6 @@ All changes are toggleable via the config file.
     * Arborist Villager Trades: Adds custom emerald to germling trades to the arborist villager
     * Disable Bee Damage Armor Bypass: Disables damage caused by bees bypassing player armor
     * Replanting Cocoa Beans: Allows Forestry farms to automatically replant cocoa beans
-* Mo' Creatures
-    * Custom Modded Biomes: Adds support for modded biome spawns via config
-    * Disable Flame Wraith Burning: Disables the flickering burning effect of flame wraiths
 * Roost
     * Early Register CT Chickens: Improves load time by registering CT chickens early for Roost to detect them
 * Simple Difficulty

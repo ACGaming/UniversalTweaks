@@ -1750,10 +1750,6 @@ public class UTConfig
         @Config.Name("Forestry")
         public final ForestryCategory FORESTRY = new ForestryCategory();
 
-        @Config.LangKey("cfg.universaltweaks.modintegration.moc")
-        @Config.Name("Mo' Creatures")
-        public final MoCreaturesCategory MO_CREATURES = new MoCreaturesCategory();
-
         @Config.LangKey("cfg.universaltweaks.modintegration.roost")
         @Config.Name("Roost")
         public final RoostCategory ROOST = new RoostCategory();
@@ -1895,33 +1891,6 @@ public class UTConfig
             @Config.Name("Replanting Cocoa Beans")
             @Config.Comment("Allows Forestry farms to automatically replant cocoa beans")
             public boolean utFOCocoaBeansToggle = true;
-        }
-
-        public static class MoCreaturesCategory
-        {
-            @Config.RequiresMcRestart
-            @Config.Name("Custom Modded Biomes")
-            @Config.Comment
-                ({
-                    "Adds support for modded biome spawns",
-                    "Syntax: modid;name;key;tag;filename",
-                    "modid    Mod ID required for this to be added",
-                    "name     Mod name",
-                    "key      Used for class lookups, needs to be a unique part of the modded package, e.g. mod.acgaming.*universaltweaks*.mods",
-                    "tag      Short tag for logs",
-                    "filename Filename to use for the generated config"
-                })
-            public String[] utMoCBiomeMods = new String[]
-                {
-                    "pvj;vibrantjourneys;vibrantjourneys;PVJ;ProjectVibrantJourneys.cfg",
-                    "traverse;traverse;traverse;TRAV;Traverse.cfg",
-                    "dimdoors;dimdoors;dimdoors;DD;DimDoors.cfg"
-                };
-
-            @Config.RequiresMcRestart
-            @Config.Name("Disable Flame Wraith Burning")
-            @Config.Comment("Disables the flickering burning effect of flame wraiths")
-            public boolean utFlameWraithBurningToggle = true;
         }
 
         public static class RoostCategory
