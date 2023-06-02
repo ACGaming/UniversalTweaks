@@ -3,6 +3,11 @@ msg.universaltweaks.obsoletemods.warning1=Universal Tweaks has replaced and impr
 msg.universaltweaks.obsoletemods.warning2=Therefore, the following mods are now incompatible with Universal Tweaks:
 msg.universaltweaks.obsoletemods.warning3=Consider removing them from your game or disabling the respective features.
 
+# MIXINBOOTER SCREEN
+msg.universaltweaks.mixinbooter.warning1=Universal Tweaks requires MixinBooter 8 or higher to work properly.
+msg.universaltweaks.mixinbooter.warning2=As you're running an older version, a couple of tweaks are non-functional.
+msg.universaltweaks.mixinbooter.warning3=Please consider updating.
+
 # TOGGLE CHEATS
 btn.universaltweaks.cheats.enabled=Cheats: ON
 btn.universaltweaks.cheats.disabled=Cheats: OFF

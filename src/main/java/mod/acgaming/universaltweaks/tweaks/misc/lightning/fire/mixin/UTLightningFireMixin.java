@@ -5,10 +5,10 @@ import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import com.llamalad7.mixinextras.injector.WrapWithCondition;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import zone.rong.mixinextras.injector.WrapWithCondition;
 
 @Mixin(EntityLightningBolt.class)
 public class UTLightningFireMixin

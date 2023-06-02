@@ -5,11 +5,11 @@ import java.util.List;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiOptions;
 
+import com.llamalad7.mixinextras.injector.WrapWithCondition;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import zone.rong.mixinextras.injector.WrapWithCondition;
 
 @Mixin(GuiOptions.class)
 public class UTSnooperClientButton

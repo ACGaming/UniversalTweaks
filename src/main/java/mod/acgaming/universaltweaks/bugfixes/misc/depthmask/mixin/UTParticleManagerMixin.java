@@ -2,10 +2,10 @@ package mod.acgaming.universaltweaks.bugfixes.misc.depthmask.mixin;
 
 import net.minecraft.client.particle.ParticleManager;
 
+import com.llamalad7.mixinextras.injector.WrapWithCondition;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import zone.rong.mixinextras.injector.WrapWithCondition;
 
 @Mixin(ParticleManager.class)
 public class UTParticleManagerMixin

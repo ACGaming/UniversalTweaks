@@ -10,16 +10,17 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class UTObsoleteModsScreen extends GuiScreen
+public class UTCompatScreen extends GuiScreen
 {
     public final List<String> messages;
-    public int textHeight;
+    private int textHeight;
 
-    public UTObsoleteModsScreen(List<String> messages)
+    public UTCompatScreen(List<String> messages)
     {
         this.messages = messages;
     }
 
+    @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
         this.drawDefaultBackground();
@@ -35,15 +36,17 @@ public class UTObsoleteModsScreen extends GuiScreen
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 
+    @Override
     public void actionPerformed(GuiButton button)
     {
         if (button.id == 0) this.mc.displayGuiScreen(new GuiMainMenu());
     }
 
+    @Override
     public void initGui()
     {
         this.buttonList.clear();
         this.textHeight = this.messages.size() * this.fontRenderer.FONT_HEIGHT;
-        this.buttonList.add(new GuiButton(0, this.width / 2 - 100, Math.min(this.height / 2 + this.textHeight / 2 + this.fontRenderer.FONT_HEIGHT, this.height - 30), I18n.format("gui.toTitle")));
+        this.buttonList.add(new GuiButton(0, this.width / 2 - 100, Math.min(this.height / 2 + this.textHeight / 2 + this.fontRenderer.FONT_HEIGHT, this.height - 30), I18n.format("gui.done")));
     }
 }

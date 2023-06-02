@@ -36,6 +36,7 @@ import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFComp
 import mod.acgaming.universaltweaks.tweaks.world.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.world.stronghold.worldgen.SafeStrongholdWorldGenerator;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
+import mod.acgaming.universaltweaks.util.compat.UTMixinBooterHandler;
 import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
 
 @Mod(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME, version = UniversalTweaks.VERSION, acceptedMinecraftVersions = "[1.12.2]", dependencies = UniversalTweaks.DEPENDENCIES)
@@ -118,6 +119,19 @@ public class UniversalTweaks
     {
         if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.onLoadComplete();
         if (UTConfig.DEBUG.utLoadingTimeToggle) LOGGER.info("The game loaded in approximately {} seconds", (System.currentTimeMillis() - UTLoadingPlugin.launchTime) / 1000F);
-        if (!UTConfig.DEBUG.utBypassIncompatibilityToggle && UTObsoleteModsHandler.obsoleteModsMessage().size() > 5) UniversalTweaks.LOGGER.warn(String.join(System.lineSeparator(), UTObsoleteModsHandler.obsoleteModsMessage()));
+        if (UTMixinBooterHandler.showMixinBooter && !UTConfig.DEBUG.utBypassIncompatibilityToggle)
+        {
+            for (String line : UTMixinBooterHandler.mixinBooterMessage())
+            {
+                if (!line.equals("")) UniversalTweaks.LOGGER.fatal(line);
+            }
+        }
+        if (UTObsoleteModsHandler.showObsoleteMods && UTObsoleteModsHandler.obsoleteModsMessage().size() > 5 && !UTConfig.DEBUG.utBypassIncompatibilityToggle)
+        {
+            for (String line : UTObsoleteModsHandler.obsoleteModsMessage())
+            {
+                if (!line.equals("")) UniversalTweaks.LOGGER.warn(line);
+            }
+        }
     }
 }

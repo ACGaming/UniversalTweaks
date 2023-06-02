@@ -1,10 +1,10 @@
 package mod.acgaming.universaltweaks.mods.forestry.mixin;
 
+import com.llamalad7.mixinextras.injector.WrapWithCondition;
 import forestry.core.utils.DamageSourceForestry;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import zone.rong.mixinextras.injector.WrapWithCondition;
 
 @Mixin(DamageSourceForestry.class)
 public class UTForestryDamageSourceMixin

@@ -4,6 +4,7 @@ import org.lwjgl.util.vector.Vector3f;
 import net.minecraft.client.renderer.entity.RenderEntityItem;
 import net.minecraft.entity.item.EntityItem;
 
+import com.llamalad7.mixinextras.injector.WrapWithCondition;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -11,7 +12,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import zone.rong.mixinextras.injector.WrapWithCondition;
 
 @Mixin(value = RenderEntityItem.class, priority = 1002)
 public abstract class UTRenderEntityItemMixin

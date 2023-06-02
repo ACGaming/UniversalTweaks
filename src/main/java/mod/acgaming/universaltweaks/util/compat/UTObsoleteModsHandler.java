@@ -10,6 +10,8 @@ import mod.acgaming.universaltweaks.config.UTConfig;
 
 public class UTObsoleteModsHandler
 {
+    public static boolean showObsoleteMods = true;
+
     public static List<String> obsoleteModsMessage()
     {
         List<String> messages = new ArrayList<>();

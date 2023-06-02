@@ -5,13 +5,13 @@ import net.minecraft.client.network.NetHandlerPlayClient;
 import net.minecraft.inventory.Container;
 import net.minecraft.item.ItemStack;
 
+import com.llamalad7.mixinextras.injector.WrapWithCondition;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import sonar.fluxnetworks.common.core.ContainerCore;
-import zone.rong.mixinextras.injector.WrapWithCondition;
 
 // Courtesy of jchung01
 @Mixin(value = NetHandlerPlayClient.class)

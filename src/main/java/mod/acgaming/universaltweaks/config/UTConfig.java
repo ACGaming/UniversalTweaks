@@ -20,7 +20,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePoti
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
-import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsScreenHandler;
+import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
 
 @Config(modid = UniversalTweaks.MODID, name = "UniversalTweaks")
 public class UTConfig
@@ -1703,10 +1703,6 @@ public class UTConfig
         @Config.Comment("Enables debug logging")
         public boolean utDebugToggle = false;
 
-        @Config.Name("Obsolete Mods Screen")
-        @Config.Comment("Enables a screen displaying incompatible mods on game load")
-        public boolean utObsoleteModsToggle = true;
-
         @Config.Name("Show Loading Time")
         @Config.Comment("Prints the time the game needed to launch to the log")
         public boolean utLoadingTimeToggle = true;
@@ -2144,7 +2140,7 @@ public class UTConfig
                     if (TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
                     UTAutoSaveOFCompat.updateOFConfig();
                 }
-                UTObsoleteModsScreenHandler.shouldDisplay = true;
+                UTObsoleteModsHandler.showObsoleteMods = true;
                 UniversalTweaks.LOGGER.info("Universal Tweaks config reloaded");
             }
         }

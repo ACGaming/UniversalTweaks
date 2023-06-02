@@ -5,11 +5,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import zone.rong.mixinextras.injector.ModifyExpressionValue;
 
 // MC-31819
 // https://bugs.mojang.com/browse/MC-31819
