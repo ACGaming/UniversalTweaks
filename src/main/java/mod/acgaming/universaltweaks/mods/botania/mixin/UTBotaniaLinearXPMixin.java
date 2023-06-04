@@ -16,6 +16,6 @@ public class UTBotaniaLinearXPMixin
     {
         if (UTConfig.TWEAKS_MISC.utLinearXP < 1) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBotaniaLinearXP ::: Get experience for level");
-        cir.setReturnValue(UTConfig.TWEAKS_MISC.utLinearXP);
+        cir.setReturnValue(level * UTConfig.TWEAKS_MISC.utLinearXP);
     }
 }
