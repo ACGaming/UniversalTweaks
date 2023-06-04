@@ -935,6 +935,10 @@ public class UTConfig
 
     public static class TweaksItemsCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.items.attackcooldown")
+        @Config.Name("Attack Cooldown")
+        public final AttackCooldownCategory ATTACK_COOLDOWN = new AttackCooldownCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.items.itementities")
         @Config.Name("Item Entities")
         public final ItemEntitiesCategory ITEM_ENTITIES = new ItemEntitiesCategory();
@@ -950,11 +954,6 @@ public class UTConfig
         @Config.Name("Auto Switch Tools")
         @Config.Comment("Switches the selected hotbar slot to a proper tool if required")
         public boolean utAutoSwitchToggle = false;
-
-        @Config.RequiresMcRestart
-        @Config.Name("No Attack Cooldown")
-        @Config.Comment("Disables the 1.9 combat update attack cooldown")
-        public boolean utAttackCooldownToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("No Crafting Repair")
@@ -1045,6 +1044,22 @@ public class UTConfig
                 "-1 for vanilla default"
             })
         public int utXPBottleAmount = -1;
+
+        public static class AttackCooldownCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] No Attack Cooldown Toggle")
+            @Config.Comment("Disables the 1.9 combat update attack cooldown")
+            public boolean utAttackCooldownToggle = false;
+
+            @Config.Name("[2] Only Affect Swords")
+            @Config.Comment("Only removes the attack cooldown of swords to balance other weapons like axes")
+            public boolean utAttackCooldownSwords = false;
+
+            @Config.Name("[3] Hide Attack Speed Tooltip")
+            @Config.Comment("Hides attack speed tooltips of weapons")
+            public boolean utAttackCooldownTooltips = true;
+        }
 
         public static class ItemEntitiesCategory
         {

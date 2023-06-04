@@ -73,6 +73,7 @@ cfg.universaltweaks.tweaks.entities.spawncaps=Spawn Caps
 cfg.universaltweaks.tweaks.entities.undeadhorses=Undead Horses
 cfg.universaltweaks.tweaks.entities.waterfalldamage=Water Fall Damage
 cfg.universaltweaks.tweaks.items=Tweaks: Items
+cfg.universaltweaks.tweaks.items.attackcooldown=Attack Cooldown
 cfg.universaltweaks.tweaks.items.itementities=Item Entities
 cfg.universaltweaks.tweaks.items.mending=Mending
 cfg.universaltweaks.tweaks.items.parry=Shield Parry

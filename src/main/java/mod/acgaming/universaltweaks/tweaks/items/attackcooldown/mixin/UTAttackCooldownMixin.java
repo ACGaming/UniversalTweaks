@@ -2,6 +2,7 @@ package mod.acgaming.universaltweaks.tweaks.items.attackcooldown.mixin;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
@@ -23,7 +24,9 @@ public abstract class UTAttackCooldownMixin extends EntityLivingBase
     @Inject(method = "resetCooldown", at = @At("TAIL"))
     public void utResetCooldown(CallbackInfo ci)
     {
-        if (!UTConfig.TWEAKS_ITEMS.utAttackCooldownToggle || this.ticksSinceLastSwing >= 20) return;
+        if (!UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle
+            || (UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownSwords && !(this.getHeldItemMainhand().getItem() instanceof ItemSword))
+            || this.ticksSinceLastSwing >= 20) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAttackCooldown ::: Reset cooldown");
         this.ticksSinceLastSwing = 20;
     }
