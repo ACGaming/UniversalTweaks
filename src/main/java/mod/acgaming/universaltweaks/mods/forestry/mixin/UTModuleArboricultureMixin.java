@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 @Mixin(value = ModuleArboriculture.class, remap = false)
 public class UTModuleArboricultureMixin
 {
-    @Inject(method = "doInit", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/fml/common/registry/VillagerRegistry$VillagerCareer;addTrade(I[Lnet/minecraft/entity/passive/EntityVillager$ITradeList;)Lnet/minecraftforge/fml/common/registry/VillagerRegistry$VillagerCareer;", ordinal = 3, shift = At.Shift.AFTER), locals = LocalCapture.CAPTURE_FAILSOFT)
+    @Inject(method = "doInit", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/fml/common/registry/VillagerRegistry$VillagerCareer;addTrade(I[Lnet/minecraft/entity/passive/EntityVillager$ITradeList;)Lnet/minecraftforge/fml/common/registry/VillagerRegistry$VillagerCareer;", ordinal = 3, shift = At.Shift.AFTER), locals = LocalCapture.CAPTURE_FAILHARD)
     public void utForestryArboristTrades(CallbackInfo ci, ItemRegistryArboriculture items, BlockRegistryArboriculture blocks, VillagerRegistry.VillagerCareer arboristCareer)
     {
         for (String deal : UTConfig.MOD_INTEGRATION.FORESTRY.utFOArboristDeals)
