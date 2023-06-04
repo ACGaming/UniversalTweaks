@@ -134,6 +134,7 @@ All changes are toggleable via the config file.
 * Remove Snooper: Forcefully turns off the snooper and hides the snooper settings button from the options menu
 * Shield Parry: Allows parrying of projectiles with shields
 * Skip Credits: Skips the credits screen after the player goes through the end podium portal
+* Skip Missing Registry Entries Screen: Automatically confirms the 'Missing Registry Entries' screen on world load
 * Smooth Scrolling: Adds smooth scrolling to every in-game list
 * Spawn Caps: Sets maximum spawning limits for different entity types
 * Super Hot Torch: Enables one-time ignition of entities by hitting them with a torch

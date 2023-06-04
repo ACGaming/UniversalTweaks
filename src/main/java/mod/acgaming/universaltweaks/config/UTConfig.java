@@ -1345,6 +1345,15 @@ public class UTConfig
         @Config.Comment("Skips the credits screen after the player goes through the end podium portal")
         public boolean utSkipCreditsToggle = false;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Skip Missing Registry Entries Screen")
+        @Config.Comment
+            ({
+                "Automatically confirms the 'Missing Registry Entries' screen on world load",
+                "Identical to the launch parameter `-Dfml.queryResult=confirm`"
+            })
+        public boolean utSkipRegistryScreenToggle = false;
+
         @Config.Name("Toggle Cheats Button")
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
         public boolean utToggleCheatsToggle = true;

@@ -58,6 +58,7 @@ public class UniversalTweaks
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
         if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
         if (Loader.isModLoaded("abyssalcraft") && UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) UTWorldDataCapability.register();
+        if (UTConfig.TWEAKS_MISC.utSkipRegistryScreenToggle) System.setProperty("fml.queryResult", "confirm");
         LOGGER.info(NAME + " pre-initialized");
     }
 
