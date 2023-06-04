@@ -929,7 +929,7 @@ public class UTConfig
 
             @Config.Name("[2] Damage Reduction")
             @Config.Comment("How much fall damage gets reduced by water per tick")
-            public float utFallDamageValue = 2.0F;
+            public double utFallDamageValue = 2.0D;
         }
     }
 
@@ -1146,7 +1146,7 @@ public class UTConfig
 
             @Config.Name("[2] Ratio")
             @Config.Comment("Determines the amount of durability mending will repair, on average, per point of experience")
-            public float utMendingRatio = 2.0F;
+            public double utMendingRatio = 2.0D;
 
             @Config.Name("[3] Overpowered")
             @Config.Comment("Repairs damaged items from the entire inventory with XP")
@@ -1217,7 +1217,7 @@ public class UTConfig
 
             @Config.Name("[11] Rebound Multiplier")
             @Config.Comment("Multiplier for the parry time windows")
-            public float utParryReboundMultiplier = 0.25F;
+            public double utParryReboundMultiplier = 0.25D;
 
             @Config.Name("[12] Require Rebound Enchantment")
             @Config.Comment("Requires the rebound enchantment for parrying")

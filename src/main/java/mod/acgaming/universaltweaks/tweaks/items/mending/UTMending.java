@@ -69,8 +69,8 @@ public class UTMending
         player.onItemPickup(xp, 1);
         if (!itemStack.isEmpty() && xp.xpValue > 0)
         {
-            int i = Math.min(roundAverage(xp.xpValue * UTConfig.TWEAKS_ITEMS.MENDING.utMendingRatio), itemStack.getItemDamage());
-            xp.xpValue -= roundAverage(i / UTConfig.TWEAKS_ITEMS.MENDING.utMendingRatio);
+            int i = Math.min(roundAverage(xp.xpValue * (float) UTConfig.TWEAKS_ITEMS.MENDING.utMendingRatio), itemStack.getItemDamage());
+            xp.xpValue -= roundAverage(i / (float) UTConfig.TWEAKS_ITEMS.MENDING.utMendingRatio);
             itemStack.setItemDamage(itemStack.getItemDamage() - i);
         }
         if (xp.xpValue > 0) player.addExperience(xp.xpValue);

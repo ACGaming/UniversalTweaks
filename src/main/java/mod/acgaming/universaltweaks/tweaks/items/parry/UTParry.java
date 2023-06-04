@@ -92,7 +92,7 @@ public class UTParry
                         {
                             return projectile.getPositionVector();
                         }
-                    }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfig.TWEAKS_ITEMS.PARRY.utParryArrowTimeWindow, entityBlocking.getActiveItemStack(), UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundMultiplier))
+                    }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfig.TWEAKS_ITEMS.PARRY.utParryArrowTimeWindow, entityBlocking.getActiveItemStack(), (float) UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundMultiplier))
                     {
                         Vec3d playerVec3 = entityBlocking.getLookVec();
                         projectile.shoot(playerVec3.x, playerVec3.y, playerVec3.z, 1.1F, 0.1F);
@@ -130,7 +130,7 @@ public class UTParry
                         {
                             return projectile.getPositionVector();
                         }
-                    }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfig.TWEAKS_ITEMS.PARRY.utParryFireballTimeWindow, entityBlocking.getActiveItemStack(), UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundMultiplier))
+                    }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfig.TWEAKS_ITEMS.PARRY.utParryFireballTimeWindow, entityBlocking.getActiveItemStack(), (float) UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundMultiplier))
                     {
                         Vec3d playerVec3 = entityBlocking.getLookVec();
                         projectile.motionX = playerVec3.x;
@@ -171,7 +171,7 @@ public class UTParry
                     {
                         return projectile.getPositionVector();
                     }
-                }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfig.TWEAKS_ITEMS.PARRY.utParryThrowableTimeWindow, entityBlocking.getActiveItemStack(), UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundMultiplier))
+                }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfig.TWEAKS_ITEMS.PARRY.utParryThrowableTimeWindow, entityBlocking.getActiveItemStack(), (float) UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundMultiplier))
                 {
                     Vec3d playerVec3 = entityBlocking.getLookVec();
                     projectile.shoot(playerVec3.x, playerVec3.y, playerVec3.z, 1.1F, 0.1F);

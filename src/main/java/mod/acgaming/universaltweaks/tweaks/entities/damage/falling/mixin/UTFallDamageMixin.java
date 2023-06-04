@@ -32,6 +32,6 @@ public class UTFallDamageMixin
     {
         if (!UTConfig.TWEAKS_ENTITIES.WATER_FALL_DAMAGE.utFallDamageToggle) return;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFallDamage ::: Load fall damage");
-        this.fallDistance = utFallDistance - UTConfig.TWEAKS_ENTITIES.WATER_FALL_DAMAGE.utFallDamageValue;
+        this.fallDistance = utFallDistance - (float) UTConfig.TWEAKS_ENTITIES.WATER_FALL_DAMAGE.utFallDamageValue;
     }
 }
