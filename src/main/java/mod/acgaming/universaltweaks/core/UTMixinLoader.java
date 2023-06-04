@@ -17,6 +17,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.abyssalcraft.json",
             "mixins.mods.aoa3.json",
             "mixins.mods.biomesoplenty.json",
+            "mixins.mods.botania.json",
             "mixins.mods.crafttweaker.json",
             "mixins.mods.cqrepoured.json",
             "mixins.mods.elementarystaffs.json",
@@ -25,6 +26,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.forestry.json",
             "mixins.mods.forestry.cocoa.json",
             "mixins.mods.forestry.extratrees.json",
+            "mixins.mods.reskillable.json",
             "mixins.mods.roost.json",
             "mixins.mods.roost.contenttweaker.json",
             "mixins.mods.simpledifficulty.json",
@@ -67,6 +69,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("abyssalcraft");
             case "mixins.mods.biomesoplenty.json":
                 return Loader.isModLoaded("biomesoplenty");
+            case "mixins.mods.botania.json":
+                return Loader.isModLoaded("botania");
             case "mixins.mods.cqrepoured.json":
                 return Loader.isModLoaded("cqrepoured");
             case "mixins.mods.elementarystaffs.json":
@@ -81,6 +85,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("forestry") && (UTLoadingPlugin.firstLaunch || UTConfigParser.isPresent("B:\"Replanting Cocoa Beans\"=true"));
             case "mixins.mods.forestry.extratrees.json":
                 return Loader.isModLoaded("extratrees");
+            case "mixins.mods.reskillable.json":
+                return Loader.isModLoaded("reskillable");
             case "mixins.mods.roost.contenttweaker.json":
                 return Loader.isModLoaded("contenttweaker");
             case "mixins.mods.simpledifficulty.json":

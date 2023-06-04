@@ -93,6 +93,7 @@ dependencies {
     deobfCompile "curse.maven:forestry-59751:2918418"
     deobfCompile "curse.maven:modtweaker-220954:3840577"
     deobfCompile "curse.maven:reborn-core-237903:3330308"
+    deobfCompile "curse.maven:reskillable-286382:2815686"
     deobfCompile "curse.maven:roost-277711:2702080"
     deobfCompile "curse.maven:simpledifficulty-360779:3613814"
     deobfCompile "curse.maven:storage-drawers-223852:2952606"
