@@ -1730,6 +1730,10 @@ public class UTConfig
         @Config.Name("Chocolate Quest Repoured")
         public final ChocolateQuestCategory CHOCOLATE_QUEST = new ChocolateQuestCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.cofhcore")
+        @Config.Name("CoFH Core")
+        public final CoFHCoreCategory COFH_CORE = new CoFHCoreCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.elementarystaffs")
         @Config.Name("Elementary Staffs")
         public final ElementaryStaffsCategory ELEMENTARY_STAFFS = new ElementaryStaffsCategory();
@@ -1825,6 +1829,13 @@ public class UTConfig
             @Config.Name("Legacy Golden Feather")
             @Config.Comment("Restores the golden feather behavior from the original Better Dungeons mod")
             public boolean utCQRGoldenFeatherToggle = true;
+        }
+
+        public static class CoFHCoreCategory
+        {
+            @Config.Name("Vorpal Enchantment Damage")
+            @Config.Comment("Sets the damage multiplier of the Vorpal enchantment")
+            public double utCoFHVorpalDamage = 10.0D;
         }
 
         public static class ElementaryStaffsCategory

@@ -50,11 +50,11 @@ jar {
 repositories {
     maven {
         name = "Curse Maven"
-        url "https://www.cursemaven.com"
+        url = "https://www.cursemaven.com"
     }
     maven {
         name = "CleanroomMC"
-        url "https://maven.cleanroommc.com"
+        url = "https://maven.cleanroommc.com"
     }
     maven {
         name = "Sponge"
@@ -72,9 +72,14 @@ repositories {
         name = "Fabric Maven"
         url = "https://maven.fabricmc.net"
     }
+    maven {
+        name = "Covers1624 Maven"
+        url = "https://maven.covers1624.net"
+    }
 }
 
 dependencies {
+    deobfCompile "cofh:CoFHCore:1.12.2-+:universal"
     deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684"
     deobfCompile "com.teamacronymcoders.base:base:1.12.2-3.14.0"
     deobfCompile "com.teamacronymcoders:ContentTweaker:1.12.2-4.10.0"

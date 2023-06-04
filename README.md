@@ -161,6 +161,8 @@ All changes are toggleable via the config file.
     * Hot Spring Water: Fixes rapid inflection of regeneration effects in hot spring water
 * Botania
     * Fancy Skybox: Enables the Botania Garden of Glass skybox for custom dimensions
+* CoFH Core
+    * Vorpal Enchantment Damage: Sets the damage multiplier of the Vorpal enchantment
 * Chocolate Quest Repoured
     * Legacy Golden Feather: Restores the golden feather behavior from the original Better Dungeons mod
 * Elementary Staffs
