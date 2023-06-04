@@ -27,6 +27,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.forestry.json",
             "mixins.mods.forestry.cocoa.json",
             "mixins.mods.forestry.extratrees.json",
+            "mixins.mods.infernalmobs.json",
             "mixins.mods.reskillable.json",
             "mixins.mods.roost.json",
             "mixins.mods.roost.contenttweaker.json",
@@ -88,6 +89,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("forestry") && (UTLoadingPlugin.firstLaunch || UTConfigParser.isPresent("B:\"Replanting Cocoa Beans\"=true"));
             case "mixins.mods.forestry.extratrees.json":
                 return Loader.isModLoaded("extratrees");
+            case "mixins.mods.infernalmobs.json":
+                return Loader.isModLoaded("infernalmobs");
             case "mixins.mods.reskillable.json":
                 return Loader.isModLoaded("reskillable");
             case "mixins.mods.roost.contenttweaker.json":

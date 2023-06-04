@@ -1750,6 +1750,10 @@ public class UTConfig
         @Config.Name("Forestry")
         public final ForestryCategory FORESTRY = new ForestryCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.infernalmobs")
+        @Config.Name("Infernal Mobs")
+        public final InfernalMobsCategory INFERNAL_MOBS = new InfernalMobsCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.roost")
         @Config.Name("Roost")
         public final RoostCategory ROOST = new RoostCategory();
@@ -1898,6 +1902,14 @@ public class UTConfig
             @Config.Name("Replanting Cocoa Beans")
             @Config.Comment("Allows Forestry farms to automatically replant cocoa beans")
             public boolean utFOCocoaBeansToggle = true;
+        }
+
+        public static class InfernalMobsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Sticky Recall Compatibility")
+            @Config.Comment("Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment")
+            public boolean utIMStickyRecallToggle = true;
         }
 
         public static class RoostCategory

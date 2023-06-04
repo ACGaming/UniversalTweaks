@@ -175,6 +175,8 @@ All changes are toggleable via the config file.
     * Arborist Villager Trades: Adds custom emerald to germling trades to the arborist villager
     * Disable Bee Damage Armor Bypass: Disables damage caused by bees bypassing player armor
     * Replanting Cocoa Beans: Allows Forestry farms to automatically replant cocoa beans
+* Infernal Mobs
+    * Sticky Recall Compatibility: Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment
 * Roost
     * Early Register CT Chickens: Improves load time by registering CT chickens early for Roost to detect them
 * Simple Difficulty
