@@ -242,7 +242,11 @@ public class UTConfig
 
         @Config.RequiresMcRestart
         @Config.Name("Entity Tracker")
-        @Config.Comment("Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions")
+        @Config.Comment
+            ({
+                "Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions",
+                "Incompatible with SpongeForge"
+            })
         public boolean utEntityTrackerToggle = true;
 
         @Config.Name("Entity UUID")
@@ -331,7 +335,11 @@ public class UTConfig
     {
         @Config.RequiresMcRestart
         @Config.Name("Chunk Saving")
-        @Config.Comment("Fixes loading of outdated chunks to prevent duplications, deletions and data corruption")
+        @Config.Comment
+            ({
+                "Fixes loading of outdated chunks to prevent duplications, deletions and data corruption",
+                "Incompatible with SpongeForge"
+            })
         public boolean utChunkSavingToggle = true;
 
         @Config.RequiresMcRestart

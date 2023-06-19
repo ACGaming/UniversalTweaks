@@ -22,6 +22,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public static final boolean isClient = FMLLaunchHandler.side().isClient();
     public static final boolean isDev = FMLLaunchHandler.isDeobfuscatedEnvironment();
     public static final boolean firstLaunch = UTConfigParser.init();
+    public static boolean spongePlayerList;
+    public static boolean spongeAnvilChunkLoader;
     public static long launchTime;
 
     static
@@ -32,6 +34,20 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             UniversalTweaks.LOGGER.info("The locale is Turkish, which is unfortunately not supported by some mods. Changing to English...");
             Locale.setDefault(Locale.ENGLISH);
         }
+
+        try
+        {
+            Class.forName("org.spongepowered.mod.mixin.core.server.management.PlayerListMixin_Forge");
+            spongePlayerList = true;
+        }
+        catch (ClassNotFoundException ignored) {}
+
+        try
+        {
+            Class.forName("org.spongepowered.common.mixin.core.world.chunk.storage.AnvilChunkLoaderMixin");
+            spongeAnvilChunkLoader = true;
+        }
+        catch (ClassNotFoundException ignored) {}
     }
 
     @Override
@@ -369,9 +385,9 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.bugfixes.entities.suffocation.json":
                 return firstLaunch || UTConfigParser.isPresent("B:\"Entity Suffocation\"=true");
             case "mixins.bugfixes.entities.tracker.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Tracker\"=true");
+                return (firstLaunch || UTConfigParser.isPresent("B:\"Entity Tracker\"=true")) && !spongePlayerList;
             case "mixins.bugfixes.world.chunksaving.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Chunk Saving\"=true");
+                return (firstLaunch || UTConfigParser.isPresent("B:\"Chunk Saving\"=true")) && !spongeAnvilChunkLoader;
             case "mixins.bugfixes.world.tileentities.json":
                 return firstLaunch || !UTConfigParser.isPresent("S:\"Tile Entity Map\"=HASHMAP");
             case "mixins.tweaks.blocks.bedobstruction.json":
