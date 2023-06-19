@@ -80,9 +80,9 @@ repositories {
 
 dependencies {
     deobfCompile "cofh:CoFHCore:1.12.2-+:universal"
-    deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684"
     deobfCompile "com.teamacronymcoders.base:base:1.12.2-3.14.0"
     deobfCompile "com.teamacronymcoders:ContentTweaker:1.12.2-4.10.0"
+    deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684"
     deobfCompile "curse.maven:abyssalcraft-53686:3425234"
     deobfCompile "curse.maven:atomicstrykers-infernal-mobs-227875:3431758"
     deobfCompile "curse.maven:baubles-227083:2518667"
@@ -108,9 +108,10 @@ dependencies {
     deobfCompile "curse.maven:thermal-expansion-69163:2926431"
     deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.55"
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
-    implementation "zone.rong:mixinbooter:8.2"
-    implementation "TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal"
+    implementation "com.cleanroommc:configanytime:1.0"
     implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
+    implementation "TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal"
+    implementation "zone.rong:mixinbooter:8.3"
     //implementation "net.jafama:jafama:2.3.2"
 }
 
