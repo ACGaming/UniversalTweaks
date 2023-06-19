@@ -14,6 +14,6 @@ public class UTDefaultDifficultySPMixin
     @Redirect(method = "<init>(Lnet/minecraft/world/WorldSettings;Ljava/lang/String;)V", at = @At(value = "FIELD", target = "Lnet/minecraft/world/storage/WorldInfo;DEFAULT_DIFFICULTY:Lnet/minecraft/world/EnumDifficulty;"))
     public EnumDifficulty utDefaultDifficultySP()
     {
-        return UTConfig.TWEAKS_MISC.utDefaultDifficulty;
+        return EnumDifficulty.byId(UTConfig.TWEAKS_MISC.utDefaultDifficulty.ordinal());
     }
 }

@@ -14,6 +14,6 @@ public class UTDefaultDifficultyMPMixin
     @Redirect(method = "getDifficulty", at = @At(value = "FIELD", target = "Lnet/minecraft/world/EnumDifficulty;NORMAL:Lnet/minecraft/world/EnumDifficulty;"))
     public EnumDifficulty utDefaultDifficultyMP()
     {
-        return UTConfig.TWEAKS_MISC.utDefaultDifficulty;
+        return EnumDifficulty.byId(UTConfig.TWEAKS_MISC.utDefaultDifficulty.ordinal());
     }
 }

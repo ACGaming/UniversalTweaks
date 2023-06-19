@@ -1,6 +1,5 @@
 package mod.acgaming.universaltweaks.config;
 
-import net.minecraft.world.EnumDifficulty;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -8,6 +7,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import com.cleanroommc.configanytime.ConfigAnytime;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
@@ -79,17 +79,12 @@ public class UTConfig
         BLACKLIST
     }
 
-    public enum EnumDrawPosition
+    public enum EnumDifficulty
     {
-        BOTTOM_RIGHT,
-        BOTTOM,
-        BOTTOM_LEFT,
-        LEFT,
-        TOP_LEFT,
-        TOP,
-        TOP_RIGHT,
-        RIGHT,
-        CENTER
+        PEACEFUL,
+        EASY,
+        NORMAL,
+        HARD
     }
 
     public static class BugfixesBlocksCategory
@@ -1515,6 +1510,19 @@ public class UTConfig
                     "Syntax: modid:item"
                 })
             public String[] utPUNBlacklistSubitem = new String[] {};
+
+            public enum EnumDrawPosition
+            {
+                BOTTOM_RIGHT,
+                BOTTOM,
+                BOTTOM_LEFT,
+                LEFT,
+                TOP_LEFT,
+                TOP,
+                TOP_RIGHT,
+                RIGHT,
+                CENTER
+            }
         }
 
         public static class SmoothScrollingCategory
@@ -2163,6 +2171,11 @@ public class UTConfig
             @Config.Comment("Caches all ore dictionary smelting recipes to speed up game loading")
             public boolean utTConOreDictCacheToggle = true;
         }
+    }
+
+    static
+    {
+        ConfigAnytime.register(UTConfig.class);
     }
 
     @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
