@@ -13,7 +13,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.bugfixes.misc.help.UTHelp;
 import mod.acgaming.universaltweaks.config.UTConfig;
-import mod.acgaming.universaltweaks.config.UTConfigParser;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
@@ -45,13 +44,12 @@ public class UniversalTweaks
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
     public static final String VERSION = "1.12.2-1.7.0";
-    public static final String DEPENDENCIES = "required-after:mixinbooter;after:abyssalcraft;after:aoa3;after:biomesoplenty;after:botania;after:cofhcore;after:contenttweaker;after:element;after:elenaidodge2;after:epicsiegemod;after:extratrees;after:forestry;after:infernalmobs;after:roost;after:storagedrawers;after:tconstruct;after:thaumcraft;after:thermalexpansion";
+    public static final String DEPENDENCIES = "required-after:mixinbooter;required-after:configanytime;after:abyssalcraft;after:aoa3;after:biomesoplenty;after:botania;after:cofhcore;after:contenttweaker;after:element;after:elenaidodge2;after:epicsiegemod;after:extratrees;after:forestry;after:infernalmobs;after:roost;after:storagedrawers;after:tconstruct;after:thaumcraft;after:thermalexpansion";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        if (!UTConfigParser.mayday.isEmpty()) UniversalTweaks.LOGGER.fatal(UTConfigParser.mayday);
         UTPacketHandler.init();
         if (UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
         UTAutoSaveOFCompat.updateOFConfig();

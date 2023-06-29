@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 import net.minecraftforge.fml.common.Loader;
 
-import mod.acgaming.universaltweaks.config.UTConfigParser;
+import mod.acgaming.universaltweaks.config.UTConfig;
 import zone.rong.mixinbooter.ILateMixinLoader;
 
 public class UTMixinLoader implements ILateMixinLoader
@@ -63,6 +63,8 @@ public class UTMixinLoader implements ILateMixinLoader
                     return Loader.isModLoaded("storagedrawers");
                 case "mixins.mods.thaumcraft.entities.client.json":
                     return Loader.isModLoaded("thaumcraft");
+                default:
+                    return true;
             }
         }
         switch (mixinConfig)
@@ -86,7 +88,7 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.forestry.json":
                 return Loader.isModLoaded("forestry");
             case "mixins.mods.forestry.cocoa.json":
-                return Loader.isModLoaded("forestry") && (UTLoadingPlugin.firstLaunch || UTConfigParser.isPresent("B:\"Replanting Cocoa Beans\"=true"));
+                return Loader.isModLoaded("forestry") && UTConfig.MOD_INTEGRATION.FORESTRY.utFOCocoaBeansToggle;
             case "mixins.mods.forestry.extratrees.json":
                 return Loader.isModLoaded("extratrees");
             case "mixins.mods.infernalmobs.json":
@@ -111,8 +113,9 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.tconstruct.json":
                 return Loader.isModLoaded("tconstruct");
             case "mixins.mods.tconstruct.oredictcache.json":
-                return Loader.isModLoaded("tconstruct") && (UTLoadingPlugin.firstLaunch || UTConfigParser.isPresent("B:\"Ore Dictionary Cache\"=true"));
+                return Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle;
+            default:
+                return true;
         }
-        return true;
     }
 }

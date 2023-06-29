@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfigParser;
+import mod.acgaming.universaltweaks.config.UTConfig;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
 @IFMLLoadingPlugin.Name("UniversalTweaksCore")
@@ -21,15 +21,14 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 {
     public static final boolean isClient = FMLLaunchHandler.side().isClient();
     public static final boolean isDev = FMLLaunchHandler.isDeobfuscatedEnvironment();
-    public static final boolean firstLaunch = UTConfigParser.init();
     public static boolean spongePlayerList;
     public static boolean spongeAnvilChunkLoader;
     public static long launchTime;
 
     static
     {
-        if (firstLaunch || UTConfigParser.isPresent("B:\"Show Loading Time\"=true")) launchTime = System.currentTimeMillis();
-        if ((firstLaunch || UTConfigParser.isPresent("B:\"Locale Crash\"=true")) && Locale.getDefault().getLanguage().equals("tr"))
+        if (UTConfig.DEBUG.utLoadingTimeToggle) launchTime = System.currentTimeMillis();
+        if (UTConfig.BUGFIXES_MISC.utLocaleToggle && Locale.getDefault().getLanguage().equals("tr"))
         {
             UniversalTweaks.LOGGER.info("The locale is Turkish, which is unfortunately not supported by some mods. Changing to English...");
             Locale.setDefault(Locale.ENGLISH);
@@ -276,206 +275,209 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     }
                     catch (ClassNotFoundException e)
                     {
-                        return firstLaunch || UTConfigParser.isPresent("B:\"Disable Audio Debug\"=true");
+                        return UTConfig.TWEAKS_PERFORMANCE.utDisableAudioDebugToggle;
                     }
                 case "mixins.bugfixes.blocks.blockoverlay.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"[1] Block Overlay Toggle\"=true");
+                    return UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle;
                 case "mixins.bugfixes.blocks.miningglitch.client.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Mining Glitch\"=true");
+                    return UTConfig.BUGFIXES_BLOCKS.utMiningGlitchToggle;
                 case "mixins.bugfixes.entities.elytra.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Elytra Deployment & Landing\"=true");
+                    return UTConfig.BUGFIXES_ENTITIES.utElytraDeploymentLandingToggle;
                 case "mixins.bugfixes.entities.villagermantle.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Villager Mantle Hoods\"=true");
+                    return UTConfig.BUGFIXES_ENTITIES.utVillagerMantleToggle;
                 case "mixins.bugfixes.misc.depthmask.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Depth Mask\"=true");
+                    return UTConfig.BUGFIXES_MISC.utDepthMaskToggle;
                 case "mixins.bugfixes.misc.modelgap.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"[1] Model Gap Toggle\"=true");
+                    return UTConfig.BUGFIXES_MISC.MODEL_GAP.utModelGapToggle;
                 case "mixins.bugfixes.misc.smoothlighting.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Accurate Smooth Lighting\"=true");
+                    return UTConfig.BUGFIXES_MISC.utAccurateSmoothLighting;
                 case "mixins.bugfixes.misc.startup.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Faster Background Startup\"=true");
+                    return UTConfig.TWEAKS_PERFORMANCE.utFasterBackgroundStartupToggle;
                 case "mixins.bugfixes.world.frustumculling.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Frustum Culling\"=true");
+                    return UTConfig.BUGFIXES_WORLD.utFrustumCullingToggle;
                 case "mixins.tweaks.entities.autojump.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Auto Jump Replacement\"=true");
+                    return UTConfig.TWEAKS_ENTITIES.utAutoJumpToggle;
                 case "mixins.tweaks.items.attackcooldown.client.json":
-                    return !firstLaunch && UTConfigParser.isPresent("B:\"[1] No Attack Cooldown Toggle\"=true");
+                    return UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle;
                 case "mixins.tweaks.items.itementities.client.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"[01] Item Entities Toggle\"=true");
+                    return UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utItemEntitiesToggle;
                 case "mixins.tweaks.misc.buttons.realms.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Remove Realms Button\"=true");
+                    return UTConfig.TWEAKS_MISC.utRealmsButtonToggle;
                 case "mixins.tweaks.misc.buttons.snooper.client.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Remove Snooper\"=true");
+                    return UTConfig.TWEAKS_MISC.utSnooperToggle;
                 case "mixins.tweaks.misc.commands.seed.json":
-                    return !firstLaunch && UTConfigParser.isPresent("B:\"Copy World Seed\"=true");
+                    return UTConfig.TWEAKS_MISC.utCopyWorldSeedToggle;
                 case "mixins.tweaks.misc.credits.json":
-                    return !firstLaunch && UTConfigParser.isPresent("B:\"Skip Credits\"=true");
+                    return UTConfig.TWEAKS_MISC.utSkipCreditsToggle;
                 case "mixins.tweaks.misc.lightning.flash.json":
-                    return !firstLaunch && UTConfigParser.isPresent("B:\"No Lightning Flash\"=true");
+                    return UTConfig.TWEAKS_MISC.LIGHTNING.utLightningFlashToggle;
                 case "mixins.tweaks.misc.music.json":
-                    return !firstLaunch && UTConfigParser.isPresent("B:\"Infinite Music\"=true");
+                    return UTConfig.TWEAKS_MISC.utInfiniteMusicToggle;
                 case "mixins.tweaks.misc.narrator.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Disable Narrator\"=true");
+                    return UTConfig.TWEAKS_MISC.utDisableNarratorToggle;
                 case "mixins.tweaks.misc.nightvisionflash.json":
-                    return !firstLaunch && UTConfigParser.isPresent("B:\"No Night Vision Flash\"=true");
+                    return UTConfig.TWEAKS_MISC.utNightVisionFlashToggle;
                 case "mixins.tweaks.misc.recipebook.client.json":
-                    return !firstLaunch && UTConfigParser.isPresent("B:\"Remove Recipe Book\"=true");
+                    return UTConfig.TWEAKS_MISC.utRecipeBookToggle;
                 case "mixins.tweaks.misc.smoothscrolling.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"[1] Smooth Scrolling Toggle\"=true");
+                    return UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle;
                 case "mixins.tweaks.misc.toastcontrol.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"[1] Toast Control Toggle\"=true");
+                    return UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlToggle;
                 case "mixins.tweaks.performance.fps.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Uncap FPS\"=true");
+                    return UTConfig.TWEAKS_PERFORMANCE.utUncapFPSToggle;
                 case "mixins.tweaks.performance.missingmodel.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Disable Fancy Missing Model\"=true");
+                    return UTConfig.TWEAKS_PERFORMANCE.utDisableFancyMissingModelToggle;
                 case "mixins.tweaks.performance.resourcemanager.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Check Animated Models\"=true");
+                    return UTConfig.TWEAKS_PERFORMANCE.utCheckAnimatedModelsToggle;
                 case "mixins.tweaks.world.loading.client.json":
-                    return firstLaunch || UTConfigParser.isPresent("B:\"Fast World Loading\"=true");
+                    return UTConfig.TWEAKS_PERFORMANCE.utWorldLoadingToggle;
+                default:
+                    return true;
             }
         }
         switch (mixinConfig)
         {
             case "mixins.bugfixes.blocks.comparatortiming.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Comparator Timing\"=true");
+                return UTConfig.BUGFIXES_BLOCKS.utComparatorTimingToggle;
             case "mixins.bugfixes.blocks.fallingblockdamage.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Falling Block Entity Damage\"=true");
+                return UTConfig.BUGFIXES_BLOCKS.utFallingBlockDamageToggle;
             case "mixins.bugfixes.blocks.hopper.boundingbox.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Hopper Bounding Box\"=true");
+                return UTConfig.BUGFIXES_BLOCKS.utDietHopperToggle;
             case "mixins.bugfixes.blocks.hopper.tile.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Hopper Insert Safety Check\"=true");
+                return UTConfig.BUGFIXES_BLOCKS.utHopperInsertToggle;
             case "mixins.bugfixes.blocks.itemframevoid.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Item Frame Void\"=true");
+                return UTConfig.BUGFIXES_BLOCKS.utItemFrameVoidToggle;
             case "mixins.bugfixes.blocks.ladderflying.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Ladder Flying Slowdown\"=true");
+                return UTConfig.BUGFIXES_BLOCKS.utLadderFlyingToggle;
             case "mixins.bugfixes.blocks.miningglitch.server.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Mining Glitch\"=true");
+                return UTConfig.BUGFIXES_BLOCKS.utMiningGlitchToggle;
             case "mixins.bugfixes.blocks.pistontile.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Piston Progress\"=true");
+                return UTConfig.BUGFIXES_BLOCKS.utPistonTileToggle;
             case "mixins.bugfixes.entities.ai.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Concurrent Entity AI Tasks\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utEntityAITasksToggle;
             case "mixins.bugfixes.entities.attackradius.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Attack Radius\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utAttackRadiusToggle;
             case "mixins.bugfixes.entities.blockfire.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Block Fire\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utBlockFireToggle;
             case "mixins.bugfixes.entities.boatoffset.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Boat Riding Offset\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utBoatOffsetToggle;
             case "mixins.bugfixes.entities.boundingbox.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Bounding Box\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utEntityAABBToggle;
             case "mixins.bugfixes.entities.deathtime.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Death Time\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utDeathTimeToggle;
             case "mixins.bugfixes.entities.destroypacket.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Destroy Entity Packets\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utDestroyPacketToggle;
             case "mixins.bugfixes.entities.desync.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Desync\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utEntityDesyncToggle;
             case "mixins.bugfixes.entities.dimensionchange.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Dimension Change Player States\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utDimensionChangeToggle;
             case "mixins.bugfixes.entities.disconnectdupe.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Disconnect Dupe\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utDisconnectDupeToggle;
             case "mixins.bugfixes.entities.entityid.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Entity ID\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utEntityIDToggle;
             case "mixins.bugfixes.entities.maxhealth.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Max Player Health\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle;
             case "mixins.bugfixes.entities.mount.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Mount Desync\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utMountDesyncToggle;
             case "mixins.bugfixes.entities.saturation.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Player Saturation\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utExhaustionToggle;
             case "mixins.bugfixes.entities.skeletonaim.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Skeleton Aim\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utSkeletonAimToggle;
             case "mixins.bugfixes.entities.suffocation.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Entity Suffocation\"=true");
+                return UTConfig.BUGFIXES_ENTITIES.utEntitySuffocationToggle;
             case "mixins.bugfixes.entities.tracker.json":
-                return (firstLaunch || UTConfigParser.isPresent("B:\"Entity Tracker\"=true")) && !spongePlayerList;
+                return UTConfig.BUGFIXES_ENTITIES.utEntityTrackerToggle && !spongePlayerList;
             case "mixins.bugfixes.world.chunksaving.json":
-                return (firstLaunch || UTConfigParser.isPresent("B:\"Chunk Saving\"=true")) && !spongeAnvilChunkLoader;
+                return UTConfig.BUGFIXES_WORLD.utChunkSavingToggle && !spongeAnvilChunkLoader;
             case "mixins.bugfixes.world.tileentities.json":
-                return firstLaunch || !UTConfigParser.isPresent("S:\"Tile Entity Map\"=HASHMAP");
+                return UTConfig.BUGFIXES_WORLD.utTileEntityMap != UTConfig.BugfixesWorldCategory.EnumMaps.HASHMAP;
             case "mixins.tweaks.blocks.bedobstruction.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Bed Obstruction Replacement\"=true");
+                return UTConfig.TWEAKS_BLOCKS.utBedObstructionToggle;
             case "mixins.tweaks.blocks.breakablebedrock.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Breakable Bedrock Toggle\"=true");
+                return UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle;
             case "mixins.tweaks.blocks.growthsize.json":
-                return !firstLaunch && (!UTConfigParser.isPresent("I:\"Cactus Size\"=3") || !UTConfigParser.isPresent("I:\"Sugar Cane Size\"=3") || !UTConfigParser.isPresent("I:\"Vine Size\"=0"));
+                return UTConfig.TWEAKS_BLOCKS.utCactusSize != 3 && UTConfig.TWEAKS_BLOCKS.utSugarCaneSize != 3 && UTConfig.TWEAKS_BLOCKS.utVineSize != 0;
             case "mixins.tweaks.blocks.hitdelay.json":
-                return !firstLaunch && !UTConfigParser.isPresent("I:\"Block Hit Delay\"=5");
+                return UTConfig.TWEAKS_BLOCKS.utBlockHitDelay != 5;
             case "mixins.tweaks.blocks.leafdecay.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Fast Leaf Decay\"=true");
+                return UTConfig.TWEAKS_BLOCKS.utLeafDecayToggle;
             case "mixins.tweaks.blocks.lenientpaths.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Lenient Paths\"=true");
+                return UTConfig.TWEAKS_BLOCKS.utLenientPathsToggle;
             case "mixins.tweaks.entities.ai.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"AI Replacement\"=true");
+                return UTConfig.TWEAKS_ENTITIES.utAIReplacementToggle;
             case "mixins.tweaks.entities.ai.saddledwandering.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"No Saddled Wandering\"=true");
+                return UTConfig.TWEAKS_ENTITIES.utSaddledWanderingToggle;
             case "mixins.tweaks.entities.ai.wither.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"Disable Wither Targeting AI\"=true");
+                return UTConfig.TWEAKS_ENTITIES.utWitherAIToggle;
             case "mixins.tweaks.entities.burning.horses.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Burning Undead Horses\"=true");
+                return UTConfig.TWEAKS_ENTITIES.UNDEAD_HORSES.utBurningUndeadHorsesToggle;
             case "mixins.tweaks.entities.damage.arrow.json":
-                return !firstLaunch && !UTConfigParser.isPresent("I:\"Critical Arrow Damage\"=-1");
+                return UTConfig.TWEAKS_ENTITIES.utCriticalArrowDamage != -1;
             case "mixins.tweaks.entities.damage.collision.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Collision Damage Toggle\"=true");
+                return UTConfig.TWEAKS_ENTITIES.COLLISION_DAMAGE.utCollisionDamageToggle;
             case "mixins.tweaks.entities.damage.falling.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Water Fall Damage Toggle\"=true");
+                return UTConfig.TWEAKS_ENTITIES.WATER_FALL_DAMAGE.utFallDamageToggle;
             case "mixins.tweaks.entities.damage.velocity.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Damage Velocity Toggle\"=true");
+                return UTConfig.TWEAKS_ENTITIES.DAMAGE_VELOCITY.utDamageVelocityToggle;
             case "mixins.tweaks.entities.despawning.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Mob Despawn Improvement\"=true");
+                return UTConfig.TWEAKS_ENTITIES.utMobDespawnToggle;
             case "mixins.tweaks.entities.loot.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"Disable Creeper Music Discs\"=true");
+                return UTConfig.TWEAKS_ENTITIES.utCreeperMusicDiscsToggle;
             case "mixins.tweaks.entities.spawning.caps.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Spawn Caps Toggle\"=true");
+                return UTConfig.TWEAKS_ENTITIES.SPAWN_CAPS.utSpawnCapsToggle;
             case "mixins.tweaks.entities.spawning.creepers.confetti.json":
-                return !firstLaunch && !UTConfigParser.isPresent("D:\"Creeper Confetti Spawning Chance\"=0.0");
+                return UTConfig.TWEAKS_ENTITIES.utCreeperConfettiChance != 0.0D;
             case "mixins.tweaks.entities.spawning.golems.json":
-                return !firstLaunch && (UTConfigParser.isPresent("B:\"[1] Iron Golem Toggle\"=true") || UTConfigParser.isPresent("B:\"[2] Snow Golem Toggle\"=true") || UTConfigParser.isPresent("B:\"[3] Wither Toggle\"=true"));
+                return UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGIronGolemToggle || UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGSnowGolemToggle || UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGWitherToggle;
             case "mixins.tweaks.entities.spawning.husk.json":
             case "mixins.tweaks.entities.spawning.stray.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Husk & Stray Spawning\"=true");
+                return UTConfig.TWEAKS_ENTITIES.utHuskStraySpawningToggle;
             case "mixins.tweaks.entities.speed.boat.json":
-                return !firstLaunch && !UTConfigParser.isPresent("D:\"Boat Speed\"=0.04");
+                return UTConfig.TWEAKS_ENTITIES.utBoatSpeed != 0.04D;
             case "mixins.tweaks.entities.speed.player.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Player Speed Toggle\"=true");
+                return UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle;
             case "mixins.tweaks.entities.taming.horses.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Taming Undead Horses\"=true");
+                return UTConfig.TWEAKS_ENTITIES.UNDEAD_HORSES.utTamingUndeadHorsesToggle;
             case "mixins.tweaks.items.attackcooldown.server.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] No Attack Cooldown Toggle\"=true");
+                return UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle;
             case "mixins.tweaks.items.hardcorebuckets.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"Hardcore Buckets\"=true");
+                return UTConfig.TWEAKS_ITEMS.utHardcoreBucketsToggle;
             case "mixins.tweaks.items.itementities.server.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"[01] Item Entities Toggle\"=true");
+                return UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utItemEntitiesToggle;
             case "mixins.tweaks.items.repairing.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"No Crafting Repair\"=true");
+                return UTConfig.TWEAKS_ITEMS.utCraftingRepairToggle;
             case "mixins.tweaks.items.xpbottle.json":
-                return !firstLaunch && !UTConfigParser.isPresent("I:\"XP Bottle Amount\"=-1");
+                return UTConfig.TWEAKS_ITEMS.utXPBottleAmount != -1;
             case "mixins.tweaks.misc.buttons.snooper.server.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Remove Snooper\"=true");
+                return UTConfig.TWEAKS_MISC.utSnooperToggle;
             case "mixins.tweaks.misc.lightning.damage.json":
-                return !firstLaunch && (!UTConfigParser.isPresent("D:\"Lightning Damage\"=5.0") || !UTConfigParser.isPresent("I:\"Lightning Fire Ticks\"=8"));
+                return UTConfig.TWEAKS_MISC.LIGHTNING.utLightningDamage != 5.0D || UTConfig.TWEAKS_MISC.LIGHTNING.utLightningFireTicks != 8;
             case "mixins.tweaks.misc.lightning.fire.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"No Lightning Fire\"=true");
+                return UTConfig.TWEAKS_MISC.LIGHTNING.utLightningFireToggle;
             case "mixins.tweaks.misc.incurablepotions.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"[1] Incurable Potions Toggle\"=true");
+                return UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle;
             case "mixins.tweaks.misc.xp.linear.json":
-                return !firstLaunch && !UTConfigParser.isPresent("I:\"Linear XP Amount\"=0");
+                return UTConfig.TWEAKS_MISC.utLinearXP != 0;
             case "mixins.tweaks.misc.recipebook.server.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"Remove Recipe Book\"=true");
+                return UTConfig.TWEAKS_MISC.utRecipeBookToggle;
             case "mixins.tweaks.misc.xp.smelting.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"No Smelting XP\"=true");
+                return UTConfig.TWEAKS_MISC.utSmeltingXPToggle;
             case "mixins.tweaks.performance.autosave.json":
-                return !firstLaunch && !UTConfigParser.isPresent("I:\"Auto Save Interval\"=900");
+                return UTConfig.TWEAKS_PERFORMANCE.utAutoSaveInterval != 900;
             case "mixins.tweaks.performance.craftingcache.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Crafting Cache\"=true");
+                return UTConfig.TWEAKS_PERFORMANCE.utCraftingCacheToggle;
             case "mixins.tweaks.performance.dyeblending.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Fast Dye Blending\"=true");
+                return UTConfig.TWEAKS_PERFORMANCE.utDyeBlendingToggle;
             case "mixins.tweaks.performance.prefixcheck.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Fast Prefix Checking\"=true");
+                return UTConfig.TWEAKS_PERFORMANCE.utPrefixCheckToggle;
             case "mixins.tweaks.performance.redstone.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"No Redstone Lighting\"=true");
+                return UTConfig.TWEAKS_PERFORMANCE.utRedstoneLightingToggle;
             case "mixins.tweaks.world.chunks.gen.json":
-                return !firstLaunch && UTConfigParser.isPresent("B:\"[1] Chunk Gen Limit Toggle\"=true");
+                return UTConfig.TWEAKS_WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle;
             case "mixins.tweaks.world.loading.server.json":
-                return firstLaunch || UTConfigParser.isPresent("B:\"Fast World Loading\"=true");
+                return UTConfig.TWEAKS_PERFORMANCE.utWorldLoadingToggle;
+            default:
+                return true;
         }
-        return true;
     }
 }
