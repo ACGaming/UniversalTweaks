@@ -1643,8 +1643,12 @@ public class UTConfig
 
         @Config.RequiresMcRestart
         @Config.Name("Fast World Loading")
-        @Config.Comment("Skips initial world chunk loading & garbage collection to speed up world loading")
-        public boolean utWorldLoadingToggle = true;
+        @Config.Comment
+            ({
+                "Skips initial world chunk loading & garbage collection to speed up world loading",
+                "May have side effects such as slower chunk generation"
+            })
+        public boolean utWorldLoadingToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("No Redstone Lighting")
