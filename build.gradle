@@ -1,12 +1,14 @@
 buildscript {
     repositories {
         maven {
+            name = "Forge"
             url = "https://maven.minecraftforge.net"
         }
         maven {
             name = "Sponge"
             url = "https://repo.spongepowered.org/maven"
         }
+        mavenCentral()
     }
     dependencies {
         classpath 'com.anatawa12.forge:ForgeGradle:2.3-1.0.8'
@@ -50,7 +52,7 @@ jar {
 repositories {
     maven {
         name = "Curse Maven"
-        url = "https://www.cursemaven.com"
+        url = "https://cursemaven.com"
     }
     maven {
         name = "CleanroomMC"
