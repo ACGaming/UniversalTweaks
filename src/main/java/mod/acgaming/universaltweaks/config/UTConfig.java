@@ -1723,25 +1723,9 @@ public class UTConfig
 
     public static class DebugCategory
     {
-        @Config.Name("Bypass Config Versioning")
-        @Config.Comment
-            ({
-                "Disables config resets on mod updates",
-                "Please note that you will face duplicate/invalid config settings"
-            })
-        public boolean utBypassConfigVersioningToggle = false;
-
         @Config.Name("Bypass Incompatibility Warnings")
         @Config.Comment("For those who live life on the edge, may or may not include Jons")
         public boolean utBypassIncompatibilityToggle = false;
-
-        @Config.Name("Config Version")
-        @Config.Comment
-            ({
-                "Version number of the config file",
-                "Do not touch!",
-            })
-        public String utConfigVersion = UniversalTweaks.VERSION;
 
         @Config.Name("Debug Logging")
         @Config.Comment("Enables debug logging")
