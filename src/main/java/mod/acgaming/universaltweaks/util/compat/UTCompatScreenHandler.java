@@ -16,18 +16,10 @@ public class UTCompatScreenHandler
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utDisplayCompatScreens(GuiOpenEvent event)
     {
-        if (event.getGui() instanceof GuiMainMenu)
+        if (event.getGui() instanceof GuiMainMenu && UTObsoleteModsHandler.showObsoleteMods && UTObsoleteModsHandler.obsoleteModsMessage().size() > 5 && !UTConfig.DEBUG.utBypassIncompatibilityToggle)
         {
-            if (UTMixinBooterHandler.showMixinBooter && !UTConfig.DEBUG.utBypassIncompatibilityToggle)
-            {
-                event.setGui(new UTCompatScreen(UTMixinBooterHandler.mixinBooterMessage()));
-                UTMixinBooterHandler.showMixinBooter = false;
-            }
-            else if (UTObsoleteModsHandler.showObsoleteMods && UTObsoleteModsHandler.obsoleteModsMessage().size() > 5 && !UTConfig.DEBUG.utBypassIncompatibilityToggle)
-            {
-                event.setGui(new UTCompatScreen(UTObsoleteModsHandler.obsoleteModsMessage()));
-                UTObsoleteModsHandler.showObsoleteMods = false;
-            }
+            event.setGui(new UTCompatScreen(UTObsoleteModsHandler.obsoleteModsMessage()));
+            UTObsoleteModsHandler.showObsoleteMods = false;
         }
     }
 }
