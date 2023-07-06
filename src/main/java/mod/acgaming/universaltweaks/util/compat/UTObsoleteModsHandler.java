@@ -74,6 +74,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("nopotionshift") && UTConfig.TWEAKS_MISC.utPotionShiftToggle) messages.add("No Potion Shift");
         if (Loader.isModLoaded("noprecipebook") && UTConfig.TWEAKS_MISC.utRecipeBookToggle) messages.add("Nop Recipe Book");
         if (Loader.isModLoaded("norecipebook") && UTConfig.TWEAKS_MISC.utRecipeBookToggle) messages.add("No Recipe Book");
+        if (Loader.isModLoaded("oldcombat") && UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle) messages.add("Old Combat Mechanics");
         if (Loader.isModLoaded("overpowered_mending") && UTConfig.TWEAKS_ITEMS.MENDING.utMendingOPToggle) messages.add("Overpowered Mending");
         if (Loader.isModLoaded("parry") && UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) messages.add("Shield Parry");
         if (Loader.isModLoaded("pathundergates") && UTConfig.TWEAKS_BLOCKS.utLenientPathsToggle) messages.add("Path Under Gates");
