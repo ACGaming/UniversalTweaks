@@ -20,7 +20,7 @@ apply plugin: 'org.spongepowered.mixin'
 
 version = "1.12.2-1.7.0"
 group = "mod.acgaming.universaltweaks"
-archivesBaseName = "UniversalTweaks"
+archivesBaseName = "UniversalTweaks-MB7"
 
 sourceCompatibility = targetCompatibility = '1.8'
 compileJava {
@@ -113,7 +113,7 @@ dependencies {
     implementation "com.cleanroommc:configanytime:1.0"
     implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
     implementation "TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal"
-    implementation "zone.rong:mixinbooter:8.3"
+    implementation "zone.rong:mixinbooter:7.0"
     //implementation "net.jafama:jafama:2.3.2"
 }
 

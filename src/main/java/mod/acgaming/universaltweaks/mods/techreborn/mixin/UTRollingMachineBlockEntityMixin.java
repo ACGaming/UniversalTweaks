@@ -11,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
@@ -30,6 +29,7 @@ import reborncore.common.util.Inventory;
 import reborncore.common.util.ItemUtils;
 import techreborn.api.RollingMachineRecipe;
 import techreborn.tiles.tier1.TileRollingMachine;
+import zone.rong.mixinextras.injector.ModifyExpressionValue;
 
 // Courtesy of aria1th (ported by jchung01)
 @Mixin(value = TileRollingMachine.class, remap = false)
