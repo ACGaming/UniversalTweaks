@@ -1952,13 +1952,15 @@ public class UTConfig
                     ({
                             "Changes the data table of the radiation environment handler to improve performance",
                             "CONCURRENT_HASHMAP:        NuclearCraft default",
-                            "CONCURRENT_LINKED_HASHMAP: Keeps an order of radiation environment info to speed up iteration",
+                            "CONCURRENT_LINKED_HASHMAP: Keeps order of radiation environment info to improve iteration - Better performance",
+                            "CONCURRENT_LINKED_QUEUE:   Uses a queue to avoid iteration - Best performance"
                     })
-            public EnumMaps utNCRadiationEnvironmentMap = EnumMaps.CONCURRENT_LINKED_HASHMAP;
+            public EnumMaps utNCRadiationEnvironmentMap = EnumMaps.CONCURRENT_LINKED_QUEUE;
             public enum EnumMaps
             {
                 CONCURRENT_HASHMAP,
-                CONCURRENT_LINKED_HASHMAP
+                CONCURRENT_LINKED_HASHMAP,
+                CONCURRENT_LINKED_QUEUE
             }
         }
 
