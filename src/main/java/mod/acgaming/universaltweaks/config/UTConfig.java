@@ -1782,6 +1782,10 @@ public class UTConfig
         @Config.Name("Infernal Mobs")
         public final InfernalMobsCategory INFERNAL_MOBS = new InfernalMobsCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.nuclearcraft")
+        @Config.Name("NuclearCraft")
+        public final NuclearCraftCategory NUCLEARCRAFT = new NuclearCraftCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.roost")
         @Config.Name("Roost")
         public final RoostCategory ROOST = new RoostCategory();
@@ -1938,6 +1942,24 @@ public class UTConfig
             @Config.Name("Sticky Recall Compatibility")
             @Config.Comment("Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment")
             public boolean utIMStickyRecallToggle = true;
+        }
+
+        public static class NuclearCraftCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Radiation Environment Map")
+            @Config.Comment
+                    ({
+                            "Changes the data table of the radiation environment handler to improve performance",
+                            "CONCURRENT_HASHMAP:        NuclearCraft default",
+                            "CONCURRENT_LINKED_HASHMAP: Keeps an order of radiation environment info to speed up iteration",
+                    })
+            public EnumMaps utNCRadiationEnvironmentMap = EnumMaps.CONCURRENT_LINKED_HASHMAP;
+            public enum EnumMaps
+            {
+                CONCURRENT_HASHMAP,
+                CONCURRENT_LINKED_HASHMAP
+            }
         }
 
         public static class RoostCategory
