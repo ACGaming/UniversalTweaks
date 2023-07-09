@@ -28,6 +28,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.forestry.cocoa.json",
             "mixins.mods.forestry.extratrees.json",
             "mixins.mods.infernalmobs.json",
+            "mixins.mods.nuclearcraft.json",
             "mixins.mods.reskillable.json",
             "mixins.mods.roost.json",
             "mixins.mods.roost.contenttweaker.json",
@@ -93,6 +94,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("extratrees");
             case "mixins.mods.infernalmobs.json":
                 return Loader.isModLoaded("infernalmobs");
+            case "mixins.mods.nuclearcraft.json":
+                return Loader.isModLoaded("nuclearcraft");
             case "mixins.mods.reskillable.json":
                 return Loader.isModLoaded("reskillable");
             case "mixins.mods.roost.contenttweaker.json":
