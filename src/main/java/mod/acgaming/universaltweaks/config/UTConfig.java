@@ -1949,13 +1949,14 @@ public class UTConfig
             @Config.RequiresMcRestart
             @Config.Name("Radiation Environment Map")
             @Config.Comment
-                    ({
-                            "Changes the data table of the radiation environment handler to improve performance",
-                            "CONCURRENT_HASHMAP:        NuclearCraft default",
-                            "CONCURRENT_LINKED_HASHMAP: Keeps order of radiation environment info to improve iteration - Better performance",
-                            "CONCURRENT_LINKED_QUEUE:   Uses a queue to avoid iteration - Best performance"
-                    })
+                ({
+                    "Changes the data table of the radiation environment handler to improve performance",
+                    "CONCURRENT_HASHMAP:        NuclearCraft default",
+                    "CONCURRENT_LINKED_HASHMAP: Keeps order of radiation environment info to improve iteration - Better performance",
+                    "CONCURRENT_LINKED_QUEUE:   Uses a queue to avoid iteration - Best performance"
+                })
             public EnumMaps utNCRadiationEnvironmentMap = EnumMaps.CONCURRENT_LINKED_QUEUE;
+
             public enum EnumMaps
             {
                 CONCURRENT_HASHMAP,

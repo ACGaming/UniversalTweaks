@@ -6,6 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ConcurrentMap;
 
+import org.apache.commons.lang3.tuple.Pair;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
@@ -20,7 +21,6 @@ import nc.radiation.environment.RadiationEnvironmentHandler;
 import nc.radiation.environment.RadiationEnvironmentInfo;
 import nc.tile.radiation.ITileRadiationEnvironment;
 import nc.util.FourPos;
-import org.apache.commons.lang3.tuple.Pair;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -35,6 +35,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = RadiationEnvironmentHandler.class, remap = false)
 public class UTRadiationEnvironmentHandlerMixin
 {
+    // Used instead of iterating through HashMap in updateRadiationEnvironment()
+    private static final Queue<Pair<FourPos, RadiationEnvironmentInfo>> ENVIRONMENT_QUEUE = UTConfig.MOD_INTEGRATION.NUCLEARCRAFT.utNCRadiationEnvironmentMap == EnumMaps.CONCURRENT_LINKED_QUEUE ? new ConcurrentLinkedQueue<>() : null;
     // ENVIRONMENT will be used as the "backup" backing map if using ENVIRONMENT_QUEUE
     // ENVIRONMENT_BACKUP will be unused
     @Mutable
@@ -42,8 +44,26 @@ public class UTRadiationEnvironmentHandlerMixin
     @Final
     private static ConcurrentMap<FourPos, RadiationEnvironmentInfo> ENVIRONMENT;
 
-    // Used instead of iterating through HashMap in updateRadiationEnvironment()
-    private static final Queue<Pair<FourPos, RadiationEnvironmentInfo>> ENVIRONMENT_QUEUE = UTConfig.MOD_INTEGRATION.NUCLEARCRAFT.utNCRadiationEnvironmentMap == EnumMaps.CONCURRENT_LINKED_QUEUE ? new ConcurrentLinkedQueue<>() : null;
+    // If using ENVIRONMENT as "backup", don't need to track ENVIRONMENT_BACKUP
+    @Inject(method = "removeTile", at = @At(value = "FIELD", target = "Lnc/radiation/environment/RadiationEnvironmentHandler;ENVIRONMENT_BACKUP:Ljava/util/concurrent/ConcurrentMap;", opcode = Opcodes.GETSTATIC), cancellable = true)
+    private static void utSkipRemoveFromBackup(CallbackInfo ci)
+    {
+        if (UTConfig.MOD_INTEGRATION.NUCLEARCRAFT.utNCRadiationEnvironmentMap != EnumMaps.CONCURRENT_LINKED_QUEUE) return;
+        ci.cancel();
+    }
+
+    @Redirect(method = "<clinit>", at = @At(value = "FIELD", target = "Lnc/radiation/environment/RadiationEnvironmentHandler;ENVIRONMENT:Ljava/util/concurrent/ConcurrentMap;"))
+    private static void utUseEnvironmentLinkedMap(ConcurrentMap<FourPos, RadiationEnvironmentInfo> map)
+    {
+        if (UTConfig.MOD_INTEGRATION.NUCLEARCRAFT.utNCRadiationEnvironmentMap == EnumMaps.CONCURRENT_LINKED_HASHMAP)
+        {
+            if (UTConfig.DEBUG.utDebugToggle)
+                UniversalTweaks.LOGGER.debug("UTRadiationEnvironmentHandler ::: Concurrent linked hash map");
+            // only replace ENVIRONMENT, ENVIRONMENT_BACKUP is not iterated on often (if at all)
+            ENVIRONMENT = new ConcurrentLinkedHashMap.Builder<FourPos, RadiationEnvironmentInfo>().maximumWeightedCapacity(Long.MAX_VALUE - Integer.MAX_VALUE).build();
+        }
+        else ENVIRONMENT = new ConcurrentHashMap<>();
+    }
 
     @Inject(method = "updateRadiationEnvironment", at = @At(value = "HEAD"), cancellable = true)
     private void utUseEnvironmentQueue(WorldTickEvent event, CallbackInfo ci)
@@ -92,26 +112,5 @@ public class UTRadiationEnvironmentHandlerMixin
             }
             ENVIRONMENT.clear();
         }
-    }
-
-    // If using ENVIRONMENT as "backup", don't need to track ENVIRONMENT_BACKUP
-    @Inject(method = "removeTile", at = @At(value = "FIELD", target = "Lnc/radiation/environment/RadiationEnvironmentHandler;ENVIRONMENT_BACKUP:Ljava/util/concurrent/ConcurrentMap;", opcode = Opcodes.GETSTATIC), cancellable = true)
-    private static void utSkipRemoveFromBackup(CallbackInfo ci)
-    {
-        if (UTConfig.MOD_INTEGRATION.NUCLEARCRAFT.utNCRadiationEnvironmentMap != EnumMaps.CONCURRENT_LINKED_QUEUE) return;
-        ci.cancel();
-    }
-
-
-    @Redirect(method = "<clinit>", at = @At(value = "FIELD", target = "Lnc/radiation/environment/RadiationEnvironmentHandler;ENVIRONMENT:Ljava/util/concurrent/ConcurrentMap;"))
-    private static void utUseEnvironmentLinkedMap(ConcurrentMap<FourPos, RadiationEnvironmentInfo> map)
-    {
-        if (UTConfig.MOD_INTEGRATION.NUCLEARCRAFT.utNCRadiationEnvironmentMap == EnumMaps.CONCURRENT_LINKED_HASHMAP)
-        {
-            if (UTConfig.DEBUG.utDebugToggle)
-                UniversalTweaks.LOGGER.debug("UTRadiationEnvironmentHandler ::: Concurrent linked hash map");
-            // only replace ENVIRONMENT, ENVIRONMENT_BACKUP is not iterated on often (if at all)
-            ENVIRONMENT = new ConcurrentLinkedHashMap.Builder<FourPos, RadiationEnvironmentInfo>().maximumWeightedCapacity(Long.MAX_VALUE - Integer.MAX_VALUE).build();
-        } else ENVIRONMENT = new ConcurrentHashMap<>();
     }
 }
