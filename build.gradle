@@ -113,6 +113,7 @@ dependencies {
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
     implementation "com.cleanroommc:configanytime:1.0"
     implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
+    implementation "curse.maven:netherrocks-226140:2628297"
     implementation "TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal"
     implementation "zone.rong:mixinbooter:8.3"
     //implementation "net.jafama:jafama:2.3.2"

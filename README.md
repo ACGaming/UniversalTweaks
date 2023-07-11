@@ -178,6 +178,10 @@ All changes are toggleable via the config file.
     * Replanting Cocoa Beans: Allows Forestry farms to automatically replant cocoa beans
 * Infernal Mobs
     * Sticky Recall Compatibility: Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment
+* Netherrocks
+    * Right Click Harvesting Fix: Prevents crashing with mods implementing right click crop harvesting
+* NuclearCraft
+    * Radiation Environment Map: Changes the data table of the radiation environment handler to improve performance
 * Roost
     * Early Register CT Chickens: Improves load time by registering CT chickens early for Roost to detect them
 * Simple Difficulty

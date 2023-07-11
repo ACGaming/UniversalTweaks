@@ -1782,6 +1782,10 @@ public class UTConfig
         @Config.Name("Infernal Mobs")
         public final InfernalMobsCategory INFERNAL_MOBS = new InfernalMobsCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.netherrocks")
+        @Config.Name("Netherrocks")
+        public final NetherrocksCategory NETHERROCKS = new NetherrocksCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.nuclearcraft")
         @Config.Name("NuclearCraft")
         public final NuclearCraftCategory NUCLEARCRAFT = new NuclearCraftCategory();
@@ -1942,6 +1946,14 @@ public class UTConfig
             @Config.Name("Sticky Recall Compatibility")
             @Config.Comment("Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment")
             public boolean utIMStickyRecallToggle = true;
+        }
+
+        public static class NetherrocksCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Right Click Harvesting Fix")
+            @Config.Comment("Prevents crashing with mods implementing right click crop harvesting")
+            public boolean utNRRightClickHarvestingToggle = true;
         }
 
         public static class NuclearCraftCategory
