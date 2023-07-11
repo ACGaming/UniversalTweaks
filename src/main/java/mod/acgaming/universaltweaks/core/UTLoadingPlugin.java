@@ -21,8 +21,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 {
     public static final boolean isClient = FMLLaunchHandler.side().isClient();
     public static final boolean isDev = FMLLaunchHandler.isDeobfuscatedEnvironment();
-    public static boolean spongePlayerList;
-    public static boolean spongeAnvilChunkLoader;
+    public static boolean spongeForgeLoaded;
     public static long launchTime;
 
     static
@@ -36,15 +35,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 
         try
         {
-            Class.forName("org.spongepowered.mod.mixin.core.server.management.PlayerListMixin_Forge");
-            spongePlayerList = true;
-        }
-        catch (ClassNotFoundException ignored) {}
-
-        try
-        {
-            Class.forName("org.spongepowered.common.mixin.core.world.chunk.storage.AnvilChunkLoaderMixin");
-            spongeAnvilChunkLoader = true;
+            Class.forName("org.spongepowered.mod.SpongeCoremod");
+            spongeForgeLoaded = true;
         }
         catch (ClassNotFoundException ignored) {}
     }
@@ -356,7 +348,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.bugfixes.blocks.pistontile.json":
                 return UTConfig.BUGFIXES_BLOCKS.utPistonTileToggle;
             case "mixins.bugfixes.misc.packetsize.json":
-                return UTConfig.BUGFIXES_MISC.utPacketSize > 0x200000;
+                return UTConfig.BUGFIXES_MISC.utPacketSize > 0x200000 && !spongeForgeLoaded;
             case "mixins.bugfixes.entities.ai.json":
                 return UTConfig.BUGFIXES_ENTITIES.utEntityAITasksToggle;
             case "mixins.bugfixes.entities.attackradius.json":
@@ -390,9 +382,9 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.bugfixes.entities.suffocation.json":
                 return UTConfig.BUGFIXES_ENTITIES.utEntitySuffocationToggle;
             case "mixins.bugfixes.entities.tracker.json":
-                return UTConfig.BUGFIXES_ENTITIES.utEntityTrackerToggle && !spongePlayerList;
+                return UTConfig.BUGFIXES_ENTITIES.utEntityTrackerToggle && !spongeForgeLoaded;
             case "mixins.bugfixes.world.chunksaving.json":
-                return UTConfig.BUGFIXES_WORLD.utChunkSavingToggle && !spongeAnvilChunkLoader;
+                return UTConfig.BUGFIXES_WORLD.utChunkSavingToggle && !spongeForgeLoaded;
             case "mixins.bugfixes.world.tileentities.json":
                 return UTConfig.BUGFIXES_WORLD.utTileEntityMap != UTConfig.BugfixesWorldCategory.EnumMaps.HASHMAP;
             case "mixins.tweaks.blocks.bedobstruction.json":

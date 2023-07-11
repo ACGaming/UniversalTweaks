@@ -309,7 +309,8 @@ public class UTConfig
         @Config.Comment
             ({
                 "Increases the packet size limit to account for large packets in modded environments",
-                "Vanilla default is 0x200000"
+                "Vanilla default is 0x200000",
+                "Incompatible with SpongeForge"
             })
         public int utPacketSize = 0x1000000;
 
