@@ -304,6 +304,15 @@ public class UTConfig
         @Config.Comment("Prevents various crashes with Turkish locale")
         public boolean utLocaleToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Packet Size")
+        @Config.Comment
+            ({
+                "Increases the packet size limit to account for large packets in modded environments",
+                "Vanilla default is 0x200000"
+            })
+        public int utPacketSize = 0x1000000;
+
         public static class ModelGapCategory
         {
             @Config.RequiresMcRestart
