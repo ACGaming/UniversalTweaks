@@ -1760,6 +1760,10 @@ public class UTConfig
         @Config.Name("Biomes O' Plenty")
         public final BiomesOPlentyCategory BIOMES_O_PLENTY = new BiomesOPlentyCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.bm")
+        @Config.Name("Blood Magic")
+        public final BloodMagicCategory BLOOD_MAGIC = new BloodMagicCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.botania")
         @Config.Name("Botania")
         public final BotaniaCategory BOTANIA = new BotaniaCategory();
@@ -1858,6 +1862,19 @@ public class UTConfig
             @Config.Name("Hot Spring Water")
             @Config.Comment("Fixes rapid inflection of regeneration effects in hot spring water")
             public boolean utBoPHotSpringWaterToggle = true;
+        }
+
+        public static class BloodMagicCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Optimized Hellfire Forge")
+            @Config.Comment("Optimizes the Hellfire/Soul Forge to reduce tick time")
+            public boolean utBMOptimizeSoulForgeToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("World Unload Memory Leak Fix")
+            @Config.Comment("Fixes memory leak related to unloading worlds/switching dimensions")
+            public boolean utBMWorldUnloadToggle = true;
         }
 
         public static class BotaniaCategory

@@ -17,6 +17,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.abyssalcraft.json",
             "mixins.mods.aoa3.json",
             "mixins.mods.biomesoplenty.json",
+            "mixins.mods.bloodmagic.json",
             "mixins.mods.botania.json",
             "mixins.mods.cofhcore.json",
             "mixins.mods.crafttweaker.json",
@@ -75,6 +76,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("abyssalcraft");
             case "mixins.mods.biomesoplenty.json":
                 return Loader.isModLoaded("biomesoplenty");
+            case "mixins.mods.bloodmagic.json":
+                return Loader.isModLoaded("bloodmagic");
             case "mixins.mods.botania.json":
                 return Loader.isModLoaded("botania");
             case "mixins.mods.cofhcore.json":
