@@ -90,6 +90,7 @@ dependencies {
     deobfCompile "curse.maven:baubles-227083:2518667"
     deobfCompile "curse.maven:binnies-mods-223525:2916129"
     deobfCompile "curse.maven:biomes-o-plenty-220318:2842510"
+    deobfCompile "curse.maven:blood-magic-224791:2822288"
     deobfCompile "curse.maven:botania-225643:3330934"
     deobfCompile "curse.maven:chameleon-230497:2450900"
     deobfCompile "curse.maven:chickens-241941:2537643"
