@@ -18,7 +18,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
-version = "1.12.2-1.7.0"
+version = "1.12.2-1.7.1"
 group = "mod.acgaming.universaltweaks"
 archivesBaseName = "UniversalTweaks-MB7"
 
@@ -90,6 +90,7 @@ dependencies {
     deobfCompile "curse.maven:baubles-227083:2518667"
     deobfCompile "curse.maven:binnies-mods-223525:2916129"
     deobfCompile "curse.maven:biomes-o-plenty-220318:2842510"
+    deobfCompile "curse.maven:blood-magic-224791:2822288"
     deobfCompile "curse.maven:botania-225643:3330934"
     deobfCompile "curse.maven:chameleon-230497:2450900"
     deobfCompile "curse.maven:chickens-241941:2537643"
@@ -100,6 +101,7 @@ dependencies {
     deobfCompile "curse.maven:fluxnetworks-248020:3178199"
     deobfCompile "curse.maven:forestry-59751:2918418"
     deobfCompile "curse.maven:modtweaker-220954:3840577"
+    deobfCompile "curse.maven:nuclearcraft-226254:3784145"
     deobfCompile "curse.maven:reborn-core-237903:3330308"
     deobfCompile "curse.maven:reskillable-286382:2815686"
     deobfCompile "curse.maven:roost-277711:2702080"
@@ -107,11 +109,13 @@ dependencies {
     deobfCompile "curse.maven:storage-drawers-223852:2952606"
     deobfCompile "curse.maven:tech-reborn-233564:2966851"
     deobfCompile "curse.maven:thaumcraft-223628:2629023"
+    deobfCompile "curse.maven:the-erebus-220698:3211974"
     deobfCompile "curse.maven:thermal-expansion-69163:2926431"
     deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.55"
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
     implementation "com.cleanroommc:configanytime:1.0"
     implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
+    implementation "curse.maven:netherrocks-226140:2628297"
     implementation "TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal"
     implementation "zone.rong:mixinbooter:7.0"
     //implementation "net.jafama:jafama:2.3.2"

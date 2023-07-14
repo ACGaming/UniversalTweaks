@@ -17,6 +17,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.abyssalcraft.json",
             "mixins.mods.aoa3.json",
             "mixins.mods.biomesoplenty.json",
+            "mixins.mods.bloodmagic.json",
             "mixins.mods.botania.json",
             "mixins.mods.cofhcore.json",
             "mixins.mods.crafttweaker.json",
@@ -24,10 +25,13 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.elementarystaffs.json",
             "mixins.mods.elenaidodge2.json",
             "mixins.mods.epicsiegemod.json",
+            "mixins.mods.erebus.json",
             "mixins.mods.forestry.json",
             "mixins.mods.forestry.cocoa.json",
             "mixins.mods.forestry.extratrees.json",
             "mixins.mods.infernalmobs.json",
+            "mixins.mods.netherrocks.json",
+            "mixins.mods.nuclearcraft.json",
             "mixins.mods.reskillable.json",
             "mixins.mods.roost.json",
             "mixins.mods.roost.contenttweaker.json",
@@ -54,7 +58,7 @@ public class UTMixinLoader implements ILateMixinLoader
             switch (mixinConfig)
             {
                 case "mixins.mods.aoa3.json":
-                    return Loader.isModLoaded("aoa3") && Loader.isModLoaded("fluxnetworks");
+                    return Loader.isModLoaded("aoa3") && (Loader.isModLoaded("fluxnetworks") || Loader.isModLoaded("nuclearcraft"));
                 case "mixins.mods.crafttweaker.json":
                     return Loader.isModLoaded("crafttweaker");
                 case "mixins.mods.roost.json":
@@ -63,8 +67,6 @@ public class UTMixinLoader implements ILateMixinLoader
                     return Loader.isModLoaded("storagedrawers");
                 case "mixins.mods.thaumcraft.entities.client.json":
                     return Loader.isModLoaded("thaumcraft");
-                default:
-                    return true;
             }
         }
         switch (mixinConfig)
@@ -73,6 +75,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("abyssalcraft");
             case "mixins.mods.biomesoplenty.json":
                 return Loader.isModLoaded("biomesoplenty");
+            case "mixins.mods.bloodmagic.json":
+                return Loader.isModLoaded("bloodmagic");
             case "mixins.mods.botania.json":
                 return Loader.isModLoaded("botania");
             case "mixins.mods.cofhcore.json":
@@ -85,6 +89,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("elenaidodge2");
             case "mixins.mods.epicsiegemod.json":
                 return Loader.isModLoaded("epicsiegemod");
+            case "mixins.mods.erebus.json":
+                return Loader.isModLoaded("erebus");
             case "mixins.mods.forestry.json":
                 return Loader.isModLoaded("forestry");
             case "mixins.mods.forestry.cocoa.json":
@@ -93,6 +99,10 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("extratrees");
             case "mixins.mods.infernalmobs.json":
                 return Loader.isModLoaded("infernalmobs");
+            case "mixins.mods.netherrocks.json":
+                return Loader.isModLoaded("netherrocks");
+            case "mixins.mods.nuclearcraft.json":
+                return Loader.isModLoaded("nuclearcraft");
             case "mixins.mods.reskillable.json":
                 return Loader.isModLoaded("reskillable");
             case "mixins.mods.roost.contenttweaker.json":
@@ -114,8 +124,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("tconstruct");
             case "mixins.mods.tconstruct.oredictcache.json":
                 return Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle;
-            default:
-                return true;
         }
+        return true;
     }
 }

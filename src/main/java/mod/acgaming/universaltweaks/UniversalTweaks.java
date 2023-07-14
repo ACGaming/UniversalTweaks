@@ -42,8 +42,8 @@ public class UniversalTweaks
 {
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
-    public static final String VERSION = "1.12.2-1.7.0";
-    public static final String DEPENDENCIES = "required-after:mixinbooter@[7.0,8.0);required-after:configanytime;after:abyssalcraft;after:aoa3;after:biomesoplenty;after:botania;after:cofhcore;after:contenttweaker;after:element;after:elenaidodge2;after:epicsiegemod;after:extratrees;after:forestry;after:infernalmobs;after:roost;after:storagedrawers;after:tconstruct;after:thaumcraft;after:thermalexpansion";
+    public static final String VERSION = "1.12.2-1.7.1";
+    public static final String DEPENDENCIES = "required-after:mixinbooter@[7.0,8.0);required-after:configanytime;after:abyssalcraft;after:aoa3;after:biomesoplenty;after:bloodmagic;after:botania;after:cofhcore;after:contenttweaker;after:element;after:elenaidodge2;after:epicsiegemod;after:erebus;after:extratrees;after:forestry;after:infernalmobs;after:netherrocks;after:nuclearcraft;after:roost;after:storagedrawers;after:tconstruct;after:thaumcraft;after:thermalexpansion";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     @Mod.EventHandler

@@ -304,6 +304,16 @@ public class UTConfig
         @Config.Comment("Prevents various crashes with Turkish locale")
         public boolean utLocaleToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Packet Size")
+        @Config.Comment
+            ({
+                "Increases the packet size limit to account for large packets in modded environments",
+                "Vanilla default is 0x200000",
+                "Incompatible with SpongeForge and RandomPatches"
+            })
+        public int utPacketSize = 0x1000000;
+
         public static class ModelGapCategory
         {
             @Config.RequiresMcRestart
@@ -1330,7 +1340,11 @@ public class UTConfig
 
         @Config.RequiresMcRestart
         @Config.Name("Remove Realms Button")
-        @Config.Comment("Removes the redundant Minecraft Realms button from the main menu")
+        @Config.Comment
+            ({
+                "Removes the redundant Minecraft Realms button from the main menu",
+                "Incompatible with RandomPatches"
+            })
         public boolean utRealmsButtonToggle = true;
 
         @Config.RequiresMcRestart
@@ -1750,6 +1764,10 @@ public class UTConfig
         @Config.Name("Biomes O' Plenty")
         public final BiomesOPlentyCategory BIOMES_O_PLENTY = new BiomesOPlentyCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.bm")
+        @Config.Name("Blood Magic")
+        public final BloodMagicCategory BLOOD_MAGIC = new BloodMagicCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.botania")
         @Config.Name("Botania")
         public final BotaniaCategory BOTANIA = new BotaniaCategory();
@@ -1774,6 +1792,10 @@ public class UTConfig
         @Config.Name("Epic Siege Mod")
         public final EpicSiegeModCategory EPIC_SIEGE_MOD = new EpicSiegeModCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.erebus")
+        @Config.Name("The Erebus")
+        public final ErebusCategory EREBUS = new ErebusCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.forestry")
         @Config.Name("Forestry")
         public final ForestryCategory FORESTRY = new ForestryCategory();
@@ -1781,6 +1803,14 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.modintegration.infernalmobs")
         @Config.Name("Infernal Mobs")
         public final InfernalMobsCategory INFERNAL_MOBS = new InfernalMobsCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.netherrocks")
+        @Config.Name("Netherrocks")
+        public final NetherrocksCategory NETHERROCKS = new NetherrocksCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.nuclearcraft")
+        @Config.Name("NuclearCraft")
+        public final NuclearCraftCategory NUCLEARCRAFT = new NuclearCraftCategory();
 
         @Config.LangKey("cfg.universaltweaks.modintegration.roost")
         @Config.Name("Roost")
@@ -1842,6 +1872,19 @@ public class UTConfig
             public boolean utBoPHotSpringWaterToggle = true;
         }
 
+        public static class BloodMagicCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Optimized Hellfire Forge")
+            @Config.Comment("Optimizes the Hellfire/Soul Forge to reduce tick time")
+            public boolean utBMOptimizeSoulForgeToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("World Unload Memory Leak Fix")
+            @Config.Comment("Fixes memory leak related to unloading worlds/switching dimensions")
+            public boolean utBMWorldUnloadToggle = true;
+        }
+
         public static class BotaniaCategory
         {
             @Config.RequiresMcRestart
@@ -1894,6 +1937,14 @@ public class UTConfig
             public boolean utESMDiggerDebugToggle = true;
         }
 
+        public static class ErebusCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Preserved Blocks Fix")
+            @Config.Comment("Prevents HWYLA/TOP crashes with preserved blocks")
+            public boolean utEBPreservedBlocksToggle = true;
+        }
+
         public static class ForestryCategory
         {
             @Config.RequiresMcRestart
@@ -1938,6 +1989,35 @@ public class UTConfig
             @Config.Name("Sticky Recall Compatibility")
             @Config.Comment("Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment")
             public boolean utIMStickyRecallToggle = true;
+        }
+
+        public static class NetherrocksCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Right Click Harvesting Fix")
+            @Config.Comment("Prevents crashing with mods implementing right click crop harvesting")
+            public boolean utNRRightClickHarvestingToggle = true;
+        }
+
+        public static class NuclearCraftCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Radiation Environment Map")
+            @Config.Comment
+                ({
+                    "Changes the data table of the radiation environment handler to improve performance",
+                    "CONCURRENT_HASHMAP:        NuclearCraft default",
+                    "CONCURRENT_LINKED_HASHMAP: Keeps order of radiation environment info to improve iteration - Better performance",
+                    "CONCURRENT_LINKED_QUEUE:   Uses a queue to avoid iteration - Best performance"
+                })
+            public EnumMaps utNCRadiationEnvironmentMap = EnumMaps.CONCURRENT_LINKED_QUEUE;
+
+            public enum EnumMaps
+            {
+                CONCURRENT_HASHMAP,
+                CONCURRENT_LINKED_HASHMAP,
+                CONCURRENT_LINKED_QUEUE
+            }
         }
 
         public static class RoostCategory

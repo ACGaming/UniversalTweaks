@@ -21,8 +21,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 {
     public static final boolean isClient = FMLLaunchHandler.side().isClient();
     public static final boolean isDev = FMLLaunchHandler.isDeobfuscatedEnvironment();
-    public static boolean spongePlayerList;
-    public static boolean spongeAnvilChunkLoader;
+    public static boolean randomPatchesLoaded;
+    public static boolean spongeForgeLoaded;
     public static long launchTime;
 
     static
@@ -36,15 +36,15 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 
         try
         {
-            Class.forName("org.spongepowered.mod.mixin.core.server.management.PlayerListMixin_Forge");
-            spongePlayerList = true;
+            Class.forName("com.therandomlabs.randompatches.RandomPatches");
+            randomPatchesLoaded = true;
         }
         catch (ClassNotFoundException ignored) {}
 
         try
         {
-            Class.forName("org.spongepowered.common.mixin.core.world.chunk.storage.AnvilChunkLoaderMixin");
-            spongeAnvilChunkLoader = true;
+            Class.forName("org.spongepowered.mod.SpongeCoremod");
+            spongeForgeLoaded = true;
         }
         catch (ClassNotFoundException ignored) {}
     }
@@ -115,6 +115,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.bugfixes.entities.villagermantle.json",
             "mixins.bugfixes.misc.depthmask.json",
             "mixins.bugfixes.misc.modelgap.json",
+            "mixins.bugfixes.misc.packetsize.json",
             "mixins.bugfixes.misc.smoothlighting.json",
             "mixins.bugfixes.misc.startup.json",
             "mixins.bugfixes.world.chunksaving.json",
@@ -209,6 +210,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.bugfixes.entities.skeletonaim.json",
                 "mixins.bugfixes.entities.suffocation.json",
                 "mixins.bugfixes.entities.tracker.json",
+                "mixins.bugfixes.misc.packetsize.json",
                 "mixins.bugfixes.world.chunksaving.json",
                 "mixins.bugfixes.world.tileentities.json",
                 "mixins.tweaks.blocks.bedobstruction.json",
@@ -302,7 +304,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.tweaks.items.itementities.client.json":
                     return UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utItemEntitiesToggle;
                 case "mixins.tweaks.misc.buttons.realms.json":
-                    return UTConfig.TWEAKS_MISC.utRealmsButtonToggle;
+                    return UTConfig.TWEAKS_MISC.utRealmsButtonToggle && !randomPatchesLoaded;
                 case "mixins.tweaks.misc.buttons.snooper.client.json":
                     return UTConfig.TWEAKS_MISC.utSnooperToggle;
                 case "mixins.tweaks.misc.commands.seed.json":
@@ -331,8 +333,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfig.TWEAKS_PERFORMANCE.utCheckAnimatedModelsToggle;
                 case "mixins.tweaks.world.loading.client.json":
                     return UTConfig.TWEAKS_PERFORMANCE.utWorldLoadingToggle;
-                default:
-                    return true;
             }
         }
         switch (mixinConfig)
@@ -353,6 +353,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.BUGFIXES_BLOCKS.utMiningGlitchToggle;
             case "mixins.bugfixes.blocks.pistontile.json":
                 return UTConfig.BUGFIXES_BLOCKS.utPistonTileToggle;
+            case "mixins.bugfixes.misc.packetsize.json":
+                return UTConfig.BUGFIXES_MISC.utPacketSize > 0x200000 && !spongeForgeLoaded && !randomPatchesLoaded;
             case "mixins.bugfixes.entities.ai.json":
                 return UTConfig.BUGFIXES_ENTITIES.utEntityAITasksToggle;
             case "mixins.bugfixes.entities.attackradius.json":
@@ -386,9 +388,9 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.bugfixes.entities.suffocation.json":
                 return UTConfig.BUGFIXES_ENTITIES.utEntitySuffocationToggle;
             case "mixins.bugfixes.entities.tracker.json":
-                return UTConfig.BUGFIXES_ENTITIES.utEntityTrackerToggle && !spongePlayerList;
+                return UTConfig.BUGFIXES_ENTITIES.utEntityTrackerToggle && !spongeForgeLoaded;
             case "mixins.bugfixes.world.chunksaving.json":
-                return UTConfig.BUGFIXES_WORLD.utChunkSavingToggle && !spongeAnvilChunkLoader;
+                return UTConfig.BUGFIXES_WORLD.utChunkSavingToggle && !spongeForgeLoaded;
             case "mixins.bugfixes.world.tileentities.json":
                 return UTConfig.BUGFIXES_WORLD.utTileEntityMap != UTConfig.BugfixesWorldCategory.EnumMaps.HASHMAP;
             case "mixins.tweaks.blocks.bedobstruction.json":
@@ -476,8 +478,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle;
             case "mixins.tweaks.world.loading.server.json":
                 return UTConfig.TWEAKS_PERFORMANCE.utWorldLoadingToggle;
-            default:
-                return true;
         }
+        return true;
     }
 }

@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
+import nc.container.processor.ContainerSorptions;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,6 +26,6 @@ public class UTAOAHandleSetSlotMixin
     {
         if (!UTConfig.MOD_INTEGRATION.AOA.utFixPlayerTickInInventorylessGui) return true;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAOAHandleSetSlot ::: Check inventory-less GUI (from AOA playerTick)");
-        return !(client.player.openContainer instanceof ContainerCore);
+        return !(client.player.openContainer instanceof ContainerCore || client.player.openContainer instanceof ContainerSorptions);
     }
 }

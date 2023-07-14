@@ -23,6 +23,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("bedbreakbegone") && UTConfig.TWEAKS_BLOCKS.utBedObstructionToggle) messages.add("BedBreakBegone");
         if (Loader.isModLoaded("betterburning") && (UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBArrowsToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBCookedToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBExtinguishToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBOverlayToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBSpreadingToggle)) messages.add("Better Burning");
         if (Loader.isModLoaded("betterplacement") && UTConfig.TWEAKS_BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle) messages.add("Better Placement");
+        if (Loader.isModLoaded("biggerpacketsplz") && UTConfig.BUGFIXES_MISC.utPacketSize > 0x200000) messages.add("Bigger Packets Please");
         if (Loader.isModLoaded("blockdispenser") && UTConfig.TWEAKS_BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle) messages.add("BlockDispenser");
         if (Loader.isModLoaded("blockfire") && UTConfig.BUGFIXES_ENTITIES.utBlockFireToggle) messages.add("BlockFire");
         if (Loader.isModLoaded("blockoverlayfix") && UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) messages.add("Block Overlay Fix");
@@ -45,6 +46,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("enablecheats") && UTConfig.TWEAKS_MISC.utToggleCheatsToggle) messages.add("Enable Cheats");
         if (Loader.isModLoaded("endportalparallax") && UTConfig.TWEAKS_MISC.utEndPortalParallaxToggle) messages.add("End Portal Parallax");
         if (Loader.isModLoaded("entity_desync_fix") && UTConfig.BUGFIXES_ENTITIES.utEntityDesyncToggle) messages.add("EntityDesyncFix");
+        if (Loader.isModLoaded("erebusfix") && UTConfig.MOD_INTEGRATION.EREBUS.utEBPreservedBlocksToggle) messages.add("Erebus Fix");
         if (Loader.isModLoaded("experiencebugfix") && UTConfig.BUGFIXES_ENTITIES.utDimensionChangeToggle) messages.add("Fix Experience Bug");
         if (Loader.isModLoaded("eyltrafix") && UTConfig.BUGFIXES_ENTITIES.utElytraDeploymentLandingToggle) messages.add("Elytra-Fix");
         if (Loader.isModLoaded("fastbench") && UTConfig.TWEAKS_PERFORMANCE.utCraftingCacheToggle) messages.add("FastWorkbench");
