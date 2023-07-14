@@ -67,8 +67,6 @@ public class UTMixinLoader implements ILateMixinLoader
                     return Loader.isModLoaded("storagedrawers");
                 case "mixins.mods.thaumcraft.entities.client.json":
                     return Loader.isModLoaded("thaumcraft");
-                default:
-                    return true;
             }
         }
         switch (mixinConfig)
@@ -126,8 +124,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("tconstruct");
             case "mixins.mods.tconstruct.oredictcache.json":
                 return Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle;
-            default:
-                return true;
         }
+        return true;
     }
 }

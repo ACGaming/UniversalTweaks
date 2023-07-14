@@ -325,8 +325,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfig.TWEAKS_PERFORMANCE.utCheckAnimatedModelsToggle;
                 case "mixins.tweaks.world.loading.client.json":
                     return UTConfig.TWEAKS_PERFORMANCE.utWorldLoadingToggle;
-                default:
-                    return true;
             }
         }
         switch (mixinConfig)
@@ -472,8 +470,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle;
             case "mixins.tweaks.world.loading.server.json":
                 return UTConfig.TWEAKS_PERFORMANCE.utWorldLoadingToggle;
-            default:
-                return true;
         }
+        return true;
     }
 }
