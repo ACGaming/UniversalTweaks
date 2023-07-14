@@ -354,7 +354,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.bugfixes.blocks.pistontile.json":
                 return UTConfig.BUGFIXES_BLOCKS.utPistonTileToggle;
             case "mixins.bugfixes.misc.packetsize.json":
-                return UTConfig.BUGFIXES_MISC.utPacketSize > 0x200000 && !spongeForgeLoaded;
+                return UTConfig.BUGFIXES_MISC.utPacketSize > 0x200000 && !spongeForgeLoaded && !randomPatchesLoaded;
             case "mixins.bugfixes.entities.ai.json":
                 return UTConfig.BUGFIXES_ENTITIES.utEntityAITasksToggle;
             case "mixins.bugfixes.entities.attackradius.json":

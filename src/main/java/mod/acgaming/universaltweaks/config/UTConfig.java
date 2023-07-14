@@ -310,7 +310,7 @@ public class UTConfig
             ({
                 "Increases the packet size limit to account for large packets in modded environments",
                 "Vanilla default is 0x200000",
-                "Incompatible with SpongeForge"
+                "Incompatible with SpongeForge and RandomPatches"
             })
         public int utPacketSize = 0x1000000;
 
