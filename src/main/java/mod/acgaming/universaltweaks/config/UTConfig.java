@@ -1340,7 +1340,11 @@ public class UTConfig
 
         @Config.RequiresMcRestart
         @Config.Name("Remove Realms Button")
-        @Config.Comment("Removes the redundant Minecraft Realms button from the main menu")
+        @Config.Comment
+            ({
+                "Removes the redundant Minecraft Realms button from the main menu",
+                "Incompatible with RandomPatches"
+            })
         public boolean utRealmsButtonToggle = true;
 
         @Config.RequiresMcRestart

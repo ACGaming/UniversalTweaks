@@ -21,6 +21,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 {
     public static final boolean isClient = FMLLaunchHandler.side().isClient();
     public static final boolean isDev = FMLLaunchHandler.isDeobfuscatedEnvironment();
+    public static boolean randomPatchesLoaded;
     public static boolean spongeForgeLoaded;
     public static long launchTime;
 
@@ -32,6 +33,13 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             UniversalTweaks.LOGGER.info("The locale is Turkish, which is unfortunately not supported by some mods. Changing to English...");
             Locale.setDefault(Locale.ENGLISH);
         }
+
+        try
+        {
+            Class.forName("com.therandomlabs.randompatches.RandomPatches");
+            randomPatchesLoaded = true;
+        }
+        catch (ClassNotFoundException ignored) {}
 
         try
         {
@@ -296,7 +304,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.tweaks.items.itementities.client.json":
                     return UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utItemEntitiesToggle;
                 case "mixins.tweaks.misc.buttons.realms.json":
-                    return UTConfig.TWEAKS_MISC.utRealmsButtonToggle;
+                    return UTConfig.TWEAKS_MISC.utRealmsButtonToggle && !randomPatchesLoaded;
                 case "mixins.tweaks.misc.buttons.snooper.client.json":
                     return UTConfig.TWEAKS_MISC.utSnooperToggle;
                 case "mixins.tweaks.misc.commands.seed.json":
