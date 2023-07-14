@@ -46,6 +46,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("enablecheats") && UTConfig.TWEAKS_MISC.utToggleCheatsToggle) messages.add("Enable Cheats");
         if (Loader.isModLoaded("endportalparallax") && UTConfig.TWEAKS_MISC.utEndPortalParallaxToggle) messages.add("End Portal Parallax");
         if (Loader.isModLoaded("entity_desync_fix") && UTConfig.BUGFIXES_ENTITIES.utEntityDesyncToggle) messages.add("EntityDesyncFix");
+        if (Loader.isModLoaded("erebusfix") && UTConfig.MOD_INTEGRATION.EREBUS.utEBPreservedBlocksToggle) messages.add("Erebus Fix");
         if (Loader.isModLoaded("experiencebugfix") && UTConfig.BUGFIXES_ENTITIES.utDimensionChangeToggle) messages.add("Fix Experience Bug");
         if (Loader.isModLoaded("eyltrafix") && UTConfig.BUGFIXES_ENTITIES.utElytraDeploymentLandingToggle) messages.add("Elytra-Fix");
         if (Loader.isModLoaded("fastbench") && UTConfig.TWEAKS_PERFORMANCE.utCraftingCacheToggle) messages.add("FastWorkbench");

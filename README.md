@@ -220,6 +220,8 @@ All changes are toggleable via the config file.
     * **Spiderlike Eldritch Crabs:** Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders
     * **Stable Thaumometer:** Stops the thaumometer from bobbing rapidly when using it to scan objects
     * **Wisp Particles:** Increases particle size of wisps similar to legacy versions
+* **The Erebus**
+  * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
 * **Thermal Expansion**
     * **Insolator Custom Monoculture:** Adds Monoculture Cycle integration to desired phytogenic insolator recipes added by ModTweaker
 * **Tinkers' Construct**

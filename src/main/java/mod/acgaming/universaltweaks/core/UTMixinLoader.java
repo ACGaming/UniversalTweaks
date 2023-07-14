@@ -25,6 +25,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.elementarystaffs.json",
             "mixins.mods.elenaidodge2.json",
             "mixins.mods.epicsiegemod.json",
+            "mixins.mods.erebus.json",
             "mixins.mods.forestry.json",
             "mixins.mods.forestry.cocoa.json",
             "mixins.mods.forestry.extratrees.json",
@@ -90,6 +91,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("elenaidodge2");
             case "mixins.mods.epicsiegemod.json":
                 return Loader.isModLoaded("epicsiegemod");
+            case "mixins.mods.erebus.json":
+                return Loader.isModLoaded("erebus");
             case "mixins.mods.forestry.json":
                 return Loader.isModLoaded("forestry");
             case "mixins.mods.forestry.cocoa.json":

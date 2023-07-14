@@ -109,6 +109,7 @@ dependencies {
     deobfCompile "curse.maven:storage-drawers-223852:2952606"
     deobfCompile "curse.maven:tech-reborn-233564:2966851"
     deobfCompile "curse.maven:thaumcraft-223628:2629023"
+    deobfCompile "curse.maven:the-erebus-220698:3211974"
     deobfCompile "curse.maven:thermal-expansion-69163:2926431"
     deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.55"
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"

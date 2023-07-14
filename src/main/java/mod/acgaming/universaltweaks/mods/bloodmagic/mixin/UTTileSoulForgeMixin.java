@@ -38,6 +38,19 @@ public abstract class UTTileSoulForgeMixin extends TileInventory implements ITic
         utRefreshRecipe();
     }
 
+    public void utRefreshRecipe()
+    {
+        List<ItemStack> inputList = new ArrayList<>();
+        for (int i = 0; i < 4; i++)
+        {
+            if (!getStackInSlot(i).isEmpty())
+            {
+                inputList.add(getStackInSlot(i));
+            }
+        }
+        utLastRecipe = BloodMagicAPI.INSTANCE.getRecipeRegistrar().getTartaricForge(inputList);
+    }
+
     /**
      * Use cached recipe in update().
      * Uses Redirect because getTartaricForge() must not be called unless necessary.
@@ -54,18 +67,5 @@ public abstract class UTTileSoulForgeMixin extends TileInventory implements ITic
             isAdded = true;
         }
         return utLastRecipe;
-    }
-
-    public void utRefreshRecipe()
-    {
-        List<ItemStack> inputList = new ArrayList<>();
-        for (int i = 0; i < 4; i++)
-        {
-            if (!getStackInSlot(i).isEmpty())
-            {
-                inputList.add(getStackInSlot(i));
-            }
-        }
-        utLastRecipe = BloodMagicAPI.INSTANCE.getRecipeRegistrar().getTartaricForge(inputList);
     }
 }

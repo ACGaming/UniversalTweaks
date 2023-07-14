@@ -1788,6 +1788,10 @@ public class UTConfig
         @Config.Name("Epic Siege Mod")
         public final EpicSiegeModCategory EPIC_SIEGE_MOD = new EpicSiegeModCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.erebus")
+        @Config.Name("The Erebus")
+        public final ErebusCategory EREBUS = new ErebusCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.forestry")
         @Config.Name("Forestry")
         public final ForestryCategory FORESTRY = new ForestryCategory();
@@ -1927,6 +1931,14 @@ public class UTConfig
             @Config.Name("Disable Digger AI Debug")
             @Config.Comment("Disables leftover debug logging inside the digger AI of the beta builds")
             public boolean utESMDiggerDebugToggle = true;
+        }
+
+        public static class ErebusCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Preserved Blocks Fix")
+            @Config.Comment("Prevents HWYLA/TOP crashes with preserved blocks")
+            public boolean utEBPreservedBlocksToggle = true;
         }
 
         public static class ForestryCategory
