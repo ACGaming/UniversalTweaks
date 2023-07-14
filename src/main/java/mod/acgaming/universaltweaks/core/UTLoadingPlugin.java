@@ -23,6 +23,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public static final boolean isDev = FMLLaunchHandler.isDeobfuscatedEnvironment();
     public static boolean randomPatchesLoaded;
     public static boolean spongeForgeLoaded;
+    public static boolean surgeLoaded;
     public static long launchTime;
 
     static
@@ -36,15 +37,22 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 
         try
         {
-            Class.forName("com.therandomlabs.randompatches.RandomPatches");
+            Class.forName("com.therandomlabs.randompatches.core.RPCore");
             randomPatchesLoaded = true;
         }
         catch (ClassNotFoundException ignored) {}
 
         try
         {
-            Class.forName("org.spongepowered.mod.SpongeCoremod");
+            Class.forName("org.spongepowered.mod.util.CompatibilityException");
             spongeForgeLoaded = true;
+        }
+        catch (ClassNotFoundException ignored) {}
+
+        try
+        {
+            Class.forName("net.darkhax.surge.core.SurgeLoadingPlugin");
+            surgeLoaded = true;
         }
         catch (ClassNotFoundException ignored) {}
     }
@@ -270,15 +278,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             switch (mixinConfig)
             {
                 case "mixins.tweaks.performance.audioreload.json":
-                    try
-                    {
-                        Class.forName("net.darkhax.surge.core.SurgeLoadingPlugin");
-                        return false;
-                    }
-                    catch (ClassNotFoundException e)
-                    {
-                        return UTConfig.TWEAKS_PERFORMANCE.utDisableAudioDebugToggle;
-                    }
+                    return UTConfig.TWEAKS_PERFORMANCE.utDisableAudioDebugToggle && !surgeLoaded;
                 case "mixins.bugfixes.blocks.blockoverlay.json":
                     return UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle;
                 case "mixins.bugfixes.blocks.miningglitch.client.json":
