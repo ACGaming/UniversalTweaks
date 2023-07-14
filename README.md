@@ -172,6 +172,9 @@ All changes are toggleable via the config file.
     * **Optimized Item Transport:** Makes an optimization to reduce tick overhead of AbyssalCraft's item transport system
 * **Advent of Ascension**
     * **Inventory-less GUI Compatibility:** Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks GUI)
+* **Blood Magic**
+  * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
+  * **World Unload Memory Leak Fix:** Fixes memory leak related to unloading worlds/switching dimensions
 * **Binnie's Mods**
     * **Gather Windfall:** Allows Forestry farms to pick up ExtraTrees fruit
 * **Biomes O' Plenty**
