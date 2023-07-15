@@ -31,6 +31,7 @@ All changes are toggleable via the config file.
 * **Dimension Change Player States:** Fixes missing player states when changing dimensions by sending additional packets
 * **Disconnect Dupe:** Fixes item dupes when players are dropping items and disconnecting
 * **Double Consumption:** Fixes consuming an item having a chance of also consuming a second item without any animation
+* **Donkey/Mule Dupe:** Fixes a duplication exploit connected to the inventories of donkeys and mules
 * **Elytra Deployment & Landing:** Relocate elytra deployment and landing to client side to prevent issues with high latencies
 * **Entity Bounding Boxes:** Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * **Entity Desync:** Fixes entity motion desyncs most notable with arrows and thrown items
@@ -55,6 +56,7 @@ All changes are toggleable via the config file.
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
 * **Piston Progress:** Properly saves the last state of pistons to tags
+* **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
 * **Villager Mantle:** Returns missing hoods to villager mantles
@@ -170,17 +172,25 @@ All changes are toggleable via the config file.
 
 * **AbyssalCraft**
     * **Optimized Item Transport:** Makes an optimization to reduce tick overhead of AbyssalCraft's item transport system
+* **Actually Additions**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Advent of Ascension**
     * **Inventory-less GUI Compatibility:** Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks GUI)
+* **Arcane Archives**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Blood Magic**
-  * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
-  * **World Unload Memory Leak Fix:** Fixes memory leak related to unloading worlds/switching dimensions
+    * **Duplication Fixes:** Fixes various duplication exploits
+    * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
+    * **World Unload Memory Leak Fix:** Fixes memory leak related to unloading worlds/switching dimensions
 * **Binnie's Mods**
     * **Gather Windfall:** Allows Forestry farms to pick up ExtraTrees fruit
 * **Biomes O' Plenty**
     * **Hot Spring Water:** Fixes rapid inflection of regeneration effects in hot spring water
 * **Botania**
+    * **Duplication Fixes:** Fixes various duplication exploits
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
+* **Chisel**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **CoFH Core**
     * **Vorpal Enchantment Damage:** Sets the damage multiplier of the Vorpal enchantment
 * **Chocolate Quest Repoured**
@@ -191,20 +201,39 @@ All changes are toggleable via the config file.
     * **Feathers Helper API Fix:** Fixes server-sided crashes when the Feathers Helper API is utilized
 * **Epic Siege Mod**
     * **Disable Digger AI Debug:** Disables leftover debug logging inside the digger AI of the beta builds
+* **Extra Utilities 2**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Forestry**
     * **Arborist Villager Trades:** Adds custom emerald to germling trades to the arborist villager
     * **Disable Bee Damage Armor Bypass:** Disables damage caused by bees bypassing player armor
+    * **Duplication Fixes:** Fixes various duplication exploits
     * **Replanting Cocoa Beans:** Allows Forestry farms to automatically replant cocoa beans
+* **IndustrialCraft 2**
+    * **Duplication Fixes:** Fixes various duplication exploits
+* **Industrial Foregoing**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Infernal Mobs**
     * **Sticky Recall Compatibility:** Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment
+* **Iron Backpacks**
+    * **Duplication Fixes:** Fixes various duplication exploits
+* **Mekanism**
+    * **Duplication Fixes:** Fixes various duplication exploits
+* **Nether Chest**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Netherrocks**
     * **Right Click Harvesting Fix:** Prevents crashing with mods implementing right click crop harvesting
 * **NuclearCraft**
     * **Radiation Environment Map:** Changes the data table of the radiation environment handler to improve performance
+* **ProjectRed**
+    * **Duplication Fixes:** Fixes various duplication exploits
+* **Quark**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Roost**
     * **Early Register CT Chickens:** Improves load time by registering CT chickens early for Roost to detect them
 * **Simple Difficulty**
     * **Iron Canteen Interaction Fix:** Fixes the interaction of iron canteens with rain collectors
+* **Spice Of Life**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Storage Drawers**
     * **Item Handlers**
         * Fixes voiding of items when nearing full capacity
@@ -214,6 +243,7 @@ All changes are toggleable via the config file.
 * **Tech Reborn**
     * **Optimized Rolling Machine:** Optimizes the Rolling Machine to reduce tick time
 * **Thaumcraft**
+    * **Duplication Fixes:** Fixes various duplication exploits
     * **Firebat Particles:** Adds particles to firebats similar to legacy versions
     * **Flower Bounding Box:** Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs
     * **Focus Effects**
@@ -223,12 +253,20 @@ All changes are toggleable via the config file.
     * **Spiderlike Eldritch Crabs:** Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders
     * **Stable Thaumometer:** Stops the thaumometer from bobbing rapidly when using it to scan objects
     * **Wisp Particles:** Increases particle size of wisps similar to legacy versions
+* **Thaumic Wonders**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **The Erebus**
-  * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
+    * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
+* **The Farlanders**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Thermal Expansion**
+    * **Duplication Fixes:** Fixes various duplication exploits
     * **Insolator Custom Monoculture:** Adds Monoculture Cycle integration to desired phytogenic insolator recipes added by ModTweaker
 * **Tinkers' Construct**
+    * **Duplication Fixes:** Fixes various duplication exploits
     * **Gaseous Fluids:** Excludes gaseous fluids from being transferable via faucets
     * **Offhand Shuriken:** Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand
-    * **Projectile Despawning:** Despawns unbreakable projectiles faster to improve framerates
     * **Ore Dictionary Cache:** Caches all ore dictionary smelting recipes to speed up game loading
+    * **Projectile Despawning:** Despawns unbreakable projectiles faster to improve framerates
+* **Tiny Progressions**
+    * **Duplication Fixes:** Fixes various duplication exploits

@@ -15,8 +15,14 @@ import mod.acgaming.universaltweaks.bugfixes.misc.help.UTHelp;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
+import mod.acgaming.universaltweaks.mods.arcanearchives.UTArcaneArchivesEvents;
+import mod.acgaming.universaltweaks.mods.bloodmagic.UTBloodMagicEvents;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
+import mod.acgaming.universaltweaks.mods.mekanism.UTMekanismFixes;
+import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
+import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructEvents;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
+import mod.acgaming.universaltweaks.mods.thaumcraft.UTThaumcraftEvents;
 import mod.acgaming.universaltweaks.tweaks.blocks.betterplacement.UTBetterPlacement;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.blocks.dispenser.UTBlockDispenser;
@@ -42,8 +48,46 @@ public class UniversalTweaks
 {
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
-    public static final String VERSION = "1.12.2-1.7.1";
-    public static final String DEPENDENCIES = "required-after:mixinbooter@[8.0,);required-after:configanytime;after:abyssalcraft;after:aoa3;after:biomesoplenty;after:bloodmagic;after:botania;after:cofhcore;after:contenttweaker;after:element;after:elenaidodge2;after:epicsiegemod;after:erebus;after:extratrees;after:forestry;after:infernalmobs;after:netherrocks;after:nuclearcraft;after:roost;after:storagedrawers;after:tconstruct;after:thaumcraft;after:thermalexpansion";
+    public static final String VERSION = "1.12.2-1.8.0";
+    public static final String DEPENDENCIES = "required-after:mixinbooter@[8.0,);required-after:configanytime;"
+        + "after:abyssalcraft;"
+        + "after:actuallyadditions;"
+        + "after:aoa3;"
+        + "after:arcanearchives;"
+        + "after:biomesoplenty;"
+        + "after:bloodmagic;"
+        + "after:botania;"
+        + "after:chisel;"
+        + "after:cofhcore;"
+        + "after:contenttweaker;"
+        + "after:element;"
+        + "after:elenaidodge2;"
+        + "after:enderio;"
+        + "after:epicsiegemod;"
+        + "after:erebus;"
+        + "after:extratrees;"
+        + "after:extrautils2;"
+        + "after:farlanders;"
+        + "after:forestry;"
+        + "after:ic2;"
+        + "after:industrialforegoing;"
+        + "after:infernalmobs;"
+        + "after:ironbackpacks;"
+        + "after:mekanism;"
+        + "after:netherchest;"
+        + "after:netherrocks;"
+        + "after:nuclearcraft;"
+        + "after:projectred-exploration;"
+        + "after:quark;"
+        + "after:roost;"
+        + "after:spiceoflife;"
+        + "after:storagedrawers;"
+        + "after:tcomplement;"
+        + "after:tconstruct;"
+        + "after:thaumcraft;"
+        + "after:thaumicwonders;"
+        + "after:thermalexpansion;"
+        + "after:tp";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     @Mod.EventHandler
@@ -63,6 +107,12 @@ public class UniversalTweaks
     public void init(FMLInitializationEvent event)
     {
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
+        if (Loader.isModLoaded("arcanearchives") && UTConfig.MOD_INTEGRATION.ARCANE_ARCHIVES.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTArcaneArchivesEvents());
+        if (Loader.isModLoaded("bloodmagic") && UTConfig.MOD_INTEGRATION.BLOOD_MAGIC.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTBloodMagicEvents());
+        if (Loader.isModLoaded("mekanism") && UTConfig.MOD_INTEGRATION.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
+        if (Loader.isModLoaded("projectred-exploration") && UTConfig.MOD_INTEGRATION.PROJECTRED.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTProjectRedWorldEvents());
+        if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTTConstructEvents());
+        if (Loader.isModLoaded("thaumcraft") && UTConfig.MOD_INTEGRATION.THAUMCRAFT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTThaumcraftEvents());
         LOGGER.info(NAME + " initialized");
     }
 

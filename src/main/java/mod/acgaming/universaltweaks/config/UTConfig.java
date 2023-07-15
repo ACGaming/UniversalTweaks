@@ -199,7 +199,7 @@ public class UTConfig
         public boolean utDestroyPacketToggle = true;
 
         @Config.Name("Disconnect Dupe")
-        @Config.Comment("Fixes item dupes when players are dropping items and disconnecting")
+        @Config.Comment("Fixes item duplications when players are dropping items and disconnecting")
         public boolean utDisconnectDupeToggle = true;
 
         @Config.RequiresMcRestart
@@ -210,6 +210,10 @@ public class UTConfig
         @Config.Name("Double Consumption")
         @Config.Comment("Fixes consuming an item having a chance of also consuming a second item without any animation")
         public boolean utDoubleConsumptionToggle = true;
+
+        @Config.Name("Donkey/Mule Dupe")
+        @Config.Comment("Fixes a duplication exploit connected to the inventories of donkeys and mules")
+        public boolean utDonkeyMuleDupeToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Elytra Deployment & Landing")
@@ -267,6 +271,10 @@ public class UTConfig
         @Config.Name("Player Saturation")
         @Config.Comment("Fixes saturation depleting in peaceful mode")
         public boolean utExhaustionToggle = true;
+
+        @Config.Name("Shear Mooshroom Dupe")
+        @Config.Comment("Fixes a duplication exploit connected to shearing mooshrooms")
+        public boolean utShearMooshroomDupeToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Skeleton Aim")
@@ -1756,6 +1764,14 @@ public class UTConfig
         @Config.Name("AbyssalCraft")
         public final AbyssalCraftCategory ABYSSALCRAFT = new AbyssalCraftCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.actuallyadditions")
+        @Config.Name("Actually Additions")
+        public final ActuallyAdditionsCategory ACTUALLY_ADDITIONS = new ActuallyAdditionsCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.arcanearchives")
+        @Config.Name("Arcane Archives")
+        public final ArcaneArchivesCategory ARCANE_ARCHIVES = new ArcaneArchivesCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.aoa")
         @Config.Name("Advent of Ascension")
         public final AOACategory AOA = new AOACategory();
@@ -1771,6 +1787,10 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.modintegration.botania")
         @Config.Name("Botania")
         public final BotaniaCategory BOTANIA = new BotaniaCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.chisel")
+        @Config.Name("Chisel")
+        public final ChiselCategory CHISEL = new ChiselCategory();
 
         @Config.LangKey("cfg.universaltweaks.modintegration.cqrepoured")
         @Config.Name("Chocolate Quest Repoured")
@@ -1796,13 +1816,37 @@ public class UTConfig
         @Config.Name("The Erebus")
         public final ErebusCategory EREBUS = new ErebusCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.extrautilities")
+        @Config.Name("Extra Utilities 2")
+        public final ExtraUtilitiesCategory EXTRA_UTILITIES = new ExtraUtilitiesCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.forestry")
         @Config.Name("Forestry")
         public final ForestryCategory FORESTRY = new ForestryCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.industrialcraft")
+        @Config.Name("IndustrialCraft 2")
+        public final IndustrialCraftCategory INDUSTRIALCRAFT = new IndustrialCraftCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.industrialforegoing")
+        @Config.Name("Industrial Foregoing")
+        public final IndustrialForegoingCategory INDUSTRIAL_FOREGOING = new IndustrialForegoingCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.infernalmobs")
         @Config.Name("Infernal Mobs")
         public final InfernalMobsCategory INFERNAL_MOBS = new InfernalMobsCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.ironbackpacks")
+        @Config.Name("Iron Backpacks")
+        public final IronBackpacksCategory IRON_BACKPACKS = new IronBackpacksCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.mekanism")
+        @Config.Name("Mekanism")
+        public final MekanismCategory MEKANISM = new MekanismCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.netherchest")
+        @Config.Name("Nether Chest")
+        public final NetherChestCategory NETHER_CHEST = new NetherChestCategory();
 
         @Config.LangKey("cfg.universaltweaks.modintegration.netherrocks")
         @Config.Name("Netherrocks")
@@ -1812,6 +1856,14 @@ public class UTConfig
         @Config.Name("NuclearCraft")
         public final NuclearCraftCategory NUCLEARCRAFT = new NuclearCraftCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.projectred")
+        @Config.Name("ProjectRed")
+        public final ProjectRedCategory PROJECTRED = new ProjectRedCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.quark")
+        @Config.Name("Quark")
+        public final QuarkCategory QUARK = new QuarkCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.roost")
         @Config.Name("Roost")
         public final RoostCategory ROOST = new RoostCategory();
@@ -1819,6 +1871,10 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.modintegration.simpledifficulty")
         @Config.Name("Simple Difficulty")
         public final SimpleDifficultyCategory SIMPLE_DIFFICULTY = new SimpleDifficultyCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.spiceoflife")
+        @Config.Name("Spice Of Life")
+        public final SpiceOfLifeCategory SPICE_OF_LIFE = new SpiceOfLifeCategory();
 
         @Config.LangKey("cfg.universaltweaks.modintegration.sd")
         @Config.Name("Storage Drawers")
@@ -1840,6 +1896,14 @@ public class UTConfig
         @Config.Name("Thaumcraft: Foci")
         public final ThaumcraftFociCategory THAUMCRAFT_FOCI = new ThaumcraftFociCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.thaumicwonders")
+        @Config.Name("Thaumic Wonders")
+        public final ThaumicWondersCategory THAUMIC_WONDERS = new ThaumicWondersCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.thefarlanders")
+        @Config.Name("The Farlanders")
+        public final TheFarlandersCategory THE_FARLANDERS = new TheFarlandersCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.te")
         @Config.Name("Thermal Expansion")
         public final ThermalExpansionCategory THERMAL_EXPANSION = new ThermalExpansionCategory();
@@ -1848,12 +1912,32 @@ public class UTConfig
         @Config.Name("Tinkers' Construct")
         public final TinkersConstructCategory TINKERS_CONSTRUCT = new TinkersConstructCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.tinyprogressions")
+        @Config.Name("Tiny Progressions")
+        public final TinyProgressionsCategory TINY_PROGRESSIONS = new TinyProgressionsCategory();
+
         public static class AbyssalCraftCategory
         {
             @Config.RequiresMcRestart
             @Config.Name("Optimized Item Transport")
             @Config.Comment("Makes an optimization to reduce tick overhead of AbyssalCraft's item transport system")
             public boolean utOptimizedItemTransferToggle = true;
+        }
+
+        public static class ActuallyAdditionsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
+        }
+
+        public static class ArcaneArchivesCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
         }
 
         public static class AOACategory
@@ -1883,6 +1967,11 @@ public class UTConfig
             @Config.Name("World Unload Memory Leak Fix")
             @Config.Comment("Fixes memory leak related to unloading worlds/switching dimensions")
             public boolean utBMWorldUnloadToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
         }
 
         public static class BotaniaCategory
@@ -1896,6 +1985,19 @@ public class UTConfig
                     "Example: 43"
                 })
             public Integer[] utBotaniaSkyboxDims = new Integer[] {};
+
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
+        }
+
+        public static class ChiselCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
         }
 
         public static class ChocolateQuestCategory
@@ -1945,6 +2047,14 @@ public class UTConfig
             public boolean utEBPreservedBlocksToggle = true;
         }
 
+        public static class ExtraUtilitiesCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
+        }
+
         public static class ForestryCategory
         {
             @Config.RequiresMcRestart
@@ -1981,6 +2091,27 @@ public class UTConfig
             @Config.Name("Replanting Cocoa Beans")
             @Config.Comment("Allows Forestry farms to automatically replant cocoa beans")
             public boolean utFOCocoaBeansToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
+        }
+
+        public static class IndustrialCraftCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
+        }
+
+        public static class IndustrialForegoingCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
         }
 
         public static class InfernalMobsCategory
@@ -1989,6 +2120,30 @@ public class UTConfig
             @Config.Name("Sticky Recall Compatibility")
             @Config.Comment("Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment")
             public boolean utIMStickyRecallToggle = true;
+        }
+
+        public static class IronBackpacksCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
+        }
+
+        public static class MekanismCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
+        }
+
+        public static class NetherChestCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
         }
 
         public static class NetherrocksCategory
@@ -2018,6 +2173,22 @@ public class UTConfig
                 CONCURRENT_LINKED_HASHMAP,
                 CONCURRENT_LINKED_QUEUE
             }
+        }
+
+        public static class ProjectRedCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
+        }
+
+        public static class QuarkCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
         }
 
         public static class RoostCategory
@@ -2051,6 +2222,14 @@ public class UTConfig
             @Config.Name("Iron Canteen Interaction Fix")
             @Config.Comment("Fixes the interaction of iron canteens with rain collectors")
             public boolean utRainCollectorCanteenToggle = true;
+        }
+
+        public static class SpiceOfLifeCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
         }
 
         public static class StorageDrawersCategory
@@ -2094,6 +2273,11 @@ public class UTConfig
             @Config.Name("Stable Thaumometer")
             @Config.Comment("Stops the thaumometer from bobbing rapidly when using it to scan objects")
             public boolean utTCStableThaumometerToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
         }
 
         public static class ThaumcraftEntitiesCategory
@@ -2211,6 +2395,22 @@ public class UTConfig
             }
         }
 
+        public static class ThaumicWondersCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
+        }
+
+        public static class TheFarlandersCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
+        }
+
         public static class ThermalExpansionCategory
         {
             @Config.RequiresMcRestart
@@ -2223,6 +2423,11 @@ public class UTConfig
                     "Note: Make sure the 'fertilizer' is specified as the secondaryInput arg in the function"
                 })
             public boolean utTEInsolatorCustomMonoculture = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
         }
 
         public static class TinkersConstructCategory
@@ -2246,6 +2451,19 @@ public class UTConfig
             @Config.Name("Ore Dictionary Cache")
             @Config.Comment("Caches all ore dictionary smelting recipes to speed up game loading")
             public boolean utTConOreDictCacheToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
+        }
+
+        public static class TinyProgressionsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Duplication Fixes")
+            @Config.Comment("Fixes various duplication exploits")
+            public boolean utDuplicationFixesToggle = true;
         }
     }
 
