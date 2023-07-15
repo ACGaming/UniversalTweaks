@@ -125,7 +125,6 @@ dependencies {
     implementation "curse.maven:bewitchment-285439:3044569"
     implementation "curse.maven:chisel-235279:2915375"
     implementation "curse.maven:codechickenlib-242818:2779848"
-    implementation "curse.maven:cofhcore-69162:2920433"
     implementation "curse.maven:cofhworld-271384:2920434"
     implementation "curse.maven:endercore-231868:2972849"
     implementation "curse.maven:enderio-64578:2989201"
