@@ -191,7 +191,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             "mixins.tweaks.performance.resourcemanager.json",
             "mixins.tweaks.world.chunks.gen.json",
             "mixins.tweaks.world.loading.client.json",
-            "mixins.tweaks.world.loading.server.json") :
+            "mixins.tweaks.world.loading.server.json",
+            "mixins.tweaks.world.sealevel.json") :
             Arrays.asList(
                 "mixins.bugfixes.blocks.comparatortiming.json",
                 "mixins.bugfixes.blocks.fallingblockdamage.json",
@@ -265,7 +266,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 "mixins.tweaks.performance.prefixcheck.json",
                 "mixins.tweaks.performance.redstone.json",
                 "mixins.tweaks.world.chunks.gen.json",
-                "mixins.tweaks.world.loading.server.json"
+                "mixins.tweaks.world.loading.server.json",
+                "mixins.tweaks.world.sealevel.json"
             );
     }
 
@@ -478,6 +480,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle;
             case "mixins.tweaks.world.loading.server.json":
                 return UTConfig.TWEAKS_PERFORMANCE.utWorldLoadingToggle;
+            case "mixins.tweaks.world.sealevel.json":
+                return UTConfig.TWEAKS_WORLD.utSeaLevel != 63;
         }
         return true;
     }

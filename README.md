@@ -149,6 +149,7 @@ All changes are toggleable via the config file.
 * **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu
 * **Remove Recipe Book:** Removes the recipe book button from GUIs
 * **Remove Snooper:** Forcefully turns off the snooper and hides the snooper settings button from the options menu
+* **Sea Level:** Sets the default height of the overworld's sea level
 * **Shield Parry:** Allows parrying of projectiles with shields
 * **Skip Credits:** Skips the credits screen after the player goes through the end podium portal
 * **Skip Missing Registry Entries Screen:** Automatically confirms the 'Missing Registry Entries' screen on world load

@@ -1694,6 +1694,15 @@ public class UTConfig
         public final DimensionUnloadCategory DIMENSION_UNLOAD = new DimensionUnloadCategory();
 
         @Config.RequiresMcRestart
+        @Config.Name("Sea Level")
+        @Config.Comment
+            ({
+                "Sets the default height of the overworld's sea level",
+                "Vanilla default is 63"
+            })
+        public int utSeaLevel = 63;
+
+        @Config.RequiresMcRestart
         @Config.Name("Stronghold Replacement")
         @Config.Comment("Replaces stronghold generation with a safer variant")
         public boolean utStrongholdToggle = true;
