@@ -92,6 +92,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public List<String> getMixinConfigs()
     {
         List<String> configs = new ArrayList<>();
+        // CLIENT ONLY
         if (isClient)
         {
             configs.add("mixins.bugfixes.blocks.banner.json");
@@ -126,6 +127,13 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             configs.add("mixins.tweaks.performance.resourcemanager.json");
             configs.add("mixins.tweaks.world.loading.client.json");
         }
+        // SERVER ONLY
+        else
+        {
+            configs.add("mixins.tweaks.misc.buttons.snooper.server.json");
+            configs.add("mixins.tweaks.misc.difficulty.server.json");
+        }
+        // COMMON
         configs.add("mixins.bugfixes.blocks.comparatortiming.json");
         configs.add("mixins.bugfixes.blocks.fallingblockdamage.json");
         configs.add("mixins.bugfixes.blocks.hopper.boundingbox.json");
@@ -187,8 +195,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.items.rarity.json");
         configs.add("mixins.tweaks.items.repairing.json");
         configs.add("mixins.tweaks.items.xpbottle.json");
-        configs.add("mixins.tweaks.misc.buttons.snooper.server.json");
-        configs.add("mixins.tweaks.misc.difficulty.server.json");
         configs.add("mixins.tweaks.misc.incurablepotions.json");
         configs.add("mixins.tweaks.misc.lightning.damage.json");
         configs.add("mixins.tweaks.misc.lightning.fire.json");
