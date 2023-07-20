@@ -103,6 +103,8 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("watercontrolextreme") && UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterToggle) messages.add("Water Control Extreme");
         try
         {
+            Class.forName("com.chocohead.biab.BornInABarn");
+            messages.add("Born in a Barn");
             if (UTConfig.BUGFIXES_MISC.utLocaleToggle)
             {
                 Class.forName("io.github.jikuja.LocaleTweaker");
