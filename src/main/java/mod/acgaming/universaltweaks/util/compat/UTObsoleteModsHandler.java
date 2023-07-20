@@ -87,6 +87,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("preventghost") && UTConfig.BUGFIXES_BLOCKS.utMiningGlitchToggle) messages.add("Prevent Ghost Blocks");
         if (Loader.isModLoaded("quickleafdecay") && UTConfig.TWEAKS_BLOCKS.utLeafDecayToggle) messages.add("Quick Leaf Decay");
         if (Loader.isModLoaded("rallyhealth") && UTConfig.TWEAKS_ENTITIES.RALLY_HEALTH.utRallyHealthToggle) messages.add("Rally Health");
+        if (Loader.isModLoaded("salwayseat") && UTConfig.TWEAKS_ITEMS.utAlwaysEatToggle) messages.add("AlwaysEat");
         if (Loader.isModLoaded("savemystronghold") && UTConfig.TWEAKS_WORLD.utStrongholdToggle) messages.add("Save My Stronghold!");
         if (Loader.isModLoaded("smooth-scrolling-everywhere") && UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle) messages.add("Smooth Scrolling Everywhere");
         if (Loader.isModLoaded("stepupfix") && UTConfig.TWEAKS_ENTITIES.utAutoJumpToggle) messages.add("StepupFixer");

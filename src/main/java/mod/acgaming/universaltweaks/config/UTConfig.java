@@ -982,6 +982,10 @@ public class UTConfig
         @Config.Name("Shield Parry")
         public final ParryCategory PARRY = new ParryCategory();
 
+        @Config.Name("Always Eat")
+        @Config.Comment("Allows the consumption of food at any time, regardless of the hunger bar")
+        public boolean utAlwaysEatToggle = false;
+
         @Config.Name("Auto Switch Tools")
         @Config.Comment("Switches the selected hotbar slot to a proper tool if required")
         public boolean utAutoSwitchToggle = false;

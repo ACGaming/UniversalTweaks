@@ -180,6 +180,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.entities.speed.player.json");
         configs.add("mixins.tweaks.entities.taming.horses.json");
         configs.add("mixins.tweaks.items.attackcooldown.server.json");
+        configs.add("mixins.tweaks.items.eating.json");
         configs.add("mixins.tweaks.items.hardcorebuckets.json");
         configs.add("mixins.tweaks.items.itementities.server.json");
         configs.add("mixins.tweaks.items.rarity.json");
@@ -381,6 +382,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_ENTITIES.UNDEAD_HORSES.utTamingUndeadHorsesToggle;
             case "mixins.tweaks.items.attackcooldown.server.json":
                 return UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle;
+            case "mixins.tweaks.items.eating.json":
+                return UTConfig.TWEAKS_ITEMS.utAlwaysEatToggle;
             case "mixins.tweaks.items.hardcorebuckets.json":
                 return UTConfig.TWEAKS_ITEMS.utHardcoreBucketsToggle;
             case "mixins.tweaks.items.itementities.server.json":

@@ -68,6 +68,7 @@ All changes are toggleable via the config file.
 ### **🔧 TWEAKS**
 
 * **AI Improvements:** Replaces/removes entity AI for improved server performance
+* **Always Eat:** Allows the consumption of food at any time, regardless of the hunger bar
 * **Attributes:** Sets custom ranges for entity attributes
 * **Auto Jump Replacement:** Replaces auto jump with an increased step height (singleplayer only)
 * **Auto Save Interval:** Configurable interval in ticks between world auto saves
