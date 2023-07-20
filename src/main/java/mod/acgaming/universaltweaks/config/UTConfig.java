@@ -618,6 +618,11 @@ public class UTConfig
         @Config.Comment("Sets the acceleration value for controlling boats")
         public double utBoatSpeed = 0.04D;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Burning Baby Zombies")
+        @Config.Comment("Lets baby zombies burn in daylight as in Minecraft 1.13+")
+        public boolean utBurningBabyZombiesToggle = true;
+
         @Config.Name("Creeper Charged Spawning Chance")
         @Config.Comment("Sets the chance for creepers to spawn charged")
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
