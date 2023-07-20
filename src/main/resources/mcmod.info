@@ -9,9 +9,6 @@
     "logoFile": "logo.png",
     "authorList": [
       "ACGaming"
-    ],
-    "dependencies": [
-      "mixinbooter"
     ]
   }
 ]
