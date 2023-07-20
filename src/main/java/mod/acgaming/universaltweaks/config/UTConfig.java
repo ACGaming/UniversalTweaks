@@ -94,6 +94,11 @@ public class UTConfig
         public final BlockOverlayCategory BLOCK_OVERLAY = new BlockOverlayCategory();
 
         @Config.RequiresMcRestart
+        @Config.Name("Banner Bounding Box")
+        @Config.Comment("Fixes rendering issues with banners by correctly sizing their render bounding boxes")
+        public boolean utBannerBoundingBoxToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Comparator Timing")
         @Config.Comment("Fixes inconsistent delays of comparators to prevent redstone timing issues")
         public boolean utComparatorTimingToggle = true;

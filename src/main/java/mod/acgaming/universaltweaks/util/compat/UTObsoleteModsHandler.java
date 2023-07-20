@@ -20,6 +20,7 @@ public class UTObsoleteModsHandler
         messages.add("");
         if (Loader.isModLoaded("aiimprovements") && (UTConfig.TWEAKS_ENTITIES.utAIReplacementToggle || UTConfig.TWEAKS_ENTITIES.utAIRemovalToggle)) messages.add("AI Improvements");
         if (Loader.isModLoaded("attributefix") && UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributesToggle) messages.add("AttributeFix");
+        if (Loader.isModLoaded("bannerpatch") && UTConfig.BUGFIXES_BLOCKS.utBannerBoundingBoxToggle) messages.add("BannerPatch");
         if (Loader.isModLoaded("bedbreakbegone") && UTConfig.TWEAKS_BLOCKS.utBedObstructionToggle) messages.add("BedBreakBegone");
         if (Loader.isModLoaded("betterburning") && (UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBArrowsToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBCookedToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBExtinguishToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBOverlayToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBSpreadingToggle)) messages.add("Better Burning");
         if (Loader.isModLoaded("betterplacement") && UTConfig.TWEAKS_BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle) messages.add("Better Placement");

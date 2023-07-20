@@ -94,6 +94,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         List<String> configs = new ArrayList<>();
         if (isClient)
         {
+            configs.add("mixins.bugfixes.blocks.banner.json");
             configs.add("mixins.bugfixes.blocks.blockoverlay.json");
             configs.add("mixins.bugfixes.blocks.miningglitch.client.json");
             configs.add("mixins.bugfixes.entities.elytra.json");
@@ -211,8 +212,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         {
             switch (mixinConfig)
             {
-                case "mixins.tweaks.performance.audioreload.json":
-                    return UTConfig.TWEAKS_PERFORMANCE.utDisableAudioDebugToggle && !surgeLoaded;
+                case "mixins.bugfixes.blocks.banner.json":
+                    return UTConfig.BUGFIXES_BLOCKS.utBannerBoundingBoxToggle;
                 case "mixins.bugfixes.blocks.blockoverlay.json":
                     return UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle;
                 case "mixins.bugfixes.blocks.miningglitch.client.json":
@@ -259,6 +260,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle;
                 case "mixins.tweaks.misc.toastcontrol.json":
                     return UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlToggle;
+                case "mixins.tweaks.performance.audioreload.json":
+                    return UTConfig.TWEAKS_PERFORMANCE.utDisableAudioDebugToggle && !surgeLoaded;
                 case "mixins.tweaks.performance.fps.json":
                     return UTConfig.TWEAKS_PERFORMANCE.utUncapFPSToggle;
                 case "mixins.tweaks.performance.missingmodel.json":

@@ -20,6 +20,7 @@ All changes are toggleable via the config file.
 
 * **Accurate Smooth Lighting:** Improves the accuracy of smooth lighting by checking for suffocation and light opacity
 * **Attack Radius:** Improves the attack radius of hostile mobs by checking the line of sight with raytracing
+* **Banner Bounding Box:** Fixes rendering issues with banners by correctly sizing their render bounding boxes
 * **Block Fire:** Prevents fire projectiles burning entities when blocking with shields
 * **Block Overlay:** Fixes x-ray when standing in non-suffocating blocks
 * **Boat Riding Offset:** Fixes entities glitching through the bottom of boats
@@ -86,6 +87,7 @@ All changes are toggleable via the config file.
 * **Boat Speed:** Sets the acceleration value for controlling boats
 * **Bow Infinity Remedy:** Bows enchanted with Infinity no longer require arrows
 * **Breakable Bedrock:** Allows customizable mining of bedrock
+* **Burning Baby Zombies:** Lets baby zombies burn in daylight as in Minecraft 1.13+
 * **Charged Creeper Spawning:** Sets the chance for creepers to spawn charged
 * **Check Animated Models:** Improves model load times by checking if an animated model exists before trying to load it
 * **Chunk Gen Limit:** Limits maximum chunk generation per tick for improved server performance
