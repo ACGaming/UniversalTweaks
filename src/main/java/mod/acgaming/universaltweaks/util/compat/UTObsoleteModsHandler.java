@@ -61,6 +61,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("givemebackmyhp") && UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle) messages.add("Give Me Back My HP");
         if (Loader.isModLoaded("gottagofast") && UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("Gotta Go Fast");
         if (Loader.isModLoaded("helpfixer") && UTConfig.BUGFIXES_MISC.utHelpToggle) messages.add("HelpFixer");
+        if (Loader.isModLoaded("horsefallfix") && UTConfig.BUGFIXES_ENTITIES.utHorseFallingToggle) messages.add("HorseFallFix");
         if (Loader.isModLoaded("horsestandstill") && UTConfig.TWEAKS_ENTITIES.utSaddledWanderingToggle) messages.add("Stupid Horse Stand Still");
         if (Loader.isModLoaded("ikwid") && UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlTutorialToggle) messages.add("I Know What I'm Doing");
         if (Loader.isModLoaded("inventoryspam") && UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) messages.add("Inventory Spam");

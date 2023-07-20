@@ -1,7 +1,7 @@
 ![Available for MC 1.12.2](https://img.shields.io/badge/Available%20for-MC%201.12.2-3498db.svg?labelColor=34495e&style=for-the-badge)
 ![License LGPL-3.0](https://img.shields.io/github/license/ACGaming/UniversalTweaks?labelColor=34495e&color=3498db&style=for-the-badge)
 [![Stars](https://img.shields.io/github/stars/ACGaming/UniversalTweaks?labelColor=34495e&color=3498db&style=for-the-badge)](https://github.com/ACGaming/UniversalTweaks/stargazers)
-[![Superseded Mods](https://img.shields.io/badge/Superseded%20Mods-80-3498db.svg?labelColor=34495e&style=for-the-badge)](https://legacy.curseforge.com/minecraft/mc-mods/universal-tweaks/relations/dependencies?filter-related-dependencies=5)
+[![Superseded Mods](https://img.shields.io/badge/Superseded%20Mods-84-3498db.svg?labelColor=34495e&style=for-the-badge)](https://legacy.curseforge.com/minecraft/mc-mods/universal-tweaks/relations/dependencies?filter-related-dependencies=5)
 
 # UNIVERSAL TWEAKS
 
@@ -49,6 +49,7 @@ All changes are toggleable via the config file.
 * **Help:** Replaces the help command, sorts and reports broken commands
 * **Hopper Bounding Box:** Slims down the hopper bounding box for easier access of nearby blocks
 * **Hopper Insert Safety Check:** Prevents crashes when the destination tile entity becomes unavailable during the item insert process
+* **Horse Falling:** Modifies falling logic of horse, listening to LivingFallEvent and taking jump boost into account
 * **Item Frame Void:** Prevents voiding held items when right + left-clicking on an item frame simultaneously
 * **Ladder Flying Slowdown:** Disables climbing movement when flying
 * **Locale:** Prevents various crashes with Turkish locale

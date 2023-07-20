@@ -145,6 +145,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.bugfixes.entities.dimensionchange.json");
         configs.add("mixins.bugfixes.entities.disconnectdupe.json");
         configs.add("mixins.bugfixes.entities.entityid.json");
+        configs.add("mixins.bugfixes.entities.horsefalling.json");
         configs.add("mixins.bugfixes.entities.maxhealth.json");
         configs.add("mixins.bugfixes.entities.mount.json");
         configs.add("mixins.bugfixes.entities.saturation.json");
@@ -315,6 +316,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.BUGFIXES_ENTITIES.utDisconnectDupeToggle;
             case "mixins.bugfixes.entities.entityid.json":
                 return UTConfig.BUGFIXES_ENTITIES.utEntityIDToggle;
+            case "mixins.bugfixes.entities.horsefalling.json":
+                return UTConfig.BUGFIXES_ENTITIES.utHorseFallingToggle;
             case "mixins.bugfixes.entities.maxhealth.json":
                 return UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle;
             case "mixins.bugfixes.entities.mount.json":

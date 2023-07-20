@@ -262,6 +262,10 @@ public class UTConfig
         @Config.Comment("Changes UUIDs of loaded entities in case their UUIDs are already assigned (and removes log spam)")
         public boolean utEntityUUIDToggle = true;
 
+        @Config.Name("Horse Falling")
+        @Config.Comment("Modifies falling logic of horses, listening to LivingFallEvent and taking jump boost into account")
+        public boolean utHorseFallingToggle = true;
+
         @Config.RequiresMcRestart
         @Config.Name("Max Player Health")
         @Config.Comment("Corrects maximum player health on joining by setting the last saved health value")
