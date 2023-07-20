@@ -1,5 +1,5 @@
 {
-  "package": "mod.acgaming.universaltweaks.tweaks.entities.spawning.skeletons.mixin",
+  "package": "mod.acgaming.universaltweaks.tweaks.entities.spawning.skeleton.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

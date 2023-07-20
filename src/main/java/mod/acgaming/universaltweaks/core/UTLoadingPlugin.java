@@ -163,8 +163,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.entities.ai.json");
         configs.add("mixins.tweaks.entities.ai.saddledwandering.json");
         configs.add("mixins.tweaks.entities.ai.wither.json");
-        configs.add("mixins.tweaks.entities.burning.horses.json");
-        configs.add("mixins.tweaks.entities.burning.zombies.json");
+        configs.add("mixins.tweaks.entities.burning.horse.json");
+        configs.add("mixins.tweaks.entities.burning.zombie.json");
         configs.add("mixins.tweaks.entities.damage.arrow.json");
         configs.add("mixins.tweaks.entities.damage.collision.json");
         configs.add("mixins.tweaks.entities.damage.falling.json");
@@ -172,13 +172,13 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.entities.despawning.json");
         configs.add("mixins.tweaks.entities.loot.json");
         configs.add("mixins.tweaks.entities.spawning.caps.json");
-        configs.add("mixins.tweaks.entities.spawning.creepers.confetti.json");
-        configs.add("mixins.tweaks.entities.spawning.golems.json");
+        configs.add("mixins.tweaks.entities.spawning.creeper.confetti.json");
+        configs.add("mixins.tweaks.entities.spawning.golem.json");
         configs.add("mixins.tweaks.entities.spawning.husk.json");
         configs.add("mixins.tweaks.entities.spawning.stray.json");
         configs.add("mixins.tweaks.entities.speed.boat.json");
         configs.add("mixins.tweaks.entities.speed.player.json");
-        configs.add("mixins.tweaks.entities.taming.horses.json");
+        configs.add("mixins.tweaks.entities.taming.horse.json");
         configs.add("mixins.tweaks.items.attackcooldown.server.json");
         configs.add("mixins.tweaks.items.eating.json");
         configs.add("mixins.tweaks.items.hardcorebuckets.json");
@@ -349,9 +349,9 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_ENTITIES.utSaddledWanderingToggle;
             case "mixins.tweaks.entities.ai.wither.json":
                 return UTConfig.TWEAKS_ENTITIES.utWitherAIToggle;
-            case "mixins.tweaks.entities.burning.horses.json":
+            case "mixins.tweaks.entities.burning.horse.json":
                 return UTConfig.TWEAKS_ENTITIES.UNDEAD_HORSES.utBurningUndeadHorsesToggle;
-            case "mixins.tweaks.entities.burning.zombies.json":
+            case "mixins.tweaks.entities.burning.zombie.json":
                 return UTConfig.TWEAKS_ENTITIES.utBurningBabyZombiesToggle;
             case "mixins.tweaks.entities.damage.arrow.json":
                 return UTConfig.TWEAKS_ENTITIES.utCriticalArrowDamage != -1;
@@ -367,9 +367,9 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_ENTITIES.utCreeperMusicDiscsToggle;
             case "mixins.tweaks.entities.spawning.caps.json":
                 return UTConfig.TWEAKS_ENTITIES.SPAWN_CAPS.utSpawnCapsToggle;
-            case "mixins.tweaks.entities.spawning.creepers.confetti.json":
+            case "mixins.tweaks.entities.spawning.creeper.confetti.json":
                 return UTConfig.TWEAKS_ENTITIES.utCreeperConfettiChance != 0.0D;
-            case "mixins.tweaks.entities.spawning.golems.json":
+            case "mixins.tweaks.entities.spawning.golem.json":
                 return UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGIronGolemToggle || UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGSnowGolemToggle || UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGWitherToggle;
             case "mixins.tweaks.entities.spawning.husk.json":
             case "mixins.tweaks.entities.spawning.stray.json":
@@ -378,7 +378,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_ENTITIES.utBoatSpeed != 0.04D;
             case "mixins.tweaks.entities.speed.player.json":
                 return UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle;
-            case "mixins.tweaks.entities.taming.horses.json":
+            case "mixins.tweaks.entities.taming.horse.json":
                 return UTConfig.TWEAKS_ENTITIES.UNDEAD_HORSES.utTamingUndeadHorsesToggle;
             case "mixins.tweaks.items.attackcooldown.server.json":
                 return UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle;
