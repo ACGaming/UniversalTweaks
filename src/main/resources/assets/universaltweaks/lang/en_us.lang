@@ -82,6 +82,7 @@ cfg.universaltweaks.tweaks.entities.easybreeding=Easy Breeding
 cfg.universaltweaks.tweaks.entities.nogolems=No Golems
 cfg.universaltweaks.tweaks.entities.playerspeed=Player Speed
 cfg.universaltweaks.tweaks.entities.rallyhealth=Rally Health
+cfg.universaltweaks.tweaks.entities.sleeping=Sleeping
 cfg.universaltweaks.tweaks.entities.spawncaps=Spawn Caps
 cfg.universaltweaks.tweaks.entities.undeadhorses=Undead Horses
 cfg.universaltweaks.tweaks.entities.waterfalldamage=Water Fall Damage

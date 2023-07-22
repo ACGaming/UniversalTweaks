@@ -592,6 +592,10 @@ public class UTConfig
         @Config.Name("Rally Health")
         public final RallyHealthCategory RALLY_HEALTH = new RallyHealthCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.sleeping")
+        @Config.Name("Sleeping")
+        public final SleepingCategory SLEEPING = new SleepingCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.spawncaps")
         @Config.Name("Spawn Caps")
         public final SpawnCapsCategory SPAWN_CAPS = new SpawnCapsCategory();
@@ -656,10 +660,6 @@ public class UTConfig
         @Config.Name("Disable Creeper Music Discs")
         @Config.Comment("Disables creepers dropping music discs when slain by skeletons")
         public boolean utCreeperMusicDiscsToggle = false;
-
-        @Config.Name("Disable Sleeping")
-        @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")
-        public boolean utSleepingToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Disable Wither Targeting AI")
@@ -912,6 +912,22 @@ public class UTConfig
             @Config.Name("[4] Indication Sound")
             @Config.Comment("Plays an indication sound effect when health is regained")
             public boolean utRallyHealthSound = false;
+        }
+
+        public static class SleepingCategory
+        {
+            @Config.Name("Disable Sleeping")
+            @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")
+            public boolean utDisableSleepingToggle = false;
+
+            @Config.Name("Sleeping Time")
+            @Config.RangeInt(min = -1, max = 23999)
+            @Config.Comment
+                ({
+                    "Determines at which time of day sleeping is allowed in ticks (0 - 23999)",
+                    "-1 for vanilla default"
+                })
+            public int utSleepingTime = -1;
         }
 
         public static class SpawnCapsCategory
