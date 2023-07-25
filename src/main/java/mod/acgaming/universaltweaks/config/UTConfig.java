@@ -1883,9 +1883,17 @@ public class UTConfig
         @Config.Name("Iron Backpacks")
         public final IronBackpacksCategory IRON_BACKPACKS = new IronBackpacksCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintergration.itemstages")
+        @Config.Name("Item Stages")
+        public final ItemStagesCategory ITEM_STAGES = new ItemStagesCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.mekanism")
         @Config.Name("Mekanism")
         public final MekanismCategory MEKANISM = new MekanismCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintergration.mobstages")
+        @Config.Name("Mob Stages")
+        public final MobStagesCategory MOB_STAGES = new MobStagesCategory();
 
         @Config.LangKey("cfg.universaltweaks.modintegration.netherchest")
         @Config.Name("Nether Chest")
@@ -2173,12 +2181,28 @@ public class UTConfig
             public boolean utDuplicationFixesToggle = true;
         }
 
+        public static class ItemStagesCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Ingredient Matching")
+            @Config.Comment("Changes item matching code to crafttweaker's ingredient matching system. Fixes item NBT matching issues")
+            public boolean utIngredientMatching = true;
+        }
+
         public static class MekanismCategory
         {
             @Config.RequiresMcRestart
             @Config.Name("Duplication Fixes")
             @Config.Comment("Fixes various duplication exploits")
             public boolean utDuplicationFixesToggle = true;
+        }
+
+        public static class MobStagesCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Ignorance of Spawning Rules Fixes")
+            @Config.Comment("Fixes mob replacement ignores entities' spawning rules")
+            public boolean utSpawningRules = true;
         }
 
         public static class NetherChestCategory
