@@ -40,7 +40,9 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.industrialforegoing.dupes.json",
             "mixins.mods.infernalmobs.json",
             "mixins.mods.ironbackpacks.dupes.json",
+            "mixins.mods.itemstages.json",
             "mixins.mods.mekanism.dupes.json",
+            "mixins.mods.mobstages.json",
             "mixins.mods.netherchest.dupes.json",
             "mixins.mods.netherrocks.json",
             "mixins.mods.nuclearcraft.json",
@@ -137,8 +139,12 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("infernalmobs");
             case "mixins.mods.ironbackpacks.dupes.json":
                 return Loader.isModLoaded("ironbackpacks") && UTConfig.MOD_INTEGRATION.IRON_BACKPACKS.utDuplicationFixesToggle;
+            case "mixins.mods.itemstages.json":
+                return Loader.isModLoaded("itemstages");
             case "mixins.mods.mekanism.dupes.json":
                 return Loader.isModLoaded("mekanism") && UTConfig.MOD_INTEGRATION.MEKANISM.utDuplicationFixesToggle;
+            case "mixins.mods.mobstages.json":
+                return Loader.isModLoaded("mobstages");
             case "mixins.mods.netherchest.dupes.json":
                 return Loader.isModLoaded("netherchest") && UTConfig.MOD_INTEGRATION.NETHER_CHEST.utDuplicationFixesToggle;
             case "mixins.mods.netherrocks.json":
