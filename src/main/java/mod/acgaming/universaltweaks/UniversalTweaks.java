@@ -14,6 +14,7 @@ import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayL
 import mod.acgaming.universaltweaks.bugfixes.misc.help.UTHelp;
 import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
+import mod.acgaming.universaltweaks.mods.abyssalcraft.UTAbyssalCraftEvents;
 import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
 import mod.acgaming.universaltweaks.mods.arcanearchives.UTArcaneArchivesEvents;
 import mod.acgaming.universaltweaks.mods.bloodmagic.UTBloodMagicEvents;
@@ -107,6 +108,7 @@ public class UniversalTweaks
     public void init(FMLInitializationEvent event)
     {
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
+        if (Loader.isModLoaded("abyssalcraft") && UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) MinecraftForge.EVENT_BUS.register(new UTAbyssalCraftEvents());
         if (Loader.isModLoaded("arcanearchives") && UTConfig.MOD_INTEGRATION.ARCANE_ARCHIVES.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTArcaneArchivesEvents());
         if (Loader.isModLoaded("bloodmagic") && UTConfig.MOD_INTEGRATION.BLOOD_MAGIC.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTBloodMagicEvents());
         if (Loader.isModLoaded("mekanism") && UTConfig.MOD_INTEGRATION.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
