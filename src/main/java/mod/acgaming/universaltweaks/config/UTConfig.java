@@ -382,9 +382,9 @@ public class UTConfig
                 "HASHMAP:                   Vanilla default",
                 "LINKED_HASHMAP:            Keeps the loading order of tile entities to prevent issues during the first ticks of chunk loading",
                 "CONCURRENT_HASHMAP:        Allows simultaneous access to tile entities to prevent concurrent modification exceptions",
-                "CONCURRENT_LINKED_HASHMAP: Combines LINKED_HASHMAP and CONCURRENT_HASHMAP",
+                "CONCURRENT_LINKED_HASHMAP: Combines LINKED_HASHMAP and CONCURRENT_HASHMAP, may have random side effects",
             })
-        public EnumMaps utTileEntityMap = EnumMaps.CONCURRENT_LINKED_HASHMAP;
+        public EnumMaps utTileEntityMap = EnumMaps.LINKED_HASHMAP;
 
         public enum EnumMaps
         {
