@@ -1883,7 +1883,7 @@ public class UTConfig
         @Config.Name("Iron Backpacks")
         public final IronBackpacksCategory IRON_BACKPACKS = new IronBackpacksCategory();
 
-        @Config.LangKey("cfg.universaltweaks.modintergration.itemstages")
+        @Config.LangKey("cfg.universaltweaks.modintegration.itemstages")
         @Config.Name("Item Stages")
         public final ItemStagesCategory ITEM_STAGES = new ItemStagesCategory();
 
@@ -1891,7 +1891,7 @@ public class UTConfig
         @Config.Name("Mekanism")
         public final MekanismCategory MEKANISM = new MekanismCategory();
 
-        @Config.LangKey("cfg.universaltweaks.modintergration.mobstages")
+        @Config.LangKey("cfg.universaltweaks.modintegration.mobstages")
         @Config.Name("Mob Stages")
         public final MobStagesCategory MOB_STAGES = new MobStagesCategory();
 
@@ -2185,7 +2185,7 @@ public class UTConfig
         {
             @Config.RequiresMcRestart
             @Config.Name("Ingredient Matching")
-            @Config.Comment("Changes item matching code to crafttweaker's ingredient matching system. Fixes item NBT matching issues")
+            @Config.Comment("Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues")
             public boolean utIngredientMatching = true;
         }
 
@@ -2200,8 +2200,8 @@ public class UTConfig
         public static class MobStagesCategory
         {
             @Config.RequiresMcRestart
-            @Config.Name("Ignorance of Spawning Rules Fixes")
-            @Config.Comment("Fixes mob replacement ignores entities' spawning rules")
+            @Config.Name("Spawning Rules Fixes")
+            @Config.Comment("Fixes mob replacement ignoring entity spawning rules")
             public boolean utSpawningRules = true;
         }
 

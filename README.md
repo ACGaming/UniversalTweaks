@@ -223,8 +223,12 @@ All changes are toggleable via the config file.
     * **Sticky Recall Compatibility:** Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment
 * **Iron Backpacks**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **Item Stages**
+    * **Ingredient Matching:** Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues
 * **Mekanism**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **Mob Stages**
+    * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
 * **Nether Chest**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Netherrocks**
