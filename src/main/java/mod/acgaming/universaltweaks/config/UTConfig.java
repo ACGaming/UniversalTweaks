@@ -662,6 +662,11 @@ public class UTConfig
         public boolean utCreeperMusicDiscsToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Villager Trade Leveling")
+        @Config.Comment("Disables leveling of villager careers, only allowing base level trades")
+        public boolean utVillagerTradeLevelingToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Disable Wither Targeting AI")
         @Config.Comment("Disables withers targeting animals")
         public boolean utWitherAIToggle = false;

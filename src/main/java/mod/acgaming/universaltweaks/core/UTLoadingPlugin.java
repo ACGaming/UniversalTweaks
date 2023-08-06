@@ -188,6 +188,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.entities.speed.boat.json");
         configs.add("mixins.tweaks.entities.speed.player.json");
         configs.add("mixins.tweaks.entities.taming.horse.json");
+        configs.add("mixins.tweaks.entities.trading.json");
         configs.add("mixins.tweaks.items.attackcooldown.server.json");
         configs.add("mixins.tweaks.items.eating.json");
         configs.add("mixins.tweaks.items.hardcorebuckets.json");
@@ -389,6 +390,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle;
             case "mixins.tweaks.entities.taming.horse.json":
                 return UTConfig.TWEAKS_ENTITIES.UNDEAD_HORSES.utTamingUndeadHorsesToggle;
+            case "mixins.tweaks.entities.trading.json":
+                return UTConfig.TWEAKS_ENTITIES.utVillagerTradeLevelingToggle;
             case "mixins.tweaks.items.attackcooldown.server.json":
                 return UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle;
             case "mixins.tweaks.items.eating.json":
