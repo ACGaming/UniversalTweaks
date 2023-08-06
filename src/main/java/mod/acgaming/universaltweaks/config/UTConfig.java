@@ -1386,6 +1386,15 @@ public class UTConfig
         public boolean utOffhandToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Overlay Message Height")
+        @Config.Comment
+            ({
+                "Sets the Y value of the overlay message (action bar), displayed for playing records etc.",
+                "-4 for vanilla default"
+            })
+        public int utOverlayMessageHeight = -4;
+
+        @Config.RequiresMcRestart
         @Config.Name("Remove Realms Button")
         @Config.Comment
             ({
@@ -1403,6 +1412,15 @@ public class UTConfig
         @Config.Name("Remove Snooper")
         @Config.Comment("Forcefully turns off the snooper and hides the snooper settings button from the options menu")
         public boolean utSnooperToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Selected Item Tooltip Height")
+        @Config.Comment
+            ({
+                "Sets the Y value of the selected item tooltip, displayed when held items are changed",
+                "59 for vanilla default"
+            })
+        public int utSelectedItemTooltipHeight = 59;
 
         @Config.RequiresMcRestart
         @Config.Name("Skip Credits")

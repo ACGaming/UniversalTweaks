@@ -114,6 +114,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             configs.add("mixins.tweaks.misc.commands.seed.json");
             configs.add("mixins.tweaks.misc.credits.json");
             configs.add("mixins.tweaks.misc.difficulty.client.json");
+            configs.add("mixins.tweaks.misc.gui.overlaymessage.json");
+            configs.add("mixins.tweaks.misc.gui.selecteditemtooltip.json");
             configs.add("mixins.tweaks.misc.lightning.flash.json");
             configs.add("mixins.tweaks.misc.music.json");
             configs.add("mixins.tweaks.misc.narrator.json");
@@ -255,6 +257,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfig.TWEAKS_MISC.utCopyWorldSeedToggle;
                 case "mixins.tweaks.misc.credits.json":
                     return UTConfig.TWEAKS_MISC.utSkipCreditsToggle;
+                case "mixins.tweaks.misc.gui.overlaymessage.json":
+                    return UTConfig.TWEAKS_MISC.utOverlayMessageHeight != -4;
+                case "mixins.tweaks.misc.gui.selecteditemtooltip.json":
+                    return UTConfig.TWEAKS_MISC.utSelectedItemTooltipHeight != 59;
                 case "mixins.tweaks.misc.lightning.flash.json":
                     return UTConfig.TWEAKS_MISC.LIGHTNING.utLightningFlashToggle;
                 case "mixins.tweaks.misc.music.json":

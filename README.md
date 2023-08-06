@@ -146,6 +146,7 @@ All changes are toggleable via the config file.
 * **No Saddled Wandering:** Stops horses wandering around when saddled
 * **No Smelting XP:** Disables the experience reward when smelting items in furnaces
 * **Offhand Improvement:** Prevents placing offhand blocks when blocks or food are held in the mainhand
+* **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
 * **Rabbit Killer Spawning:** Configurable chance for rabbits to spawn as the killer bunny variant
@@ -155,6 +156,7 @@ All changes are toggleable via the config file.
 * **Remove Recipe Book:** Removes the recipe book button from GUIs
 * **Remove Snooper:** Forcefully turns off the snooper and hides the snooper settings button from the options menu
 * **Sea Level:** Sets the default height of the overworld's sea level
+* **Selected Item Tooltip Height:** Sets the Y value of the selected item tooltip, displayed when held items are changed
 * **Shield Parry:** Allows parrying of projectiles with shields
 * **Skip Credits:** Skips the credits screen after the player goes through the end podium portal
 * **Skip Missing Registry Entries Screen:** Automatically confirms the 'Missing Registry Entries' screen on world load
