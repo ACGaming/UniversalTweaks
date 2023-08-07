@@ -20,17 +20,10 @@ public class UTED2Sprinting
     {
         if (event.phase == TickEvent.Phase.START
             && event.player instanceof EntityPlayerMP
-            && event.player.isSprinting())
+            && event.player.isSprinting()
+            && event.player.ticksExisted % UTConfig.MOD_INTEGRATION.ELENAI_DODGE_2.utED2SprintingFeatherInterval == 0)
         {
-            if (FeathersHelper.getFeatherLevel((EntityPlayerMP) event.player) < UTConfig.MOD_INTEGRATION.ELENAI_DODGE_2.utED2SprintingFeatherRequirement)
-            {
-                event.player.setSprinting(false);
-                return;
-            }
-            if (event.player.ticksExisted % UTConfig.MOD_INTEGRATION.ELENAI_DODGE_2.utED2SprintingFeatherInterval == 0)
-            {
-                FeathersHelper.decreaseFeathers((EntityPlayerMP) event.player, UTConfig.MOD_INTEGRATION.ELENAI_DODGE_2.utED2SprintingFeatherConsumption);
-            }
+            FeathersHelper.decreaseFeathers((EntityPlayerMP) event.player, UTConfig.MOD_INTEGRATION.ELENAI_DODGE_2.utED2SprintingFeatherConsumption);
         }
     }
 
@@ -40,7 +33,7 @@ public class UTED2Sprinting
     {
         if (event.phase == TickEvent.Phase.START
             && event.player instanceof EntityPlayerSP
-            && event.player.isSprinting()
+            && (((EntityPlayerSP) event.player).sprintingTicksLeft < 5 || FeathersHelper.getFeatherLevel((EntityPlayerSP) event.player) == 0)
             && FeathersHelper.getFeatherLevel((EntityPlayerSP) event.player) < UTConfig.MOD_INTEGRATION.ELENAI_DODGE_2.utED2SprintingFeatherRequirement)
         {
             event.player.setSprinting(false);
