@@ -209,6 +209,7 @@ All changes are toggleable via the config file.
     * **Electric Staff Port:** Reintroduces the 1.5 electric staff behavior along with some subtle particles
 * **Elenai Dodge 2**
     * **Feathers Helper API Fix:** Fixes server-sided crashes when the Feathers Helper API is utilized
+    * **Sprinting Integration:** Configurable consumption of feathers when the player is sprinting
 * **Epic Siege Mod**
     * **Disable Digger AI Debug:** Disables leftover debug logging inside the digger AI of the beta builds
 * **Extra Utilities 2**

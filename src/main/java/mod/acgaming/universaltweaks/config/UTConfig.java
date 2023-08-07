@@ -2103,6 +2103,19 @@ public class UTConfig
             @Config.Name("Feathers Helper API Fix")
             @Config.Comment("Fixes server-sided crashes when the Feathers Helper API is utilized")
             public boolean utED2FeathersHelperToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Sprinting Feather Consumption")
+            @Config.Comment("Sets the amount of consumed half-feathers per interval when the player is sprinting")
+            public int utED2SprintingFeatherConsumption = 0;
+
+            @Config.Name("Sprinting Feather Interval")
+            @Config.Comment("Sets the rate feathers are consumed in ticks when the player is sprinting")
+            public int utED2SprintingFeatherInterval = 20;
+
+            @Config.Name("Sprinting Feather Requirement")
+            @Config.Comment("Sets the amount of half-feathers required to start sprinting")
+            public int utED2SprintingFeatherRequirement = 6;
         }
 
         public static class EpicSiegeModCategory
