@@ -20,7 +20,10 @@ public class UTObsoleteModsHandler
         messages.add("");
         if (Loader.isModLoaded("aiimprovements") && (UTConfig.TWEAKS_ENTITIES.utAIReplacementToggle || UTConfig.TWEAKS_ENTITIES.utAIRemovalToggle)) messages.add("AI Improvements");
         if (Loader.isModLoaded("attributefix") && UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributesToggle) messages.add("AttributeFix");
+        if (Loader.isModLoaded("bannerpatch") && UTConfig.BUGFIXES_BLOCKS.utBannerBoundingBoxToggle) messages.add("BannerPatch");
         if (Loader.isModLoaded("bedbreakbegone") && UTConfig.TWEAKS_BLOCKS.utBedObstructionToggle) messages.add("BedBreakBegone");
+        if (Loader.isModLoaded("bedfix") && UTConfig.TWEAKS_ENTITIES.SLEEPING.utSleepingTime != -1) messages.add("BedFix");
+        if (Loader.isModLoaded("bedsaynosleep") && UTConfig.TWEAKS_ENTITIES.SLEEPING.utDisableSleepingToggle) messages.add("Sleepn't");
         if (Loader.isModLoaded("betterburning") && (UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBArrowsToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBCookedToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBExtinguishToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBOverlayToggle || UTConfig.TWEAKS_ENTITIES.BETTER_BURNING.utBBSpreadingToggle)) messages.add("Better Burning");
         if (Loader.isModLoaded("betterplacement") && UTConfig.TWEAKS_BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle) messages.add("Better Placement");
         if (Loader.isModLoaded("biggerpacketsplz") && UTConfig.BUGFIXES_MISC.utPacketSize > 0x200000) messages.add("Bigger Packets Please");
@@ -29,6 +32,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("blockoverlayfix") && UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) messages.add("Block Overlay Fix");
         if (Loader.isModLoaded("bottomsugarcanharvest") && UTConfig.TWEAKS_BLOCKS.utSugarCaneSize != 3) messages.add("Bottom Sugar Cane Harvest");
         if (Loader.isModLoaded("bowinfinityfix") && UTConfig.TWEAKS_ITEMS.utBowInfinityToggle) messages.add("Bow Infinity Fix");
+        if (Loader.isModLoaded("burnbabyburn") && UTConfig.TWEAKS_ENTITIES.utBurningBabyZombiesToggle) messages.add("BurnBabyBurn");
         if (Loader.isModLoaded("cie") && UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utItemEntitiesToggle) messages.add("Configurable Item Entities (CIE)");
         if (Loader.isModLoaded("classiccombat") && UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle) messages.add("Classic Combat");
         if (Loader.isModLoaded("cleardespawn") && UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEClearDespawnToggle) messages.add("Clear Despawn");
@@ -42,6 +46,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("diethopper") && UTConfig.BUGFIXES_BLOCKS.utDietHopperToggle) messages.add("Diet Hopper");
         if (Loader.isModLoaded("ding") && UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfig.TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) messages.add("Ding");
         if (Loader.isModLoaded("drawerfps") && UTConfig.MOD_INTEGRATION.STORAGE_DRAWERS.utSDRenderRange > 0) messages.add("DrawerFPS");
+        if (Loader.isModLoaded("dupefixproject")) messages.add("DupeFix Project");
         if (Loader.isModLoaded("easybreeding") && UTConfig.TWEAKS_ENTITIES.EASY_BREEDING.utEasyBreedingToggle) messages.add("Easy Breeding");
         if (Loader.isModLoaded("enablecheats") && UTConfig.TWEAKS_MISC.utToggleCheatsToggle) messages.add("Enable Cheats");
         if (Loader.isModLoaded("endportalparallax") && UTConfig.TWEAKS_MISC.utEndPortalParallaxToggle) messages.add("End Portal Parallax");
@@ -58,8 +63,10 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("givemebackmyhp") && UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle) messages.add("Give Me Back My HP");
         if (Loader.isModLoaded("gottagofast") && UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("Gotta Go Fast");
         if (Loader.isModLoaded("helpfixer") && UTConfig.BUGFIXES_MISC.utHelpToggle) messages.add("HelpFixer");
+        if (Loader.isModLoaded("horsefallfix") && UTConfig.BUGFIXES_ENTITIES.utHorseFallingToggle) messages.add("HorseFallFix");
         if (Loader.isModLoaded("horsestandstill") && UTConfig.TWEAKS_ENTITIES.utSaddledWanderingToggle) messages.add("Stupid Horse Stand Still");
         if (Loader.isModLoaded("ikwid") && UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlTutorialToggle) messages.add("I Know What I'm Doing");
+        if (Loader.isModLoaded("insomniac") && UTConfig.TWEAKS_ENTITIES.SLEEPING.utDisableSleepingToggle) messages.add("Insomniac");
         if (Loader.isModLoaded("inventoryspam") && UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) messages.add("Inventory Spam");
         if (Loader.isModLoaded("leafdecay") && UTConfig.TWEAKS_BLOCKS.utLeafDecayToggle) messages.add("Leaf Decay Accelerator");
         if (Loader.isModLoaded("letmedespawn") && UTConfig.TWEAKS_ENTITIES.utMobDespawnToggle) messages.add("Let Me Despawn");
@@ -72,6 +79,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("nanfix") && UTConfig.BUGFIXES_ENTITIES.utEntityNaNToggle) messages.add("NaN Entity Health Fix");
         if (Loader.isModLoaded("nanpolice") && UTConfig.BUGFIXES_ENTITIES.utEntityNaNToggle) messages.add("NaNPolice");
         if (Loader.isModLoaded("nobounce") && UTConfig.MOD_INTEGRATION.THAUMCRAFT.utTCStableThaumometerToggle) messages.add("Stable Thaumometer");
+        if (Loader.isModLoaded("nodoze") && UTConfig.TWEAKS_ENTITIES.SLEEPING.utDisableSleepingToggle) messages.add("No Doze");
         if (Loader.isModLoaded("nonvflash") && UTConfig.TWEAKS_MISC.utNightVisionFlashToggle) messages.add("No Night Vision Flashing");
         if (Loader.isModLoaded("nopotionshift") && UTConfig.TWEAKS_MISC.utPotionShiftToggle) messages.add("No Potion Shift");
         if (Loader.isModLoaded("noprecipebook") && UTConfig.TWEAKS_MISC.utRecipeBookToggle) messages.add("Nop Recipe Book");
@@ -84,7 +92,9 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("preventghost") && UTConfig.BUGFIXES_BLOCKS.utMiningGlitchToggle) messages.add("Prevent Ghost Blocks");
         if (Loader.isModLoaded("quickleafdecay") && UTConfig.TWEAKS_BLOCKS.utLeafDecayToggle) messages.add("Quick Leaf Decay");
         if (Loader.isModLoaded("rallyhealth") && UTConfig.TWEAKS_ENTITIES.RALLY_HEALTH.utRallyHealthToggle) messages.add("Rally Health");
+        if (Loader.isModLoaded("salwayseat") && UTConfig.TWEAKS_ITEMS.utAlwaysEatToggle) messages.add("AlwaysEat");
         if (Loader.isModLoaded("savemystronghold") && UTConfig.TWEAKS_WORLD.utStrongholdToggle) messages.add("Save My Stronghold!");
+        if (Loader.isModLoaded("sleepsooner") && UTConfig.TWEAKS_ENTITIES.SLEEPING.utSleepingTime != -1) messages.add("Sleep Sooner");
         if (Loader.isModLoaded("smooth-scrolling-everywhere") && UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle) messages.add("Smooth Scrolling Everywhere");
         if (Loader.isModLoaded("stepupfix") && UTConfig.TWEAKS_ENTITIES.utAutoJumpToggle) messages.add("StepupFixer");
         if (Loader.isModLoaded("stg") && UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) messages.add("SwingThroughGrass");
@@ -99,6 +109,8 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("watercontrolextreme") && UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterToggle) messages.add("Water Control Extreme");
         try
         {
+            Class.forName("com.chocohead.biab.BornInABarn");
+            messages.add("Born in a Barn");
             if (UTConfig.BUGFIXES_MISC.utLocaleToggle)
             {
                 Class.forName("io.github.jikuja.LocaleTweaker");

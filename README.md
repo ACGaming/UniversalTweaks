@@ -1,6 +1,7 @@
 ![Available for MC 1.12.2](https://img.shields.io/badge/Available%20for-MC%201.12.2-3498db.svg?labelColor=34495e&style=for-the-badge)
 ![License LGPL-3.0](https://img.shields.io/github/license/ACGaming/UniversalTweaks?labelColor=34495e&color=3498db&style=for-the-badge)
 [![Stars](https://img.shields.io/github/stars/ACGaming/UniversalTweaks?labelColor=34495e&color=3498db&style=for-the-badge)](https://github.com/ACGaming/UniversalTweaks/stargazers)
+[![Superseded Mods](https://img.shields.io/badge/Superseded%20Mods-89-3498db.svg?labelColor=34495e&style=for-the-badge)](https://legacy.curseforge.com/minecraft/mc-mods/universal-tweaks/relations/dependencies?filter-related-dependencies=5)
 
 # UNIVERSAL TWEAKS
 
@@ -19,6 +20,7 @@ All changes are toggleable via the config file.
 
 * **Accurate Smooth Lighting:** Improves the accuracy of smooth lighting by checking for suffocation and light opacity
 * **Attack Radius:** Improves the attack radius of hostile mobs by checking the line of sight with raytracing
+* **Banner Bounding Box:** Fixes rendering issues with banners by correctly sizing their render bounding boxes
 * **Block Fire:** Prevents fire projectiles burning entities when blocking with shields
 * **Block Overlay:** Fixes x-ray when standing in non-suffocating blocks
 * **Boat Riding Offset:** Fixes entities glitching through the bottom of boats
@@ -31,6 +33,7 @@ All changes are toggleable via the config file.
 * **Dimension Change Player States:** Fixes missing player states when changing dimensions by sending additional packets
 * **Disconnect Dupe:** Fixes item dupes when players are dropping items and disconnecting
 * **Double Consumption:** Fixes consuming an item having a chance of also consuming a second item without any animation
+* **Donkey/Mule Dupe:** Fixes a duplication exploit connected to the inventories of donkeys and mules
 * **Elytra Deployment & Landing:** Relocate elytra deployment and landing to client side to prevent issues with high latencies
 * **Entity Bounding Boxes:** Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * **Entity Desync:** Fixes entity motion desyncs most notable with arrows and thrown items
@@ -46,6 +49,7 @@ All changes are toggleable via the config file.
 * **Help:** Replaces the help command, sorts and reports broken commands
 * **Hopper Bounding Box:** Slims down the hopper bounding box for easier access of nearby blocks
 * **Hopper Insert Safety Check:** Prevents crashes when the destination tile entity becomes unavailable during the item insert process
+* **Horse Falling:** Modifies falling logic of horses, listening to LivingFallEvent and taking jump boost into account
 * **Item Frame Void:** Prevents voiding held items when right + left-clicking on an item frame simultaneously
 * **Ladder Flying Slowdown:** Disables climbing movement when flying
 * **Locale:** Prevents various crashes with Turkish locale
@@ -55,6 +59,7 @@ All changes are toggleable via the config file.
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
 * **Piston Progress:** Properly saves the last state of pistons to tags
+* **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
 * **Villager Mantle:** Returns missing hoods to villager mantles
@@ -64,6 +69,7 @@ All changes are toggleable via the config file.
 ### **🔧 TWEAKS**
 
 * **AI Improvements:** Replaces/removes entity AI for improved server performance
+* **Always Eat:** Allows the consumption of food at any time, regardless of the hunger bar
 * **Attributes:** Sets custom ranges for entity attributes
 * **Auto Jump Replacement:** Replaces auto jump with an increased step height (singleplayer only)
 * **Auto Save Interval:** Configurable interval in ticks between world auto saves
@@ -83,6 +89,7 @@ All changes are toggleable via the config file.
 * **Boat Speed:** Sets the acceleration value for controlling boats
 * **Bow Infinity Remedy:** Bows enchanted with Infinity no longer require arrows
 * **Breakable Bedrock:** Allows customizable mining of bedrock
+* **Burning Baby Zombies:** Lets baby zombies burn in daylight as in Minecraft 1.13+
 * **Charged Creeper Spawning:** Sets the chance for creepers to spawn charged
 * **Check Animated Models:** Improves model load times by checking if an animated model exists before trying to load it
 * **Chunk Gen Limit:** Limits maximum chunk generation per tick for improved server performance
@@ -101,6 +108,7 @@ All changes are toggleable via the config file.
 * **Disable Fancy Missing Model:** Improves rendering performance by removing the resource location text on missing models
 * **Disable Narrator:** Disables the narrator functionality entirely
 * **Disable Sleeping:** Disables skipping night by using a bed while making it still able to set spawn
+* **Disable Villager Trade Leveling:** Disables leveling of villager careers, only allowing base level trades
 * **Disable Wither Targeting AI:** Disables withers targeting animals
 * **Easy Breeding:** Enables easy breeding of animals by tossing food on the ground
 * **End Portal Parallax:** Re-implements parallax rendering of the end portal from 1.11 and older
@@ -138,6 +146,7 @@ All changes are toggleable via the config file.
 * **No Saddled Wandering:** Stops horses wandering around when saddled
 * **No Smelting XP:** Disables the experience reward when smelting items in furnaces
 * **Offhand Improvement:** Prevents placing offhand blocks when blocks or food are held in the mainhand
+* **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
 * **Rabbit Killer Spawning:** Configurable chance for rabbits to spawn as the killer bunny variant
@@ -146,9 +155,12 @@ All changes are toggleable via the config file.
 * **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu
 * **Remove Recipe Book:** Removes the recipe book button from GUIs
 * **Remove Snooper:** Forcefully turns off the snooper and hides the snooper settings button from the options menu
+* **Sea Level:** Sets the default height of the overworld's sea level
+* **Selected Item Tooltip Height:** Sets the Y value of the selected item tooltip, displayed when held items are changed
 * **Shield Parry:** Allows parrying of projectiles with shields
 * **Skip Credits:** Skips the credits screen after the player goes through the end podium portal
 * **Skip Missing Registry Entries Screen:** Automatically confirms the 'Missing Registry Entries' screen on world load
+* **Sleeping Time:** Determines at which time of day sleeping is allowed in ticks (0 - 24000)
 * **Smooth Scrolling:** Adds smooth scrolling to every in-game list
 * **Spawn Caps:** Sets maximum spawning limits for different entity types
 * **Super Hot Torch:** Enables one-time ignition of entities by hitting them with a torch
@@ -170,17 +182,25 @@ All changes are toggleable via the config file.
 
 * **AbyssalCraft**
     * **Optimized Item Transport:** Makes an optimization to reduce tick overhead of AbyssalCraft's item transport system
+* **Actually Additions**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Advent of Ascension**
     * **Inventory-less GUI Compatibility:** Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks GUI)
+* **Arcane Archives**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Blood Magic**
-  * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
-  * **World Unload Memory Leak Fix:** Fixes memory leak related to unloading worlds/switching dimensions
+    * **Duplication Fixes:** Fixes various duplication exploits
+    * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
+    * **World Unload Memory Leak Fix:** Fixes memory leak related to unloading worlds/switching dimensions
 * **Binnie's Mods**
     * **Gather Windfall:** Allows Forestry farms to pick up ExtraTrees fruit
 * **Biomes O' Plenty**
     * **Hot Spring Water:** Fixes rapid inflection of regeneration effects in hot spring water
 * **Botania**
+    * **Duplication Fixes:** Fixes various duplication exploits
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
+* **Chisel**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **CoFH Core**
     * **Vorpal Enchantment Damage:** Sets the damage multiplier of the Vorpal enchantment
 * **Chocolate Quest Repoured**
@@ -189,22 +209,46 @@ All changes are toggleable via the config file.
     * **Electric Staff Port:** Reintroduces the 1.5 electric staff behavior along with some subtle particles
 * **Elenai Dodge 2**
     * **Feathers Helper API Fix:** Fixes server-sided crashes when the Feathers Helper API is utilized
+    * **Sprinting Integration:** Configurable consumption of feathers when the player is sprinting
 * **Epic Siege Mod**
     * **Disable Digger AI Debug:** Disables leftover debug logging inside the digger AI of the beta builds
+* **Extra Utilities 2**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Forestry**
     * **Arborist Villager Trades:** Adds custom emerald to germling trades to the arborist villager
     * **Disable Bee Damage Armor Bypass:** Disables damage caused by bees bypassing player armor
+    * **Duplication Fixes:** Fixes various duplication exploits
     * **Replanting Cocoa Beans:** Allows Forestry farms to automatically replant cocoa beans
+* **IndustrialCraft 2**
+    * **Duplication Fixes:** Fixes various duplication exploits
+* **Industrial Foregoing**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Infernal Mobs**
     * **Sticky Recall Compatibility:** Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment
+* **Iron Backpacks**
+    * **Duplication Fixes:** Fixes various duplication exploits
+* **Item Stages**
+    * **Ingredient Matching:** Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues
+* **Mekanism**
+    * **Duplication Fixes:** Fixes various duplication exploits
+* **Mob Stages**
+    * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
+* **Nether Chest**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Netherrocks**
     * **Right Click Harvesting Fix:** Prevents crashing with mods implementing right click crop harvesting
 * **NuclearCraft**
     * **Radiation Environment Map:** Changes the data table of the radiation environment handler to improve performance
+* **ProjectRed**
+    * **Duplication Fixes:** Fixes various duplication exploits
+* **Quark**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Roost**
     * **Early Register CT Chickens:** Improves load time by registering CT chickens early for Roost to detect them
 * **Simple Difficulty**
     * **Iron Canteen Interaction Fix:** Fixes the interaction of iron canteens with rain collectors
+* **Spice Of Life**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Storage Drawers**
     * **Item Handlers**
         * Fixes voiding of items when nearing full capacity
@@ -214,6 +258,7 @@ All changes are toggleable via the config file.
 * **Tech Reborn**
     * **Optimized Rolling Machine:** Optimizes the Rolling Machine to reduce tick time
 * **Thaumcraft**
+    * **Duplication Fixes:** Fixes various duplication exploits
     * **Firebat Particles:** Adds particles to firebats similar to legacy versions
     * **Flower Bounding Box:** Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs
     * **Focus Effects**
@@ -223,12 +268,20 @@ All changes are toggleable via the config file.
     * **Spiderlike Eldritch Crabs:** Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders
     * **Stable Thaumometer:** Stops the thaumometer from bobbing rapidly when using it to scan objects
     * **Wisp Particles:** Increases particle size of wisps similar to legacy versions
+* **Thaumic Wonders**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **The Erebus**
-  * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
+    * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
+* **The Farlanders**
+    * **Duplication Fixes:** Fixes various duplication exploits
 * **Thermal Expansion**
+    * **Duplication Fixes:** Fixes various duplication exploits
     * **Insolator Custom Monoculture:** Adds Monoculture Cycle integration to desired phytogenic insolator recipes added by ModTweaker
 * **Tinkers' Construct**
+    * **Duplication Fixes:** Fixes various duplication exploits
     * **Gaseous Fluids:** Excludes gaseous fluids from being transferable via faucets
     * **Offhand Shuriken:** Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand
-    * **Projectile Despawning:** Despawns unbreakable projectiles faster to improve framerates
     * **Ore Dictionary Cache:** Caches all ore dictionary smelting recipes to speed up game loading
+    * **Projectile Despawning:** Despawns unbreakable projectiles faster to improve framerates
+* **Tiny Progressions**
+    * **Duplication Fixes:** Fixes various duplication exploits

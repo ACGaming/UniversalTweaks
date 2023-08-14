@@ -18,7 +18,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
-version = "1.12.2-1.7.1"
+version = "1.12.2-1.8.0"
 group = "mod.acgaming.universaltweaks"
 archivesBaseName = "UniversalTweaks-MB7"
 
@@ -81,6 +81,12 @@ repositories {
 }
 
 dependencies {
+    // Libraries
+    implementation "zone.rong:mixinbooter:7.0"
+    implementation "com.cleanroommc:configanytime:1.0"
+    implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
+
+    // Mods
     deobfCompile "cofh:CoFHCore:1.12.2-+:universal"
     deobfCompile "com.teamacronymcoders.base:base:1.12.2-3.14.0"
     deobfCompile "com.teamacronymcoders:ContentTweaker:1.12.2-4.10.0"
@@ -113,12 +119,40 @@ dependencies {
     deobfCompile "curse.maven:thermal-expansion-69163:2926431"
     deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.55"
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
-    implementation "com.cleanroommc:configanytime:1.0"
-    implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
+    deobfCompile "net.darkhax.bookshelf:Bookshelf-1.12.2:2.3.590"
+    deobfCompile "net.darkhax.gamestages:GameStages-1.12.2:2.0.120"
+    deobfCompile "net.darkhax.itemstages:ItemStages-1.12.2:2.0.51"
+    deobfCompile "net.darkhax.mobstages:MobStages-1.12.2:2.0.13"
+    implementation "curse.maven:actuallyaditions-228404:2844115"
+    implementation "curse.maven:applecore-224472:2969118"
+    implementation "curse.maven:arcanearchives-311357:3057332"
+    implementation "curse.maven:bewitchment-285439:3044569"
+    implementation "curse.maven:chisel-235279:2915375"
+    implementation "curse.maven:codechickenlib-242818:2779848"
+    implementation "curse.maven:cofhworld-271384:2920434"
+    implementation "curse.maven:endercore-231868:2972849"
+    implementation "curse.maven:enderio-64578:2989201"
+    implementation "curse.maven:extrautilities-225561:2678374"
+    implementation "curse.maven:forgemultipartcbe-258426:2755790"
+    implementation "curse.maven:guideapi-228832:2645992"
+    implementation "curse.maven:industrialcraft-242638:3078604"
+    implementation "curse.maven:industrialforegoing-266515:2745324"
+    implementation "curse.maven:ironbackpacks-227049:2564573"
+    implementation "curse.maven:mekanism-268560:2835175"
+    implementation "curse.maven:mrtjpcore-229002:2735197"
+    implementation "curse.maven:netherchest-268888:2655413"
     implementation "curse.maven:netherrocks-226140:2628297"
+    implementation "curse.maven:projectredbase-228702:2745545"
+    implementation "curse.maven:projectredworld-229049:2745551"
+    implementation "curse.maven:quark-243121:2924091"
+    implementation "curse.maven:teslacorelib-254602:2891841"
+    implementation "curse.maven:thaumicwonders-316704:2787954"
+    implementation "curse.maven:thefarlanders-336432:2805139"
+    implementation "curse.maven:thermalfoundation-222880:2926428"
+    implementation "curse.maven:thespiceoflife-220811:2571951"
+    implementation "curse.maven:tinkerscomplement-272671:2843439"
+    implementation "curse.maven:tinyprogressions-250850:2721018"
     implementation "TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal"
-    implementation "zone.rong:mixinbooter:7.0"
-    //implementation "net.jafama:jafama:2.3.2"
 }
 
 mixin {

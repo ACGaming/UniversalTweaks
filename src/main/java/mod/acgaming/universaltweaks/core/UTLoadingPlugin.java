@@ -1,6 +1,6 @@
 package mod.acgaming.universaltweaks.core;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -91,182 +91,128 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     @Override
     public List<String> getMixinConfigs()
     {
-        return isClient ? Arrays.asList(
-            "mixins.bugfixes.blocks.blockoverlay.json",
-            "mixins.bugfixes.blocks.comparatortiming.json",
-            "mixins.bugfixes.blocks.fallingblockdamage.json",
-            "mixins.bugfixes.blocks.hopper.boundingbox.json",
-            "mixins.bugfixes.blocks.hopper.tile.json",
-            "mixins.bugfixes.blocks.itemframevoid.json",
-            "mixins.bugfixes.blocks.ladderflying.json",
-            "mixins.bugfixes.blocks.miningglitch.client.json",
-            "mixins.bugfixes.blocks.miningglitch.server.json",
-            "mixins.bugfixes.blocks.pistontile.json",
-            "mixins.bugfixes.entities.ai.json",
-            "mixins.bugfixes.entities.attackradius.json",
-            "mixins.bugfixes.entities.blockfire.json",
-            "mixins.bugfixes.entities.boatoffset.json",
-            "mixins.bugfixes.entities.boundingbox.json",
-            "mixins.bugfixes.entities.deathtime.json",
-            "mixins.bugfixes.entities.destroypacket.json",
-            "mixins.bugfixes.entities.desync.json",
-            "mixins.bugfixes.entities.dimensionchange.json",
-            "mixins.bugfixes.entities.disconnectdupe.json",
-            "mixins.bugfixes.entities.elytra.json",
-            "mixins.bugfixes.entities.entityid.json",
-            "mixins.bugfixes.entities.maxhealth.json",
-            "mixins.bugfixes.entities.mount.json",
-            "mixins.bugfixes.entities.saturation.json",
-            "mixins.bugfixes.entities.skeletonaim.json",
-            "mixins.bugfixes.entities.suffocation.json",
-            "mixins.bugfixes.entities.tracker.json",
-            "mixins.bugfixes.entities.villagermantle.json",
-            "mixins.bugfixes.misc.depthmask.json",
-            "mixins.bugfixes.misc.modelgap.json",
-            "mixins.bugfixes.misc.packetsize.json",
-            "mixins.bugfixes.misc.smoothlighting.json",
-            "mixins.bugfixes.misc.startup.json",
-            "mixins.bugfixes.world.chunksaving.json",
-            "mixins.bugfixes.world.frustumculling.json",
-            "mixins.bugfixes.world.tileentities.json",
-            "mixins.tweaks.blocks.bedobstruction.json",
-            "mixins.tweaks.blocks.breakablebedrock.json",
-            "mixins.tweaks.blocks.growthsize.json",
-            "mixins.tweaks.blocks.hitdelay.json",
-            "mixins.tweaks.blocks.leafdecay.json",
-            "mixins.tweaks.blocks.lenientpaths.json",
-            "mixins.tweaks.entities.ai.json",
-            "mixins.tweaks.entities.ai.saddledwandering.json",
-            "mixins.tweaks.entities.ai.wither.json",
-            "mixins.tweaks.entities.autojump.json",
-            "mixins.tweaks.entities.burning.horses.json",
-            "mixins.tweaks.entities.damage.arrow.json",
-            "mixins.tweaks.entities.damage.collision.json",
-            "mixins.tweaks.entities.damage.falling.json",
-            "mixins.tweaks.entities.damage.velocity.json",
-            "mixins.tweaks.entities.despawning.json",
-            "mixins.tweaks.entities.loot.json",
-            "mixins.tweaks.entities.spawning.caps.json",
-            "mixins.tweaks.entities.spawning.creepers.confetti.json",
-            "mixins.tweaks.entities.spawning.golems.json",
-            "mixins.tweaks.entities.spawning.husk.json",
-            "mixins.tweaks.entities.spawning.stray.json",
-            "mixins.tweaks.entities.speed.boat.json",
-            "mixins.tweaks.entities.speed.player.json",
-            "mixins.tweaks.entities.taming.horses.json",
-            "mixins.tweaks.items.attackcooldown.client.json",
-            "mixins.tweaks.items.attackcooldown.server.json",
-            "mixins.tweaks.items.hardcorebuckets.json",
-            "mixins.tweaks.items.itementities.client.json",
-            "mixins.tweaks.items.itementities.server.json",
-            "mixins.tweaks.items.rarity.json",
-            "mixins.tweaks.items.repairing.json",
-            "mixins.tweaks.items.xpbottle.json",
-            "mixins.tweaks.misc.buttons.realms.json",
-            "mixins.tweaks.misc.buttons.snooper.client.json",
-            "mixins.tweaks.misc.commands.seed.json",
-            "mixins.tweaks.misc.credits.json",
-            "mixins.tweaks.misc.difficulty.client.json",
-            "mixins.tweaks.misc.incurablepotions.json",
-            "mixins.tweaks.misc.lightning.damage.json",
-            "mixins.tweaks.misc.lightning.fire.json",
-            "mixins.tweaks.misc.lightning.flash.json",
-            "mixins.tweaks.misc.xp.linear.json",
-            "mixins.tweaks.misc.xp.smelting.json",
-            "mixins.tweaks.misc.music.json",
-            "mixins.tweaks.misc.narrator.json",
-            "mixins.tweaks.misc.nightvisionflash.json",
-            "mixins.tweaks.misc.recipebook.client.json",
-            "mixins.tweaks.misc.recipebook.server.json",
-            "mixins.tweaks.misc.smoothscrolling.json",
-            "mixins.tweaks.misc.toastcontrol.json",
-            "mixins.tweaks.performance.audioreload.json",
-            "mixins.tweaks.performance.autosave.json",
-            "mixins.tweaks.performance.craftingcache.json",
-            "mixins.tweaks.performance.dyeblending.json",
-            "mixins.tweaks.performance.fps.json",
-            "mixins.tweaks.performance.missingmodel.json",
-            "mixins.tweaks.performance.prefixcheck.json",
-            "mixins.tweaks.performance.redstone.json",
-            "mixins.tweaks.performance.resourcemanager.json",
-            "mixins.tweaks.world.chunks.gen.json",
-            "mixins.tweaks.world.loading.client.json",
-            "mixins.tweaks.world.loading.server.json") :
-            Arrays.asList(
-                "mixins.bugfixes.blocks.comparatortiming.json",
-                "mixins.bugfixes.blocks.fallingblockdamage.json",
-                "mixins.bugfixes.blocks.hopper.boundingbox.json",
-                "mixins.bugfixes.blocks.hopper.tile.json",
-                "mixins.bugfixes.blocks.itemframevoid.json",
-                "mixins.bugfixes.blocks.ladderflying.json",
-                "mixins.bugfixes.blocks.miningglitch.server.json",
-                "mixins.bugfixes.blocks.pistontile.json",
-                "mixins.bugfixes.entities.ai.json",
-                "mixins.bugfixes.entities.attackradius.json",
-                "mixins.bugfixes.entities.blockfire.json",
-                "mixins.bugfixes.entities.boatoffset.json",
-                "mixins.bugfixes.entities.boundingbox.json",
-                "mixins.bugfixes.entities.deathtime.json",
-                "mixins.bugfixes.entities.destroypacket.json",
-                "mixins.bugfixes.entities.desync.json",
-                "mixins.bugfixes.entities.dimensionchange.json",
-                "mixins.bugfixes.entities.disconnectdupe.json",
-                "mixins.bugfixes.entities.entityid.json",
-                "mixins.bugfixes.entities.maxhealth.json",
-                "mixins.bugfixes.entities.mount.json",
-                "mixins.bugfixes.entities.saturation.json",
-                "mixins.bugfixes.entities.skeletonaim.json",
-                "mixins.bugfixes.entities.suffocation.json",
-                "mixins.bugfixes.entities.tracker.json",
-                "mixins.bugfixes.misc.packetsize.json",
-                "mixins.bugfixes.world.chunksaving.json",
-                "mixins.bugfixes.world.tileentities.json",
-                "mixins.tweaks.blocks.bedobstruction.json",
-                "mixins.tweaks.blocks.breakablebedrock.json",
-                "mixins.tweaks.blocks.growthsize.json",
-                "mixins.tweaks.blocks.hitdelay.json",
-                "mixins.tweaks.blocks.leafdecay.json",
-                "mixins.tweaks.blocks.lenientpaths.json",
-                "mixins.tweaks.entities.ai.json",
-                "mixins.tweaks.entities.ai.saddledwandering.json",
-                "mixins.tweaks.entities.ai.wither.json",
-                "mixins.tweaks.entities.burning.horses.json",
-                "mixins.tweaks.entities.damage.arrow.json",
-                "mixins.tweaks.entities.damage.collision.json",
-                "mixins.tweaks.entities.damage.falling.json",
-                "mixins.tweaks.entities.damage.velocity.json",
-                "mixins.tweaks.entities.despawning.json",
-                "mixins.tweaks.entities.loot.json",
-                "mixins.tweaks.entities.spawning.caps.json",
-                "mixins.tweaks.entities.spawning.creepers.confetti.json",
-                "mixins.tweaks.entities.spawning.golems.json",
-                "mixins.tweaks.entities.spawning.husk.json",
-                "mixins.tweaks.entities.spawning.stray.json",
-                "mixins.tweaks.entities.speed.boat.json",
-                "mixins.tweaks.entities.speed.player.json",
-                "mixins.tweaks.entities.taming.horses.json",
-                "mixins.tweaks.items.attackcooldown.server.json",
-                "mixins.tweaks.items.hardcorebuckets.json",
-                "mixins.tweaks.items.itementities.server.json",
-                "mixins.tweaks.items.rarity.json",
-                "mixins.tweaks.items.repairing.json",
-                "mixins.tweaks.items.xpbottle.json",
-                "mixins.tweaks.misc.buttons.snooper.server.json",
-                "mixins.tweaks.misc.difficulty.server.json",
-                "mixins.tweaks.misc.incurablepotions.json",
-                "mixins.tweaks.misc.lightning.damage.json",
-                "mixins.tweaks.misc.lightning.fire.json",
-                "mixins.tweaks.misc.xp.linear.json",
-                "mixins.tweaks.misc.xp.smelting.json",
-                "mixins.tweaks.misc.recipebook.server.json",
-                "mixins.tweaks.performance.autosave.json",
-                "mixins.tweaks.performance.craftingcache.json",
-                "mixins.tweaks.performance.dyeblending.json",
-                "mixins.tweaks.performance.prefixcheck.json",
-                "mixins.tweaks.performance.redstone.json",
-                "mixins.tweaks.world.chunks.gen.json",
-                "mixins.tweaks.world.loading.server.json"
-            );
+        List<String> configs = new ArrayList<>();
+        // CLIENT ONLY
+        if (isClient)
+        {
+            configs.add("mixins.bugfixes.blocks.banner.json");
+            configs.add("mixins.bugfixes.blocks.blockoverlay.json");
+            configs.add("mixins.bugfixes.blocks.miningglitch.client.json");
+            configs.add("mixins.bugfixes.entities.elytra.json");
+            configs.add("mixins.bugfixes.entities.villagermantle.json");
+            configs.add("mixins.bugfixes.misc.depthmask.json");
+            configs.add("mixins.bugfixes.misc.modelgap.json");
+            configs.add("mixins.bugfixes.misc.smoothlighting.json");
+            configs.add("mixins.bugfixes.misc.startup.json");
+            configs.add("mixins.bugfixes.world.frustumculling.json");
+            configs.add("mixins.tweaks.entities.autojump.json");
+            configs.add("mixins.tweaks.items.attackcooldown.client.json");
+            configs.add("mixins.tweaks.items.itementities.client.json");
+            configs.add("mixins.tweaks.items.rarity.json");
+            configs.add("mixins.tweaks.misc.buttons.realms.json");
+            configs.add("mixins.tweaks.misc.buttons.snooper.client.json");
+            configs.add("mixins.tweaks.misc.commands.seed.json");
+            configs.add("mixins.tweaks.misc.credits.json");
+            configs.add("mixins.tweaks.misc.difficulty.client.json");
+            configs.add("mixins.tweaks.misc.gui.overlaymessage.json");
+            configs.add("mixins.tweaks.misc.gui.selecteditemtooltip.json");
+            configs.add("mixins.tweaks.misc.lightning.flash.json");
+            configs.add("mixins.tweaks.misc.music.json");
+            configs.add("mixins.tweaks.misc.narrator.json");
+            configs.add("mixins.tweaks.misc.nightvisionflash.json");
+            configs.add("mixins.tweaks.misc.recipebook.client.json");
+            configs.add("mixins.tweaks.misc.smoothscrolling.json");
+            configs.add("mixins.tweaks.misc.toastcontrol.json");
+            configs.add("mixins.tweaks.performance.audioreload.json");
+            configs.add("mixins.tweaks.performance.fps.json");
+            configs.add("mixins.tweaks.performance.missingmodel.json");
+            configs.add("mixins.tweaks.performance.resourcemanager.json");
+            configs.add("mixins.tweaks.world.loading.client.json");
+        }
+        // SERVER ONLY
+        else
+        {
+            configs.add("mixins.tweaks.misc.buttons.snooper.server.json");
+            configs.add("mixins.tweaks.misc.difficulty.server.json");
+        }
+        // COMMON
+        configs.add("mixins.bugfixes.blocks.comparatortiming.json");
+        configs.add("mixins.bugfixes.blocks.fallingblockdamage.json");
+        configs.add("mixins.bugfixes.blocks.hopper.boundingbox.json");
+        configs.add("mixins.bugfixes.blocks.hopper.tile.json");
+        configs.add("mixins.bugfixes.blocks.itemframevoid.json");
+        configs.add("mixins.bugfixes.blocks.ladderflying.json");
+        configs.add("mixins.bugfixes.blocks.miningglitch.server.json");
+        configs.add("mixins.bugfixes.blocks.pistontile.json");
+        configs.add("mixins.bugfixes.entities.ai.json");
+        configs.add("mixins.bugfixes.entities.attackradius.json");
+        configs.add("mixins.bugfixes.entities.blockfire.json");
+        configs.add("mixins.bugfixes.entities.boatoffset.json");
+        configs.add("mixins.bugfixes.entities.boundingbox.json");
+        configs.add("mixins.bugfixes.entities.deathtime.json");
+        configs.add("mixins.bugfixes.entities.destroypacket.json");
+        configs.add("mixins.bugfixes.entities.desync.json");
+        configs.add("mixins.bugfixes.entities.dimensionchange.json");
+        configs.add("mixins.bugfixes.entities.disconnectdupe.json");
+        configs.add("mixins.bugfixes.entities.entityid.json");
+        configs.add("mixins.bugfixes.entities.horsefalling.json");
+        configs.add("mixins.bugfixes.entities.maxhealth.json");
+        configs.add("mixins.bugfixes.entities.mount.json");
+        configs.add("mixins.bugfixes.entities.saturation.json");
+        configs.add("mixins.bugfixes.entities.skeletonaim.json");
+        configs.add("mixins.bugfixes.entities.suffocation.json");
+        configs.add("mixins.bugfixes.entities.tracker.json");
+        configs.add("mixins.bugfixes.misc.packetsize.json");
+        configs.add("mixins.bugfixes.world.chunksaving.json");
+        configs.add("mixins.bugfixes.world.tileentities.json");
+        configs.add("mixins.tweaks.blocks.bedobstruction.json");
+        configs.add("mixins.tweaks.blocks.breakablebedrock.json");
+        configs.add("mixins.tweaks.blocks.growthsize.json");
+        configs.add("mixins.tweaks.blocks.hitdelay.json");
+        configs.add("mixins.tweaks.blocks.leafdecay.json");
+        configs.add("mixins.tweaks.blocks.lenientpaths.json");
+        configs.add("mixins.tweaks.entities.ai.json");
+        configs.add("mixins.tweaks.entities.ai.saddledwandering.json");
+        configs.add("mixins.tweaks.entities.ai.wither.json");
+        configs.add("mixins.tweaks.entities.burning.horse.json");
+        configs.add("mixins.tweaks.entities.burning.zombie.json");
+        configs.add("mixins.tweaks.entities.damage.arrow.json");
+        configs.add("mixins.tweaks.entities.damage.collision.json");
+        configs.add("mixins.tweaks.entities.damage.falling.json");
+        configs.add("mixins.tweaks.entities.damage.velocity.json");
+        configs.add("mixins.tweaks.entities.despawning.json");
+        configs.add("mixins.tweaks.entities.loot.json");
+        configs.add("mixins.tweaks.entities.spawning.caps.json");
+        configs.add("mixins.tweaks.entities.spawning.creeper.confetti.json");
+        configs.add("mixins.tweaks.entities.spawning.golem.json");
+        configs.add("mixins.tweaks.entities.spawning.husk.json");
+        configs.add("mixins.tweaks.entities.spawning.stray.json");
+        configs.add("mixins.tweaks.entities.speed.boat.json");
+        configs.add("mixins.tweaks.entities.speed.player.json");
+        configs.add("mixins.tweaks.entities.taming.horse.json");
+        configs.add("mixins.tweaks.entities.trading.json");
+        configs.add("mixins.tweaks.items.attackcooldown.server.json");
+        configs.add("mixins.tweaks.items.eating.json");
+        configs.add("mixins.tweaks.items.hardcorebuckets.json");
+        configs.add("mixins.tweaks.items.itementities.server.json");
+        configs.add("mixins.tweaks.items.rarity.json");
+        configs.add("mixins.tweaks.items.repairing.json");
+        configs.add("mixins.tweaks.items.xpbottle.json");
+        configs.add("mixins.tweaks.misc.incurablepotions.json");
+        configs.add("mixins.tweaks.misc.lightning.damage.json");
+        configs.add("mixins.tweaks.misc.lightning.fire.json");
+        configs.add("mixins.tweaks.misc.xp.linear.json");
+        configs.add("mixins.tweaks.misc.xp.smelting.json");
+        configs.add("mixins.tweaks.misc.recipebook.server.json");
+        configs.add("mixins.tweaks.performance.autosave.json");
+        configs.add("mixins.tweaks.performance.craftingcache.json");
+        configs.add("mixins.tweaks.performance.dyeblending.json");
+        configs.add("mixins.tweaks.performance.prefixcheck.json");
+        configs.add("mixins.tweaks.performance.redstone.json");
+        configs.add("mixins.tweaks.world.chunks.gen.json");
+        configs.add("mixins.tweaks.world.loading.server.json");
+        configs.add("mixins.tweaks.world.sealevel.json");
+        return configs;
     }
 
     @Override
@@ -277,8 +223,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         {
             switch (mixinConfig)
             {
-                case "mixins.tweaks.performance.audioreload.json":
-                    return UTConfig.TWEAKS_PERFORMANCE.utDisableAudioDebugToggle && !surgeLoaded;
+                case "mixins.bugfixes.blocks.banner.json":
+                    return UTConfig.BUGFIXES_BLOCKS.utBannerBoundingBoxToggle;
                 case "mixins.bugfixes.blocks.blockoverlay.json":
                     return UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle;
                 case "mixins.bugfixes.blocks.miningglitch.client.json":
@@ -311,6 +257,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfig.TWEAKS_MISC.utCopyWorldSeedToggle;
                 case "mixins.tweaks.misc.credits.json":
                     return UTConfig.TWEAKS_MISC.utSkipCreditsToggle;
+                case "mixins.tweaks.misc.gui.overlaymessage.json":
+                    return UTConfig.TWEAKS_MISC.utOverlayMessageHeight != -4;
+                case "mixins.tweaks.misc.gui.selecteditemtooltip.json":
+                    return UTConfig.TWEAKS_MISC.utSelectedItemTooltipHeight != 59;
                 case "mixins.tweaks.misc.lightning.flash.json":
                     return UTConfig.TWEAKS_MISC.LIGHTNING.utLightningFlashToggle;
                 case "mixins.tweaks.misc.music.json":
@@ -325,6 +275,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle;
                 case "mixins.tweaks.misc.toastcontrol.json":
                     return UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlToggle;
+                case "mixins.tweaks.performance.audioreload.json":
+                    return UTConfig.TWEAKS_PERFORMANCE.utDisableAudioDebugToggle && !surgeLoaded;
                 case "mixins.tweaks.performance.fps.json":
                     return UTConfig.TWEAKS_PERFORMANCE.utUncapFPSToggle;
                 case "mixins.tweaks.performance.missingmodel.json":
@@ -377,6 +329,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.BUGFIXES_ENTITIES.utDisconnectDupeToggle;
             case "mixins.bugfixes.entities.entityid.json":
                 return UTConfig.BUGFIXES_ENTITIES.utEntityIDToggle;
+            case "mixins.bugfixes.entities.horsefalling.json":
+                return UTConfig.BUGFIXES_ENTITIES.utHorseFallingToggle;
             case "mixins.bugfixes.entities.maxhealth.json":
                 return UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle;
             case "mixins.bugfixes.entities.mount.json":
@@ -411,8 +365,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_ENTITIES.utSaddledWanderingToggle;
             case "mixins.tweaks.entities.ai.wither.json":
                 return UTConfig.TWEAKS_ENTITIES.utWitherAIToggle;
-            case "mixins.tweaks.entities.burning.horses.json":
+            case "mixins.tweaks.entities.burning.horse.json":
                 return UTConfig.TWEAKS_ENTITIES.UNDEAD_HORSES.utBurningUndeadHorsesToggle;
+            case "mixins.tweaks.entities.burning.zombie.json":
+                return UTConfig.TWEAKS_ENTITIES.utBurningBabyZombiesToggle;
             case "mixins.tweaks.entities.damage.arrow.json":
                 return UTConfig.TWEAKS_ENTITIES.utCriticalArrowDamage != -1;
             case "mixins.tweaks.entities.damage.collision.json":
@@ -427,9 +383,9 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_ENTITIES.utCreeperMusicDiscsToggle;
             case "mixins.tweaks.entities.spawning.caps.json":
                 return UTConfig.TWEAKS_ENTITIES.SPAWN_CAPS.utSpawnCapsToggle;
-            case "mixins.tweaks.entities.spawning.creepers.confetti.json":
+            case "mixins.tweaks.entities.spawning.creeper.confetti.json":
                 return UTConfig.TWEAKS_ENTITIES.utCreeperConfettiChance != 0.0D;
-            case "mixins.tweaks.entities.spawning.golems.json":
+            case "mixins.tweaks.entities.spawning.golem.json":
                 return UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGIronGolemToggle || UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGSnowGolemToggle || UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGWitherToggle;
             case "mixins.tweaks.entities.spawning.husk.json":
             case "mixins.tweaks.entities.spawning.stray.json":
@@ -438,10 +394,14 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_ENTITIES.utBoatSpeed != 0.04D;
             case "mixins.tweaks.entities.speed.player.json":
                 return UTConfig.TWEAKS_ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle;
-            case "mixins.tweaks.entities.taming.horses.json":
+            case "mixins.tweaks.entities.taming.horse.json":
                 return UTConfig.TWEAKS_ENTITIES.UNDEAD_HORSES.utTamingUndeadHorsesToggle;
+            case "mixins.tweaks.entities.trading.json":
+                return UTConfig.TWEAKS_ENTITIES.utVillagerTradeLevelingToggle;
             case "mixins.tweaks.items.attackcooldown.server.json":
                 return UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle;
+            case "mixins.tweaks.items.eating.json":
+                return UTConfig.TWEAKS_ITEMS.utAlwaysEatToggle;
             case "mixins.tweaks.items.hardcorebuckets.json":
                 return UTConfig.TWEAKS_ITEMS.utHardcoreBucketsToggle;
             case "mixins.tweaks.items.itementities.server.json":
@@ -478,6 +438,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle;
             case "mixins.tweaks.world.loading.server.json":
                 return UTConfig.TWEAKS_PERFORMANCE.utWorldLoadingToggle;
+            case "mixins.tweaks.world.sealevel.json":
+                return UTConfig.TWEAKS_WORLD.utSeaLevel != 63;
         }
         return true;
     }

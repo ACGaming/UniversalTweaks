@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class UTSystemToastMixin
 {
     @Inject(method = "addOrUpdate", at = @At(value = "HEAD"), cancellable = true)
-    private static void UTSystemToast(GuiToast p_193665_0_, IRecipe p_193665_1_, CallbackInfo ci)
+    private static void utSystemToast(GuiToast p_193665_0_, IRecipe p_193665_1_, CallbackInfo ci)
     {
         if (UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlSystemToggle) ci.cancel();
     }

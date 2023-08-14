@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.NetHandlerPlayClient;
 import net.minecraft.inventory.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.Loader;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
@@ -26,6 +27,6 @@ public class UTAOAHandleSetSlotMixin
     {
         if (!UTConfig.MOD_INTEGRATION.AOA.utFixPlayerTickInInventorylessGui) return true;
         if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAOAHandleSetSlot ::: Check inventory-less GUI (from AOA playerTick)");
-        return !(client.player.openContainer instanceof ContainerCore || client.player.openContainer instanceof ContainerSorptions);
+        return !((Loader.isModLoaded("fluxnetworks") && client.player.openContainer instanceof ContainerCore) || (Loader.isModLoaded("nuclearcraft") && client.player.openContainer instanceof ContainerSorptions));
     }
 }
