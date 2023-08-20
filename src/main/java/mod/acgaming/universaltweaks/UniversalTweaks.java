@@ -22,6 +22,8 @@ import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Sprinting;
 import mod.acgaming.universaltweaks.mods.mekanism.UTMekanismFixes;
 import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
+import mod.acgaming.universaltweaks.mods.simplyjetpacks.UTSimplyJetpacksEvents;
+import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageClientStatesReset;
 import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructEvents;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
 import mod.acgaming.universaltweaks.mods.thaumcraft.UTThaumcraftEvents;
@@ -45,6 +47,8 @@ import mod.acgaming.universaltweaks.tweaks.world.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.world.stronghold.worldgen.SafeStrongholdWorldGenerator;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
 import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
+import net.tardis.mod.proxy.ClientProxy;
+import tonius.simplyjetpacks.network.NetworkHandler;
 
 @Mod(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME, version = UniversalTweaks.VERSION, acceptedMinecraftVersions = "[1.12.2]", dependencies = UniversalTweaks.DEPENDENCIES)
 public class UniversalTweaks
@@ -83,8 +87,10 @@ public class UniversalTweaks
         + "after:projectred-exploration;"
         + "after:quark;"
         + "after:roost;"
+        + "after:simplyjetpacks;"
         + "after:spiceoflife;"
         + "after:storagedrawers;"
+        + "after:tardis;"
         + "after:tcomplement;"
         + "after:tconstruct;"
         + "after:thaumcraft;"
@@ -117,6 +123,13 @@ public class UniversalTweaks
         if (Loader.isModLoaded("elenaidodge2") && UTConfig.MOD_INTEGRATION.ELENAI_DODGE_2.utED2SprintingFeatherConsumption > 0) MinecraftForge.EVENT_BUS.register(new UTED2Sprinting());
         if (Loader.isModLoaded("mekanism") && UTConfig.MOD_INTEGRATION.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
         if (Loader.isModLoaded("projectred-exploration") && UTConfig.MOD_INTEGRATION.PROJECTRED.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTProjectRedWorldEvents());
+        if (Loader.isModLoaded("simplyjetpacks") && UTConfig.MOD_INTEGRATION.SIMPLY_JETPACKS.utMemoryLeakFixToggle)
+        {
+            MinecraftForge.EVENT_BUS.register(new UTSimplyJetpacksEvents());
+            NetworkHandler.instance.registerMessage(MessageClientStatesReset.class, MessageClientStatesReset.class, NetworkHandler.nextID(), Side.CLIENT);
+        }
+        // Unregister reason: event handler adds to an unused map that is never cleared.
+        if (Loader.isModLoaded("tardis") && UTConfig.MOD_INTEGRATION.TARDIS.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.unregister(ClientProxy.class);
         if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTTConstructEvents());
         if (Loader.isModLoaded("thaumcraft") && UTConfig.MOD_INTEGRATION.THAUMCRAFT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTThaumcraftEvents());
         LOGGER.info(NAME + " initialized");
