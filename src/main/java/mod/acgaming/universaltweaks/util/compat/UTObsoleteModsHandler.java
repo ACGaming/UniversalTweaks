@@ -19,6 +19,7 @@ public class UTObsoleteModsHandler
         messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning2").getFormattedText());
         messages.add("");
         if (Loader.isModLoaded("aiimprovements") && (UTConfig.TWEAKS_ENTITIES.utAIReplacementToggle || UTConfig.TWEAKS_ENTITIES.utAIRemovalToggle)) messages.add("AI Improvements");
+        if (Loader.isModLoaded("armorcurve") && UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveToggle) messages.add("Armor Curve");
         if (Loader.isModLoaded("attributefix") && UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributesToggle) messages.add("AttributeFix");
         if (Loader.isModLoaded("bannerpatch") && UTConfig.BUGFIXES_BLOCKS.utBannerBoundingBoxToggle) messages.add("BannerPatch");
         if (Loader.isModLoaded("bedbreakbegone") && UTConfig.TWEAKS_BLOCKS.utBedObstructionToggle) messages.add("BedBreakBegone");

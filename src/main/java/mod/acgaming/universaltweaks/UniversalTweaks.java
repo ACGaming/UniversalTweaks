@@ -33,6 +33,7 @@ import mod.acgaming.universaltweaks.tweaks.items.dragonbreath.UTLeftoverDragonBr
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
+import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import mod.acgaming.universaltweaks.tweaks.misc.endportal.UTEndPortalParallax;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
@@ -50,7 +51,7 @@ public class UniversalTweaks
 {
     public static final String MODID = "universaltweaks";
     public static final String NAME = "Universal Tweaks";
-    public static final String VERSION = "1.12.2-1.8.0";
+    public static final String VERSION = "1.12.2-1.9.0";
     public static final String DEPENDENCIES = "required-after:mixinbooter@[8.0,);required-after:configanytime;"
         + "after:abyssalcraft;"
         + "after:actuallyadditions;"
@@ -108,6 +109,7 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
+        if (UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
         if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
         if (Loader.isModLoaded("abyssalcraft") && UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) MinecraftForge.EVENT_BUS.register(new UTAbyssalCraftEvents());
         if (Loader.isModLoaded("arcanearchives") && UTConfig.MOD_INTEGRATION.ARCANE_ARCHIVES.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTArcaneArchivesEvents());

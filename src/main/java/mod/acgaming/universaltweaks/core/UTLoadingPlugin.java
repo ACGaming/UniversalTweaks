@@ -198,6 +198,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.items.rarity.json");
         configs.add("mixins.tweaks.items.repairing.json");
         configs.add("mixins.tweaks.items.xpbottle.json");
+        configs.add("mixins.tweaks.misc.armorcurve.json");
         configs.add("mixins.tweaks.misc.incurablepotions.json");
         configs.add("mixins.tweaks.misc.lightning.damage.json");
         configs.add("mixins.tweaks.misc.lightning.fire.json");
@@ -410,6 +411,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfig.TWEAKS_ITEMS.utCraftingRepairToggle;
             case "mixins.tweaks.items.xpbottle.json":
                 return UTConfig.TWEAKS_ITEMS.utXPBottleAmount != -1;
+            case "mixins.tweaks.misc.armorcurve.json":
+                return UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveToggle;
             case "mixins.tweaks.misc.buttons.snooper.server.json":
                 return UTConfig.TWEAKS_MISC.utSnooperToggle;
             case "mixins.tweaks.misc.lightning.damage.json":

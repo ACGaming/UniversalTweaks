@@ -1,0 +1,7 @@
+{
+  "package": "mod.acgaming.universaltweaks.tweaks.misc.armorcurve.mixin",
+  "refmap": "universaltweaks.refmap.json",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": ["UTArmorDegradationMixin", "UTAttributeUpdater", "UTDamageCalculatorMixin", "UTValueUpdateMixin"]
+}

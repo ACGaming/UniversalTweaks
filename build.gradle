@@ -18,7 +18,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
-version = "1.12.2-1.8.0"
+version = "1.12.2-1.9.0"
 group = "mod.acgaming.universaltweaks"
 archivesBaseName = "UniversalTweaks"
 
@@ -85,6 +85,7 @@ dependencies {
     implementation "zone.rong:mixinbooter:8.4"
     implementation "com.cleanroommc:configanytime:1.0"
     implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
+    implementation "com.udojava:EvalEx:2.7"
 
     // Mods
     deobfCompile "cofh:CoFHCore:1.12.2-+:universal"
@@ -166,6 +167,7 @@ configurations {
 
 dependencies {
     embed "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
+    embed "com.udojava:EvalEx:2.7"
 }
 
 jar {

@@ -1,7 +1,7 @@
 ![Available for MC 1.12.2](https://img.shields.io/badge/Available%20for-MC%201.12.2-3498db.svg?labelColor=34495e&style=for-the-badge)
 ![License LGPL-3.0](https://img.shields.io/github/license/ACGaming/UniversalTweaks?labelColor=34495e&color=3498db&style=for-the-badge)
 [![Stars](https://img.shields.io/github/stars/ACGaming/UniversalTweaks?labelColor=34495e&color=3498db&style=for-the-badge)](https://github.com/ACGaming/UniversalTweaks/stargazers)
-[![Superseded Mods](https://img.shields.io/badge/Superseded%20Mods-89-3498db.svg?labelColor=34495e&style=for-the-badge)](https://legacy.curseforge.com/minecraft/mc-mods/universal-tweaks/relations/dependencies?filter-related-dependencies=5)
+[![Superseded Mods](https://img.shields.io/badge/Superseded%20Mods-90-3498db.svg?labelColor=34495e&style=for-the-badge)](https://legacy.curseforge.com/minecraft/mc-mods/universal-tweaks/relations/dependencies?filter-related-dependencies=5)
 
 # UNIVERSAL TWEAKS
 
@@ -70,6 +70,7 @@ All changes are toggleable via the config file.
 
 * **AI Improvements:** Replaces/removes entity AI for improved server performance
 * **Always Eat:** Allows the consumption of food at any time, regardless of the hunger bar
+* **Armor Curve:** Adjusts the armor scaling and degradation formulae for mobs and players
 * **Attributes:** Sets custom ranges for entity attributes
 * **Auto Jump Replacement:** Replaces auto jump with an increased step height (singleplayer only)
 * **Auto Save Interval:** Configurable interval in ticks between world auto saves

@@ -16,6 +16,7 @@ import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBe
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
+import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
@@ -1302,6 +1303,10 @@ public class UTConfig
 
     public static class TweaksMiscCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.armorcurve")
+        @Config.Name("Armor Curve")
+        public final ArmorCurveCategory ARMOR_CURVE = new ArmorCurveCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.incurablepotions")
         @Config.Name("Incurable Potions")
         public final IncurablePotionsCategory INCURABLE_POTIONS = new IncurablePotionsCategory();
@@ -1439,6 +1444,50 @@ public class UTConfig
         @Config.Name("Toggle Cheats Button")
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
         public boolean utToggleCheatsToggle = true;
+
+        public static class ArmorCurveCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Armor Curve Toggle")
+            @Config.Comment("Adjusts the armor scaling and degradation formulae for mobs and players")
+            public boolean utArmorCurveToggle = false;
+
+            @Config.Name("[2] Armor Damage Reduction Formula")
+            @Config.Comment
+                ({
+                    "Configure how much armor does against damage",
+                    "Valid values are 'armor', 'damage', and 'toughness'",
+                    "Set to 1 to not modify damage at this step"
+                })
+            public String utArmorCurveArmor = "damage-(damage>(40/(toughness+1)))*((40/(toughness+1)))/2";
+
+            @Config.Name("[3] Armor Toughness Damage Reduction Formula")
+            @Config.Comment
+                ({
+                    "Configure sudden death protection for armor toughness",
+                    "Valid values are 'armor', 'damage', and 'toughness'",
+                    "Set to 1 to not modify damage at this step"
+                })
+            public String utArmorCurveArmorToughness = "damage*MAX(10/(10+armor),0.2)";
+
+            @Config.Name("[4] Enchantment Damage Reduction Formula")
+            @Config.Comment
+                ({
+                    "Configure the efficiency of protection enchantments",
+                    "Valid values are 'enchant' and 'damage'",
+                    "Set to 1 to not modify damage at this step"
+                })
+            public String utArmorCurveEnchantments = "damage*10/(10+enchant)";
+
+            @Config.Name("[5] Armor Degradation Formula")
+            @Config.Comment
+                ({
+                    "Configure how armor degrades",
+                    "Valid values are 'remaining' and 'max'",
+                    "Set to 1 to disable"
+                })
+            public String utArmorCurveDegradation = "remaining/MAX(max,1)";
+        }
 
         public static class IncurablePotionsCategory
         {
@@ -2585,6 +2634,7 @@ public class UTConfig
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
                 if (TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
+                if (TWEAKS_MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
                 if (TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
