@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 import net.minecraft.util.CombatRules;
 
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,16 +20,19 @@ public abstract class UTDamageCalculatorMixin
     private static void utGetDamageAfterAbsorb(float damage, float armor, float armorToughness, CallbackInfoReturnable<Float> info)
     {
         if (!Float.isFinite(damage) || !Float.isFinite(armor) || !Float.isFinite(armorToughness)) return;
-        BigDecimal ret = UTArmorCurve.armor.with("damage", new BigDecimal(damage)).and("armor", new BigDecimal(armor)).and("toughness", new BigDecimal(armorToughness)).eval();
-        ret = UTArmorCurve.toughness.with("damage", ret).and("armor", new BigDecimal(armor)).and("toughness", new BigDecimal(armorToughness)).eval();
-        info.setReturnValue(ret.floatValue());
+        BigDecimal retArmor = UTArmorCurve.armor.with("damage", BigDecimal.valueOf(damage)).and("armor", BigDecimal.valueOf(armor)).and("toughness", BigDecimal.valueOf(armorToughness)).eval();
+        if (UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveLogging) UniversalTweaks.LOGGER.info("UTArmorCurve ::: Armor Damage: " + retArmor);
+        BigDecimal retToughness = UTArmorCurve.toughness.with("damage", retArmor).and("armor", BigDecimal.valueOf(armor)).and("toughness", BigDecimal.valueOf(armorToughness)).eval();
+        if (UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveLogging) UniversalTweaks.LOGGER.info("UTArmorCurve ::: Armor Toughness Damage: " + retToughness);
+        info.setReturnValue(retToughness.floatValue());
     }
 
     @Inject(cancellable = true, at = @At("HEAD"), method = "getDamageAfterMagicAbsorb(FF)F")
     private static void utGetDamageAfterMagicAbsorb(float damage, float prot, CallbackInfoReturnable<Float> info)
     {
         if (!Float.isFinite(damage) || !Float.isFinite(prot)) return;
-        BigDecimal ret = UTArmorCurve.enchants.with("damage", new BigDecimal(damage)).and("enchant", new BigDecimal(prot)).eval();
-        info.setReturnValue(ret.floatValue());
+        BigDecimal retEnchants = UTArmorCurve.enchants.with("damage", BigDecimal.valueOf(damage)).and("enchant", BigDecimal.valueOf(prot)).eval();
+        if (UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveLogging) UniversalTweaks.LOGGER.info("UTArmorCurve ::: Enchantment Damage: " + retEnchants);
+        info.setReturnValue(retEnchants.floatValue());
     }
 }

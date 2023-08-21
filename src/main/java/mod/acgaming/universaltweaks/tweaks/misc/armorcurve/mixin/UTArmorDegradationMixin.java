@@ -12,6 +12,8 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfig;
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -48,12 +50,13 @@ public abstract class UTArmorDegradationMixin
             ImmutableMultimap<String, AttributeModifier> cached = CACHE.getIfPresent((ItemStack) (Object) this);
             if (cached != null) info.setReturnValue(cached);
             ImmutableMultimap.Builder<String, AttributeModifier> copy = ImmutableMultimap.builder();
-            if (UTArmorCurve.degrade == null || UTArmorCurve.degrade.toString().equals("1")) return;
-            float degrade = UTArmorCurve.degrade.with("remaining", new BigDecimal(this.getMaxDamage() - this.getItemDamage())).and("max", new BigDecimal(this.getMaxDamage())).eval().floatValue();
+            if (UTArmorCurve.degrade == null || UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveDegradation.equals("1")) return;
+            float retDegrade = UTArmorCurve.degrade.with("remaining", BigDecimal.valueOf(this.getMaxDamage() - this.getItemDamage())).and("max", BigDecimal.valueOf(this.getMaxDamage())).eval().floatValue();
+            if (UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveLogging) UniversalTweaks.LOGGER.info("UTArmorCurve ::: Armor Degradation: " + retDegrade);
             for (String e : m.keySet())
                 for (AttributeModifier eam : m.get(e))
                 {
-                    AttributeModifier degradedEAM = new AttributeModifier(eam.getID(), eam.getName(), (degrade) * eam.getAmount(), eam.getOperation());
+                    AttributeModifier degradedEAM = new AttributeModifier(eam.getID(), eam.getName(), (retDegrade) * eam.getAmount(), eam.getOperation());
                     copy.put(e, degradedEAM);
                 }
             cached = copy.build();

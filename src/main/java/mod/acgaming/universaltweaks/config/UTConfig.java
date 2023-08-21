@@ -1487,6 +1487,10 @@ public class UTConfig
                     "Set to 1 to disable"
                 })
             public String utArmorCurveDegradation = "remaining/MAX(max,1)";
+
+            @Config.Name("[6] Debug Logging")
+            @Config.Comment("Enables debug logging for easier config validation")
+            public boolean utArmorCurveLogging = false;
         }
 
         public static class IncurablePotionsCategory
