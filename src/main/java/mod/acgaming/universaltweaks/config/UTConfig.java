@@ -1995,6 +1995,10 @@ public class UTConfig
         @Config.Name("Simple Difficulty")
         public final SimpleDifficultyCategory SIMPLE_DIFFICULTY = new SimpleDifficultyCategory();
 
+        @Config.LangKey("cfg.universaltweaks.modintegration.simplyjetpacks")
+        @Config.Name("Simply Jetpacks")
+        public final SimplyJetpacksCategory SIMPLY_JETPACKS = new SimplyJetpacksCategory();
+
         @Config.LangKey("cfg.universaltweaks.modintegration.spiceoflife")
         @Config.Name("Spice Of Life")
         public final SpiceOfLifeCategory SPICE_OF_LIFE = new SpiceOfLifeCategory();
@@ -2002,6 +2006,10 @@ public class UTConfig
         @Config.LangKey("cfg.universaltweaks.modintegration.sd")
         @Config.Name("Storage Drawers")
         public final StorageDrawersCategory STORAGE_DRAWERS = new StorageDrawersCategory();
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.tardis")
+        @Config.Name("Tardis Mod")
+        public final TardisCategory TARDIS = new TardisCategory();
 
         @Config.LangKey("cfg.universaltweaks.modintegration.tr")
         @Config.Name("Tech Reborn")
@@ -2376,6 +2384,14 @@ public class UTConfig
             public boolean utRainCollectorCanteenToggle = true;
         }
 
+        public static class SimplyJetpacksCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Memory Leak Fix")
+            @Config.Comment("Fixes a client-side memory leak associated with EntityPlayer")
+            public boolean utMemoryLeakFixToggle = true;
+        }
+
         public static class SpiceOfLifeCategory
         {
             @Config.RequiresMcRestart
@@ -2404,6 +2420,14 @@ public class UTConfig
                     "0 for default unlimited range"
                 })
             public int utSDRenderRange = 0;
+        }
+
+        public static class TardisCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Memory Leak Fix")
+            @Config.Comment("Fixes a client-side memory leak associated with EntityPlayer")
+            public boolean utMemoryLeakFixToggle = true;
         }
 
         public static class TechRebornCategory

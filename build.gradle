@@ -63,20 +63,8 @@ repositories {
         url = "https://repo.spongepowered.org/maven"
     }
     maven {
-        name = "DVS1 Maven FS"
-        url = "https://dvs1.progwml6.com/files/maven"
-    }
-    maven {
-        name = "jaredlll08 Maven"
-        url = "https://maven.blamejared.com"
-    }
-    maven {
-        name = "Fabric Maven"
-        url = "https://maven.fabricmc.net"
-    }
-    maven {
-        name = "Covers1624 Maven"
-        url = "https://maven.covers1624.net"
+        name = "Mod Maven"
+        url = "https://modmaven.dev/"
     }
 }
 
@@ -118,8 +106,8 @@ dependencies {
     deobfCompile "curse.maven:thaumcraft-223628:2629023"
     deobfCompile "curse.maven:the-erebus-220698:3211974"
     deobfCompile "curse.maven:thermal-expansion-69163:2926431"
-    deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.55"
-    deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
+    deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.56"
+    deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.190"
     deobfCompile "net.darkhax.bookshelf:Bookshelf-1.12.2:2.3.590"
     deobfCompile "net.darkhax.gamestages:GameStages-1.12.2:2.0.120"
     deobfCompile "net.darkhax.itemstages:ItemStages-1.12.2:2.0.51"
@@ -146,6 +134,8 @@ dependencies {
     implementation "curse.maven:projectredbase-228702:2745545"
     implementation "curse.maven:projectredworld-229049:2745551"
     implementation "curse.maven:quark-243121:2924091"
+    implementation "curse.maven:simplyjetpacks2-251792:3294422"
+    implementation "curse.maven:tardis-290247:2903453"
     implementation "curse.maven:teslacorelib-254602:2891841"
     implementation "curse.maven:thaumicwonders-316704:2787954"
     implementation "curse.maven:thefarlanders-336432:2805139"
