@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(ExperienceFunctions.class)
+@Mixin(value = ExperienceFunctions.class, remap = false)
 public class UTCollectiveLinearXPMixin
 {
     @Inject(method = "getExperienceForLevel", at = @At("HEAD"), cancellable = true)
