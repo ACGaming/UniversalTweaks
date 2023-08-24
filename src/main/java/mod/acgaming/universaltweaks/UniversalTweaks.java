@@ -66,6 +66,7 @@ public class UniversalTweaks
         + "after:botania;"
         + "after:chisel;"
         + "after:cofhcore;"
+        + "after:collective;"
         + "after:contenttweaker;"
         + "after:element;"
         + "after:elenaidodge2;"
