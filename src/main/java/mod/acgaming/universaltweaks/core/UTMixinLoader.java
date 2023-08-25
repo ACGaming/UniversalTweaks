@@ -23,6 +23,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.bloodmagic.json",
             "mixins.mods.botania.dupes.json",
             "mixins.mods.botania.json",
+            "mixins.mods.ceramics.json",
             "mixins.mods.chisel.tcomplement.dupes.json",
             "mixins.mods.cofhcore.json",
             "mixins.mods.collective.json",
@@ -110,6 +111,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("botania");
             case "mixins.mods.botania.dupes.json":
                 return Loader.isModLoaded("botania") && UTConfig.MOD_INTEGRATION.BOTANIA.utDuplicationFixesToggle;
+            case "mixins.mods.ceramics.json":
+                return Loader.isModLoaded("ceramics");
             case "mixins.mods.cofhcore.json":
                 return Loader.isModLoaded("cofhcore");
             case "mixins.mods.collective.json":

@@ -64,6 +64,7 @@ public class UniversalTweaks
         + "after:biomesoplenty;"
         + "after:bloodmagic;"
         + "after:botania;"
+        + "after:ceramics;"
         + "after:chisel;"
         + "after:cofhcore;"
         + "after:collective;"
