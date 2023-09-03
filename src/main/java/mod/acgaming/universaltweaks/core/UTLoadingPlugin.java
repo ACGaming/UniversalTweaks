@@ -22,6 +22,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public static final boolean isClient = FMLLaunchHandler.side().isClient();
     public static final boolean isDev = FMLLaunchHandler.isDeobfuscatedEnvironment();
     public static boolean randomPatchesLoaded;
+    public static boolean renderLibLoaded;
     public static boolean spongeForgeLoaded;
     public static boolean surgeLoaded;
     public static long launchTime;
@@ -39,6 +40,13 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         {
             Class.forName("com.therandomlabs.randompatches.core.RPCore");
             randomPatchesLoaded = true;
+        }
+        catch (ClassNotFoundException ignored) {}
+
+        try
+        {
+            Class.forName("meldexun.renderlib.RenderLib");
+            renderLibLoaded = true;
         }
         catch (ClassNotFoundException ignored) {}
 
@@ -225,7 +233,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             switch (mixinConfig)
             {
                 case "mixins.bugfixes.blocks.banner.json":
-                    return UTConfig.BUGFIXES_BLOCKS.utBannerBoundingBoxToggle;
+                    return UTConfig.BUGFIXES_BLOCKS.utBannerBoundingBoxToggle && !renderLibLoaded;
                 case "mixins.bugfixes.blocks.blockoverlay.json":
                     return UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle;
                 case "mixins.bugfixes.blocks.miningglitch.client.json":
