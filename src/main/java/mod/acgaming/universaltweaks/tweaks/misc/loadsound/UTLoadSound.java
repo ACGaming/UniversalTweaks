@@ -15,6 +15,7 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
@@ -25,7 +26,8 @@ import static mod.acgaming.universaltweaks.config.UTConfig.TweaksMiscCategory.Lo
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTLoadSound
 {
-    public static boolean played = false;
+    public static boolean playedMenu = false;
+    public static boolean playedWorld = false;
     public static Random random = new Random();
     public static List<SoundEvent> soundListMC = new ArrayList<>();
     public static List<SoundEvent> soundListWorld = new ArrayList<>();
@@ -73,7 +75,7 @@ public class UTLoadSound
 
     public static void playRandomSoundMC()
     {
-        if (soundListMC.size() < 1) return;
+        if (soundListMC.isEmpty()) return;
         int randomIndex = random.nextInt(soundListMC.size());
         SoundEvent soundEvent = soundListMC.get(randomIndex);
         Float pitch = pitchListMC.get(randomIndex);
@@ -82,7 +84,7 @@ public class UTLoadSound
 
     public static void playRandomSoundWorld()
     {
-        if (soundListMC.size() < 1) return;
+        if (soundListMC.isEmpty()) return;
         int randomIndex = random.nextInt(soundListWorld.size());
         SoundEvent soundEvent = soundListWorld.get(randomIndex);
         Float pitch = pitchListWorld.get(randomIndex);
@@ -92,19 +94,26 @@ public class UTLoadSound
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utMenuSound(GuiOpenEvent event)
     {
-        if (!played && event.getGui() instanceof GuiMainMenu)
+        if (!playedMenu && event.getGui() instanceof GuiMainMenu)
         {
             if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode == MINECRAFT || UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode == MINECRAFT_AND_WORLD) playRandomSoundMC();
-            played = true;
+            playedMenu = true;
         }
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utWorldSound(EntityJoinWorldEvent event)
     {
-        if (event.getEntity() instanceof EntityPlayerSP)
+        if (!playedWorld && event.getEntity() instanceof EntityPlayerSP)
         {
             if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode == WORLD || UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode == MINECRAFT_AND_WORLD) playRandomSoundWorld();
+            playedWorld = true;
         }
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void utWorldSoundReset(PlayerEvent.PlayerLoggedOutEvent event)
+    {
+        playedWorld = false;
     }
 }
