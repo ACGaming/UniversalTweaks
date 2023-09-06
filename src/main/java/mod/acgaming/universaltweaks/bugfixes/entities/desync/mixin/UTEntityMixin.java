@@ -3,6 +3,7 @@ package mod.acgaming.universaltweaks.bugfixes.entities.desync.mixin;
 import net.minecraft.entity.Entity;
 
 import mod.acgaming.universaltweaks.bugfixes.entities.desync.IPrevMotion;
+import mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -30,6 +31,7 @@ public class UTEntityMixin implements IPrevMotion
     @Inject(method = "onUpdate", at = @At("HEAD"))
     public void utOnUpdate(CallbackInfo info)
     {
+        if (UTEntityDesync.isBlacklisted(((Entity) (Object) this))) return;
         prevMotionX = motionX;
         prevMotionY = motionY;
         prevMotionZ = motionZ;

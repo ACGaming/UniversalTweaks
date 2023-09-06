@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import com.cleanroommc.configanytime.ConfigAnytime;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
+import mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
@@ -96,7 +97,11 @@ public class UTConfig
 
         @Config.RequiresMcRestart
         @Config.Name("Banner Bounding Box")
-        @Config.Comment("Fixes rendering issues with banners by correctly sizing their render bounding boxes")
+        @Config.Comment
+            ({
+                "Fixes rendering issues with banners by correctly sizing their render bounding boxes",
+                "Incompatible with RenderLib"
+            })
         public boolean utBannerBoundingBoxToggle = true;
 
         @Config.RequiresMcRestart
@@ -170,6 +175,10 @@ public class UTConfig
 
     public static class BugfixesEntitiesCategory
     {
+        @Config.LangKey("cfg.universaltweaks.bugfixes.entities.desync")
+        @Config.Name("Entity Desync")
+        public final EntityDesyncCategory ENTITY_DESYNC = new EntityDesyncCategory();
+
         @Config.RequiresMcRestart
         @Config.Name("Attack Radius")
         @Config.Comment("Improves the attack radius of hostile mobs by checking the line of sight with raytracing")
@@ -232,11 +241,6 @@ public class UTConfig
         public boolean utEntityAABBToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Entity Desync")
-        @Config.Comment("Fixes entity motion desyncs most notable with arrows and thrown items")
-        public boolean utEntityDesyncToggle = true;
-
-        @Config.RequiresMcRestart
         @Config.Name("Entity ID")
         @Config.Comment("Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0")
         public boolean utEntityIDToggle = true;
@@ -295,6 +299,29 @@ public class UTConfig
         @Config.Name("Villager Mantle Hoods")
         @Config.Comment("Returns missing hoods to villager mantles")
         public boolean utVillagerMantleToggle = true;
+
+        public static class EntityDesyncCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Entity Desync Toggle")
+            @Config.Comment
+                ({
+                    "Fixes entity motion desyncs most notable with arrows and thrown items",
+                    "Incompatible with Immersive Vehicles"
+                })
+            public boolean utEntityDesyncToggle = true;
+
+            @Config.Name("[2] Entity Blacklist")
+            @Config.Comment
+                ({
+                    "Syntax:  modid:entity",
+                    "Example: minecraft:minecart"
+                })
+            public String[] utEntityDesyncBlacklist = new String[]
+                {
+                    "minecraft:minecart"
+                };
+        }
     }
 
     public static class BugfixesMiscCategory
@@ -2661,6 +2688,7 @@ public class UTConfig
             if (event.getModID().equals(UniversalTweaks.MODID))
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
+                if (BUGFIXES_ENTITIES.ENTITY_DESYNC.utEntityDesyncToggle) UTEntityDesync.initBlacklistedEntityEntries();
                 if (TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
                 if (TWEAKS_MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
                 if (TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();

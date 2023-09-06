@@ -331,7 +331,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.bugfixes.entities.destroypacket.json":
                 return UTConfig.BUGFIXES_ENTITIES.utDestroyPacketToggle;
             case "mixins.bugfixes.entities.desync.json":
-                return UTConfig.BUGFIXES_ENTITIES.utEntityDesyncToggle;
+                return UTConfig.BUGFIXES_ENTITIES.ENTITY_DESYNC.utEntityDesyncToggle;
             case "mixins.bugfixes.entities.dimensionchange.json":
                 return UTConfig.BUGFIXES_ENTITIES.utDimensionChangeToggle;
             case "mixins.bugfixes.entities.disconnectdupe.json":
