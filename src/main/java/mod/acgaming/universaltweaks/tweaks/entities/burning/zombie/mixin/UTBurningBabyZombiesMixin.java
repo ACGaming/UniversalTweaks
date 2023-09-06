@@ -17,6 +17,6 @@ public abstract class UTBurningBabyZombiesMixin
     @Redirect(method = "onLivingUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/monster/EntityZombie;isChild()Z"))
     public boolean utBurningBabyZombies(EntityZombie zombie)
     {
-        return this.isChild() || UTConfig.TWEAKS_ENTITIES.utBurningBabyZombiesToggle;
+        return this.isChild() && !UTConfig.TWEAKS_ENTITIES.utBurningBabyZombiesToggle;
     }
 }
