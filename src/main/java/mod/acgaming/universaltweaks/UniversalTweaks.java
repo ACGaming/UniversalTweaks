@@ -26,6 +26,7 @@ import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.UTSimplyJetpacksEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageClientStatesReset;
 import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructEvents;
+import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructMaterials;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
 import mod.acgaming.universaltweaks.mods.thaumcraft.UTThaumcraftEvents;
 import mod.acgaming.universaltweaks.tweaks.blocks.betterplacement.UTBetterPlacement;
@@ -161,6 +162,7 @@ public class UniversalTweaks
         if (UTConfig.TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
         if (UTConfig.TWEAKS_ITEMS.utCustomUseDurations.length > 0) UTCustomUseDuration.initItemUseMaps();
         if (UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
+        if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConMaterialBlacklist.length > 0) UTTConstructMaterials.utHandleBlacklistedMaterials();
         LOGGER.info(NAME + " post-initialized");
     }
 

@@ -281,6 +281,7 @@ All changes are toggleable via the config file.
 * **Tinkers' Construct**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Gaseous Fluids:** Excludes gaseous fluids from being transferable via faucets
+    * **Material Blacklist:** Hides tool/bow materials in the 'Materials and You' book
     * **Offhand Shuriken:** Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand
     * **Ore Dictionary Cache:** Caches all ore dictionary smelting recipes to speed up game loading
     * **Projectile Despawning:** Despawns unbreakable projectiles faster to improve framerates

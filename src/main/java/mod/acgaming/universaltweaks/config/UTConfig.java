@@ -2645,9 +2645,14 @@ public class UTConfig
             public boolean utTConGaseousFluidsToggle = false;
 
             @Config.RequiresMcRestart
-            @Config.Name("Projectile Despawning")
-            @Config.Comment("Despawns unbreakable projectiles faster to improve framerates")
-            public boolean utTConProjectileToggle = true;
+            @Config.Name("Material Blacklist")
+            @Config.Comment
+                ({
+                    "Hides tool/bow materials in the 'Materials and You' book",
+                    "Syntax: material",
+                    "Enabling debug logging prints all materials on opening the book"
+                })
+            public String[] utTConMaterialBlacklist = new String[] {};
 
             @Config.RequiresMcRestart
             @Config.Name("Offhand Shuriken")
@@ -2658,6 +2663,11 @@ public class UTConfig
             @Config.Name("Ore Dictionary Cache")
             @Config.Comment("Caches all ore dictionary smelting recipes to speed up game loading")
             public boolean utTConOreDictCacheToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Projectile Despawning")
+            @Config.Comment("Despawns unbreakable projectiles faster to improve framerates")
+            public boolean utTConProjectileToggle = true;
 
             @Config.RequiresMcRestart
             @Config.Name("Duplication Fixes")
