@@ -1,7 +1,6 @@
 package mod.acgaming.universaltweaks.mods.cqrepoured.mixin;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
@@ -21,17 +20,7 @@ public class UTGoldenFeatherItemMixin extends ItemLore
     public void utGoldenFeatherItem(ItemStack stack, World world, Entity entity, int itemSlot, boolean isSelected, CallbackInfo ci)
     {
         if (!UTConfig.MOD_INTEGRATION.CHOCOLATE_QUEST.utCQRGoldenFeatherToggle) return;
-        if (entity.fallDistance >= 3)
-        {
-            // Handle item damage and fall distance in the server world...
-            if (!world.isRemote)
-            {
-                stack.damageItem(1, (EntityLivingBase) entity);
-                entity.fallDistance = 0;
-            }
-            // ...and particles in the client world
-            else world.spawnParticle(EnumParticleTypes.CLOUD, entity.posX, entity.posY, entity.posZ, (itemRand.nextFloat() - 0.5) / 2, -0.5, (itemRand.nextFloat() - 0.5) / 2);
-        }
+        if (entity.fallDistance >= 3) world.spawnParticle(EnumParticleTypes.CLOUD, entity.posX, entity.posY, entity.posZ, (itemRand.nextFloat() - 0.5) / 2, -0.5, (itemRand.nextFloat() - 0.5) / 2);
         super.onUpdate(stack, world, entity, itemSlot, isSelected);
         ci.cancel();
     }

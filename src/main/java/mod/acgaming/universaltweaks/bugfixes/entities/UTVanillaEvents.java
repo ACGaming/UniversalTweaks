@@ -11,10 +11,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
+import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfig;
 
 // Courtesy of Focamacho
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTVanillaEvents
 {
     @SubscribeEvent

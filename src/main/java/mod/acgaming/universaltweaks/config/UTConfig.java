@@ -2164,7 +2164,6 @@ public class UTConfig
 
         public static class ChocolateQuestCategory
         {
-            @Config.RequiresMcRestart
             @Config.Name("Legacy Golden Feather")
             @Config.Comment("Restores the golden feather behavior from the original Better Dungeons mod")
             public boolean utCQRGoldenFeatherToggle = true;
@@ -2650,7 +2649,7 @@ public class UTConfig
                 ({
                     "Hides tool/bow materials in the 'Materials and You' book",
                     "Syntax: material",
-                    "Enabling debug logging prints all materials on opening the book"
+                    "Enabling debug logging prints all materials on game launch"
                 })
             public String[] utTConMaterialBlacklist = new String[] {};
 
