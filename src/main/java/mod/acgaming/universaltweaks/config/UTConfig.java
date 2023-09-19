@@ -2294,6 +2294,11 @@ public class UTConfig
             @Config.Name("Sticky Recall Compatibility")
             @Config.Comment("Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment")
             public boolean utIMStickyRecallToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Sticky Pedestal Compatibility")
+            @Config.Comment("Enables compatibility between Infernal Mobs' Sticky effect and Reliquary's Pedestal")
+            public boolean utIMStickyPedestalToggle = true;
         }
 
         public static class IronBackpacksCategory

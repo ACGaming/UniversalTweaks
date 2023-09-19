@@ -226,6 +226,7 @@ All changes are toggleable via the config file.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Infernal Mobs**
     * **Sticky Recall Compatibility:** Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment
+    * **Sticky Pedestal Compatibility:** Enables compatibility between Infernal Mobs' Sticky effect and Reliquary's Pedestal
 * **Iron Backpacks**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Item Stages**
