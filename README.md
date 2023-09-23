@@ -9,7 +9,7 @@
 
 Universal Tweaks consolidates various bugfixes and tweaks into a single solution for Minecraft 1.12.2.
 
-All changes are toggleable via the config file.
+All changes are toggleable via config files.
 
 [![Requires MixinBooter](https://img.shields.io/badge/Requires-MixinBooter-3498db.svg?labelColor=34495e&style=for-the-badge)](https://www.curseforge.com/minecraft/mc-mods/mixin-booter)
 [![Requires ConfigAnytime](https://img.shields.io/badge/Requires-ConfigAnytime-3498db.svg?labelColor=34495e&style=for-the-badge)](https://www.curseforge.com/minecraft/mc-mods/configanytime)
