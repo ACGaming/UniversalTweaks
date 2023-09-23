@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.elenai.elenaidodge2.api.FeathersHelper;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 
 public class UTED2Sprinting
 {
@@ -21,9 +21,9 @@ public class UTED2Sprinting
         if (event.phase == TickEvent.Phase.START
             && event.player instanceof EntityPlayerMP
             && event.player.isSprinting()
-            && event.player.ticksExisted % UTConfig.MOD_INTEGRATION.ELENAI_DODGE_2.utED2SprintingFeatherInterval == 0)
+            && event.player.ticksExisted % UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherInterval == 0)
         {
-            FeathersHelper.decreaseFeathers((EntityPlayerMP) event.player, UTConfig.MOD_INTEGRATION.ELENAI_DODGE_2.utED2SprintingFeatherConsumption);
+            FeathersHelper.decreaseFeathers((EntityPlayerMP) event.player, UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherConsumption);
         }
     }
 
@@ -34,7 +34,7 @@ public class UTED2Sprinting
         if (event.phase == TickEvent.Phase.START
             && event.player instanceof EntityPlayerSP
             && (((EntityPlayerSP) event.player).sprintingTicksLeft < 5 || FeathersHelper.getFeatherLevel((EntityPlayerSP) event.player) == 0)
-            && FeathersHelper.getFeatherLevel((EntityPlayerSP) event.player) < UTConfig.MOD_INTEGRATION.ELENAI_DODGE_2.utED2SprintingFeatherRequirement)
+            && FeathersHelper.getFeatherLevel((EntityPlayerSP) event.player) < UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherRequirement)
         {
             event.player.setSprinting(false);
             KeyBinding.setKeyBindState(Minecraft.getMinecraft().gameSettings.keyBindSprint.getKeyCode(), false);

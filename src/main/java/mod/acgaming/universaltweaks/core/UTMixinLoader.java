@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 import net.minecraftforge.fml.common.Loader;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import zone.rong.mixinbooter.ILateMixinLoader;
 
 public class UTMixinLoader implements ILateMixinLoader
@@ -98,19 +98,19 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.abyssalcraft.json":
                 return Loader.isModLoaded("abyssalcraft");
             case "mixins.mods.actuallyadditions.dupes.json":
-                return Loader.isModLoaded("actuallyadditions") && UTConfig.MOD_INTEGRATION.ACTUALLY_ADDITIONS.utDuplicationFixesToggle;
+                return Loader.isModLoaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle;
             case "mixins.mods.arcanearchives.dupes.json":
-                return Loader.isModLoaded("arcanearchives") && UTConfig.MOD_INTEGRATION.ARCANE_ARCHIVES.utDuplicationFixesToggle;
+                return Loader.isModLoaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle;
             case "mixins.mods.biomesoplenty.json":
                 return Loader.isModLoaded("biomesoplenty");
             case "mixins.mods.bloodmagic.json":
                 return Loader.isModLoaded("bloodmagic");
             case "mixins.mods.bloodmagic.dupes.json":
-                return Loader.isModLoaded("bloodmagic") && UTConfig.MOD_INTEGRATION.BLOOD_MAGIC.utDuplicationFixesToggle;
+                return Loader.isModLoaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle;
             case "mixins.mods.botania.json":
                 return Loader.isModLoaded("botania");
             case "mixins.mods.botania.dupes.json":
-                return Loader.isModLoaded("botania") && UTConfig.MOD_INTEGRATION.BOTANIA.utDuplicationFixesToggle;
+                return Loader.isModLoaded("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle;
             case "mixins.mods.ceramics.json":
                 return Loader.isModLoaded("ceramics");
             case "mixins.mods.cofhcore.json":
@@ -128,37 +128,37 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.erebus.json":
                 return Loader.isModLoaded("erebus");
             case "mixins.mods.extrautilities.dupes.json":
-                return Loader.isModLoaded("extrautils2") && UTConfig.MOD_INTEGRATION.EXTRA_UTILITIES.utDuplicationFixesToggle;
+                return Loader.isModLoaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDuplicationFixesToggle;
             case "mixins.mods.forestry.json":
                 return Loader.isModLoaded("forestry");
             case "mixins.mods.forestry.cocoa.json":
-                return Loader.isModLoaded("forestry") && UTConfig.MOD_INTEGRATION.FORESTRY.utFOCocoaBeansToggle;
+                return Loader.isModLoaded("forestry") && UTConfigMods.FORESTRY.utFOCocoaBeansToggle;
             case "mixins.mods.forestry.dupes.json":
-                return Loader.isModLoaded("forestry") && UTConfig.MOD_INTEGRATION.FORESTRY.utDuplicationFixesToggle;
+                return Loader.isModLoaded("forestry") && UTConfigMods.FORESTRY.utDuplicationFixesToggle;
             case "mixins.mods.forestry.extratrees.json":
                 return Loader.isModLoaded("extratrees");
             case "mixins.mods.industrialcraft.dupes.json":
-                return Loader.isModLoaded("ic2") && UTConfig.MOD_INTEGRATION.INDUSTRIALCRAFT.utDuplicationFixesToggle;
+                return Loader.isModLoaded("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle;
             case "mixins.mods.industrialforegoing.dupes.json":
-                return Loader.isModLoaded("industrialforegoing") && UTConfig.MOD_INTEGRATION.INDUSTRIAL_FOREGOING.utDuplicationFixesToggle;
+                return Loader.isModLoaded("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utDuplicationFixesToggle;
             case "mixins.mods.infernalmobs.json":
                 return Loader.isModLoaded("infernalmobs");
             case "mixins.mods.ironbackpacks.dupes.json":
-                return Loader.isModLoaded("ironbackpacks") && UTConfig.MOD_INTEGRATION.IRON_BACKPACKS.utDuplicationFixesToggle;
+                return Loader.isModLoaded("ironbackpacks") && UTConfigMods.IRON_BACKPACKS.utDuplicationFixesToggle;
             case "mixins.mods.itemstages.json":
                 return Loader.isModLoaded("itemstages");
             case "mixins.mods.mekanism.dupes.json":
-                return Loader.isModLoaded("mekanism") && UTConfig.MOD_INTEGRATION.MEKANISM.utDuplicationFixesToggle;
+                return Loader.isModLoaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle;
             case "mixins.mods.mobstages.json":
                 return Loader.isModLoaded("mobstages");
             case "mixins.mods.netherchest.dupes.json":
-                return Loader.isModLoaded("netherchest") && UTConfig.MOD_INTEGRATION.NETHER_CHEST.utDuplicationFixesToggle;
+                return Loader.isModLoaded("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle;
             case "mixins.mods.netherrocks.json":
                 return Loader.isModLoaded("netherrocks");
             case "mixins.mods.nuclearcraft.json":
                 return Loader.isModLoaded("nuclearcraft");
             case "mixins.mods.quark.dupes.json":
-                return Loader.isModLoaded("quark") && UTConfig.MOD_INTEGRATION.QUARK.utDuplicationFixesToggle;
+                return Loader.isModLoaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle;
             case "mixins.mods.reskillable.json":
                 return Loader.isModLoaded("reskillable");
             case "mixins.mods.roost.contenttweaker.json":
@@ -166,11 +166,11 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.simpledifficulty.json":
                 return Loader.isModLoaded("simpledifficulty");
             case "mixins.mods.spiceoflife.dupes.json":
-                return Loader.isModLoaded("spiceoflife") && UTConfig.MOD_INTEGRATION.SPICE_OF_LIFE.utDuplicationFixesToggle;
+                return Loader.isModLoaded("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle;
             case "mixins.mods.storagedrawers.server.json":
                 return Loader.isModLoaded("storagedrawers");
             case "mixins.mods.chisel.tcomplement.dupes.json":
-                return Loader.isModLoaded("chisel") && Loader.isModLoaded("tcomplement") && UTConfig.MOD_INTEGRATION.CHISEL.utDuplicationFixesToggle;
+                return Loader.isModLoaded("chisel") && Loader.isModLoaded("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle;
             case "mixins.mods.techreborn.json":
                 return Loader.isModLoaded("techreborn");
             case "mixins.mods.thaumcraft.json":
@@ -179,23 +179,23 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.thaumcraft.entities.server.json":
                 return Loader.isModLoaded("thaumcraft");
             case "mixins.mods.thaumcraft.dupes.json":
-                return Loader.isModLoaded("thaumcraft") && UTConfig.MOD_INTEGRATION.THAUMCRAFT.utDuplicationFixesToggle;
+                return Loader.isModLoaded("thaumcraft") && UTConfigMods.THAUMCRAFT.utDuplicationFixesToggle;
             case "mixins.mods.thaumcraft.enderio.dupes.json":
-                return Loader.isModLoaded("thaumcraft") && Loader.isModLoaded("enderio") && UTConfig.MOD_INTEGRATION.THAUMCRAFT.utDuplicationFixesToggle;
+                return Loader.isModLoaded("thaumcraft") && Loader.isModLoaded("enderio") && UTConfigMods.THAUMCRAFT.utDuplicationFixesToggle;
             case "mixins.mods.thaumicwonders.dupes.json":
-                return Loader.isModLoaded("thaumicwonders") && UTConfig.MOD_INTEGRATION.THAUMIC_WONDERS.utDuplicationFixesToggle;
+                return Loader.isModLoaded("thaumicwonders") && UTConfigMods.THAUMIC_WONDERS.utDuplicationFixesToggle;
             case "mixins.mods.thefarlanders.dupes.json":
-                return Loader.isModLoaded("farlanders") && UTConfig.MOD_INTEGRATION.THE_FARLANDERS.utDuplicationFixesToggle;
+                return Loader.isModLoaded("farlanders") && UTConfigMods.THE_FARLANDERS.utDuplicationFixesToggle;
             case "mixins.mods.thermalexpansion.json":
                 return Loader.isModLoaded("thermalexpansion");
             case "mixins.mods.thermalexpansion.dupes.json":
-                return Loader.isModLoaded("thermalexpansion") && UTConfig.MOD_INTEGRATION.THERMAL_EXPANSION.utDuplicationFixesToggle;
+                return Loader.isModLoaded("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle;
             case "mixins.mods.tconstruct.json":
                 return Loader.isModLoaded("tconstruct");
             case "mixins.mods.tconstruct.oredictcache.json":
-                return Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle;
+                return Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle;
             case "mixins.mods.tinyprogressions.dupes.json":
-                return Loader.isModLoaded("tp") && UTConfig.MOD_INTEGRATION.TINY_PROGRESSIONS.utDuplicationFixesToggle;
+                return Loader.isModLoaded("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle;
         }
         return true;
     }

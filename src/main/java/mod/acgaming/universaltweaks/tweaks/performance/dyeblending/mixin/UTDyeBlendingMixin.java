@@ -5,7 +5,8 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.item.EnumDyeColor;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.tweaks.performance.dyeblending.UTDyeBlending;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,8 +27,8 @@ public class UTDyeBlendingMixin
     @Inject(method = "getDyeColorMixFromParents(Lnet/minecraft/entity/passive/EntityAnimal;Lnet/minecraft/entity/passive/EntityAnimal;)Lnet/minecraft/item/EnumDyeColor;", at = @At("HEAD"), cancellable = true)
     public void utGetDyeColorMixFromParents(EntityAnimal father, EntityAnimal mother, CallbackInfoReturnable<EnumDyeColor> info)
     {
-        if (!UTConfig.TWEAKS_PERFORMANCE.utDyeBlendingToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDyeBlendingMixin ::: Get dye color mix from parents");
+        if (!UTConfigTweaks.PERFORMANCE.utDyeBlendingToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDyeBlendingMixin ::: Get dye color mix from parents");
         // Ensure both entities are sheep.
         if (father instanceof EntitySheep && mother instanceof EntitySheep)
         {

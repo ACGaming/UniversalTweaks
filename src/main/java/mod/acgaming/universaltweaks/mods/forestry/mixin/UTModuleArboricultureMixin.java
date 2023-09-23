@@ -8,7 +8,7 @@ import forestry.arboriculture.ModuleArboriculture;
 import forestry.arboriculture.blocks.BlockRegistryArboriculture;
 import forestry.arboriculture.items.ItemRegistryArboriculture;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.mods.forestry.UTVillagerArboristTrades;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,7 +22,7 @@ public class UTModuleArboricultureMixin
     @Inject(method = "doInit", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/fml/common/registry/VillagerRegistry$VillagerCareer;addTrade(I[Lnet/minecraft/entity/passive/EntityVillager$ITradeList;)Lnet/minecraftforge/fml/common/registry/VillagerRegistry$VillagerCareer;", ordinal = 3, shift = At.Shift.AFTER), locals = LocalCapture.CAPTURE_FAILHARD)
     public void utForestryArboristTrades(CallbackInfo ci, ItemRegistryArboriculture items, BlockRegistryArboriculture blocks, VillagerRegistry.VillagerCareer arboristCareer)
     {
-        for (String deal : UTConfig.MOD_INTEGRATION.FORESTRY.utFOArboristDeals)
+        for (String deal : UTConfigMods.FORESTRY.utFOArboristDeals)
         {
             String[] dealProperties = deal.split(";");
             int level = Integer.parseInt(dealProperties[0]);

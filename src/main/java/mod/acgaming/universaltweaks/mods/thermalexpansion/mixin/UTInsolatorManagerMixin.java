@@ -4,7 +4,8 @@ import net.minecraft.item.ItemStack;
 
 import cofh.thermalexpansion.util.managers.machine.InsolatorManager;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.mods.thermalexpansion.modtweaker.UTInsolatorExpansion;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,12 +23,12 @@ public class UTInsolatorManagerMixin
     @Inject(method = "initialize", at = @At("HEAD"))
     private static void utTEInitialize(CallbackInfo ci)
     {
-        if (!UTConfig.MOD_INTEGRATION.THERMAL_EXPANSION.utTEInsolatorCustomMonoculture) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInsolatorManagerMixin ::: Add custom fertilizers");
+        if (!UTConfigMods.THERMAL_EXPANSION.utTEInsolatorCustomMonoculture) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInsolatorManagerMixin ::: Add custom fertilizers");
         // EXTRA FERTILIZERS
         for (ItemStack item : UTInsolatorExpansion.additionalFertilizers)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInsolatorManagerMixin ::: Adding fertilizer: " + item.toString());
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInsolatorManagerMixin ::: Adding fertilizer: " + item.toString());
             // adding the fertilizer is enough for TE to recognize the recipe(s) for Monoculture Cycle
             // see cofh.thermalexpansion.block.machine.TileInsolator.processFinish() for details
             addFertilizer(item);

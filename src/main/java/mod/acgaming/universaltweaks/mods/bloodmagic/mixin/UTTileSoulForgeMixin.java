@@ -12,7 +12,7 @@ import WayofTime.bloodmagic.api.impl.recipe.RecipeTartaricForge;
 import WayofTime.bloodmagic.soul.IDemonWillConduit;
 import WayofTime.bloodmagic.tile.TileInventory;
 import WayofTime.bloodmagic.tile.TileSoulForge;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -34,7 +34,7 @@ public abstract class UTTileSoulForgeMixin extends TileInventory implements ITic
     public void markDirty()
     {
         super.markDirty();
-        if (!UTConfig.MOD_INTEGRATION.BLOOD_MAGIC.utBMOptimizeSoulForgeToggle) return;
+        if (!UTConfigMods.BLOOD_MAGIC.utBMOptimizeSoulForgeToggle) return;
         utRefreshRecipe();
     }
 
@@ -60,7 +60,7 @@ public abstract class UTTileSoulForgeMixin extends TileInventory implements ITic
     @Redirect(method = "update", at = @At(value = "INVOKE", target = "LWayofTime/bloodmagic/api/impl/BloodMagicRecipeRegistrar;getTartaricForge(Ljava/util/List;)LWayofTime/bloodmagic/api/impl/recipe/RecipeTartaricForge;"), remap = true)
     private RecipeTartaricForge utUseCachedRecipe(BloodMagicRecipeRegistrar registrar, List<ItemStack> input)
     {
-        if (!UTConfig.MOD_INTEGRATION.BLOOD_MAGIC.utBMOptimizeSoulForgeToggle) return registrar.getTartaricForge(input);
+        if (!UTConfigMods.BLOOD_MAGIC.utBMOptimizeSoulForgeToggle) return registrar.getTartaricForge(input);
         if (!isAdded)
         {
             utLastRecipe = registrar.getTartaricForge(input);

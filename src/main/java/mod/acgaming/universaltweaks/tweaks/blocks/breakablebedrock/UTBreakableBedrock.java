@@ -16,7 +16,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTBreakableBedrock
@@ -28,7 +29,7 @@ public class UTBreakableBedrock
         toolList.clear();
         try
         {
-            for (String entry : UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToolList)
+            for (String entry : UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToolList)
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
                 if (ForgeRegistries.ITEMS.containsKey(resLoc)) toolList.add(ForgeRegistries.ITEMS.getValue(resLoc));
@@ -44,10 +45,10 @@ public class UTBreakableBedrock
     @SubscribeEvent
     public static void utMineBedrock(PlayerInteractEvent.LeftClickBlock event)
     {
-        if (!UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBreakableBedrock ::: Left click block event");
+        if (!UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBreakableBedrock ::: Left click block event");
         Item heldTool = event.getEntityPlayer().getHeldItemMainhand().getItem();
-        boolean isWhitelist = UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToolListMode == UTConfig.EnumLists.WHITELIST;
+        boolean isWhitelist = UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToolListMode == UTConfigTweaks.EnumLists.WHITELIST;
         if (toolList.contains(heldTool) == isWhitelist) return;
         World world = event.getWorld();
         BlockPos blockPos = event.getPos();

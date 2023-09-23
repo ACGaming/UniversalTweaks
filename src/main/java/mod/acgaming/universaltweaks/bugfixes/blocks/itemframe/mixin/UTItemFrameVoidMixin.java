@@ -5,7 +5,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumHand;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -20,9 +21,9 @@ public abstract class UTItemFrameVoidMixin
     @Inject(method = "processInitialInteract", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/item/EntityItemFrame;setDisplayedItem(Lnet/minecraft/item/ItemStack;)V"), cancellable = true)
     public void utItemFrameVoid(EntityPlayer player, EnumHand hand, CallbackInfoReturnable<Boolean> cir)
     {
-        if (UTConfig.BUGFIXES_BLOCKS.utItemFrameVoidToggle && ((EntityItemFrame) (Object) this).isDead)
+        if (UTConfigBugfixes.BLOCKS.utItemFrameVoidToggle && ((EntityItemFrame) (Object) this).isDead)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTItemFrameVoid ::: Process initial interact");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTItemFrameVoid ::: Process initial interact");
             cir.setReturnValue(false);
         }
     }

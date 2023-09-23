@@ -11,7 +11,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTAutoSwitch
@@ -19,8 +20,8 @@ public class UTAutoSwitch
     @SubscribeEvent
     public static void utAutoSwitch(PlayerInteractEvent.LeftClickBlock event)
     {
-        if (!UTConfig.TWEAKS_ITEMS.utAutoSwitchToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAutoSwitch ::: Left click block event");
+        if (!UTConfigTweaks.ITEMS.utAutoSwitchToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAutoSwitch ::: Left click block event");
         World world = event.getWorld();
         BlockPos blockPos = event.getPos();
         EntityPlayer player = event.getEntityPlayer();

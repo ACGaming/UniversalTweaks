@@ -1,6 +1,6 @@
 package mod.acgaming.universaltweaks.tweaks.world.sealevel.mixin;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,6 +16,6 @@ public class UTSeaLevelChunkGeneratorMixin
     @Inject(method = "setDefaults", at = @At(value = "TAIL"))
     public void utSeaLevel(CallbackInfo ci)
     {
-        seaLevel = UTConfig.TWEAKS_WORLD.utSeaLevel;
+        seaLevel = UTConfigTweaks.WORLD.utSeaLevel;
     }
 }

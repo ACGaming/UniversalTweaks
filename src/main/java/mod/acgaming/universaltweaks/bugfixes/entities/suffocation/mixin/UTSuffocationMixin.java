@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -43,8 +43,8 @@ public abstract class UTSuffocationMixin
     @Inject(method = "setSize", at = @At("HEAD"), cancellable = true)
     public void utOnSetSize(float width, float height, CallbackInfo ci)
     {
-        if (!UTConfig.BUGFIXES_ENTITIES.utEntitySuffocationToggle) return;
-        //if (UTConfig.debug.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSuffocationMixin ::: Set entity size");
+        if (!UTConfigBugfixes.ENTITIES.utEntitySuffocationToggle) return;
+        //if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSuffocationMixin ::: Set entity size");
         if (width != this.width || height != this.height)
         {
             float f = this.width;

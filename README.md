@@ -179,7 +179,7 @@ All changes are toggleable via the config file.
 
 ![](https://i.imgur.com/1EmHZlb.png)
 
-### **⚙️ MOD TWEAKS**
+### **⚙️ MOD INTEGRATION**
 
 * **AbyssalCraft**
     * **Optimized Item Transport:** Makes an optimization to reduce tick overhead of AbyssalCraft's item transport system

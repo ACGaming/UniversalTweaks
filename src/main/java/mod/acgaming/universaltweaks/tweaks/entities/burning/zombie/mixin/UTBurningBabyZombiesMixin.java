@@ -2,7 +2,7 @@ package mod.acgaming.universaltweaks.tweaks.entities.burning.zombie.mixin;
 
 import net.minecraft.entity.monster.EntityZombie;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,6 +17,6 @@ public abstract class UTBurningBabyZombiesMixin
     @Redirect(method = "onLivingUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/monster/EntityZombie;isChild()Z"))
     public boolean utBurningBabyZombies(EntityZombie zombie)
     {
-        return this.isChild() && !UTConfig.TWEAKS_ENTITIES.utBurningBabyZombiesToggle;
+        return this.isChild() && !UTConfigTweaks.ENTITIES.utBurningBabyZombiesToggle;
     }
 }

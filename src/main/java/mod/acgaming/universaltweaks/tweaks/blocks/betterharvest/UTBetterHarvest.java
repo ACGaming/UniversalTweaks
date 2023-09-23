@@ -12,7 +12,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTBetterHarvest
@@ -20,8 +21,8 @@ public class UTBetterHarvest
     @SubscribeEvent
     public static void utBetterHarvest(BlockEvent.BreakEvent event)
     {
-        if (!UTConfig.TWEAKS_BLOCKS.utBetterHarvestToggle || event.getPlayer().isSneaking()) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterHarvest ::: Block break event");
+        if (!UTConfigTweaks.BLOCKS.utBetterHarvestToggle || event.getPlayer().isSneaking()) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterHarvest ::: Block break event");
         IBlockState blockState = event.getState();
         Block block = blockState.getBlock();
         World world = event.getWorld();

@@ -13,7 +13,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Unnoen & tie
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
@@ -24,10 +25,10 @@ public class UTUnloader
     @SubscribeEvent
     public static void utUnloader(TickEvent.ServerTickEvent event)
     {
-        if (!UTConfig.TWEAKS_WORLD.DIMENSION_UNLOAD.utUnloaderToggle || event.phase != TickEvent.Phase.END) return;
+        if (!UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle || event.phase != TickEvent.Phase.END) return;
         tickCount++;
-        if (tickCount < UTConfig.TWEAKS_WORLD.DIMENSION_UNLOAD.utUnloaderInterval) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTUnloader ::: Server tick event");
+        if (tickCount < UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderInterval) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTUnloader ::: Server tick event");
         tickCount = 0;
         Integer[] dims = DimensionManager.getIDs();
         for (Integer id : dims) utHandleDimUnload(id);
@@ -43,7 +44,7 @@ public class UTUnloader
 
         if (dimensionType != null) dimensionName = dimensionType.getName();
 
-        for (String dimConfig : UTConfig.TWEAKS_WORLD.DIMENSION_UNLOAD.utUnloaderBlacklist)
+        for (String dimConfig : UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderBlacklist)
         {
             if (dimensionName.matches(dimConfig) || Integer.toString(id).matches(dimConfig)) return;
         }

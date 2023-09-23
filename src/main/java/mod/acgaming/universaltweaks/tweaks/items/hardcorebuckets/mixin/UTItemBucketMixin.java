@@ -7,7 +7,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -18,8 +19,8 @@ public class UTItemBucketMixin
     @Redirect(method = "tryPlaceContainedLiquid", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;setBlockState(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)Z"))
     public boolean utItemBucket(World world, BlockPos blockPos, IBlockState blockState, int flags)
     {
-        if (!UTConfig.TWEAKS_ITEMS.utHardcoreBucketsToggle) return world.setBlockState(blockPos, blockState, flags);
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTItemBucket ::: Place liquid");
+        if (!UTConfigTweaks.ITEMS.utHardcoreBucketsToggle) return world.setBlockState(blockPos, blockState, flags);
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTItemBucket ::: Place liquid");
         try
         {
             return world.setBlockState(blockPos, blockState.withProperty(BlockLiquid.LEVEL, 1), flags);

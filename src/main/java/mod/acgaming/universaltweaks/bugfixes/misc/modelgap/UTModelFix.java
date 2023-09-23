@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.block.model.BlockPart;
 import net.minecraft.client.renderer.block.model.ItemModelGenerator;
 import net.minecraft.util.EnumFacing;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // Courtesy of MehVahdJukaar
@@ -30,7 +30,7 @@ public class UTModelFix
                 int i = isHorizontal(spanFacing) ? pixelY : pixelX;
                 if (span2.getAnchor() != i) continue;
                 // Skips faces with transparent pixels, so we can enlarge safely
-                if (UTConfig.BUGFIXES_MISC.MODEL_GAP.utModelGapExpansion != 0 && span2.getMax() != (!isHorizontal(spanFacing) ? pixelY : pixelX) - 1) continue;
+                if (UTConfigBugfixes.MISC.MODEL_GAP.utModelGapExpansion != 0 && span2.getMax() != (!isHorizontal(spanFacing) ? pixelY : pixelX) - 1) continue;
                 existingSpan = span2;
                 break;
             }
@@ -46,8 +46,8 @@ public class UTModelFix
 
     public static void enlargeFaces(CallbackInfoReturnable<List<BlockPart>> cir)
     {
-        float inc = (float) UTConfig.BUGFIXES_MISC.MODEL_GAP.utModelGapRecess;
-        float inc2 = (float) UTConfig.BUGFIXES_MISC.MODEL_GAP.utModelGapExpansion;
+        float inc = (float) UTConfigBugfixes.MISC.MODEL_GAP.utModelGapRecess;
+        float inc2 = (float) UTConfigBugfixes.MISC.MODEL_GAP.utModelGapExpansion;
         for (BlockPart e : cir.getReturnValue())
         {
             Vector3f from = e.positionFrom;

@@ -24,7 +24,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of gigaherz
 public class UTPickupNotificationOverlay extends GuiScreen
@@ -67,7 +67,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
     @SubscribeEvent
     public void utPUNRenderOverlay(RenderGameOverlayEvent.Post event)
     {
-        if (!UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNItemAdditions && !UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNItemRemovals) return;
+        if (!UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNItemAdditions && !UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNItemRemovals) return;
 
         if (event.getType() != RenderGameOverlayEvent.ElementType.CHAT) return;
 
@@ -75,18 +75,18 @@ public class UTPickupNotificationOverlay extends GuiScreen
         int width = resolution.getScaledWidth();
         int height = resolution.getScaledHeight();
 
-        width = (int) (width / UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNScaleName);
-        height = (int) (height / UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNScaleName);
+        width = (int) (width / UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNScaleName);
+        height = (int) (height / UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNScaleName);
 
         FontRenderer font = Minecraft.getMinecraft().fontRenderer;
 
-        int iconSize = (int) (16 * UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNScaleIcon);
-        int rightMargin = UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNDisplayIcon ? (2 + iconSize) : 0;
-        int topMargin1 = 2 + (UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNDisplayIcon ? Math.max(0, (iconSize - font.FONT_HEIGHT) / 2) : 0);
+        int iconSize = (int) (16 * UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNScaleIcon);
+        int rightMargin = UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNDisplayIcon ? (2 + iconSize) : 0;
+        int topMargin1 = 2 + (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNDisplayIcon ? Math.max(0, (iconSize - font.FONT_HEIGHT) / 2) : 0);
         int topMargin2 = 1 + Math.max(0, -(iconSize - font.FONT_HEIGHT) / 2);
 
         int lineHeight = font.FONT_HEIGHT;
-        if (UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNDisplayIcon) lineHeight = Math.max(2 + iconSize, lineHeight);
+        if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNDisplayIcon) lineHeight = Math.max(2 + iconSize, lineHeight);
 
         hard_limit = height / lineHeight;
 
@@ -106,7 +106,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
         }
 
         GlStateManager.pushMatrix();
-        GlStateManager.scale(UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNScaleName, UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNScaleName, 1);
+        GlStateManager.scale(UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNScaleName, UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNScaleName, 1);
 
         rectWidth += rightMargin;
 
@@ -114,57 +114,57 @@ public class UTPickupNotificationOverlay extends GuiScreen
 
         int x, y;
         int align;
-        switch (UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNSnapPosition)
+        switch (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNSnapPosition)
         {
             default:
             case BOTTOM_RIGHT:
-                x = width - 2 - rectWidth - UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
-                y = height - 2 - rectHeight - UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
+                x = width - 2 - rectWidth - UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
+                y = height - 2 - rectHeight - UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
                 align = 1;
                 break;
             case BOTTOM:
-                x = (width - rectWidth) / 2 - 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
-                y = height - 2 - rectHeight - UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
+                x = (width - rectWidth) / 2 - 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
+                y = height - 2 - rectHeight - UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
                 align = 0;
                 break;
             case BOTTOM_LEFT:
-                x = 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
-                y = height - 2 - rectHeight - UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
+                x = 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
+                y = height - 2 - rectHeight - UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
                 align = -1;
                 break;
             case LEFT:
-                x = 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
-                y = (height - rectHeight) / 2 - 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
+                x = 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
+                y = (height - rectHeight) / 2 - 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
                 align = -1;
                 break;
             case TOP_LEFT:
-                x = 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
-                y = 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
+                x = 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
+                y = 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
                 align = -1;
                 break;
             case TOP:
-                x = (width - rectWidth) / 2 - 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
-                y = 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
+                x = (width - rectWidth) / 2 - 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
+                y = 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
                 align = 0;
                 break;
             case TOP_RIGHT:
-                x = width - 2 - rectWidth - UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
-                y = 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
+                x = width - 2 - rectWidth - UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
+                y = 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
                 align = 1;
                 break;
             case RIGHT:
-                x = width - 2 - rectWidth - UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
-                y = (height - rectHeight) / 2 - 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
+                x = width - 2 - rectWidth - UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
+                y = (height - rectHeight) / 2 - 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
                 align = 1;
                 break;
             case CENTER:
-                x = (width - rectWidth) / 2 - 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
-                y = (height - rectHeight) / 2 - 2 + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
+                x = (width - rectWidth) / 2 - 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetHorizontal;
+                y = (height - rectHeight) / 2 - 2 + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNOffsetVertical;
                 align = 0;
                 break;
         }
 
-        if (UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNDisplayBackground) drawRect(x - 2, y - 2, x + rectWidth + 4, y + rectHeight + 4, Integer.MIN_VALUE);
+        if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNDisplayBackground) drawRect(x - 2, y - 2, x + rectWidth + 4, y + rectHeight + 4, Integer.MIN_VALUE);
 
         for (Triple<ChangeInfo, String[], Integer> e : computedStrings)
         {
@@ -181,8 +181,8 @@ public class UTPickupNotificationOverlay extends GuiScreen
                 w += wn;
             }
 
-            int forcedFade = UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNFadeLimit > 0 ? (fade * 255 / (UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNFadeLimit + 2)) : 255;
-            int ttlFade = change.ttl * 255 / UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNFadeDuration;
+            int forcedFade = UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNFadeLimit > 0 ? (fade * 255 / (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNFadeLimit + 2)) : 255;
+            int ttlFade = change.ttl * 255 / UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNFadeDuration;
             int alpha = Math.min(255, Math.min(forcedFade, ttlFade));
             int color = alpha << 24 | (change.mode == ChangeMode.OBTAINED ? 0x7FFF7F : 0xFF5F5F);
 
@@ -208,11 +208,11 @@ public class UTPickupNotificationOverlay extends GuiScreen
                 wAcc += widths[n];
             }
 
-            if (UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNDisplayIcon)
+            if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNDisplayIcon)
             {
                 GlStateManager.pushMatrix();
                 GlStateManager.translate(x + 2 + w + leftMargin, y + topMargin2, 0);
-                GlStateManager.scale(UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNScaleIcon, UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNScaleIcon, 1);
+                GlStateManager.scale(UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNScaleIcon, UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNScaleIcon, 1);
                 RenderHelper.enableGUIStandardItemLighting();
                 if (change.item.stack.getItem() == Items.EXPERIENCE_BOTTLE && change.item.stack.getMetadata() == 42)
                 {
@@ -240,7 +240,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
     {
         if (event.phase != TickEvent.Phase.END) return;
 
-        if (!UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNItemAdditions && !UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNItemRemovals) return;
+        if (!UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNItemAdditions && !UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNItemRemovals) return;
 
         EntityPlayer player = Minecraft.getMinecraft().player;
 
@@ -301,7 +301,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
         if (isChangeMeaningful(stackInCursor, previousInCursor)) changes.add(Pair.of(previousInCursor, stackInCursor));
         previousInCursor = stackInCursor.copy();
 
-        if (UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNExperience)
+        if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNExperience)
         {
             if (previousXP == -1) previousXP = player.experienceTotal;
             else if (previousXP != player.experienceTotal)
@@ -361,9 +361,9 @@ public class UTPickupNotificationOverlay extends GuiScreen
     private int computeStrings(List<Triple<ChangeInfo, String[], Integer>> computedStrings, FontRenderer font)
     {
         int rectWidth = 0;
-        int itemsToShow = Math.min(Math.min(hard_limit, UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNSoftLimit + UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNFadeLimit), changeEntries.size());
+        int itemsToShow = Math.min(Math.min(hard_limit, UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNSoftLimit + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNFadeLimit), changeEntries.size());
         int offset = Math.max(0, changeEntries.size() - itemsToShow);
-        int fadeOffset = changeEntries.size() - UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNSoftLimit - UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNFadeLimit;
+        int fadeOffset = changeEntries.size() - UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNSoftLimit - UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNFadeLimit;
 
         for (int i = offset; i < changeEntries.size(); i++)
         {
@@ -374,7 +374,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
 
             rectWidth = Math.max(rectWidth, w);
 
-            computedStrings.add(Triple.of(change, parts, Math.min(UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNFadeLimit + 2, 1 + i - fadeOffset)));
+            computedStrings.add(Triple.of(change, parts, Math.min(UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNFadeLimit + 2, 1 + i - fadeOffset)));
         }
         return rectWidth;
     }
@@ -383,7 +383,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
     {
         String mode = change.mode == ChangeMode.OBTAINED ? "+" : "-";
         String s1 = String.format("%s%d", mode, change.count);
-        if (UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNDisplayName)
+        if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNDisplayName)
         {
             String name = change.item.stack.getDisplayName();
             String italics = change.item.stack.hasDisplayName() ? String.valueOf(TextFormatting.ITALIC) : "";
@@ -400,7 +400,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
 
     private boolean isBlacklisted(ItemStack left)
     {
-        return Arrays.asList(UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNBlacklistItem).contains(left.getItem().getRegistryName().toString());
+        return Arrays.asList(UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNBlacklistItem).contains(left.getItem().getRegistryName().toString());
     }
 
     private boolean isChangeMeaningful(ItemStack a, ItemStack b)
@@ -409,21 +409,21 @@ public class UTPickupNotificationOverlay extends GuiScreen
 
         if (a == b || isStackEmpty(a) && isStackEmpty(b)) return false;
 
-        if (a.getItem() == b.getItem() && Arrays.asList(UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNBlacklistSubitem).contains(a.getItem().getRegistryName().toString())) return false; // If we are ignoring subitem changes, consider them the same.
+        if (a.getItem() == b.getItem() && Arrays.asList(UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNBlacklistSubitem).contains(a.getItem().getRegistryName().toString())) return false; // If we are ignoring subitem changes, consider them the same.
 
         return !ItemStack.areItemsEqualIgnoreDurability(a, b);
     }
 
     private void obtainedItem(List<ChangeInfo> changeList, ItemStack item, int added)
     {
-        if (added <= 0 || !UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNItemAdditions) return;
+        if (added <= 0 || !UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNItemAdditions) return;
 
         accumulate(changeList, item, ChangeMode.OBTAINED, added, true);
     }
 
     private void lostItem(List<ChangeInfo> changeList, ItemStack item, int removed)
     {
-        if (removed <= 0 || !UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNItemRemovals) return;
+        if (removed <= 0 || !UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNItemRemovals) return;
 
         accumulate(changeList, item, ChangeMode.LOST, removed, true);
     }
@@ -436,7 +436,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
         ChangeInfo info = isLocal ? changeList.stream().filter(e -> e.item.equals(name)).findFirst().orElse(null) : changeList.stream().filter(e -> e.item.equals(name) && e.mode == mode).findFirst().orElse(null);
         if (info == null)
         {
-            info = new ChangeInfo(name, mode, count, UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNDisplayDuration);
+            info = new ChangeInfo(name, mode, count, UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNDisplayDuration);
             changeList.add(info);
             return;
         }
@@ -444,7 +444,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
         if (info.mode != mode) count = -count;
 
         info.count += count;
-        info.ttl = UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPUNDisplayDuration;
+        info.ttl = UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNDisplayDuration;
 
         if (info.count < 0)
         {

@@ -3,7 +3,7 @@ package mod.acgaming.universaltweaks.mods.itemstages.mixin;
 import net.minecraft.item.ItemStack;
 
 import crafttweaker.api.minecraft.CraftTweakerMC;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import net.darkhax.itemstages.StageCompare;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,7 +16,7 @@ public class UTStageCompareMixin
     @Inject(method = "isValid", at = @At("HEAD"), cancellable = true)
     public void utChangeToCrTIngredient(ItemStack entryStack, Object second, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.ITEM_STAGES.utIngredientMatching) return;
+        if (!UTConfigMods.ITEM_STAGES.utIngredientMatching) return;
         if (second instanceof ItemStack)
         {
             cir.setReturnValue(CraftTweakerMC.matches(CraftTweakerMC.getIItemStackForMatching(entryStack), (ItemStack) second));

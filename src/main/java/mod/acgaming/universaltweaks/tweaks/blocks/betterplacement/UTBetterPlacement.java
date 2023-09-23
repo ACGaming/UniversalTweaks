@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of tterrag1098, BucketOfCompasses
 public class UTBetterPlacement
@@ -23,7 +23,7 @@ public class UTBetterPlacement
     public static void utBetterPlacement(TickEvent.ClientTickEvent event)
     {
         if (Minecraft.getMinecraft().world == null || Minecraft.getMinecraft().player == null) return;
-        if (event.phase == Phase.START && (!UTConfig.TWEAKS_BLOCKS.BETTER_PLACEMENT.utBetterPlacementCreative || Minecraft.getMinecraft().player.isCreative()))
+        if (event.phase == Phase.START && (!UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementCreative || Minecraft.getMinecraft().player.isCreative()))
         {
             RayTraceResult hover = Minecraft.getMinecraft().objectMouseOver;
             if (hover != null && hover.typeOfHit == Type.BLOCK)
@@ -46,7 +46,7 @@ public class UTBetterPlacement
                     {
                         Minecraft.getMinecraft().rightClickDelayTimer = 0;
                     }
-                    else if (UTConfig.TWEAKS_BLOCKS.BETTER_PLACEMENT.utBetterPlacementNewLoc && pos.equals(lastTargetPos) && side == lastTargetSide)
+                    else if (UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementNewLoc && pos.equals(lastTargetPos) && side == lastTargetSide)
                     {
                         Minecraft.getMinecraft().rightClickDelayTimer = 4;
                     }

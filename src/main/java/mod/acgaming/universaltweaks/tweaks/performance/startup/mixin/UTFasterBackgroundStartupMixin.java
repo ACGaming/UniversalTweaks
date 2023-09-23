@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.client.FMLClientHandler;
 
 import com.llamalad7.mixinextras.injector.WrapWithCondition;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -27,6 +27,6 @@ public class UTFasterBackgroundStartupMixin
     @WrapWithCondition(method = "getTooltip", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/event/ForgeEventFactory;onItemTooltip(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/player/EntityPlayer;Ljava/util/List;Lnet/minecraft/client/util/ITooltipFlag;)Lnet/minecraftforge/event/entity/player/ItemTooltipEvent;"))
     public boolean utFasterBackgroundStartup(ItemStack itemStack, EntityPlayer entityPlayer, List<String> toolTip, ITooltipFlag flags)
     {
-        return !UTConfig.TWEAKS_PERFORMANCE.utFasterBackgroundStartupToggle || !FMLClientHandler.instance().isLoading();
+        return !UTConfigTweaks.PERFORMANCE.utFasterBackgroundStartupToggle || !FMLClientHandler.instance().isLoading();
     }
 }

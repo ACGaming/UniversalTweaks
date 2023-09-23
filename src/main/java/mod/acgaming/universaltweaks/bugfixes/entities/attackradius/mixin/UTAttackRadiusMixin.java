@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.world.World;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -24,6 +24,6 @@ public abstract class UTAttackRadiusMixin extends EntityCreature
     @Inject(method = "attackEntityAsMob", at = @At("HEAD"), cancellable = true)
     public void utAttackRadius(Entity target, CallbackInfoReturnable<Boolean> cir)
     {
-        if (UTConfig.BUGFIXES_ENTITIES.utAttackRadiusToggle && !this.canEntityBeSeen(target)) cir.setReturnValue(false);
+        if (UTConfigBugfixes.ENTITIES.utAttackRadiusToggle && !this.canEntityBeSeen(target)) cir.setReturnValue(false);
     }
 }

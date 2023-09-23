@@ -18,7 +18,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTRandomUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -42,9 +43,9 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
     @Inject(method = "explode", at = @At("HEAD"), cancellable = true)
     public void utCreeperConfetti(CallbackInfo ci)
     {
-        double chargedChance = UTConfig.TWEAKS_ENTITIES.utCreeperConfettiChance;
+        double chargedChance = UTConfigTweaks.ENTITIES.utCreeperConfettiChance;
         if (chargedChance <= 0.0D || !UTRandomUtil.chance(chargedChance, new Random(this.getUniqueID().getMostSignificantBits() & Long.MAX_VALUE))) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCreeperConfetti ::: Explode");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCreeperConfetti ::: Explode");
         if (this.world.isRemote) spawnParticles(this.getEntityWorld(), this.getPosition(), this.getPowered());
         else
         {

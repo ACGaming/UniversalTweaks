@@ -27,7 +27,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 
 // Courtesy of Meldexun
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
@@ -36,7 +36,7 @@ public class UTBlockOverlay
     @SuppressWarnings("deprecation")
     public static void renderNearbyBlocks(float partialTicks)
     {
-        if (!UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) return;
+        if (!UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) return;
         Minecraft mc = Minecraft.getMinecraft();
         EntityPlayerSP player = mc.player;
         if (player.isPlayerSleeping() || player.isSpectator()) return;

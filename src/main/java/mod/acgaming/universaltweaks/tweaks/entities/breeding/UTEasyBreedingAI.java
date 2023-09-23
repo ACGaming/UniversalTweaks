@@ -13,7 +13,8 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Gigabit101
 public class UTEasyBreedingAI extends EntityAIBase
@@ -30,7 +31,7 @@ public class UTEasyBreedingAI extends EntityAIBase
     @Nullable
     public EntityItem checkFood()
     {
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEasyBreedingAI ::: Check food");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEasyBreedingAI ::: Check food");
         List<EntityItem> items = getItems();
         for (EntityItem item : items) return item;
         return null;
@@ -57,7 +58,7 @@ public class UTEasyBreedingAI extends EntityAIBase
 
     public void consumeFood(EntityItem item)
     {
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEasyBreedingAI ::: Consume food");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEasyBreedingAI ::: Consume food");
         ItemStack stack = item.getItem();
         stack.setCount(stack.getCount() - 1);
         if (stack.getCount() == 0) item.setDead();
@@ -66,7 +67,7 @@ public class UTEasyBreedingAI extends EntityAIBase
 
     List<EntityItem> getItems()
     {
-        double distance = UTConfig.TWEAKS_ENTITIES.EASY_BREEDING.utEasyBreedingDistance;
+        double distance = UTConfigTweaks.ENTITIES.EASY_BREEDING.utEasyBreedingDistance;
         return world.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(animal.posX - distance, animal.posY - distance, animal.posZ - distance, animal.posX + distance, animal.posY + distance, animal.posZ + distance));
     }
 }

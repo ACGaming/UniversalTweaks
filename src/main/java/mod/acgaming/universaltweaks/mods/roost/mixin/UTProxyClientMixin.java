@@ -10,7 +10,8 @@ import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import com.timwoodcreates.roost.RoostTextures;
 import com.timwoodcreates.roost.proxy.ProxyClient;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,11 +24,11 @@ public class UTProxyClientMixin
     @Inject(method = "loadComplete", at = @At("HEAD"))
     public void utRoostLoadComplete(FMLLoadCompleteEvent e, CallbackInfo ci)
     {
-        if (UTConfig.MOD_INTEGRATION.ROOST.utRoostChickenMods.length == 0) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTProxyClientMixin ::: Rebuild roost stock textures");
+        if (UTConfigMods.ROOST.utRoostChickenMods.length == 0) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTProxyClientMixin ::: Rebuild roost stock textures");
         // stockTextures is immutable set, use stream to rebuild
         RoostTextures.stockTextures = Stream.concat(RoostTextures.stockTextures.stream(),
-                Arrays.stream(UTConfig.MOD_INTEGRATION.ROOST.utRoostChickenMods))
+                Arrays.stream(UTConfigMods.ROOST.utRoostChickenMods))
             .collect(Collectors.collectingAndThen(Collectors.toSet(), ImmutableSet::copyOf));
     }
 }

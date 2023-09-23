@@ -4,7 +4,8 @@ import net.minecraft.client.gui.recipebook.GuiRecipeBook;
 import net.minecraft.inventory.InventoryCrafting;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,8 +18,8 @@ public abstract class UTRecipeBookGUIMixin
     @Inject(method = "initVisuals", at = @At(value = "TAIL"))
     public void utHideRecipeBook(boolean p_193014_1_, InventoryCrafting p_193014_2_, CallbackInfo ci)
     {
-        if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookGUI ::: Initialize visuals");
+        if (!UTConfigTweaks.MISC.utRecipeBookToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookGUI ::: Initialize visuals");
         setVisible(false);
     }
 

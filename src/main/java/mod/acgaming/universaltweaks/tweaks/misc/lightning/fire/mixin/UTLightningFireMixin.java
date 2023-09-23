@@ -6,7 +6,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import com.llamalad7.mixinextras.injector.WrapWithCondition;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -16,12 +16,12 @@ public class UTLightningFireMixin
     @WrapWithCondition(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;setBlockState(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z"))
     public boolean utLightningFireInit(World instance, BlockPos pos, IBlockState state)
     {
-        return !UTConfig.TWEAKS_MISC.LIGHTNING.utLightningFireToggle;
+        return !UTConfigTweaks.MISC.LIGHTNING.utLightningFireToggle;
     }
 
     @WrapWithCondition(method = "onUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;setBlockState(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z"))
     public boolean utLightningFireUpdate(World instance, BlockPos pos, IBlockState state)
     {
-        return !UTConfig.TWEAKS_MISC.LIGHTNING.utLightningFireToggle;
+        return !UTConfigTweaks.MISC.LIGHTNING.utLightningFireToggle;
     }
 }

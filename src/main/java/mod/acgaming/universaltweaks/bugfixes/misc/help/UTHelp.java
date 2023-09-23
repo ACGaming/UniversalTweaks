@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 
 // Courtesy of matthewprenger
 @SuppressWarnings("NullableProblems")
@@ -63,7 +63,7 @@ public class UTHelp
 
     public static void onServerStarting(FMLServerStartingEvent event)
     {
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHelp ::: Server starting event");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHelp ::: Server starting event");
         event.registerServerCommand(new CommandHelp()
         {
             @SuppressWarnings("ConstantConditions")
@@ -101,7 +101,7 @@ public class UTHelp
 
     public static void onServerStarted(FMLServerStartedEvent event)
     {
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHelp ::: Server started event");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTHelp ::: Server started event");
         Collection<ICommand> commands = FMLCommonHandler.instance().getMinecraftServerInstance().getCommandManager().getCommands().values();
         for (final ICommand command : commands)
         {

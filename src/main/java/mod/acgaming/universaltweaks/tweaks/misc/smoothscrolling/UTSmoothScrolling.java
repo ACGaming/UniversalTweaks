@@ -4,7 +4,7 @@ import java.util.function.Function;
 
 import net.minecraft.util.math.MathHelper;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of shedaniel
 public class UTSmoothScrolling
@@ -18,17 +18,17 @@ public class UTSmoothScrolling
 
     public static long getScrollDuration()
     {
-        return UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingDuration;
+        return UTConfigTweaks.MISC.SMOOTH_SCROLLING.utSmoothScrollingDuration;
     }
 
     public static float getScrollStep()
     {
-        return (float) UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingStep;
+        return (float) UTConfigTweaks.MISC.SMOOTH_SCROLLING.utSmoothScrollingStep;
     }
 
     public static float getBounceBackMultiplier()
     {
-        return (float) UTConfig.TWEAKS_MISC.SMOOTH_SCROLLING.utSmoothScrollingBounce;
+        return (float) UTConfigTweaks.MISC.SMOOTH_SCROLLING.utSmoothScrollingBounce;
     }
 
     public static float handleScrollingPosition(float[] target, float scroll, float maxScroll, float delta, double start, double duration)

@@ -14,18 +14,15 @@ import net.minecraftforge.fml.relauncher.Side;
 
 import com.googlecode.concurrentlinkedhashmap.ConcurrentLinkedHashMap;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
-import mod.acgaming.universaltweaks.config.UTConfig.ModIntegrationCategory.NuclearCraftCategory.EnumMaps;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import nc.config.NCConfig;
 import nc.radiation.environment.RadiationEnvironmentHandler;
 import nc.radiation.environment.RadiationEnvironmentInfo;
 import nc.tile.radiation.ITileRadiationEnvironment;
 import nc.util.FourPos;
 import org.objectweb.asm.Opcodes;
-import org.spongepowered.asm.mixin.Final;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Mutable;
-import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -36,7 +33,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class UTRadiationEnvironmentHandlerMixin
 {
     // Used instead of iterating through HashMap in updateRadiationEnvironment()
-    private static final Queue<Pair<FourPos, RadiationEnvironmentInfo>> ENVIRONMENT_QUEUE = UTConfig.MOD_INTEGRATION.NUCLEARCRAFT.utNCRadiationEnvironmentMap == EnumMaps.CONCURRENT_LINKED_QUEUE ? new ConcurrentLinkedQueue<>() : null;
+    @Unique
+    private static final Queue<Pair<FourPos, RadiationEnvironmentInfo>> ENVIRONMENT_QUEUE = UTConfigMods.NUCLEARCRAFT.utNCRadiationEnvironmentMap == UTConfigMods.NuclearCraftCategory.EnumMaps.CONCURRENT_LINKED_QUEUE ? new ConcurrentLinkedQueue<>() : null;
     // ENVIRONMENT will be used as the "backup" backing map if using ENVIRONMENT_QUEUE
     // ENVIRONMENT_BACKUP will be unused
     @Mutable
@@ -48,16 +46,16 @@ public class UTRadiationEnvironmentHandlerMixin
     @Inject(method = "removeTile", at = @At(value = "FIELD", target = "Lnc/radiation/environment/RadiationEnvironmentHandler;ENVIRONMENT_BACKUP:Ljava/util/concurrent/ConcurrentMap;", opcode = Opcodes.GETSTATIC), cancellable = true)
     private static void utSkipRemoveFromBackup(CallbackInfo ci)
     {
-        if (UTConfig.MOD_INTEGRATION.NUCLEARCRAFT.utNCRadiationEnvironmentMap != EnumMaps.CONCURRENT_LINKED_QUEUE) return;
+        if (UTConfigMods.NUCLEARCRAFT.utNCRadiationEnvironmentMap != UTConfigMods.NuclearCraftCategory.EnumMaps.CONCURRENT_LINKED_QUEUE) return;
         ci.cancel();
     }
 
     @Redirect(method = "<clinit>", at = @At(value = "FIELD", target = "Lnc/radiation/environment/RadiationEnvironmentHandler;ENVIRONMENT:Ljava/util/concurrent/ConcurrentMap;"))
     private static void utUseEnvironmentLinkedMap(ConcurrentMap<FourPos, RadiationEnvironmentInfo> map)
     {
-        if (UTConfig.MOD_INTEGRATION.NUCLEARCRAFT.utNCRadiationEnvironmentMap == EnumMaps.CONCURRENT_LINKED_HASHMAP)
+        if (UTConfigMods.NUCLEARCRAFT.utNCRadiationEnvironmentMap == UTConfigMods.NuclearCraftCategory.EnumMaps.CONCURRENT_LINKED_HASHMAP)
         {
-            if (UTConfig.DEBUG.utDebugToggle)
+            if (UTConfigGeneral.DEBUG.utDebugToggle)
                 UniversalTweaks.LOGGER.debug("UTRadiationEnvironmentHandler ::: Concurrent linked hash map");
             // only replace ENVIRONMENT, ENVIRONMENT_BACKUP is not iterated on often (if at all)
             ENVIRONMENT = new ConcurrentLinkedHashMap.Builder<FourPos, RadiationEnvironmentInfo>().maximumWeightedCapacity(Long.MAX_VALUE - Integer.MAX_VALUE).build();
@@ -68,7 +66,7 @@ public class UTRadiationEnvironmentHandlerMixin
     @Inject(method = "updateRadiationEnvironment", at = @At(value = "HEAD"), cancellable = true)
     private void utUseEnvironmentQueue(WorldTickEvent event, CallbackInfo ci)
     {
-        if (UTConfig.MOD_INTEGRATION.NUCLEARCRAFT.utNCRadiationEnvironmentMap != EnumMaps.CONCURRENT_LINKED_QUEUE) return;
+        if (UTConfigMods.NUCLEARCRAFT.utNCRadiationEnvironmentMap != UTConfigMods.NuclearCraftCategory.EnumMaps.CONCURRENT_LINKED_QUEUE) return;
         ci.cancel();
 
         if (!NCConfig.radiation_enabled_public) return;

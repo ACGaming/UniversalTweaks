@@ -6,7 +6,8 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -24,10 +25,10 @@ public abstract class UTAttackCooldownMixin extends EntityLivingBase
     @Inject(method = "resetCooldown", at = @At("TAIL"))
     public void utResetCooldown(CallbackInfo ci)
     {
-        if (!UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle
-            || (UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownSwords && !(this.getHeldItemMainhand().getItem() instanceof ItemSword))
+        if (!UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle
+            || (UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownSwords && !(this.getHeldItemMainhand().getItem() instanceof ItemSword))
             || this.ticksSinceLastSwing >= 20) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAttackCooldown ::: Reset cooldown");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAttackCooldown ::: Reset cooldown");
         this.ticksSinceLastSwing = 20;
     }
 }

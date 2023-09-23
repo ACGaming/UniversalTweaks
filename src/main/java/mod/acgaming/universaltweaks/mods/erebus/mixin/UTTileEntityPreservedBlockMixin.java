@@ -5,7 +5,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import erebus.tileentity.TileEntityPreservedBlock;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -19,7 +19,7 @@ public class UTTileEntityPreservedBlockMixin
     @Inject(method = "markForUpdate", at = @At(value = "HEAD"), cancellable = true, remap = false)
     private void utMarkForUpdate(CallbackInfo info)
     {
-        if (!UTConfig.MOD_INTEGRATION.EREBUS.utEBPreservedBlocksToggle) return;
+        if (!UTConfigMods.EREBUS.utEBPreservedBlocksToggle) return;
         World world = ((TileEntityPreservedBlock) (Object) this).getWorld();
         if (world != null && !world.isRemote)
         {

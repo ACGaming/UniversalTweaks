@@ -3,7 +3,8 @@ package mod.acgaming.universaltweaks.bugfixes.blocks.miningglitch.mixin;
 import net.minecraft.network.NetHandlerPlayServer;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
@@ -17,8 +18,8 @@ public class UTPlayerPacketsMixin
     @ModifyConstant(method = "processPlayer", constant = @Constant(intValue = 5, ordinal = 0))
     private int utModifyMaxPlayerMovementPacketsPerTick(int maxPackets)
     {
-        if (!UTConfig.BUGFIXES_BLOCKS.utMiningGlitchToggle) return maxPackets;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPlayerPacketsMixin ::: Process player");
+        if (!UTConfigBugfixes.BLOCKS.utMiningGlitchToggle) return maxPackets;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPlayerPacketsMixin ::: Process player");
         if (maxPackets == 5) return 10;
         else return maxPackets;
     }

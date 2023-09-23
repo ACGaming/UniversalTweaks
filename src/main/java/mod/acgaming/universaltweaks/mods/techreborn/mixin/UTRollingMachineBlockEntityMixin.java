@@ -12,7 +12,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -109,7 +109,7 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
     @ModifyExpressionValue(method = "getCraftingMatrix", at = @At(value = "FIELD", target = "Lreborncore/common/util/Inventory;hasChanged:Z", opcode = Opcodes.GETFIELD, ordinal = 0))
     private boolean utCheckForceRefresh(boolean original)
     {
-        return UTConfig.MOD_INTEGRATION.TECH_REBORN.utOptimizeRollingMachineToggle ? utForceRefresh || original : original;
+        return UTConfigMods.TECH_REBORN.utOptimizeRollingMachineToggle ? utForceRefresh || original : original;
     }
     // endregion
 
@@ -117,14 +117,14 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
     @Inject(method = "balanceRecipe", at = @At(value = "HEAD"), require = 1)
     private void utBalanceRecipe(CallbackInfoReturnable<Optional<InventoryCrafting>> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.TECH_REBORN.utOptimizeRollingMachineToggle) return;
+        if (!UTConfigMods.TECH_REBORN.utOptimizeRollingMachineToggle) return;
         utForceRefresh = false;
     }
 
     @Inject(method = "createContainer", at = @At(value = "HEAD"), require = 1)
     private void utCreateContainer(CallbackInfoReturnable<BuiltContainer> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.TECH_REBORN.utOptimizeRollingMachineToggle) return;
+        if (!UTConfigMods.TECH_REBORN.utOptimizeRollingMachineToggle) return;
         utForceRefresh = false;
     }
 
@@ -137,7 +137,7 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
     @Inject(method = "update", at = @At(value = "HEAD"), cancellable = true, remap = true)
     private void utOptimizedUpdate(CallbackInfo ci)
     {
-        if (!UTConfig.MOD_INTEGRATION.TECH_REBORN.utOptimizeRollingMachineToggle) return;
+        if (!UTConfigMods.TECH_REBORN.utOptimizeRollingMachineToggle) return;
         ci.cancel();
 
         super.update();
@@ -222,7 +222,7 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
     @Inject(method = "canMake", at = @At(value = "HEAD"), cancellable = true)
     private void utCanMakeIgnoreLock(InventoryCrafting craftMatrix, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.TECH_REBORN.utOptimizeRollingMachineToggle) return;
+        if (!UTConfigMods.TECH_REBORN.utOptimizeRollingMachineToggle) return;
 
         ItemStack stack = utFindMatchingRecipeOutput(craftMatrix, world);
         if (stack.isEmpty())
@@ -246,7 +246,7 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
     @ModifyArg(method = "createContainer", at = @At(value = "INVOKE", target = "Lreborncore/client/containerBuilder/builder/ContainerTileInventoryBuilder;onCraft(Ljava/util/function/Consumer;)Lreborncore/client/containerBuilder/builder/ContainerTileInventoryBuilder;"))
     private Consumer<InventoryCrafting> utModifyOnCraftCall(Consumer<InventoryCrafting> onCraft)
     {
-        if (!UTConfig.MOD_INTEGRATION.TECH_REBORN.utOptimizeRollingMachineToggle) return onCraft;
+        if (!UTConfigMods.TECH_REBORN.utOptimizeRollingMachineToggle) return onCraft;
         return (inv) -> this.inventory.setInventorySlotContents(1, utFindMatchingRecipeOutput(this.getCraftingMatrix(), this.world));
     }
 

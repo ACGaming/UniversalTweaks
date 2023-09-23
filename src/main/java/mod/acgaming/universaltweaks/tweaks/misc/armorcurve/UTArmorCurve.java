@@ -2,7 +2,7 @@ package mod.acgaming.universaltweaks.tweaks.misc.armorcurve;
 
 import com.udojava.evalex.Expression;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Jackiecrazy
 public class UTArmorCurve
@@ -11,10 +11,10 @@ public class UTArmorCurve
 
     public static void initExpressions()
     {
-        armor = new Expression(UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveArmor);
-        toughness = new Expression(UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveArmorToughness);
-        enchants = new Expression(UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveEnchantments);
-        degrade = new Expression(UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveDegradation);
+        armor = new Expression(UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveArmor);
+        toughness = new Expression(UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveArmorToughness);
+        enchants = new Expression(UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveEnchantments);
+        degrade = new Expression(UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveDegradation);
 
         try
         {

@@ -4,7 +4,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.GameSettings;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,8 +21,8 @@ public class UTSnooperClient
     @Inject(method = "isSnooperEnabled", at = @At("HEAD"), cancellable = true)
     public void utSnooperClient(CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.TWEAKS_MISC.utSnooperToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSnooperClient ::: Disable client snooper");
+        if (!UTConfigTweaks.MISC.utSnooperToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSnooperClient ::: Disable client snooper");
         this.gameSettings.snooperEnabled = false;
         cir.setReturnValue(false);
     }

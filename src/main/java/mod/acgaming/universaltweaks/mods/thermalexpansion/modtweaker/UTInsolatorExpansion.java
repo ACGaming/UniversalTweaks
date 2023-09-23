@@ -11,7 +11,8 @@ import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import stanhebben.zenscript.annotations.Optional;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenMethodStatic;
@@ -24,14 +25,14 @@ public class UTInsolatorExpansion
 {
     // list of fertilizers that will be added to TE's InsolatorManager
     // This isn't really a Set because ItemStack doesn't override equals(), but performance impact shouldn't be significant.
-    public static Set<ItemStack> additionalFertilizers = UTConfig.MOD_INTEGRATION.THERMAL_EXPANSION.utTEInsolatorCustomMonoculture ? new ObjectOpenHashSet<>() : null;
+    public static Set<ItemStack> additionalFertilizers = UTConfigMods.THERMAL_EXPANSION.utTEInsolatorCustomMonoculture ? new ObjectOpenHashSet<>() : null;
 
     @ZenMethodStatic
     public static void addRecipeMonoculture(IItemStack primaryOutput, IItemStack primaryInput, IItemStack secondaryInput, int energy, @Optional IItemStack secondaryOutput, @Optional int secondaryChance, @Optional(valueLong = -1L) int water)
     {
-        if (!UTConfig.MOD_INTEGRATION.THERMAL_EXPANSION.utTEInsolatorCustomMonoculture)
+        if (!UTConfigMods.THERMAL_EXPANSION.utTEInsolatorCustomMonoculture)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInsolatorExpansion ::: ERROR - utTEInsolatorCustomMonoculture must be enabled to use this function!");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInsolatorExpansion ::: ERROR - utTEInsolatorCustomMonoculture must be enabled to use this function!");
             return;
         }
         additionalFertilizers.add(CraftTweakerMC.getItemStack(secondaryInput));
@@ -41,9 +42,9 @@ public class UTInsolatorExpansion
     @ZenMethodStatic
     public static void addRecipeMonocultureSaplingInfuser(IItemStack primaryOutput, IItemStack primaryInput, IItemStack secondaryInput, int energy, @Optional IItemStack secondaryOutput, @Optional int secondaryChance, @Optional(valueLong = -1L) int water)
     {
-        if (!UTConfig.MOD_INTEGRATION.THERMAL_EXPANSION.utTEInsolatorCustomMonoculture)
+        if (!UTConfigMods.THERMAL_EXPANSION.utTEInsolatorCustomMonoculture)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInsolatorExpansion ::: ERROR - utTEInsolatorCustomMonoculture must be enabled to use this function!");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInsolatorExpansion ::: ERROR - utTEInsolatorCustomMonoculture must be enabled to use this function!");
             return;
         }
         additionalFertilizers.add(CraftTweakerMC.getItemStack(secondaryInput));

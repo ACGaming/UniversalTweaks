@@ -10,7 +10,7 @@ import java.util.List;
 import net.minecraft.launchwrapper.Launch;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 
 public class UTAutoSaveOFCompat
@@ -27,10 +27,10 @@ public class UTAutoSaveOFCompat
 
             Path ofConfigPath = Paths.get(rootFolder + File.separator + "optionsof.txt");
             List<String> lines = Files.readAllLines(ofConfigPath, StandardCharsets.UTF_8);
-            lines.set(31, "ofAutoSaveTicks:" + UTConfig.TWEAKS_PERFORMANCE.utAutoSaveInterval);
+            lines.set(31, "ofAutoSaveTicks:" + UTConfigTweaks.PERFORMANCE.utAutoSaveInterval);
             Files.write(ofConfigPath, lines, StandardCharsets.UTF_8);
 
-            UniversalTweaks.LOGGER.info("OptiFine auto save interval updated to " + UTConfig.TWEAKS_PERFORMANCE.utAutoSaveInterval);
+            UniversalTweaks.LOGGER.info("OptiFine auto save interval updated to " + UTConfigTweaks.PERFORMANCE.utAutoSaveInterval);
         }
         catch (Exception ignored) {}
     }

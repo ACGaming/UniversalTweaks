@@ -1,7 +1,8 @@
 package mod.acgaming.universaltweaks.mods.botania.mixin;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -14,8 +15,8 @@ public class UTBotaniaLinearXPMixin
     @Inject(method = "getExperienceForLevel", at = @At("HEAD"), cancellable = true)
     private static void utBotaniaLinearXP(int level, CallbackInfoReturnable<Integer> cir)
     {
-        if (UTConfig.TWEAKS_MISC.utLinearXP < 1) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBotaniaLinearXP ::: Get experience for level");
-        cir.setReturnValue(level * UTConfig.TWEAKS_MISC.utLinearXP);
+        if (UTConfigTweaks.MISC.utLinearXP < 1) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBotaniaLinearXP ::: Get experience for level");
+        cir.setReturnValue(level * UTConfigTweaks.MISC.utLinearXP);
     }
 }

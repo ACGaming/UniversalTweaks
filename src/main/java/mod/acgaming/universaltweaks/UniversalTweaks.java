@@ -13,7 +13,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync;
 import mod.acgaming.universaltweaks.bugfixes.misc.help.UTHelp;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.abyssalcraft.UTAbyssalCraftEvents;
 import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
@@ -107,35 +110,35 @@ public class UniversalTweaks
     public void preInit(FMLPreInitializationEvent event)
     {
         UTPacketHandler.init();
-        if (UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
+        if (UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
         UTAutoSaveOFCompat.updateOFConfig();
-        if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
-        if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
-        if (Loader.isModLoaded("abyssalcraft") && UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) UTWorldDataCapability.register();
-        if (UTConfig.TWEAKS_MISC.utSkipRegistryScreenToggle) System.setProperty("fml.queryResult", "confirm");
+        if (UTConfigTweaks.WORLD.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
+        if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
+        if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) UTWorldDataCapability.register();
+        if (UTConfigTweaks.MISC.utSkipRegistryScreenToggle) System.setProperty("fml.queryResult", "confirm");
         LOGGER.info(NAME + " pre-initialized");
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        if (UTConfig.TWEAKS_MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
-        if (UTConfig.TWEAKS_WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
-        if (Loader.isModLoaded("abyssalcraft") && UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) MinecraftForge.EVENT_BUS.register(new UTAbyssalCraftEvents());
-        if (Loader.isModLoaded("arcanearchives") && UTConfig.MOD_INTEGRATION.ARCANE_ARCHIVES.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTArcaneArchivesEvents());
-        if (Loader.isModLoaded("bloodmagic") && UTConfig.MOD_INTEGRATION.BLOOD_MAGIC.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTBloodMagicEvents());
-        if (Loader.isModLoaded("elenaidodge2") && UTConfig.MOD_INTEGRATION.ELENAI_DODGE_2.utED2SprintingFeatherConsumption > 0) MinecraftForge.EVENT_BUS.register(new UTED2Sprinting());
-        if (Loader.isModLoaded("mekanism") && UTConfig.MOD_INTEGRATION.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
-        if (Loader.isModLoaded("projectred-exploration") && UTConfig.MOD_INTEGRATION.PROJECTRED.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTProjectRedWorldEvents());
-        if (Loader.isModLoaded("simplyjetpacks") && UTConfig.MOD_INTEGRATION.SIMPLY_JETPACKS.utMemoryLeakFixToggle)
+        if (UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
+        if (UTConfigTweaks.WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
+        if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) MinecraftForge.EVENT_BUS.register(new UTAbyssalCraftEvents());
+        if (Loader.isModLoaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTArcaneArchivesEvents());
+        if (Loader.isModLoaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTBloodMagicEvents());
+        if (Loader.isModLoaded("elenaidodge2") && UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherConsumption > 0) MinecraftForge.EVENT_BUS.register(new UTED2Sprinting());
+        if (Loader.isModLoaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
+        if (Loader.isModLoaded("projectred-exploration") && UTConfigMods.PROJECTRED.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTProjectRedWorldEvents());
+        if (Loader.isModLoaded("simplyjetpacks") && UTConfigMods.SIMPLY_JETPACKS.utMemoryLeakFixToggle)
         {
             MinecraftForge.EVENT_BUS.register(new UTSimplyJetpacksEvents());
             NetworkHandler.instance.registerMessage(MessageClientStatesReset.class, MessageClientStatesReset.class, NetworkHandler.nextID(), Side.CLIENT);
         }
         // Unregister reason: event handler adds to an unused map that is never cleared.
-        if (Loader.isModLoaded("tardis") && UTConfig.MOD_INTEGRATION.TARDIS.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.unregister(ClientProxy.class);
-        if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTTConstructEvents());
-        if (Loader.isModLoaded("thaumcraft") && UTConfig.MOD_INTEGRATION.THAUMCRAFT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTThaumcraftEvents());
+        if (Loader.isModLoaded("tardis") && UTConfigMods.TARDIS.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.unregister(ClientProxy.class);
+        if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTTConstructEvents());
+        if (Loader.isModLoaded("thaumcraft") && UTConfigMods.THAUMCRAFT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTThaumcraftEvents());
         LOGGER.info(NAME + " initialized");
     }
 
@@ -143,26 +146,26 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void initClient(FMLInitializationEvent event)
     {
-        if (UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
-        if (UTConfig.TWEAKS_BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle) MinecraftForge.EVENT_BUS.register(UTBetterPlacement.class);
-        if (UTConfig.TWEAKS_MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
-        if (UTConfig.TWEAKS_MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) UTPickupNotificationOverlay.init();
+        if (UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) UTBlockOverlayLists.initLists();
+        if (UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle) MinecraftForge.EVENT_BUS.register(UTBetterPlacement.class);
+        if (UTConfigTweaks.MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
+        if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) UTPickupNotificationOverlay.init();
         if (Loader.isModLoaded("botania")) MinecraftForge.EVENT_BUS.register(UTBotaniaFancySkybox.class);
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-        if (UTConfig.BUGFIXES_ENTITIES.ENTITY_DESYNC.utEntityDesyncToggle) UTEntityDesync.initBlacklistedEntityEntries();
-        if (UTConfig.TWEAKS_BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle) UTBlockDispenser.initBlockList();
-        if (UTConfig.TWEAKS_BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
-        if (UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
-        if (UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
-        if (UTConfig.TWEAKS_ITEMS.utLeftoverBreathBottleToggle) UTLeftoverDragonBreath.postInit();
-        if (UTConfig.TWEAKS_ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
-        if (UTConfig.TWEAKS_ITEMS.utCustomUseDurations.length > 0) UTCustomUseDuration.initItemUseMaps();
-        if (UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
-        if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConMaterialBlacklist.length > 0) UTTConstructMaterials.utHandleBlacklistedMaterials();
+        if (UTConfigBugfixes.ENTITIES.ENTITY_DESYNC.utEntityDesyncToggle) UTEntityDesync.initBlacklistedEntityEntries();
+        if (UTConfigTweaks.BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle) UTBlockDispenser.initBlockList();
+        if (UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
+        if (UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
+        if (UTConfigTweaks.MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
+        if (UTConfigTweaks.ITEMS.utLeftoverBreathBottleToggle) UTLeftoverDragonBreath.postInit();
+        if (UTConfigTweaks.ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
+        if (UTConfigTweaks.ITEMS.utCustomUseDurations.length > 0) UTCustomUseDuration.initItemUseMaps();
+        if (UTConfigTweaks.ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
+        if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConMaterialBlacklist.length > 0) UTTConstructMaterials.utHandleBlacklistedMaterials();
         LOGGER.info(NAME + " post-initialized");
     }
 
@@ -170,29 +173,29 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void postInitClient(FMLPostInitializationEvent event)
     {
-        if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfig.TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
-        if (UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlTutorialToggle) UTTutorialToast.utTutorialToast();
+        if (UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfigTweaks.MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
+        if (UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlTutorialToggle) UTTutorialToast.utTutorialToast();
         if (Loader.isModLoaded("botania")) UTBotaniaFancySkybox.initDimList();
     }
 
     @Mod.EventHandler
     public void onServerStarting(FMLServerStartingEvent event)
     {
-        if (UTConfig.BUGFIXES_MISC.utHelpToggle) UTHelp.onServerStarting(event);
+        if (UTConfigBugfixes.MISC.utHelpToggle) UTHelp.onServerStarting(event);
     }
 
     @Mod.EventHandler
     public void onServerStarted(FMLServerStartedEvent event)
     {
-        if (UTConfig.BUGFIXES_MISC.utHelpToggle) UTHelp.onServerStarted(event);
+        if (UTConfigBugfixes.MISC.utHelpToggle) UTHelp.onServerStarted(event);
     }
 
     @Mod.EventHandler
     public void onLoadComplete(FMLLoadCompleteEvent event)
     {
-        if (Loader.isModLoaded("tconstruct") && UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.onLoadComplete();
-        if (UTConfig.DEBUG.utLoadingTimeToggle) LOGGER.info("The game loaded in approximately {} seconds", (System.currentTimeMillis() - UTLoadingPlugin.launchTime) / 1000F);
-        if (UTObsoleteModsHandler.showObsoleteMods && UTObsoleteModsHandler.obsoleteModsMessage().size() > 5 && !UTConfig.DEBUG.utBypassIncompatibilityToggle)
+        if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.onLoadComplete();
+        if (UTConfigGeneral.DEBUG.utLoadingTimeToggle) LOGGER.info("The game loaded in approximately {} seconds", (System.currentTimeMillis() - UTLoadingPlugin.launchTime) / 1000F);
+        if (UTObsoleteModsHandler.showObsoleteMods && UTObsoleteModsHandler.obsoleteModsMessage().size() > 5 && !UTConfigGeneral.DEBUG.utBypassIncompatibilityToggle)
         {
             for (String line : UTObsoleteModsHandler.obsoleteModsMessage())
             {

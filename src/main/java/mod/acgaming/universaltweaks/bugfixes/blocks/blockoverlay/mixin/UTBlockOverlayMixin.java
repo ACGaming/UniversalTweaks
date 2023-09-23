@@ -9,7 +9,8 @@ import net.minecraft.util.BlockRenderLayer;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlay;
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -31,8 +32,8 @@ public class UTBlockOverlayMixin
     @Inject(method = "renderBlockLayer(Lnet/minecraft/util/BlockRenderLayer;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/ChunkRenderContainer;renderChunkLayer(Lnet/minecraft/util/BlockRenderLayer;)V"))
     public void utBlockOverlay(BlockRenderLayer blockLayerIn, CallbackInfo info)
     {
-        if (!UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBlockOverlay ::: Render block layer");
+        if (!UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBlockOverlay ::: Render block layer");
         Block block = world.getBlockState(mc.player.getPosition().up()).getBlock();
         if ((blockLayerIn == BlockRenderLayer.SOLID && !UTBlockOverlayLists.blacklistedBlocks.contains(block)) || UTBlockOverlayLists.whitelistedBlocks.contains(block))
         {

@@ -12,7 +12,8 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTRayTraceEntity;
 
 // Courtesy of Exidex, Rongmario
@@ -22,8 +23,8 @@ public class UTSwingThroughGrass
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void utSwingThroughGrass(PlayerInteractEvent.LeftClickBlock event)
     {
-        if (!UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSwingThroughGrass ::: Left click block event");
+        if (!UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSwingThroughGrass ::: Left click block event");
         Entity entity = getEntityBehindGrass(event.getWorld(), event.getPos(), event.getEntityPlayer());
         if (entity != null)
         {
@@ -35,8 +36,8 @@ public class UTSwingThroughGrass
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void utInteractThroughGrass(PlayerInteractEvent.RightClickBlock event)
     {
-        if (!UTConfig.TWEAKS_MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSwingThroughGrass ::: Right click block event");
+        if (!UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSwingThroughGrass ::: Right click block event");
         Entity entity = getEntityBehindGrass(event.getWorld(), event.getPos(), event.getEntityPlayer());
         if (entity != null)
         {

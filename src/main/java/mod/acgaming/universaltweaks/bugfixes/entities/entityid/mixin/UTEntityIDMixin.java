@@ -4,7 +4,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,10 +28,10 @@ public abstract class UTEntityIDMixin
     @Inject(method = "<init>", at = @At("TAIL"))
     public void utEntityID(World worldIn, CallbackInfo ci)
     {
-        if (UTConfig.BUGFIXES_ENTITIES.utEntityIDToggle && this.entityId == 0)
+        if (UTConfigBugfixes.ENTITIES.utEntityIDToggle && this.entityId == 0)
         {
             this.entityId = nextEntityID++;
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityID ::: Corrected entity ID from 0 to {}", this.entityId);
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityID ::: Corrected entity ID from 0 to {}", this.entityId);
         }
     }
 }

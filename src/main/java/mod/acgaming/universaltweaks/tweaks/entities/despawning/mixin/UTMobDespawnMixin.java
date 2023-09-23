@@ -12,7 +12,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 
 // Courtesy of frikinjay
@@ -31,8 +32,8 @@ public abstract class UTMobDespawnMixin extends EntityCreature
     public void updateEquipmentIfNeeded(EntityItem itemEntity)
     {
         super.updateEquipmentIfNeeded(itemEntity);
-        if (!UTConfig.TWEAKS_ENTITIES.utMobDespawnToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Update equipment");
+        if (!UTConfigTweaks.ENTITIES.utMobDespawnToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Update equipment");
         this.pickedItems = true;
         ((EntityLivingAccessor) this).setPersistenceRequired(this.hasCustomName());
     }
@@ -40,7 +41,7 @@ public abstract class UTMobDespawnMixin extends EntityCreature
     @Override
     public void despawnEntity()
     {
-        if (!UTConfig.TWEAKS_ENTITIES.utMobDespawnToggle)
+        if (!UTConfigTweaks.ENTITIES.utMobDespawnToggle)
         {
             super.despawnEntity();
             return;
@@ -70,7 +71,7 @@ public abstract class UTMobDespawnMixin extends EntityCreature
 
     public void dropEquipmentAndDespawn()
     {
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Despawn entity");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Despawn entity");
         if (this.pickedItems)
         {
             for (EntityEquipmentSlot entityequipmentslot : EntityEquipmentSlot.values())

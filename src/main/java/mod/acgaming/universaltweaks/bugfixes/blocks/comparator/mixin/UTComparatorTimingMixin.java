@@ -8,7 +8,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -35,9 +36,9 @@ public abstract class UTComparatorTimingMixin extends BlockRedstoneDiode
     @Redirect(method = "calculateOutput", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockRedstoneComparator;calculateInputStrength(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)I", ordinal = 1))
     public int utFixCompareModeOutput(BlockRedstoneComparator that, World worldIn, BlockPos posIn, IBlockState stateIn)
     {
-        if (UTConfig.BUGFIXES_BLOCKS.utComparatorTimingToggle)
+        if (UTConfigBugfixes.BLOCKS.utComparatorTimingToggle)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTComparatorTimingMixin ::: Calculate output");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTComparatorTimingMixin ::: Calculate output");
             int inputStrength = this.calculateInputStrength(worldIn, posIn, stateIn);
             if (this.getPowerOnSides(worldIn, posIn, stateIn) > inputStrength) return 0;
             else return inputStrength;
@@ -48,9 +49,9 @@ public abstract class UTComparatorTimingMixin extends BlockRedstoneDiode
     @Inject(method = "shouldBePowered", at = @At("HEAD"), cancellable = true)
     public void utBetterShouldBePowered(World worldIn, BlockPos posIn, IBlockState stateIn, CallbackInfoReturnable<Boolean> cir)
     {
-        if (UTConfig.BUGFIXES_BLOCKS.utComparatorTimingToggle)
+        if (UTConfigBugfixes.BLOCKS.utComparatorTimingToggle)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTComparatorTimingMixin ::: Should be powered check");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTComparatorTimingMixin ::: Should be powered check");
             cir.setReturnValue(false);
             int inputStrength = this.calculateInputStrength(worldIn, posIn, stateIn);
             if (inputStrength > 0)

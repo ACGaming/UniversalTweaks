@@ -5,7 +5,7 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -35,12 +35,12 @@ public class UTRedstoneLightingMixin
     @Inject(at = @At(value = "HEAD"), method = "getLightValue()I", cancellable = true)
     public void utGetLightValue(CallbackInfoReturnable<Integer> cir)
     {
-        if (UTConfig.TWEAKS_PERFORMANCE.utRedstoneLightingToggle && isRedstoneComponent(block)) cir.setReturnValue(0);
+        if (UTConfigTweaks.PERFORMANCE.utRedstoneLightingToggle && isRedstoneComponent(block)) cir.setReturnValue(0);
     }
 
     @Inject(at = @At(value = "HEAD"), method = "getLightValue(Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;)I", cancellable = true, remap = false)
     public void utGetLightValueWorld(IBlockAccess world, BlockPos pos, CallbackInfoReturnable<Integer> cir)
     {
-        if (UTConfig.TWEAKS_PERFORMANCE.utRedstoneLightingToggle && isRedstoneComponent(block)) cir.setReturnValue(0);
+        if (UTConfigTweaks.PERFORMANCE.utRedstoneLightingToggle && isRedstoneComponent(block)) cir.setReturnValue(0);
     }
 }

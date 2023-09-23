@@ -7,7 +7,7 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -20,7 +20,7 @@ public class UTStableThaumometerMixin
     @Inject(method = "onItemRightClick", at = @At(value = "RETURN"), cancellable = true)
     public void utStableThaumometer(World world, EntityPlayer p, EnumHand hand, CallbackInfoReturnable<ActionResult<ItemStack>> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.THAUMCRAFT.utTCStableThaumometerToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.utTCStableThaumometerToggle) return;
         cir.setReturnValue(new ActionResult<>(EnumActionResult.FAIL, p.getHeldItem(hand)));
     }
 }

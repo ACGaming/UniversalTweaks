@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 public class UTIncurablePotions
 {
@@ -18,7 +18,7 @@ public class UTIncurablePotions
         potionList.clear();
         try
         {
-            for (String entry : UTConfig.TWEAKS_MISC.INCURABLE_POTIONS.utIncurablePotionsList)
+            for (String entry : UTConfigTweaks.MISC.INCURABLE_POTIONS.utIncurablePotionsList)
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
                 if (ForgeRegistries.POTIONS.containsKey(resLoc)) potionList.add(ForgeRegistries.POTIONS.getValue(resLoc).getRegistryName().toString());

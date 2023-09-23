@@ -8,7 +8,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 
 public class UTBlockOverlayLists
 {
@@ -21,12 +21,12 @@ public class UTBlockOverlayLists
         whitelistedBlocks.clear();
         try
         {
-            for (String entry : UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayBlacklist)
+            for (String entry : UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayBlacklist)
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
                 if (ForgeRegistries.BLOCKS.containsKey(resLoc)) blacklistedBlocks.add(ForgeRegistries.BLOCKS.getValue(resLoc));
             }
-            for (String entry : UTConfig.BUGFIXES_BLOCKS.BLOCK_OVERLAY.utBlockOverlayWhitelist)
+            for (String entry : UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayWhitelist)
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
                 if (ForgeRegistries.BLOCKS.containsKey(resLoc)) whitelistedBlocks.add(ForgeRegistries.BLOCKS.getValue(resLoc));

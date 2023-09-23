@@ -8,7 +8,8 @@ import net.minecraft.tileentity.TileEntityPiston;
 import net.minecraft.util.EnumFacing;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -48,10 +49,10 @@ public class UTPistonTileMixin extends TileEntity
         this.pistonState = Block.getBlockById(compound.getInteger("blockId")).getStateFromMeta(compound.getInteger("blockData"));
         this.pistonFacing = EnumFacing.byIndex(compound.getInteger("facing"));
         this.progress = compound.getFloat("progress");
-        this.lastProgress = UTConfig.BUGFIXES_BLOCKS.utPistonTileToggle ? compound.getFloat("lastProgress") : this.progress;
+        this.lastProgress = UTConfigBugfixes.BLOCKS.utPistonTileToggle ? compound.getFloat("lastProgress") : this.progress;
         this.extending = compound.getBoolean("extending");
         this.shouldHeadBeRendered = compound.getBoolean("source");
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPistonTile ::: Read from NBT");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPistonTile ::: Read from NBT");
     }
 
     /**
@@ -66,10 +67,10 @@ public class UTPistonTileMixin extends TileEntity
         compound.setInteger("blockData", this.pistonState.getBlock().getMetaFromState(this.pistonState));
         compound.setInteger("facing", this.pistonFacing.getIndex());
         compound.setFloat("progress", this.progress);
-        if (UTConfig.BUGFIXES_BLOCKS.utPistonTileToggle) compound.setFloat("lastProgress", this.lastProgress);
+        if (UTConfigBugfixes.BLOCKS.utPistonTileToggle) compound.setFloat("lastProgress", this.lastProgress);
         compound.setBoolean("extending", this.extending);
         compound.setBoolean("source", this.shouldHeadBeRendered);
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPistonTile ::: Write to NBT");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPistonTile ::: Write to NBT");
         return compound;
     }
 }

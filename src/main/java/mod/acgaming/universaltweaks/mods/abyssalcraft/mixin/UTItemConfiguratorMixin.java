@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 
 import com.shinoow.abyssalcraft.common.items.ItemConfigurator;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -35,7 +35,7 @@ public class UTItemConfiguratorMixin
     @Inject(method = "onItemUse", at = @At(value = "INVOKE", target = "Lcom/shinoow/abyssalcraft/api/transfer/caps/IItemTransferCapability;addTransferConfiguration(Lcom/shinoow/abyssalcraft/api/transfer/ItemTransferConfiguration;)V"))
     private void utAddConfiguredTileEntity(EntityPlayer player, World w, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ, CallbackInfoReturnable<EnumActionResult> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
+        if (!UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
         Chunk chunk = w.getChunk(pos);
         UTWorldDataCapability.getCap(w).addConfigured(chunk, pos, w.getTileEntity(pos));
         // Not sure if this is necessary?
@@ -46,7 +46,7 @@ public class UTItemConfiguratorMixin
     @Inject(method = "onItemUse", at = @At(value = "INVOKE", target = "Lcom/shinoow/abyssalcraft/api/transfer/caps/IItemTransferCapability;clearConfigurations()V"))
     private void utRemoveConfiguredTileEntity(EntityPlayer player, World w, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ, CallbackInfoReturnable<EnumActionResult> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
+        if (!UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
         Chunk chunk = w.getChunk(pos);
         UTWorldDataCapability.getCap(w).removeConfigured(w.getChunk(pos), pos);
         // Not sure if this is necessary?

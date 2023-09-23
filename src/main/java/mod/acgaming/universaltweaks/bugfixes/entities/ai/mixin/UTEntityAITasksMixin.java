@@ -7,7 +7,8 @@ import net.minecraft.entity.ai.EntityAITasks;
 import net.minecraft.profiler.Profiler;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
@@ -32,9 +33,9 @@ public class UTEntityAITasksMixin
     @Inject(method = "<init>", at = @At(value = "TAIL"))
     public void utEntityAITasks(Profiler profilerIn, CallbackInfo ci)
     {
-        if (!UTConfig.BUGFIXES_ENTITIES.utEntityAITasksToggle) return;
+        if (!UTConfigBugfixes.ENTITIES.utEntityAITasksToggle) return;
         this.taskEntries = Sets.newConcurrentHashSet();
         this.executingTaskEntries = Sets.newConcurrentHashSet();
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityAITasks ::: Created concurrent hash sets");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityAITasks ::: Created concurrent hash sets");
     }
 }

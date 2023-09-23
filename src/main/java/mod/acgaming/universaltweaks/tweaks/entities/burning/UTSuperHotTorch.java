@@ -14,7 +14,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTSuperHotTorch
@@ -22,8 +23,8 @@ public class UTSuperHotTorch
     @SubscribeEvent
     public static void utSuperHotTorch(AttackEntityEvent event)
     {
-        if (!UTConfig.TWEAKS_ITEMS.utSuperHotTorchToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSuperHotTorch ::: Attack entity event");
+        if (!UTConfigTweaks.ITEMS.utSuperHotTorchToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSuperHotTorch ::: Attack entity event");
         Entity target = event.getTarget();
         EntityPlayer player = event.getEntityPlayer();
         ItemStack stackMainhand = player.getHeldItemMainhand();

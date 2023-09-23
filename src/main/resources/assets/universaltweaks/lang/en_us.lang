@@ -20,14 +20,18 @@ msg.universaltweaks.tweaks.pickupnotification.xp=Experience
 
 # CONFIG
 # Doesn't need to be translated because config is English in general
-cfg.universaltweaks.bugfixes.blocks=Bugfixes: Blocks
+cfg.universaltweaks.config.blocks=Blocks
+cfg.universaltweaks.config.debug=Debug
+cfg.universaltweaks.config.entities=Entities
+cfg.universaltweaks.config.items=Items
+cfg.universaltweaks.config.misc=Misc
+cfg.universaltweaks.config.performance=Performance
+cfg.universaltweaks.config.world=World
+
 cfg.universaltweaks.bugfixes.blocks.blockoverlay=Block Overlay
-cfg.universaltweaks.bugfixes.entities=Bugfixes: Entities
 cfg.universaltweaks.bugfixes.entities.desync=Entity Desync
-cfg.universaltweaks.bugfixes.misc=Bugfixes: Misc
 cfg.universaltweaks.bugfixes.misc.modelgap=Model Gap
-cfg.universaltweaks.bugfixes.world=Bugfixes: World
-cfg.universaltweaks.debug=Debug
+
 cfg.universaltweaks.modintegration.abyssalcraft=AbyssalCraft
 cfg.universaltweaks.modintegration.actuallyadditions=Actually Additions
 cfg.universaltweaks.modintegration.aoa=Advent of Ascension
@@ -74,11 +78,11 @@ cfg.universaltweaks.modintegration.thefarlanders=The Farlanders
 cfg.universaltweaks.modintegration.tinyprogressions=Tiny Progressions
 cfg.universaltweaks.modintegration.tr=Tech Reborn
 cfg.universaltweaks.modintegration=Mod Integration
+
 cfg.universaltweaks.tweaks.blocks.betterplacement=Better Placement
 cfg.universaltweaks.tweaks.blocks.blockdispenser=Block Dispenser
 cfg.universaltweaks.tweaks.blocks.breakablebedrock=Breakable Bedrock
 cfg.universaltweaks.tweaks.blocks.finitewater=Finite Water
-cfg.universaltweaks.tweaks.blocks=Tweaks: Blocks
 cfg.universaltweaks.tweaks.entities.attributes=Attributes
 cfg.universaltweaks.tweaks.entities.betterburning=Better Burning
 cfg.universaltweaks.tweaks.entities.collisiondamage=Collision Damage
@@ -91,12 +95,10 @@ cfg.universaltweaks.tweaks.entities.sleeping=Sleeping
 cfg.universaltweaks.tweaks.entities.spawncaps=Spawn Caps
 cfg.universaltweaks.tweaks.entities.undeadhorses=Undead Horses
 cfg.universaltweaks.tweaks.entities.waterfalldamage=Water Fall Damage
-cfg.universaltweaks.tweaks.entities=Tweaks: Entities
 cfg.universaltweaks.tweaks.items.attackcooldown=Attack Cooldown
 cfg.universaltweaks.tweaks.items.itementities=Item Entities
 cfg.universaltweaks.tweaks.items.mending=Mending
 cfg.universaltweaks.tweaks.items.parry=Shield Parry
-cfg.universaltweaks.tweaks.items=Tweaks: Items
 cfg.universaltweaks.tweaks.misc.armorcurve=Armor Curve
 cfg.universaltweaks.tweaks.misc.incurablepotions=Incurable Potions
 cfg.universaltweaks.tweaks.misc.lightning=Lightning
@@ -105,8 +107,5 @@ cfg.universaltweaks.tweaks.misc.pickupnotification=Pickup Notification
 cfg.universaltweaks.tweaks.misc.smoothscrolling=Smooth Scrolling
 cfg.universaltweaks.tweaks.misc.stg=Swing Through Grass
 cfg.universaltweaks.tweaks.misc.toastcontrol=Toast Control
-cfg.universaltweaks.tweaks.misc=Tweaks: Misc
-cfg.universaltweaks.tweaks.performance=Tweaks: Performance
 cfg.universaltweaks.tweaks.world.chunkgenlimit=Chunk Gen Limit
 cfg.universaltweaks.tweaks.world.dimensionunload=Dimension Unload
-cfg.universaltweaks.tweaks.world=Tweaks: World

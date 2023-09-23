@@ -5,7 +5,7 @@ import net.minecraft.client.gui.toasts.IToast;
 import net.minecraft.client.multiplayer.ClientAdvancementManager;
 
 import com.llamalad7.mixinextras.injector.WrapWithCondition;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -15,6 +15,6 @@ public class UTAdvancementToastMixin
     @WrapWithCondition(method = "read", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/toasts/GuiToast;add(Lnet/minecraft/client/gui/toasts/IToast;)V"))
     public boolean utAdvancementToast(GuiToast instance, IToast toastIn)
     {
-        return !UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlAdvancementsToggle;
+        return !UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlAdvancementsToggle;
     }
 }

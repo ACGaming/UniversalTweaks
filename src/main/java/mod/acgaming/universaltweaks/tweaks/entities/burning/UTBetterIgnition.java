@@ -13,7 +13,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTBetterIgnition
@@ -21,8 +22,8 @@ public class UTBetterIgnition
     @SubscribeEvent
     public static void utBetterIgnition(PlayerInteractEvent.EntityInteract event)
     {
-        if (!UTConfig.TWEAKS_ENTITIES.utBetterIgnitionToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterIgnition ::: Right click entity event");
+        if (!UTConfigTweaks.ENTITIES.utBetterIgnitionToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterIgnition ::: Right click entity event");
         EnumHand hand = event.getHand();
         EntityPlayer player = event.getEntityPlayer();
         ItemStack stackMainhand = player.getHeldItemMainhand();

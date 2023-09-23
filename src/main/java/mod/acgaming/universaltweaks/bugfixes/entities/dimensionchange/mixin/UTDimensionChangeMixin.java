@@ -14,7 +14,8 @@ import net.minecraftforge.common.util.ITeleporter;
 
 import com.mojang.authlib.GameProfile;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -37,8 +38,8 @@ public abstract class UTDimensionChangeMixin extends EntityPlayer
     @Inject(method = "changeDimension", at = @At(value = "HEAD"), remap = false)
     public void utChangeDimension(int dimensionIn, ITeleporter teleporter, CallbackInfoReturnable<Entity> cir)
     {
-        if (!UTConfig.BUGFIXES_ENTITIES.utDimensionChangeToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDimensionChange ::: Change dimension");
+        if (!UTConfigBugfixes.ENTITIES.utDimensionChangeToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDimensionChange ::: Change dimension");
         this.connection.sendPacket(new SPacketUpdateHealth(this.getHealth(), this.foodStats.getFoodLevel(), this.foodStats.getSaturationLevel()));
         this.connection.sendPacket(new SPacketSetExperience(this.experience, this.experienceTotal, this.experienceLevel));
         this.connection.sendPacket(new SPacketPlayerAbilities(this.capabilities));

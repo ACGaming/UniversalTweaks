@@ -7,7 +7,8 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTRandomUtil;
 
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
@@ -18,22 +19,22 @@ public class UTRabbits
     {
         if (!(event.getEntity() instanceof EntityRabbit) || event.getWorld().isRemote) return;
 
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRabbits ::: Rabbit Spawn Event");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRabbits ::: Rabbit Spawn Event");
 
-        double toastChance = UTConfig.TWEAKS_ENTITIES.utRabbitToastChance;
-        double killerChance = UTConfig.TWEAKS_ENTITIES.utRabbitKillerChance;
+        double toastChance = UTConfigTweaks.ENTITIES.utRabbitToastChance;
+        double killerChance = UTConfigTweaks.ENTITIES.utRabbitKillerChance;
         if (toastChance <= 0.0D && killerChance <= 0.0D) return;
 
         EntityRabbit rabbit = (EntityRabbit) event.getEntity();
 
         if (UTRandomUtil.chance(toastChance))
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRabbits ::: Rabbit Spawn Event Toast");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRabbits ::: Rabbit Spawn Event Toast");
             rabbit.setCustomNameTag("Toast");
         }
         else if (UTRandomUtil.chance(killerChance))
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRabbits ::: Rabbit Spawn Event Killer");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRabbits ::: Rabbit Spawn Event Killer");
             rabbit.setRabbitType(99);
         }
     }

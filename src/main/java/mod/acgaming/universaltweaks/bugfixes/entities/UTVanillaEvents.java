@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 
 // Courtesy of Focamacho
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
@@ -21,7 +21,7 @@ public class UTVanillaEvents
     @SubscribeEvent
     public static void utShearMooshroom(PlayerInteractEvent.EntityInteract event)
     {
-        if (!UTConfig.BUGFIXES_ENTITIES.utShearMooshroomDupeToggle) return;
+        if (!UTConfigBugfixes.ENTITIES.utShearMooshroomDupeToggle) return;
         if (event.getTarget() instanceof EntityMooshroom && event.getItemStack().getItem() instanceof ItemShears && event.getTarget().isDead)
         {
             event.setCanceled(true);
@@ -31,7 +31,7 @@ public class UTVanillaEvents
     @SubscribeEvent
     public static void utHorseInventory(PlayerEvent.PlayerLoggedOutEvent event)
     {
-        if (!UTConfig.BUGFIXES_ENTITIES.utDonkeyMuleDupeToggle) return;
+        if (!UTConfigBugfixes.ENTITIES.utDonkeyMuleDupeToggle) return;
         BlockPos playerPos = event.player.getPosition();
         event.player.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(playerPos.getX() - 32, playerPos.getY() - 32, playerPos.getZ() - 32, playerPos.getX() + 32, playerPos.getY() + 32, playerPos.getZ() + 32)).forEach(player -> {
             if (player.openContainer instanceof ContainerHorseInventory)

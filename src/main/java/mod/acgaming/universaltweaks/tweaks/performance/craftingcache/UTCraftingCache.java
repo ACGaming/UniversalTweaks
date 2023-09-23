@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.LoaderState;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 
 // Courtesy of EverNife
 public class UTCraftingCache
@@ -56,7 +56,7 @@ public class UTCraftingCache
             optionalContent = new UTOptionalContent<>();
             NON_NBT_CRAFT_CACHE.putAndMoveToFirst(matrixKey.hashCode(), optionalContent);
         }
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("Recipe HashCode: " + matrixKey.hashCode());
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("Recipe HashCode: " + matrixKey.hashCode());
         return optionalContent;
     }
 }

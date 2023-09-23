@@ -5,7 +5,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -17,8 +18,8 @@ public class UTLenientPathsBlockMixin
     @Inject(method = "updateBlockState", at = @At("HEAD"), cancellable = true)
     public void utLenientPathsBlock(World worldIn, BlockPos pos, CallbackInfo ci)
     {
-        if (!UTConfig.TWEAKS_BLOCKS.utLenientPathsToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLenientPathsBlock ::: Update block state");
+        if (!UTConfigTweaks.BLOCKS.utLenientPathsToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLenientPathsBlock ::: Update block state");
         ci.cancel();
     }
 }

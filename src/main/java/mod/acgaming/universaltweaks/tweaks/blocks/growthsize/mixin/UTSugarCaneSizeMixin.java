@@ -2,7 +2,7 @@ package mod.acgaming.universaltweaks.tweaks.blocks.growthsize.mixin;
 
 import net.minecraft.block.BlockReed;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
@@ -13,6 +13,6 @@ public class UTSugarCaneSizeMixin
     @ModifyConstant(method = "updateTick", constant = @Constant(intValue = 3))
     public int utSugarCaneSize(int constant)
     {
-        return UTConfig.TWEAKS_BLOCKS.utSugarCaneSize;
+        return UTConfigTweaks.BLOCKS.utSugarCaneSize;
     }
 }

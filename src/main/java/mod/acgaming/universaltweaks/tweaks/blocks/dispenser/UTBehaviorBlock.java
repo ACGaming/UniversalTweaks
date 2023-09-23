@@ -17,7 +17,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Vazkii
 public class UTBehaviorBlock extends BehaviorDefaultDispenseItem
@@ -34,7 +34,7 @@ public class UTBehaviorBlock extends BehaviorDefaultDispenseItem
     @Override
     public ItemStack dispenseStack(IBlockSource blockSource, ItemStack stack)
     {
-        if (UTConfig.TWEAKS_BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle)
+        if (UTConfigTweaks.BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle)
         {
             try
             {

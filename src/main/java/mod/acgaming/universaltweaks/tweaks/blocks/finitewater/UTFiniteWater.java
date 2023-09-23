@@ -12,7 +12,8 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTFiniteWater
@@ -20,13 +21,13 @@ public class UTFiniteWater
     @SubscribeEvent
     public static void utFiniteWater(BlockEvent.CreateFluidSourceEvent event)
     {
-        if (!UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFiniteWater ::: Create fluid source event");
+        if (!UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFiniteWater ::: Create fluid source event");
         World world = event.getWorld();
         BlockPos pos = event.getPos();
-        if (pos.getY() >= UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterInfMin && pos.getY() <= UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterInfMax) return;
+        if (pos.getY() >= UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterInfMin && pos.getY() <= UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterInfMax) return;
         Biome biome = world.getBiomeForCoordsBody(pos);
-        if (UTConfig.TWEAKS_BLOCKS.FINITE_WATER.utFiniteWaterWaterBiomes && (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN) || BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))) return;
+        if (UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterWaterBiomes && (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN) || BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))) return;
         IBlockState state = event.getState();
         if (state.getMaterial() == Material.WATER) event.setResult(Event.Result.DENY);
     }

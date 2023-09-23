@@ -10,7 +10,8 @@ import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.registries.GameData;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,8 +24,8 @@ public class UTPrefixCheckMixin
     @Inject(method = "checkPrefix(Ljava/lang/String;Z)Lnet/minecraft/util/ResourceLocation;", at = @At("HEAD"), cancellable = true, remap = false)
     private static void checkPrefix(String name, boolean warnOverrides, CallbackInfoReturnable<ResourceLocation> info)
     {
-        if (!UTConfig.TWEAKS_PERFORMANCE.utPrefixCheckToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPrefixCheckMixin ::: Check prefix");
+        if (!UTConfigTweaks.PERFORMANCE.utPrefixCheckToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPrefixCheckMixin ::: Check prefix");
         // Get position of the last separator
         final int separator = name.lastIndexOf(':');
         // Resolve the namespace

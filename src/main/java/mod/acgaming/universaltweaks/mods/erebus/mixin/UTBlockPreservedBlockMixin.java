@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import erebus.blocks.BlockPreservedBlock;
 import erebus.tileentity.TileEntityPreservedBlock;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -24,7 +24,7 @@ public class UTBlockPreservedBlockMixin
     @Inject(method = "getPickBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/nbt/NBTTagCompound;setTag(Ljava/lang/String;Lnet/minecraft/nbt/NBTBase;)V"), locals = LocalCapture.CAPTURE_FAILSOFT, cancellable = true)
     public void utGetPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player, CallbackInfoReturnable<ItemStack> cir, TileEntityPreservedBlock tile, BlockPreservedBlock.EnumAmberType type, ItemStack stack, NBTTagCompound tag)
     {
-        if (!UTConfig.MOD_INTEGRATION.EREBUS.utEBPreservedBlocksToggle) return;
+        if (!UTConfigMods.EREBUS.utEBPreservedBlocksToggle) return;
         NBTTagCompound entityNBT = tile.getEntityNBT();
         if (entityNBT != null)
         {

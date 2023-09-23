@@ -19,7 +19,8 @@ import net.minecraftforge.fml.common.ProgressManager;
 import net.minecraftforge.fml.common.ProgressManager.ProgressBar;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -44,8 +45,8 @@ public class UTAudioReloadMixin
     @Inject(method = "onResourceManagerReload(Lnet/minecraft/client/resources/IResourceManager;)V", at = @At("HEAD"), cancellable = true)
     public void utOnResourceManagerReload(IResourceManager resourceManager, CallbackInfo info)
     {
-        if (!UTConfig.TWEAKS_PERFORMANCE.utDisableAudioDebugToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAudioReloadMixin ::: Resource manager reload");
+        if (!UTConfigTweaks.PERFORMANCE.utDisableAudioDebugToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAudioReloadMixin ::: Resource manager reload");
         this.soundRegistry.clearMap();
         final List<Tuple<ResourceLocation, SoundList>> soundLists = new LinkedList<>();
         this.loadSoundLists(resourceManager, soundLists);

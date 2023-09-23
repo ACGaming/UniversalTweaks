@@ -13,7 +13,7 @@ import net.minecraft.world.chunk.storage.AnvilChunkLoader;
 import net.minecraft.world.chunk.storage.RegionFileCache;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -74,14 +74,14 @@ public abstract class UTChunkSavingMixin
     @Redirect(method = "loadChunk__Async", at = @At(value = "INVOKE", target = "Ljava/util/Map;get(Ljava/lang/Object;)Ljava/lang/Object;", ordinal = 0, remap = false), remap = false)
     private Object utPullChunkToSave(Map lChunksToSave, Object lpos)
     {
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChunkSaving ::: Pull chunk to save");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChunkSaving ::: Pull chunk to save");
         return this.reloadChunkFromSaveQueues((ChunkPos) lpos);
     }
 
     @Inject(method = "isChunkGeneratedAt", at = @At("HEAD"), cancellable = true)
     private void utOverrideIsChunkGeneratedAt(int x, int z, CallbackInfoReturnable<Boolean> ci)
     {
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChunkSaving ::: Check chunk generation");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChunkSaving ::: Check chunk generation");
         ChunkPos chunkpos = new ChunkPos(x, z);
         boolean exists = chunkExistInSaveQueues(chunkpos);
         ci.setReturnValue(exists || RegionFileCache.chunkExists(this.chunkSaveLocation, x, z));
@@ -90,7 +90,7 @@ public abstract class UTChunkSavingMixin
     @Redirect(method = "addChunkToPending", at = @At(value = "INVOKE", target = "Ljava/util/Set;contains(Ljava/lang/Object;)Z", remap = false))
     private boolean utOverrideAddChunkToPending(Set lChunksBeingSaved, Object lPos, ChunkPos pos, NBTTagCompound compound)
     {
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChunkSaving ::: Add chunk to pending");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChunkSaving ::: Add chunk to pending");
         this.queueChunkToSave(pos, compound);
         return true;
     }
@@ -98,7 +98,7 @@ public abstract class UTChunkSavingMixin
     @Inject(method = "writeNextIO", at = @At("HEAD"), cancellable = true)
     private void utOverrideWriteNextIO(CallbackInfoReturnable<Boolean> ci)
     {
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChunkSaving ::: Write next IO");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChunkSaving ::: Write next IO");
         Map.Entry<ChunkPos, NBTTagCompound> entry = this.fetchChunkToWrite();
         if (entry == null)
         {

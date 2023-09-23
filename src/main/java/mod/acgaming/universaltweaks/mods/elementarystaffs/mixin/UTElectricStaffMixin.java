@@ -12,7 +12,8 @@ import net.minecraft.world.World;
 
 import de.krokoyt.element.items.ElectricStaff;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -24,8 +25,8 @@ public abstract class UTElectricStaffMixin extends Item
     @Inject(method = "onItemRightClick", at = @At("HEAD"), cancellable = true)
     public void utElectricStaff(World worldIn, EntityPlayer p, EnumHand handIn, CallbackInfoReturnable<ActionResult<ItemStack>> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.ELEMENTARY_STAFFS.utESElectricStaffToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTElectricStaff ::: On item right click");
+        if (!UTConfigMods.ELEMENTARY_STAFFS.utESElectricStaffToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTElectricStaff ::: On item right click");
         double x = -Math.sin(Math.toRadians(p.rotationYaw));
         double z = Math.cos(Math.toRadians(p.rotationYaw));
         double y = -Math.sin(Math.toRadians(p.rotationPitch));

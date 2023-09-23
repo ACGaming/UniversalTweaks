@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.client.renderer.entity.layers.LayerWitherAura;
 import net.minecraft.entity.boss.EntityWither;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -19,6 +19,6 @@ public abstract class UTWitherLayerMixin implements LayerRenderer<EntityWither>
     @Inject(method = "doRenderLayer(Lnet/minecraft/entity/boss/EntityWither;FFFFFFF)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/GlStateManager;disableBlend()V", shift = At.Shift.AFTER))
     public void utWitherLayer(EntityWither entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale, CallbackInfo ci)
     {
-        if (UTConfig.BUGFIXES_MISC.utDepthMaskToggle) GlStateManager.depthMask(true);
+        if (UTConfigBugfixes.MISC.utDepthMaskToggle) GlStateManager.depthMask(true);
     }
 }

@@ -6,7 +6,8 @@ import net.minecraft.item.ItemStack;
 
 import com.jaquadro.minecraft.storagedrawers.capabilities.DrawerItemHandler;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,8 +21,8 @@ public abstract class UTDrawerItemHandlerMixin
     @Inject(method = "insertItem", at = @At("HEAD"), cancellable = true)
     public void utInsertItem(int slot, ItemStack stack, boolean simulate, CallbackInfoReturnable<ItemStack> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.STORAGE_DRAWERS.utSDItemHandlers) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDrawerItemHandler ::: Insert item");
+        if (!UTConfigMods.STORAGE_DRAWERS.utSDItemHandlers) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDrawerItemHandler ::: Insert item");
         if (slot == 0)
         {
             cir.setReturnValue(stack);

@@ -4,7 +4,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -16,9 +17,9 @@ public class UTSmeltingXPMixin
     @Inject(method = "getSmeltingExperience", at = @At("HEAD"), cancellable = true)
     public void utSmeltingXP(ItemStack stack, CallbackInfoReturnable<Float> cir)
     {
-        if (UTConfig.TWEAKS_MISC.utSmeltingXPToggle)
+        if (UTConfigTweaks.MISC.utSmeltingXPToggle)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSmeltingXP ::: Get smelting experience");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSmeltingXP ::: Get smelting experience");
             cir.setReturnValue(0.0F);
         }
     }

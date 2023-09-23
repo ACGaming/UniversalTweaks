@@ -5,7 +5,8 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.passive.AbstractHorse;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,8 +24,8 @@ public class UTSaddledWanderingMixin
     @Inject(method = "shouldExecute", at = @At("HEAD"), cancellable = true)
     public void utSaddledWandering(CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.TWEAKS_ENTITIES.utSaddledWanderingToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSaddledWandering ::: Should execute check");
+        if (!UTConfigTweaks.ENTITIES.utSaddledWanderingToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSaddledWandering ::: Should execute check");
         if (entity instanceof AbstractHorse && ((AbstractHorse) entity).isHorseSaddled()) cir.setReturnValue(false);
     }
 }

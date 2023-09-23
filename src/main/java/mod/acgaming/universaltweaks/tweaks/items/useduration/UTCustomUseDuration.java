@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTCustomUseDuration
@@ -29,7 +29,7 @@ public class UTCustomUseDuration
         itemUseCooldownMap.clear();
         try
         {
-            for (String config : UTConfig.TWEAKS_ITEMS.utCustomUseDurations)
+            for (String config : UTConfigTweaks.ITEMS.utCustomUseDurations)
             {
                 String[] configParts = config.split(";");
                 String[] itemParts = configParts[0].split(":");

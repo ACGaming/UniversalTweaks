@@ -6,7 +6,7 @@ import net.minecraft.world.WorldProvider;
 import net.minecraft.world.storage.ISaveHandler;
 import net.minecraft.world.storage.WorldInfo;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,6 +22,6 @@ public abstract class UTSeaLevelWorldMixin
     @Inject(method = "<init>", at = @At(value = "TAIL"))
     public void utSeaLevel(ISaveHandler saveHandlerIn, WorldInfo info, WorldProvider providerIn, Profiler profilerIn, boolean client, CallbackInfo ci)
     {
-        seaLevel = UTConfig.TWEAKS_WORLD.utSeaLevel;
+        seaLevel = UTConfigTweaks.WORLD.utSeaLevel;
     }
 }

@@ -8,7 +8,8 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -22,8 +23,8 @@ public class UTLongSwordMixin
     @Inject(method = "onItemRightClick", at = @At(value = "HEAD"), cancellable = true)
     public void utTConLongSwordOffhand(World worldIn, EntityPlayer playerIn, EnumHand hand, CallbackInfoReturnable<ActionResult<ItemStack>> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConShurikenToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLongSword ::: On item right click");
+        if (!UTConfigMods.TINKERS_CONSTRUCT.utTConShurikenToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLongSword ::: On item right click");
         if (!playerIn.getHeldItemOffhand().isEmpty() && (playerIn.getHeldItemOffhand().getItem() == TinkerRangedWeapons.shuriken))
         {
             cir.setReturnValue(ActionResult.newResult(EnumActionResult.PASS, playerIn.getHeldItem(hand)));

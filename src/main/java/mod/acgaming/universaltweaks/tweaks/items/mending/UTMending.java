@@ -18,7 +18,8 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of FloorIsJava & Rakambda
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
@@ -59,18 +60,18 @@ public class UTMending
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utPickupXP(PlayerPickupXpEvent event)
     {
-        if (!UTConfig.TWEAKS_ITEMS.MENDING.utMendingToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMending ::: Player pick up XP event");
+        if (!UTConfigTweaks.ITEMS.MENDING.utMendingToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMending ::: Player pick up XP event");
         event.setCanceled(true);
         EntityPlayer player = event.getEntityPlayer();
         EntityXPOrb xp = event.getOrb();
-        ItemStack itemStack = UTConfig.TWEAKS_ITEMS.MENDING.utMendingOPToggle ? getDamagedEnchantedItemOP(Enchantments.MENDING, player) : getDamagedEnchantedItem(Enchantments.MENDING, player);
+        ItemStack itemStack = UTConfigTweaks.ITEMS.MENDING.utMendingOPToggle ? getDamagedEnchantedItemOP(Enchantments.MENDING, player) : getDamagedEnchantedItem(Enchantments.MENDING, player);
         player.xpCooldown = 2;
         player.onItemPickup(xp, 1);
         if (!itemStack.isEmpty() && xp.xpValue > 0)
         {
-            int i = Math.min(roundAverage(xp.xpValue * (float) UTConfig.TWEAKS_ITEMS.MENDING.utMendingRatio), itemStack.getItemDamage());
-            xp.xpValue -= roundAverage(i / (float) UTConfig.TWEAKS_ITEMS.MENDING.utMendingRatio);
+            int i = Math.min(roundAverage(xp.xpValue * (float) UTConfigTweaks.ITEMS.MENDING.utMendingRatio), itemStack.getItemDamage());
+            xp.xpValue -= roundAverage(i / (float) UTConfigTweaks.ITEMS.MENDING.utMendingRatio);
             itemStack.setItemDamage(itemStack.getItemDamage() - i);
         }
         if (xp.xpValue > 0) player.addExperience(xp.xpValue);

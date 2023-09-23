@@ -15,7 +15,7 @@ import com.shinoow.abyssalcraft.api.transfer.caps.IItemTransferCapability;
 import com.shinoow.abyssalcraft.api.transfer.caps.ItemTransferCapability;
 import com.shinoow.abyssalcraft.common.entity.EntitySpiritItem;
 import com.shinoow.abyssalcraft.common.handlers.ItemTransferEventHandler;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -31,7 +31,7 @@ public class UTItemTransferEventHandlerMixin
     @Inject(method = "onTick", at = @At(value = "HEAD"), cancellable = true)
     private void utOnTick(TickEvent.WorldTickEvent event, CallbackInfo ci)
     {
-        if (!UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
+        if (!UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
         ci.cancel();
 
         // Mostly copied from original onTick()

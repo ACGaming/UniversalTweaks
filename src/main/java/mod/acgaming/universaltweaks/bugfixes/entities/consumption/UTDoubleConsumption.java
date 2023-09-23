@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 
 // MC-849
 // https://bugs.mojang.com/browse/MC-849
@@ -17,7 +17,7 @@ public class UTDoubleConsumption
     @SubscribeEvent
     public static void utDoubleConsumption(TickEvent.PlayerTickEvent event)
     {
-        if (event.phase == TickEvent.Phase.START && UTConfig.BUGFIXES_ENTITIES.utDoubleConsumptionToggle && event.player.getActiveItemStack() != ItemStack.EMPTY)
+        if (event.phase == TickEvent.Phase.START && UTConfigBugfixes.ENTITIES.utDoubleConsumptionToggle && event.player.getActiveItemStack() != ItemStack.EMPTY)
         {
             ItemStack currentItem = event.player.inventory.getCurrentItem();
             if (event.player.getActiveItemStack() != currentItem && ItemStack.areItemStacksEqual(currentItem, event.player.getActiveItemStack()))

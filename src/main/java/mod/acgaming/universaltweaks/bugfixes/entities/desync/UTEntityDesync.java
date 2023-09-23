@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 
 public class UTEntityDesync
 {
@@ -21,7 +21,7 @@ public class UTEntityDesync
         blacklistedEntityEntries.clear();
         try
         {
-            for (String entry : UTConfig.BUGFIXES_ENTITIES.ENTITY_DESYNC.utEntityDesyncBlacklist)
+            for (String entry : UTConfigBugfixes.ENTITIES.ENTITY_DESYNC.utEntityDesyncBlacklist)
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
                 if (ForgeRegistries.ENTITIES.containsKey(resLoc)) blacklistedEntityEntries.add(ForgeRegistries.ENTITIES.getValue(resLoc));

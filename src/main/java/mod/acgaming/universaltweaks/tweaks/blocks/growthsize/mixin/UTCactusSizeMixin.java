@@ -2,7 +2,7 @@ package mod.acgaming.universaltweaks.tweaks.blocks.growthsize.mixin;
 
 import net.minecraft.block.BlockCactus;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
@@ -13,6 +13,6 @@ public class UTCactusSizeMixin
     @ModifyConstant(method = "updateTick", constant = @Constant(intValue = 3))
     public int utCactusSize(int constant)
     {
-        return UTConfig.TWEAKS_BLOCKS.utCactusSize;
+        return UTConfigTweaks.BLOCKS.utCactusSize;
     }
 }

@@ -11,7 +11,8 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTRayTraceEntity;
 
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
@@ -20,8 +21,8 @@ public class UTEntityItemInteract
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void utEntityItemInteract(PlayerInteractEvent.RightClickBlock event)
     {
-        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEAutomaticPickupToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityItemInteract ::: Right click block");
+        if (UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEAutomaticPickupToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityItemInteract ::: Right click block");
         IBlockState state = event.getWorld().getBlockState(event.getPos()).getActualState(event.getWorld(), event.getPos());
         if (state.getCollisionBoundingBox(event.getWorld(), event.getPos()) != Block.NULL_AABB) return;
         EntityPlayer player = event.getEntityPlayer();

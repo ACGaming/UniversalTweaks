@@ -6,7 +6,8 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.nbt.NBTTagCompound;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -49,8 +50,8 @@ public abstract class UTMaxHealthMixin
     @Inject(method = "readEntityFromNBT", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/EntityLivingBase;setHealth(F)V"))
     public void utGetHealth(NBTTagCompound compound, CallbackInfo ci)
     {
-        if (!UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMaxHealth ::: Read entity from NBT");
+        if (!UTConfigBugfixes.ENTITIES.utMaxHealthToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMaxHealth ::: Read entity from NBT");
         final float savedHealth = compound.getFloat("Health");
         if (savedHealth > getMaxHealth() && savedHealth > 0) actualHealth = savedHealth;
     }
@@ -64,8 +65,8 @@ public abstract class UTMaxHealthMixin
     @Inject(method = "onUpdate", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/EntityLivingBase;ticksExisted:I"))
     public void utSetHealth(CallbackInfo ci)
     {
-        if (!UTConfig.BUGFIXES_ENTITIES.utMaxHealthToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMaxHealth ::: On update");
+        if (!UTConfigBugfixes.ENTITIES.utMaxHealthToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMaxHealth ::: On update");
         if (actualHealth != null)
         {
             if (actualHealth > 0 && actualHealth > this.getHealth()) this.setHealth(actualHealth);

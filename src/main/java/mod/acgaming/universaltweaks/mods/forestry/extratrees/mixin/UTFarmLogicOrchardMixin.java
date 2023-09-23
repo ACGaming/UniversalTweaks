@@ -6,7 +6,7 @@ import binnie.extratrees.items.ItemETFood;
 import forestry.api.farming.IFarmProperties;
 import forestry.farming.logic.FarmLogic;
 import forestry.farming.logic.FarmLogicOrchard;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,6 +23,6 @@ public abstract class UTFarmLogicOrchardMixin extends FarmLogic
     @Inject(method = "isAcceptedWindfall", at = @At("RETURN"), cancellable = true)
     public void utExtraTreesWindfall(ItemStack stack, CallbackInfoReturnable<Boolean> cir)
     {
-        if (UTConfig.MOD_INTEGRATION.FORESTRY.utFOGatherWindfallToggle && stack.getItem() instanceof ItemETFood) cir.setReturnValue(true);
+        if (UTConfigMods.FORESTRY.utFOGatherWindfallToggle && stack.getItem() instanceof ItemETFood) cir.setReturnValue(true);
     }
 }

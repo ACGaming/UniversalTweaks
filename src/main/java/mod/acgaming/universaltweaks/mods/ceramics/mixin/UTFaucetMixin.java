@@ -8,7 +8,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 
 import knightminer.ceramics.tileentity.TileFaucet;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -28,8 +29,8 @@ public abstract class UTFaucetMixin extends TileEntity
     @Inject(method = "doTransfer", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/fluids/capability/IFluidHandler;fill(Lnet/minecraftforge/fluids/FluidStack;Z)I", shift = At.Shift.BEFORE), cancellable = true)
     public void utFaucetGaseousFluids(CallbackInfo ci)
     {
-        if (!UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConGaseousFluidsToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFaucet ::: Check fluid type");
+        if (!UTConfigMods.TINKERS_CONSTRUCT.utTConGaseousFluidsToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFaucet ::: Check fluid type");
         FluidStack fluidStack = getFluidHandler(pos.offset(direction), direction.getOpposite()).drain(TRANSACTION_AMOUNT, false);
         if (fluidStack != null && fluidStack.getFluid().isGaseous())
         {

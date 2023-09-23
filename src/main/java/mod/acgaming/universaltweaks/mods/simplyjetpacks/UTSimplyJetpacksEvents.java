@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageClientStatesReset;
 import tonius.simplyjetpacks.handler.SyncHandler;
 import tonius.simplyjetpacks.network.NetworkHandler;
@@ -26,7 +26,7 @@ public class UTSimplyJetpacksEvents
     public void onClientPlayerLoggedOut(FMLNetworkEvent.ClientDisconnectionFromServerEvent event)
     {
         // Just clear the maps, the client-side ones should only track the client's player.
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSimplyJetpacksEvents ::: Logged out - clearing state maps");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSimplyJetpacksEvents ::: Logged out - clearing state maps");
         SyncHandler.clearAll();
     }
 

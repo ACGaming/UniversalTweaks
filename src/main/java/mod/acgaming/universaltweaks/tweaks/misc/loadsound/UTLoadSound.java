@@ -19,9 +19,9 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
-import static mod.acgaming.universaltweaks.config.UTConfig.TweaksMiscCategory.LoadSoundsCategory.EnumSoundModes.*;
+import static mod.acgaming.universaltweaks.config.UTConfigTweaks.MiscCategory.LoadSoundsCategory.EnumSoundModes.*;
 
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTLoadSound
@@ -40,7 +40,7 @@ public class UTLoadSound
         soundListWorld.clear();
         pitchListMC.clear();
         pitchListWorld.clear();
-        for (String sound : UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMC)
+        for (String sound : UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMC)
         {
             String[] soundEntries = sound.split(";");
             SoundEvent soundEvent = SoundEvent.REGISTRY.getObject(new ResourceLocation(soundEntries[0]));
@@ -55,7 +55,7 @@ public class UTLoadSound
                 UniversalTweaks.LOGGER.warn("Unable to find sound: {}", new ResourceLocation(soundEntries[0]));
             }
         }
-        for (String sound : UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundWorld)
+        for (String sound : UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundWorld)
         {
             String[] soundEntries = sound.split(";");
             SoundEvent soundEvent = SoundEvent.REGISTRY.getObject(new ResourceLocation(soundEntries[0]));
@@ -96,7 +96,7 @@ public class UTLoadSound
     {
         if (!playedMenu && event.getGui() instanceof GuiMainMenu)
         {
-            if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode == MINECRAFT || UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode == MINECRAFT_AND_WORLD) playRandomSoundMC();
+            if (UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode == MINECRAFT || UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode == MINECRAFT_AND_WORLD) playRandomSoundMC();
             playedMenu = true;
         }
     }
@@ -106,7 +106,7 @@ public class UTLoadSound
     {
         if (!playedWorld && event.getEntity() instanceof EntityPlayerSP)
         {
-            if (UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode == WORLD || UTConfig.TWEAKS_MISC.LOAD_SOUNDS.utLoadSoundMode == MINECRAFT_AND_WORLD) playRandomSoundWorld();
+            if (UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode == WORLD || UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode == MINECRAFT_AND_WORLD) playRandomSoundWorld();
             playedWorld = true;
         }
     }

@@ -4,7 +4,7 @@ import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.entity.ai.attributes.RangedAttribute;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 import static net.minecraft.entity.SharedMonsterAttributes.*;
 
@@ -15,16 +15,16 @@ public class UTAttributes
 
     public static void utSetAttributes()
     {
-        setValues(ATTRIBUTES[0], UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeMaxHealthMin, UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeMaxHealthMax);
-        setValues(ATTRIBUTES[1], UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeFollowRangeMin, UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeFollowRangeMax);
-        setValues(ATTRIBUTES[2], UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeKnockbackResistanceMin, UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeKnockbackResistanceMax);
-        setValues(ATTRIBUTES[3], UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeMovementSpeedMin, UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeMovementSpeedMax);
-        setValues(ATTRIBUTES[4], UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeFlyingSpeedMin, UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeFlyingSpeedMax);
-        setValues(ATTRIBUTES[5], UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeAttackDamageMin, UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeAttackDamageMax);
-        setValues(ATTRIBUTES[6], UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeAttackSpeedMin, UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeAttackSpeedMax);
-        setValues(ATTRIBUTES[7], UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeArmorMin, UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeArmorMax);
-        setValues(ATTRIBUTES[8], UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeArmorToughnessMin, UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeArmorToughnessMax);
-        setValues(ATTRIBUTES[9], UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeLuckMin, UTConfig.TWEAKS_ENTITIES.ATTRIBUTES.utAttributeLuckMax);
+        setValues(ATTRIBUTES[0], UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeMaxHealthMin, UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeMaxHealthMax);
+        setValues(ATTRIBUTES[1], UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeFollowRangeMin, UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeFollowRangeMax);
+        setValues(ATTRIBUTES[2], UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeKnockbackResistanceMin, UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeKnockbackResistanceMax);
+        setValues(ATTRIBUTES[3], UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeMovementSpeedMin, UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeMovementSpeedMax);
+        setValues(ATTRIBUTES[4], UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeFlyingSpeedMin, UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeFlyingSpeedMax);
+        setValues(ATTRIBUTES[5], UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeAttackDamageMin, UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeAttackDamageMax);
+        setValues(ATTRIBUTES[6], UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeAttackSpeedMin, UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeAttackSpeedMax);
+        setValues(ATTRIBUTES[7], UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeArmorMin, UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeArmorMax);
+        setValues(ATTRIBUTES[8], UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeArmorToughnessMin, UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeArmorToughnessMax);
+        setValues(ATTRIBUTES[9], UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeLuckMin, UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributeLuckMax);
     }
 
     public static void setValues(IAttribute attribute, double minValue, double maxValue)

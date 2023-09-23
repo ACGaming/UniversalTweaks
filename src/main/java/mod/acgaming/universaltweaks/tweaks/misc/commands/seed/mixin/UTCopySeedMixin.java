@@ -7,7 +7,8 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.event.ClickEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,11 +26,11 @@ public abstract class UTCopySeedMixin
     @Inject(method = "handleComponentClick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiScreen;sendChatMessage(Ljava/lang/String;Z)V"), cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
     private void utCopySeed(ITextComponent component, CallbackInfoReturnable<Boolean> cir, ClickEvent clickevent)
     {
-        if (!UTConfig.TWEAKS_MISC.utCopyWorldSeedToggle) return;
+        if (!UTConfigTweaks.MISC.utCopyWorldSeedToggle) return;
 
         String[] splitCommand = clickevent.getValue().split(" ");
         if (!splitCommand[0].equals("/utCopySeed")) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCopySeedMixin :: Copy seed");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCopySeedMixin :: Copy seed");
 
         GuiScreen.setClipboardString(splitCommand[1]);
         mc.player.sendMessage(new TextComponentString("Copied seed to clipboard!"));

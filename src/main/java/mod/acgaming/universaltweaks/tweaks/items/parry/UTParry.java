@@ -30,7 +30,8 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Drullkus
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
@@ -45,7 +46,7 @@ public class UTParry
         projectileList.clear();
         try
         {
-            for (String entry : UTConfig.TWEAKS_ITEMS.PARRY.utParryProjectileList)
+            for (String entry : UTConfigTweaks.ITEMS.PARRY.utParryProjectileList)
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
                 if (ForgeRegistries.ENTITIES.containsKey(resLoc)) projectileList.add(ForgeRegistries.ENTITIES.getValue(resLoc));
@@ -61,8 +62,8 @@ public class UTParry
     @SubscribeEvent
     public static void utRegisterEnchantment(RegistryEvent.Register<Enchantment> event)
     {
-        if (!UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle || !UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Register enchantment");
+        if (!UTConfigTweaks.ITEMS.PARRY.utParryToggle || !UTConfigTweaks.ITEMS.PARRY.utParryReboundToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Register enchantment");
         enchantmentTypeShield = EnumHelper.addEnchantmentType("shield", input -> input instanceof ItemShield || input != null && input.isShield(new ItemStack(input, 1, 0), null));
         enchantment = new EnchantmentRebound(Enchantment.Rarity.COMMON).setRegistryName(new ResourceLocation("parry", "parry")).setName("parry");
         event.getRegistry().register(enchantment);
@@ -71,11 +72,11 @@ public class UTParry
     @SubscribeEvent
     public static void utArrowParry(ProjectileImpactEvent.Arrow event)
     {
-        if (!UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry arrow");
+        if (!UTConfigTweaks.ITEMS.PARRY.utParryToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry arrow");
         final EntityArrow projectile = event.getArrow();
         final EntityEntry projectileEntity = EntityRegistry.getEntry(projectile.getClass());
-        boolean isBlacklist = UTConfig.TWEAKS_ITEMS.PARRY.utParryProjectileListMode == UTConfig.EnumLists.BLACKLIST;
+        boolean isBlacklist = UTConfigTweaks.ITEMS.PARRY.utParryProjectileListMode == UTConfigTweaks.EnumLists.BLACKLIST;
         if (projectileList.contains(projectileEntity) == isBlacklist) return;
         if (!projectile.getEntityWorld().isRemote)
         {
@@ -85,20 +86,20 @@ public class UTParry
                 if (entity instanceof EntityLivingBase)
                 {
                     EntityLivingBase entityBlocking = (EntityLivingBase) entity;
-                    if (UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
+                    if (UTConfigTweaks.ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
                     if (entityBlocking.canBlockDamageSource(new DamageSource("parry_this")
                     {
                         public Vec3d getDamageLocation()
                         {
                             return projectile.getPositionVector();
                         }
-                    }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfig.TWEAKS_ITEMS.PARRY.utParryArrowTimeWindow, entityBlocking.getActiveItemStack(), (float) UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundMultiplier))
+                    }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfigTweaks.ITEMS.PARRY.utParryArrowTimeWindow, entityBlocking.getActiveItemStack(), (float) UTConfigTweaks.ITEMS.PARRY.utParryReboundMultiplier))
                     {
                         Vec3d playerVec3 = entityBlocking.getLookVec();
                         projectile.shoot(playerVec3.x, playerVec3.y, playerVec3.z, 1.1F, 0.1F);
                         projectile.shootingEntity = entityBlocking;
                         entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.PLAYERS, 1.0F, 0.8F + entityBlocking.world.rand.nextFloat() * 0.4F);
-                        if (UTConfig.TWEAKS_ITEMS.PARRY.utParrySound) entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 0.5F, 2.0F);
+                        if (UTConfigTweaks.ITEMS.PARRY.utParrySound) entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 0.5F, 2.0F);
                         event.setCanceled(true);
                     }
                 }
@@ -109,11 +110,11 @@ public class UTParry
     @SubscribeEvent
     public static void utFireballParry(ProjectileImpactEvent.Fireball event)
     {
-        if (!UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry fireball");
+        if (!UTConfigTweaks.ITEMS.PARRY.utParryToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry fireball");
         final EntityFireball projectile = event.getFireball();
         final EntityEntry projectileEntity = EntityRegistry.getEntry(projectile.getClass());
-        boolean isBlacklist = UTConfig.TWEAKS_ITEMS.PARRY.utParryProjectileListMode == UTConfig.EnumLists.BLACKLIST;
+        boolean isBlacklist = UTConfigTweaks.ITEMS.PARRY.utParryProjectileListMode == UTConfigTweaks.EnumLists.BLACKLIST;
         if (projectileList.contains(projectileEntity) == isBlacklist) return;
         if (!projectile.getEntityWorld().isRemote)
         {
@@ -123,14 +124,14 @@ public class UTParry
                 if (entity instanceof EntityLivingBase)
                 {
                     EntityLivingBase entityBlocking = (EntityLivingBase) entity;
-                    if (UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
+                    if (UTConfigTweaks.ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
                     if (entityBlocking.canBlockDamageSource(new DamageSource("parry_this")
                     {
                         public Vec3d getDamageLocation()
                         {
                             return projectile.getPositionVector();
                         }
-                    }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfig.TWEAKS_ITEMS.PARRY.utParryFireballTimeWindow, entityBlocking.getActiveItemStack(), (float) UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundMultiplier))
+                    }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfigTweaks.ITEMS.PARRY.utParryFireballTimeWindow, entityBlocking.getActiveItemStack(), (float) UTConfigTweaks.ITEMS.PARRY.utParryReboundMultiplier))
                     {
                         Vec3d playerVec3 = entityBlocking.getLookVec();
                         projectile.motionX = playerVec3.x;
@@ -141,7 +142,7 @@ public class UTParry
                         projectile.accelerationZ = projectile.motionZ * 0.1D;
                         projectile.shootingEntity = entityBlocking;
                         entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.PLAYERS, 1.0F, 0.8F + entityBlocking.world.rand.nextFloat() * 0.4F);
-                        if (UTConfig.TWEAKS_ITEMS.PARRY.utParrySound) entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 0.5F, 2.0F);
+                        if (UTConfigTweaks.ITEMS.PARRY.utParrySound) entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 0.5F, 2.0F);
                         event.setCanceled(true);
                     }
                 }
@@ -152,11 +153,11 @@ public class UTParry
     @SubscribeEvent
     public static void utThrowableParry(ProjectileImpactEvent.Throwable event)
     {
-        if (!UTConfig.TWEAKS_ITEMS.PARRY.utParryToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry throwable");
+        if (!UTConfigTweaks.ITEMS.PARRY.utParryToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry throwable");
         final EntityThrowable projectile = event.getThrowable();
         final EntityEntry projectileEntity = EntityRegistry.getEntry(projectile.getClass());
-        boolean isBlacklist = UTConfig.TWEAKS_ITEMS.PARRY.utParryProjectileListMode == UTConfig.EnumLists.BLACKLIST;
+        boolean isBlacklist = UTConfigTweaks.ITEMS.PARRY.utParryProjectileListMode == UTConfigTweaks.EnumLists.BLACKLIST;
         if (projectileList.contains(projectileEntity) == isBlacklist) return;
         if (!projectile.getEntityWorld().isRemote)
         {
@@ -164,20 +165,20 @@ public class UTParry
             if (event.getEntity() != null && entity instanceof EntityLivingBase)
             {
                 EntityLivingBase entityBlocking = (EntityLivingBase) entity;
-                if (UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
+                if (UTConfigTweaks.ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
                 if (entityBlocking.canBlockDamageSource(new DamageSource("parry_this")
                 {
                     public Vec3d getDamageLocation()
                     {
                         return projectile.getPositionVector();
                     }
-                }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfig.TWEAKS_ITEMS.PARRY.utParryThrowableTimeWindow, entityBlocking.getActiveItemStack(), (float) UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundMultiplier))
+                }) && (entityBlocking.getActiveItemStack().getItem().getMaxItemUseDuration(entityBlocking.getActiveItemStack()) - entityBlocking.getItemInUseCount()) <= applyTimerBonus(UTConfigTweaks.ITEMS.PARRY.utParryThrowableTimeWindow, entityBlocking.getActiveItemStack(), (float) UTConfigTweaks.ITEMS.PARRY.utParryReboundMultiplier))
                 {
                     Vec3d playerVec3 = entityBlocking.getLookVec();
                     projectile.shoot(playerVec3.x, playerVec3.y, playerVec3.z, 1.1F, 0.1F);
                     projectile.thrower = entityBlocking;
                     entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.PLAYERS, 1.0F, 0.8F + entityBlocking.world.rand.nextFloat() * 0.4F);
-                    if (UTConfig.TWEAKS_ITEMS.PARRY.utParrySound) entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 0.5F, 2.0F);
+                    if (UTConfigTweaks.ITEMS.PARRY.utParrySound) entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 0.5F, 2.0F);
                     event.setCanceled(true);
                 }
             }
@@ -213,13 +214,13 @@ public class UTParry
         @Override
         public int getMaxLevel()
         {
-            return UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundMaxLevel;
+            return UTConfigTweaks.ITEMS.PARRY.utParryReboundMaxLevel;
         }
 
         @Override
         public boolean isTreasureEnchantment()
         {
-            return UTConfig.TWEAKS_ITEMS.PARRY.utParryReboundTreasure;
+            return UTConfigTweaks.ITEMS.PARRY.utParryReboundTreasure;
         }
 
         @Override

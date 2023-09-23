@@ -5,7 +5,7 @@ import java.util.List;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraftforge.fml.common.registry.VillagerRegistry;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -17,6 +17,6 @@ public class UTVillagerRegistryMixin
     @Inject(method = "getTrades", at = @At("RETURN"), cancellable = true)
     public void utGetTrades(int level, CallbackInfoReturnable<List<EntityVillager.ITradeList>> cir)
     {
-        if (UTConfig.TWEAKS_ENTITIES.utVillagerTradeLevelingToggle && level > 0) cir.setReturnValue(null);
+        if (UTConfigTweaks.ENTITIES.utVillagerTradeLevelingToggle && level > 0) cir.setReturnValue(null);
     }
 }

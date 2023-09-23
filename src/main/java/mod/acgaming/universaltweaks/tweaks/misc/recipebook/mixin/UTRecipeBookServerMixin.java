@@ -8,7 +8,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.stats.RecipeBookServer;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -21,24 +22,24 @@ public class UTRecipeBookServerMixin
     @Inject(method = "init", at = @At("HEAD"), cancellable = true)
     public void utRecipeBookInit(EntityPlayerMP player, CallbackInfo ci)
     {
-        if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Init");
+        if (!UTConfigTweaks.MISC.utRecipeBookToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Init");
         ci.cancel();
     }
 
     @Inject(method = "add", at = @At("HEAD"), cancellable = true)
     public void utRecipeBookAdd(List<IRecipe> recipesIn, EntityPlayerMP player, CallbackInfo ci)
     {
-        if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Add");
+        if (!UTConfigTweaks.MISC.utRecipeBookToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Add");
         ci.cancel();
     }
 
     @Inject(method = "remove", at = @At("HEAD"), cancellable = true)
     public void utRecipeBookRemove(List<IRecipe> recipesIn, EntityPlayerMP player, CallbackInfo ci)
     {
-        if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Remove");
+        if (!UTConfigTweaks.MISC.utRecipeBookToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Remove");
         ci.cancel();
     }
 
@@ -48,8 +49,8 @@ public class UTRecipeBookServerMixin
     @Inject(method = "write", at = @At("HEAD"), cancellable = true)
     public void utRecipeBookWrite(CallbackInfoReturnable<NBTTagCompound> cir)
     {
-        if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Write");
+        if (!UTConfigTweaks.MISC.utRecipeBookToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Write");
         cir.setReturnValue(new NBTTagCompound());
     }
 
@@ -59,8 +60,8 @@ public class UTRecipeBookServerMixin
     @Inject(method = "read", at = @At("HEAD"), cancellable = true)
     public void utRecipeBookRead(NBTTagCompound tag, CallbackInfo ci)
     {
-        if (!UTConfig.TWEAKS_MISC.utRecipeBookToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Read");
+        if (!UTConfigTweaks.MISC.utRecipeBookToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRecipeBookServer ::: Read");
         ci.cancel();
     }
 }

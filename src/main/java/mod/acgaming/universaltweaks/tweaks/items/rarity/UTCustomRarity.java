@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 public class UTCustomRarity
 {
@@ -19,7 +19,7 @@ public class UTCustomRarity
         itemRarityMap.clear();
         try
         {
-            for (String config : UTConfig.TWEAKS_ITEMS.utCustomRarities)
+            for (String config : UTConfigTweaks.ITEMS.utCustomRarities)
             {
                 String[] configParts = config.split(";");
                 String[] itemParts = configParts[0].split(":");

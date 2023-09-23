@@ -11,7 +11,7 @@ import com.teamacronymcoders.contenttweaker.modules.chickens.ChickenFactory;
 import com.teamacronymcoders.contenttweaker.modules.chickens.ChickenRepresentation;
 import crafttweaker.CraftTweakerAPI;
 import crafttweaker.api.minecraft.CraftTweakerMC;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 
 // Courtesy of jchung01
 public class UTChickenRegistration
@@ -33,7 +33,7 @@ public class UTChickenRegistration
             );
             ChickensRegistry.register(item);
         }
-        if (UTConfig.DEBUG.utDebugToggle)
+        if (UTConfigGeneral.DEBUG.utDebugToggle)
         {
             CraftTweakerAPI.logInfo("UTChickenModuleMixin ::: Dumping chicken registry!");
             for (ChickensRegistryItem chicken : ChickensRegistry.getItems())
@@ -46,7 +46,7 @@ public class UTChickenRegistration
     // finish setting up chickens in init, after registries/resources are loaded
     public static void utInitChickens()
     {
-        if (UTConfig.DEBUG.utDebugToggle)
+        if (UTConfigGeneral.DEBUG.utDebugToggle)
         {
             CraftTweakerAPI.logInfo("UTChickenModuleMixin ::: Dumping chicken registry! (in init)");
             for (ChickensRegistryItem chicken : ChickensRegistry.getItems())

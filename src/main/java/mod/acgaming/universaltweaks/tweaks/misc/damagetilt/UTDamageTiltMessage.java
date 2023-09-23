@@ -9,7 +9,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import io.netty.buffer.ByteBuf;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Charles445
 public class UTDamageTiltMessage implements IMessage
@@ -40,7 +40,7 @@ public class UTDamageTiltMessage implements IMessage
         @SideOnly(Side.CLIENT)
         public static void fromMessage(UTDamageTiltMessage message)
         {
-            if (!UTConfig.TWEAKS_MISC.utDamageTiltToggle) return;
+            if (!UTConfigTweaks.MISC.utDamageTiltToggle) return;
             Minecraft.getMinecraft().player.attackedAtYaw = message.attackedAtYaw;
         }
 

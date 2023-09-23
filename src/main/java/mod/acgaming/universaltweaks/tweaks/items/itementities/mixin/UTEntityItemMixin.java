@@ -9,7 +9,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -35,7 +35,7 @@ public abstract class UTEntityItemMixin extends Entity
     public boolean isCollectionTool(Item item)
     {
         String registryName = item.getRegistryName().toString();
-        for (String collectionTool : UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIECollectionTools)
+        for (String collectionTool : UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIECollectionTools)
         {
             if (registryName.equals(collectionTool)) return true;
         }
@@ -48,14 +48,14 @@ public abstract class UTEntityItemMixin extends Entity
     @Override
     public AxisAlignedBB getCollisionBoundingBox()
     {
-        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10) return this.getEntityBoundingBox();
+        if (UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10) return this.getEntityBoundingBox();
         else return null;
     }
 
     @Override
     public void applyEntityCollision(Entity entity)
     {
-        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10)
+        if (UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10)
         {
             if (entity instanceof EntityItem)
             {
@@ -69,21 +69,21 @@ public abstract class UTEntityItemMixin extends Entity
     @Override
     public boolean canBeCollidedWith()
     {
-        return UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10;
+        return UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10;
     }
 
     @Override
     public boolean canBePushed()
     {
-        return UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10;
+        return UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10;
     }
 
     @Override
     public boolean processInitialInteract(EntityPlayer player, EnumHand hand)
     {
-        if (!UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEAutomaticPickupToggle)
+        if (!UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEAutomaticPickupToggle)
         {
-            if (!UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESneakingPickupToggle || player.isSneaking())
+            if (!UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIESneakingPickupToggle || player.isSneaking())
             {
                 playerInteraction = true;
                 this.onCollideWithPlayer(player);
@@ -98,7 +98,7 @@ public abstract class UTEntityItemMixin extends Entity
     @Override
     public AxisAlignedBB getCollisionBox(Entity entity)
     {
-        return UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10 || entity.canBePushed() ? entity.getEntityBoundingBox() : null;
+        return UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10 || entity.canBePushed() ? entity.getEntityBoundingBox() : null;
     }
 
     @Inject(method = "onCollideWithPlayer", at = @At("HEAD"), cancellable = true)
@@ -106,7 +106,7 @@ public abstract class UTEntityItemMixin extends Entity
     {
         Item heldItemMainhand = entityIn.getHeldItemMainhand().getItem();
         Item heldItemOffhand = entityIn.getHeldItemOffhand().getItem();
-        if (!UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEAutomaticPickupToggle && !playerInteraction && !isCollectionTool(heldItemMainhand) && !isCollectionTool(heldItemOffhand) || UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESneakingPickupToggle && !entityIn.isSneaking())
+        if (!UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEAutomaticPickupToggle && !playerInteraction && !isCollectionTool(heldItemMainhand) && !isCollectionTool(heldItemOffhand) || UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIESneakingPickupToggle && !entityIn.isSneaking())
         {
             ci.cancel();
         }
@@ -115,21 +115,21 @@ public abstract class UTEntityItemMixin extends Entity
     @Inject(method = "setPickupDelay", at = @At("TAIL"))
     public void utIESetPickupDelay(int ticks, CallbackInfo ci)
     {
-        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEPickupDelay > -1) this.pickupDelay = UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEPickupDelay;
+        if (UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPickupDelay > -1) this.pickupDelay = UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPickupDelay;
     }
 
     @Inject(method = "setDefaultPickupDelay", at = @At(value = "TAIL"))
     public void utIESetDefaultPickupDelay(CallbackInfo ci)
     {
-        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEPickupDelay > -1) this.pickupDelay = UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIEPickupDelay;
+        if (UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPickupDelay > -1) this.pickupDelay = UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPickupDelay;
     }
 
     // Courtesy of Darkhax, bl4ckscor3
     @Inject(method = "searchForOtherItemsNearby", at = @At("HEAD"), cancellable = true)
     public void utIECombinationSearch(CallbackInfo ci)
     {
-        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIENoCombinationToggle) ci.cancel();
-        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESmartCombinationToggle)
+        if (UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIENoCombinationToggle) ci.cancel();
+        if (UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIESmartCombinationToggle)
         {
             // Check maximum stack size
             final ItemStack stack = this.getItem();
@@ -137,8 +137,8 @@ public abstract class UTEntityItemMixin extends Entity
             // Check configurable radius
             EntityItem entityItem = (EntityItem) (Object) this;
             if (entityItem.ticksExisted < 20) return;
-            double radius = UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESmartCombinationRadius;
-            boolean checkY = UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESmartCombinationYAxis;
+            double radius = UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIESmartCombinationRadius;
+            boolean checkY = UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIESmartCombinationYAxis;
             for (EntityItem i : entityItem.world.getEntitiesWithinAABB(EntityItem.class, entityItem.getEntityBoundingBox().grow(radius, checkY ? radius : 0, radius))) entityItem.combineItems(i);
             ci.cancel();
         }
@@ -148,8 +148,8 @@ public abstract class UTEntityItemMixin extends Entity
     @Inject(method = "combineItems", at = @At("HEAD"), cancellable = true)
     public void utIECombinationCombine(EntityItem other, CallbackInfoReturnable<Boolean> cir)
     {
-        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIENoCombinationToggle) cir.setReturnValue(false);
-        if (UTConfig.TWEAKS_ITEMS.ITEM_ENTITIES.utIESmartCombinationToggle)
+        if (UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIENoCombinationToggle) cir.setReturnValue(false);
+        if (UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIESmartCombinationToggle)
         {
             // Check maximum stack size
             final ItemStack stack = this.getItem();

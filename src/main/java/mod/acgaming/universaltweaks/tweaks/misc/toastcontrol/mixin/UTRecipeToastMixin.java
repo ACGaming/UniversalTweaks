@@ -4,7 +4,7 @@ import net.minecraft.client.gui.toasts.GuiToast;
 import net.minecraft.client.gui.toasts.RecipeToast;
 import net.minecraft.item.crafting.IRecipe;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -16,6 +16,6 @@ public class UTRecipeToastMixin
     @Inject(method = "addOrUpdate", at = @At(value = "HEAD"), cancellable = true)
     private static void utRecipeToast(GuiToast p_193665_0_, IRecipe p_193665_1_, CallbackInfo ci)
     {
-        if (UTConfig.TWEAKS_MISC.TOAST_CONTROL.utToastControlRecipesToggle) ci.cancel();
+        if (UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlRecipesToggle) ci.cancel();
     }
 }

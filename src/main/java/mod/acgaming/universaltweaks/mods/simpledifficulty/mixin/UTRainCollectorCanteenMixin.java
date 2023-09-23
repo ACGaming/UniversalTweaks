@@ -17,7 +17,8 @@ import com.charles445.simpledifficulty.block.BlockRainCollector;
 import com.charles445.simpledifficulty.item.ItemCanteen;
 import com.charles445.simpledifficulty.util.SoundUtil;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -38,8 +39,8 @@ public abstract class UTRainCollectorCanteenMixin
     @Inject(method = "onBlockActivated", at = @At(value = "RETURN", ordinal = 4), cancellable = true)
     public void utRainCollectorCanteen(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.SIMPLE_DIFFICULTY.utRainCollectorCanteenToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRainCollectorCanteen ::: On block activated");
+        if (!UTConfigMods.SIMPLE_DIFFICULTY.utRainCollectorCanteenToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRainCollectorCanteen ::: On block activated");
         ItemStack itemStack = player.getHeldItem(hand);
         Item item = itemStack.getItem();
         int amount = state.getValue(LEVEL);

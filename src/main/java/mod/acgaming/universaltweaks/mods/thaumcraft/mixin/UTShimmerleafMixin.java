@@ -8,7 +8,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import thaumcraft.common.blocks.world.plants.BlockPlantShimmerleaf;
 
@@ -25,7 +25,7 @@ public class UTShimmerleafMixin extends BlockBush
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos)
     {
-        if (UTConfig.MOD_INTEGRATION.THAUMCRAFT.utTCFlowerBoundingBoxToggle) return BUSH_AABB.offset(state.getOffset(world, pos));
+        if (UTConfigMods.THAUMCRAFT.utTCFlowerBoundingBoxToggle) return BUSH_AABB.offset(state.getOffset(world, pos));
         else return BUSH_AABB;
     }
 }

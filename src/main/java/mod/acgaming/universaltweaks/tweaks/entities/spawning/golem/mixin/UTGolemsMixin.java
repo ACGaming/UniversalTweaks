@@ -6,7 +6,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,14 +20,14 @@ public abstract class UTGolemsMixin
     @Inject(method = "trySpawnGolem", at = @At("HEAD"), cancellable = true)
     public void utGolemSpawnCheck(World worldIn, BlockPos pos, CallbackInfo ci)
     {
-        if (UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGSnowGolemToggle && this.getSnowmanPattern().match(worldIn, pos) != null)
+        if (UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGSnowGolemToggle && this.getSnowmanPattern().match(worldIn, pos) != null)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTNoGolems ::: No snow golem spawn");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTNoGolems ::: No snow golem spawn");
             ci.cancel();
         }
-        if (UTConfig.TWEAKS_ENTITIES.NO_GOLEMS.utNGIronGolemToggle && this.getGolemPattern().match(worldIn, pos) != null)
+        if (UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGIronGolemToggle && this.getGolemPattern().match(worldIn, pos) != null)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTNoGolems ::: No iron golem spawn");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTNoGolems ::: No iron golem spawn");
             ci.cancel();
         }
     }

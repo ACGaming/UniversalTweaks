@@ -6,7 +6,8 @@ import net.minecraft.entity.player.PlayerCapabilities;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
@@ -26,9 +27,9 @@ public abstract class UTLadderFlyingPlayerMixin extends EntityLivingBase
     @Override
     public boolean isOnLadder()
     {
-        if (UTConfig.BUGFIXES_BLOCKS.utLadderFlyingToggle)
+        if (UTConfigBugfixes.BLOCKS.utLadderFlyingToggle)
         {
-            if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLadderFlyingPlayer ::: Player climb check");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTLadderFlyingPlayer ::: Player climb check");
             if (capabilities.isFlying) return false;
         }
         return super.isOnLadder();

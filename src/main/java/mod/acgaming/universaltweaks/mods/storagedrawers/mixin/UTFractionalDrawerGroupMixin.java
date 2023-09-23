@@ -2,7 +2,8 @@ package mod.acgaming.universaltweaks.mods.storagedrawers.mixin;
 
 import com.jaquadro.minecraft.storagedrawers.api.storage.IDrawerAttributes;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,8 +20,8 @@ public class UTFractionalDrawerGroupMixin
     @Inject(method = {"adjustStoredItemCount"}, at = @At(value = "HEAD"), cancellable = true)
     public void utAdjustStoredItemCount(int slot, int amount, CallbackInfoReturnable<Integer> cir)
     {
-        if (!UTConfig.MOD_INTEGRATION.STORAGE_DRAWERS.utSDItemHandlers) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFractionalDrawerGroup ::: Adjust stored item count");
+        if (!UTConfigMods.STORAGE_DRAWERS.utSDItemHandlers) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFractionalDrawerGroup ::: Adjust stored item count");
         if (this.attrs.isUnlimitedVending()) cir.setReturnValue(0);
     }
 }

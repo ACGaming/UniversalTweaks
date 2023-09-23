@@ -8,7 +8,8 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTRandomUtil;
 
 // Courtesy of UeberallGebannt
@@ -26,9 +27,9 @@ public class UTChargedCreepers
     {
         if (!(event.getEntity() instanceof EntityCreeper) || event.getWorld().isRemote) return;
 
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChargedCreepers ::: Creeper Spawn Event");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChargedCreepers ::: Creeper Spawn Event");
 
-        double chargedChance = UTConfig.TWEAKS_ENTITIES.utCreeperChargedChance;
+        double chargedChance = UTConfigTweaks.ENTITIES.utCreeperChargedChance;
         if (chargedChance <= 0.0D) return;
 
         if (event.getEntity().getTags().contains(SPAWNED_CHECK_TAG) || event.getEntity().getTags().contains(NCC_CHECK_TAG)) return;
@@ -36,7 +37,7 @@ public class UTChargedCreepers
 
         if (!UTRandomUtil.chance(chargedChance)) return;
 
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChargedCreepers ::: Creeper Spawn Event Charged");
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChargedCreepers ::: Creeper Spawn Event Charged");
 
         EntityCreeper creeper = (EntityCreeper) event.getEntity();
         NBTTagCompound tags = new NBTTagCompound();

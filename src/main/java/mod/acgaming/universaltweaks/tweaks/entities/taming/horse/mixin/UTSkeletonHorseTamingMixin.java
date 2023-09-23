@@ -4,7 +4,7 @@ import net.minecraft.entity.passive.AbstractHorse;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.world.World;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -20,6 +20,6 @@ public abstract class UTSkeletonHorseTamingMixin extends AbstractHorse
     @Redirect(method = "processInteract", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/EntitySkeletonHorse;isTame()Z"))
     public boolean utSkeletonHorseTaming(EntitySkeletonHorse horse)
     {
-        return this.isTame() || UTConfig.TWEAKS_ENTITIES.UNDEAD_HORSES.utTamingUndeadHorsesToggle;
+        return this.isTame() || UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utTamingUndeadHorsesToggle;
     }
 }

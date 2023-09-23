@@ -4,7 +4,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import thaumcraft.client.renderers.entity.mob.RenderEldritchCrab;
 import thaumcraft.common.entities.monster.EntityEldritchCrab;
@@ -21,7 +21,7 @@ public abstract class UTEldritchCrabRenderMixin extends RenderLiving<EntityEldri
     @Override
     public float getDeathMaxRotation(EntityEldritchCrab entity)
     {
-        if (UTConfig.MOD_INTEGRATION.THAUMCRAFT_ENTITIES.utTCSpiderlikeEldritchCrabToggle) return 180.0F;
+        if (UTConfigMods.THAUMCRAFT_ENTITIES.utTCSpiderlikeEldritchCrabToggle) return 180.0F;
         else return 90.0F;
     }
 }

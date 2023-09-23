@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of modmuss50
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
@@ -26,7 +26,7 @@ public class UTToggleCheats
     @SubscribeEvent
     public static void utToggleCheatsInitGUI(GuiScreenEvent.InitGuiEvent event)
     {
-        if (!UTConfig.TWEAKS_MISC.utToggleCheatsToggle || !isEscMenuSP(event.getGui())) return;
+        if (!UTConfigTweaks.MISC.utToggleCheatsToggle || !isEscMenuSP(event.getGui())) return;
         GuiScreen gui = event.getGui();
         Optional<GuiButton> optionalButton = getButton(event.getButtonList(), 7);
         if (!optionalButton.isPresent()) return;
@@ -40,7 +40,7 @@ public class UTToggleCheats
     @SubscribeEvent
     public static void utToggleCheatsActionPerformed(GuiScreenEvent.ActionPerformedEvent.Post event)
     {
-        if (!UTConfig.TWEAKS_MISC.utToggleCheatsToggle || !isEscMenuSP(event.getGui())) return;
+        if (!UTConfigTweaks.MISC.utToggleCheatsToggle || !isEscMenuSP(event.getGui())) return;
         if (event.getButton().id == 101)
         {
             toggleCheats(!areCheatsEnabled());

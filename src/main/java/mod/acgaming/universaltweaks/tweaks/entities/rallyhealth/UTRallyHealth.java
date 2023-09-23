@@ -15,7 +15,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Mrbysco
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
@@ -24,8 +25,8 @@ public class UTRallyHealth
     @SubscribeEvent
     public static void utDamageHandler(LivingHurtEvent event)
     {
-        if (!UTConfig.TWEAKS_ENTITIES.RALLY_HEALTH.utRallyHealthToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRallyHealth ::: Damage handler");
+        if (!UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRallyHealth ::: Damage handler");
         if (event.getEntityLiving() instanceof EntityPlayer)
         {
             EntityPlayer player = (EntityPlayer) event.getEntityLiving();
@@ -43,8 +44,8 @@ public class UTRallyHealth
     @SubscribeEvent
     public static void utLivingAttack(LivingAttackEvent event)
     {
-        if (!UTConfig.TWEAKS_ENTITIES.RALLY_HEALTH.utRallyHealthToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRallyHealth ::: Living attack");
+        if (!UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRallyHealth ::: Living attack");
         if (event.getSource().getDamageType().equals("player") && event.getSource().getTrueSource() instanceof EntityPlayer)
         {
             EntityPlayer player = (EntityPlayer) event.getSource().getTrueSource();
@@ -52,11 +53,11 @@ public class UTRallyHealth
             if (event.getEntityLiving().getName().equals(playerData.getString("lastMob"))
                 && !player.world.isRemote
                 && playerData.getBoolean("atRisk")
-                && player.world.rand.nextInt(100) < UTConfig.TWEAKS_ENTITIES.RALLY_HEALTH.utRallyHealthHealChance)
+                && player.world.rand.nextInt(100) < UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthHealChance)
             {
                 player.heal(playerData.getFloat("lastDamage"));
                 playerData.setBoolean("atRisk", false);
-                if (UTConfig.TWEAKS_ENTITIES.RALLY_HEALTH.utRallyHealthSound)
+                if (UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthSound)
                 {
                     player.world.playSound(null, player.getPosition(), SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 0.5F, 2.0F);
                 }
@@ -67,8 +68,8 @@ public class UTRallyHealth
     @SubscribeEvent
     public static void utRiskEvent(TickEvent.PlayerTickEvent event)
     {
-        if (!UTConfig.TWEAKS_ENTITIES.RALLY_HEALTH.utRallyHealthToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRallyHealth ::: Risk event");
+        if (!UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRallyHealth ::: Risk event");
         if (event.phase.equals(TickEvent.Phase.START) && event.side.isServer())
         {
             MinecraftServer server = event.player.world.getMinecraftServer();
@@ -80,7 +81,7 @@ public class UTRallyHealth
                 int riskTime = playerData.getInteger("riskTime");
                 if (playerData.getBoolean("atRisk"))
                 {
-                    if (riskTime >= UTConfig.TWEAKS_ENTITIES.RALLY_HEALTH.utRallyHealthRiskTime)
+                    if (riskTime >= UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthRiskTime)
                     {
                         riskTime = 0;
                         playerData.setInteger("riskTime", riskTime);

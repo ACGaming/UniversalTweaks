@@ -16,7 +16,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -34,7 +34,7 @@ public abstract class UTHorseFallingMixin extends EntityAnimal
     @Inject(method = "fall", at = @At("HEAD"), cancellable = true)
     public void utHorseFalling(float distance, float damageMultiplier, CallbackInfo ci)
     {
-        if (!UTConfig.BUGFIXES_ENTITIES.utHorseFallingToggle) return;
+        if (!UTConfigBugfixes.ENTITIES.utHorseFallingToggle) return;
         ci.cancel();
         final float[] ret = ForgeHooks.onLivingFall(this, distance, damageMultiplier);
         if (ret == null) return;

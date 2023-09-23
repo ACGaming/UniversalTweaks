@@ -11,7 +11,8 @@ import net.minecraft.world.World;
 
 import com.mojang.authlib.GameProfile;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -39,8 +40,8 @@ public abstract class UTDestroyPacketMixin extends EntityPlayer
     @Inject(method = "onUpdateEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/EntityPlayer;onUpdate()V", shift = At.Shift.AFTER))
     public void utSendDestroyPacket(CallbackInfo ci)
     {
-        if (!UTConfig.BUGFIXES_ENTITIES.utDestroyPacketToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDestroyPacket ::: Send SPacketDestroyEntities");
+        if (!UTConfigBugfixes.ENTITIES.utDestroyPacketToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDestroyPacket ::: Send SPacketDestroyEntities");
         if (!this.isEntityAlive())
         {
             while (!this.entityRemoveQueue.isEmpty())

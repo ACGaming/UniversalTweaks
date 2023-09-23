@@ -8,7 +8,8 @@ import net.minecraftforge.fml.common.Loader;
 
 import com.llamalad7.mixinextras.injector.WrapWithCondition;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import nc.container.processor.ContainerSorptions;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -25,8 +26,8 @@ public class UTAOAHandleSetSlotMixin
     @WrapWithCondition(method = "handleSetSlot", at = @At(value = "INVOKE", target = "Lnet/minecraft/inventory/Container;putStackInSlot(ILnet/minecraft/item/ItemStack;)V", ordinal = 1))
     private boolean utAOAHandleSetSlotIfAllowed(Container instance, int slotID, ItemStack stack)
     {
-        if (!UTConfig.MOD_INTEGRATION.AOA.utFixPlayerTickInInventorylessGui) return true;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAOAHandleSetSlot ::: Check inventory-less GUI (from AOA playerTick)");
+        if (!UTConfigMods.AOA.utFixPlayerTickInInventorylessGui) return true;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAOAHandleSetSlot ::: Check inventory-less GUI (from AOA playerTick)");
         return !((Loader.isModLoaded("fluxnetworks") && client.player.openContainer instanceof ContainerCore) || (Loader.isModLoaded("nuclearcraft") && client.player.openContainer instanceof ContainerSorptions));
     }
 }

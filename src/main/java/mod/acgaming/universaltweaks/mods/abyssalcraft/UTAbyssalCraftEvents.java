@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.shinoow.abyssalcraft.api.transfer.caps.ItemTransferCapabilityProvider;
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
 import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapabilityProvider;
 
@@ -28,7 +28,7 @@ public class UTAbyssalCraftEvents
     @SubscribeEvent
     public void attachCapabilityWorld(AttachCapabilitiesEvent<World> event)
     {
-        if (!UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
+        if (!UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
 
         event.addCapability(new ResourceLocation("universaltweaks", "WorldDataCapability"), new UTWorldDataCapabilityProvider());
     }
@@ -37,7 +37,7 @@ public class UTAbyssalCraftEvents
     @SubscribeEvent
     public void onChunkSave(ChunkDataEvent.Save event)
     {
-        if (!UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
+        if (!UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
 
         Chunk chunk = event.getChunk();
         Map<BlockPos, TileEntity> set = UTWorldDataCapability.getCap(event.getWorld()).getChunkMap(chunk);
@@ -71,7 +71,7 @@ public class UTAbyssalCraftEvents
     @SubscribeEvent
     public void onChunkLoad(ChunkDataEvent.Load event)
     {
-        if (!UTConfig.MOD_INTEGRATION.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
+        if (!UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
         if (event.getWorld().isRemote) return;
 
         if (event.getData().hasKey(CHECK_ID))

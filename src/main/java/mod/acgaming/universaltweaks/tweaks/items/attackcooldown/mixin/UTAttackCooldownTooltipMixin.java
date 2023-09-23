@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.text.translation.I18n;
 
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,7 +25,7 @@ public abstract class UTAttackCooldownTooltipMixin
     @Inject(method = "getTooltip", at = @At("RETURN"))
     public void utItemStackTooltip(EntityPlayer playerIn, ITooltipFlag advanced, CallbackInfoReturnable<List<String>> cir)
     {
-        if (!UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownTooltips || (UTConfig.TWEAKS_ITEMS.ATTACK_COOLDOWN.utAttackCooldownSwords && !(this.getItem() instanceof ItemSword))) return;
+        if (!UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownTooltips || (UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownSwords && !(this.getItem() instanceof ItemSword))) return;
         cir.getReturnValue().removeIf(line -> line.contains(I18n.translateToLocal("attribute.name.generic.attackSpeed")));
     }
 }

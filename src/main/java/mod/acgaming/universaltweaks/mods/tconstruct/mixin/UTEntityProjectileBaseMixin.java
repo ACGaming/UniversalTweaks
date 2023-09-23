@@ -4,7 +4,8 @@ import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.world.World;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfig;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -29,8 +30,8 @@ public abstract class UTEntityProjectileBaseMixin extends EntityArrow
     @Inject(method = "onUpdate", at = @At(value = "HEAD"))
     public void utTConProjectileLifetime(CallbackInfo ci)
     {
-        if (!UTConfig.MOD_INTEGRATION.TINKERS_CONSTRUCT.utTConProjectileToggle) return;
-        if (UTConfig.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityProjectileBase ::: On update");
+        if (!UTConfigMods.TINKERS_CONSTRUCT.utTConProjectileToggle) return;
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityProjectileBase ::: On update");
         if (!this.getEntityWorld().isRemote
             && this.inGround
             && this.arrowShake <= 0
