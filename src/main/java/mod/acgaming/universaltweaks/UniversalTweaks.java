@@ -23,6 +23,7 @@ import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapab
 import mod.acgaming.universaltweaks.mods.arcanearchives.UTArcaneArchivesEvents;
 import mod.acgaming.universaltweaks.mods.bloodmagic.UTBloodMagicEvents;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
+import mod.acgaming.universaltweaks.mods.cqrepoured.UTGoldenFeatherEvent;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Sprinting;
 import mod.acgaming.universaltweaks.mods.mekanism.UTMekanismFixes;
 import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
@@ -127,6 +128,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) MinecraftForge.EVENT_BUS.register(new UTAbyssalCraftEvents());
         if (Loader.isModLoaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTArcaneArchivesEvents());
         if (Loader.isModLoaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTBloodMagicEvents());
+        if (Loader.isModLoaded("cqrepoured") && UTConfigMods.CHOCOLATE_QUEST.utCQRGoldenFeatherToggle) MinecraftForge.EVENT_BUS.register(new UTGoldenFeatherEvent());
         if (Loader.isModLoaded("elenaidodge2") && UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherConsumption > 0) MinecraftForge.EVENT_BUS.register(new UTED2Sprinting());
         if (Loader.isModLoaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
         if (Loader.isModLoaded("projectred-exploration") && UTConfigMods.PROJECTRED.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTProjectRedWorldEvents());

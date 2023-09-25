@@ -273,6 +273,7 @@ public class UTConfigMods
 
     public static class ChocolateQuestCategory
     {
+        @Config.RequiresMcRestart
         @Config.Name("Legacy Golden Feather")
         @Config.Comment("Restores the golden feather behavior from the original Better Dungeons mod")
         public boolean utCQRGoldenFeatherToggle = true;

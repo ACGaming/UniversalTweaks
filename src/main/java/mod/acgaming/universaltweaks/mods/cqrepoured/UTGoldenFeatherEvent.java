@@ -4,20 +4,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfigMods;
 import team.cqr.cqrepoured.init.CQRItems;
 
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTGoldenFeatherEvent
 {
     @SubscribeEvent
-    public static void onLivingFallEvent(LivingFallEvent event)
+    public void onLivingFallEvent(LivingFallEvent event)
     {
-        if (UTConfigMods.CHOCOLATE_QUEST.utCQRGoldenFeatherToggle && event.getDistance() > 0.0F && event.getEntityLiving() instanceof EntityPlayer)
+        if (event.getDistance() > 0.0F && event.getEntityLiving() instanceof EntityPlayer)
         {
             EntityPlayer player = (EntityPlayer) event.getEntityLiving();
             ItemStack mainhand = player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND);
