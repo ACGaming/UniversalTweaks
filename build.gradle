@@ -1,185 +1,281 @@
-buildscript {
-    repositories {
-        maven {
-            name = "Forge"
-            url = "https://maven.minecraftforge.net"
-        }
-        maven {
-            name = "Sponge"
-            url = "https://repo.spongepowered.org/maven"
-        }
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.anatawa12.forge:ForgeGradle:2.3-1.0.8'
-        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
-    }
-}
-apply plugin: 'net.minecraftforge.gradle.forge'
-apply plugin: 'org.spongepowered.mixin'
+import org.jetbrains.gradle.ext.Gradle
 
-version = "1.12.2-1.9.0"
-group = "mod.acgaming.universaltweaks"
-archivesBaseName = "UniversalTweaks"
-
-sourceCompatibility = targetCompatibility = '1.8'
-compileJava {
-    sourceCompatibility = targetCompatibility = '1.8'
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'maven-publish'
+    id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.7'
+    id 'eclipse'
+    id 'com.gtnewhorizons.retrofuturagradle' version '1.3.24'
+    id 'com.matthewprenger.cursegradle' version '1.4.0'
 }
 
-minecraft {
-    version = "1.12.2-14.23.5.2847"
-    runDir = "run"
-    mappings = "stable_39"
+version = project.mod_version
+group = project.maven_group
+archivesBaseName = project.archives_base_name
 
-    def args = ["-Dmixin.debug.export=true",
-                '-Dmixin.hotSwap=true',
-                '-Dmixin.checks.interfaces=true']
-
-    clientJvmArgs.addAll(args)
-    serverJvmArgs.addAll(args)
+// Set the toolchain version to decouple the Java we run Gradle with from the Java used to compile and run the mod
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(8))
+        // Azul covers the most platforms for Java 8 toolchains, crucially including MacOS arm64
+        vendor.set(org.gradle.jvm.toolchain.JvmVendorSpec.AZUL)
+    }
+    // Generate sources and javadocs jars when building and publishing
+    withSourcesJar()
+    // withJavadocJar()
 }
 
-jar {
-    manifest {
-        attributes 'FMLCorePlugin': 'mod.acgaming.universaltweaks.core.UTLoadingPlugin'
-        attributes 'FMLCorePluginContainsFMLMod': 'true'
-        attributes 'ForceLoadAsMod': 'true'
-        attributes 'FMLAT': 'universaltweaks_at.cfg'
-    }
-}
-
-repositories {
-    maven {
-        name = "Curse Maven"
-        url = "https://cursemaven.com"
-    }
-    maven {
-        name = "CleanroomMC"
-        url = "https://maven.cleanroommc.com"
-    }
-    maven {
-        name = "Sponge"
-        url = "https://repo.spongepowered.org/maven"
-    }
-    maven {
-        name = "Mod Maven"
-        url = "https://modmaven.dev/"
-    }
-}
-
-dependencies {
-    // Libraries
-    implementation "zone.rong:mixinbooter:8.6"
-    implementation "com.cleanroommc:configanytime:1.0"
-    implementation "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
-    implementation "com.udojava:EvalEx:2.7"
-
-    // Mods
-    deobfCompile "cofh:CoFHCore:1.12.2-+:universal"
-    deobfCompile "com.teamacronymcoders.base:base:1.12.2-3.14.0"
-    deobfCompile "com.teamacronymcoders:ContentTweaker:1.12.2-4.10.0"
-    deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684"
-    deobfCompile "curse.maven:abyssalcraft-53686:3425234"
-    deobfCompile "curse.maven:atomicstrykers-infernal-mobs-227875:3431758"
-    deobfCompile "curse.maven:baubles-227083:2518667"
-    deobfCompile "curse.maven:binnies-mods-223525:2916129"
-    deobfCompile "curse.maven:biomes-o-plenty-220318:2842510"
-    deobfCompile "curse.maven:blood-magic-224791:2822288"
-    deobfCompile "curse.maven:botania-225643:3330934"
-    deobfCompile "curse.maven:ceramics-250617:3158763"
-    deobfCompile "curse.maven:chameleon-230497:2450900"
-    deobfCompile "curse.maven:chickens-241941:2537643"
-    deobfCompile "curse.maven:collective-342584:3533131"
-    deobfCompile "curse.maven:cqrepoured-303422:3953103"
-    deobfCompile "curse.maven:elementary-staffs-346007:2995593"
-    deobfCompile "curse.maven:elenaidodge2-442962:3343308"
-    deobfCompile "curse.maven:epic-siege-mod-229449:3356157"
-    deobfCompile "curse.maven:fluxnetworks-248020:3178199"
-    deobfCompile "curse.maven:forestry-59751:2918418"
-    deobfCompile "curse.maven:modtweaker-220954:3840577"
-    deobfCompile "curse.maven:nuclearcraft-226254:3784145"
-    deobfCompile "curse.maven:reborn-core-237903:3330308"
-    deobfCompile "curse.maven:reskillable-286382:2815686"
-    deobfCompile "curse.maven:roost-277711:2702080"
-    deobfCompile "curse.maven:simpledifficulty-360779:3613814"
-    deobfCompile "curse.maven:storage-drawers-223852:2952606"
-    deobfCompile "curse.maven:tech-reborn-233564:2966851"
-    deobfCompile "curse.maven:thaumcraft-223628:2629023"
-    deobfCompile "curse.maven:the-erebus-220698:3211974"
-    deobfCompile "curse.maven:thermal-expansion-69163:2926431"
-    deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.56"
-    deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.190"
-    deobfCompile "net.darkhax.bookshelf:Bookshelf-1.12.2:2.3.590"
-    deobfCompile "net.darkhax.gamestages:GameStages-1.12.2:2.0.120"
-    deobfCompile "net.darkhax.itemstages:ItemStages-1.12.2:2.0.51"
-    deobfCompile "net.darkhax.mobstages:MobStages-1.12.2:2.0.13"
-    implementation "curse.maven:actuallyaditions-228404:2844115"
-    implementation "curse.maven:applecore-224472:2969118"
-    implementation "curse.maven:arcanearchives-311357:3057332"
-    implementation "curse.maven:bewitchment-285439:3044569"
-    implementation "curse.maven:chisel-235279:2915375"
-    implementation "curse.maven:codechickenlib-242818:2779848"
-    implementation "curse.maven:cofhworld-271384:2920434"
-    implementation "curse.maven:endercore-231868:2972849"
-    implementation "curse.maven:enderio-64578:2989201"
-    implementation "curse.maven:extrautilities-225561:2678374"
-    implementation "curse.maven:forgemultipartcbe-258426:2755790"
-    implementation "curse.maven:guideapi-228832:2645992"
-    implementation "curse.maven:industrialcraft-242638:3078604"
-    implementation "curse.maven:industrialforegoing-266515:2745324"
-    implementation "curse.maven:ironbackpacks-227049:2564573"
-    implementation "curse.maven:mekanism-268560:2835175"
-    implementation "curse.maven:mrtjpcore-229002:2735197"
-    implementation "curse.maven:netherchest-268888:2655413"
-    implementation "curse.maven:netherrocks-226140:2628297"
-    implementation "curse.maven:projectredbase-228702:2745545"
-    implementation "curse.maven:projectredworld-229049:2745551"
-    implementation "curse.maven:quark-243121:2924091"
-    implementation "curse.maven:simplyjetpacks2-251792:3294422"
-    implementation "curse.maven:tardis-290247:2903453"
-    implementation "curse.maven:teslacorelib-254602:2891841"
-    implementation "curse.maven:thaumicwonders-316704:2787954"
-    implementation "curse.maven:thefarlanders-336432:2805139"
-    implementation "curse.maven:thermalfoundation-222880:2926428"
-    implementation "curse.maven:thespiceoflife-220811:2571951"
-    implementation "curse.maven:tinkerscomplement-272671:2843439"
-    implementation "curse.maven:tinyprogressions-250850:2721018"
-    implementation "TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal"
-}
-
-mixin {
-    add sourceSets.main, "universaltweaks.refmap.json"
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
 }
 
 configurations {
     embed
-    compile.extendsFrom(embed)
+    implementation.extendsFrom(embed)
+}
+
+minecraft {
+    mcVersion = '1.12.2'
+
+    // MCP Mappings
+    mcpMappingChannel = 'stable'
+    mcpMappingVersion = '39'
+
+    // Set username here, the UUID will be looked up automatically
+    username = 'Developer'
+
+    // Add any additional tweaker classes here
+    // extraTweakClasses.add('org.spongepowered.asm.launch.MixinTweaker')
+
+    // Add various JVM arguments here for runtime
+    def args = ["-ea:${project.group}"]
+    if (project.use_coremod.toBoolean()) {
+        args << '-Dfml.coreMods.load=' + coremod_plugin_class_name
+    }
+    if (project.use_mixins.toBoolean()) {
+        args << '-Dmixin.hotSwap=true'
+        args << '-Dmixin.checks.interfaces=true'
+        args << '-Dmixin.debug.export=true'
+    }
+    extraRunJvmArguments.addAll(args)
+
+    // Include and use dependencies' Access Transformer files
+    useDependencyAccessTransformers = true
+
+    // Add any properties you want to swap out for a dynamic value at build time here
+    // Any properties here will be added to a class at build time, the name can be configured below
+    injectedTags.put('MOD_ID', project.mod_id)
+    injectedTags.put('MOD_NAME', project.mod_name)
+    injectedTags.put('VERSION', project.version)
+}
+
+// Generate a group.mod_id.Tags class
+tasks.injectTags.configure {
+    // Change Tags class' name here:
+    outputClassName.set("${project.group}.${project.mod_id}.Tags")
+}
+
+repositories {
+    maven {
+        name 'CleanroomMC Maven'
+        url 'https://maven.cleanroommc.com'
+    }
+    maven {
+        name 'SpongePowered Maven'
+        url 'https://repo.spongepowered.org/maven'
+    }
+    maven {
+        name 'CurseMaven'
+        url 'https://cursemaven.com'
+        content {
+            includeGroup 'curse.maven'
+        }
+    }
+    maven {
+        name = 'Mod Maven'
+        url = 'https://modmaven.dev'
+    }
+    mavenLocal() // Must be last for caching to work
 }
 
 dependencies {
-    embed "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2"
-    embed "com.udojava:EvalEx:2.7"
+    // Libraries
+    if (project.use_assetmover.toBoolean()) {
+        implementation 'com.cleanroommc:assetmover:2.5'
+    }
+    if (project.use_mixins.toBoolean()) {
+        implementation 'zone.rong:mixinbooter:8.6'
+    }
+    implementation 'com.cleanroommc:configanytime:1.0'
+
+    implementation 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
+    embed 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
+    implementation 'com.udojava:EvalEx:2.7'
+    embed 'com.udojava:EvalEx:2.7'
+
+    // Mods
+    implementation rfg.deobf('cofh:CoFHCore:1.12.2-+:universal')
+    implementation rfg.deobf('com.teamacronymcoders.base:base:1.12.2-3.14.0')
+    implementation rfg.deobf('com.teamacronymcoders:ContentTweaker:1.12.2-4.10.0')
+    implementation rfg.deobf('CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684')
+    implementation rfg.deobf('curse.maven:abyssalcraft-53686:3425234')
+    implementation rfg.deobf('curse.maven:atomicstrykers-infernal-mobs-227875:3431758')
+    implementation rfg.deobf('curse.maven:baubles-227083:2518667')
+    implementation rfg.deobf('curse.maven:binnies-mods-223525:2916129')
+    implementation rfg.deobf('curse.maven:biomes-o-plenty-220318:2842510')
+    implementation rfg.deobf('curse.maven:blood-magic-224791:2822288')
+    implementation rfg.deobf('curse.maven:botania-225643:3330934')
+    implementation rfg.deobf('curse.maven:ceramics-250617:3158763')
+    implementation rfg.deobf('curse.maven:chameleon-230497:2450900')
+    implementation rfg.deobf('curse.maven:chickens-241941:2537643')
+    implementation rfg.deobf('curse.maven:collective-342584:3533131')
+    implementation rfg.deobf('curse.maven:cqrepoured-303422:3953103')
+    implementation rfg.deobf('curse.maven:elementary-staffs-346007:2995593')
+    implementation rfg.deobf('curse.maven:elenaidodge2-442962:3343308')
+    implementation rfg.deobf('curse.maven:epic-siege-mod-229449:3356157')
+    implementation rfg.deobf('curse.maven:fluxnetworks-248020:3178199')
+    implementation rfg.deobf('curse.maven:forestry-59751:2918418')
+    implementation rfg.deobf('curse.maven:modtweaker-220954:3840577')
+    implementation rfg.deobf('curse.maven:nuclearcraft-226254:3784145')
+    implementation rfg.deobf('curse.maven:reborn-core-237903:3330308')
+    implementation rfg.deobf('curse.maven:reskillable-286382:2815686')
+    implementation rfg.deobf('curse.maven:roost-277711:2702080')
+    implementation rfg.deobf('curse.maven:simpledifficulty-360779:3613814')
+    implementation rfg.deobf('curse.maven:storage-drawers-223852:2952606')
+    implementation rfg.deobf('curse.maven:tech-reborn-233564:2966851')
+    implementation rfg.deobf('curse.maven:thaumcraft-223628:2629023')
+    implementation rfg.deobf('curse.maven:the-erebus-220698:3211974')
+    implementation rfg.deobf('curse.maven:thermal-expansion-69163:2926431')
+    implementation rfg.deobf('slimeknights.mantle:Mantle:1.12-1.3.3.56')
+    implementation rfg.deobf('slimeknights:TConstruct:1.12.2-2.13.0.190')
+    implementation rfg.deobf('net.darkhax.bookshelf:Bookshelf-1.12.2:2.3.590')
+    implementation rfg.deobf('net.darkhax.gamestages:GameStages-1.12.2:2.0.120')
+    implementation rfg.deobf('net.darkhax.itemstages:ItemStages-1.12.2:2.0.51')
+    implementation rfg.deobf('net.darkhax.mobstages:MobStages-1.12.2:2.0.13')
+    implementation 'curse.maven:actuallyaditions-228404:2844115'
+    implementation 'curse.maven:applecore-224472:2969118'
+    implementation 'curse.maven:arcanearchives-311357:3057332'
+    implementation 'curse.maven:bewitchment-285439:3044569'
+    implementation 'curse.maven:chisel-235279:2915375'
+    implementation 'curse.maven:codechickenlib-242818:2779848'
+    implementation 'curse.maven:cofhworld-271384:2920434'
+    implementation 'curse.maven:endercore-231868:2972849'
+    implementation 'curse.maven:enderio-64578:2989201'
+    implementation 'curse.maven:extrautilities-225561:2678374'
+    implementation 'curse.maven:forgemultipartcbe-258426:2755790'
+    implementation 'curse.maven:guideapi-228832:2645992'
+    implementation 'curse.maven:industrialcraft-242638:3078604'
+    implementation 'curse.maven:industrialforegoing-266515:2745324'
+    implementation 'curse.maven:ironbackpacks-227049:2564573'
+    implementation 'curse.maven:mekanism-268560:2835175'
+    implementation 'curse.maven:mrtjpcore-229002:2735197'
+    implementation 'curse.maven:netherchest-268888:2655413'
+    implementation 'curse.maven:netherrocks-226140:2628297'
+    implementation 'curse.maven:projectredbase-228702:2745545'
+    implementation 'curse.maven:projectredworld-229049:2745551'
+    implementation 'curse.maven:quark-243121:2924091'
+    implementation 'curse.maven:simplyjetpacks2-251792:3294422'
+    implementation 'curse.maven:tardis-290247:2903453'
+    implementation 'curse.maven:teslacorelib-254602:2891841'
+    implementation 'curse.maven:thaumicwonders-316704:2787954'
+    implementation 'curse.maven:thefarlanders-336432:2805139'
+    implementation 'curse.maven:thermalfoundation-222880:2926428'
+    implementation 'curse.maven:thespiceoflife-220811:2571951'
+    implementation 'curse.maven:tinkerscomplement-272671:2843439'
+    implementation 'curse.maven:tinyprogressions-250850:2721018'
+    implementation 'TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal'
+
+    if (project.use_mixins.toBoolean()) {
+        String mixin = modUtils.enableMixins("zone.rong:mixinbooter:8.6", "universaltweaks.refmap.json")
+        api(mixin) {
+            transitive = false
+        }
+        annotationProcessor 'org.ow2.asm:asm-debug-all:5.2'
+        annotationProcessor 'com.google.guava:guava:24.1.1-jre'
+        annotationProcessor 'com.google.code.gson:gson:2.8.6'
+        annotationProcessor(mixin) {
+            transitive = false
+        }
+    }
 }
 
-jar {
-    from(configurations.embed.collect {
-        it.isDirectory() ? it : zipTree(it)
-    })
+// Adds Access Transformer files to tasks
+if (project.use_access_transformer.toBoolean()) {
+    for (File at : sourceSets.getByName("main").resources.files) {
+        if (at.name.toLowerCase().endsWith("_at.cfg")) {
+            tasks.deobfuscateMergedJarToSrg.accessTransformerFiles.from(at)
+            tasks.srgifyBinpatchedJar.accessTransformerFiles.from(at)
+        }
+    }
 }
 
 processResources {
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
+    // This will ensure that this task is redone when the versions change
+    inputs.property 'version', project.version
+    inputs.property 'mcversion', project.minecraft.version
 
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version': project.version, 'mcversion': project.minecraft.version
+    // Replace various properties in mcmod.info and pack.mcmeta if applicable
+    filesMatching(['mcmod.info', 'pack.mcmeta']) { fcd ->
+        // Replace version and mcversion
+        fcd.expand('version': project.version,
+                'mcversion': project.minecraft.version)
     }
 
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+    if (project.use_access_transformer.toBoolean()) {
+        rename '(.+_at.cfg)', 'META-INF/$1' // Make sure Access Transformer files are in META-INF folder
     }
+}
 
-    rename '(.+_at.cfg)', 'META-INF/$1'
+jar {
+    manifest {
+        def attribute_map = [:]
+        if (project.use_coremod.toBoolean()) {
+            attribute_map['FMLCorePlugin'] = project.coremod_plugin_class_name
+            if (project.include_mod.toBoolean()) {
+                attribute_map['FMLCorePluginContainsFMLMod'] = true
+                attribute_map['ForceLoadAsMod'] = project.gradle.startParameter.taskNames[0] == "build"
+            }
+        }
+        if (project.use_access_transformer.toBoolean()) {
+            attribute_map['FMLAT'] = project.mod_id + '_at.cfg'
+        }
+        attributes(attribute_map)
+    }
+    // Add all embedded dependencies into the jar
+    from(provider { configurations.embed.collect { it.isDirectory() ? it : zipTree(it) } })
+}
+
+idea {
+    module {
+        inheritOutputDirs = true
+    }
+    project {
+        settings {
+            runConfigurations {
+                "1. Run Client"(Gradle) {
+                    taskNames = ["runClient"]
+                }
+                "2. Run Server"(Gradle) {
+                    taskNames = ["runServer"]
+                }
+                "3. Run Obfuscated Client"(Gradle) {
+                    taskNames = ["runObfClient"]
+                }
+                "4. Run Obfuscated Server"(Gradle) {
+                    taskNames = ["runObfServer"]
+                }
+            }
+            compiler.javac {
+                afterEvaluate {
+                    javacAdditionalOptions = "-encoding utf8"
+                    moduleJavacAdditionalOptions = [(project.name + ".main"): tasks.compileJava.options.compilerArgs.collect { '"' + it + '"' }.join(' ')]
+                }
+            }
+        }
+    }
+}
+
+tasks.named("processIdeaSettings").configure {
+    dependsOn("injectTags")
 }

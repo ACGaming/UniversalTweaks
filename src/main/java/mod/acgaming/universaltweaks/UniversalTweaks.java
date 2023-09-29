@@ -59,9 +59,9 @@ import tonius.simplyjetpacks.network.NetworkHandler;
 @Mod(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME, version = UniversalTweaks.VERSION, acceptedMinecraftVersions = "[1.12.2]", dependencies = UniversalTweaks.DEPENDENCIES)
 public class UniversalTweaks
 {
-    public static final String MODID = "universaltweaks";
-    public static final String NAME = "Universal Tweaks";
-    public static final String VERSION = "1.12.2-1.9.0";
+    public static final String MODID = Tags.MOD_ID;
+    public static final String NAME = Tags.MOD_NAME;
+    public static final String VERSION = Tags.VERSION;
     public static final String DEPENDENCIES = "required-after:mixinbooter@[8.0,);required-after:configanytime;"
         + "after:abyssalcraft;"
         + "after:actuallyadditions;"
