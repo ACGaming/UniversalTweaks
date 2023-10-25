@@ -41,8 +41,16 @@ public class UTCraftingCache
         if (isValid(craftMatrix) && Loader.instance().hasReachedState(LoaderState.SERVER_STARTING))
         {
             UTOptionalContent<IRecipe> optionalContent = getOrCreateCachedRecipe(craftMatrix);
-            if (!optionalContent.hasContent()) optionalContent.setContent(findMatchingRecipeDefault(craftMatrix, worldIn));
-            return optionalContent.getContent();
+
+            if (optionalContent.hasContent())
+            {
+                IRecipe recipe = optionalContent.getContent();
+                if (recipe == null || recipe.matches(craftMatrix, worldIn)) return recipe;
+            }
+
+            IRecipe recipe = findMatchingRecipeDefault(craftMatrix, worldIn);
+            optionalContent.setContent(recipe);
+            return recipe;
         }
         return findMatchingRecipeDefault(craftMatrix, worldIn);
     }
