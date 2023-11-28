@@ -55,7 +55,6 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.simpledifficulty.json",
             "mixins.mods.spiceoflife.dupes.json",
             "mixins.mods.storagedrawers.client.json",
-            "mixins.mods.storagedrawers.server.json",
             "mixins.mods.tconstruct.json",
             "mixins.mods.tconstruct.oredictcache.json",
             "mixins.mods.techreborn.json",
@@ -167,8 +166,6 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("simpledifficulty");
             case "mixins.mods.spiceoflife.dupes.json":
                 return Loader.isModLoaded("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle;
-            case "mixins.mods.storagedrawers.server.json":
-                return Loader.isModLoaded("storagedrawers");
             case "mixins.mods.chisel.tcomplement.dupes.json":
                 return Loader.isModLoaded("chisel") && Loader.isModLoaded("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle;
             case "mixins.mods.techreborn.json":
