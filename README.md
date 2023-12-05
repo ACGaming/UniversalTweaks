@@ -249,14 +249,14 @@ All changes are toggleable via config files.
     * **Early Register CT Chickens:** Improves load time by registering CT chickens early for Roost to detect them
 * **Simple Difficulty**
     * **Iron Canteen Interaction Fix:** Fixes the interaction of iron canteens with rain collectors
+* **Simply Jetpacks**
+    * **Memory Leak Fix:** Fixes a client-side memory leak associated with EntityPlayer
 * **Spice Of Life**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Storage Drawers**
-    * **Item Handlers**
-        * Fixes voiding of items when nearing full capacity
-        * Fixes slotless item handler implementation not allowing the extraction from compacting item drawers with the vending upgrade
-        * Caches the drawer controller tile to avoid getting the TE from the world every time a drawer slave is interacted with
     * **Render Range:** Approximate range in blocks at which drawers render contained items
+* **Tardis**
+    * **Memory Leak Fix:** Fixes a client-side memory leak associated with EntityPlayer
 * **Tech Reborn**
     * **Optimized Rolling Machine:** Optimizes the Rolling Machine to reduce tick time
 * **Thaumcraft**
