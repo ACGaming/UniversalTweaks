@@ -1,0 +1,19 @@
+# OBSOLETE MODS SCREEN
+msg.universaltweaks.obsoletemods.warning1=유니버셜 트윅은 다른 모드들의 기능을 대체하고 개선했습니다.
+msg.universaltweaks.obsoletemods.warning2=따라서, 다음 모드들은 이제 유니버셜 트윅과 호환되지 않습니다:
+msg.universaltweaks.obsoletemods.warning3=해당 모드들을 제거하거나 유니버셜 트윅의 해당 기능을 비활성화하는 것을 고려해 주십시오.
+
+# TOGGLE CHEATS
+btn.universaltweaks.cheats.enabled=치트: 켜짐
+btn.universaltweaks.cheats.disabled=치트: 꺼짐
+msg.universaltweaks.cheats.enabled=치트가 §a활성화되었습니다.
+msg.universaltweaks.cheats.disabled=치트가 §c비활성화되었습니다.
+
+# DISABLE SLEEPING
+msg.universaltweaks.sleep.spawnpoint=스폰 지점이 설정되었습니다.
+
+# PARRY
+enchantment.parry=반사
+
+# PICKUP NOTIFICATION
+msg.universaltweaks.tweaks.pickupnotification.xp=경험치
