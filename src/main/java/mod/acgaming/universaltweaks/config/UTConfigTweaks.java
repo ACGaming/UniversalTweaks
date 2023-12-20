@@ -78,6 +78,10 @@ public class UTConfigTweaks
         @Config.Name("Finite Water")
         public final FiniteWaterCategory FINITE_WATER = new FiniteWaterCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.sapling")
+        @Config.Name("Sapling Behavior")
+        public final SaplingBehaviorCategory SAPLING_BEHAVIOR = new SaplingBehaviorCategory();
+
         @Config.RequiresMcRestart
         @Config.Name("Bed Obstruction Replacement")
         @Config.Comment("Replaces bed obstruction checks with an improved version")
@@ -220,6 +224,27 @@ public class UTConfigTweaks
             @Config.Name("[4] Maximum Altitude")
             @Config.Comment("Inclusive maximum altitude at which water is infinite")
             public int utFiniteWaterInfMax = 63;
+        }
+
+        public static class SaplingBehaviorCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Sapling Behavior Toggle")
+            @Config.Comment("Allows customization of sapling behavior while utilizing an optimized method")
+            public boolean utSaplingBehaviorToggle = true;
+
+            @Config.Name("[2] Minimum Light Level")
+            @Config.Comment("Inclusive minimum light level at which saplings grow into trees")
+            public int utSaplingLightLevel = 9;
+
+            @Config.Name("[3] Growth Chance")
+            @Config.Comment
+                ({
+                    "Chance per update tick at which saplings grow into trees",
+                    "Note: General growth rate is still affected by the random tick speed"
+                })
+            @Config.RangeDouble(min = 0.0D, max = 1.0D)
+            public double utSaplingGrowthChance = 0.125D;
         }
     }
 

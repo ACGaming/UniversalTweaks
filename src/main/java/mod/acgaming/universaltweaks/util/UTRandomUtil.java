@@ -5,6 +5,8 @@ import java.util.Random;
 // Courtesy of UeberallGebannt
 public class UTRandomUtil
 {
+    public static final Random RANDOM = new Random();
+
     /**
      * Returns true with a certain chance
      *
@@ -26,6 +28,6 @@ public class UTRandomUtil
      */
     public static boolean chance(double chance)
     {
-        return chance(chance, new Random());
+        return chance(chance, RANDOM);
     }
 }

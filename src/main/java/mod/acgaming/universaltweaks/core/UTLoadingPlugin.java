@@ -181,6 +181,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.blocks.hitdelay.json");
         configs.add("mixins.tweaks.blocks.leafdecay.json");
         configs.add("mixins.tweaks.blocks.lenientpaths.json");
+        configs.add("mixins.tweaks.blocks.sapling.json");
         configs.add("mixins.tweaks.entities.ai.json");
         configs.add("mixins.tweaks.entities.ai.saddledwandering.json");
         configs.add("mixins.tweaks.entities.ai.wither.json");
@@ -370,6 +371,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.BLOCKS.utLeafDecayToggle;
             case "mixins.tweaks.blocks.lenientpaths.json":
                 return UTConfigTweaks.BLOCKS.utLenientPathsToggle;
+            case "mixins.tweaks.blocks.sapling.json":
+                return UTConfigTweaks.BLOCKS.SAPLING_BEHAVIOR.utSaplingBehaviorToggle;
             case "mixins.tweaks.entities.ai.json":
                 return UTConfigTweaks.ENTITIES.utAIReplacementToggle;
             case "mixins.tweaks.entities.ai.saddledwandering.json":
