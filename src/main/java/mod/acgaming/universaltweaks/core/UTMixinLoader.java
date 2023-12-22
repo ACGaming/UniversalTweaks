@@ -57,6 +57,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.storagedrawers.client.json",
             "mixins.mods.tconstruct.json",
             "mixins.mods.tconstruct.toolcustomization.json",
+            "mixins.mods.tconstruct.toolcustomization.plustic.json",
             "mixins.mods.tconstruct.oredictcache.json",
             "mixins.mods.techreborn.json",
             "mixins.mods.thaumcraft.dupes.json",
@@ -192,6 +193,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("tconstruct");
             case "mixins.mods.tconstruct.toolcustomization.json":
                 return Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle;
+            case "mixins.mods.tconstruct.toolcustomization.plustic.json":
+                return Loader.isModLoaded("tconstruct") && Loader.isModLoaded("plustic") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle;
             case "mixins.mods.tconstruct.oredictcache.json":
                 return Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle;
             case "mixins.mods.tinyprogressions.dupes.json":

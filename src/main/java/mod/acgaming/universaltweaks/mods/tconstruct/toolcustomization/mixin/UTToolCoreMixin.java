@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import slimeknights.tconstruct.library.tools.ToolCore;
 
+// Courtesy of jchung01
 @Mixin(value = ToolCore.class, remap = false)
 public class UTToolCoreMixin
 {

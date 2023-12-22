@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import slimeknights.tconstruct.tools.melee.item.Cleaver;
 
+// Courtesy of jchung01
 @Mixin(value = Cleaver.class, remap = false)
 public class UTCleaverMixin
 {

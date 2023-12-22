@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import slimeknights.tconstruct.tools.melee.item.LongSword;
 
+// Courtesy of jchung01
 @Mixin(value = LongSword.class, remap = false)
 public class UTLongswordMixin
 {

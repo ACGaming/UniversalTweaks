@@ -182,6 +182,7 @@ dependencies {
     compileOnly 'curse.maven:mrtjpcore-229002:2735197'
     compileOnly 'curse.maven:netherchest-268888:2655413'
     compileOnly 'curse.maven:netherrocks-226140:2628297'
+    compileOnly 'curse.maven:plustic-376903:4703532'
     compileOnly 'curse.maven:projectredbase-228702:2745545'
     compileOnly 'curse.maven:projectredworld-229049:2745551'
     compileOnly 'curse.maven:quark-243121:2924091'

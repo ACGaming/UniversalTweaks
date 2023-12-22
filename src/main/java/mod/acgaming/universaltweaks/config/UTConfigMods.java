@@ -821,6 +821,14 @@ public class UTConfigMods
                 })
             public float utTConToolRapierDamageCutoff = 13.0f;
 
+            @Config.Name("PlusTiC: Katana Attack Damage Cutoff")
+            @Config.Comment
+                ({
+                    "Sets the attack damage cutoff at which diminishing returns start for the PlusTiC katana",
+                    "Default value: 22.0"
+                })
+            public float utTConToolKatanaDamageCutoff = 22.0f;
+
             @Config.Name("Attack Damage Decay Rate")
             @Config.Comment
                 ({

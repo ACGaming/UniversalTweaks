@@ -8,6 +8,7 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import slimeknights.tconstruct.library.utils.ToolHelper;
 
+// Courtesy of jchung01
 @Mixin(value = ToolHelper.class, remap = false)
 public class UTToolHelperMixin
 {
