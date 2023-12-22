@@ -24,7 +24,7 @@ public abstract class UTFallingBlockDamageMixin extends Entity
         super(worldIn);
     }
 
-    @Redirect(method = "fall", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/Lists;newArrayList(Ljava/lang/Iterable;)Ljava/util/ArrayList;"))
+    @Redirect(method = "fall", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/Lists;newArrayList(Ljava/lang/Iterable;)Ljava/util/ArrayList;", remap = false))
     public ArrayList<Entity> utFallingBlockDamage(Iterable<? extends Entity> elements)
     {
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFallingBlockDamage ::: Block falling");

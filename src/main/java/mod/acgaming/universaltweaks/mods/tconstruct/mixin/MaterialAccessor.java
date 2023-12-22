@@ -4,7 +4,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 import slimeknights.tconstruct.library.materials.Material;
 
-@Mixin(Material.class)
+@Mixin(value = Material.class, remap = false)
 public interface MaterialAccessor
 {
     @Accessor("hidden")

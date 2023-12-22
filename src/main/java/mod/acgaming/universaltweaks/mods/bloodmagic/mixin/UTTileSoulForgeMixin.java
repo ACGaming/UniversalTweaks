@@ -57,7 +57,7 @@ public abstract class UTTileSoulForgeMixin extends TileInventory implements ITic
      * <p>
      * Remapping needed!
      */
-    @Redirect(method = "update", at = @At(value = "INVOKE", target = "LWayofTime/bloodmagic/api/impl/BloodMagicRecipeRegistrar;getTartaricForge(Ljava/util/List;)LWayofTime/bloodmagic/api/impl/recipe/RecipeTartaricForge;"), remap = true)
+    @Redirect(method = "update", at = @At(value = "INVOKE", target = "LWayofTime/bloodmagic/api/impl/BloodMagicRecipeRegistrar;getTartaricForge(Ljava/util/List;)LWayofTime/bloodmagic/api/impl/recipe/RecipeTartaricForge;", remap = false), remap = true)
     private RecipeTartaricForge utUseCachedRecipe(BloodMagicRecipeRegistrar registrar, List<ItemStack> input)
     {
         if (!UTConfigMods.BLOOD_MAGIC.utBMOptimizeSoulForgeToggle) return registrar.getTartaricForge(input);

@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(FarmLogicCocoa.class)
+@Mixin(value = FarmLogicCocoa.class, remap = false)
 public class UTMultiFarmCocoaMixin
 {
     @Mutable

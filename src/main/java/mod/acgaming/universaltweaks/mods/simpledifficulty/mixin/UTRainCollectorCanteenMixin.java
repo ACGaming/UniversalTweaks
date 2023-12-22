@@ -26,7 +26,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(BlockRainCollector.class)
+@Mixin(value = BlockRainCollector.class, remap = false)
 public abstract class UTRainCollectorCanteenMixin
 {
     @Shadow
@@ -36,7 +36,7 @@ public abstract class UTRainCollectorCanteenMixin
     @Shadow
     public abstract void setWaterLevel(World world, BlockPos pos, IBlockState state, int level);
 
-    @Inject(method = "onBlockActivated", at = @At(value = "RETURN", ordinal = 4), cancellable = true)
+    @Inject(method = "onBlockActivated", at = @At(value = "RETURN", ordinal = 4), cancellable = true, remap = true)
     public void utRainCollectorCanteen(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ, CallbackInfoReturnable<Boolean> cir)
     {
         if (!UTConfigMods.SIMPLE_DIFFICULTY.utRainCollectorCanteenToggle) return;
