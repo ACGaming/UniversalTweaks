@@ -777,6 +777,61 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Tool Customization")
+        @Config.Comment("Enables usage of tweaks in below category to customize Tinkers' tools stats")
+        public boolean utTConToolCustomizationToggle = true;
+
+        @Config.LangKey("cfg.universaltweaks.modintegration.tcon.toolcustomization")
+        @Config.Name("Tool Customization")
+        public final TinkersConstructCategory.ToolCustomizationCategory TOOL_CUSTOMIZATION = new TinkersConstructCategory.ToolCustomizationCategory();
+
+        public static class ToolCustomizationCategory
+        {
+            @Config.Name("General Attack Damage Cutoff")
+            @Config.Comment
+                ({
+                    "Sets the attack damage cutoff at which diminishing returns start for any Tinkers' tool not listed here",
+                    "Default value: 15.0"
+                })
+            public float utTConToolGeneralDamageCutoff = 15.0f;
+
+            @Config.Name("Cleaver Attack Damage Cutoff")
+            @Config.Comment
+                ({
+                    "Sets the attack damage cutoff at which diminishing returns start for the cleaver",
+                    "Default value: 25.0"
+                })
+            public float utTConToolCleaverDamageCutoff = 25.0f;
+
+            @Config.Name("Longsword Attack Damage Cutoff")
+            @Config.Comment
+                ({
+                    "Sets the attack damage cutoff at which diminishing returns start for the longsword",
+                    "Default value: 18.0"
+                })
+            public float utTConToolLongswordDamageCutoff = 18.0f;
+
+            @Config.Name("Rapier Attack Damage Cutoff")
+            @Config.Comment
+                ({
+                    "Sets the attack damage cutoff at which diminishing returns start for the rapier",
+                    "Default value: 13.0"
+                })
+            public float utTConToolRapierDamageCutoff = 13.0f;
+
+            @Config.Name("Attack Damage Decay Rate")
+            @Config.Comment
+                ({
+                    "Sets the rate at which a tool's attack damage incrementally decays depending on its damage cutoff",
+                    "Default value: 0.9",
+                    "Range: 0.0 - 1.0",
+                    "Note: A rate of 1.0 means there is no damage decay",
+                    "Note: The damage curve will cap the maximum value to (tool's damage cutoff)/(1 - decay rate)"
+                })
+            public String utTConToolDamageDecayRate = "0.9";
+        }
     }
 
     public static class TinyProgressionsCategory
