@@ -287,5 +287,6 @@ All changes are toggleable via config files.
     * **Offhand Shuriken:** Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand
     * **Ore Dictionary Cache:** Caches all ore dictionary smelting recipes to speed up game loading
     * **Projectile Despawning:** Despawns unbreakable projectiles faster to improve framerates
+    * **Tool Customization:** Sets the attack damage cutoff at which diminishing returns start and sets the rate at which a tool's attack damage incrementally decays depending on its damage cutoff for any Tinkers' tool
 * **Tiny Progressions**
     * **Duplication Fixes:** Fixes various duplication exploits
