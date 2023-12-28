@@ -116,7 +116,7 @@ dependencies {
         implementation 'com.cleanroommc:assetmover:2.5'
     }
     if (project.use_mixins.toBoolean()) {
-        implementation 'zone.rong:mixinbooter:8.6'
+        implementation 'zone.rong:mixinbooter:8.9'
     }
     implementation 'com.cleanroommc:configanytime:1.0'
 
