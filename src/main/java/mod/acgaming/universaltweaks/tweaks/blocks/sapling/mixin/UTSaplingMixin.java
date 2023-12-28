@@ -30,7 +30,7 @@ public abstract class UTSaplingMixin extends BlockBush
         if (!worldIn.isRemote)
         {
             super.updateTick(worldIn, pos, state, rand);
-            if (worldIn.getLightFromNeighbors(pos.up()) >= UTConfigTweaks.BLOCKS.SAPLING_BEHAVIOR.utSaplingLightLevel && UTRandomUtil.chance(UTConfigTweaks.BLOCKS.SAPLING_BEHAVIOR.utSaplingGrowthChance) && worldIn.isAreaLoaded(pos, 1)) this.grow(worldIn, pos, state, rand);
+            if (UTRandomUtil.chance(UTConfigTweaks.BLOCKS.SAPLING_BEHAVIOR.utSaplingGrowthChance) && worldIn.isAreaLoaded(pos, 1) && worldIn.getLightFromNeighbors(pos.up()) >= UTConfigTweaks.BLOCKS.SAPLING_BEHAVIOR.utSaplingLightLevel) this.grow(worldIn, pos, state, rand);
         }
     }
 }
