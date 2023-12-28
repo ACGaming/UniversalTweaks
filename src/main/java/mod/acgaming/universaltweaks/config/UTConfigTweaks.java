@@ -262,6 +262,10 @@ public class UTConfigTweaks
         @Config.Name("Collision Damage")
         public final CollisionDamageCategory COLLISION_DAMAGE = new CollisionDamageCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.creeperconfetti")
+        @Config.Name("Creeper Confetti")
+        public final CreeperConfettiCategory CREEPER_CONFETTI = new CreeperConfettiCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.damagevelocity")
         @Config.Name("Damage Velocity")
         public final DamageVelocityCategory DAMAGE_VELOCITY = new DamageVelocityCategory();
@@ -330,12 +334,6 @@ public class UTConfigTweaks
         @Config.Comment("Sets the chance for creepers to spawn charged")
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
         public double utCreeperChargedChance = 0.0D;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Creeper Confetti Spawning Chance")
-        @Config.Comment("Sets the chance to replace deadly creeper explosions with delightful confetti")
-        @Config.RangeDouble(min = 0.0D, max = 1.0D)
-        public double utCreeperConfettiChance = 0.0D;
 
         @Config.RequiresMcRestart
         @Config.Name("Critical Arrow Damage")
@@ -502,6 +500,19 @@ public class UTConfigTweaks
                     "Vanilla default for elytra damage is 10"
                 })
             public int utCollisionDamageFactor = 10;
+        }
+
+        public static class CreeperConfettiCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Creeper Confetti Chance")
+            @Config.Comment("Sets the chance to replace deadly creeper explosions with delightful confetti")
+            @Config.RangeDouble(min = 0.0D, max = 1.0D)
+            public double utCreeperConfettiChance = 0.0D;
+
+            @Config.Name("[2] Creeper Confetti Damage")
+            @Config.Comment("Sets the damage dealt by confetti explosions")
+            public double utCreeperConfettiDamage = 0.0D;
         }
 
         public static class DamageVelocityCategory

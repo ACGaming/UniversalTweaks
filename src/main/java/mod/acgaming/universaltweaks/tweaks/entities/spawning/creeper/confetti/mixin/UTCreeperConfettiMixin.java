@@ -13,6 +13,7 @@ import net.minecraft.item.ItemDye;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -43,7 +44,7 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
     @Inject(method = "explode", at = @At("HEAD"), cancellable = true)
     public void utCreeperConfetti(CallbackInfo ci)
     {
-        double chargedChance = UTConfigTweaks.ENTITIES.utCreeperConfettiChance;
+        double chargedChance = UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiChance;
         if (chargedChance <= 0.0D || !UTRandomUtil.chance(chargedChance, new Random(this.getUniqueID().getMostSignificantBits() & Long.MAX_VALUE))) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCreeperConfetti ::: Explode");
         if (this.world.isRemote) spawnParticles(this.getEntityWorld(), this.getPosition(), this.getPowered());
@@ -52,6 +53,7 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
             this.dead = true;
             this.setDead();
             this.spawnLingeringCloud();
+            this.damagePlayers(((EntityCreeper) (Object) this));
         }
         ci.cancel();
     }
@@ -83,6 +85,14 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
         nbttaglist.appendTag(fireworkTag);
         fireworkItemTag.setTag("Explosions", nbttaglist);
         return fireworkItemTag;
+    }
+
+    @Unique
+    public void damagePlayers(EntityCreeper creeper)
+    {
+        float explosionStrength = (float) (creeper.getPowered() ? UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiDamage * 2 : UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiDamage);
+        Explosion explosion = new Explosion(creeper.getEntityWorld(), creeper, creeper.posX, creeper.posY, creeper.posZ, 3.0F * explosionStrength, false, false);
+        explosion.doExplosionA();
     }
 
     @Shadow

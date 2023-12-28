@@ -398,7 +398,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.entities.spawning.caps.json":
                 return UTConfigTweaks.ENTITIES.SPAWN_CAPS.utSpawnCapsToggle;
             case "mixins.tweaks.entities.spawning.creeper.confetti.json":
-                return UTConfigTweaks.ENTITIES.utCreeperConfettiChance != 0.0D;
+                return UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiChance != 0.0D;
             case "mixins.tweaks.entities.spawning.golem.json":
                 return UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGIronGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGSnowGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGWitherToggle;
             case "mixins.tweaks.entities.spawning.husk.json":
