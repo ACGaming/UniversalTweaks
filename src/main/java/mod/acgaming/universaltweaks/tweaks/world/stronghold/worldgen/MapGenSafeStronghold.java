@@ -9,6 +9,8 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.*;
 
+import it.unimi.dsi.fastutil.objects.ObjectIterator;
+
 /**
  * Courtesy of yungnickyoung
  * Replacement for normal strongholds.
@@ -37,10 +39,11 @@ public class MapGenSafeStronghold extends MapGenStronghold
         this.initializeStructureData(worldIn);
         int i = (chunkCoord.x << 4) + 8;
         int j = (chunkCoord.z << 4) + 8;
+        ObjectIterator objectiterator = this.structureMap.values().iterator();
 
-        for (StructureStart structureStart : this.structureMap.values())
+        while (objectiterator.hasNext())
         {
-            Start structurestart = (Start) structureStart;
+            Start structurestart = (Start) objectiterator.next();
 
             if (structurestart.isSizeableStructure() && structurestart.isValidForPostProcess(chunkCoord) && structurestart.getBoundingBox().intersectsWith(i, j, i + 15, j + 15))
             {
