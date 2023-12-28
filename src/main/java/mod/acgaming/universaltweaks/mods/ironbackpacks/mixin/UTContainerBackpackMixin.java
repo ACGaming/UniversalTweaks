@@ -26,6 +26,7 @@ public class UTContainerBackpackMixin extends Container
     @ParametersAreNonnullByDefault
     public boolean canInteractWith(EntityPlayer playerIn)
     {
+        // Currently breaks hotkey functionality
         return this.backpackStack.getItem() instanceof IBackpack && (playerIn.getHeldItemMainhand() == this.backpackStack || playerIn.getHeldItemOffhand() == this.backpackStack);
     }
 }
