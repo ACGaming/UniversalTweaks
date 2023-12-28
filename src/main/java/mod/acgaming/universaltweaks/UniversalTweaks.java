@@ -92,6 +92,7 @@ public class UniversalTweaks
         + "after:netherchest;"
         + "after:netherrocks;"
         + "after:nuclearcraft;"
+        + "after:plustic;"
         + "after:projectred-exploration;"
         + "after:quark;"
         + "after:roost;"

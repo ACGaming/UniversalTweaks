@@ -96,6 +96,17 @@ repositories {
         name = 'Mod Maven'
         url = 'https://modmaven.dev'
     }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
     mavenLocal() // Must be last for caching to work
 }
 
@@ -115,76 +126,77 @@ dependencies {
     embed 'com.udojava:EvalEx:2.7'
 
     // Mods
-    implementation rfg.deobf('cofh:CoFHCore:1.12.2-+:universal')
-    implementation rfg.deobf('com.teamacronymcoders.base:base:1.12.2-3.14.0')
-    implementation rfg.deobf('com.teamacronymcoders:ContentTweaker:1.12.2-4.10.0')
-    implementation rfg.deobf('CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684')
-    implementation rfg.deobf('curse.maven:abyssalcraft-53686:3425234')
-    implementation rfg.deobf('curse.maven:atomicstrykers-infernal-mobs-227875:3431758')
-    implementation rfg.deobf('curse.maven:baubles-227083:2518667')
-    implementation rfg.deobf('curse.maven:binnies-mods-223525:2916129')
-    implementation rfg.deobf('curse.maven:biomes-o-plenty-220318:2842510')
-    implementation rfg.deobf('curse.maven:blood-magic-224791:2822288')
-    implementation rfg.deobf('curse.maven:botania-225643:3330934')
-    implementation rfg.deobf('curse.maven:ceramics-250617:3158763')
-    implementation rfg.deobf('curse.maven:chameleon-230497:2450900')
-    implementation rfg.deobf('curse.maven:chickens-241941:2537643')
-    implementation rfg.deobf('curse.maven:collective-342584:3533131')
-    implementation rfg.deobf('curse.maven:cqrepoured-303422:3953103')
-    implementation rfg.deobf('curse.maven:elementary-staffs-346007:2995593')
-    implementation rfg.deobf('curse.maven:elenaidodge2-442962:3343308')
-    implementation rfg.deobf('curse.maven:epic-siege-mod-229449:3356157')
-    implementation rfg.deobf('curse.maven:fluxnetworks-248020:3178199')
-    implementation rfg.deobf('curse.maven:forestry-59751:2918418')
-    implementation rfg.deobf('curse.maven:modtweaker-220954:3840577')
-    implementation rfg.deobf('curse.maven:nuclearcraft-226254:3784145')
-    implementation rfg.deobf('curse.maven:reborn-core-237903:3330308')
-    implementation rfg.deobf('curse.maven:reskillable-286382:2815686')
-    implementation rfg.deobf('curse.maven:roost-277711:2702080')
-    implementation rfg.deobf('curse.maven:simpledifficulty-360779:3613814')
-    implementation rfg.deobf('curse.maven:storage-drawers-223852:2952606')
-    implementation rfg.deobf('curse.maven:tech-reborn-233564:2966851')
-    implementation rfg.deobf('curse.maven:thaumcraft-223628:2629023')
-    implementation rfg.deobf('curse.maven:the-erebus-220698:3211974')
-    implementation rfg.deobf('curse.maven:thermal-expansion-69163:2926431')
+    compileOnly rfg.deobf('cofh:CoFHCore:1.12.2-+:universal')
+    compileOnly rfg.deobf('com.teamacronymcoders.base:base:1.12.2-3.14.0')
+    compileOnly rfg.deobf('com.teamacronymcoders:ContentTweaker:1.12.2-4.10.0')
+    compileOnly rfg.deobf('CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684')
+    compileOnly rfg.deobf('curse.maven:abyssalcraft-53686:3425234')
+    compileOnly rfg.deobf('curse.maven:atomicstrykers-infernal-mobs-227875:3431758')
+    compileOnly rfg.deobf('curse.maven:baubles-227083:2518667')
+    compileOnly rfg.deobf('curse.maven:binnies-mods-223525:2916129')
+    compileOnly rfg.deobf('curse.maven:biomes-o-plenty-220318:2842510')
+    compileOnly rfg.deobf('curse.maven:blood-magic-224791:2822288')
+    compileOnly rfg.deobf('curse.maven:botania-225643:3330934')
+    compileOnly rfg.deobf('curse.maven:ceramics-250617:3158763')
+    compileOnly rfg.deobf('curse.maven:chameleon-230497:2450900')
+    compileOnly rfg.deobf('curse.maven:chickens-241941:2537643')
+    compileOnly rfg.deobf('curse.maven:collective-342584:3533131')
+    compileOnly rfg.deobf('curse.maven:cqrepoured-303422:3953103')
+    compileOnly rfg.deobf('curse.maven:elementary-staffs-346007:2995593')
+    compileOnly rfg.deobf('curse.maven:elenaidodge2-442962:3343308')
+    compileOnly rfg.deobf('curse.maven:epic-siege-mod-229449:3356157')
+    compileOnly rfg.deobf('curse.maven:fluxnetworks-248020:3178199')
+    compileOnly rfg.deobf('curse.maven:forestry-59751:2918418')
+    compileOnly rfg.deobf('curse.maven:modtweaker-220954:3840577')
+    compileOnly rfg.deobf('curse.maven:nuclearcraft-226254:3784145')
+    compileOnly rfg.deobf('curse.maven:reborn-core-237903:3330308')
+    compileOnly rfg.deobf('curse.maven:reskillable-286382:2815686')
+    compileOnly rfg.deobf('curse.maven:roost-277711:2702080')
+    compileOnly rfg.deobf('curse.maven:simpledifficulty-360779:3613814')
+    compileOnly rfg.deobf('curse.maven:storage-drawers-223852:2952606')
+    compileOnly rfg.deobf('curse.maven:tech-reborn-233564:2966851')
+    compileOnly rfg.deobf('curse.maven:thaumcraft-223628:2629023')
+    compileOnly rfg.deobf('curse.maven:the-erebus-220698:3211974')
+    compileOnly rfg.deobf('curse.maven:thermal-expansion-69163:2926431')
     implementation rfg.deobf('slimeknights.mantle:Mantle:1.12-1.3.3.56')
     implementation rfg.deobf('slimeknights:TConstruct:1.12.2-2.13.0.190')
-    implementation rfg.deobf('net.darkhax.bookshelf:Bookshelf-1.12.2:2.3.590')
-    implementation rfg.deobf('net.darkhax.gamestages:GameStages-1.12.2:2.0.120')
-    implementation rfg.deobf('net.darkhax.itemstages:ItemStages-1.12.2:2.0.51')
-    implementation rfg.deobf('net.darkhax.mobstages:MobStages-1.12.2:2.0.13')
-    implementation 'curse.maven:actuallyaditions-228404:2844115'
-    implementation 'curse.maven:applecore-224472:2969118'
-    implementation 'curse.maven:arcanearchives-311357:3057332'
-    implementation 'curse.maven:bewitchment-285439:3044569'
-    implementation 'curse.maven:chisel-235279:2915375'
-    implementation 'curse.maven:codechickenlib-242818:2779848'
-    implementation 'curse.maven:cofhworld-271384:2920434'
-    implementation 'curse.maven:endercore-231868:2972849'
-    implementation 'curse.maven:enderio-64578:2989201'
-    implementation 'curse.maven:extrautilities-225561:2678374'
-    implementation 'curse.maven:forgemultipartcbe-258426:2755790'
-    implementation 'curse.maven:guideapi-228832:2645992'
-    implementation 'curse.maven:industrialcraft-242638:3078604'
-    implementation 'curse.maven:industrialforegoing-266515:2745324'
-    implementation 'curse.maven:ironbackpacks-227049:2564573'
-    implementation 'curse.maven:mekanism-268560:2835175'
-    implementation 'curse.maven:mrtjpcore-229002:2735197'
-    implementation 'curse.maven:netherchest-268888:2655413'
-    implementation 'curse.maven:netherrocks-226140:2628297'
-    implementation 'curse.maven:projectredbase-228702:2745545'
-    implementation 'curse.maven:projectredworld-229049:2745551'
-    implementation 'curse.maven:quark-243121:2924091'
-    implementation 'curse.maven:simplyjetpacks2-251792:3294422'
-    implementation 'curse.maven:tardis-290247:2903453'
-    implementation 'curse.maven:teslacorelib-254602:2891841'
-    implementation 'curse.maven:thaumicwonders-316704:2787954'
-    implementation 'curse.maven:thefarlanders-336432:2805139'
-    implementation 'curse.maven:thermalfoundation-222880:2926428'
-    implementation 'curse.maven:thespiceoflife-220811:2571951'
-    implementation 'curse.maven:tinkerscomplement-272671:2843439'
-    implementation 'curse.maven:tinyprogressions-250850:2721018'
-    implementation 'TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal'
+    compileOnly rfg.deobf('net.darkhax.bookshelf:Bookshelf-1.12.2:2.3.590')
+    compileOnly rfg.deobf('net.darkhax.gamestages:GameStages-1.12.2:2.0.120')
+    compileOnly rfg.deobf('net.darkhax.itemstages:ItemStages-1.12.2:2.0.51')
+    compileOnly rfg.deobf('net.darkhax.mobstages:MobStages-1.12.2:2.0.13')
+    compileOnly 'curse.maven:actuallyaditions-228404:2844115'
+    compileOnly 'curse.maven:applecore-224472:2969118'
+    compileOnly 'curse.maven:arcanearchives-311357:3057332'
+    compileOnly 'curse.maven:bewitchment-285439:3044569'
+    compileOnly 'curse.maven:chisel-235279:2915375'
+    compileOnly 'curse.maven:codechickenlib-242818:2779848'
+    compileOnly 'curse.maven:cofhworld-271384:2920434'
+    compileOnly 'curse.maven:endercore-231868:2972849'
+    compileOnly 'curse.maven:enderio-64578:2989201'
+    compileOnly 'curse.maven:extrautilities-225561:2678374'
+    compileOnly 'curse.maven:forgemultipartcbe-258426:2755790'
+    compileOnly 'curse.maven:guideapi-228832:2645992'
+    compileOnly 'curse.maven:industrialcraft-242638:3078604'
+    compileOnly 'curse.maven:ironbackpacks-227049:2564573'
+    compileOnly 'curse.maven:mekanism-268560:2835175'
+    compileOnly 'curse.maven:mrtjpcore-229002:2735197'
+    compileOnly 'curse.maven:netherchest-268888:2655413'
+    compileOnly 'curse.maven:netherrocks-226140:2628297'
+    compileOnly 'curse.maven:plustic-376903:4703532'
+    compileOnly 'curse.maven:projectredbase-228702:2745545'
+    compileOnly 'curse.maven:projectredworld-229049:2745551'
+    compileOnly 'curse.maven:quark-243121:2924091'
+    compileOnly 'curse.maven:simplyjetpacks2-251792:3294422'
+    compileOnly 'curse.maven:tardis-290247:2903453'
+    compileOnly 'curse.maven:teslacorelib-254602:2891841'
+    compileOnly 'curse.maven:thaumicwonders-316704:2787954'
+    compileOnly 'curse.maven:thefarlanders-336432:2805139'
+    compileOnly 'curse.maven:thermalfoundation-222880:2926428'
+    compileOnly 'curse.maven:thespiceoflife-220811:2571951'
+    compileOnly 'curse.maven:tinkerscomplement-272671:2843439'
+    compileOnly 'curse.maven:tinyprogressions-250850:2721018'
+    compileOnly 'maven.modrinth:industrial-foregoing:1.12.13-237'
+    compileOnly 'TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal'
 
     if (project.use_mixins.toBoolean()) {
         String mixin = modUtils.enableMixins("zone.rong:mixinbooter:8.9", "universaltweaks.refmap.json")

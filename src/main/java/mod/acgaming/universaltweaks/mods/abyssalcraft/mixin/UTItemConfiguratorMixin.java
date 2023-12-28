@@ -17,22 +17,22 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // Courtesy of jchung01
-@Mixin(ItemConfigurator.class) // Remapping needed!
+@Mixin(value = ItemConfigurator.class) // Remapping needed!
 public class UTItemConfiguratorMixin
 {
     // Item is called "Spirit Tablet"
     /*
      * Mode reference:
      * mode == 0: Set Path
-     *      - No changes needed, only edits the configurator's nbt
+     *       - No changes needed, only edits the configurator's nbt
      * mode == 1: Apply Configuration
-     *       - Need to add TE to UTItemTransferListHolder.configuredTileEntities
+     *       - Need to add TE to UTWorldDataCapability.configuredTileEntities
      * mode == 2: Clear Configurations
-     *       - Need to remove TE from UTItemTransferListHolder.configuredTileEntities
+     *       - Need to remove TE from UTWorldDataCapability.configuredTileEntities
      */
 
     // mode == 1
-    @Inject(method = "onItemUse", at = @At(value = "INVOKE", target = "Lcom/shinoow/abyssalcraft/api/transfer/caps/IItemTransferCapability;addTransferConfiguration(Lcom/shinoow/abyssalcraft/api/transfer/ItemTransferConfiguration;)V"))
+    @Inject(method = "onItemUse", at = @At(value = "INVOKE", target = "Lcom/shinoow/abyssalcraft/api/transfer/caps/IItemTransferCapability;addTransferConfiguration(Lcom/shinoow/abyssalcraft/api/transfer/ItemTransferConfiguration;)V", remap = false))
     private void utAddConfiguredTileEntity(EntityPlayer player, World w, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ, CallbackInfoReturnable<EnumActionResult> cir)
     {
         if (!UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
@@ -43,7 +43,7 @@ public class UTItemConfiguratorMixin
     }
 
     // mode == 2
-    @Inject(method = "onItemUse", at = @At(value = "INVOKE", target = "Lcom/shinoow/abyssalcraft/api/transfer/caps/IItemTransferCapability;clearConfigurations()V"))
+    @Inject(method = "onItemUse", at = @At(value = "INVOKE", target = "Lcom/shinoow/abyssalcraft/api/transfer/caps/IItemTransferCapability;clearConfigurations()V", remap = false))
     private void utRemoveConfiguredTileEntity(EntityPlayer player, World w, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ, CallbackInfoReturnable<EnumActionResult> cir)
     {
         if (!UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) return;
