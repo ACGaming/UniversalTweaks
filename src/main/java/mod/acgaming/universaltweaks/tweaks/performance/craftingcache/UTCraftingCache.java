@@ -55,7 +55,7 @@ public class UTCraftingCache
         return findMatchingRecipeDefault(craftMatrix, worldIn);
     }
 
-    public static UTOptionalContent<IRecipe> getOrCreateCachedRecipe(InventoryCrafting craftMatrix)
+    public static synchronized UTOptionalContent<IRecipe> getOrCreateCachedRecipe(InventoryCrafting craftMatrix)
     {
         UTCraftMatrixCacheKey matrixKey = new UTCraftMatrixCacheKey(craftMatrix);
         UTOptionalContent<IRecipe> optionalContent = NON_NBT_CRAFT_CACHE.getAndMoveToFirst(matrixKey.hashCode());
