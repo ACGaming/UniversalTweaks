@@ -177,6 +177,7 @@ All changes are toggleable via config files.
     * **Taming:** Allows taming of undead horses
 * **Water Fall Damage:** Re-implements an improved version of pre-1.4 fall damage in water
 * **XP Bottle Amount:** Sets the amount of experience spawned by bottles o' enchanting
+* **XP Level Cap:** Sets the maximum experience level players can reach
 
 ![](https://i.imgur.com/1EmHZlb.png)
 

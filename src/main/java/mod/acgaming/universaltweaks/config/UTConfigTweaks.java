@@ -1145,6 +1145,16 @@ public class UTConfigTweaks
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
         public boolean utToggleCheatsToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("XP Level Cap")
+        @Config.Comment
+            ({
+                "Sets the maximum experience level players can reach",
+                "0 to effectively disable gaining of experience",
+                "-1 for vanilla default"
+            })
+        public int utXPLevelCap = -1;
+
         public static class ArmorCurveCategory
         {
             @Config.RequiresMcRestart

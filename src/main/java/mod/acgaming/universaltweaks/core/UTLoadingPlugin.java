@@ -213,6 +213,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.misc.incurablepotions.json");
         configs.add("mixins.tweaks.misc.lightning.damage.json");
         configs.add("mixins.tweaks.misc.lightning.fire.json");
+        configs.add("mixins.tweaks.misc.xp.cap.json");
         configs.add("mixins.tweaks.misc.xp.linear.json");
         configs.add("mixins.tweaks.misc.xp.smelting.json");
         configs.add("mixins.tweaks.misc.recipebook.server.json");
@@ -434,8 +435,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.MISC.LIGHTNING.utLightningFireToggle;
             case "mixins.tweaks.misc.incurablepotions.json":
                 return UTConfigTweaks.MISC.INCURABLE_POTIONS.utIncurablePotionsToggle;
+            case "mixins.tweaks.misc.xp.cap.json":
+                return UTConfigTweaks.MISC.utXPLevelCap > -1;
             case "mixins.tweaks.misc.xp.linear.json":
-                return UTConfigTweaks.MISC.utLinearXP != 0;
+                return UTConfigTweaks.MISC.utLinearXP > 0;
             case "mixins.tweaks.misc.recipebook.server.json":
                 return UTConfigTweaks.MISC.utRecipeBookToggle;
             case "mixins.tweaks.misc.xp.smelting.json":
