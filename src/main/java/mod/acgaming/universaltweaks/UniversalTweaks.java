@@ -12,6 +12,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync;
+import mod.acgaming.universaltweaks.bugfixes.entities.dimensionchange.UTDimensionChangeEvents;
 import mod.acgaming.universaltweaks.bugfixes.misc.help.UTHelp;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
@@ -124,6 +125,7 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
+        if (UTConfigBugfixes.ENTITIES.utDimensionChangeToggle) MinecraftForge.EVENT_BUS.register(new UTDimensionChangeEvents());
         if (UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
         if (UTConfigTweaks.WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
         if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) MinecraftForge.EVENT_BUS.register(new UTAbyssalCraftEvents());
