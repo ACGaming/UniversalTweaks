@@ -36,6 +36,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("bottomsugarcanharvest") && UTConfigTweaks.BLOCKS.utSugarCaneSize != 3) messages.add("Bottom Sugar Cane Harvest");
         if (Loader.isModLoaded("bowinfinityfix") && UTConfigTweaks.ITEMS.utBowInfinityToggle) messages.add("Bow Infinity Fix");
         if (Loader.isModLoaded("burnbabyburn") && UTConfigTweaks.ENTITIES.utBurningBabyZombiesToggle) messages.add("BurnBabyBurn");
+        if (Loader.isModLoaded("chickensshed") && UTConfigTweaks.ENTITIES.CHICKEN_SHEDDING.utChickenSheddingToggle) messages.add("ChickensShed");
         if (Loader.isModLoaded("cie") && UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle) messages.add("Configurable Item Entities (CIE)");
         if (Loader.isModLoaded("classiccombat") && UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle) messages.add("Classic Combat");
         if (Loader.isModLoaded("cleardespawn") && UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEClearDespawnToggle) messages.add("Clear Despawn");
