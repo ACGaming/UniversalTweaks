@@ -257,7 +257,7 @@ public class UTConfigTweaks
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.betterburning")
         @Config.Name("Better Burning")
         public final BetterBurningCategory BETTER_BURNING = new BetterBurningCategory();
-        
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.chickenshedding")
         @Config.Name("Chicken Shedding")
         public final ChickenSheddingCategory CHICKEN_SHEDDING = new ChickenSheddingCategory();
@@ -478,13 +478,13 @@ public class UTConfigTweaks
             @Config.Comment("Allows fire to spread from entity to entity (30% chance * regional difficulty)")
             public boolean utBBSpreadingToggle = true;
         }
-        
+
         public static class ChickenSheddingCategory
         {
             @Config.Name("[1] Chicken Shedding")
             @Config.Comment("Enables chickens to have a chance to shed a feather")
             public boolean utChickenSheddingToggle = true;
-            
+
             @Config.Name("[2] Shed Frequency")
             @Config.Comment("How frequently feathers shed from chickens (lower means more)")
             public int utChickenSheddingFrequency = 28000;

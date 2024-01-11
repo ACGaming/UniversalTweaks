@@ -12,7 +12,8 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of holmraven
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
-public class UTChickenShedding {
+public class UTChickenShedding
+{
     @SubscribeEvent
     public static void onLivingUpdate(LivingUpdateEvent event)
     {
