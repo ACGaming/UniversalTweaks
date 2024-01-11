@@ -59,6 +59,7 @@ All changes are toggleable via config files.
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
 * **Piston Progress:** Properly saves the last state of pistons to tags
+* **Portal Duplication Fixes:** Fixes entity duplication issues on portals
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues

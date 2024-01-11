@@ -346,6 +346,11 @@ public class UTConfigBugfixes
         public boolean utFrustumCullingToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Portal Duplication Fixes")
+        @Config.Comment("Fixes entity duplication issues on portals")
+        public boolean utPortalDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Tile Entity Map")
         @Config.Comment
             ({
