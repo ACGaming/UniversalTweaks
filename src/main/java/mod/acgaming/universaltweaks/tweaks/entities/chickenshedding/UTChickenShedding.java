@@ -24,8 +24,7 @@ public class UTChickenShedding {
         EntityChicken chicken = (EntityChicken) event.getEntity();
         if (UTConfigTweaks.ENTITIES.CHICKEN_SHEDDING.utChickenSheddingBabyToggle || !(chicken.isChild()) && chicken.world.rand.nextInt(UTConfigTweaks.ENTITIES.CHICKEN_SHEDDING.utChickenSheddingFrequency) == 0)
         {
-            if (UTConfigGeneral.DEBUG.utDebugToggle)
-                UniversalTweaks.LOGGER.debug("UTChickenShedding ::: Living update event");
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTChickenShedding ::: Living update event");
             chicken.dropItem(Items.FEATHER, 1);
         }
     }

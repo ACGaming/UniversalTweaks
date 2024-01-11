@@ -486,7 +486,7 @@ public class UTConfigTweaks
             public boolean utChickenSheddingToggle = true;
             
             @Config.Name("[2] Shed Frequency")
-            @Config.Comment("How frequently feathers shed from chicken (lower means more)")
+            @Config.Comment("How frequently feathers shed from chickens (lower means more)")
             public int utChickenSheddingFrequency = 28000;
 
             @Config.Name("[3] Baby Chickens Shed Feathers")
