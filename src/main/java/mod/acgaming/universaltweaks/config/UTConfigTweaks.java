@@ -1092,6 +1092,15 @@ public class UTConfigTweaks
         public int utLinearXP = 0;
 
         @Config.RequiresMcRestart
+        @Config.Name("More Banner Layers")
+        @Config.Comment
+            ({
+                "Sets the amount of applicable pattern layers for banners",
+                "6 for vanilla default"
+            })
+        public int utBannerLayers = 6;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Night Vision Flash")
         @Config.Comment("Disables the flashing effect when the night vision potion effect is about to run out")
         public boolean utNightVisionFlashToggle = false;

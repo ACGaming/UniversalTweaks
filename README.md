@@ -138,6 +138,7 @@ All changes are toggleable via config files.
 * **Mending Overpowered:** If mending fix is enabled, repairs entire damaged inventory with XP
 * **Mending:** Only repairs damaged equipment with XP
 * **Mob Despawn Improvement:** Mobs carrying picked up items will drop their equipment and despawn properly
+* **More Banner Layers:** Sets the amount of applicable pattern layers for banners
 * **No Attack Cooldown:** Disables the 1.9 combat update attack cooldown
 * **No Crafting Repair:** Disables crafting recipes for repairing tools
 * **No Golems:** Disables the manual creation of golems and withers
