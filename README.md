@@ -93,6 +93,7 @@ All changes are toggleable via config files.
 * **Burning Baby Zombies:** Lets baby zombies burn in daylight as in Minecraft 1.13+
 * **Charged Creeper Spawning:** Sets the chance for creepers to spawn charged
 * **Check Animated Models:** Improves model load times by checking if an animated model exists before trying to load it
+* **Chicken Shedding:** Allows chickens to have a chance to shed feathers (similarly to laying eggs)
 * **Chunk Gen Limit:** Limits maximum chunk generation per tick for improved server performance
 * **Copy World Seed:** Enables clicking of `/seed` world seed in chat to copy to clipboard
 * **Crafting Cache:** Adds an IRecipe cache to improve recipe performance in large modpacks
