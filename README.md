@@ -70,6 +70,7 @@ All changes are toggleable via config files.
 
 * **AI Improvements:** Replaces/removes entity AI for improved server performance
 * **Always Eat:** Allows the consumption of food at any time, regardless of the hunger bar
+* **Armed Armor Stands:** Enables arms for armor stands by default
 * **Armor Curve:** Adjusts the armor scaling and degradation formulae for mobs and players
 * **Attributes:** Sets custom ranges for entity attributes
 * **Auto Jump Replacement:** Replaces auto jump with an increased step height (singleplayer only)

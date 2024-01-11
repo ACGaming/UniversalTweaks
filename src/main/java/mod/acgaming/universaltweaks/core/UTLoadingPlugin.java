@@ -185,6 +185,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.entities.ai.json");
         configs.add("mixins.tweaks.entities.ai.saddledwandering.json");
         configs.add("mixins.tweaks.entities.ai.wither.json");
+        configs.add("mixins.tweaks.entities.armedarmorstands.json");
         configs.add("mixins.tweaks.entities.burning.horse.json");
         configs.add("mixins.tweaks.entities.burning.zombie.json");
         configs.add("mixins.tweaks.entities.damage.arrow.json");
@@ -381,6 +382,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.ENTITIES.utSaddledWanderingToggle;
             case "mixins.tweaks.entities.ai.wither.json":
                 return UTConfigTweaks.ENTITIES.utWitherAIToggle;
+            case "mixins.tweaks.entities.armedarmorstands.json":
+                return UTConfigTweaks.ENTITIES.utArmedArmorStandsToggle;
             case "mixins.tweaks.entities.burning.horse.json":
                 return UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utBurningUndeadHorsesToggle;
             case "mixins.tweaks.entities.burning.zombie.json":

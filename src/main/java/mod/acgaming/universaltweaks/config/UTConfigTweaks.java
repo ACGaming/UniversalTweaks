@@ -316,6 +316,11 @@ public class UTConfigTweaks
         public boolean utAIRemovalToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Armed Armor Stands")
+        @Config.Comment("Enables arms for armor stands by default")
+        public boolean utArmedArmorStandsToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Auto Jump Replacement")
         @Config.Comment("Replaces auto jump with an increased step height (singleplayer only)")
         public boolean utAutoJumpToggle = true;
