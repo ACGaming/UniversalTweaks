@@ -12,12 +12,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(EntityArmorStand.class)
 public abstract class UTArmedArmorStandsMixin
 {
-    @Shadow
-    protected abstract void setShowArms(boolean showArms);
-
     @Inject(method = "getShowArms", at = @At("HEAD"))
     public void utArmedArmorStands(CallbackInfoReturnable<Boolean> cir)
     {
         if (UTConfigTweaks.ENTITIES.utArmedArmorStandsToggle) this.setShowArms(true);
     }
+
+    @Shadow
+    protected abstract void setShowArms(boolean showArms);
 }

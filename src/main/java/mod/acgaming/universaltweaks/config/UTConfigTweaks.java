@@ -1,5 +1,8 @@
 package mod.acgaming.universaltweaks.config;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -18,9 +21,6 @@ import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePoti
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
 public class UTConfigTweaks
@@ -63,7 +63,8 @@ public class UTConfigTweaks
         HARD
     }
 
-    public enum EnumBeacon {
+    public enum EnumBeacon
+    {
         MODIFIER(false, true),
         ENFORCED(true, false),
         ENFORCED_MODIFIER(true, true);
@@ -71,7 +72,8 @@ public class UTConfigTweaks
         public final boolean isEnforce;
         public final boolean isModifier;
 
-        EnumBeacon(boolean isEnforce, boolean isModifier) {
+        EnumBeacon(boolean isEnforce, boolean isModifier)
+        {
             this.isEnforce = isEnforce;
             this.isModifier = isModifier;
         }
@@ -282,7 +284,8 @@ public class UTConfigTweaks
                 })
             public Map<String, Double> utOverhaulBeaconBlocksModifier = new HashMap<>();
 
-            public OverhaulBeaconCategory() {
+            public OverhaulBeaconCategory()
+            {
                 utOverhaulBeaconBlocksModifier.put("modid:example", 1D);
             }
         }

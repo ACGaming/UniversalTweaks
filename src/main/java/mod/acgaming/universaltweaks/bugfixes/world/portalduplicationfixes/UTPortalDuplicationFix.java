@@ -1,7 +1,6 @@
 package mod.acgaming.universaltweaks.bugfixes.world.portalduplicationfixes;
 
 import org.apache.logging.log4j.Level;
-
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
@@ -11,7 +10,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of fonnymunkey
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)

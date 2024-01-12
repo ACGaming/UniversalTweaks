@@ -8,9 +8,7 @@ import net.minecraft.tileentity.TileEntityPiston;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
-import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
