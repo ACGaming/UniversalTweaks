@@ -297,6 +297,11 @@ public class UTConfigMods
     public static class ElenaiDodge2Category
     {
         @Config.RequiresMcRestart
+        @Config.Name("Extinguishing Dodges")
+        @Config.Comment("Chance per dodge to extinguish the player when burning")
+        public double utED2ExtinguishingDodgeChance = 0;
+
+        @Config.RequiresMcRestart
         @Config.Name("Feathers Helper API Fix")
         @Config.Comment("Fixes server-sided crashes when the Feathers Helper API is utilized")
         public boolean utED2FeathersHelperToggle = true;
