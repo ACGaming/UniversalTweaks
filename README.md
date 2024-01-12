@@ -150,6 +150,7 @@ All changes are toggleable via config files.
 * **No Saddled Wandering:** Stops horses wandering around when saddled
 * **No Smelting XP:** Disables the experience reward when smelting items in furnaces
 * **Offhand Improvement:** Prevents placing offhand blocks when blocks or food are held in the mainhand
+* **Overhaul Beacon:** Change how beacon construct and range apply per level.
 * **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
