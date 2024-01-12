@@ -19,6 +19,9 @@ import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
 public class UTConfigTweaks
 {
@@ -60,6 +63,20 @@ public class UTConfigTweaks
         HARD
     }
 
+    public enum EnumBeacon {
+        MODIFIER(false, true),
+        ENFORCED(true, false),
+        ENFORCED_MODIFIER(true, true);
+
+        public final boolean isEnforce;
+        public final boolean isModifier;
+
+        EnumBeacon(boolean isEnforce, boolean isModifier) {
+            this.isEnforce = isEnforce;
+            this.isModifier = isModifier;
+        }
+    }
+
     public static class BlocksCategory
     {
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.betterplacement")
@@ -77,6 +94,10 @@ public class UTConfigTweaks
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.finitewater")
         @Config.Name("Finite Water")
         public final FiniteWaterCategory FINITE_WATER = new FiniteWaterCategory();
+
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.overhaulbeacon")
+        @Config.Name("Overhaul Beacon")
+        public final OverhaulBeaconCategory OVERHAUL_BEACON = new OverhaulBeaconCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.sapling")
         @Config.Name("Sapling Behavior")
@@ -224,6 +245,46 @@ public class UTConfigTweaks
             @Config.Name("[4] Maximum Altitude")
             @Config.Comment("Inclusive maximum altitude at which water is infinite")
             public int utFiniteWaterInfMax = 63;
+        }
+
+        public static class OverhaulBeaconCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Overhaul Beacon Toggle")
+            @Config.Comment("Overhaul beacon construction and range")
+            public boolean utOverhaulBeaconToggle = false;
+
+            @Config.Name("[2] Mode")
+            @Config.Comment
+                ({
+                    "Modifier: Use per block modifier for range calculation, replacing vanilla implementation",
+                    "Enforced: Enforce usage of only 1 beacon base type per level",
+                })
+            public EnumBeacon utOverhaulBeaconMode = EnumBeacon.ENFORCED;
+
+            @Config.Name("[3] Global Modifier")
+            @Config.Comment("Global range for block, change it by modify beacon range config")
+            public double utOverhaulBeaconGlobalModifier = 1D;
+
+            @Config.Name("Per Block Modifier")
+            @Config.Comment
+                ({
+                    "Block modifier for range calculate, only apply for beacon base block",
+                    "Add new one required restart, modify doesn't required so"
+                })
+            public Map<String, Double> utOverhaulBeaconBlocksModifier = new HashMap<>();
+
+            @Config.Name("[4] Level Scaling")
+            @Config.Comment
+                ({
+                    "Scaling beacon range per level (1 -> 4)",
+                    "Don't try add more value to this scale as this only use first 4 values"
+                })
+            public double[] utOverhaulBeaconLevelScale = {1D, 0.8D, 0.6D, 0.4D};
+
+            public OverhaulBeaconCategory() {
+                utOverhaulBeaconBlocksModifier.put("modid:example", 1D);
+            }
         }
 
         public static class SaplingBehaviorCategory
