@@ -187,6 +187,11 @@ public class UTConfigBugfixes
         @Config.Comment("Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0")
         public boolean utEntityIDToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Entity Lists")
+        @Config.Comment("Fixes entity lists often not getting updated correctly")
+        public boolean utEntityListsToggle = true;
+
         @Config.Name("Entity NaN Values")
         @Config.Comment("Prevents corruption of entities caused by invalid health or damage values")
         public boolean utEntityNaNToggle = true;
@@ -348,7 +353,7 @@ public class UTConfigBugfixes
         @Config.RequiresMcRestart
         @Config.Name("Portal Duplication Fix")
         @Config.Comment("Fixes duplication issues that can occur when entities travel through portals")
-        public boolean utPortalDuplicationFixesToggle = true;
+        public boolean utPortalDuplicationFixToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Tile Entity Map")
