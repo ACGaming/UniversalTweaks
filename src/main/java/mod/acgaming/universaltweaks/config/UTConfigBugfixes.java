@@ -346,8 +346,8 @@ public class UTConfigBugfixes
         public boolean utFrustumCullingToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Portal Duplication Fixes")
-        @Config.Comment("Fixes entity duplication issues on portals")
+        @Config.Name("Portal Duplication Fix")
+        @Config.Comment("Fixes duplication issues that can occur when entities travel through portals")
         public boolean utPortalDuplicationFixesToggle = true;
 
         @Config.RequiresMcRestart

@@ -59,7 +59,7 @@ All changes are toggleable via config files.
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
 * **Piston Progress:** Properly saves the last state of pistons to tags
-* **Portal Duplication Fixes:** Fixes entity duplication issues on portals
+* **Portal Duplication Fix:** Fixes duplication issues that can occur when entities travel through portals
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
@@ -168,6 +168,7 @@ All changes are toggleable via config files.
 * **Skip Missing Registry Entries Screen:** Automatically confirms the 'Missing Registry Entries' screen on world load
 * **Sleeping Time:** Determines at which time of day sleeping is allowed in ticks (0 - 24000)
 * **Smooth Scrolling:** Adds smooth scrolling to every in-game list
+* **Soulbound Vexes:** Summoned vexes will also die when their summoner is killed
 * **Spawn Caps:** Sets maximum spawning limits for different entity types
 * **Super Hot Torch:** Enables one-time ignition of entities by hitting them with a torch
 * **Stronghold Replacement:** Replaces stronghold generation with a safer variant

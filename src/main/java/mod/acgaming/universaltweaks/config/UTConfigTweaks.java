@@ -393,6 +393,11 @@ public class UTConfigTweaks
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
         public double utRabbitToastChance = 0.0D;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Soulbound Vexes")
+        @Config.Comment("Summoned vexes will also die when their summoner is killed")
+        public boolean utSoulboundVexesToggle = true;
+
         public static class AttributesCategory
         {
             @Config.RequiresMcRestart
