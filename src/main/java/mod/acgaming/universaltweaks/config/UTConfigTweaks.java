@@ -266,14 +266,6 @@ public class UTConfigTweaks
             @Config.Comment("Global range for block, change it by modify beacon range config")
             public double utOverhaulBeaconGlobalModifier = 1D;
 
-            @Config.Name("Per Block Modifier")
-            @Config.Comment
-                ({
-                    "Block modifier for range calculate, only apply for beacon base block",
-                    "Add new one required restart, modify doesn't required so"
-                })
-            public Map<String, Double> utOverhaulBeaconBlocksModifier = new HashMap<>();
-
             @Config.Name("[4] Level Scaling")
             @Config.Comment
                 ({
@@ -281,6 +273,14 @@ public class UTConfigTweaks
                     "Don't try add more value to this scale as this only use first 4 values"
                 })
             public double[] utOverhaulBeaconLevelScale = {1D, 0.8D, 0.6D, 0.4D};
+
+            @Config.Name("[5] Per Block Modifier")
+            @Config.Comment
+                ({
+                    "Block modifier for range calculate, only apply for beacon base block",
+                    "Add new one required restart, modify doesn't required so",
+                })
+            public Map<String, Double> utOverhaulBeaconBlocksModifier = new HashMap<>();
 
             public OverhaulBeaconCategory() {
                 utOverhaulBeaconBlocksModifier.put("modid:example", 1D);
