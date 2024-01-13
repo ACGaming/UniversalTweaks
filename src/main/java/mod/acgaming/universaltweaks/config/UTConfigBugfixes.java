@@ -90,6 +90,11 @@ public class UTConfigBugfixes
         @Config.Comment("Properly saves the last state of pistons to tags")
         public boolean utPistonTileToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Sleep Resets Weather")
+        @Config.Comment("Fixes sleeping always resetting rain and thunder times")
+        public boolean utSleepResetsWeatherToggle = true;
+
         public static class BlockOverlayCategory
         {
             @Config.RequiresMcRestart
