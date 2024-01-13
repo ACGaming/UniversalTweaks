@@ -309,6 +309,11 @@ public class UTConfigBugfixes
         public boolean utLocaleToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Particle Spawning")
+        @Config.Comment("Fixes various particle types not showing up on the client")
+        public boolean utParticleSpawningToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Packet Size")
         @Config.Comment
             ({
