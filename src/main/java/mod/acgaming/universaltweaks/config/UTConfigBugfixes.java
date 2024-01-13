@@ -291,7 +291,7 @@ public class UTConfigBugfixes
         @Config.RequiresMcRestart
         @Config.Name("Blast Protection Knockback")
         @Config.Comment("Fixes the blast protection enchantment not reducing knockback from explosions except at very high levels")
-        public boolean utBlastProtectionKnockbackToggle = true;
+        public boolean utBlastProtectionKnockbackToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Depth Mask")

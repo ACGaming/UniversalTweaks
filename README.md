@@ -21,7 +21,6 @@ All changes are toggleable via config files.
 * **Accurate Smooth Lighting:** Improves the accuracy of smooth lighting by checking for suffocation and light opacity
 * **Attack Radius:** Improves the attack radius of hostile mobs by checking the line of sight with raytracing
 * **Banner Bounding Box:** Fixes rendering issues with banners by correctly sizing their render bounding boxes
-* **Blast Protection Knockback:** Fixes the blast protection enchantment not reducing knockback from explosions except at very high levels
 * **Block Fire:** Prevents fire projectiles burning entities when blocking with shields
 * **Block Overlay:** Fixes x-ray when standing in non-suffocating blocks
 * **Boat Riding Offset:** Fixes entities glitching through the bottom of boats
