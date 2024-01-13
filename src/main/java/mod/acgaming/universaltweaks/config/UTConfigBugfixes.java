@@ -289,6 +289,11 @@ public class UTConfigBugfixes
         public boolean utAccurateSmoothLighting = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Blast Protection Knockback")
+        @Config.Comment("Fixes the blast protection enchantment not reducing knockback from explosions except at very high levels")
+        public boolean utBlastProtectionKnockbackToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Depth Mask")
         @Config.Comment("Fixes entity and particle rendering issues by enabling depth buffer writing")
         public boolean utDepthMaskToggle = true;
