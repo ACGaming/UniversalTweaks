@@ -272,6 +272,7 @@ public class UTConfigBugfixes
             public String[] utEntityDesyncBlacklist = new String[]
                 {
                     "minecraft:minecart",
+                    "pixelmon:empty_pokeball",
                     "pixelmon:occupied_pokeball"
                 };
         }
