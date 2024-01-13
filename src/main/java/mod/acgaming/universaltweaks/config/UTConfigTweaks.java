@@ -370,6 +370,15 @@ public class UTConfigTweaks
         @Config.Name("Water Fall Damage")
         public final WaterFallDamageCategory WATER_FALL_DAMAGE = new WaterFallDamageCategory();
 
+        @Config.Name("Adaptive XP Drops")
+        @Config.Comment
+            ({
+                "Scales dropped experience from entities based on their health",
+                "Formula: max_health * factor",
+                "0 for vanilla default"
+            })
+        public double utAdaptiveXPFactor = 0;
+
         @Config.RequiresMcRestart
         @Config.Name("AI Replacement")
         @Config.Comment("Replaces entity AI for improved server performance")

@@ -71,6 +71,7 @@ All changes are toggleable via config files.
 
 ### **🔧 TWEAKS**
 
+* **Adaptive XP Drops:** Scales dropped experience from entities based on their health
 * **AI Improvements:** Replaces/removes entity AI for improved server performance
 * **Always Eat:** Allows the consumption of food at any time, regardless of the hunger bar
 * **Armed Armor Stands:** Enables arms for armor stands by default
