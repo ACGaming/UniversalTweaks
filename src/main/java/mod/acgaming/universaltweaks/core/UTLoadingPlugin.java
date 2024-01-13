@@ -322,6 +322,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigBugfixes.BLOCKS.utMiningGlitchToggle;
             case "mixins.bugfixes.blocks.pistontile.json":
                 return UTConfigBugfixes.BLOCKS.utPistonTileToggle;
+            case "mixins.bugfixes.blocks.bed.json":
+                return UTConfigBugfixes.BLOCKS.utSleepResetsWeatherToggle;
+            case "mixins.bugfixes.misc.enchantment.json":
+                return UTConfigBugfixes.MISC.utBlastProtectionKnockbackToggle;
             case "mixins.bugfixes.misc.packetsize.json":
                 return UTConfigBugfixes.MISC.utPacketSize > 0x200000 && !spongeForgeLoaded && !randomPatchesLoaded;
             case "mixins.bugfixes.entities.ai.json":

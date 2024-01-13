@@ -90,6 +90,11 @@ public class UTConfigBugfixes
         @Config.Comment("Properly saves the last state of pistons to tags")
         public boolean utPistonTileToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Sleep Resets Weather")
+        @Config.Comment("Fixes sleeping always resetting rain and thunder times")
+        public boolean utSleepResetsWeatherToggle = true;
+
         public static class BlockOverlayCategory
         {
             @Config.RequiresMcRestart
@@ -282,6 +287,11 @@ public class UTConfigBugfixes
         @Config.Name("Accurate Smooth Lighting")
         @Config.Comment("Improves the accuracy of smooth lighting by checking for suffocation and light opacity")
         public boolean utAccurateSmoothLighting = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Blast Protection Knockback")
+        @Config.Comment("Fixes the blast protection enchantment not reducing knockback from explosions except at very high levels")
+        public boolean utBlastProtectionKnockbackToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Depth Mask")

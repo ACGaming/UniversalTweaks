@@ -63,6 +63,7 @@ All changes are toggleable via config files.
 * **Portal Duplication Fix:** Fixes duplication issues that can occur when entities travel through portals
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
+* **Sleep Resets Weather:** Fixes sleeping always resetting rain and thunder times
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
 * **Villager Mantle:** Returns missing hoods to villager mantles
 
