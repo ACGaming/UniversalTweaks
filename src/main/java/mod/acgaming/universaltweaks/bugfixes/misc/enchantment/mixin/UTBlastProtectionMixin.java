@@ -6,10 +6,9 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Enchantments;
 import net.minecraft.util.math.MathHelper;
 
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-
-import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 
 // MC-198809
 // https://bugs.mojang.com/browse/MC-198809
@@ -30,10 +29,11 @@ public abstract class UTBlastProtectionMixin
         {
             if (UTConfigBugfixes.MISC.utBlastProtectionKnockbackToggle)
             {
-                damage -= damage * Math.min(1D, (double) ((float) i * 0.15F));
-            } else
+                damage -= damage * Math.min(1D, i * 0.15F);
+            }
+            else
             {
-                damage -= (double) MathHelper.floor(damage * (double) ((float) i * 0.15F));
+                damage -= MathHelper.floor(damage * (i * 0.15F));
             }
         }
 

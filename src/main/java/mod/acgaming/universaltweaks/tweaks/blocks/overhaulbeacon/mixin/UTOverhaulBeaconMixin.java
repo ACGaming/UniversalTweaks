@@ -87,7 +87,8 @@ public class UTOverhaulBeaconMixin
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/block/Block;isBeaconBase(Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/BlockPos;)Z"
-        )
+        ),
+        remap = false
     )
     private boolean utOverhaulBeacon$collectBlocksOnLevel(boolean original, @Local Block block, @Local(index = 8) int level)
     {
