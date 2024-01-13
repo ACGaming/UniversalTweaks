@@ -146,6 +146,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             configs.add("mixins.tweaks.misc.difficulty.server.json");
         }
         // COMMON
+        configs.add("mixins.bugfixes.blocks.bed.json");
         configs.add("mixins.bugfixes.blocks.comparatortiming.json");
         configs.add("mixins.bugfixes.blocks.fallingblockdamage.json");
         configs.add("mixins.bugfixes.blocks.hopper.boundingbox.json");
@@ -173,7 +174,9 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.bugfixes.entities.skeletonaim.json");
         configs.add("mixins.bugfixes.entities.suffocation.json");
         configs.add("mixins.bugfixes.entities.tracker.json");
+        configs.add("mixins.bugfixes.misc.enchantment.json");
         configs.add("mixins.bugfixes.misc.packetsize.json");
+        configs.add("mixins.bugfixes.misc.particlespawning.json");
         configs.add("mixins.bugfixes.world.chunksaving.json");
         configs.add("mixins.bugfixes.world.tileentities.json");
         configs.add("mixins.tweaks.blocks.bedobstruction.json");
@@ -328,6 +331,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigBugfixes.MISC.utBlastProtectionKnockbackToggle;
             case "mixins.bugfixes.misc.packetsize.json":
                 return UTConfigBugfixes.MISC.utPacketSize > 0x200000 && !spongeForgeLoaded && !randomPatchesLoaded;
+            case "mixins.tweaks.misc.particlespawning.json":
+                return UTConfigBugfixes.MISC.utParticleSpawningToggle;
             case "mixins.bugfixes.entities.ai.json":
                 return UTConfigBugfixes.ENTITIES.utEntityAITasksToggle;
             case "mixins.bugfixes.entities.attackradius.json":

@@ -16,7 +16,7 @@ public class UTSoulboundVexes
     @SubscribeEvent
     public static void soulboundVexesEvent(LivingUpdateEvent event)
     {
-        if (!(UTConfigTweaks.ENTITIES.utSoulboundVexesToggle)) return;
+        if (!UTConfigTweaks.ENTITIES.utSoulboundVexesToggle) return;
 
         if (event.getEntity() instanceof EntityVex)
         {

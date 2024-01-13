@@ -59,6 +59,7 @@ All changes are toggleable via config files.
 * **Model Gap:** Fixes transparent gaps in all 3D models of blocks and items
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
+* **Particle Spawning:** Fixes various particle types not showing up on the client
 * **Piston Progress:** Properly saves the last state of pistons to tags
 * **Portal Duplication Fix:** Fixes duplication issues that can occur when entities travel through portals
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms

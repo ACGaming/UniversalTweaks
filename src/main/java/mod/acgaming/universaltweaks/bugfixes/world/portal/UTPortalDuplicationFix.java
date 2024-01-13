@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.bugfixes.world.portalduplicationfixes;
+package mod.acgaming.universaltweaks.bugfixes.world.portal;
 
 import org.apache.logging.log4j.Level;
 import net.minecraft.entity.EntityLiving;
@@ -18,7 +18,7 @@ public class UTPortalDuplicationFix
     @SubscribeEvent
     public static void dimensionChangeEvent(EntityTravelToDimensionEvent event)
     {
-        if (event.getEntity().world.isRemote || !(UTConfigBugfixes.WORLD.utPortalDuplicationFixToggle)) return;
+        if (event.getEntity().world.isRemote || !UTConfigBugfixes.WORLD.utPortalDuplicationFixToggle) return;
         if (event.getEntity() instanceof EntityLiving && !(event.getEntity() instanceof EntityPlayer))
         {
             EntityLiving entity = (EntityLiving) event.getEntity();
