@@ -1609,6 +1609,11 @@ public class UTConfigTweaks
         public boolean utRedstoneLightingToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Suppress Ore Dictionary Errors")
+        @Config.Comment("Suppresses Forge's broken ore dictionary errors")
+        public boolean utOreDictionaryCheckToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Uncap FPS")
         @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
         public boolean utUncapFPSToggle = true;

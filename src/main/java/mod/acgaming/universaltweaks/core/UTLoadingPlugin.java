@@ -227,6 +227,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.performance.autosave.json");
         configs.add("mixins.tweaks.performance.craftingcache.json");
         configs.add("mixins.tweaks.performance.dyeblending.json");
+        configs.add("mixins.tweaks.performance.oredictionarycheck.json");
         configs.add("mixins.tweaks.performance.prefixcheck.json");
         configs.add("mixins.tweaks.performance.redstone.json");
         configs.add("mixins.tweaks.world.chunks.gen.json");
@@ -470,6 +471,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.PERFORMANCE.utCraftingCacheToggle;
             case "mixins.tweaks.performance.dyeblending.json":
                 return UTConfigTweaks.PERFORMANCE.utDyeBlendingToggle;
+            case "mixins.tweaks.performance.oredictionarycheck.json":
+                return UTConfigTweaks.PERFORMANCE.utOreDictionaryCheckToggle;
             case "mixins.tweaks.performance.prefixcheck.json":
                 return UTConfigTweaks.PERFORMANCE.utPrefixCheckToggle;
             case "mixins.tweaks.performance.redstone.json":
