@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -155,5 +156,13 @@ public abstract class UTEntityItemMixin extends Entity
             final ItemStack stack = this.getItem();
             if (stack.getCount() >= stack.getMaxStackSize()) cir.setReturnValue(false);
         }
+    }
+
+    // Courtesy of fonnymunkey
+    @Redirect(method = "onUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/item/EntityItem;move(Lnet/minecraft/entity/MoverType;DDD)V"))
+    public boolean utIEOnUpdate(EntityItem instance, MoverType moverType, double dx, double dy, double dz)
+    {
+        // Run on odd ticks to not skip the '% 25' check
+        return UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEUpdateToggle && instance.ticksExisted % 2 != 0;
     }
 }

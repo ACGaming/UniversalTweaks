@@ -1019,6 +1019,10 @@ public class UTConfigTweaks
             @Config.Name("[16] Clear Despawn: Urgent Flashing")
             @Config.Comment("Makes item entities flash faster as they get closer to despawning")
             public boolean utIEClearDespawnUrgentToggle = true;
+
+            @Config.Name("[17] Slowed Movement")
+            @Config.Comment("Slows how often item entities update their position to improve performance")
+            public boolean utIEUpdateToggle  = true;
         }
 
         public static class MendingCategory
