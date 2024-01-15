@@ -13,14 +13,15 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
+// Courtesy of fonnymunkey
 @Mixin(EntityTrackerEntry.class)
 public abstract class UTEntityTrackerEntryMixin
 {
     @Shadow @Final private Entity trackedEntity;
 
     @Redirect(method = "createSpawnPacket", at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;warn(Ljava/lang/String;)V", remap = false))
-    public boolean utCreateSpawnPacket(Logger instance, String s)
+    public void utCreateSpawnPacket(Logger instance, String s)
     {
-        return UTConfigTweaks.MISC.utImprovedEntityTrackerToggle && instance.warn(s + ", name: " + this.trackedEntity.getName() + " pos: {x:" + this.trackedEntity.posX + ",y:" + this.trackedEntity.posY + ",z:" + this.trackedEntity.posZ + "}");
+    	instance.warn(s + ", name: " + this.trackedEntity.getName() + " pos: {x:" + this.trackedEntity.posX + ",y:" + this.trackedEntity.posY + ",z:" + this.trackedEntity.posZ + "}");
     }
 }
