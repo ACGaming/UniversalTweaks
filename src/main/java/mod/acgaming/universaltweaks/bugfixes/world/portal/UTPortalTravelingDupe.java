@@ -13,12 +13,12 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 
 // Courtesy of fonnymunkey
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
-public class UTPortalDuplicationFix
+public class UTPortalTravelingDupe
 {
     @SubscribeEvent
     public static void dimensionChangeEvent(EntityTravelToDimensionEvent event)
     {
-        if (event.getEntity().world.isRemote || !UTConfigBugfixes.WORLD.utPortalDuplicationFixToggle) return;
+        if (event.getEntity().world.isRemote || !UTConfigBugfixes.WORLD.utPortalTravelingDupeToggle) return;
         if (event.getEntity() instanceof EntityLiving && !(event.getEntity() instanceof EntityPlayer))
         {
             EntityLiving entity = (EntityLiving) event.getEntity();

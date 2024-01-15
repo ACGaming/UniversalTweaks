@@ -1206,6 +1206,11 @@ public class UTConfigTweaks
         @Config.Comment("Disables the experience reward when smelting items in furnaces")
         public boolean utSmeltingXPToggle = false;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Improved Entity Tracker Warning")
+        @Config.Comment("Provides more information to addPacket removed entity warnings")
+        public boolean utImprovedEntityTrackerToggle = true;
+
         @Config.Name("Offhand Improvement")
         @Config.Comment("Prevents placing offhand blocks when blocks or food are held in the mainhand")
         public boolean utOffhandToggle = true;

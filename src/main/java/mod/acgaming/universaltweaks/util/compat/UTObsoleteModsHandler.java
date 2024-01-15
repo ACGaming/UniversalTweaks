@@ -35,6 +35,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("blockoverlayfix") && UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) messages.add("Block Overlay Fix");
         if (Loader.isModLoaded("bottomsugarcanharvest") && UTConfigTweaks.BLOCKS.utSugarCaneSize != 3) messages.add("Bottom Sugar Cane Harvest");
         if (Loader.isModLoaded("bowinfinityfix") && UTConfigTweaks.ITEMS.utBowInfinityToggle) messages.add("Bow Infinity Fix");
+        if (Loader.isModLoaded("breedablekillerrabbit") && UTConfigTweaks.ENTITIES.utRabbitKillerChance > 0.0D) messages.add("Breedable Killer Rabbit");
         if (Loader.isModLoaded("burnbabyburn") && UTConfigTweaks.ENTITIES.utBurningBabyZombiesToggle) messages.add("BurnBabyBurn");
         if (Loader.isModLoaded("chickensshed") && UTConfigTweaks.ENTITIES.CHICKEN_SHEDDING.utChickenSheddingToggle) messages.add("ChickensShed");
         if (Loader.isModLoaded("cie") && UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle) messages.add("Configurable Item Entities (CIE)");
@@ -42,6 +43,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("cleardespawn") && UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEClearDespawnToggle) messages.add("Clear Despawn");
         if (Loader.isModLoaded("collisiondamage") && UTConfigTweaks.ENTITIES.COLLISION_DAMAGE.utCollisionDamageToggle) messages.add("Collision Damage");
         if (Loader.isModLoaded("configurablecane") && UTConfigTweaks.BLOCKS.utSugarCaneSize != 3) messages.add("Configurable Cane");
+        if (Loader.isModLoaded("configurabledespawntimer") && UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle) messages.add("Configurable Despawn Timer");
         if (Loader.isModLoaded("continousmusic") && UTConfigTweaks.MISC.utInfiniteMusicToggle) messages.add("Infinite Music");
         if (Loader.isModLoaded("creeperconfetti") && UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiChance > 0) messages.add("Creeper Confetti");
         if (Loader.isModLoaded("damagetilt") && UTConfigTweaks.MISC.utDamageTiltToggle) messages.add("Damage Tilt");
@@ -67,6 +69,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("givemebackmyhp") && UTConfigBugfixes.ENTITIES.utMaxHealthToggle) messages.add("Give Me Back My HP");
         if (Loader.isModLoaded("gottagofast") && UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("Gotta Go Fast");
         if (Loader.isModLoaded("helpfixer") && UTConfigBugfixes.MISC.utHelpToggle) messages.add("HelpFixer");
+        if (Loader.isModLoaded("hiddenrecipebook") && UTConfigTweaks.MISC.utRecipeBookToggle) messages.add("Hidden Recipe Book");
         if (Loader.isModLoaded("horsefallfix") && UTConfigBugfixes.ENTITIES.utHorseFallingToggle) messages.add("HorseFallFix");
         if (Loader.isModLoaded("horsestandstill") && UTConfigTweaks.ENTITIES.utSaddledWanderingToggle) messages.add("Stupid Horse Stand Still");
         if (Loader.isModLoaded("ikwid") && UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlTutorialToggle) messages.add("I Know What I'm Doing");
@@ -93,7 +96,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("parry") && UTConfigTweaks.ITEMS.PARRY.utParryToggle) messages.add("Shield Parry");
         if (Loader.isModLoaded("pathundergates") && UTConfigTweaks.BLOCKS.utLenientPathsToggle) messages.add("Path Under Gates");
         if (Loader.isModLoaded("pickupnotifier") && UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) messages.add("Pick Up Notifier");
-        if (Loader.isModLoaded("portaldupebegone") && UTConfigBugfixes.WORLD.utPortalDuplicationFixToggle) messages.add("PortalDupeBegone");
+        if (Loader.isModLoaded("portaldupebegone") && UTConfigBugfixes.WORLD.utPortalTravelingDupeToggle) messages.add("PortalDupeBegone");
         if (Loader.isModLoaded("preventghost") && UTConfigBugfixes.BLOCKS.utMiningGlitchToggle) messages.add("Prevent Ghost Blocks");
         if (Loader.isModLoaded("quickleafdecay") && UTConfigTweaks.BLOCKS.utLeafDecayToggle) messages.add("Quick Leaf Decay");
         if (Loader.isModLoaded("rallyhealth") && UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle) messages.add("Rally Health");

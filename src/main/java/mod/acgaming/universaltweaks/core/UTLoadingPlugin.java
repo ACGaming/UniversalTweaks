@@ -218,6 +218,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.items.xpbottle.json");
         configs.add("mixins.tweaks.misc.armorcurve.json");
         configs.add("mixins.tweaks.misc.bannerlayers.json");
+        configs.add("mixins.tweaks.misc.console.addpacket.json");
         configs.add("mixins.tweaks.misc.incurablepotions.json");
         configs.add("mixins.tweaks.misc.lightning.damage.json");
         configs.add("mixins.tweaks.misc.lightning.fire.json");
@@ -454,6 +455,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.MISC.utBannerLayers != 6;
             case "mixins.tweaks.misc.buttons.snooper.server.json":
                 return UTConfigTweaks.MISC.utSnooperToggle;
+            case "mixins.tweaks.misc.console.addpacket.json":
+                return UTConfigTweaks.MISC.utImprovedEntityTrackerToggle;
             case "mixins.tweaks.misc.lightning.damage.json":
                 return UTConfigTweaks.MISC.LIGHTNING.utLightningDamage != 5.0D || UTConfigTweaks.MISC.LIGHTNING.utLightningFireTicks != 8;
             case "mixins.tweaks.misc.lightning.fire.json":

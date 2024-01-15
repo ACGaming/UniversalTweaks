@@ -1,6 +1,7 @@
 package mod.acgaming.universaltweaks.tweaks.items.itementities.mixin;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.MoverType;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;

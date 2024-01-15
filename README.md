@@ -61,7 +61,7 @@ All changes are toggleable via config files.
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
 * **Particle Spawning:** Fixes various particle types not showing up on the client
 * **Piston Progress:** Properly saves the last state of pistons to tags
-* **Portal Duplication Fix:** Fixes duplication issues that can occur when entities travel through portals
+* **Portal Traveling Dupe:** Fixes duplication issues that can occur when entities travel through portals
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Sleep Resets Weather:** Fixes sleeping always resetting rain and thunder times
@@ -130,6 +130,7 @@ All changes are toggleable via config files.
 * **Hardcore Buckets:** Prevents placing of liquid source blocks in the world
 * **Horizontal Collision Damage:** Applies horizontal collision damage to the player akin to elytra collision
 * **Husk & Stray Spawning:** Lets husks and strays spawn underground like regular zombies and skeletons
+* **Improved Entity Tracker Warning:** Provides more information to addPacket removed entity warnings
 * **Incurable Potions:** Excludes potion effects from being curable with curative items like buckets of milk
 * **Infinite Music:** Lets background music play continuously without delays
 * **Item Entities:** Enables the modification of item entity properties

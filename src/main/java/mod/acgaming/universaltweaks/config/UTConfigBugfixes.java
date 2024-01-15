@@ -367,9 +367,9 @@ public class UTConfigBugfixes
         public boolean utFrustumCullingToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Portal Duplication Fix")
+        @Config.Name("Portal Traveling Dupe")
         @Config.Comment("Fixes duplication issues that can occur when entities travel through portals")
-        public boolean utPortalDuplicationFixToggle = true;
+        public boolean utPortalTravelingDupeToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Tile Entity Map")
