@@ -203,6 +203,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.entities.spawning.creeper.confetti.json");
         configs.add("mixins.tweaks.entities.spawning.golem.json");
         configs.add("mixins.tweaks.entities.spawning.husk.json");
+        configs.add("mixins.tweaks.entities.spawning.portal.json");
         configs.add("mixins.tweaks.entities.spawning.stray.json");
         configs.add("mixins.tweaks.entities.speed.boat.json");
         configs.add("mixins.tweaks.entities.speed.player.json");
@@ -217,6 +218,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.items.xpbottle.json");
         configs.add("mixins.tweaks.misc.armorcurve.json");
         configs.add("mixins.tweaks.misc.bannerlayers.json");
+        configs.add("mixins.tweaks.misc.console.addpacket.json");
         configs.add("mixins.tweaks.misc.incurablepotions.json");
         configs.add("mixins.tweaks.misc.lightning.damage.json");
         configs.add("mixins.tweaks.misc.lightning.fire.json");
@@ -227,6 +229,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.performance.autosave.json");
         configs.add("mixins.tweaks.performance.craftingcache.json");
         configs.add("mixins.tweaks.performance.dyeblending.json");
+        configs.add("mixins.tweaks.performance.oredictionarycheck.json");
         configs.add("mixins.tweaks.performance.prefixcheck.json");
         configs.add("mixins.tweaks.performance.redstone.json");
         configs.add("mixins.tweaks.world.chunks.gen.json");
@@ -424,6 +427,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.entities.spawning.husk.json":
             case "mixins.tweaks.entities.spawning.stray.json":
                 return UTConfigTweaks.ENTITIES.utHuskStraySpawningToggle;
+            case "mixins.tweaks.entities.spawning.portal.json":
+                return UTConfigTweaks.ENTITIES.utPortalSpawningToggle;
             case "mixins.tweaks.entities.speed.boat.json":
                 return UTConfigTweaks.ENTITIES.utBoatSpeed != 0.04D;
             case "mixins.tweaks.entities.speed.player.json":
@@ -450,6 +455,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.MISC.utBannerLayers != 6;
             case "mixins.tweaks.misc.buttons.snooper.server.json":
                 return UTConfigTweaks.MISC.utSnooperToggle;
+            case "mixins.tweaks.misc.console.addpacket.json":
+                return UTConfigTweaks.MISC.utImprovedEntityTrackerToggle;
             case "mixins.tweaks.misc.lightning.damage.json":
                 return UTConfigTweaks.MISC.LIGHTNING.utLightningDamage != 5.0D || UTConfigTweaks.MISC.LIGHTNING.utLightningFireTicks != 8;
             case "mixins.tweaks.misc.lightning.fire.json":
@@ -470,6 +477,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.PERFORMANCE.utCraftingCacheToggle;
             case "mixins.tweaks.performance.dyeblending.json":
                 return UTConfigTweaks.PERFORMANCE.utDyeBlendingToggle;
+            case "mixins.tweaks.performance.oredictionarycheck.json":
+                return UTConfigTweaks.PERFORMANCE.utOreDictionaryCheckToggle;
             case "mixins.tweaks.performance.prefixcheck.json":
                 return UTConfigTweaks.PERFORMANCE.utPrefixCheckToggle;
             case "mixins.tweaks.performance.redstone.json":

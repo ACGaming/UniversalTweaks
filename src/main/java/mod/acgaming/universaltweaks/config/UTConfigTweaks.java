@@ -452,6 +452,11 @@ public class UTConfigTweaks
         public boolean utMobDespawnToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("No Portal Spawning")
+        @Config.Comment("Prevents zombie pigmen spawning from nether portals")
+        public boolean utPortalSpawningToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Saddled Wandering")
         @Config.Comment("Stops horses wandering around when saddled")
         public boolean utSaddledWanderingToggle = true;
@@ -1014,6 +1019,10 @@ public class UTConfigTweaks
             @Config.Name("[16] Clear Despawn: Urgent Flashing")
             @Config.Comment("Makes item entities flash faster as they get closer to despawning")
             public boolean utIEClearDespawnUrgentToggle = true;
+
+            @Config.Name("[17] Slowed Movement")
+            @Config.Comment("Slows how often item entities update their position to improve performance")
+            public boolean utIEUpdateToggle  = true;
         }
 
         public static class MendingCategory
@@ -1196,6 +1205,11 @@ public class UTConfigTweaks
         @Config.Name("No Smelting XP")
         @Config.Comment("Disables the experience reward when smelting items in furnaces")
         public boolean utSmeltingXPToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Improved Entity Tracker Warning")
+        @Config.Comment("Provides more information to addPacket removed entity warnings")
+        public boolean utImprovedEntityTrackerToggle = true;
 
         @Config.Name("Offhand Improvement")
         @Config.Comment("Prevents placing offhand blocks when blocks or food are held in the mainhand")
@@ -1607,6 +1621,11 @@ public class UTConfigTweaks
         @Config.Name("No Redstone Lighting")
         @Config.Comment("Disables lighting of active redstone, repeaters, and comparators to improve performance")
         public boolean utRedstoneLightingToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Suppress Ore Dictionary Errors")
+        @Config.Comment("Suppresses Forge's broken ore dictionary errors")
+        public boolean utOreDictionaryCheckToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Uncap FPS")

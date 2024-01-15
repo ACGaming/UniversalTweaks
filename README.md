@@ -61,7 +61,7 @@ All changes are toggleable via config files.
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
 * **Particle Spawning:** Fixes various particle types not showing up on the client
 * **Piston Progress:** Properly saves the last state of pistons to tags
-* **Portal Duplication Fix:** Fixes duplication issues that can occur when entities travel through portals
+* **Portal Traveling Dupe:** Fixes duplication issues that can occur when entities travel through portals
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Sleep Resets Weather:** Fixes sleeping always resetting rain and thunder times
@@ -130,6 +130,7 @@ All changes are toggleable via config files.
 * **Hardcore Buckets:** Prevents placing of liquid source blocks in the world
 * **Horizontal Collision Damage:** Applies horizontal collision damage to the player akin to elytra collision
 * **Husk & Stray Spawning:** Lets husks and strays spawn underground like regular zombies and skeletons
+* **Improved Entity Tracker Warning:** Provides more information to addPacket removed entity warnings
 * **Incurable Potions:** Excludes potion effects from being curable with curative items like buckets of milk
 * **Infinite Music:** Lets background music play continuously without delays
 * **Item Entities:** Enables the modification of item entity properties
@@ -151,6 +152,7 @@ All changes are toggleable via config files.
 * **No Leftover Breath Bottles:** Disables dragon's breath from leaving off empty bottles when a stack is brewed with
 * **No Night Vision Flash:** Disables the flashing effect when the night vision potion effect is about to run out
 * **No Potion Shift:** Disables the inventory shift when potion effects are active
+* **No Portal Spawning:** Prevents zombie pigmen spawning from nether portals
 * **No Redstone Lighting:** Disables lighting of active redstone, repeaters, and comparators to improve performance
 * **No Saddled Wandering:** Stops horses wandering around when saddled
 * **No Smelting XP:** Disables the experience reward when smelting items in furnaces
@@ -176,6 +178,7 @@ All changes are toggleable via config files.
 * **Soulbound Vexes:** Summoned vexes will also die when their summoner is killed
 * **Spawn Caps:** Sets maximum spawning limits for different entity types
 * **Super Hot Torch:** Enables one-time ignition of entities by hitting them with a torch
+* **Suppress Ore Dictionary Errors:** Suppresses Forge's broken ore dictionary errors
 * **Stronghold Replacement:** Replaces stronghold generation with a safer variant
 * **Swing Through Grass:** Allows hitting entities through grass instead of breaking it
 * **Tidy Chunk:** Tidies newly generated chunks by removing scattered item entities
