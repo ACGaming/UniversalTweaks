@@ -9,8 +9,9 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import com.llamalad7.mixinextras.injector.WrapWithCondition;
 
+// Courtesy of fonnymunkey
 @Mixin(OreDictionary.class)
-public class UTOreDictionaryCheckMixin
+public abstract class UTOreDictionaryCheckMixin
 {
     @WrapWithCondition(
             method = "registerOreImpl",

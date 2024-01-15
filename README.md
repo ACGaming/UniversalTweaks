@@ -151,6 +151,7 @@ All changes are toggleable via config files.
 * **No Leftover Breath Bottles:** Disables dragon's breath from leaving off empty bottles when a stack is brewed with
 * **No Night Vision Flash:** Disables the flashing effect when the night vision potion effect is about to run out
 * **No Potion Shift:** Disables the inventory shift when potion effects are active
+* **No Portal Spawning:** Prevents zombie pigmen spawning from nether portals
 * **No Redstone Lighting:** Disables lighting of active redstone, repeaters, and comparators to improve performance
 * **No Saddled Wandering:** Stops horses wandering around when saddled
 * **No Smelting XP:** Disables the experience reward when smelting items in furnaces

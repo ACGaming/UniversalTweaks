@@ -452,6 +452,11 @@ public class UTConfigTweaks
         public boolean utMobDespawnToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("No Portal Spawning")
+        @Config.Comment("Prevents zombie pigmen spawning from nether portals")
+        public boolean utPortalSpawningToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Saddled Wandering")
         @Config.Comment("Stops horses wandering around when saddled")
         public boolean utSaddledWanderingToggle = true;
