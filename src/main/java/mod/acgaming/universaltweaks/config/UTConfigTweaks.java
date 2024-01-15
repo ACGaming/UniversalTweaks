@@ -437,6 +437,11 @@ public class UTConfigTweaks
         public boolean utVillagerTradeLevelingToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Villager Trade Restock")
+        @Config.Comment("Disables restocking of villager trades, only allowing one trade per offer")
+        public boolean utVillagerTradeRestockToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Disable Wither Targeting AI")
         @Config.Comment("Disables withers targeting animals")
         public boolean utWitherAIToggle = false;
@@ -1022,7 +1027,7 @@ public class UTConfigTweaks
 
             @Config.Name("[17] Slowed Movement")
             @Config.Comment("Slows how often item entities update their position to improve performance")
-            public boolean utIEUpdateToggle  = true;
+            public boolean utIEUpdateToggle = true;
         }
 
         public static class MendingCategory

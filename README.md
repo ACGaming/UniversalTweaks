@@ -38,7 +38,7 @@ All changes are toggleable via config files.
 * **Entity Bounding Boxes:** Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * **Entity Desync:** Fixes entity motion desyncs most notable with arrows and thrown items
 * **Entity ID:** Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0
-* **Entity Lists:** Fixes entity lists often not getting updated correctly 
+* **Entity Lists:** Fixes entity lists often not getting updated correctly
 * **Entity NaN:** Prevents corruption of entities caused by invalid health or damage values
 * **Entity Suffocation:** Pushes entities out of blocks when growing up to prevent suffocation
 * **Entity Tracker:** Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
@@ -117,6 +117,7 @@ All changes are toggleable via config files.
 * **Disable Narrator:** Disables the narrator functionality entirely
 * **Disable Sleeping:** Disables skipping night by using a bed while making it still able to set spawn
 * **Disable Villager Trade Leveling:** Disables leveling of villager careers, only allowing base level trades
+* **Disable Villager Trade Restock:** Disables restocking of villager trades, only allowing one trade per offer
 * **Disable Wither Targeting AI:** Disables withers targeting animals
 * **Easy Breeding:** Enables easy breeding of animals by tossing food on the ground
 * **End Portal Parallax:** Re-implements parallax rendering of the end portal from 1.11 and older

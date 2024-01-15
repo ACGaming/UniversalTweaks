@@ -3,5 +3,5 @@
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
-  "mixins": ["UTVillagerRegistryMixin"]
+  "mixins": ["UTMerchantRecipeMixin", "UTVillagerRegistryMixin"]
 }
