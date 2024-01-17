@@ -439,7 +439,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.entities.taming.horse.json":
                 return UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utTamingUndeadHorsesToggle;
             case "mixins.tweaks.entities.trading.json":
-                return UTConfigTweaks.ENTITIES.utVillagerTradeLevelingToggle;
+                return UTConfigTweaks.ENTITIES.utVillagerTradeLevelingToggle || UTConfigTweaks.ENTITIES.utVillagerTradeRestockToggle;
             case "mixins.tweaks.items.attackcooldown.server.json":
                 return UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle;
             case "mixins.tweaks.items.eating.json":
