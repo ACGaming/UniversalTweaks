@@ -312,6 +312,11 @@ public class UTConfigBugfixes
         @Config.Name("Particle Spawning")
         @Config.Comment("Fixes various particle types not showing up on the client")
         public boolean utParticleSpawningToggle = true;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Potion Amplifier Visibility")
+        @Config.Comment("Fixes potion effects not displaying their level when it is above 'IV'")
+        public boolean utPotionAmplifierVisibilityToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Packet Size")
