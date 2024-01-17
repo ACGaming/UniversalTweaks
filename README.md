@@ -62,6 +62,7 @@ All changes are toggleable via config files.
 * **Particle Spawning:** Fixes various particle types not showing up on the client
 * **Piston Progress:** Properly saves the last state of pistons to tags
 * **Portal Traveling Dupe:** Fixes duplication issues that can occur when entities travel through portals
+* **Potion Amplifier Visibility:** Fixes potion effects not displaying their amplifier when it is above 'IV'
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Sleep Resets Weather:** Fixes sleeping always resetting rain and thunder times
