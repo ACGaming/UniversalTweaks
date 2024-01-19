@@ -62,12 +62,13 @@ All changes are toggleable via config files.
 * **Particle Spawning:** Fixes various particle types not showing up on the client
 * **Piston Progress:** Properly saves the last state of pistons to tags
 * **Portal Traveling Dupe:** Fixes duplication issues that can occur when entities travel through portals
-* **Potion Amplifier Visibility:** Fixes potion effects not displaying their level when it is above 'IV'
+* **Potion Amplifier Visibility:** Fixes potion effects not displaying their level above 'IV'
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Sleep Resets Weather:** Fixes sleeping always resetting rain and thunder times
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
 * **Villager Mantle:** Returns missing hoods to villager mantles
+* **Witch Huts:** Fixes witch hut structure data not accounting for the height it is generated at
 
 ![](https://i.imgur.com/1EmHZlb.png)
 

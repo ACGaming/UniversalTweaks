@@ -315,7 +315,7 @@ public class UTConfigBugfixes
         
         @Config.RequiresMcRestart
         @Config.Name("Potion Amplifier Visibility")
-        @Config.Comment("Fixes potion effects not displaying their level when it is above 'IV'")
+        @Config.Comment("Fixes potion effects not displaying their level above 'IV'")
         public boolean utPotionAmplifierVisibilityToggle = true;
 
         @Config.RequiresMcRestart
@@ -375,6 +375,11 @@ public class UTConfigBugfixes
         @Config.Name("Portal Traveling Dupe")
         @Config.Comment("Fixes duplication issues that can occur when entities travel through portals")
         public boolean utPortalTravelingDupeToggle = true;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Witch Huts")
+        @Config.Comment("Fixes witch hut structure data not accounting for the height it is generated at")
+        public boolean utWitchStructuresToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Tile Entity Map")
