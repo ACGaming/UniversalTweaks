@@ -227,6 +227,11 @@ public class UTConfigBugfixes
         @Config.Name("Max Player Health")
         @Config.Comment("Corrects maximum player health on joining by setting the last saved health value")
         public boolean utMaxHealthToggle = true;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Minecart AI")
+        @Config.Comment("Fixes non-player entities being able to control minecarts")
+        public boolean utMinecartAIToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Mount Desync")

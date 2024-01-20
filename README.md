@@ -55,6 +55,7 @@ All changes are toggleable via config files.
 * **Ladder Flying Slowdown:** Disables climbing movement when flying
 * **Locale:** Prevents various crashes with Turkish locale
 * **Max Health:** Corrects maximum player health on joining by setting the last saved health value
+* **Minecart AI:** Fixes non-player entities being able to control minecarts
 * **Mining Glitch:** Avoids the need for multiple mining attempts by sending additional movement packets
 * **Model Gap:** Fixes transparent gaps in all 3D models of blocks and items
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
