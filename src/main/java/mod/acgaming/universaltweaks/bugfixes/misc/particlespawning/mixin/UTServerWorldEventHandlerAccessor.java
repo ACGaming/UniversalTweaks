@@ -1,9 +1,8 @@
 package mod.acgaming.universaltweaks.bugfixes.misc.particlespawning.mixin;
 
-import java.util.Objects;
-
 import net.minecraft.world.ServerWorldEventHandler;
 import net.minecraft.world.WorldServer;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 

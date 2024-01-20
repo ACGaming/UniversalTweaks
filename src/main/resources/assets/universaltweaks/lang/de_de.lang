@@ -17,3 +17,13 @@ enchantment.parry=Rückschlag
 
 # PICKUP NOTIFICATION
 msg.universaltweaks.tweaks.pickupnotification.xp=Erfahrung
+
+# LAN SERVER PROPERTIES
+btn.universaltweaks.lanserverproperties.allow_flight=Erlaube Flug
+btn.universaltweaks.lanserverproperties.allow_pvp=Erlaube PVP
+btn.universaltweaks.lanserverproperties.max_players=Maximale Spieler
+btn.universaltweaks.lanserverproperties.online_mode=Online-Modus
+btn.universaltweaks.lanserverproperties.online_mode_desc=Deaktivierung ermöglicht nicht authentifizierte Verbindungen
+btn.universaltweaks.lanserverproperties.port=Abhörender Port
+btn.universaltweaks.lanserverproperties.spawn_animals=Erschaffe Tiere
+btn.universaltweaks.lanserverproperties.spawn_npcs=Erschaffe NPCs

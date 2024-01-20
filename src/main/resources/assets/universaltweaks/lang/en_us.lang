@@ -18,6 +18,16 @@ enchantment.parry=Rebound
 # PICKUP NOTIFICATION
 msg.universaltweaks.tweaks.pickupnotification.xp=Experience
 
+# LAN SERVER PROPERTIES
+btn.universaltweaks.lanserverproperties.allow_flight=Allow Flight
+btn.universaltweaks.lanserverproperties.allow_pvp=Allow PVP
+btn.universaltweaks.lanserverproperties.max_players=Max Players
+btn.universaltweaks.lanserverproperties.online_mode=Online Mode
+btn.universaltweaks.lanserverproperties.online_mode_desc=Disabling this will allow unauthenticated connections
+btn.universaltweaks.lanserverproperties.port=Listening Port
+btn.universaltweaks.lanserverproperties.spawn_animals=Spawn Animals
+btn.universaltweaks.lanserverproperties.spawn_npcs=Spawn NPCs
+
 # CONFIG
 # Doesn't need to be translated because config is English in general
 cfg.universaltweaks.config.blocks=Blocks
