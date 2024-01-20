@@ -62,6 +62,7 @@ All changes are toggleable via config files.
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
 * **Particle Spawning:** Fixes various particle types not showing up on the client
 * **Piston Progress:** Properly saves the last state of pistons to tags
+* **Piston Retraction:** Improves retraction behavior on double piston extenders
 * **Portal Traveling Dupe:** Fixes duplication issues that can occur when entities travel through portals
 * **Potion Amplifier Visibility:** Fixes potion effects not displaying their level above 'IV'
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms

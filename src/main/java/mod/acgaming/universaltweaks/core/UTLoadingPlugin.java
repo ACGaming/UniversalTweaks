@@ -157,6 +157,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.bugfixes.blocks.ladderflying.json");
         configs.add("mixins.bugfixes.blocks.miningglitch.server.json");
         configs.add("mixins.bugfixes.blocks.pistontile.json");
+        configs.add("mixins.bugfixes.blocks.pistontile.pistonretraction.json");
         configs.add("mixins.bugfixes.entities.ai.json");
         configs.add("mixins.bugfixes.entities.attackradius.json");
         configs.add("mixins.bugfixes.entities.blockfire.json");
@@ -336,6 +337,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigBugfixes.BLOCKS.utMiningGlitchToggle;
             case "mixins.bugfixes.blocks.pistontile.json":
                 return UTConfigBugfixes.BLOCKS.utPistonTileToggle;
+            case "mixins.bugfixes.blocks.pistontile.pistonretraction.json":
+                return UTConfigBugfixes.BLOCKS.utPistonRetractionToggle;
             case "mixins.bugfixes.blocks.bed.json":
                 return UTConfigBugfixes.BLOCKS.utSleepResetsWeatherToggle;
             case "mixins.bugfixes.misc.enchantment.json":

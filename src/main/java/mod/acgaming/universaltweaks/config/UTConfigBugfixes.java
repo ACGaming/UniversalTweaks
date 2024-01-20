@@ -89,6 +89,11 @@ public class UTConfigBugfixes
         @Config.Name("Piston Progress")
         @Config.Comment("Properly saves the last state of pistons to tags")
         public boolean utPistonTileToggle = true;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Piston Retraction")
+        @Config.Comment("Improves retraction behavior on double piston extenders")
+        public boolean utPistonRetractionToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Sleep Resets Weather")
