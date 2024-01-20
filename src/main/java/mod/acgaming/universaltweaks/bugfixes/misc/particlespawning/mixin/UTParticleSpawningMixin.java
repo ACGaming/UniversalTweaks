@@ -4,12 +4,12 @@ import java.util.Objects;
 
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.ServerWorldEventHandler;
+
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 
 // MC-10369, MC-93826
 // https://bugs.mojang.com/browse/MC-10369
