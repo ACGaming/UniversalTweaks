@@ -55,19 +55,22 @@ All changes are toggleable via config files.
 * **Ladder Flying Slowdown:** Disables climbing movement when flying
 * **Locale:** Prevents various crashes with Turkish locale
 * **Max Health:** Corrects maximum player health on joining by setting the last saved health value
+* **Minecart AI:** Fixes non-player entities being able to control minecarts
 * **Mining Glitch:** Avoids the need for multiple mining attempts by sending additional movement packets
 * **Model Gap:** Fixes transparent gaps in all 3D models of blocks and items
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
 * **Particle Spawning:** Fixes various particle types not showing up on the client
 * **Piston Progress:** Properly saves the last state of pistons to tags
+* **Piston Retraction:** Improves retraction behavior on double piston extenders
 * **Portal Traveling Dupe:** Fixes duplication issues that can occur when entities travel through portals
-* **Potion Amplifier Visibility:** Fixes potion effects not displaying their level when it is above 'IV'
+* **Potion Amplifier Visibility:** Fixes potion effects not displaying their level above 'IV'
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Sleep Resets Weather:** Fixes sleeping always resetting rain and thunder times
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
 * **Villager Mantle:** Returns missing hoods to villager mantles
+* **Witch Huts:** Fixes witch hut structure data not accounting for the height it is generated at
 
 ![](https://i.imgur.com/1EmHZlb.png)
 

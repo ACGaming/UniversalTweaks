@@ -157,6 +157,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.bugfixes.blocks.ladderflying.json");
         configs.add("mixins.bugfixes.blocks.miningglitch.server.json");
         configs.add("mixins.bugfixes.blocks.pistontile.json");
+        configs.add("mixins.bugfixes.blocks.pistontile.pistonretraction.json");
         configs.add("mixins.bugfixes.entities.ai.json");
         configs.add("mixins.bugfixes.entities.attackradius.json");
         configs.add("mixins.bugfixes.entities.blockfire.json");
@@ -171,6 +172,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.bugfixes.entities.entitylists.json");
         configs.add("mixins.bugfixes.entities.horsefalling.json");
         configs.add("mixins.bugfixes.entities.maxhealth.json");
+        configs.add("mixins.bugfixes.entities.minecart.json");
         configs.add("mixins.bugfixes.entities.mount.json");
         configs.add("mixins.bugfixes.entities.saturation.json");
         configs.add("mixins.bugfixes.entities.skeletonaim.json");
@@ -181,6 +183,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.bugfixes.misc.particlespawning.json");
         configs.add("mixins.bugfixes.world.chunksaving.json");
         configs.add("mixins.bugfixes.world.tileentities.json");
+        configs.add("mixins.bugfixes.world.witchhuts.json");
         configs.add("mixins.tweaks.blocks.bedobstruction.json");
         configs.add("mixins.tweaks.blocks.breakablebedrock.json");
         configs.add("mixins.tweaks.blocks.growthsize.json");
@@ -334,6 +337,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigBugfixes.BLOCKS.utMiningGlitchToggle;
             case "mixins.bugfixes.blocks.pistontile.json":
                 return UTConfigBugfixes.BLOCKS.utPistonTileToggle;
+            case "mixins.bugfixes.blocks.pistontile.pistonretraction.json":
+                return UTConfigBugfixes.BLOCKS.utPistonRetractionToggle;
             case "mixins.bugfixes.blocks.bed.json":
                 return UTConfigBugfixes.BLOCKS.utSleepResetsWeatherToggle;
             case "mixins.bugfixes.misc.enchantment.json":
@@ -370,6 +375,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigBugfixes.ENTITIES.utHorseFallingToggle;
             case "mixins.bugfixes.entities.maxhealth.json":
                 return UTConfigBugfixes.ENTITIES.utMaxHealthToggle;
+            case "mixins.bugfixes.entities.minecart.json":
+                return UTConfigBugfixes.ENTITIES.utMinecartAIToggle;
             case "mixins.bugfixes.entities.mount.json":
                 return UTConfigBugfixes.ENTITIES.utMountDesyncToggle;
             case "mixins.bugfixes.entities.saturation.json":
@@ -384,6 +391,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigBugfixes.WORLD.utChunkSavingToggle && !spongeForgeLoaded;
             case "mixins.bugfixes.world.tileentities.json":
                 return UTConfigBugfixes.WORLD.utTileEntityMap != UTConfigBugfixes.WorldCategory.EnumMaps.HASHMAP;
+            case "mixins.bugfixes.world.witchhuts.json":
+                return UTConfigBugfixes.WORLD.utWitchStructuresToggle;
             case "mixins.tweaks.blocks.bedobstruction.json":
                 return UTConfigTweaks.BLOCKS.utBedObstructionToggle;
             case "mixins.tweaks.blocks.breakablebedrock.json":
