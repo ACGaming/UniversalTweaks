@@ -1180,6 +1180,11 @@ public class UTConfigTweaks
         public boolean utInfiniteMusicToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("LAN Server Properties")
+        @Config.Comment("Enhance the vanilla 'Open to LAN' GUI for listening port customization, removal of enforced authentication and more")
+        public boolean utLANServerProperties = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Linear XP Amount")
         @Config.Comment
             ({
