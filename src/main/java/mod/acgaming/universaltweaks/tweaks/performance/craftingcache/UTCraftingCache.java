@@ -15,7 +15,7 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 // Courtesy of EverNife
 public class UTCraftingCache
 {
-    public static Int2ObjectLinkedOpenHashMap<UTOptionalContent<IRecipe>> NON_NBT_CRAFT_CACHE = new Int2ObjectLinkedOpenHashMap<>();
+    private static final Int2ObjectLinkedOpenHashMap<UTOptionalContent<IRecipe>> NON_NBT_CRAFT_CACHE = new Int2ObjectLinkedOpenHashMap<>();
 
     public static boolean isValid(InventoryCrafting craftMatrix)
     {

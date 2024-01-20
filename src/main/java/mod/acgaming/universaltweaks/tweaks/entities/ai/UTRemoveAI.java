@@ -32,11 +32,7 @@ public class UTRemoveAI
             while (it.hasNext())
             {
                 EntityAITasks.EntityAITaskEntry obj = it.next();
-                if (obj != null)
-                {
-                    if (obj.action instanceof EntityAIWatchClosest) it.remove();
-                    else if (obj.action instanceof EntityAILookIdle) it.remove();
-                }
+                if (obj != null && (obj.action instanceof EntityAIWatchClosest || obj.action instanceof EntityAILookIdle)) it.remove();
             }
         }
     }

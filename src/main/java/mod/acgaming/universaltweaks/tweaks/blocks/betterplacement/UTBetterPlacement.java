@@ -15,9 +15,9 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 // Courtesy of tterrag1098, BucketOfCompasses
 public class UTBetterPlacement
 {
-    public static BlockPos lastTargetPos;
-    public static Vec3d lastPlayerPos;
-    public static EnumFacing lastTargetSide;
+    private static BlockPos lastTargetPos;
+    private static Vec3d lastPlayerPos;
+    private static EnumFacing lastTargetSide;
 
     @SubscribeEvent
     public static void utBetterPlacement(TickEvent.ClientTickEvent event)

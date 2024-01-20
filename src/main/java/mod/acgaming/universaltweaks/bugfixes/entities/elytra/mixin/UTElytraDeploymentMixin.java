@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(EntityPlayerSP.class)
 public abstract class UTElytraDeploymentMixin extends AbstractClientPlayer
 {
-    public UTElytraDeploymentMixin(World worldIn, GameProfile playerProfile)
+    protected UTElytraDeploymentMixin(World worldIn, GameProfile playerProfile)
     {
         super(worldIn, playerProfile);
     }

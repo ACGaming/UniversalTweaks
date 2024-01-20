@@ -28,7 +28,7 @@ public class UTEntityAITasksMixin
     @Mutable
     @Shadow
     @Final
-    private Set<EntityAITasks.EntityAITaskEntry> executingTaskEntries;
+    public Set<EntityAITasks.EntityAITaskEntry> executingTaskEntries;
 
     @Inject(method = "<init>", at = @At(value = "TAIL"))
     public void utEntityAITasks(Profiler profilerIn, CallbackInfo ci)

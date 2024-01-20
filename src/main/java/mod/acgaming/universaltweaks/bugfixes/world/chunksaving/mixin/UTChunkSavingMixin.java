@@ -17,6 +17,7 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -28,22 +29,27 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(AnvilChunkLoader.class)
 public abstract class UTChunkSavingMixin
 {
+    @Unique
     private final Map<ChunkPos, NBTTagCompound> chunksInWrite = new HashMap<>();
+
     @Shadow
     @Final
     public File chunkSaveLocation;
+
     @Shadow
     @Final
     private Map<ChunkPos, NBTTagCompound> chunksToSave;
+
     @Shadow
     private boolean flushing;
 
     @Shadow
-    protected abstract void writeChunkData(ChunkPos pos, NBTTagCompound compound) throws IOException;
+    public abstract void writeChunkData(ChunkPos pos, NBTTagCompound compound) throws IOException;
 
-    synchronized private void queueChunkToSave(ChunkPos pos, NBTTagCompound data) {chunksToSave.put(pos, data);}
+    @Unique
+    private synchronized void queueChunkToSave(ChunkPos pos, NBTTagCompound data) {chunksToSave.put(pos, data);}
 
-    synchronized private Map.Entry<ChunkPos, NBTTagCompound> fetchChunkToWrite()
+    private synchronized Map.Entry<ChunkPos, NBTTagCompound> fetchChunkToWrite()
     {
         if (chunksToSave.isEmpty()) return null;
         Set<Map.Entry<ChunkPos, NBTTagCompound>> entrySet = chunksToSave.entrySet();
@@ -54,19 +60,22 @@ public abstract class UTChunkSavingMixin
         return entry;
     }
 
-    synchronized private void retireChunkToWrite(ChunkPos pos, NBTTagCompound data)
+    @Unique
+    private synchronized void retireChunkToWrite(ChunkPos pos, NBTTagCompound data)
     {
         chunksInWrite.remove(pos);
     }
 
-    synchronized private NBTTagCompound reloadChunkFromSaveQueues(ChunkPos pos)
+    @Unique
+    private synchronized NBTTagCompound reloadChunkFromSaveQueues(ChunkPos pos)
     {
         NBTTagCompound data = chunksToSave.get(pos);
         if (data != null) return data;
         return chunksInWrite.get(pos);
     }
 
-    synchronized private boolean chunkExistInSaveQueues(ChunkPos pos)
+    @Unique
+    private synchronized boolean chunkExistInSaveQueues(ChunkPos pos)
     {
         return chunksToSave.containsKey(pos) || chunksInWrite.containsKey(pos);
     }

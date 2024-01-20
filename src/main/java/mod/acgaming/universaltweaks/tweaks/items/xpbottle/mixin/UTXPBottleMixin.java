@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(EntityExpBottle.class)
 public abstract class UTXPBottleMixin extends EntityThrowable
 {
-    public UTXPBottleMixin(World worldIn)
+    protected UTXPBottleMixin(World worldIn)
     {
         super(worldIn);
     }

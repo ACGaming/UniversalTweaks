@@ -123,7 +123,7 @@ public abstract class UTGuiScrollingListMixin
         {
             int height = (this.bottom - this.top) * (this.bottom - this.top) / this.getContentHeight();
             height = MathHelper.clamp(height, 32, this.bottom - this.top - 8);
-            height = (int) ((double) height - Math.min(this.scrollDistance < 0.0D ? (int) (-this.scrollDistance) : (this.scrollDistance > (double) this.func_148135_f() ? (int) this.scrollDistance - this.func_148135_f() : 0), (double) height * 0.75D));
+            height = (int) (height - Math.min(this.scrollDistance < 0.0D ? (int) (-this.scrollDistance) : (this.scrollDistance > (double) this.func_148135_f() ? (int) this.scrollDistance - this.func_148135_f() : 0), height * 0.75D));
             int minY = Math.min(Math.max(((int) scrollDistance) * (this.bottom - this.top - height) / maxScroll + this.top, this.top), this.bottom - height);
             GlStateManager.disableTexture2D();
             buffer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);

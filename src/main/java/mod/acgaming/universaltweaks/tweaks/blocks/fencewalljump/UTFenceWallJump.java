@@ -21,7 +21,7 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTFenceWallJump
 {
-    public static final AxisAlignedBB[] FENCE_WALL_AABBS = new AxisAlignedBB[]
+    protected static final AxisAlignedBB[] FENCE_WALL_AABBS = new AxisAlignedBB[]
         {
             new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 1.0D, 0.625D),
             new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 1.0D, 1.0D),

@@ -1,5 +1,5 @@
 {
-  "package": "mod.acgaming.universaltweaks.bugfixes.blocks.piston.mixin",
+  "package": "mod.acgaming.universaltweaks.bugfixes.blocks.piston.tile.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

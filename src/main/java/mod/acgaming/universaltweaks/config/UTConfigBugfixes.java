@@ -89,11 +89,11 @@ public class UTConfigBugfixes
         @Config.Name("Piston Progress")
         @Config.Comment("Properly saves the last state of pistons to tags")
         public boolean utPistonTileToggle = true;
-        
+
         @Config.RequiresMcRestart
         @Config.Name("Piston Retraction")
         @Config.Comment("Improves retraction behavior on double piston extenders")
-        public boolean utPistonRetractionToggle = true;
+        public boolean utPistonRetractionToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Sleep Resets Weather")
@@ -232,7 +232,7 @@ public class UTConfigBugfixes
         @Config.Name("Max Player Health")
         @Config.Comment("Corrects maximum player health on joining by setting the last saved health value")
         public boolean utMaxHealthToggle = true;
-        
+
         @Config.RequiresMcRestart
         @Config.Name("Minecart AI")
         @Config.Comment("Fixes non-player entities being able to control minecarts")
@@ -322,7 +322,7 @@ public class UTConfigBugfixes
         @Config.Name("Particle Spawning")
         @Config.Comment("Fixes various particle types not showing up on the client")
         public boolean utParticleSpawningToggle = true;
-        
+
         @Config.RequiresMcRestart
         @Config.Name("Potion Amplifier Visibility")
         @Config.Comment("Fixes potion effects not displaying their level above 'IV'")
@@ -385,7 +385,7 @@ public class UTConfigBugfixes
         @Config.Name("Portal Traveling Dupe")
         @Config.Comment("Fixes duplication issues that can occur when entities travel through portals")
         public boolean utPortalTravelingDupeToggle = true;
-        
+
         @Config.RequiresMcRestart
         @Config.Name("Witch Huts")
         @Config.Comment("Fixes witch hut structure data not accounting for the height it is generated at")

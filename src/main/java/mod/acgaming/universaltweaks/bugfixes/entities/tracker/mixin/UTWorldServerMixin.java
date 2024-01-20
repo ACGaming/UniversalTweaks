@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin(WorldServer.class)
 public abstract class UTWorldServerMixin extends World implements IWorldServer
 {
-    public UTWorldServerMixin(MinecraftServer server, ISaveHandler saveHandlerIn, WorldInfo info, int dimensionId, Profiler profilerIn)
+    protected UTWorldServerMixin(MinecraftServer server, ISaveHandler saveHandlerIn, WorldInfo info, int dimensionId, Profiler profilerIn)
     {
         super(saveHandlerIn, info, DimensionType.getById(dimensionId).createDimension(), profilerIn, false);
     }

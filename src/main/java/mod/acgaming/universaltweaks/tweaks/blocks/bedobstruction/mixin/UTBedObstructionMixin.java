@@ -12,6 +12,7 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -35,6 +36,7 @@ public class UTBedObstructionMixin
         else callback.setReturnValue(iterateBedPoint(worldIn, bedLocation));
     }
 
+    @Unique
     private static BlockPos iterateSpawnPoint(World world, BlockPos pos)
     {
         if (isValidSpawnPos(world, pos, false)) return pos;
@@ -52,6 +54,7 @@ public class UTBedObstructionMixin
         return null;
     }
 
+    @Unique
     private static BlockPos iterateBedPoint(World world, BlockPos pos)
     {
         EnumFacing enumfacing = world.getBlockState(pos).getValue(BlockHorizontal.FACING);
@@ -77,6 +80,7 @@ public class UTBedObstructionMixin
         return null;
     }
 
+    @Unique
     private static boolean isValidSpawnPos(World worldIn, BlockPos blockPos, boolean requireFloor)
     {
         return (worldIn.getBlockState(blockPos.down()).getMaterial().isSolid() || !requireFloor) && worldIn.getBlockState(blockPos).getBlock().canSpawnInBlock() && worldIn.getBlockState(blockPos.up()).getBlock().canSpawnInBlock();

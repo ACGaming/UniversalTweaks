@@ -16,8 +16,8 @@ public class UTWorldContext
         return entity instanceof EntityItem;
     }
 
-    public Object2LongOpenHashMap<ChunkPos> chunks = new Object2LongOpenHashMap<>();
-    public int removeCount = 0;
+    private final Object2LongOpenHashMap<ChunkPos> chunks = new Object2LongOpenHashMap<>();
+    private int removeCount = 0;
 
     public void add(ChunkPos pos, World world)
     {
@@ -26,7 +26,7 @@ public class UTWorldContext
 
     public void searchAndDestroy(World world)
     {
-        if (this.chunks.size() > 0)
+        if (!this.chunks.isEmpty())
         {
             world.getEntities(EntityItem.class, t -> isTargetEntity(t) && isContained(t)).forEach(this::removeEntity);
             if (this.removeCount > 0)

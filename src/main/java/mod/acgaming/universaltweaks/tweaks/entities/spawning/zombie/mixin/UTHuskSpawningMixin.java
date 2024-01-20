@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(EntityHusk.class)
 public abstract class UTHuskSpawningMixin extends EntityZombie
 {
-    public UTHuskSpawningMixin(World worldIn)
+    protected UTHuskSpawningMixin(World worldIn)
     {
         super(worldIn);
     }

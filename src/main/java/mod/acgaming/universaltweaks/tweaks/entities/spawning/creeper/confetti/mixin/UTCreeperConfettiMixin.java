@@ -33,7 +33,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(EntityCreeper.class)
 public abstract class UTCreeperConfettiMixin extends EntityMob
 {
-    public UTCreeperConfettiMixin(World worldIn)
+    protected UTCreeperConfettiMixin(World worldIn)
     {
         super(worldIn);
     }

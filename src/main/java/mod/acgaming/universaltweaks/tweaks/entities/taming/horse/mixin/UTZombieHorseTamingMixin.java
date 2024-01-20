@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(EntityZombieHorse.class)
 public abstract class UTZombieHorseTamingMixin extends AbstractHorse
 {
-    public UTZombieHorseTamingMixin(World worldIn)
+    protected UTZombieHorseTamingMixin(World worldIn)
     {
         super(worldIn);
     }

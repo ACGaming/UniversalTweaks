@@ -30,7 +30,7 @@ public abstract class UTDimensionChangeMixin extends EntityPlayer
     @Shadow
     public NetHandlerPlayServer connection;
 
-    public UTDimensionChangeMixin(World worldIn, GameProfile gameProfileIn)
+    protected UTDimensionChangeMixin(World worldIn, GameProfile gameProfileIn)
     {
         super(worldIn, gameProfileIn);
     }

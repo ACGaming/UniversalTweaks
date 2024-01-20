@@ -20,7 +20,7 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTUnloader
 {
-    public static int tickCount = 0;
+    private static int tickCount = 0;
 
     @SubscribeEvent
     public static void utUnloader(TickEvent.ServerTickEvent event)

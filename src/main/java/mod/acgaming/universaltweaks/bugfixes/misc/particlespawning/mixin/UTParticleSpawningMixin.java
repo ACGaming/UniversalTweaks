@@ -28,7 +28,6 @@ public abstract class UTParticleSpawningMixin
     {
         EnumParticleTypes particle = Objects.requireNonNull(EnumParticleTypes.getParticleFromId(particleID));
         if (particle == EnumParticleTypes.SPELL_MOB || particle == EnumParticleTypes.SPELL_MOB_AMBIENT || !UTConfigBugfixes.MISC.utParticleSpawningToggle) return;
-        if (parameters.length == particle.getArgumentCount())
-            ((UTServerWorldEventHandlerAccessor) this).getWorld().spawnParticle(particle, xCoord, yCoord, zCoord, 0, xSpeed, ySpeed, zSpeed, 1.0, parameters);
+        if (parameters.length == particle.getArgumentCount()) ((UTServerWorldEventHandlerAccessor) this).getWorld().spawnParticle(particle, xCoord, yCoord, zCoord, 0, xSpeed, ySpeed, zSpeed, 1.0, parameters);
     }
 }

@@ -9,7 +9,7 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 // Courtesy of shedaniel
 public class UTSmoothScrolling
 {
-    public static Function<Double, Double> easingMethod = v -> v;
+    private static final Function<Double, Double> easingMethod = v -> v;
 
     public static Function<Double, Double> getEasingMethod()
     {

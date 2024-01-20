@@ -37,9 +37,9 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTParry
 {
-    public static Enchantment enchantment;
-    public static EnumEnchantmentType enchantmentTypeShield;
-    public static List<EntityEntry> projectileList = new ArrayList<>();
+    private static Enchantment enchantment;
+    private static EnumEnchantmentType enchantmentTypeShield;
+    private static final List<EntityEntry> projectileList = new ArrayList<>();
 
     public static void initProjectileList()
     {

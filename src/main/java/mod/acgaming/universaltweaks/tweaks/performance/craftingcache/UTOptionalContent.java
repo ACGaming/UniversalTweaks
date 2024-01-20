@@ -3,8 +3,8 @@ package mod.acgaming.universaltweaks.tweaks.performance.craftingcache;
 // Courtesy of EverNife
 public class UTOptionalContent<T>
 {
-    public boolean hasContent = false;
-    public T content;
+    private boolean hasContent = false;
+    private T content;
 
     public T getContent()
     {

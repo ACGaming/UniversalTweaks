@@ -156,8 +156,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.bugfixes.blocks.itemframevoid.json");
         configs.add("mixins.bugfixes.blocks.ladderflying.json");
         configs.add("mixins.bugfixes.blocks.miningglitch.server.json");
-        configs.add("mixins.bugfixes.blocks.pistontile.json");
-        configs.add("mixins.bugfixes.blocks.pistontile.pistonretraction.json");
+        configs.add("mixins.bugfixes.blocks.piston.tile.json");
+        configs.add("mixins.bugfixes.blocks.piston.retraction.json");
         configs.add("mixins.bugfixes.entities.ai.json");
         configs.add("mixins.bugfixes.entities.attackradius.json");
         configs.add("mixins.bugfixes.entities.blockfire.json");
@@ -335,9 +335,9 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigBugfixes.BLOCKS.utLadderFlyingToggle;
             case "mixins.bugfixes.blocks.miningglitch.server.json":
                 return UTConfigBugfixes.BLOCKS.utMiningGlitchToggle;
-            case "mixins.bugfixes.blocks.pistontile.json":
+            case "mixins.bugfixes.blocks.piston.tile.json":
                 return UTConfigBugfixes.BLOCKS.utPistonTileToggle;
-            case "mixins.bugfixes.blocks.pistontile.pistonretraction.json":
+            case "mixins.bugfixes.blocks.piston.retraction.json":
                 return UTConfigBugfixes.BLOCKS.utPistonRetractionToggle;
             case "mixins.bugfixes.blocks.bed.json":
                 return UTConfigBugfixes.BLOCKS.utSleepResetsWeatherToggle;

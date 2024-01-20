@@ -19,9 +19,9 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTCustomUseDuration
 {
-    public static Map<String, Integer> itemUseDurationMap = new Object2IntOpenHashMap<>();
-    public static Map<String, Integer> itemUseCooldownMap = new Object2IntOpenHashMap<>();
-    public static int used = 0;
+    private static final Map<String, Integer> itemUseDurationMap = new Object2IntOpenHashMap<>();
+    private static final Map<String, Integer> itemUseCooldownMap = new Object2IntOpenHashMap<>();
+    private static int used = 0;
 
     public static void initItemUseMaps()
     {

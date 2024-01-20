@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(EntityMob.class)
 public abstract class UTAttackRadiusMixin extends EntityCreature
 {
-    public UTAttackRadiusMixin(World worldIn)
+    protected UTAttackRadiusMixin(World worldIn)
     {
         super(worldIn);
     }

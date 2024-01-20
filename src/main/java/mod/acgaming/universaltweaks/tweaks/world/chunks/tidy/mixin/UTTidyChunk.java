@@ -23,7 +23,7 @@ import mod.acgaming.universaltweaks.tweaks.world.chunks.tidy.UTWorldContext;
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTTidyChunk
 {
-    public static Int2ObjectArrayMap<UTWorldContext> worldData = new Int2ObjectArrayMap<>();
+    private static final Int2ObjectArrayMap<UTWorldContext> worldData = new Int2ObjectArrayMap<>();
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utOnWorldUnload(WorldEvent.Unload event)

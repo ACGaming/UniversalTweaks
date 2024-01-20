@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(EntityPlayer.class)
 public abstract class UTAttackCooldownMixin extends EntityLivingBase
 {
-    public UTAttackCooldownMixin(World worldIn)
+    protected UTAttackCooldownMixin(World worldIn)
     {
         super(worldIn);
     }

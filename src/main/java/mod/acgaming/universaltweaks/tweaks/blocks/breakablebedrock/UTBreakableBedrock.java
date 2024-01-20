@@ -22,7 +22,7 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTBreakableBedrock
 {
-    public static List<Item> toolList = new ArrayList<>();
+    private static final List<Item> toolList = new ArrayList<>();
 
     public static void initToolList()
     {

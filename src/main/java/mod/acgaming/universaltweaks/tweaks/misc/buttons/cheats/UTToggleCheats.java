@@ -21,7 +21,7 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTToggleCheats
 {
-    public static GuiButton cheatsButton;
+    private static GuiButton cheatsButton;
 
     @SubscribeEvent
     public static void utToggleCheatsInitGUI(GuiScreenEvent.InitGuiEvent event)

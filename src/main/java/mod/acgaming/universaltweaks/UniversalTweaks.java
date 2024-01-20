@@ -45,8 +45,8 @@ import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import mod.acgaming.universaltweaks.tweaks.misc.endportal.UTEndPortalParallax;
-import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties.UTLanServerProperties;
+import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.pickupnotification.UTPickupNotificationOverlay;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
@@ -208,7 +208,7 @@ public class UniversalTweaks
         {
             for (String line : UTObsoleteModsHandler.obsoleteModsMessage())
             {
-                if (!line.equals("")) UniversalTweaks.LOGGER.warn(line);
+                if (!line.isEmpty()) UniversalTweaks.LOGGER.warn(line);
             }
         }
     }

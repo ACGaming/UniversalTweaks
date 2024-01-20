@@ -24,6 +24,7 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -37,7 +38,7 @@ public class UTAudioReloadMixin
     private static Logger LOGGER;
     @Shadow
     @Final
-    private SoundManager sndManager;
+    public SoundManager sndManager;
     @Shadow
     @Final
     private SoundRegistry soundRegistry;
@@ -55,6 +56,7 @@ public class UTAudioReloadMixin
         info.cancel();
     }
 
+    @Unique
     public void loadSounds(List<Tuple<ResourceLocation, SoundList>> soundLists)
     {
         final ProgressBar resourcesBar = ProgressManager.push("Loading sounds", soundLists.size());
@@ -73,6 +75,7 @@ public class UTAudioReloadMixin
         ProgressManager.pop(resourcesBar);
     }
 
+    @Unique
     public void loadSoundLists(IResourceManager resourceManager, List<Tuple<ResourceLocation, SoundList>> soundLists)
     {
         for (final String s : resourceManager.getResourceDomains())

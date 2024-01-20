@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(EntityStray.class)
 public abstract class UTStraySpawningMixin extends AbstractSkeleton
 {
-    public UTStraySpawningMixin(World worldIn)
+    protected UTStraySpawningMixin(World worldIn)
     {
         super(worldIn);
     }

@@ -29,7 +29,7 @@ public class UTTileEntityMapMixin
     @Mutable
     @Shadow
     @Final
-    private Map<BlockPos, TileEntity> tileEntities;
+    public Map<BlockPos, TileEntity> tileEntities;
 
     @Redirect(method = "<init>(Lnet/minecraft/world/World;II)V", at = @At(value = "FIELD", target = "Lnet/minecraft/world/chunk/Chunk;tileEntities:Ljava/util/Map;"))
     public void utTileEntityMap(Chunk chunk, Map<BlockPos, TileEntity> map)

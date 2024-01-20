@@ -130,7 +130,7 @@ public abstract class UTGuiSlotMixin
         {
             int height = (this.bottom - this.top) * (this.bottom - this.top) / this.getContentHeight();
             height = MathHelper.clamp(height, 32, this.bottom - this.top - 8);
-            height = (int) ((double) height - Math.min(this.amountScrolled < 0.0D ? (int) (-this.amountScrolled) : (this.amountScrolled > (double) this.getMaxScroll() ? (int) this.amountScrolled - this.getMaxScroll() : 0), (double) height * 0.75D));
+            height = (int) (height - Math.min(this.amountScrolled < 0.0D ? (int) (-this.amountScrolled) : (this.amountScrolled > (double) this.getMaxScroll() ? (int) this.amountScrolled - this.getMaxScroll() : 0), height * 0.75D));
             int minY = Math.min(Math.max(this.getAmountScrolled() * (this.bottom - this.top - height) / maxScroll + this.top, this.top), this.bottom - height);
             buffer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
             buffer.pos(scrollbarPositionMinX, this.bottom, 0.0D).tex(0.0D, 1.0D).color(0, 0, 0, 255).endVertex();

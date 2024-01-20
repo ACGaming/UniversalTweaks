@@ -46,13 +46,10 @@ public class UTEasyBreedingAI extends EntityAIBase
 
     public void execute(EntityAnimal animal, EntityItem item)
     {
-        if (animal.getNavigator().tryMoveToXYZ(item.posX, item.posY, item.posZ, 1.25F))
+        if (animal.getNavigator().tryMoveToXYZ(item.posX, item.posY, item.posZ, 1.25F) && animal.getDistance(item) < 1.1F)
         {
-            if (animal.getDistance(item) < 1.1F)
-            {
-                consumeFood(item);
-                animal.setInLove(null);
-            }
+            consumeFood(item);
+            animal.setInLove(null);
         }
     }
 

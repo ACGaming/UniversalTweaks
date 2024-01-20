@@ -3,7 +3,6 @@ package mod.acgaming.universaltweaks.bugfixes.world.witchhuts.mixin;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.gen.structure.StructureStart;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -17,12 +16,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(StructureStart.class)
 public abstract class UTWitchHutMixin
 {
-    @Shadow
-    protected abstract void updateBoundingBox();
-
     @Inject(method = "writeStructureComponentsToNBT", at = @At(value = "CONSTANT", args = "stringValue=Children", ordinal = 0))
     public void callUpdateBoundingBox(int chunkX, int chunkZ, CallbackInfoReturnable<NBTTagCompound> ci)
     {
         if (UTConfigBugfixes.WORLD.utWitchStructuresToggle) this.updateBoundingBox();
     }
+
+    @Shadow
+    protected abstract void updateBoundingBox();
 }

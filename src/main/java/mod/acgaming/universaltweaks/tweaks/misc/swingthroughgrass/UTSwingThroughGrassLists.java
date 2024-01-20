@@ -12,8 +12,8 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 public class UTSwingThroughGrassLists
 {
-    public static List<Block> blacklistedBlocks = new ArrayList<>();
-    public static List<Block> whitelistedBlocks = new ArrayList<>();
+    protected static List<Block> blacklistedBlocks = new ArrayList<>();
+    protected static List<Block> whitelistedBlocks = new ArrayList<>();
 
     public static void initLists()
     {

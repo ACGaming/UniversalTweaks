@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -44,7 +45,6 @@ public abstract class UTSuffocationMixin
     public void utOnSetSize(float width, float height, CallbackInfo ci)
     {
         if (!UTConfigBugfixes.ENTITIES.utEntitySuffocationToggle) return;
-        //if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSuffocationMixin ::: Set entity size");
         if (width != this.width || height != this.height)
         {
             float f = this.width;
@@ -58,6 +58,7 @@ public abstract class UTSuffocationMixin
         ci.cancel();
     }
 
+    @Unique
     public void pushEntityOutOfBlocks(AxisAlignedBB oldHitbox)
     {
         // Pass "null" in first argument to only get _possible_ block collisions

@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(EntityLivingBase.class)
 public abstract class UTDeathTimeMixin extends Entity
 {
-    public UTDeathTimeMixin(World worldIn)
+    protected UTDeathTimeMixin(World worldIn)
     {
         super(worldIn);
     }

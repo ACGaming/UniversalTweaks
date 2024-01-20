@@ -10,13 +10,13 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
+import com.llamalad7.mixinextras.injector.WrapWithCondition;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -26,9 +26,9 @@ public abstract class UTEntityItemMixin extends Entity
     @Unique
     public boolean playerInteraction;
     @Shadow
-    private int pickupDelay;
+    public int pickupDelay;
 
-    public UTEntityItemMixin(World worldIn)
+    protected UTEntityItemMixin(World worldIn)
     {
         super(worldIn);
     }
@@ -160,7 +160,7 @@ public abstract class UTEntityItemMixin extends Entity
     }
 
     // Courtesy of fonnymunkey
-    @Redirect(method = "onUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/item/EntityItem;move(Lnet/minecraft/entity/MoverType;DDD)V"))
+    @WrapWithCondition(method = "onUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/item/EntityItem;move(Lnet/minecraft/entity/MoverType;DDD)V"))
     public boolean utIEOnUpdate(EntityItem instance, MoverType moverType, double dx, double dy, double dz)
     {
         // Run on odd ticks to not skip the '% 25' check

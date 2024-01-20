@@ -26,13 +26,13 @@ import static mod.acgaming.universaltweaks.config.UTConfigTweaks.MiscCategory.Lo
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTLoadSound
 {
-    public static boolean playedMenu = false;
-    public static boolean playedWorld = false;
-    public static Random random = new Random();
-    public static List<SoundEvent> soundListMC = new ArrayList<>();
-    public static List<SoundEvent> soundListWorld = new ArrayList<>();
-    public static List<Float> pitchListMC = new ArrayList<>();
-    public static List<Float> pitchListWorld = new ArrayList<>();
+    private static boolean playedMenu = false;
+    private static boolean playedWorld = false;
+    private static final Random random = new Random();
+    private static final List<SoundEvent> soundListMC = new ArrayList<>();
+    private static final List<SoundEvent> soundListWorld = new ArrayList<>();
+    private static final List<Float> pitchListMC = new ArrayList<>();
+    private static final List<Float> pitchListWorld = new ArrayList<>();
 
     public static void initLists()
     {

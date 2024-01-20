@@ -83,6 +83,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("mendingfix") && UTConfigTweaks.ITEMS.MENDING.utMendingToggle) messages.add("Mending Fix");
         if (Loader.isModLoaded("movingquickly") && UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("MovingQuickly");
         if (Loader.isModLoaded("mtqfix") && UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) messages.add("MTQFix");
+        if (Loader.isModLoaded("mup")) messages.add("MUP / EigenCraft Unofficial Patch");
         if (Loader.isModLoaded("naturallychargedcreepers") && UTConfigTweaks.ENTITIES.utCreeperChargedChance > 0) messages.add("Naturally Charged Creepers");
         if (Loader.isModLoaded("nanfix") && UTConfigBugfixes.ENTITIES.utEntityNaNToggle) messages.add("NaN Entity Health Fix");
         if (Loader.isModLoaded("nanpolice") && UTConfigBugfixes.ENTITIES.utEntityNaNToggle) messages.add("NaNPolice");

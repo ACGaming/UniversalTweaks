@@ -51,7 +51,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
 
     private final List<ChangeInfo> changeEntries = Lists.newArrayList();
     private final RenderItem renderItem;
-    private int hard_limit;
+    private int hardLimit;
     private int dim;
     private int dimLoadTicks;
     private ItemStack[] previous;
@@ -88,7 +88,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
         int lineHeight = font.FONT_HEIGHT;
         if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNDisplayIcon) lineHeight = Math.max(2 + iconSize, lineHeight);
 
-        hard_limit = height / lineHeight;
+        hardLimit = height / lineHeight;
 
         List<Triple<ChangeInfo, String[], Integer>> computedStrings = Lists.newArrayList();
 
@@ -97,7 +97,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
 
         synchronized (changeEntries)
         {
-            if (changeEntries.size() == 0) return;
+            if (changeEntries.isEmpty()) return;
 
             rectWidth = computeStrings(computedStrings, font);
 
@@ -112,7 +112,8 @@ public class UTPickupNotificationOverlay extends GuiScreen
 
         int rectHeight = lineHeight * number;
 
-        int x, y;
+        int x;
+        int y;
         int align;
         switch (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNSnapPosition)
         {
@@ -276,8 +277,8 @@ public class UTPickupNotificationOverlay extends GuiScreen
         synchronized (changeEntries)
         {
             changeEntries.forEach(e -> e.ttl--);
-            while (changeEntries.size() > hard_limit) changeEntries.remove(0);
-            changeEntries.removeIf((e) -> e.ttl <= 0 || e.count == 0);
+            while (changeEntries.size() > hardLimit) changeEntries.remove(0);
+            changeEntries.removeIf(e -> e.ttl <= 0 || e.count == 0);
         }
 
         if (previous == null || previous.length != player.inventory.getSizeInventory())
@@ -311,10 +312,10 @@ public class UTPickupNotificationOverlay extends GuiScreen
             }
         }
 
-        if (changes.size() == 0) return;
+        if (changes.isEmpty()) return;
 
         final List<ChangeInfo> changeList = Lists.newArrayList();
-        changes.forEach((change) -> {
+        changes.forEach(change -> {
             ItemStack left = change.getLeft();
             boolean leftEmpty = left.getCount() <= 0;
 
@@ -343,9 +344,9 @@ public class UTPickupNotificationOverlay extends GuiScreen
             }
         });
 
-        changeList.removeIf((e) -> e.count == 0);
+        changeList.removeIf(e -> e.count == 0);
 
-        if (changeList.size() > 0)
+        if (!changeList.isEmpty())
         {
             synchronized (changeEntries)
             {
@@ -361,7 +362,7 @@ public class UTPickupNotificationOverlay extends GuiScreen
     private int computeStrings(List<Triple<ChangeInfo, String[], Integer>> computedStrings, FontRenderer font)
     {
         int rectWidth = 0;
-        int itemsToShow = Math.min(Math.min(hard_limit, UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNSoftLimit + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNFadeLimit), changeEntries.size());
+        int itemsToShow = Math.min(Math.min(hardLimit, UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNSoftLimit + UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNFadeLimit), changeEntries.size());
         int offset = Math.max(0, changeEntries.size() - itemsToShow);
         int fadeOffset = changeEntries.size() - UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNSoftLimit - UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNFadeLimit;
 

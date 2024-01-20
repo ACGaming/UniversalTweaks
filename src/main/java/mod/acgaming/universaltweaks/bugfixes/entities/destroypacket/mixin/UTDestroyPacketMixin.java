@@ -32,7 +32,7 @@ public abstract class UTDestroyPacketMixin extends EntityPlayer
     @Final
     private List<Integer> entityRemoveQueue;
 
-    public UTDestroyPacketMixin(World worldIn, GameProfile gameProfileIn)
+    protected UTDestroyPacketMixin(World worldIn, GameProfile gameProfileIn)
     {
         super(worldIn, gameProfileIn);
     }

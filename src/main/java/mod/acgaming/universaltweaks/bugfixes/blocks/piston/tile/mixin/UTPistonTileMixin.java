@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.bugfixes.blocks.piston.mixin;
+package mod.acgaming.universaltweaks.bugfixes.blocks.piston.tile.mixin;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;

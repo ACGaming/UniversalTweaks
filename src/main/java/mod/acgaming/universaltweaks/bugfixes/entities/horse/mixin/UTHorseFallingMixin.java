@@ -26,7 +26,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(AbstractHorse.class)
 public abstract class UTHorseFallingMixin extends EntityAnimal
 {
-    public UTHorseFallingMixin(World worldIn)
+    protected UTHorseFallingMixin(World worldIn)
     {
         super(worldIn);
     }

@@ -23,7 +23,7 @@ public abstract class UTMountDesyncMixin extends Entity
     @Shadow
     public NetHandlerPlayServer connection;
 
-    public UTMountDesyncMixin(World worldIn)
+    protected UTMountDesyncMixin(World worldIn)
     {
         super(worldIn);
     }

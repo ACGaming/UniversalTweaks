@@ -5,7 +5,7 @@ import net.minecraft.item.EnumDyeColor;
 // Courtesy of Darkhax
 public class UTDyeBlending
 {
-    public static final EnumDyeColor[][] BLENDABLE_DYE_COLORS = new EnumDyeColor[16][16];
+    private static final EnumDyeColor[][] BLENDABLE_DYE_COLORS = new EnumDyeColor[16][16];
 
     static
     {

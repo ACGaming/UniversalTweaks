@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(EntityPlayer.class)
 public abstract class UTSaturationMixin extends EntityLivingBase
 {
-    public UTSaturationMixin(World worldIn)
+    protected UTSaturationMixin(World worldIn)
     {
         super(worldIn);
     }
