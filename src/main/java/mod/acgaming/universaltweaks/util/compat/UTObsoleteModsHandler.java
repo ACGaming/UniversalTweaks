@@ -117,29 +117,26 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("unloader") && UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle) messages.add("Unloader");
         if (Loader.isModLoaded("villagermantlefix") && UTConfigBugfixes.ENTITIES.utVillagerMantleToggle) messages.add("Villager Mantle Fix");
         if (Loader.isModLoaded("watercontrolextreme") && UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle) messages.add("Water Control Extreme");
-        try
-        {
-            Class.forName("com.chocohead.biab.BornInABarn");
-            messages.add("Born in a Barn");
-            if (UTConfigBugfixes.MISC.utLocaleToggle)
-            {
-                Class.forName("io.github.jikuja.LocaleTweaker");
-                messages.add("LocaleFixer");
-            }
-            if (UTConfigTweaks.BLOCKS.utBlockHitDelay != 5)
-            {
-                Class.forName("com.cleanroommc.blockdelayremover.BlockDelayRemoverCore");
-                messages.add("Block Delay Remover");
-            }
-            if (UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle)
-            {
-                Class.forName("io.github.barteks2x.chunkgenlimiter.ChunkGenLimitMod");
-                messages.add("Chunk Generation Limiter");
-            }
-        }
-        catch (ClassNotFoundException ignored) {}
+        // Mods checked by class
+        if (isClassLoaded("com.chocohead.biab.BornInABarn")) messages.add("Born in a Barn");
+        if (isClassLoaded("io.github.jikuja.LocaleTweaker") && UTConfigBugfixes.MISC.utLocaleToggle) messages.add("LocaleFixer");
+        if (isClassLoaded("com.cleanroommc.blockdelayremover.BlockDelayRemoverCore") && UTConfigTweaks.BLOCKS.utBlockHitDelay != 5) messages.add("Block Delay Remover");
+        if (isClassLoaded("io.github.barteks2x.chunkgenlimiter.ChunkGenLimitMod") && UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) messages.add("Chunk Generation Limiter");
         messages.add("");
         messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning3").getFormattedText());
         return messages;
+    }
+
+    private static boolean isClassLoaded(String className)
+    {
+        try
+        {
+            Class.forName(className);
+            return true;
+        }
+        catch (ClassNotFoundException ignored)
+        {
+            return false;
+        }
     }
 }
