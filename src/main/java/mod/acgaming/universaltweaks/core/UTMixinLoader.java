@@ -27,6 +27,7 @@ public class UTMixinLoader implements ILateMixinLoader
             "mixins.mods.chisel.tcomplement.dupes.json",
             "mixins.mods.cofhcore.json",
             "mixins.mods.collective.json",
+            "mixins.mods.compactmachines.json",
             "mixins.mods.cqrepoured.json",
             "mixins.mods.crafttweaker.json",
             "mixins.mods.elementarystaffs.json",
@@ -86,6 +87,8 @@ public class UTMixinLoader implements ILateMixinLoader
                     return Loader.isModLoaded("aoa3") && (Loader.isModLoaded("fluxnetworks") || Loader.isModLoaded("nuclearcraft"));
                 case "mixins.mods.crafttweaker.json":
                     return Loader.isModLoaded("crafttweaker");
+                case "mixins.mods.compactmachines.json":
+                    return Loader.isModLoaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle;
                 case "mixins.mods.roost.json":
                     return Loader.isModLoaded("roost");
                 case "mixins.mods.storagedrawers.client.json":

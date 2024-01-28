@@ -77,6 +77,7 @@ public class UniversalTweaks
         + "after:chisel;"
         + "after:cofhcore;"
         + "after:collective;"
+        + "after:compactmachines3;"
         + "after:contenttweaker;"
         + "after:element;"
         + "after:elenaidodge2;"
