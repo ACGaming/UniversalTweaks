@@ -246,7 +246,15 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     @Override
     public boolean shouldMixinConfigQueue(String mixinConfig)
     {
-        if (isDev) return true;
+        if (isDev)
+        {
+            // Causes crashes in dev env only
+            if (mixinConfig.equals("mixins.tweaks.misc.armorcurve.json"))
+            {
+                return false;
+            }
+            return true;
+        }
         if (isClient)
         {
             switch (mixinConfig)
