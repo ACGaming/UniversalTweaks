@@ -1,8 +1,8 @@
 package mod.acgaming.universaltweaks.core;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import com.google.common.collect.Lists;
 import net.minecraftforge.fml.common.Loader;
 
 import mod.acgaming.universaltweaks.config.UTConfigMods;
@@ -13,66 +13,72 @@ public class UTMixinLoader implements ILateMixinLoader
     @Override
     public List<String> getMixinConfigs()
     {
-        return Lists.newArrayList(
-            "mixins.mods.abyssalcraft.json",
-            "mixins.mods.actuallyadditions.dupes.json",
-            "mixins.mods.aoa3.json",
-            "mixins.mods.arcanearchives.dupes.json",
-            "mixins.mods.biomesoplenty.json",
-            "mixins.mods.bloodmagic.dupes.json",
-            "mixins.mods.bloodmagic.json",
-            "mixins.mods.botania.dupes.json",
-            "mixins.mods.botania.json",
-            "mixins.mods.ceramics.json",
-            "mixins.mods.chisel.tcomplement.dupes.json",
-            "mixins.mods.cofhcore.json",
-            "mixins.mods.collective.json",
-            "mixins.mods.cqrepoured.json",
-            "mixins.mods.crafttweaker.json",
-            "mixins.mods.elementarystaffs.json",
-            "mixins.mods.elenaidodge2.json",
-            "mixins.mods.epicsiegemod.json",
-            "mixins.mods.erebus.json",
-            "mixins.mods.extrautilities.dupes.json",
-            "mixins.mods.forestry.cocoa.json",
-            "mixins.mods.forestry.dupes.json",
-            "mixins.mods.forestry.extratrees.json",
-            "mixins.mods.forestry.json",
-            "mixins.mods.industrialcraft.dupes.json",
-            "mixins.mods.industrialforegoing.dupes.json",
-            "mixins.mods.infernalmobs.json",
-            "mixins.mods.ironbackpacks.dupes.json",
-            "mixins.mods.itemstages.json",
-            "mixins.mods.mekanism.dupes.json",
-            "mixins.mods.mobstages.json",
-            "mixins.mods.netherchest.dupes.json",
-            "mixins.mods.netherrocks.json",
-            "mixins.mods.nuclearcraft.json",
-            "mixins.mods.quark.dupes.json",
-            "mixins.mods.reskillable.json",
-            "mixins.mods.roost.contenttweaker.json",
-            "mixins.mods.roost.json",
-            "mixins.mods.simpledifficulty.json",
-            "mixins.mods.spiceoflife.dupes.json",
-            "mixins.mods.storagedrawers.client.json",
-            "mixins.mods.tconstruct.json",
-            "mixins.mods.tconstruct.toolcustomization.json",
-            "mixins.mods.tconstruct.toolcustomization.plustic.json",
-            "mixins.mods.tconstruct.oredictcache.json",
-            "mixins.mods.techreborn.json",
-            "mixins.mods.thaumcraft.dupes.json",
-            "mixins.mods.thaumcraft.enderio.dupes.json",
-            "mixins.mods.thaumcraft.entities.client.json",
-            "mixins.mods.thaumcraft.entities.server.json",
-            "mixins.mods.thaumcraft.foci.focuseffects.json",
-            "mixins.mods.thaumcraft.foci.focusmediums.json",
-            "mixins.mods.thaumcraft.json",
-            "mixins.mods.thaumicwonders.dupes.json",
-            "mixins.mods.thefarlanders.dupes.json",
-            "mixins.mods.thermalexpansion.dupes.json",
-            "mixins.mods.thermalexpansion.json",
-            "mixins.mods.tinyprogressions.dupes.json"
-        );
+        List<String> configs = new ArrayList<>();
+        // CLIENT ONLY
+        if (UTLoadingPlugin.isClient)
+        {
+            configs.add("mixins.mods.aoa3.json");
+            configs.add("mixins.mods.compactmachines.json");
+            configs.add("mixins.mods.crafttweaker.json");
+            configs.add("mixins.mods.roost.json");
+            configs.add("mixins.mods.storagedrawers.client.json");
+            configs.add("mixins.mods.thaumcraft.entities.client.json");
+        }
+        // COMMON
+        configs.add("mixins.mods.abyssalcraft.json");
+        configs.add("mixins.mods.actuallyadditions.dupes.json");
+        configs.add("mixins.mods.arcanearchives.dupes.json");
+        configs.add("mixins.mods.biomesoplenty.json");
+        configs.add("mixins.mods.bloodmagic.dupes.json");
+        configs.add("mixins.mods.bloodmagic.json");
+        configs.add("mixins.mods.botania.dupes.json");
+        configs.add("mixins.mods.botania.json");
+        configs.add("mixins.mods.ceramics.json");
+        configs.add("mixins.mods.chisel.tcomplement.dupes.json");
+        configs.add("mixins.mods.cofhcore.json");
+        configs.add("mixins.mods.collective.json");
+        configs.add("mixins.mods.cqrepoured.json");
+        configs.add("mixins.mods.elementarystaffs.json");
+        configs.add("mixins.mods.elenaidodge2.json");
+        configs.add("mixins.mods.epicsiegemod.json");
+        configs.add("mixins.mods.erebus.json");
+        configs.add("mixins.mods.extrautilities.dupes.json");
+        configs.add("mixins.mods.forestry.cocoa.json");
+        configs.add("mixins.mods.forestry.dupes.json");
+        configs.add("mixins.mods.forestry.extratrees.json");
+        configs.add("mixins.mods.forestry.json");
+        configs.add("mixins.mods.industrialcraft.dupes.json");
+        configs.add("mixins.mods.industrialforegoing.dupes.json");
+        configs.add("mixins.mods.infernalmobs.json");
+        configs.add("mixins.mods.ironbackpacks.dupes.json");
+        configs.add("mixins.mods.itemstages.json");
+        configs.add("mixins.mods.mekanism.dupes.json");
+        configs.add("mixins.mods.mobstages.json");
+        configs.add("mixins.mods.netherchest.dupes.json");
+        configs.add("mixins.mods.netherrocks.json");
+        configs.add("mixins.mods.nuclearcraft.json");
+        configs.add("mixins.mods.quark.dupes.json");
+        configs.add("mixins.mods.reskillable.json");
+        configs.add("mixins.mods.roost.contenttweaker.json");
+        configs.add("mixins.mods.simpledifficulty.json");
+        configs.add("mixins.mods.spiceoflife.dupes.json");
+        configs.add("mixins.mods.tconstruct.json");
+        configs.add("mixins.mods.tconstruct.toolcustomization.json");
+        configs.add("mixins.mods.tconstruct.toolcustomization.plustic.json");
+        configs.add("mixins.mods.tconstruct.oredictcache.json");
+        configs.add("mixins.mods.techreborn.json");
+        configs.add("mixins.mods.thaumcraft.dupes.json");
+        configs.add("mixins.mods.thaumcraft.enderio.dupes.json");
+        configs.add("mixins.mods.thaumcraft.entities.server.json");
+        configs.add("mixins.mods.thaumcraft.foci.focuseffects.json");
+        configs.add("mixins.mods.thaumcraft.foci.focusmediums.json");
+        configs.add("mixins.mods.thaumcraft.json");
+        configs.add("mixins.mods.thaumicwonders.dupes.json");
+        configs.add("mixins.mods.thefarlanders.dupes.json");
+        configs.add("mixins.mods.thermalexpansion.dupes.json");
+        configs.add("mixins.mods.thermalexpansion.json");
+        configs.add("mixins.mods.tinyprogressions.dupes.json");
+        return configs;
     }
 
     @Override
@@ -84,6 +90,8 @@ public class UTMixinLoader implements ILateMixinLoader
             {
                 case "mixins.mods.aoa3.json":
                     return Loader.isModLoaded("aoa3") && (Loader.isModLoaded("fluxnetworks") || Loader.isModLoaded("nuclearcraft"));
+                case "mixins.mods.compactmachines.json":
+                    return Loader.isModLoaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle;
                 case "mixins.mods.crafttweaker.json":
                     return Loader.isModLoaded("crafttweaker");
                 case "mixins.mods.roost.json":

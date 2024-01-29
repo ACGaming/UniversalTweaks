@@ -55,6 +55,10 @@ public class UTConfigMods
     @Config.Name("CoFH Core")
     public static final CoFHCoreCategory COFH_CORE = new CoFHCoreCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.compactmachines")
+    @Config.Name("Compact Machines")
+    public static final CompactMachinesCoreCategory COMPACT_MACHINES = new CompactMachinesCoreCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.elementarystaffs")
     @Config.Name("Elementary Staffs")
     public static final ElementaryStaffsCategory ELEMENTARY_STAFFS = new ElementaryStaffsCategory();
@@ -284,6 +288,14 @@ public class UTConfigMods
         @Config.Name("Vorpal Enchantment Damage")
         @Config.Comment("Sets the damage multiplier of the Vorpal enchantment")
         public double utCoFHVorpalDamage = 10.0D;
+    }
+
+    public static class CompactMachinesCoreCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Invisible Wall Render Fix")
+        @Config.Comment("Fixes some compact machine walls being invisible if Nothirium 0.2.x+ or Vintagium is installed")
+        public boolean utCMRenderFixToggle = true;
     }
 
     public static class ElementaryStaffsCategory
