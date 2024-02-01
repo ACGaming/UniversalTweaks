@@ -95,7 +95,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 case "mixins.mods.crafttweaker.json":
                     return Loader.isModLoaded("crafttweaker");
                 case "mixins.mods.roost.json":
-                    return Loader.isModLoaded("roost");
+                    return Loader.isModLoaded("roost") && Loader.isModLoaded("contenttweaker");
                 case "mixins.mods.storagedrawers.client.json":
                     return Loader.isModLoaded("storagedrawers");
                 case "mixins.mods.thaumcraft.entities.client.json":

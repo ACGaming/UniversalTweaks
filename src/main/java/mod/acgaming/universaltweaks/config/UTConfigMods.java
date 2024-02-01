@@ -520,22 +520,11 @@ public class UTConfigMods
         @Config.Comment
             ({
                 "Improves load time by registering CT chickens early for Roost to detect them",
-                "Note: All CT chickens must be specified in \"Custom Chickens\" for this tweak to work!",
-                "Note: In your .zs files, to use ContentTweaker's MaterialSystem Parts, you must:",
+                "Note: If you would like to use ContentTweaker's MaterialSystem Parts for the layed item, in your script you must:",
                 "1) Use '#loader finalize_contenttweaker', not '#loader contenttweaker'",
                 "2) Use the Material Part Bracket Handler to reference the item"
             })
-        public boolean utRoostEarlyRegisterCTChickens = false;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Custom Chickens")
-        @Config.Comment
-            ({
-                "Adds custom chickens from mods (e.g. ContentTweaker) to Roost's stock texture check",
-                "Syntax: name",
-                "name     Chicken name",
-            })
-        public String[] utRoostChickenMods = new String[] {};
+        public boolean utRoostEarlyRegisterCTChickens = true;
     }
 
     public static class SimpleDifficultyCategory
