@@ -1379,6 +1379,11 @@ public class UTConfigTweaks
             @Config.Name("No Lightning Flash")
             @Config.Comment("Disables the flashing of skybox and ground brightness on lightning bolt strikes")
             public boolean utLightningFlashToggle = false;
+            
+            @Config.RequiresMcRestart
+            @Config.Name("No Lightning Item Destruction")
+            @Config.Comment("Disables lightning bolts destroying items")
+            public boolean utLightningItemDestructionToggle = false;
         }
 
         public static class LoadSoundsCategory

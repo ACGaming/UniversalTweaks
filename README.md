@@ -146,6 +146,7 @@ All changes are toggleable via config files.
     * **Lightning Fire Ticks:** Sets the duration in ticks lightning bolts set entities on fire
     * **No Lightning Fire:** Disables the creation of fire around lightning strikes
     * **No Lightning Flash:** Disables the flashing of skybox and ground brightness on lightning strikes
+    * **No Lighting Item Destruction:** Disables lightning bolts destroying items
 * **Linear XP Amount:** Sets the amount of XP needed for each level, effectively removing the increasing level scaling
 * **Load Sounds:** Plays sounds when the game or the world are loaded
 * **Mending Overpowered:** If mending fix is enabled, repairs entire damaged inventory with XP
