@@ -237,6 +237,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.performance.oredictionarycheck.json");
         configs.add("mixins.tweaks.performance.prefixcheck.json");
         configs.add("mixins.tweaks.performance.redstone.json");
+        configs.add("mixins.tweaks.performance.texturemapcheck.json");
         configs.add("mixins.tweaks.world.chunks.gen.json");
         configs.add("mixins.tweaks.world.loading.server.json");
         configs.add("mixins.tweaks.world.sealevel.json");
@@ -506,6 +507,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.PERFORMANCE.utPrefixCheckToggle;
             case "mixins.tweaks.performance.redstone.json":
                 return UTConfigTweaks.PERFORMANCE.utRedstoneLightingToggle;
+            case "mixins.tweaks.performance.texturemapcheck.json":
+                return UTConfigTweaks.PERFORMANCE.utTextureMapCheckToggle;
             case "mixins.tweaks.world.chunks.gen.json":
                 return UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle;
             case "mixins.tweaks.world.loading.server.json":

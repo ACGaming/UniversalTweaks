@@ -146,13 +146,15 @@ All changes are toggleable via config files.
     * **Lightning Fire Ticks:** Sets the duration in ticks lightning bolts set entities on fire
     * **No Lightning Fire:** Disables the creation of fire around lightning strikes
     * **No Lightning Flash:** Disables the flashing of skybox and ground brightness on lightning strikes
-    * **No Lighting Item Destruction:** Disables lightning bolts destroying items
+    * **No Lightning Item Destruction:** Prevents lightning bolts from destroying items
 * **Linear XP Amount:** Sets the amount of XP needed for each level, effectively removing the increasing level scaling
 * **Load Sounds:** Plays sounds when the game or the world are loaded
 * **Mending Overpowered:** If mending fix is enabled, repairs entire damaged inventory with XP
 * **Mending:** Only repairs damaged equipment with XP
 * **Mob Despawn Improvement:** Mobs carrying picked up items will drop their equipment and despawn properly
 * **More Banner Layers:** Sets the amount of applicable pattern layers for banners
+* **Mute Ore Dictionary Errors:** Silences ore dictionary errors
+* **Mute Texture Map Errors:** Silences texture map errors
 * **No Attack Cooldown:** Disables the 1.9 combat update attack cooldown
 * **No Crafting Repair:** Disables crafting recipes for repairing tools
 * **No Golems:** Disables the manual creation of golems and withers
@@ -185,7 +187,6 @@ All changes are toggleable via config files.
 * **Soulbound Vexes:** Summoned vexes will also die when their summoner is killed
 * **Spawn Caps:** Sets maximum spawning limits for different entity types
 * **Super Hot Torch:** Enables one-time ignition of entities by hitting them with a torch
-* **Suppress Ore Dictionary Errors:** Suppresses Forge's broken ore dictionary errors
 * **Stronghold Replacement:** Replaces stronghold generation with a safer variant
 * **Swing Through Grass:** Allows hitting entities through grass instead of breaking it
 * **Tidy Chunk:** Tidies newly generated chunks by removing scattered item entities
