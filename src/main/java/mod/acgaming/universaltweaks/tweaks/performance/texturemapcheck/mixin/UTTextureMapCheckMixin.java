@@ -11,7 +11,7 @@ import com.llamalad7.mixinextras.injector.WrapWithCondition;
 
 // Courtesy of Elephant_1214
 @Mixin(value = TextureMap.class, priority = 500)
-public abstract class UTTextureMapCheckMixin
+public class UTTextureMapCheckMixin
 {
     @WrapWithCondition(
             method = "*", at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;error(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", remap = false),

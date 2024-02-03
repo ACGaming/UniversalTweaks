@@ -1633,6 +1633,11 @@ public class UTConfigTweaks
         public boolean utWorldLoadingToggle = false;
         
         @Config.RequiresMcRestart
+        @Config.Name("Mute Advancement Errors")
+        @Config.Comment("Silences advancement errors")
+        public boolean utAdvancementCheckToggle = false;
+        
+        @Config.RequiresMcRestart
         @Config.Name("Mute Ore Dictionary Errors")
         @Config.Comment("Silences ore dictionary errors")
         public boolean utOreDictionaryCheckToggle = false;

@@ -153,6 +153,7 @@ All changes are toggleable via config files.
 * **Mending:** Only repairs damaged equipment with XP
 * **Mob Despawn Improvement:** Mobs carrying picked up items will drop their equipment and despawn properly
 * **More Banner Layers:** Sets the amount of applicable pattern layers for banners
+* **Mute Advancement Errors:** Silences advancement errors
 * **Mute Ore Dictionary Errors:** Silences ore dictionary errors
 * **Mute Texture Map Errors:** Silences texture map errors
 * **No Attack Cooldown:** Disables the 1.9 combat update attack cooldown

@@ -231,6 +231,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.misc.xp.linear.json");
         configs.add("mixins.tweaks.misc.xp.smelting.json");
         configs.add("mixins.tweaks.misc.recipebook.server.json");
+        configs.add("mixins.tweaks.performance.advancementcheck.json");
         configs.add("mixins.tweaks.performance.autosave.json");
         configs.add("mixins.tweaks.performance.craftingcache.json");
         configs.add("mixins.tweaks.performance.dyeblending.json");
@@ -495,6 +496,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.MISC.utRecipeBookToggle;
             case "mixins.tweaks.misc.xp.smelting.json":
                 return UTConfigTweaks.MISC.utSmeltingXPToggle;
+            case "mixins.tweaks.performance.advancementcheck.json":
+                return UTConfigTweaks.PERFORMANCE.utAdvancementCheckToggle;
             case "mixins.tweaks.performance.autosave.json":
                 return UTConfigTweaks.PERFORMANCE.utAutoSaveInterval != 900;
             case "mixins.tweaks.performance.craftingcache.json":
