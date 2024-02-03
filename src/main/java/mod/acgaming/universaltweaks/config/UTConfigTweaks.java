@@ -1379,6 +1379,11 @@ public class UTConfigTweaks
             @Config.Name("No Lightning Flash")
             @Config.Comment("Disables the flashing of skybox and ground brightness on lightning bolt strikes")
             public boolean utLightningFlashToggle = false;
+            
+            @Config.RequiresMcRestart
+            @Config.Name("No Lightning Item Destruction")
+            @Config.Comment("Prevents lightning bolts from destroying items")
+            public boolean utLightningItemDestructionToggle = false;
         }
 
         public static class LoadSoundsCategory
@@ -1626,16 +1631,26 @@ public class UTConfigTweaks
                 "May have side effects such as slower chunk generation"
             })
         public boolean utWorldLoadingToggle = false;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Mute Advancement Errors")
+        @Config.Comment("Silences advancement errors")
+        public boolean utAdvancementCheckToggle = false;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Mute Ore Dictionary Errors")
+        @Config.Comment("Silences ore dictionary errors")
+        public boolean utOreDictionaryCheckToggle = false;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Mute Texture Map Errors")
+        @Config.Comment("Silences texture map errors")
+        public boolean utTextureMapCheckToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("No Redstone Lighting")
         @Config.Comment("Disables lighting of active redstone, repeaters, and comparators to improve performance")
         public boolean utRedstoneLightingToggle = false;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Suppress Ore Dictionary Errors")
-        @Config.Comment("Suppresses Forge's broken ore dictionary errors")
-        public boolean utOreDictionaryCheckToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Uncap FPS")

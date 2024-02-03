@@ -231,12 +231,14 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.misc.xp.linear.json");
         configs.add("mixins.tweaks.misc.xp.smelting.json");
         configs.add("mixins.tweaks.misc.recipebook.server.json");
+        configs.add("mixins.tweaks.performance.advancementcheck.json");
         configs.add("mixins.tweaks.performance.autosave.json");
         configs.add("mixins.tweaks.performance.craftingcache.json");
         configs.add("mixins.tweaks.performance.dyeblending.json");
         configs.add("mixins.tweaks.performance.oredictionarycheck.json");
         configs.add("mixins.tweaks.performance.prefixcheck.json");
         configs.add("mixins.tweaks.performance.redstone.json");
+        configs.add("mixins.tweaks.performance.texturemapcheck.json");
         configs.add("mixins.tweaks.world.chunks.gen.json");
         configs.add("mixins.tweaks.world.loading.server.json");
         configs.add("mixins.tweaks.world.sealevel.json");
@@ -494,6 +496,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.MISC.utRecipeBookToggle;
             case "mixins.tweaks.misc.xp.smelting.json":
                 return UTConfigTweaks.MISC.utSmeltingXPToggle;
+            case "mixins.tweaks.performance.advancementcheck.json":
+                return UTConfigTweaks.PERFORMANCE.utAdvancementCheckToggle;
             case "mixins.tweaks.performance.autosave.json":
                 return UTConfigTweaks.PERFORMANCE.utAutoSaveInterval != 900;
             case "mixins.tweaks.performance.craftingcache.json":
@@ -506,6 +510,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.PERFORMANCE.utPrefixCheckToggle;
             case "mixins.tweaks.performance.redstone.json":
                 return UTConfigTweaks.PERFORMANCE.utRedstoneLightingToggle;
+            case "mixins.tweaks.performance.texturemapcheck.json":
+                return UTConfigTweaks.PERFORMANCE.utTextureMapCheckToggle;
             case "mixins.tweaks.world.chunks.gen.json":
                 return UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle;
             case "mixins.tweaks.world.loading.server.json":
