@@ -1166,7 +1166,7 @@ public class UTConfigTweaks
         
         @Config.RequiresMcRestart
         @Config.Name("Disable Advancements")
-        @Config.Comment("Prevents the advancement system from loading")
+        @Config.Comment("Prevents the advancement system from loading entirely")
         public boolean utDisableAdvancementsToggle = false;
 
         @Config.RequiresMcRestart
