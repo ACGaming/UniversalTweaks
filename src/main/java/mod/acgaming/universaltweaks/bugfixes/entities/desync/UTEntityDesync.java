@@ -36,6 +36,6 @@ public class UTEntityDesync
 
     public static boolean isBlacklisted(Entity entity)
     {
-        return blacklistedEntityEntries.contains(EntityRegistry.getEntry(entity.getClass()));
+        return blacklistedEntityEntries.contains(EntityRegistry.getEntry(entity.getClass())) || !(((IPrevMotion) entity).hasSuperUpdate());
     }
 }
