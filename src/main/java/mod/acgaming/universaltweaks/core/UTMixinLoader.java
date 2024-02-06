@@ -23,6 +23,7 @@ public class UTMixinLoader implements ILateMixinLoader
             configs.add("mixins.mods.roost.json");
             configs.add("mixins.mods.storagedrawers.client.json");
             configs.add("mixins.mods.thaumcraft.entities.client.json");
+            configs.add("mixins.mods.thaumicwonders.client.json");
         }
         // COMMON
         configs.add("mixins.mods.abyssalcraft.json");
@@ -101,6 +102,8 @@ public class UTMixinLoader implements ILateMixinLoader
                     return Loader.isModLoaded("storagedrawers");
                 case "mixins.mods.thaumcraft.entities.client.json":
                     return Loader.isModLoaded("thaumcraft");
+                case "mixins.mods.thaumicwonders.client.json":
+                    return Loader.isModLoaded("thaumicwonders");
             }
         }
         switch (mixinConfig)
