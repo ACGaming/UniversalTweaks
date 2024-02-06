@@ -15,7 +15,7 @@ import static net.minecraft.block.BlockPistonBase.EXTENDED;
 
 // MC-88959
 // https://bugs.mojang.com/browse/MC-88959
-// Courtesy of mrgrim
+// Courtesy of Nessiesson
 @Mixin(BlockPistonBase.class)
 public abstract class UTPistonBaseBlockMixin
 {

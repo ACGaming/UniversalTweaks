@@ -1027,7 +1027,7 @@ public class UTConfigTweaks
 
             @Config.Name("[17] Slowed Movement")
             @Config.Comment("Slows how often item entities update their position to improve performance")
-            public boolean utIEUpdateToggle = true;
+            public boolean utIEUpdateToggle = false;
         }
 
         public static class MendingCategory
