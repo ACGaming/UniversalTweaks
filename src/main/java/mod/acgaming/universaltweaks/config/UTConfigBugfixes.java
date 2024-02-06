@@ -327,6 +327,11 @@ public class UTConfigBugfixes
         @Config.Name("Potion Amplifier Visibility")
         @Config.Comment("Fixes potion effects not displaying their level above 'IV'")
         public boolean utPotionAmplifierVisibilityToggle = true;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Spectator Menu")
+        @Config.Comment("Fixes the spectator menu not showing player skins")
+        public boolean utSpectatorMenuToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Packet Size")

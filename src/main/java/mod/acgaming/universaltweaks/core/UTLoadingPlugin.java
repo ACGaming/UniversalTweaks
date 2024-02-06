@@ -114,6 +114,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             configs.add("mixins.bugfixes.misc.modelgap.json");
             configs.add("mixins.bugfixes.misc.potionamplifier.json");
             configs.add("mixins.bugfixes.misc.smoothlighting.json");
+            configs.add("mixins.bugfixes.misc.spectatormenu.json");
             configs.add("mixins.bugfixes.misc.startup.json");
             configs.add("mixins.bugfixes.world.frustumculling.json");
             configs.add("mixins.tweaks.entities.autojump.json");
@@ -280,6 +281,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfigBugfixes.MISC.utPotionAmplifierVisibilityToggle;
                 case "mixins.bugfixes.misc.smoothlighting.json":
                     return UTConfigBugfixes.MISC.utAccurateSmoothLighting;
+                case "mixins.bugfixes.misc.spectatormenu.json":
+                    return UTConfigBugfixes.MISC.utSpectatorMenuToggle;
                 case "mixins.bugfixes.misc.startup.json":
                     return UTConfigTweaks.PERFORMANCE.utFasterBackgroundStartupToggle;
                 case "mixins.bugfixes.world.frustumculling.json":
