@@ -204,6 +204,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.entities.damage.velocity.json");
         configs.add("mixins.tweaks.entities.despawning.json");
         configs.add("mixins.tweaks.entities.loot.json");
+        configs.add("mixins.tweaks.entities.saturation.json");
         configs.add("mixins.tweaks.entities.spawning.caps.json");
         configs.add("mixins.tweaks.entities.spawning.creeper.confetti.json");
         configs.add("mixins.tweaks.entities.spawning.golem.json");
@@ -444,6 +445,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.ENTITIES.utMobDespawnToggle;
             case "mixins.tweaks.entities.loot.json":
                 return UTConfigTweaks.ENTITIES.utCreeperMusicDiscsToggle;
+            case "mixins.tweaks.entities.saturation.json":
+                return UTConfigTweaks.ENTITIES.utRidingExhaustionToggle;
             case "mixins.tweaks.entities.spawning.caps.json":
                 return UTConfigTweaks.ENTITIES.SPAWN_CAPS.utSpawnCapsToggle;
             case "mixins.tweaks.entities.spawning.creeper.confetti.json":

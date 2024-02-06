@@ -477,6 +477,11 @@ public class UTConfigTweaks
         public double utRabbitToastChance = 0.0D;
 
         @Config.RequiresMcRestart
+        @Config.Name("Riding Exhaustion")
+        @Config.Comment("Enables depleting saturation when riding mounts")
+        public boolean utRidingExhaustionToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Soulbound Vexes")
         @Config.Comment("Summoned vexes will also die when their summoner is killed")
         public boolean utSoulboundVexesToggle = true;
@@ -1163,7 +1168,7 @@ public class UTConfigTweaks
         @Config.Name("Default Difficulty")
         @Config.Comment("Sets the default difficulty for newly generated worlds")
         public EnumDifficulty utDefaultDifficulty = EnumDifficulty.NORMAL;
-        
+
         @Config.RequiresMcRestart
         @Config.Name("Disable Advancements")
         @Config.Comment("Prevents the advancement system from loading entirely")
@@ -1384,7 +1389,7 @@ public class UTConfigTweaks
             @Config.Name("No Lightning Flash")
             @Config.Comment("Disables the flashing of skybox and ground brightness on lightning bolt strikes")
             public boolean utLightningFlashToggle = false;
-            
+
             @Config.RequiresMcRestart
             @Config.Name("No Lightning Item Destruction")
             @Config.Comment("Prevents lightning bolts from destroying items")
@@ -1636,17 +1641,17 @@ public class UTConfigTweaks
                 "May have side effects such as slower chunk generation"
             })
         public boolean utWorldLoadingToggle = false;
-        
+
         @Config.RequiresMcRestart
         @Config.Name("Mute Advancement Errors")
         @Config.Comment("Silences advancement errors")
         public boolean utAdvancementCheckToggle = false;
-        
+
         @Config.RequiresMcRestart
         @Config.Name("Mute Ore Dictionary Errors")
         @Config.Comment("Silences ore dictionary errors")
         public boolean utOreDictionaryCheckToggle = false;
-        
+
         @Config.RequiresMcRestart
         @Config.Name("Mute Texture Map Errors")
         @Config.Comment("Silences texture map errors")
