@@ -54,6 +54,7 @@ public class UTMixinLoader implements ILateMixinLoader
         configs.add("mixins.mods.itemstages.json");
         configs.add("mixins.mods.mekanism.dupes.json");
         configs.add("mixins.mods.mobstages.json");
+        configs.add("mixins.mods.mrtjpcore.json");
         configs.add("mixins.mods.netherchest.dupes.json");
         configs.add("mixins.mods.netherrocks.json");
         configs.add("mixins.mods.nuclearcraft.json");
@@ -160,6 +161,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle;
             case "mixins.mods.mobstages.json":
                 return Loader.isModLoaded("mobstages");
+            case "mixins.mods.mrtjpcore.json":
+                return Loader.isModLoaded("mrtjpcore");
             case "mixins.mods.netherchest.dupes.json":
                 return Loader.isModLoaded("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle;
             case "mixins.mods.netherrocks.json":
