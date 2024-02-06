@@ -88,6 +88,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("naturallychargedcreepers") && UTConfigTweaks.ENTITIES.utCreeperChargedChance > 0) messages.add("Naturally Charged Creepers");
         if (Loader.isModLoaded("nanfix") && UTConfigBugfixes.ENTITIES.utEntityNaNToggle) messages.add("NaN Entity Health Fix");
         if (Loader.isModLoaded("nanpolice") && UTConfigBugfixes.ENTITIES.utEntityNaNToggle) messages.add("NaNPolice");
+        if (Loader.isModLoaded("noadvancements") && UTConfigTweaks.MISC.utDisableAdvancementsToggle) messages.add("No Advancements");
         if (Loader.isModLoaded("nobounce") && UTConfigMods.THAUMCRAFT.utTCStableThaumometerToggle) messages.add("Stable Thaumometer");
         if (Loader.isModLoaded("nodoze") && UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle) messages.add("No Doze");
         if (Loader.isModLoaded("nonvflash") && UTConfigTweaks.MISC.utNightVisionFlashToggle) messages.add("No Night Vision Flashing");

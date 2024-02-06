@@ -1163,6 +1163,11 @@ public class UTConfigTweaks
         @Config.Name("Default Difficulty")
         @Config.Comment("Sets the default difficulty for newly generated worlds")
         public EnumDifficulty utDefaultDifficulty = EnumDifficulty.NORMAL;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Advancements")
+        @Config.Comment("Prevents the advancement system from loading entirely")
+        public boolean utDisableAdvancementsToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Disable Narrator")
