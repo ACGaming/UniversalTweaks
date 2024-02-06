@@ -24,7 +24,7 @@ public abstract class UTPlayerMenuObjectMixin
     private GameProfile profile;
 
     @Redirect(method = "renderIcon", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/texture/TextureManager;bindTexture(Lnet/minecraft/util/ResourceLocation;)V"))
-    private void redirectbindTexture(TextureManager textureManager, ResourceLocation resource)
+    private void utRedirectBindTexture(TextureManager textureManager, ResourceLocation resource)
     {
         if (UTConfigBugfixes.MISC.utSpectatorMenuToggle)
         {
