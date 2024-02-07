@@ -18,6 +18,7 @@ public class UTMixinLoader implements ILateMixinLoader
         if (UTLoadingPlugin.isClient)
         {
             configs.add("mixins.mods.aoa3.json");
+            configs.add("mixins.mods.cbmultipart.client.json");
             configs.add("mixins.mods.compactmachines.json");
             configs.add("mixins.mods.crafttweaker.json");
             configs.add("mixins.mods.roost.json");
@@ -34,6 +35,7 @@ public class UTMixinLoader implements ILateMixinLoader
         configs.add("mixins.mods.bloodmagic.json");
         configs.add("mixins.mods.botania.dupes.json");
         configs.add("mixins.mods.botania.json");
+        configs.add("mixins.mods.cbmultipart.json");
         configs.add("mixins.mods.ceramics.json");
         configs.add("mixins.mods.chisel.tcomplement.dupes.json");
         configs.add("mixins.mods.cofhcore.json");
@@ -92,6 +94,8 @@ public class UTMixinLoader implements ILateMixinLoader
             {
                 case "mixins.mods.aoa3.json":
                     return Loader.isModLoaded("aoa3") && (Loader.isModLoaded("fluxnetworks") || Loader.isModLoaded("nuclearcraft"));
+                case "mixins.mods.cbmultipart.client.json":
+                    return Loader.isModLoaded("forgemultipartcbe");
                 case "mixins.mods.compactmachines.json":
                     return Loader.isModLoaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle;
                 case "mixins.mods.crafttweaker.json":
@@ -124,6 +128,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("botania");
             case "mixins.mods.botania.dupes.json":
                 return Loader.isModLoaded("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle;
+            case "mixins.mods.cbmultipart.json":
+                return Loader.isModLoaded("forgemultipartcbe");
             case "mixins.mods.ceramics.json":
                 return Loader.isModLoaded("ceramics");
             case "mixins.mods.cofhcore.json":
