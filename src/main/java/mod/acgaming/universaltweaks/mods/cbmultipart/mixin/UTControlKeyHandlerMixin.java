@@ -14,6 +14,6 @@ public class UTControlKeyHandlerMixin
     @ModifyArg(method = "tick", at = @At(value = "INVOKE", target = "Lscala/collection/mutable/Map;put(Ljava/lang/Object;Ljava/lang/Object;)Lscala/Option;"), index = 0)
     private Object utPutWithUUID(Object playerObj)
     {
-        return ((EntityPlayer) playerObj).getGameProfile().getId();
+        return ((EntityPlayer) playerObj).getUniqueID();
     }
 }

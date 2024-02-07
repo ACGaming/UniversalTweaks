@@ -33,7 +33,7 @@ public class UTControlKeyValueMixin
     @Inject(method = "<init>", at = @At(value = "RETURN"))
     private void utSetUUID(EntityPlayer p, CallbackInfo ci)
     {
-        universalTweaks$id = p.getGameProfile().getId();
+        universalTweaks$id = p.getUniqueID();
         this.p = null;
     }
 

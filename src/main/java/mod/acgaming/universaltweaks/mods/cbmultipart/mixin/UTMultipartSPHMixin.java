@@ -14,6 +14,6 @@ public class UTMultipartSPHMixin
     @ModifyArg(method = "handlePacket", at = @At(value = "INVOKE", target = "Lscala/collection/mutable/Map;put(Ljava/lang/Object;Ljava/lang/Object;)Lscala/Option;"), index = 0)
     private Object utPutWithUUID(Object senderObj)
     {
-        return ((EntityPlayer) senderObj).getGameProfile().getId();
+        return ((EntityPlayer) senderObj).getUniqueID();
     }
 }

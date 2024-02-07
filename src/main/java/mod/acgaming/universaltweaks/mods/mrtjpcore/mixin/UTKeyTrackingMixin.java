@@ -15,7 +15,7 @@ public class UTKeyTrackingMixin
     private Object utUpdateUUIDKey(Object playerObj)
     {
         // Set key as UUID, not EntityPlayer
-        return ((EntityPlayer) playerObj).getGameProfile().getId();
+        return ((EntityPlayer) playerObj).getUniqueID();
     }
 
     // This doesn't seem to be necessary
@@ -38,6 +38,6 @@ public class UTKeyTrackingMixin
     private Object utIsKeyDownForUUID(Object playerObj)
     {
         // Get value using UUID key
-        return ((EntityPlayer) playerObj).getGameProfile().getId();
+        return ((EntityPlayer) playerObj).getUniqueID();
     }
 }
