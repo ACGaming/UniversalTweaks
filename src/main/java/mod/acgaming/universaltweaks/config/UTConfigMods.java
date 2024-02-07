@@ -43,6 +43,10 @@ public class UTConfigMods
     @Config.Name("Botania")
     public static final BotaniaCategory BOTANIA = new BotaniaCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.cbmultipart")
+    @Config.Name("CB Multipart/Forge Multipart CBE")
+    public static final CBMultipartCategory CB_MULTIPART = new CBMultipartCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.chisel")
     @Config.Name("Chisel")
     public static final ChiselCategory CHISEL = new ChiselCategory();
@@ -110,6 +114,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.mobstages")
     @Config.Name("Mob Stages")
     public static final MobStagesCategory MOB_STAGES = new MobStagesCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.mrtjpcore")
+    @Config.Name("MrTJPCore")
+    public static final MrTJPCoreCategory MRTJPCORE = new MrTJPCoreCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.netherchest")
     @Config.Name("Nether Chest")
@@ -195,7 +203,7 @@ public class UTConfigMods
     {
         @Config.RequiresMcRestart
         @Config.Name("Optimized Item Transport")
-        @Config.Comment("Makes an optimization to reduce tick overhead of AbyssalCraft's item transport system")
+        @Config.Comment("Optimizes AbyssalCraft's item transport system to reduce tick overhead")
         public boolean utOptimizedItemTransferToggle = true;
     }
 
@@ -219,7 +227,7 @@ public class UTConfigMods
     {
         @Config.RequiresMcRestart
         @Config.Name("Inventory-less GUI Compatibility")
-        @Config.Comment("Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks GUI)")
+        @Config.Comment("Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks, Nuclearcraft)")
         public boolean utFixPlayerTickInInventorylessGui = false;
     }
 
@@ -240,7 +248,7 @@ public class UTConfigMods
 
         @Config.RequiresMcRestart
         @Config.Name("World Unload Memory Leak Fix")
-        @Config.Comment("Fixes memory leak related to unloading worlds/switching dimensions")
+        @Config.Comment("Fixes memory leak when unloading worlds/switching dimensions")
         public boolean utBMWorldUnloadToggle = true;
 
         @Config.RequiresMcRestart
@@ -265,6 +273,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class CBMultipartCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Memory Leak Fix")
+        @Config.Comment("Fixes a memory leak associated with EntityPlayer")
+        public boolean utMemoryLeakFixToggle = true;
     }
 
     public static class ChiselCategory
@@ -294,7 +310,7 @@ public class UTConfigMods
     {
         @Config.RequiresMcRestart
         @Config.Name("Invisible Wall Render Fix")
-        @Config.Comment("Fixes some compact machine walls being invisible if Nothirium 0.2.x+ or Vintagium is installed")
+        @Config.Comment("Fixes some compact machine walls being invisible if Nothirium 0.2.x (and up) or Vintagium is installed")
         public boolean utCMRenderFixToggle = true;
     }
 
@@ -460,6 +476,14 @@ public class UTConfigMods
         public boolean utSpawningRules = true;
     }
 
+    public static class MrTJPCoreCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Memory Leak Fix")
+        @Config.Comment("Fixes a memory leak associated with EntityPlayer")
+        public boolean utMemoryLeakFixToggle = true;
+    }
+
     public static class NetherChestCategory
     {
         @Config.RequiresMcRestart
@@ -482,7 +506,7 @@ public class UTConfigMods
         @Config.Name("Radiation Environment Map")
         @Config.Comment
             ({
-                "Changes the data table of the radiation environment handler to improve performance",
+                "Changes the data table of the radiation environment handler to improve tick time",
                 "CONCURRENT_HASHMAP:        NuclearCraft default",
                 "CONCURRENT_LINKED_HASHMAP: Keeps order of radiation environment info to improve iteration - Better performance",
                 "CONCURRENT_LINKED_QUEUE:   Uses a queue to avoid iteration - Best performance"
@@ -519,7 +543,7 @@ public class UTConfigMods
         @Config.Name("ContentTweaker: Early Register CT Chickens")
         @Config.Comment
             ({
-                "Improves load time by registering CT chickens early for Roost to detect them",
+                "Improves load time by registering ContentTweaker chickens early for Roost to detect them",
                 "Note: If you would like to use ContentTweaker's MaterialSystem Parts for the layed item, in your script you must:",
                 "1) Use '#loader finalize_contenttweaker', not '#loader contenttweaker'",
                 "2) Use the Material Part Bracket Handler to reference the item"
@@ -718,6 +742,11 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Memory Leak Fix")
+        @Config.Comment("Fixes a client-side memory leak when wearing Void Fortress armor")
+        public boolean utMemoryLeakFixToggle = true;
     }
 
     public static class TheFarlandersCategory

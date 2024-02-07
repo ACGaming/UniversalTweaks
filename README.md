@@ -208,30 +208,34 @@ All changes are toggleable via config files.
 ### **⚙️ MOD INTEGRATION**
 
 * **AbyssalCraft**
-    * **Optimized Item Transport:** Makes an optimization to reduce tick overhead of AbyssalCraft's item transport system
+    * **Optimized Item Transport:** Optimizes AbyssalCraft's item transport system to reduce tick overhead
 * **Actually Additions**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Advent of Ascension**
-    * **Inventory-less GUI Compatibility:** Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks GUI)
+    * **Inventory-less GUI Compatibility:** Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks, Nuclearcraft)
 * **Arcane Archives**
     * **Duplication Fixes:** Fixes various duplication exploits
-* **Blood Magic**
-    * **Duplication Fixes:** Fixes various duplication exploits
-    * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
-    * **World Unload Memory Leak Fix:** Fixes memory leak related to unloading worlds/switching dimensions
 * **Binnie's Mods**
     * **Gather Windfall:** Allows Forestry farms to pick up ExtraTrees fruit
 * **Biomes O' Plenty**
     * **Hot Spring Water:** Fixes rapid inflection of regeneration effects in hot spring water
+* **Blood Magic**
+    * **Duplication Fixes:** Fixes various duplication exploits
+    * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
+    * **World Unload Memory Leak Fix:** Fixes memory leak when unloading worlds/switching dimensions
 * **Botania**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
+* **CB Multipart**
+  * **Memory Leak Fix:** Fixes a memory leak associated with EntityPlayer
 * **Chisel**
     * **Duplication Fixes:** Fixes various duplication exploits
-* **CoFH Core**
-    * **Vorpal Enchantment Damage:** Sets the damage multiplier of the Vorpal enchantment
 * **Chocolate Quest Repoured**
     * **Legacy Golden Feather:** Restores the golden feather behavior from the original Better Dungeons mod
+* **CoFH Core**
+    * **Vorpal Enchantment Damage:** Sets the damage multiplier of the Vorpal enchantment
+* **Compact Machines**
+    * **Invisible Wall Render Fix:** Fixes some compact machine walls being invisible if [Nothirium](https://www.curseforge.com/minecraft/mc-mods/nothirium) 0.2.x (and up) or [Vintagium](https://github.com/Asek3/sodium-1.12) is installed
 * **Elementary Staffs**
     * **Electric Staff Port:** Reintroduces the 1.5 electric staff behavior along with some subtle particles
 * **Elenai Dodge 2**
@@ -262,18 +266,20 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Mob Stages**
     * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
+* **MrTJPCore**
+    * **Memory Leak Fix:** Fixes a memory leak associated with EntityPlayer
 * **Nether Chest**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Netherrocks**
     * **Right Click Harvesting Fix:** Prevents crashing with mods implementing right click crop harvesting
 * **NuclearCraft**
-    * **Radiation Environment Map:** Changes the data table of the radiation environment handler to improve performance
+    * **Radiation Environment Map:** Changes the data table of the radiation environment handler to improve tick time
 * **ProjectRed**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Quark**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Roost**
-    * **Early Register CT Chickens:** Improves load time by registering CT chickens early for Roost to detect them
+    * **Early Register CT Chickens:** Improves load time by registering ContentTweaker chickens early for Roost to detect them
 * **Simple Difficulty**
     * **Iron Canteen Interaction Fix:** Fixes the interaction of iron canteens with rain collectors
 * **Simply Jetpacks**
@@ -299,6 +305,7 @@ All changes are toggleable via config files.
     * **Wisp Particles:** Increases particle size of wisps similar to legacy versions
 * **Thaumic Wonders**
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Memory Leak Fix:** Fixes a client-side memory leak when wearing Void Fortress armor
 * **The Erebus**
     * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
 * **The Farlanders**
@@ -313,6 +320,6 @@ All changes are toggleable via config files.
     * **Offhand Shuriken:** Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand
     * **Ore Dictionary Cache:** Caches all ore dictionary smelting recipes to speed up game loading
     * **Projectile Despawning:** Despawns unbreakable projectiles faster to improve framerates
-    * **Tool Customization:** Sets the attack damage cutoff at which diminishing returns start and sets the rate at which a tool's attack damage incrementally decays depending on its damage cutoff for any Tinkers' tool
+    * **Tool Customization:** Sets the attack damage cutoff at which diminishing returns start for any Tinkers' tool and sets the rate at which a tool's attack damage incrementally decays depending on its damage cutoff
 * **Tiny Progressions**
     * **Duplication Fixes:** Fixes various duplication exploits
