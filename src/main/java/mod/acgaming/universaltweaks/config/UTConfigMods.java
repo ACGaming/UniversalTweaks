@@ -43,6 +43,10 @@ public class UTConfigMods
     @Config.Name("Botania")
     public static final BotaniaCategory BOTANIA = new BotaniaCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.cbmultipart")
+    @Config.Name("CB Multipart/Forge Multipart CBE")
+    public static final CBMultipartCategory CB_MULTIPART = new CBMultipartCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.chisel")
     @Config.Name("Chisel")
     public static final ChiselCategory CHISEL = new ChiselCategory();
@@ -110,6 +114,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.mobstages")
     @Config.Name("Mob Stages")
     public static final MobStagesCategory MOB_STAGES = new MobStagesCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.mrtjpcore")
+    @Config.Name("MrTJPCore")
+    public static final MrTJPCoreCategory MRTJPCORE = new MrTJPCoreCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.netherchest")
     @Config.Name("Nether Chest")
@@ -240,7 +248,7 @@ public class UTConfigMods
 
         @Config.RequiresMcRestart
         @Config.Name("World Unload Memory Leak Fix")
-        @Config.Comment("Fixes memory leak related to unloading worlds/switching dimensions")
+        @Config.Comment("Fixes memory leak when unloading worlds/switching dimensions")
         public boolean utBMWorldUnloadToggle = true;
 
         @Config.RequiresMcRestart
@@ -265,6 +273,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class CBMultipartCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Memory Leak Fix")
+        @Config.Comment("Fixes a memory leak associated with EntityPlayer")
+        public boolean utMemoryLeakFixToggle = true;
     }
 
     public static class ChiselCategory
@@ -458,6 +474,14 @@ public class UTConfigMods
         @Config.Name("Spawning Rules Fixes")
         @Config.Comment("Fixes mob replacement ignoring entity spawning rules")
         public boolean utSpawningRules = true;
+    }
+
+    public static class MrTJPCoreCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Memory Leak Fix")
+        @Config.Comment("Fixes a memory leak associated with EntityPlayer")
+        public boolean utMemoryLeakFixToggle = true;
     }
 
     public static class NetherChestCategory
@@ -718,6 +742,11 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Memory Leak Fix")
+        @Config.Comment("Fixes a client-side memory leak when wearing Void Fortress armor")
+        public boolean utMemoryLeakFixToggle = true;
     }
 
     public static class TheFarlandersCategory

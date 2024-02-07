@@ -95,7 +95,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 case "mixins.mods.aoa3.json":
                     return Loader.isModLoaded("aoa3") && (Loader.isModLoaded("fluxnetworks") || Loader.isModLoaded("nuclearcraft"));
                 case "mixins.mods.cbmultipart.client.json":
-                    return Loader.isModLoaded("forgemultipartcbe");
+                    return Loader.isModLoaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle;
                 case "mixins.mods.compactmachines.json":
                     return Loader.isModLoaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle;
                 case "mixins.mods.crafttweaker.json":
@@ -107,7 +107,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 case "mixins.mods.thaumcraft.entities.client.json":
                     return Loader.isModLoaded("thaumcraft");
                 case "mixins.mods.thaumicwonders.client.json":
-                    return Loader.isModLoaded("thaumicwonders");
+                    return Loader.isModLoaded("thaumicwonders") && UTConfigMods.THAUMIC_WONDERS.utMemoryLeakFixToggle;
             }
         }
         switch (mixinConfig)
@@ -129,7 +129,7 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.botania.dupes.json":
                 return Loader.isModLoaded("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle;
             case "mixins.mods.cbmultipart.json":
-                return Loader.isModLoaded("forgemultipartcbe");
+                return Loader.isModLoaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle;
             case "mixins.mods.ceramics.json":
                 return Loader.isModLoaded("ceramics");
             case "mixins.mods.cofhcore.json":
@@ -171,7 +171,7 @@ public class UTMixinLoader implements ILateMixinLoader
             case "mixins.mods.mobstages.json":
                 return Loader.isModLoaded("mobstages");
             case "mixins.mods.mrtjpcore.json":
-                return Loader.isModLoaded("mrtjpcore");
+                return Loader.isModLoaded("mrtjpcore") && UTConfigMods.MRTJPCORE.utMemoryLeakFixToggle;
             case "mixins.mods.netherchest.dupes.json":
                 return Loader.isModLoaded("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle;
             case "mixins.mods.netherrocks.json":
