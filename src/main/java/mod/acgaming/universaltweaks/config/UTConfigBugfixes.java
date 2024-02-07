@@ -303,6 +303,11 @@ public class UTConfigBugfixes
         @Config.Name("Blast Protection Knockback")
         @Config.Comment("Fixes the blast protection enchantment not reducing knockback from explosions except at very high levels")
         public boolean utBlastProtectionKnockbackToggle = false;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Crafted Item Statistics")
+        @Config.Comment("Fixes crafted item statistics not increasing correctly when items are crafted with shift-click or drop methods")
+        public boolean utCraftedItemStatisticsToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Depth Mask")
@@ -327,6 +332,11 @@ public class UTConfigBugfixes
         @Config.Name("Potion Amplifier Visibility")
         @Config.Comment("Fixes potion effects not displaying their level above 'IV'")
         public boolean utPotionAmplifierVisibilityToggle = true;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Spectator Menu")
+        @Config.Comment("Fixes the spectator menu not showing player skins")
+        public boolean utSpectatorMenuToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Packet Size")

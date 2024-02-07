@@ -27,6 +27,7 @@ All changes are toggleable via config files.
 * **Chunk Saving:** Fixes loading of outdated chunks to prevent duplications, deletions and data corruption
 * **Comparator Timing:** Fixes inconsistent delays of comparators to prevent redstone timing issues
 * **Concurrent Entity AI Tasks:** Replaces linked entity AI task sets with concurrent sets to avoid mod exception concerning entity AI
+* **Crafted Item Statistics:** Fixes crafted item statistics not increasing correctly when items are crafted with shift-click or drop methods
 * **Death Time:** Fixes corrupted entities exceeding the allowed death time
 * **Depth Mask:** Fixes entity and particle rendering issues by enabling depth buffer writing
 * **Destroy Entity Packets:** Fixes lag caused by dead entities by sending additional packets when the player is not alive
@@ -68,6 +69,7 @@ All changes are toggleable via config files.
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Sleep Resets Weather:** Fixes sleeping always resetting rain and thunder times
+* **Spectator Menu:** Fixes the spectator menu not showing player skins
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
 * **Villager Mantle:** Returns missing hoods to villager mantles
 * **Witch Huts:** Fixes witch hut structure data not accounting for the height it is generated at
