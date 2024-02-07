@@ -204,6 +204,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.entities.damage.velocity.json");
         configs.add("mixins.tweaks.entities.despawning.json");
         configs.add("mixins.tweaks.entities.loot.json");
+        configs.add("mixins.tweaks.entities.saturation.json");
         configs.add("mixins.tweaks.entities.spawning.caps.json");
         configs.add("mixins.tweaks.entities.spawning.creeper.confetti.json");
         configs.add("mixins.tweaks.entities.spawning.golem.json");
@@ -221,6 +222,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.items.rarity.json");
         configs.add("mixins.tweaks.items.repairing.json");
         configs.add("mixins.tweaks.items.xpbottle.json");
+        configs.add("mixins.tweaks.misc.advancements.json");
         configs.add("mixins.tweaks.misc.armorcurve.json");
         configs.add("mixins.tweaks.misc.bannerlayers.json");
         configs.add("mixins.tweaks.misc.console.addpacket.json");
@@ -443,6 +445,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.ENTITIES.utMobDespawnToggle;
             case "mixins.tweaks.entities.loot.json":
                 return UTConfigTweaks.ENTITIES.utCreeperMusicDiscsToggle;
+            case "mixins.tweaks.entities.saturation.json":
+                return UTConfigTweaks.ENTITIES.utRidingExhaustionToggle;
             case "mixins.tweaks.entities.spawning.caps.json":
                 return UTConfigTweaks.ENTITIES.SPAWN_CAPS.utSpawnCapsToggle;
             case "mixins.tweaks.entities.spawning.creeper.confetti.json":
@@ -474,6 +478,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.ITEMS.utCraftingRepairToggle;
             case "mixins.tweaks.items.xpbottle.json":
                 return UTConfigTweaks.ITEMS.utXPBottleAmount != -1;
+            case "mixins.tweaks.misc.advancements.json":
+                return UTConfigTweaks.MISC.utDisableAdvancementsToggle;
             case "mixins.tweaks.misc.armorcurve.json":
                 return UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle;
             case "mixins.tweaks.misc.bannerlayers.json":

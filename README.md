@@ -115,6 +115,7 @@ All changes are toggleable via config files.
 * **Damage Velocity:** Enables the modification of damage sources that change the entity's velocity
 * **Default Difficulty:** Sets the default difficulty for newly generated worlds
 * **Dimension Unload:** Unloads dimensions not in use to free up resources
+* **Disable Advancements:** Prevents the advancement system from loading entirely
 * **Disable Audio Debug:** Improves loading times by removing debug code for missing sounds and subtitles
 * **Disable Creeper Music Discs:** Disables creepers dropping music discs when slain by skeletons
 * **Disable Fancy Missing Model:** Improves rendering performance by removing the resource location text on missing models
@@ -177,6 +178,7 @@ All changes are toggleable via config files.
 * **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu
 * **Remove Recipe Book:** Removes the recipe book button from GUIs
 * **Remove Snooper:** Forcefully turns off the snooper and hides the snooper settings button from the options menu
+* **Riding Exhaustion:** Enables depleting saturation when riding mounts
 * **Sapling Behavior:** Allows customization of sapling behavior while utilizing an optimized method
 * **Sea Level:** Sets the default height of the overworld's sea level
 * **Selected Item Tooltip Height:** Sets the Y value of the selected item tooltip, displayed when held items are changed
