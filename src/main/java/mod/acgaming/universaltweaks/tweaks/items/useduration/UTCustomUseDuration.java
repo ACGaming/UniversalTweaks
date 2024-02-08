@@ -54,6 +54,12 @@ public class UTCustomUseDuration
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void utCustomUseDurationStart(LivingEntityUseItemEvent.Start event)
+    {
+        used = 0;
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void utCustomUseDurationTick(LivingEntityUseItemEvent.Tick event)
     {
         if (event.getEntityLiving().getEntityWorld().isRemote) return;
