@@ -1,11 +1,12 @@
-package mod.acgaming.universaltweaks.bugfixes.misc.spectator.mixin;
+package mod.acgaming.universaltweaks.bugfixes.misc.spectatormenu.mixin;
 
-import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.spectator.PlayerMenuObject;
 import net.minecraft.client.network.NetworkPlayerInfo;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.util.ResourceLocation;
+
+import com.mojang.authlib.GameProfile;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -34,7 +35,8 @@ public abstract class UTPlayerMenuObjectMixin
             {
                 mc.getTextureManager().bindTexture(npi.getLocationSkin());
             }
-        } else
+        }
+        else
         {
             textureManager.bindTexture(resource);
         }
