@@ -452,7 +452,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.tweaks.entities.loot.json":
                 return UTConfigTweaks.ENTITIES.utCreeperMusicDiscsToggle;
             case "mixins.tweaks.entities.saturation.json":
-                return UTConfigTweaks.ENTITIES.utRidingExhaustionToggle;
+                return UTConfigTweaks.ENTITIES.utRidingExhaustion != 0.0D;
             case "mixins.tweaks.entities.spawning.caps.json":
                 return UTConfigTweaks.ENTITIES.SPAWN_CAPS.utSpawnCapsToggle;
             case "mixins.tweaks.entities.spawning.creeper.confetti.json":

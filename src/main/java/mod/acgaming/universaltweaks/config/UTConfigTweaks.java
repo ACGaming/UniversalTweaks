@@ -478,8 +478,9 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Riding Exhaustion")
-        @Config.Comment("Enables depleting saturation when riding mounts")
-        public boolean utRidingExhaustionToggle = false;
+        @Config.Comment("Sets the exhaustion value per cm when riding mounts")
+        @Config.RangeDouble(min = 0.0D, max = 1.0D)
+        public double utRidingExhaustion = 0.0D;
 
         @Config.RequiresMcRestart
         @Config.Name("Soulbound Vexes")
