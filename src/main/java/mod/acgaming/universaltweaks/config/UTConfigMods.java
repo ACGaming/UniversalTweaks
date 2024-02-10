@@ -63,6 +63,10 @@ public class UTConfigMods
     @Config.Name("Compact Machines")
     public static final CompactMachinesCoreCategory COMPACT_MACHINES = new CompactMachinesCoreCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.effortlessbuilding")
+    @Config.Name("Effortless Building")
+    public static final EffortlessBuildingCategory EFFORTLESS_BUILDING = new EffortlessBuildingCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.elementarystaffs")
     @Config.Name("Elementary Staffs")
     public static final ElementaryStaffsCategory ELEMENTARY_STAFFS = new ElementaryStaffsCategory();
@@ -312,6 +316,14 @@ public class UTConfigMods
         @Config.Name("Invisible Wall Render Fix")
         @Config.Comment("Fixes some compact machine walls being invisible if Nothirium 0.2.x (and up) or Vintagium is installed")
         public boolean utCMRenderFixToggle = true;
+    }
+
+    public static class EffortlessBuildingCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Block Transmutation Fix")
+        @Config.Comment("Fixes Effortless Building ignoring Metadata when checking for items in inventory")
+        public boolean utEFTransmutationFixToggle = true;
     }
 
     public static class ElementaryStaffsCategory
