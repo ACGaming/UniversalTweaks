@@ -41,6 +41,7 @@ public class UTMixinLoader implements ILateMixinLoader
         configs.add("mixins.mods.cofhcore.json");
         configs.add("mixins.mods.collective.json");
         configs.add("mixins.mods.cqrepoured.json");
+        configs.add("mixins.mods.effortlessbuilding.json");
         configs.add("mixins.mods.elementarystaffs.json");
         configs.add("mixins.mods.elenaidodge2.json");
         configs.add("mixins.mods.epicsiegemod.json");

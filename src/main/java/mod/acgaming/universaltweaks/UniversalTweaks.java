@@ -79,6 +79,7 @@ public class UniversalTweaks
         + "after:collective;"
         + "after:compactmachines3;"
         + "after:contenttweaker;"
+        + "after:effortlessbuilding;"
         + "after:element;"
         + "after:elenaidodge2;"
         + "after:enderio;"
