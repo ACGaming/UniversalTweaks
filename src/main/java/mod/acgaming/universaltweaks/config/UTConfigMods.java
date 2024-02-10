@@ -226,9 +226,9 @@ public class UTConfigMods
     public static class AOACategory
     {
         @Config.RequiresMcRestart
-        @Config.Name("Inventory-less GUI Compatibility")
-        @Config.Comment("Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks, Nuclearcraft)")
-        public boolean utFixPlayerTickInInventorylessGui = false;
+        @Config.Name("Improved Player Tick")
+        @Config.Comment("Improves AoA player ticking by only sending inventory changes when necessary")
+        public boolean utImprovedPlayerTickToggle = true;
     }
 
     public static class BiomesOPlentyCategory

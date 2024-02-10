@@ -214,7 +214,7 @@ All changes are toggleable via config files.
 * **Actually Additions**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Advent of Ascension**
-    * **Inventory-less GUI Compatibility:** Fixes AoA player ticking in certain GUIs without player inventories (i.e. Flux Networks, Nuclearcraft)
+    * **Improved Player Tick:** Improves AoA player ticking by only sending inventory changes when necessary
 * **Arcane Archives**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Binnie's Mods**
