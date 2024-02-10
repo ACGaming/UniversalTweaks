@@ -28,7 +28,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-// courtesy of jchung01
+// Courtesy of jchung01
 @Mixin(value = RadiationEnvironmentHandler.class, remap = false)
 public class UTRadiationEnvironmentHandlerMixin
 {

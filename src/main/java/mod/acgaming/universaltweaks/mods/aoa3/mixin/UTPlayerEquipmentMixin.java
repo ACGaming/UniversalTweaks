@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-// courtesy of jchung01
+// Courtesy of jchung01
 @Mixin(value = PlayerEquipment.class, remap = false)
 public class UTPlayerEquipmentMixin
 {
