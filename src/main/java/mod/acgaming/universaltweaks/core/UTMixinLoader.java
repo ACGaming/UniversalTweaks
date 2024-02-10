@@ -17,7 +17,6 @@ public class UTMixinLoader implements ILateMixinLoader
         // CLIENT ONLY
         if (UTLoadingPlugin.isClient)
         {
-            configs.add("mixins.mods.aoa3.json");
             configs.add("mixins.mods.cbmultipart.client.json");
             configs.add("mixins.mods.compactmachines.json");
             configs.add("mixins.mods.crafttweaker.json");
@@ -27,6 +26,7 @@ public class UTMixinLoader implements ILateMixinLoader
             configs.add("mixins.mods.thaumicwonders.client.json");
         }
         // COMMON
+        configs.add("mixins.mods.aoa3.json");
         configs.add("mixins.mods.abyssalcraft.json");
         configs.add("mixins.mods.actuallyadditions.dupes.json");
         configs.add("mixins.mods.arcanearchives.dupes.json");
@@ -92,8 +92,6 @@ public class UTMixinLoader implements ILateMixinLoader
         {
             switch (mixinConfig)
             {
-                case "mixins.mods.aoa3.json":
-                    return Loader.isModLoaded("aoa3") && (Loader.isModLoaded("fluxnetworks") || Loader.isModLoaded("nuclearcraft"));
                 case "mixins.mods.cbmultipart.client.json":
                     return Loader.isModLoaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle;
                 case "mixins.mods.compactmachines.json":
@@ -112,6 +110,8 @@ public class UTMixinLoader implements ILateMixinLoader
         }
         switch (mixinConfig)
         {
+            case "mixins.mods.aoa3.json":
+                return Loader.isModLoaded("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle;
             case "mixins.mods.abyssalcraft.json":
                 return Loader.isModLoaded("abyssalcraft");
             case "mixins.mods.actuallyadditions.dupes.json":
