@@ -139,6 +139,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("collective");
             case "mixins.mods.cqrepoured.json":
                 return Loader.isModLoaded("cqrepoured");
+            case "mixins.mods.effortlessbuilding.json":
+                return Loader.isModLoaded("effortlessbuilding");
             case "mixins.mods.elementarystaffs.json":
                 return Loader.isModLoaded("element");
             case "mixins.mods.elenaidodge2.json":
