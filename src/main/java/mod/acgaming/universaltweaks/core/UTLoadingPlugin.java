@@ -247,6 +247,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.world.loading.server.json");
         configs.add("mixins.tweaks.world.sealevel.json");
         configs.add("mixins.tweaks.misc.chat.compactmessage.json");
+        configs.add("mixins.tweaks.world.village.json");
         return configs;
     }
 
@@ -256,10 +257,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         if (isDev)
         {
             // Causes crashes in dev env only
-            if (mixinConfig.equals("mixins.tweaks.misc.armorcurve.json"))
-            {
-                return false;
-            }
+            if (mixinConfig.equals("mixins.tweaks.misc.armorcurve.json")) return false;
             return true;
         }
         if (isClient)
@@ -531,6 +529,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.PERFORMANCE.utWorldLoadingToggle;
             case "mixins.tweaks.world.sealevel.json":
                 return UTConfigTweaks.WORLD.utSeaLevel != 63;
+            case "mixins.tweaks.world.village.json":
+                return UTConfigTweaks.WORLD.utVillageDistance != 32;
         }
         return true;
     }

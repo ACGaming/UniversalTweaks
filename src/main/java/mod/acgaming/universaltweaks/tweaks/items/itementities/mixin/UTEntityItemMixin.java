@@ -163,7 +163,8 @@ public abstract class UTEntityItemMixin extends Entity
     @WrapWithCondition(method = "onUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/item/EntityItem;move(Lnet/minecraft/entity/MoverType;DDD)V"))
     public boolean utIEOnUpdate(EntityItem instance, MoverType moverType, double dx, double dy, double dz)
     {
+        if (!UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEUpdateToggle) return true;
         // Run on odd ticks to not skip the '% 25' check
-        return UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEUpdateToggle && instance.ticksExisted % 2 != 0;
+        return instance.ticksExisted % 2 != 0;
     }
 }

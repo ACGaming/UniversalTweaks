@@ -1702,6 +1702,15 @@ public class UTConfigTweaks
         @Config.Comment("Tidies newly generated chunks by removing scattered item entities")
         public boolean utTidyChunkToggle = false;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Village Distance")
+        @Config.Comment
+            ({
+                "Sets the village generation distance in chunks",
+                "Vanilla default is 32"
+            })
+        public int utVillageDistance = 32;
+
         public static class ChunkGenLimitCategory
         {
             @Config.RequiresMcRestart

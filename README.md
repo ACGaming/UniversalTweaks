@@ -201,6 +201,7 @@ All changes are toggleable via config files.
 * **Undead Horses**
     * **Burning:** Lets untamed undead horses burn in daylight
     * **Taming:** Allows taming of undead horses
+* **Village Distance:** Sets the village generation distance in chunks
 * **Water Fall Damage:** Re-implements an improved version of pre-1.4 fall damage in water
 * **XP Bottle Amount:** Sets the amount of experience spawned by bottles o' enchanting
 * **XP Level Cap:** Sets the maximum experience level players can reach
