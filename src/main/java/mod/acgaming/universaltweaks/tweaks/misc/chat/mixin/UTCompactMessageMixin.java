@@ -1,7 +1,6 @@
 package mod.acgaming.universaltweaks.tweaks.misc.chat.mixin;
 
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
-import mod.acgaming.universaltweaks.tweaks.misc.chat.TextComponentCount;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ChatLine;
 import net.minecraft.client.gui.GuiNewChat;
@@ -60,7 +59,7 @@ public abstract class UTCompactMessageMixin {
                 }
                 this.drawnChatLines.removeIf(chatLine1 -> splittedText.contains(chatLine1.getChatComponent()) || chatLine1.equals(chatLine));
                 this.chatLines.removeIf(chatLine1 -> splittedText.contains(chatLine1.getChatComponent()) || chatLine1.equals(chatLine));
-                chatComponent.appendSibling(new TextComponentCount(count));
+                chatComponent.appendSibling(new TextComponentString(" (" + count + ")").setStyle(new Style().setColor(TextFormatting.GRAY)));
                 break;
             }
         }
