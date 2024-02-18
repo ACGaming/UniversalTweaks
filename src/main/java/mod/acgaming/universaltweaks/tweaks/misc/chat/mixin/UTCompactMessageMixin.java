@@ -7,6 +7,9 @@ import net.minecraft.client.gui.GuiNewChat;
 import net.minecraft.client.gui.GuiUtilRenderComponents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,7 +26,7 @@ import java.util.regex.Pattern;
 public abstract class UTCompactMessageMixin {
 
     @Unique
-    private Pattern universalTweaks$matchPattern = Pattern.compile("§7+\\s+\\(+\\d+\\)");
+    private Pattern universalTweaks$matchPattern = Pattern.compile("(?:§7)?+\\s+\\(+\\d+\\)");
 
     @Shadow
     @Final
