@@ -61,7 +61,7 @@ public abstract class UTCompactMessageMixin {
                     }
                 }
                 this.drawnChatLines.removeIf(chatLine1 -> splittedText.contains(chatLine1.getChatComponent()) || chatLine1.equals(chatLine));
-                this.chatLines.removeIf(chatLine1 -> splittedText.contains(chatLine1.getChatComponent()) || chatLine1.equals(chatLine));
+                this.chatLines.removeIf(chatLine1 -> chatLine1.getChatComponent().getUnformattedComponentText().equals(chatComponent.getUnformattedComponentText()));
                 chatComponent.appendSibling(new TextComponentString(" (" + count + ")").setStyle(new Style().setColor(TextFormatting.GRAY)));
                 break;
             }
