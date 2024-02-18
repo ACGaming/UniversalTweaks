@@ -246,6 +246,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.world.chunks.gen.json");
         configs.add("mixins.tweaks.world.loading.server.json");
         configs.add("mixins.tweaks.world.sealevel.json");
+        configs.add("mixins.tweaks.misc.chat.compactmessage.json");
         configs.add("mixins.tweaks.world.village.json");
         return configs;
     }
