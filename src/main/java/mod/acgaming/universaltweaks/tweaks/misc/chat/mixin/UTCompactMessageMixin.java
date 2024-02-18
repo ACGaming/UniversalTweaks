@@ -42,8 +42,8 @@ public abstract class UTCompactMessageMixin {
 
     @Shadow public abstract int getChatWidth();
 
-    @Inject(method = "printChatMessageWithOptionalDeletion", at = @At("HEAD"))
-    public void utCompactMessage(ITextComponent chatComponent, int chatLineId, CallbackInfo ci) {
+    @Inject(method = "setChatLine", at = @At("HEAD"))
+    public void utCompactMessage(ITextComponent chatComponent, int chatLineId, int updateCounter, boolean displayOnly, CallbackInfo ci) {
         if (!UTConfigTweaks.MISC.utCompactMessagesToggle) return;
         int count = 1;
         int chatSize = MathHelper.floor((float)this.getChatWidth() / this.getChatScale());
