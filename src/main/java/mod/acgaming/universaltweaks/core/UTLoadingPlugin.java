@@ -179,6 +179,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.bugfixes.entities.skeletonaim.json");
         configs.add("mixins.bugfixes.entities.suffocation.json");
         configs.add("mixins.bugfixes.entities.tracker.json");
+        configs.add("mixins.bugfixes.entities.untippedarrowparticles.json");
         configs.add("mixins.bugfixes.misc.crafteditemstatistics.json");
         configs.add("mixins.bugfixes.misc.enchantment.json");
         configs.add("mixins.bugfixes.misc.packetsize.json");
@@ -404,6 +405,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigBugfixes.ENTITIES.utEntitySuffocationToggle;
             case "mixins.bugfixes.entities.tracker.json":
                 return UTConfigBugfixes.ENTITIES.utEntityTrackerToggle && !spongeForgeLoaded;
+            case "mixins.bugfixes.entities.untippedarrowparticles.json":
+                return UTConfigBugfixes.ENTITIES.utUntippedArrowParticlesToggle;
             case "mixins.bugfixes.world.chunksaving.json":
                 return UTConfigBugfixes.WORLD.utChunkSavingToggle && !spongeForgeLoaded;
             case "mixins.bugfixes.world.tileentities.json":

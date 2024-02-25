@@ -256,6 +256,11 @@ public class UTConfigBugfixes
         @Config.Name("Skeleton Aim")
         @Config.Comment("Fixes skeletons not looking at their targets when strafing")
         public boolean utSkeletonAimToggle = true;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Untipped Arrow Particles")
+        @Config.Comment("Fixes untipped arrows emitting blue tipped arrow particles upon reloading a world")
+        public boolean utUntippedArrowParticlesToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Villager Mantle Hoods")

@@ -71,6 +71,7 @@ All changes are toggleable via config files.
 * **Sleep Resets Weather:** Fixes sleeping always resetting rain and thunder times
 * **Spectator Menu:** Fixes the spectator menu not showing player skins
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
+* **Untipped Arrow Particles:** Fixes untipped arrows emitting blue tipped arrow particles upon reloading a world
 * **Villager Mantle:** Returns missing hoods to villager mantles
 * **Witch Huts:** Fixes witch hut structure data not accounting for the height it is generated at
 
