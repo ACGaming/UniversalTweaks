@@ -27,7 +27,7 @@ public abstract class UTEntityTippedArrowMixin
     private Set<PotionEffect> customPotionEffects;
 
     @Redirect(method = "refreshColor", at = @At(value = "INVOKE", target = "Ljava/lang/Integer;valueOf(I)Ljava/lang/Integer;"))
-    public Integer rlmixins_vanillaEntityTippedArrow_refreshColor(int i)
+    public Integer utTippedArrowRefreshColor(int i)
     {
         if (UTConfigBugfixes.ENTITIES.utUntippedArrowParticlesToggle && potion == PotionTypes.EMPTY && customPotionEffects.isEmpty()) return -1;
         return i;
