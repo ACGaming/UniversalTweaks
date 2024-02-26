@@ -108,6 +108,7 @@ All changes are toggleable via config files.
 * **Check Animated Models:** Improves model load times by checking if an animated model exists before trying to load it
 * **Chicken Shedding:** Allows chickens to have a chance to shed feathers (similarly to laying eggs)
 * **Chunk Gen Limit:** Limits maximum chunk generation per tick for improved server performance
+* **Compact Messages:** Removes duplicate messages and instead put a number behind the message how often it was repeated
 * **Copy World Seed:** Enables clicking of `/seed` world seed in chat to copy to clipboard
 * **Crafting Cache:** Adds an IRecipe cache to improve recipe performance in large modpacks
 * **Creeper Confetti:** Replaces deadly creeper explosions with delightful confetti (with a configurable chance)
@@ -171,7 +172,7 @@ All changes are toggleable via config files.
 * **No Saddled Wandering:** Stops horses wandering around when saddled
 * **No Smelting XP:** Disables the experience reward when smelting items in furnaces
 * **Offhand Improvement:** Prevents placing offhand blocks when blocks or food are held in the mainhand
-* **Overhaul Beacon:** Change how beacon construct and range apply per level.
+* **Overhaul Beacon:** Change how beacon construct and range apply per level
 * **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
@@ -231,7 +232,7 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
 * **CB Multipart**
-  * **Memory Leak Fix:** Fixes a memory leak associated with EntityPlayer
+    * **Memory Leak Fix:** Fixes a memory leak associated with EntityPlayer
 * **Chisel**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Chocolate Quest Repoured**
@@ -240,6 +241,8 @@ All changes are toggleable via config files.
     * **Vorpal Enchantment Damage:** Sets the damage multiplier of the Vorpal enchantment
 * **Compact Machines**
     * **Invisible Wall Render Fix:** Fixes some compact machine walls being invisible if [Nothirium](https://www.curseforge.com/minecraft/mc-mods/nothirium) 0.2.x (and up) or [Vintagium](https://github.com/Asek3/sodium-1.12) is installed
+* **Effortless Building**
+    * **Block Transmutation Fix:** Fixes Effortless Building ignoring Metadata when checking for items in inventory
 * **Elementary Staffs**
     * **Electric Staff Port:** Reintroduces the 1.5 electric staff behavior along with some subtle particles
 * **Elenai Dodge 2**
