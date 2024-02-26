@@ -258,8 +258,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         if (isDev)
         {
             // Causes crashes in dev env only
-            if (mixinConfig.equals("mixins.tweaks.misc.armorcurve.json")) return false;
-            return true;
+            return !mixinConfig.equals("mixins.tweaks.misc.armorcurve.json");
         }
         if (isClient)
         {

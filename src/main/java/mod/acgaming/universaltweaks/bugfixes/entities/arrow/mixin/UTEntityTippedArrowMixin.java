@@ -1,11 +1,11 @@
 package mod.acgaming.universaltweaks.bugfixes.entities.arrow.mixin;
 
+import java.util.Set;
+
 import net.minecraft.entity.projectile.EntityTippedArrow;
 import net.minecraft.init.PotionTypes;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.potion.PotionType;
-
-import java.util.Set;
 
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Final;
@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class UTEntityTippedArrowMixin
 {
     @Shadow
-    private PotionType potion; 
+    private PotionType potion;
     @Shadow
     @Final
     private Set<PotionEffect> customPotionEffects;

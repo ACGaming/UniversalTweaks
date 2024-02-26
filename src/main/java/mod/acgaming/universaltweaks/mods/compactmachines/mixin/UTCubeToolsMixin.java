@@ -17,23 +17,27 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 // Courtesy of jchung01
 @Mixin(value = CubeTools.class, remap = false)
-public class UTCubeToolsMixin {
+public class UTCubeToolsMixin
+{
 
     /**
      * Using a block's complete (x,y,z) position, determine the size of compact machine it belongs to.
      *
      * @param section the section of world, possibly a sub-chunk or chunk
-     * @param pos the block pos, including its y dimension
+     * @param pos     the block pos, including its y dimension
      * @return the corresponding compact machine's interior size + 1
      */
     @Unique
-    private static int universalTweaks$getCubeSizeWithYContext(IBlockAccess section, MutableBlockPos pos) {
+    private static int universalTweaks$getCubeSizeWithYContext(IBlockAccess section, MutableBlockPos pos)
+    {
         pos.setPos(pos.getX() * 1024, pos.getY(), pos.getZ());
-        for (int i = EnumMachineSize.values().length - 1; i >= 0; i--) {
+        for (int i = EnumMachineSize.values().length - 1; i >= 0; i--)
+        {
             EnumMachineSize size = EnumMachineSize.values()[i];
             // (x + dimension, y, z)
             pos.move(EnumFacing.EAST, size.getDimension());
-            if (section.getBlockState(pos).getBlock() == Blockss.wall) {
+            if (section.getBlockState(pos).getBlock() == Blockss.wall)
+            {
                 return size.getDimension();
             }
             // Reset to (x, y, z)
@@ -52,17 +56,21 @@ public class UTCubeToolsMixin {
      * to get block state info for the bottom sub-chunk of the machine, not the upper sub-chunk. This causes invisible walls for that upper sub-chunk.
      *
      * @param instance the EnumMachineSize instance
-     * @param world the section of world, possibly a sub-chunk or chunk
-     * @param pos the block pos
+     * @param world    the section of world, possibly a sub-chunk or chunk
+     * @param pos      the block pos
      * @return the corresponding compact machine's interior size + 1
      */
     @Redirect(method = "shouldSideBeRendered", at = @At(value = "INVOKE", target = "Lorg/dave/compactmachines3/reference/EnumMachineSize;getDimension()I"))
-    private static int utReassignSize(EnumMachineSize instance, IBlockAccess world, BlockPos pos) {
+    private static int utReassignSize(EnumMachineSize instance, IBlockAccess world, BlockPos pos)
+    {
         if (!UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle) return instance.getDimension();
         PooledMutableBlockPos mPos = PooledMutableBlockPos.retain(pos);
-        try {
+        try
+        {
             return universalTweaks$getCubeSizeWithYContext(world, mPos.setPos(pos.getX() / 1024, pos.getY(), 0));
-        } finally {
+        }
+        finally
+        {
             // Have to manually release in 1.12
             mPos.release();
         }

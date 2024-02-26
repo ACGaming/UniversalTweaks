@@ -1,7 +1,5 @@
 package mod.acgaming.universaltweaks.mods.thaumicwonders.mixin;
 
-import net.minecraft.client.model.ModelBiped;
-
 import com.verdantartifice.thaumicwonders.client.renderers.models.gear.ModelVoidFortressArmor;
 import com.verdantartifice.thaumicwonders.common.items.armor.ItemVoidFortressArmor;
 import org.spongepowered.asm.mixin.Mixin;

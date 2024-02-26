@@ -1198,7 +1198,7 @@ public class UTConfigTweaks
         @Config.RequiresMcRestart
         @Config.Name("Compact Messages")
         @Config.Comment("Removes duplicate messages and instead put a number behind the message how often it was repeated")
-        public boolean utCompactMessagesToggle = true;
+        public boolean utCompactMessagesToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Linear XP Amount")
