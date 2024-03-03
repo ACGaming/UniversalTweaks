@@ -121,6 +121,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             configs.add("mixins.tweaks.items.attackcooldown.client.json");
             configs.add("mixins.tweaks.items.itementities.client.json");
             configs.add("mixins.tweaks.items.rarity.json");
+            configs.add("mixins.tweaks.misc.buttons.anaglyph.json");
             configs.add("mixins.tweaks.misc.buttons.realms.json");
             configs.add("mixins.tweaks.misc.buttons.snooper.client.json");
             configs.add("mixins.tweaks.misc.commands.seed.json");
@@ -294,6 +295,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle;
                 case "mixins.tweaks.items.itementities.client.json":
                     return UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle;
+                case "mixins.tweaks.misc.buttons.anaglyph.json":
+                    return UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle;
                 case "mixins.tweaks.misc.buttons.realms.json":
                     return UTConfigTweaks.MISC.utRealmsButtonToggle && !randomPatchesLoaded;
                 case "mixins.tweaks.misc.buttons.snooper.client.json":

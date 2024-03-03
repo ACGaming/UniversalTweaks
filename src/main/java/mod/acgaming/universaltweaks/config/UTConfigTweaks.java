@@ -1251,6 +1251,11 @@ public class UTConfigTweaks
         public int utOverlayMessageHeight = -4;
 
         @Config.RequiresMcRestart
+        @Config.Name("Remove 3D Anaglyph Button")
+        @Config.Comment("Removes the 3D Anaglyph button from the video settings menu")
+        public boolean ut3DAnaglyphButtonToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Remove Realms Button")
         @Config.Comment
             ({
