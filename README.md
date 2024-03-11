@@ -57,7 +57,7 @@ All changes are toggleable via config files.
 * **Locale:** Prevents various crashes with Turkish locale
 * **Max Health:** Corrects maximum player health on joining by setting the last saved health value
 * **Minecart AI:** Fixes non-player entities being able to control minecarts
-* **Mining Glitch:** Avoids the need for multiple mining attempts by sending additional movement packets
+* **Mining Glitch:** Prevents ghost blocks by sending additional movement packets
 * **Model Gap:** Fixes transparent gaps in all 3D models of blocks and items
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments

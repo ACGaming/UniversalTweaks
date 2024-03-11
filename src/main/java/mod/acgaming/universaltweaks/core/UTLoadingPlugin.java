@@ -270,7 +270,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 case "mixins.bugfixes.blocks.blockoverlay.json":
                     return UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle;
                 case "mixins.bugfixes.blocks.miningglitch.client.json":
-                    return UTConfigBugfixes.BLOCKS.utMiningGlitchToggle;
+                    return UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle;
                 case "mixins.bugfixes.entities.elytra.json":
                     return UTConfigBugfixes.ENTITIES.utElytraDeploymentLandingToggle;
                 case "mixins.bugfixes.entities.villagermantle.json":
@@ -352,7 +352,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             case "mixins.bugfixes.blocks.ladderflying.json":
                 return UTConfigBugfixes.BLOCKS.utLadderFlyingToggle;
             case "mixins.bugfixes.blocks.miningglitch.server.json":
-                return UTConfigBugfixes.BLOCKS.utMiningGlitchToggle;
+                return UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle;
             case "mixins.bugfixes.blocks.piston.tile.json":
                 return UTConfigBugfixes.BLOCKS.utPistonTileToggle;
             case "mixins.bugfixes.blocks.piston.retraction.json":

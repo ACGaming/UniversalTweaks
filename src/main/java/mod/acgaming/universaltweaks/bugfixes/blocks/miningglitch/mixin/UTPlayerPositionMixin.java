@@ -30,7 +30,7 @@ public class UTPlayerPositionMixin
     @Inject(slice = @Slice(from = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;getTutorial()Lnet/minecraft/client/tutorial/Tutorial;", ordinal = 1), to = @At(value = "INVOKE", target = "Lnet/minecraft/block/state/IBlockState;getMaterial()Lnet/minecraft/block/material/Material;", ordinal = 0)), method = "clickBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/NetHandlerPlayClient;sendPacket(Lnet/minecraft/network/Packet;)V", ordinal = 0))
     private void utUpdatePlayerPositionBeforeDigging(BlockPos loc, EnumFacing face, CallbackInfoReturnable<Boolean> ci)
     {
-        if (!UTConfigBugfixes.BLOCKS.utMiningGlitchToggle) return;
+        if (!UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPlayerPositionMixin ::: Update player position");
         ((IEntityPlayerSP) this.mc.player).updateWalkingPlayer();
     }

@@ -18,9 +18,9 @@ public class UTPlayerPacketsMixin
     @ModifyConstant(method = "processPlayer", constant = @Constant(intValue = 5, ordinal = 0))
     private int utModifyMaxPlayerMovementPacketsPerTick(int maxPackets)
     {
-        if (!UTConfigBugfixes.BLOCKS.utMiningGlitchToggle) return maxPackets;
+        if (!UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle) return maxPackets;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPlayerPacketsMixin ::: Process player");
-        if (maxPackets == 5) return 10;
+        if (maxPackets == 5) return UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchPackets;
         else return maxPackets;
     }
 }
