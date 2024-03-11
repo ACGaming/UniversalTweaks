@@ -1157,6 +1157,10 @@ public class UTConfigTweaks
         @Config.Name("Toast Control")
         public final ToastControlCategory TOAST_CONTROL = new ToastControlCategory();
 
+        @Config.Name("Accurate Potion Duration")
+        @Config.Comment("Always displays the actual potion duration instead of `**:**`")
+        public boolean utPotionDurationToggle = true;
+
         @Config.RequiresMcRestart
         @Config.Name("Copy World Seed")
         @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
