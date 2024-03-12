@@ -153,7 +153,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         // COMMON
         configs.add("mixins.bugfixes.blocks.bed.json");
         configs.add("mixins.bugfixes.blocks.comparatortiming.json");
-        configs.add("mixins.bugfixes.blocks.fallingblockdamage.json");
+        configs.add("mixins.bugfixes.blocks.falling.json");
         configs.add("mixins.bugfixes.blocks.hopper.boundingbox.json");
         configs.add("mixins.bugfixes.blocks.hopper.tile.json");
         configs.add("mixins.bugfixes.blocks.itemframevoid.json");
@@ -192,6 +192,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.blocks.bedobstruction.json");
         configs.add("mixins.tweaks.blocks.breakablebedrock.json");
         configs.add("mixins.tweaks.blocks.explosion.json");
+        configs.add("mixins.tweaks.blocks.falling.json");
         configs.add("mixins.tweaks.blocks.growthsize.json");
         configs.add("mixins.tweaks.blocks.hitdelay.json");
         configs.add("mixins.tweaks.blocks.leafdecay.json");
@@ -346,7 +347,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         {
             case "mixins.bugfixes.blocks.comparatortiming.json":
                 return UTConfigBugfixes.BLOCKS.utComparatorTimingToggle;
-            case "mixins.bugfixes.blocks.fallingblockdamage.json":
+            case "mixins.bugfixes.blocks.falling.json":
                 return UTConfigBugfixes.BLOCKS.utFallingBlockDamageToggle;
             case "mixins.bugfixes.blocks.hopper.boundingbox.json":
                 return UTConfigBugfixes.BLOCKS.utDietHopperToggle;
@@ -426,6 +427,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle;
             case "mixins.tweaks.blocks.explosion.json":
                 return UTConfigTweaks.BLOCKS.utExplosionDropChance != 1.0D;
+            case "mixins.tweaks.blocks.falling.json":
+                return UTConfigTweaks.BLOCKS.utFallingBlockLifespan != 600;
             case "mixins.tweaks.blocks.growthsize.json":
                 return UTConfigTweaks.BLOCKS.utCactusSize != 3 && UTConfigTweaks.BLOCKS.utSugarCaneSize != 3 && UTConfigTweaks.BLOCKS.utVineSize != 0;
             case "mixins.tweaks.blocks.hitdelay.json":

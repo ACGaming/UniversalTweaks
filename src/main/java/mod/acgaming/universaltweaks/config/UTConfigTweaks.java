@@ -134,6 +134,11 @@ public class UTConfigTweaks
         public double utExplosionDropChance = 1.0D;
 
         @Config.RequiresMcRestart
+        @Config.Name("Falling Block Lifespan")
+        @Config.Comment("Determines how long falling blocks remain in ticks until they are dropped under normal circumstances")
+        public int utFallingBlockLifespan = 600;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fast Leaf Decay")
         @Config.Comment("Makes leaves decay faster when trees are chopped")
         public boolean utLeafDecayToggle = true;

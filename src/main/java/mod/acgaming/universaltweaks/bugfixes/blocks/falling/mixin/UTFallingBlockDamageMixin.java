@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.bugfixes.blocks.fallingblockdamage.mixin;
+package mod.acgaming.universaltweaks.bugfixes.blocks.falling.mixin;
 
 import java.util.ArrayList;
 
