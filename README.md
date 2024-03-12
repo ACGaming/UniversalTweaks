@@ -132,6 +132,7 @@ All changes are toggleable via config files.
 * **Disable Wither Targeting AI:** Disables withers targeting animals
 * **Easy Breeding:** Enables easy breeding of animals by tossing food on the ground
 * **End Portal Parallax:** Re-implements parallax rendering of the end portal from 1.11 and older
+* **Explosion Block Drop Chance:** Determines the numerator of the block drop formula on explosions
 * **Fast Dye Blending:** Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry
 * **Fast Leaf Decay:** Makes leaves decay faster when trees are chopped
 * **Fast Prefix Checking:** Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time

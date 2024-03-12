@@ -191,6 +191,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.bugfixes.world.witchhuts.json");
         configs.add("mixins.tweaks.blocks.bedobstruction.json");
         configs.add("mixins.tweaks.blocks.breakablebedrock.json");
+        configs.add("mixins.tweaks.blocks.explosion.json");
         configs.add("mixins.tweaks.blocks.growthsize.json");
         configs.add("mixins.tweaks.blocks.hitdelay.json");
         configs.add("mixins.tweaks.blocks.leafdecay.json");
@@ -423,6 +424,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.BLOCKS.utBedObstructionToggle;
             case "mixins.tweaks.blocks.breakablebedrock.json":
                 return UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle;
+            case "mixins.tweaks.blocks.explosion.json":
+                return UTConfigTweaks.BLOCKS.utExplosionDropChance != 1.0D;
             case "mixins.tweaks.blocks.growthsize.json":
                 return UTConfigTweaks.BLOCKS.utCactusSize != 3 && UTConfigTweaks.BLOCKS.utSugarCaneSize != 3 && UTConfigTweaks.BLOCKS.utVineSize != 0;
             case "mixins.tweaks.blocks.hitdelay.json":

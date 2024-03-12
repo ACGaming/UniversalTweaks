@@ -125,6 +125,15 @@ public class UTConfigTweaks
         public int utCactusSize = 3;
 
         @Config.RequiresMcRestart
+        @Config.Name("Explosion Block Drop Chance")
+        @Config.Comment
+            ({
+                "Determines the numerator of the block drop formula on explosions",
+                "Formula: chance ÷ explosionSize"
+            })
+        public double utExplosionDropChance = 1.0D;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fast Leaf Decay")
         @Config.Comment("Makes leaves decay faster when trees are chopped")
         public boolean utLeafDecayToggle = true;
