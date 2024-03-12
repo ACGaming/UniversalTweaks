@@ -217,6 +217,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.entities.spawning.portal.json");
         configs.add("mixins.tweaks.entities.spawning.stray.json");
         configs.add("mixins.tweaks.entities.speed.boat.json");
+        configs.add("mixins.tweaks.entities.speed.cobweb.json");
         configs.add("mixins.tweaks.entities.speed.player.json");
         configs.add("mixins.tweaks.entities.taming.horse.json");
         configs.add("mixins.tweaks.entities.trading.json");
@@ -473,6 +474,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.ENTITIES.utPortalSpawningToggle;
             case "mixins.tweaks.entities.speed.boat.json":
                 return UTConfigTweaks.ENTITIES.utBoatSpeed != 0.04D;
+            case "mixins.tweaks.entities.speed.cobweb.json":
+                return UTConfigTweaks.ENTITIES.COBWEB_SLOWNESS.utCobwebSlownessToggle;
             case "mixins.tweaks.entities.speed.player.json":
                 return UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle;
             case "mixins.tweaks.entities.taming.horse.json":

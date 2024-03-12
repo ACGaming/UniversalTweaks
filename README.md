@@ -109,6 +109,7 @@ All changes are toggleable via config files.
 * **Check Animated Models:** Improves model load times by checking if an animated model exists before trying to load it
 * **Chicken Shedding:** Allows chickens to have a chance to shed feathers (similarly to laying eggs)
 * **Chunk Gen Limit:** Limits maximum chunk generation per tick for improved server performance
+* **Cobweb Slowness:** Modifies the applied slowness factor when entities are moving in cobwebs
 * **Compact Messages:** Removes duplicate messages and instead put a number behind the message how often it was repeated
 * **Copy World Seed:** Enables clicking of `/seed` world seed in chat to copy to clipboard
 * **Crafting Cache:** Adds an IRecipe cache to improve recipe performance in large modpacks

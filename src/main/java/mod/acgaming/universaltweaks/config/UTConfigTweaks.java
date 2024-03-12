@@ -326,6 +326,10 @@ public class UTConfigTweaks
         @Config.Name("Chicken Shedding")
         public final ChickenSheddingCategory CHICKEN_SHEDDING = new ChickenSheddingCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.cobwebslowness")
+        @Config.Name("Cobweb Slowness")
+        public final CobwebSlownessCategory COBWEB_SLOWNESS = new CobwebSlownessCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.collisiondamage")
         @Config.Name("Collision Damage")
         public final CollisionDamageCategory COLLISION_DAMAGE = new CollisionDamageCategory();
@@ -602,6 +606,22 @@ public class UTConfigTweaks
             @Config.Name("[2] Search Distance")
             @Config.Comment("Determines the distance for animals to search for food")
             public double utEasyBreedingDistance = 10;
+        }
+
+        public static class CobwebSlownessCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Cobweb Slowness Toggle")
+            @Config.Comment("Modifies the applied slowness factor when entities are moving in cobwebs")
+            public boolean utCobwebSlownessToggle = false;
+
+            @Config.Name("[2] Horizontal Slowness Factor")
+            @Config.Comment("The slowness factor that gets multiplied with the horizontal entity speed")
+            public double utCobwebSlownessFactorH = 0.25D;
+
+            @Config.Name("[3] Vertical Slowness Factor")
+            @Config.Comment("The slowness factor that gets multiplied with the vertical entity speed")
+            public double utCobwebSlownessFactorV = 0.05000000074505806D;
         }
 
         public static class CollisionDamageCategory
