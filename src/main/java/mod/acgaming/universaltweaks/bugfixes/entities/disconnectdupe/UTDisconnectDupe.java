@@ -7,6 +7,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
+import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.bugfixes.entities.disconnectdupe.mixin.PlayerListInvoker;
@@ -14,7 +15,7 @@ import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 
 // Courtesy of Meldexun
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
+@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTDisconnectDupe
 {
     @SubscribeEvent
