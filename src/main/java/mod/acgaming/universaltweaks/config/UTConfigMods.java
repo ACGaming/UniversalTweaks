@@ -754,11 +754,6 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Memory Leak Fix")
-        @Config.Comment("Fixes a client-side memory leak when wearing Void Fortress armor")
-        public boolean utMemoryLeakFixToggle = true;
     }
 
     public static class TheFarlandersCategory
