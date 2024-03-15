@@ -181,7 +181,7 @@ public class UTConfigBugfixes
         public boolean utDestroyPacketToggle = true;
 
         @Config.Name("Disconnect Dupe")
-        @Config.Comment("Fixes item duplications when players are dropping items and disconnecting")
+        @Config.Comment("Fixes item duplications when players are dropping items and disconnecting (singleplayer only)")
         public boolean utDisconnectDupeToggle = true;
 
         @Config.RequiresMcRestart
@@ -286,11 +286,7 @@ public class UTConfigBugfixes
         {
             @Config.RequiresMcRestart
             @Config.Name("[1] Entity Desync Toggle")
-            @Config.Comment
-                ({
-                    "Fixes entity motion desyncs most notable with arrows and thrown items",
-                    "Incompatible with Immersive Vehicles"
-                })
+            @Config.Comment("Fixes entity motion desyncs most notable with arrows and thrown items")
             public boolean utEntityDesyncToggle = true;
 
             @Config.Name("[2] Entity Blacklist")
