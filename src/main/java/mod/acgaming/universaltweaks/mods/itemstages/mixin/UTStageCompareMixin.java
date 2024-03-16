@@ -19,7 +19,7 @@ public class UTStageCompareMixin
         if (!UTConfigMods.ITEM_STAGES.utIngredientMatching) return;
         if (second instanceof ItemStack)
         {
-            cir.setReturnValue(CraftTweakerMC.matches(CraftTweakerMC.getIItemStackForMatching(entryStack), (ItemStack) second));
+            cir.setReturnValue(CraftTweakerMC.getIItemStackForMatching(((ItemStack) second)).matches(CraftTweakerMC.getIItemStackForMatching(entryStack)));
         }
     }
 }
