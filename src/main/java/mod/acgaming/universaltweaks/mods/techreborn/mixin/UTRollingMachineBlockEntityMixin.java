@@ -192,7 +192,7 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
             // Craft one
             if (inventory.getStackInSlot(outputSlot).isEmpty())
             {
-                inventory.setInventorySlotContents(outputSlot, currentRecipeOutput);
+                inventory.setInventorySlotContents(outputSlot, currentRecipeOutput.copy());
             }
             else
             {
