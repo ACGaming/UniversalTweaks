@@ -161,6 +161,7 @@ All changes are toggleable via config files.
 * **Mending Overpowered:** If mending fix is enabled, repairs entire damaged inventory with XP
 * **Mending:** Only repairs damaged equipment with XP
 * **Mob Despawn Improvement:** Mobs carrying picked up items will drop their equipment and despawn properly
+* **Modern Knockback:** Backports 1.16+ knockback to 1.12: Knockback resistance is now a scale instead of a probability
 * **More Banner Layers:** Sets the amount of applicable pattern layers for banners
 * **Mute Advancement Errors:** Silences advancement errors
 * **Mute Ore Dictionary Errors:** Silences ore dictionary errors
