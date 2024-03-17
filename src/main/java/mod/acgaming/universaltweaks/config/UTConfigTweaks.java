@@ -474,6 +474,10 @@ public class UTConfigTweaks
         @Config.Comment("Mobs carrying picked up items will drop their equipment and despawn properly")
         public boolean utMobDespawnToggle = true;
 
+        @Config.Name("Modern Knockback")
+        @Config.Comment("Backports 1.16+ knockback to 1.12: Knockback resistance is now a scale instead of a probability")
+        public boolean utModernKnockbackToggle = true;
+
         @Config.RequiresMcRestart
         @Config.Name("No Portal Spawning")
         @Config.Comment("Prevents zombie pigmen spawning from nether portals")
