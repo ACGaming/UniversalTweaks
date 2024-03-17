@@ -25,7 +25,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import reborncore.api.IToolDrop;
 import reborncore.api.tile.IInventoryProvider;
 import reborncore.client.containerBuilder.IContainerProvider;
-import reborncore.client.containerBuilder.builder.BuiltContainer;
 import reborncore.common.powerSystem.TilePowerAcceptor;
 import reborncore.common.util.Inventory;
 import reborncore.common.util.ItemUtils;
@@ -86,13 +85,6 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
 
     @Inject(method = "balanceRecipe", at = @At(value = "HEAD"), require = 1)
     private void utBalanceRecipe(CallbackInfoReturnable<Optional<InventoryCrafting>> cir)
-    {
-        if (!UTConfigMods.TECH_REBORN.utOptimizeRollingMachineToggle) return;
-        universalTweaks$forceRefresh = false;
-    }
-
-    @Inject(method = "createContainer", at = @At(value = "HEAD"), require = 1)
-    private void utCreateContainer(CallbackInfoReturnable<BuiltContainer> cir)
     {
         if (!UTConfigMods.TECH_REBORN.utOptimizeRollingMachineToggle) return;
         universalTweaks$forceRefresh = false;
@@ -217,6 +209,8 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
     private Consumer<InventoryCrafting> utModifyOnCraftCall(Consumer<InventoryCrafting> onCraft)
     {
         if (!UTConfigMods.TECH_REBORN.utOptimizeRollingMachineToggle) return onCraft;
+        // For utCheckForceRefresh
+        universalTweaks$forceRefresh = false;
         return (inv) -> this.inventory.setInventorySlotContents(1, utFindMatchingRecipeOutput(this.getCraftingMatrix(), this.world));
     }
 
