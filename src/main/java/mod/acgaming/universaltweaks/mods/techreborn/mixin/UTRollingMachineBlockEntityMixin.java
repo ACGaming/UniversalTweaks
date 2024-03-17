@@ -135,14 +135,15 @@ public abstract class UTRollingMachineBlockEntityMixin extends TilePowerAcceptor
             setIsActive(false);
             return;
         }
+        boolean overTicked = tickTime >= Math.max((int) (runTime * (1.0 - getSpeedMultiplier())), 1);
         // Now we ensured we can make something. Check energy state.
-        if (canUseEnergy(getEuPerTick(energyPerTick)) && canMake(craftMatrix) && tickTime < Math.max((int) (runTime * (1.0 - getSpeedMultiplier())), 1))
+        if (canUseEnergy(getEuPerTick(energyPerTick)) && canMake(craftMatrix) && !overTicked)
         {
             setIsActive(true);
             useEnergy(getEuPerTick(energyPerTick));
             tickTime++;
         }
-        else
+        else if (!overTicked)
         {
             setIsActive(false);
             return;
