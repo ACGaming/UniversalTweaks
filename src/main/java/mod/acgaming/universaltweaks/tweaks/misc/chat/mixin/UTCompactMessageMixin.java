@@ -26,17 +26,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(GuiNewChat.class)
 public abstract class UTCompactMessageMixin
 {
-
     @Unique
     private final Pattern universalTweaks$matchPattern = Pattern.compile("(?:§7)?+\\s+\\(+\\d+\\)");
 
     @Shadow
     @Final
-    private List<ChatLine> drawnChatLines = new ArrayList<>();
+    private final List<ChatLine> drawnChatLines = new ArrayList<>();
 
     @Shadow
     @Final
-    private List<ChatLine> chatLines = new ArrayList<>();
+    private final List<ChatLine> chatLines = new ArrayList<>();
 
     @Shadow
     @Final
@@ -53,7 +52,7 @@ public abstract class UTCompactMessageMixin
     {
         if (!UTConfigTweaks.MISC.utCompactMessagesToggle) return;
         int count = 1;
-        int chatSize = MathHelper.floor((float) this.getChatWidth() / this.getChatScale());
+        int chatSize = MathHelper.floor(this.getChatWidth() / this.getChatScale());
         List<ITextComponent> splittedText = GuiUtilRenderComponents.splitText(chatComponent, chatSize, this.mc.fontRenderer, false, false);
         ITextComponent textComponent = splittedText.get(splittedText.size() - 1);
         for (int i = 0; i < drawnChatLines.size(); i++)
