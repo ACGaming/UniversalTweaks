@@ -20,6 +20,7 @@ public class UTMixinLoader implements ILateMixinLoader
             configs.add("mixins.mods.cbmultipart.client.json");
             configs.add("mixins.mods.compactmachines.json");
             configs.add("mixins.mods.crafttweaker.json");
+            configs.add("mixins.mods.hwyla.json");
             configs.add("mixins.mods.roost.json");
             configs.add("mixins.mods.storagedrawers.client.json");
             configs.add("mixins.mods.thaumcraft.entities.client.json");
@@ -98,6 +99,8 @@ public class UTMixinLoader implements ILateMixinLoader
                     return Loader.isModLoaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle;
                 case "mixins.mods.crafttweaker.json":
                     return Loader.isModLoaded("crafttweaker");
+                case "mixins.mods.hwyla.json":
+                    return Loader.isModLoaded("waila");
                 case "mixins.mods.roost.json":
                     return Loader.isModLoaded("roost") && Loader.isModLoaded("contenttweaker");
                 case "mixins.mods.storagedrawers.client.json":

@@ -178,6 +178,7 @@ dependencies {
     compileOnly 'curse.maven:extrautilities-225561:2678374'
     compileOnly 'curse.maven:forgemultipartcbe-258426:2755790' // aka "CB Multipart"
     compileOnly 'curse.maven:guideapi-228832:2645992'
+    compileOnly 'curse.maven:hwyla-253449:2568751'
     compileOnly 'curse.maven:industrialcraft-242638:3078604'
     compileOnly 'curse.maven:ironbackpacks-227049:2564573'
     compileOnly 'curse.maven:mekanism-268560:2835175'

@@ -264,6 +264,8 @@ All changes are toggleable via config files.
     * **Disable Bee Damage Armor Bypass:** Disables damage caused by bees bypassing player armor
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Replanting Cocoa Beans:** Allows Forestry farms to automatically replant cocoa beans
+* **HWYLA**
+  * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
 * **IndustrialCraft 2**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Industrial Foregoing**
