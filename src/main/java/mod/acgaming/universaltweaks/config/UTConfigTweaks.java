@@ -465,6 +465,11 @@ public class UTConfigTweaks
         public boolean utWitherAIToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("First Person Burning Overlay")
+        @Config.Comment("Sets the offset for the fire overlay in first person when the player is burning")
+        public double utFirstPersonBurningOverlay = -0.3D;
+
+        @Config.RequiresMcRestart
         @Config.Name("Husk & Stray Spawning")
         @Config.Comment("Lets husks and strays spawn underground like regular zombies and skeletons")
         public boolean utHuskStraySpawningToggle = true;

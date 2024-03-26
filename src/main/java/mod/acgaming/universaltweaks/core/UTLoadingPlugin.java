@@ -118,6 +118,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             configs.add("mixins.bugfixes.misc.startup.json");
             configs.add("mixins.bugfixes.world.frustumculling.json");
             configs.add("mixins.tweaks.entities.autojump.json");
+            configs.add("mixins.tweaks.entities.burning.player.json");
             configs.add("mixins.tweaks.items.attackcooldown.client.json");
             configs.add("mixins.tweaks.items.itementities.client.json");
             configs.add("mixins.tweaks.items.rarity.json");
@@ -295,6 +296,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfigBugfixes.WORLD.utFrustumCullingToggle;
                 case "mixins.tweaks.entities.autojump.json":
                     return UTConfigTweaks.ENTITIES.utAutoJumpToggle;
+                case "mixins.tweaks.entities.burning.player.json":
+                    return UTConfigTweaks.ENTITIES.utFirstPersonBurningOverlay != -0.3D;
                 case "mixins.tweaks.items.attackcooldown.client.json":
                     return UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle;
                 case "mixins.tweaks.items.itementities.client.json":
