@@ -1225,7 +1225,7 @@ public class UTConfigTweaks
         @Config.RequiresMcRestart
         @Config.Name("Disable Narrator")
         @Config.Comment("Disables the narrator functionality entirely")
-        public boolean utDisableNarratorToggle = true;
+        public boolean utDisableNarratorToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("End Portal Parallax")
