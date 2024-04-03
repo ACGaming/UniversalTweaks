@@ -6,6 +6,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.math.Vec3d;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
@@ -46,7 +47,7 @@ public class UTBetterPlacement
                     {
                         Minecraft.getMinecraft().rightClickDelayTimer = 0;
                     }
-                    else if (UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementNewLoc && pos.equals(lastTargetPos) && side == lastTargetSide)
+                    else if (UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementNewLoc && pos.equals(lastTargetPos) && side == lastTargetSide && !isDrawer(pos))
                     {
                         Minecraft.getMinecraft().rightClickDelayTimer = 4;
                     }
@@ -55,6 +56,18 @@ public class UTBetterPlacement
                 lastPlayerPos = playerVector;
                 lastTargetSide = side;
             }
+        }
+    }
+
+    public static boolean isDrawer(BlockPos pos)
+    {
+        try
+        {
+            return Loader.isModLoaded("storagedrawers") && Minecraft.getMinecraft().world.getBlockState(pos).getBlock().getRegistryName().getNamespace().equals("storagedrawers");
+        }
+        catch (Exception e)
+        {
+            return false;
         }
     }
 }
