@@ -330,6 +330,7 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Insolator Custom Monoculture:** Adds Monoculture Cycle integration to desired phytogenic insolator recipes added by ModTweaker
 * **Tinkers' Construct**
+    * **Disable Rendering Items in Smeltery:** Disables rendering items in the world when they are inside the Smeltery to prevent lag while rendering
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Gaseous Fluids:** Excludes gaseous fluids from being transferable via faucets
     * **Material Blacklist:** Hides tool/bow materials in the 'Materials and You' book

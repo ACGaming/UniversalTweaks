@@ -790,6 +790,10 @@ public class UTConfigMods
         @Config.Comment("Excludes gaseous fluids from being transferable via faucets")
         public boolean utTConGaseousFluidsToggle = false;
 
+        @Config.Name("Disable Rendering Items in Smeltery")
+        @Config.Comment("Disables rendering items in the world when they are inside the Smeltery to prevent lag while rendering")
+        public boolean utDisableItemRenderingSmeltery = false;
+
         @Config.RequiresMcRestart
         @Config.Name("Material Blacklist")
         @Config.Comment
