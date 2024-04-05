@@ -1,5 +1,7 @@
 package mod.acgaming.universaltweaks.mods.tconstruct.mixin;
 
+import javax.annotation.Nonnull;
+
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -9,8 +11,6 @@ import slimeknights.tconstruct.smeltery.client.SmelteryRenderer;
 import slimeknights.tconstruct.smeltery.client.SmelteryTankRenderer;
 import slimeknights.tconstruct.smeltery.tileentity.TileSmeltery;
 
-import javax.annotation.Nonnull;
-
 // Courtesy of WaitingIdly
 @Mixin(value = SmelteryRenderer.class, remap = false)
 public abstract class SmelteryRendererMixin extends SmelteryTankRenderer<TileSmeltery>
@@ -19,7 +19,8 @@ public abstract class SmelteryRendererMixin extends SmelteryTankRenderer<TileSme
     public void utRender(@Nonnull TileSmeltery smeltery, double x, double y, double z, float partialTicks, int destroyStage, float alpha, CallbackInfo ci)
     {
         if (UTConfigMods.TINKERS_CONSTRUCT.utMaximumItemRendersInSmeltery == -1) return;
-        if (smeltery.getSizeInventory() > UTConfigMods.TINKERS_CONSTRUCT.utMaximumItemRendersInSmeltery) {
+        if (smeltery.getSizeInventory() > UTConfigMods.TINKERS_CONSTRUCT.utMaximumItemRendersInSmeltery)
+        {
             ci.cancel();
         }
     }

@@ -1,9 +1,5 @@
 package mod.acgaming.universaltweaks.mods.actuallyadditions.mixin;
 
-import de.ellpeck.actuallyadditions.mod.blocks.BlockLaserRelay;
-import de.ellpeck.actuallyadditions.mod.tile.TileEntityLaserRelay;
-import de.ellpeck.actuallyadditions.mod.util.StackUtil;
-import mod.acgaming.universaltweaks.config.UTConfigMods;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -12,6 +8,11 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import de.ellpeck.actuallyadditions.mod.blocks.BlockLaserRelay;
+import de.ellpeck.actuallyadditions.mod.tile.TileEntityLaserRelay;
+import de.ellpeck.actuallyadditions.mod.util.StackUtil;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -26,12 +27,14 @@ public abstract class UTBlockLaserRelayMixin
     {
         if (!UTConfigMods.ACTUALLY_ADDITIONS.utLaserUpgradeVoid) return;
         TileEntity tile = world.getTileEntity(pos);
-        if (tile instanceof TileEntityLaserRelay) {
+        if (tile instanceof TileEntityLaserRelay)
+        {
             ItemStack stack = player.getHeldItem(hand);
             ItemStack set = stack.copy();
             set.setCount(1);
             ((TileEntityLaserRelay) tile).inv.setStackInSlot(0, set);
-            if (!player.isCreative()) {
+            if (!player.isCreative())
+            {
                 player.setHeldItem(hand, StackUtil.shrink(stack, 1));
             }
             cir.setReturnValue(true);

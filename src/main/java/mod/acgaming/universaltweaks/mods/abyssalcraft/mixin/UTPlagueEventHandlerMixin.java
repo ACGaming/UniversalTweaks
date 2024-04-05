@@ -1,8 +1,9 @@
 package mod.acgaming.universaltweaks.mods.abyssalcraft.mixin;
 
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
+
 import com.shinoow.abyssalcraft.common.handlers.PlagueEventHandler;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
