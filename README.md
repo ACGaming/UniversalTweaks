@@ -223,6 +223,7 @@ All changes are toggleable via config files.
     * **Optimized Item Transport:** Optimizes AbyssalCraft's item transport system to reduce tick overhead
 * **Actually Additions**
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Laser Upgrade Voiding:** Fixes Laser Upgrades voiding instead of applying if there is only one item in the stack
 * **Advent of Ascension**
     * **Improved Player Tick:** Improves AoA player ticking by only sending inventory changes when necessary
 * **Arcane Archives**
