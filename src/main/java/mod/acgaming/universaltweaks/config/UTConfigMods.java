@@ -252,6 +252,10 @@ public class UTConfigMods
         @Config.Name("Downgrade Missing Player Log Level")
         @Config.Comment("Downgrades the message when completing a recipe without an initializing player from a warning to a debug")
         public boolean utMissingPlayerLogLevelDowngrade = true;
+
+        @Config.Name("Sooty Marble Rendering Fix")
+        @Config.Comment("Fixes Sooty Marble Pillar blocking the proper rendering of adjacent fluids due to inverted logic")
+        public boolean utSootyMarbleRendering = true;
     }
 
     public static class AOACategory

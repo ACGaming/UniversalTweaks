@@ -242,6 +242,7 @@ All changes are toggleable via config files.
     * **Laser Upgrade Voiding:** Fixes Laser Upgrades voiding instead of applying if there is only one item in the stack
 * **Astral Sorcery**
   * **Missing Player Log Level:** Downgrades the message when completing a recipe without an initializing player from a warning to a debug
+  * **Sooty Marble Rendering:** Fixes Sooty Marble Pillar blocking the proper rendering of adjacent fluids due to inverted logic
 * **Advent of Ascension**
     * **Improved Player Tick:** Improves AoA player ticking by only sending inventory changes when necessary
 * **Arcane Archives**
