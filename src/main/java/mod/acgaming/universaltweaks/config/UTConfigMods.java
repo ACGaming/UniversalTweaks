@@ -209,6 +209,10 @@ public class UTConfigMods
         @Config.Name("Optimized Item Transport")
         @Config.Comment("Optimizes AbyssalCraft's item transport system to reduce tick overhead")
         public boolean utOptimizedItemTransferToggle = true;
+
+        @Config.Name("Disable Plague Potion Clouds")
+        @Config.Comment("Disables AbyssalCraft's Plague-type mobs spawning lingering potion effects on death")
+        public boolean utDisablePlaguePotionClouds = false;
     }
 
     public static class ActuallyAdditionsCategory
