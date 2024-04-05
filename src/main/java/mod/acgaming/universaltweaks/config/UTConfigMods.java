@@ -221,6 +221,10 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.Name("Laser Upgrade Voiding")
+        @Config.Comment("Fixes Laser Upgrades voiding instead of applying if there is only one item in the stack")
+        public boolean utLaserUpgradeVoid = true;
     }
 
     public static class ArcaneArchivesCategory

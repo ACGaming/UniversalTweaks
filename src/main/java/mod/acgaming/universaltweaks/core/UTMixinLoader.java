@@ -29,6 +29,7 @@ public class UTMixinLoader implements ILateMixinLoader
         configs.add("mixins.mods.aoa3.json");
         configs.add("mixins.mods.abyssalcraft.json");
         configs.add("mixins.mods.actuallyadditions.dupes.json");
+        configs.add("mixins.mods.actuallyadditions.json");
         configs.add("mixins.mods.arcanearchives.dupes.json");
         configs.add("mixins.mods.biomesoplenty.json");
         configs.add("mixins.mods.bloodmagic.dupes.json");
@@ -117,6 +118,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("abyssalcraft");
             case "mixins.mods.actuallyadditions.dupes.json":
                 return Loader.isModLoaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle;
+            case "mixins.mods.actuallyadditions.json":
+                return Loader.isModLoaded("actuallyadditions");
             case "mixins.mods.arcanearchives.dupes.json":
                 return Loader.isModLoaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle;
             case "mixins.mods.biomesoplenty.json":

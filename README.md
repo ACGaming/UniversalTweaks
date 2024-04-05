@@ -224,6 +224,7 @@ All changes are toggleable via config files.
     * **Disable Plague Potion Clouds:** Disables AbyssalCraft's Plague-type mobs spawning lingering potion effects on death
 * **Actually Additions**
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Laser Upgrade Voiding:** Fixes Laser Upgrades voiding instead of applying if there is only one item in the stack
 * **Advent of Ascension**
     * **Improved Player Tick:** Improves AoA player ticking by only sending inventory changes when necessary
 * **Arcane Archives**
