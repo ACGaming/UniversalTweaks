@@ -240,6 +240,8 @@ All changes are toggleable via config files.
 * **Actually Additions**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Laser Upgrade Voiding:** Fixes Laser Upgrades voiding instead of applying if there is only one item in the stack
+* **Astral Sorcery**
+  * **Missing Player Log Level:** Downgrades the message when completing a recipe without an initializing player from a warning to a debug
 * **Advent of Ascension**
     * **Improved Player Tick:** Improves AoA player ticking by only sending inventory changes when necessary
 * **Arcane Archives**

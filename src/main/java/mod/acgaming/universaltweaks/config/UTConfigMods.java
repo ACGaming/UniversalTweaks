@@ -249,6 +249,9 @@ public class UTConfigMods
 
     public static class AstralSorceryCategory
     {
+        @Config.Name("Downgrade Missing Player Log Level")
+        @Config.Comment("Downgrades the message when completing a recipe without an initializing player from a warning to a debug")
+        public boolean utMissingPlayerLogLevelDowngrade = true;
     }
 
     public static class AOACategory
