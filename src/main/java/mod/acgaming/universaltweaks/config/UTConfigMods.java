@@ -27,6 +27,10 @@ public class UTConfigMods
     @Config.Name("Arcane Archives")
     public static final ArcaneArchivesCategory ARCANE_ARCHIVES = new ArcaneArchivesCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.astralsorcery")
+    @Config.Name("Astral Sorcery")
+    public static final AstralSorceryCategory ASTRAL_SORCERY = new AstralSorceryCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.aoa")
     @Config.Name("Advent of Ascension")
     public static final AOACategory AOA = new AOACategory();
@@ -241,6 +245,10 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class AstralSorceryCategory
+    {
     }
 
     public static class AOACategory
