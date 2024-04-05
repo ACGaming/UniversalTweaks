@@ -794,6 +794,15 @@ public class UTConfigMods
         @Config.Comment("Excludes gaseous fluids from being transferable via faucets")
         public boolean utTConGaseousFluidsToggle = false;
 
+        @Config.Name("Maximum Items to Render in Smeltery")
+        @Config.Comment
+            ({
+                "Determines the maximum number of possible items to display before not rendering any to prevent substantial lag",
+                "0 to disable rendering items in the smeltery entirely",
+                "-1 for the default, which is always rendering items"
+            })
+        public int utMaximumItemRendersInSmeltery = -1;
+
         @Config.RequiresMcRestart
         @Config.Name("Material Blacklist")
         @Config.Comment
