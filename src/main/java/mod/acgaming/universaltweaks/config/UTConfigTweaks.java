@@ -69,7 +69,6 @@ public class UTConfigTweaks
         NEVER,
         ONLY_PLAYER,
         NOT_PLAYER,
-        NOT_PLAYER_RESPECTS_MOB_GRIEFING,
         FEATHER_FALLING
     }
 
@@ -132,7 +131,6 @@ public class UTConfigTweaks
                 "Never: Farmland can never be trampled",
                 "Only Player: Prevents farmland from being trampled by a non-EntityPlayer",
                 "Not Player: Prevents farmland from being trampled by an EntityPlayer",
-                "Not Player Respects Mob Griefing: Prevents farmland from being trampled by a non-EntityPlayer if the mobGriefing gamerule is false",
                 "Feather Falling: Prevents farmland from being trampled if the entity has the Feather Falling enchantment on equipped boots",
             })
         public TrampleOptions utFarmlandTrample = TrampleOptions.DEFAULT;

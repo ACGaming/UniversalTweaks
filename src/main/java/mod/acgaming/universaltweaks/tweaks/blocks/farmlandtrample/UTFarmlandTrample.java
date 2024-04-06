@@ -33,10 +33,6 @@ public class UTFarmlandTrample
             case NOT_PLAYER:
                 if (event.getEntity() instanceof EntityPlayer) event.setCanceled(true);
                 break;
-            case NOT_PLAYER_RESPECTS_MOB_GRIEFING:
-                if (event.getEntity() instanceof EntityPlayer || event.getWorld().getGameRules().getBoolean("mobGriefing")) break;
-                event.setCanceled(true);
-                break;
             case FEATHER_FALLING:
                 if (Enchantments.FEATHER_FALLING == null) break;
                 for (ItemStack slot : event.getEntity().getArmorInventoryList())
