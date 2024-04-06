@@ -101,6 +101,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("pathundergates") && UTConfigTweaks.BLOCKS.utLenientPathsToggle) messages.add("Path Under Gates");
         if (Loader.isModLoaded("pickupnotifier") && UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) messages.add("Pick Up Notifier");
         if (Loader.isModLoaded("portaldupebegone") && UTConfigBugfixes.WORLD.utPortalTravelingDupeToggle) messages.add("PortalDupeBegone");
+        if (Loader.isModLoaded("ppa") && UTConfigTweaks.BLOCKS.utUnsupportedPumpkinPlacing) messages.add("PlacePumpkinAnywhere");
         if (Loader.isModLoaded("preventghost") && UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle) messages.add("Prevent Ghost Blocks");
         if (Loader.isModLoaded("quickleafdecay") && UTConfigTweaks.BLOCKS.utLeafDecayToggle) messages.add("Quick Leaf Decay");
         if (Loader.isModLoaded("rallyhealth") && UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle) messages.add("Rally Health");

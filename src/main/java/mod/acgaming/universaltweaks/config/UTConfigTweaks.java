@@ -174,6 +174,10 @@ public class UTConfigTweaks
         @Config.Comment("Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)")
         public boolean utLenientPathsToggle = true;
 
+        @Config.Name("Unsupported Pumpkin Placing")
+        @Config.Comment("Allows placing Pumpkins and Jack'O'Lanterns without a supporting block")
+        public boolean utUnsupportedPumpkinPlacing = false;
+
         @Config.RequiresMcRestart
         @Config.Name("Sugar Cane Size")
         @Config.Comment("Determines how tall sugar cane can grow")
