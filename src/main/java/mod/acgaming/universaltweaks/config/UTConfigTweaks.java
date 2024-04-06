@@ -175,7 +175,7 @@ public class UTConfigTweaks
         public boolean utLenientPathsToggle = true;
 
         @Config.Name("Unsupported Pumpkin Placing")
-        @Config.Comment("Allows placing Pumpkins without a supporting block")
+        @Config.Comment("Allows placing Pumpkins and Jack'O'Lanterns without a supporting block")
         public boolean utUnsupportedPumpkinPlacing = false;
 
         @Config.RequiresMcRestart
