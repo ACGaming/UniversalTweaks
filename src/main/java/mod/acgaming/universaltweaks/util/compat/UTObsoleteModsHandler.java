@@ -115,7 +115,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("tconfixes")) messages.add("TConFixes");
         if (Loader.isModLoaded("tidychunk") && UTConfigTweaks.WORLD.utTidyChunkToggle) messages.add("TidyChunk");
         if (Loader.isModLoaded("tinkersoredictcache") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) messages.add("TinkersOreDictCache");
-        if (Loader.isModLoaded("tramplestopper") && UTConfigTweaks.BLOCKS.utFarmlandTrample != UTConfigTweaks.TrampleOptions.DEFAULT) messages.add("TrampleStopper");
+        if (Loader.isModLoaded("tramplestopper")) messages.add("TrampleStopper");
         if (Loader.isModLoaded("toastcontrol") && UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlToggle) messages.add("Toast Control");
         if (Loader.isModLoaded("unloader") && UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle) messages.add("Unloader");
         if (Loader.isModLoaded("villagermantlefix") && UTConfigBugfixes.ENTITIES.utVillagerMantleToggle) messages.add("Villager Mantle Fix");
