@@ -206,6 +206,7 @@ All changes are toggleable via config files.
 * **Tidy Chunk:** Tidies newly generated chunks by removing scattered item entities
 * **Toast Control:** Enables the control of toasts (pop-up text boxes)
 * **Toggle Cheats Button:** Adds a button to the pause menu to toggle cheats
+* **Trample Control:** Controls how and when farmland is trampled
 * **Uncap FPS:** Removes the hardcoded 30 FPS limit in screens like the main menu
 * **Undead Horses**
     * **Burning:** Lets untamed undead horses burn in daylight

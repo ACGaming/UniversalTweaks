@@ -63,6 +63,16 @@ public class UTConfigTweaks
         HARD
     }
 
+    public enum TrampleOptions
+    {
+        DEFAULT,
+        NEVER,
+        ONLY_PLAYER,
+        NOT_PLAYER,
+        NOT_PLAYER_RESPECTS_MOB_GRIEFING,
+        FEATHER_FALLING
+    }
+
     public enum EnumBeacon
     {
         MODIFIER(false, true),
@@ -113,6 +123,19 @@ public class UTConfigTweaks
         @Config.Name("Better Harvest")
         @Config.Comment("Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking")
         public boolean utBetterHarvestToggle = false;
+
+        @Config.Name("Farmland Trample")
+        @Config.Comment
+            ({
+                "Controls how farmland can be trampled and turning it into dirt",
+                "Default: Farmland is trampled as normal",
+                "Never: Farmland is never trampled",
+                "Only Player: Farmland is only possible to trample by an EntityPlayer",
+                "Not Player: Farmland is only possible to trample by a non-EntityPlayer",
+                "Not Player Respect Mob Griefing: Farmland is only possible to trample by a non-EntityPlayer, if the mobGriefing gamerule is false",
+                "Feather Falling: Farmland is trampled if the entity does not have the Feather Falling enchantment on equipped boots",
+            })
+        public TrampleOptions utFarmlandTrample = TrampleOptions.DEFAULT;
 
         @Config.RequiresMcRestart
         @Config.Name("Block Hit Delay")
