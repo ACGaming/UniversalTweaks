@@ -1716,6 +1716,11 @@ public class UTConfigTweaks
         public boolean utTextureMapCheckToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("No Pathfinding Chunk Loading")
+        @Config.Comment("Prevents mob pathfinding from loading new/unloaded chunks when building chunk caches")
+        public boolean utPathfindingChunkCacheFixToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Redstone Lighting")
         @Config.Comment("Disables lighting of active redstone, repeaters, and comparators to improve performance")
         public boolean utRedstoneLightingToggle = false;
