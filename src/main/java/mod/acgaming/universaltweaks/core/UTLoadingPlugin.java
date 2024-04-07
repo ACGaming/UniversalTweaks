@@ -200,6 +200,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.blocks.lenientpaths.json");
         configs.add("mixins.tweaks.blocks.overhaulbeacon.json");
         configs.add("mixins.tweaks.blocks.pumpkinplacing.json");
+        configs.add("mixins.tweaks.blocks.endcrystal.json");
         configs.add("mixins.tweaks.blocks.sapling.json");
         configs.add("mixins.tweaks.entities.ai.json");
         configs.add("mixins.tweaks.entities.ai.saddledwandering.json");
@@ -445,6 +446,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.BLOCKS.OVERHAUL_BEACON.utOverhaulBeaconToggle;
             case "mixins.tweaks.blocks.pumpkinplacing.json":
                 return UTConfigTweaks.BLOCKS.utUnsupportedPumpkinPlacing;
+            case "mixins.tweaks.blocks.endcrystal.json":
+                return UTConfigTweaks.BLOCKS.utEndCrystalAnywherePlacing;
             case "mixins.tweaks.blocks.sapling.json":
                 return UTConfigTweaks.BLOCKS.SAPLING_BEHAVIOR.utSaplingBehaviorToggle;
             case "mixins.tweaks.entities.ai.json":
