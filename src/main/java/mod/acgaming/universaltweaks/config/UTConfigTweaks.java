@@ -1651,6 +1651,10 @@ public class UTConfigTweaks
 
     public static class PerformanceCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.performance.entityradiuscheck")
+        @Config.Name("Entity Radius Check")
+        public final EntityRadiusCheckCategory ENTITY_RADIUS_CHECK = new EntityRadiusCheckCategory();
+
         @Config.RequiresMcRestart
         @Config.Name("Auto Save Interval")
         @Config.Comment("Determines the interval in ticks between world auto saves")
@@ -1729,6 +1733,30 @@ public class UTConfigTweaks
         @Config.Name("Uncap FPS")
         @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
         public boolean utUncapFPSToggle = true;
+
+        public static class EntityRadiusCheckCategory
+        {
+            @Config.Name("Reduce Search Size Toggle")
+            @Config.Comment
+                ({
+                    "Reduces the search size of various getEntitiesWithinAABB functions for specified entity types",
+                    "Only useful if you have a mod that increases World.MAX_ENTITY_RADIUS",
+                    "(Lycanites Mobs, Advanced Rocketry, Immersive Railroading, etc.)"
+                })
+            public boolean utReduceSearchSizeToggle = true;
+
+            @Config.Name("Reduce Search Size Targets")
+            @Config.Comment
+                ({
+                    "The entity types to reduce the search size for",
+                    "Specify by the fully qualified class name"
+                })
+            public String[] utReduceSearchSizeTargets = new String[]
+                {
+                    "net.minecraft.entity.item.EntityItem",
+                    "net.minecraft.entity.player.EntityPlayer"
+                };
+        }
     }
 
     public static class WorldCategory

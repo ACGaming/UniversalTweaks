@@ -224,6 +224,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.performance.autosave.json");
         configs.add("mixins.tweaks.performance.craftingcache.json");
         configs.add("mixins.tweaks.performance.dyeblending.json");
+        configs.add("mixins.tweaks.performance.entityradiuscheck.reducesearchsize.json");
         configs.add("mixins.tweaks.performance.oredictionarycheck.json");
         configs.add("mixins.tweaks.performance.pathfinding.json");
         configs.add("mixins.tweaks.performance.prefixcheck.json");
