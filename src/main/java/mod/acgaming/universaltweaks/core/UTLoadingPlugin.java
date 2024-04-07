@@ -14,6 +14,7 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
 @IFMLLoadingPlugin.Name("UniversalTweaksCore")
@@ -38,33 +39,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             Locale.setDefault(Locale.ENGLISH);
         }
 
-        try
-        {
-            Class.forName("com.therandomlabs.randompatches.core.RPCore");
-            randomPatchesLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
-
-        try
-        {
-            Class.forName("meldexun.renderlib.RenderLib");
-            renderLibLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
-
-        try
-        {
-            Class.forName("org.spongepowered.mod.util.CompatibilityException");
-            spongeForgeLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
-
-        try
-        {
-            Class.forName("net.darkhax.surge.core.SurgeLoadingPlugin");
-            surgeLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
+        randomPatchesLoaded = UTReflectionUtil.isClassLoaded("com.therandomlabs.randompatches.core.RPCore");
+        renderLibLoaded = UTReflectionUtil.isClassLoaded("meldexun.renderlib.RenderLib");
+        spongeForgeLoaded = UTReflectionUtil.isClassLoaded("org.spongepowered.mod.util.CompatibilityException");
+        surgeLoaded = UTReflectionUtil.isClassLoaded("net.darkhax.surge.core.SurgeLoadingPlugin");
     }
 
     @Override
