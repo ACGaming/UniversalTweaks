@@ -142,6 +142,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             configs.add("mixins.tweaks.performance.audioreload.json");
             configs.add("mixins.tweaks.performance.fps.json");
             configs.add("mixins.tweaks.performance.missingmodel.json");
+            configs.add("mixins.tweaks.performance.mobspawnerrender.json");
             configs.add("mixins.tweaks.performance.resourcemanager.json");
             configs.add("mixins.tweaks.world.loading.client.json");
         }
@@ -341,6 +342,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfigTweaks.PERFORMANCE.utUncapFPSToggle;
                 case "mixins.tweaks.performance.missingmodel.json":
                     return UTConfigTweaks.PERFORMANCE.utDisableFancyMissingModelToggle;
+                case "mixins.tweaks.performance.mobspawnerrender.json":
+                    return UTConfigTweaks.PERFORMANCE.utDisableMobSpawnerRendering;
                 case "mixins.tweaks.performance.resourcemanager.json":
                     return UTConfigTweaks.PERFORMANCE.utCheckAnimatedModelsToggle;
                 case "mixins.tweaks.world.loading.client.json":
