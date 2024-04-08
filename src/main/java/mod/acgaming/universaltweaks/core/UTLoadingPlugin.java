@@ -261,7 +261,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public List<String> getMixinConfigs()
     {
         List<String> configs = new ArrayList<>();
-        configs.addAll((isClient ? clientsideMixinConfigs : serversideMixinConfigs).keySet());
+        if (isClient) configs.addAll(clientsideMixinConfigs.keySet());
+        else configs.addAll(serversideMixinConfigs.keySet());
         configs.addAll(commonMixinConfigs.keySet());
         return configs;
     }
