@@ -75,6 +75,7 @@ public class UTObsoleteModsHandler
         if (Loader.isModLoaded("ikwid") && UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlTutorialToggle) messages.add("I Know What I'm Doing");
         if (Loader.isModLoaded("insomniac") && UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle) messages.add("Insomniac");
         if (Loader.isModLoaded("inventoryspam") && UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) messages.add("Inventory Spam");
+        if (Loader.isModLoaded("keydescfix") && UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow) messages.add("Keybind Description Fix");
         if (Loader.isModLoaded("lanserverproperties") && UTConfigTweaks.MISC.utLANServerProperties) messages.add("LAN Server Properties");
         if (Loader.isModLoaded("leafdecay") && UTConfigTweaks.BLOCKS.utLeafDecayToggle) messages.add("Leaf Decay Accelerator");
         if (Loader.isModLoaded("letmedespawn") && UTConfigTweaks.ENTITIES.utMobDespawnToggle) messages.add("Let Me Despawn");
