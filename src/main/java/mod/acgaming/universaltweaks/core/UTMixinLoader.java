@@ -111,12 +111,8 @@ public class UTMixinLoader implements ILateMixinLoader
     @Override
     public boolean shouldMixinConfigQueue(String mixinConfig)
     {
-        if (UTLoadingPlugin.isClient)
-        {
-            Supplier<Boolean> supplier = clientsideMixinConfigs.get(mixinConfig);
-            if (supplier != null && supplier.get()) return true;
-        }
-        Supplier<Boolean> supplier = commonMixinConfigs.get(mixinConfig);
-        return supplier == null || supplier.get();
+        Supplier<Boolean> sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : null;
+        Supplier<Boolean> commonSupplier = commonMixinConfigs.get(mixinConfig);
+        return sidedSupplier != null ? sidedSupplier.get() : commonSupplier == null || commonSupplier.get();
     }
 }

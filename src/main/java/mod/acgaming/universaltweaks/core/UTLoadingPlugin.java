@@ -274,9 +274,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             // Causes crashes in dev env only
             return !mixinConfig.equals("mixins.tweaks.misc.armorcurve.json");
         }
-        Supplier<Boolean> sidedSupplier = (isClient ? clientsideMixinConfigs : serversideMixinConfigs).get(mixinConfig);
-        if (sidedSupplier != null && sidedSupplier.get()) return true;
+        Supplier<Boolean> sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : null;
         Supplier<Boolean> commonSupplier = commonMixinConfigs.get(mixinConfig);
-        return commonSupplier == null || commonSupplier.get();
+        return sidedSupplier != null ? sidedSupplier.get() : commonSupplier == null || commonSupplier.get();
     }
 }
