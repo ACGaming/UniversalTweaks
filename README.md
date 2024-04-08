@@ -298,6 +298,8 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Quark**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **RFTools Dimension**
+    * **Properly Unregister Dimensions:** Fixes a bug where joining a world or server with any RFTools Dimension registered would disallow entering another world without that dimension until restarting.
 * **Roost**
     * **Early Register CT Chickens:** Improves load time by registering ContentTweaker chickens early for Roost to detect them
 * **Simple Difficulty**

@@ -143,6 +143,10 @@ public class UTConfigMods
     @Config.Name("Quark")
     public static final QuarkCategory QUARK = new QuarkCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.rftoolsdimensions")
+    @Config.Name("RFTools Dimensions")
+    public static final RFToolsDimensionsCategory RFTOOLS_DIMENSIONS = new RFToolsDimensionsCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.roost")
     @Config.Name("Roost")
     public static final RoostCategory ROOST = new RoostCategory();
@@ -569,6 +573,14 @@ public class UTConfigMods
                 "2) Use the Material Part Bracket Handler to reference the item"
             })
         public boolean utRoostEarlyRegisterCTChickens = true;
+    }
+
+    public static class RFToolsDimensionsCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fully Unregister Dimensions")
+        @Config.Comment("Fixes a bug where joining a world or server with any RFTools Dimension registered would disallow entering another world without that dimension until restarting")
+        public boolean utFullyUnregisterDimensions = true;
     }
 
     public static class SimpleDifficultyCategory
