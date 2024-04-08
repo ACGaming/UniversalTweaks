@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
+import com.google.common.collect.ImmutableMap;
 import net.minecraftforge.fml.common.Loader;
 
 import mod.acgaming.universaltweaks.config.UTConfigMods;
@@ -13,7 +14,7 @@ import zone.rong.mixinbooter.ILateMixinLoader;
 
 public class UTMixinLoader implements ILateMixinLoader
 {
-    private static final Map<String, Supplier<Boolean>> clientsideMixinConfigs = new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, Supplier<Boolean>> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
     {
         {
             put("mixins.mods.cbmultipart.client.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
@@ -24,9 +25,9 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.storagedrawers.client.json", () -> loaded("storagedrawers"));
             put("mixins.mods.thaumcraft.entities.client.json", () -> loaded("thaumcraft"));
         }
-    };
+    });
 
-    private static final Map<String, Supplier<Boolean>> commonMixinConfigs = new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, Supplier<Boolean>> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
     {
         {
             put("mixins.mods.abyssalcraft.json", () -> loaded("abyssalcraft"));
@@ -88,7 +89,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.thermalexpansion.json", () -> loaded("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle);
             put("mixins.mods.tinyprogressions.dupes.json", () -> loaded("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle);
         }
-    };
+    });
 
     private static boolean loaded(String modid)
     {

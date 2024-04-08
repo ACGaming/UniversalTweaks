@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
+import com.google.common.collect.ImmutableMap;
 import net.minecraftforge.common.ForgeVersion;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
@@ -27,7 +28,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public static boolean surgeLoaded;
     public static long launchTime;
 
-    private static final Map<String, Supplier<Boolean>> clientsideMixinConfigs = new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, Supplier<Boolean>> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
     {
         {
             put("mixins.bugfixes.blocks.banner.json", () -> UTConfigBugfixes.BLOCKS.utBannerBoundingBoxToggle && !renderLibLoaded);
@@ -68,17 +69,17 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.performance.resourcemanager.json", () -> UTConfigTweaks.PERFORMANCE.utCheckAnimatedModelsToggle);
             put("mixins.tweaks.world.loading.client.json", () -> UTConfigTweaks.PERFORMANCE.utWorldLoadingToggle);
         }
-    };
+    });
 
-    private static final Map<String, Supplier<Boolean>> serversideMixinConfigs = new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, Supplier<Boolean>> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
     {
         {
             put("mixins.tweaks.misc.buttons.snooper.server.json", () -> UTConfigTweaks.MISC.utSnooperToggle);
             put("mixins.tweaks.misc.difficulty.server.json", () -> true);
         }
-    };
+    });
 
-    private static final Map<String, Supplier<Boolean>> commonMixinConfigs = new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, Supplier<Boolean>> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
     {
         {
             put("mixins.bugfixes.blocks.bed.json", () -> UTConfigBugfixes.BLOCKS.utSleepResetsWeatherToggle);
@@ -184,7 +185,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.world.sealevel.json", () -> UTConfigTweaks.WORLD.utSeaLevel != 63);
             put("mixins.tweaks.world.village.json", () -> UTConfigTweaks.WORLD.utVillageDistance != 32);
         }
-    };
+    });
 
 
     static
