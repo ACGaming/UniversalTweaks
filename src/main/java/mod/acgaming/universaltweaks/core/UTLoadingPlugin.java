@@ -81,6 +81,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     private static final Map<String, Supplier<Boolean>> commonMixinConfigs = new HashMap<String, Supplier<Boolean>>()
     {
         {
+            put("mixins.bugfixes.blocks.bed.json", () -> UTConfigBugfixes.BLOCKS.utSleepResetsWeatherToggle);
             put("mixins.bugfixes.blocks.comparatortiming.json", () -> UTConfigBugfixes.BLOCKS.utComparatorTimingToggle);
             put("mixins.bugfixes.blocks.falling.json", () -> UTConfigBugfixes.BLOCKS.utFallingBlockDamageToggle);
             put("mixins.bugfixes.blocks.hopper.boundingbox.json", () -> UTConfigBugfixes.BLOCKS.utDietHopperToggle);
@@ -88,13 +89,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.blocks.itemframevoid.json", () -> UTConfigBugfixes.BLOCKS.utItemFrameVoidToggle);
             put("mixins.bugfixes.blocks.ladderflying.json", () -> UTConfigBugfixes.BLOCKS.utLadderFlyingToggle);
             put("mixins.bugfixes.blocks.miningglitch.server.json", () -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
-            put("mixins.bugfixes.blocks.piston.tile.json", () -> UTConfigBugfixes.BLOCKS.utPistonTileToggle);
             put("mixins.bugfixes.blocks.piston.retraction.json", () -> UTConfigBugfixes.BLOCKS.utPistonRetractionToggle);
-            put("mixins.bugfixes.blocks.bed.json", () -> UTConfigBugfixes.BLOCKS.utSleepResetsWeatherToggle);
-            put("mixins.bugfixes.misc.crafteditemstatistics.json", () -> UTConfigBugfixes.MISC.utCraftedItemStatisticsToggle);
-            put("mixins.bugfixes.misc.enchantment.json", () -> UTConfigBugfixes.MISC.utBlastProtectionKnockbackToggle);
-            put("mixins.bugfixes.misc.packetsize.json", () -> UTConfigBugfixes.MISC.utPacketSize > 0x200000 && !spongeForgeLoaded && !randomPatchesLoaded);
-            put("mixins.bugfixes.misc.particlespawning.json", () -> UTConfigBugfixes.MISC.utParticleSpawningToggle);
+            put("mixins.bugfixes.blocks.piston.tile.json", () -> UTConfigBugfixes.BLOCKS.utPistonTileToggle);
             put("mixins.bugfixes.entities.ai.json", () -> UTConfigBugfixes.ENTITIES.utEntityAITasksToggle);
             put("mixins.bugfixes.entities.attackradius.json", () -> UTConfigBugfixes.ENTITIES.utAttackRadiusToggle);
             put("mixins.bugfixes.entities.blockfire.json", () -> UTConfigBugfixes.ENTITIES.utBlockFireToggle);
@@ -116,6 +112,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.entities.suffocation.json", () -> UTConfigBugfixes.ENTITIES.utEntitySuffocationToggle);
             put("mixins.bugfixes.entities.tracker.json", () -> UTConfigBugfixes.ENTITIES.utEntityTrackerToggle && !spongeForgeLoaded);
             put("mixins.bugfixes.entities.untippedarrowparticles.json", () -> UTConfigBugfixes.ENTITIES.utUntippedArrowParticlesToggle);
+            put("mixins.bugfixes.misc.crafteditemstatistics.json", () -> UTConfigBugfixes.MISC.utCraftedItemStatisticsToggle);
+            put("mixins.bugfixes.misc.enchantment.json", () -> UTConfigBugfixes.MISC.utBlastProtectionKnockbackToggle);
+            put("mixins.bugfixes.misc.packetsize.json", () -> UTConfigBugfixes.MISC.utPacketSize > 0x200000 && !spongeForgeLoaded && !randomPatchesLoaded);
+            put("mixins.bugfixes.misc.particlespawning.json", () -> UTConfigBugfixes.MISC.utParticleSpawningToggle);
             put("mixins.bugfixes.world.chunksaving.json", () -> UTConfigBugfixes.WORLD.utChunkSavingToggle && !spongeForgeLoaded);
             put("mixins.bugfixes.world.tileentities.json", () -> UTConfigBugfixes.WORLD.utTileEntityMap != UTConfigBugfixes.WorldCategory.EnumMaps.HASHMAP);
             put("mixins.bugfixes.world.witchhuts.json", () -> UTConfigBugfixes.WORLD.utWitchStructuresToggle);
@@ -147,8 +147,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.entities.spawning.creeper.confetti.json", () -> UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiChance != 0.0D);
             put("mixins.tweaks.entities.spawning.golem.json", () -> UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGIronGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGSnowGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGWitherToggle);
             put("mixins.tweaks.entities.spawning.husk.json", () -> UTConfigTweaks.ENTITIES.utHuskStraySpawningToggle);
-            put("mixins.tweaks.entities.spawning.stray.json", () -> UTConfigTweaks.ENTITIES.utHuskStraySpawningToggle);
             put("mixins.tweaks.entities.spawning.portal.json", () -> UTConfigTweaks.ENTITIES.utPortalSpawningToggle);
+            put("mixins.tweaks.entities.spawning.stray.json", () -> UTConfigTweaks.ENTITIES.utHuskStraySpawningToggle);
             put("mixins.tweaks.entities.speed.boat.json", () -> UTConfigTweaks.ENTITIES.utBoatSpeed != 0.04D);
             put("mixins.tweaks.entities.speed.cobweb.json", () -> UTConfigTweaks.ENTITIES.COBWEB_SLOWNESS.utCobwebSlownessToggle);
             put("mixins.tweaks.entities.speed.player.json", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
@@ -164,12 +164,12 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.armorcurve.json", () -> UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle);
             put("mixins.tweaks.misc.bannerlayers.json", () -> UTConfigTweaks.MISC.utBannerLayers != 6);
             put("mixins.tweaks.misc.console.addpacket.json", () -> UTConfigTweaks.MISC.utImprovedEntityTrackerToggle);
+            put("mixins.tweaks.misc.incurablepotions.json", () -> UTConfigTweaks.MISC.INCURABLE_POTIONS.utIncurablePotionsToggle);
             put("mixins.tweaks.misc.lightning.damage.json", () -> UTConfigTweaks.MISC.LIGHTNING.utLightningDamage != 5.0D || UTConfigTweaks.MISC.LIGHTNING.utLightningFireTicks != 8);
             put("mixins.tweaks.misc.lightning.fire.json", () -> UTConfigTweaks.MISC.LIGHTNING.utLightningFireToggle);
-            put("mixins.tweaks.misc.incurablepotions.json", () -> UTConfigTweaks.MISC.INCURABLE_POTIONS.utIncurablePotionsToggle);
+            put("mixins.tweaks.misc.recipebook.server.json", () -> UTConfigTweaks.MISC.utRecipeBookToggle);
             put("mixins.tweaks.misc.xp.cap.json", () -> UTConfigTweaks.MISC.utXPLevelCap > -1);
             put("mixins.tweaks.misc.xp.linear.json", () -> UTConfigTweaks.MISC.utLinearXP > 0);
-            put("mixins.tweaks.misc.recipebook.server.json", () -> UTConfigTweaks.MISC.utRecipeBookToggle);
             put("mixins.tweaks.misc.xp.smelting.json", () -> UTConfigTweaks.MISC.utSmeltingXPToggle);
             put("mixins.tweaks.performance.advancementcheck.json", () -> UTConfigTweaks.PERFORMANCE.utAdvancementCheckToggle);
             put("mixins.tweaks.performance.autosave.json", () -> UTConfigTweaks.PERFORMANCE.utAutoSaveInterval != 900);

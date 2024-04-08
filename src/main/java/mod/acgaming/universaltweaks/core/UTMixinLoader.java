@@ -29,10 +29,10 @@ public class UTMixinLoader implements ILateMixinLoader
     private static final Map<String, Supplier<Boolean>> commonMixinConfigs = new HashMap<String, Supplier<Boolean>>()
     {
         {
-            put("mixins.mods.aoa3.json", () -> loaded("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
             put("mixins.mods.abyssalcraft.json", () -> loaded("abyssalcraft"));
             put("mixins.mods.actuallyadditions.dupes.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle);
             put("mixins.mods.actuallyadditions.json", () -> loaded("actuallyadditions"));
+            put("mixins.mods.aoa3.json", () -> loaded("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
             put("mixins.mods.arcanearchives.dupes.json", () -> loaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
             put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
             put("mixins.mods.bloodmagic.dupes.json", () -> loaded("bloodmagic"));
@@ -72,9 +72,9 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.simpledifficulty.json", () -> loaded("simpledifficulty"));
             put("mixins.mods.spiceoflife.dupes.json", () -> loaded("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);
             put("mixins.mods.tconstruct.json", () -> loaded("tconstruct"));
+            put("mixins.mods.tconstruct.oredictcache.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
             put("mixins.mods.tconstruct.toolcustomization.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle);
             put("mixins.mods.tconstruct.toolcustomization.plustic.json", () -> loaded("tconstruct") && loaded("plustic") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle);
-            put("mixins.mods.tconstruct.oredictcache.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
             put("mixins.mods.techreborn.json", () -> loaded("techreborn"));
             put("mixins.mods.thaumcraft.dupes.json", () -> loaded("thaumcraft") && UTConfigMods.THAUMCRAFT.utDuplicationFixesToggle);
             put("mixins.mods.thaumcraft.enderio.dupes.json", () -> loaded("thaumcraft") && loaded("enderio") && UTConfigMods.THAUMCRAFT.utDuplicationFixesToggle);
