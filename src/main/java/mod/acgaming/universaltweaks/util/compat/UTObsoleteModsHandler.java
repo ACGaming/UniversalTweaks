@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
+import com.google.common.collect.ImmutableMap;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.common.Loader;
 
@@ -16,7 +17,7 @@ import net.minecraftforge.fml.common.ModContainer;
 
 public class UTObsoleteModsHandler
 {
-    private static final Map<String, Supplier<Boolean>> obsoleteModMap = new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, Supplier<Boolean>> obsoleteModMap = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
     {
         {
             put("aiimprovements", () -> UTConfigTweaks.ENTITIES.utAIReplacementToggle || UTConfigTweaks.ENTITIES.utAIRemovalToggle);
@@ -121,7 +122,7 @@ public class UTObsoleteModsHandler
             put("villagermantlefix", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
             put("watercontrolextreme", () -> UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle);
         }
-    };
+    });
 
     public static boolean showObsoleteMods = true;
 
