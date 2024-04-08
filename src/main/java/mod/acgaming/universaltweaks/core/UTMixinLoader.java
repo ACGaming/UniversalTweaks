@@ -65,6 +65,7 @@ public class UTMixinLoader implements ILateMixinLoader
         configs.add("mixins.mods.nuclearcraft.json");
         configs.add("mixins.mods.quark.dupes.json");
         configs.add("mixins.mods.reskillable.json");
+        configs.add("mixins.mods.rftoolsdimensions.json");
         configs.add("mixins.mods.roost.contenttweaker.json");
         configs.add("mixins.mods.simpledifficulty.json");
         configs.add("mixins.mods.spiceoflife.dupes.json");
@@ -188,6 +189,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle;
             case "mixins.mods.reskillable.json":
                 return Loader.isModLoaded("reskillable");
+            case "mixins.mods.rftoolsdimensions.json":
+                return Loader.isModLoaded("rftoolsdim");
             case "mixins.mods.roost.contenttweaker.json":
                 return Loader.isModLoaded("contenttweaker");
             case "mixins.mods.simpledifficulty.json":

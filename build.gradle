@@ -164,6 +164,9 @@ dependencies {
     compileOnly rfg.deobf('net.darkhax.gamestages:GameStages-1.12.2:2.0.120')
     compileOnly rfg.deobf('net.darkhax.itemstages:ItemStages-1.12.2:2.0.51')
     compileOnly rfg.deobf('net.darkhax.mobstages:MobStages-1.12.2:2.0.13')
+    compileOnly rfg.deobf('curse.maven:mcjtylib-233105:2745846')
+    compileOnly rfg.deobf('curse.maven:rftools-224641:2861573')
+    compileOnly rfg.deobf('curse.maven:rftools-dimensions-240950:2707390')
     compileOnly 'curse.maven:actuallyaditions-228404:2844115'
     compileOnly 'curse.maven:applecore-224472:2969118'
     compileOnly 'curse.maven:arcanearchives-311357:3057332'
