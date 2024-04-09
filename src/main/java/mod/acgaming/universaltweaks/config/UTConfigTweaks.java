@@ -1712,6 +1712,11 @@ public class UTConfigTweaks
         public boolean utDisableFancyMissingModelToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Mob Spawner Entity")
+        @Config.Comment("Improves rendering performance by disabling rendering the entity inside mob spawners")
+        public boolean utDisableMobSpawnerRendering = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Faster Background Startup")
         @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
         public boolean utFasterBackgroundStartupToggle = true;
