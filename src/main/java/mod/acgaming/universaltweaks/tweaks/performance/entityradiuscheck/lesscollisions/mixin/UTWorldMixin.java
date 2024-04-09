@@ -23,7 +23,7 @@ public class UTWorldMixin
     private List<Entity> utReducedRadiusAABBCall(World instance, Entity entityIn, AxisAlignedBB aabb, Predicate<? super Entity> predicate, Operation<List<Entity>> original)
     {
         final double ORIGINAL_MAX_ENTITY_RADIUS = 2.0D;
-        if (World.MAX_ENTITY_RADIUS != ORIGINAL_MAX_ENTITY_RADIUS && UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeToggle && entityIn != null && UTEntityRadiusCheck.collisionTargets.contains(entityIn.getClass()))
+        if (World.MAX_ENTITY_RADIUS != ORIGINAL_MAX_ENTITY_RADIUS && UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utLessCollisionsToggle && entityIn != null && UTEntityRadiusCheck.collisionTargets.contains(entityIn.getClass()))
         {
             // Trying to modify the actual MAX_ENTITY_RADIUS across multiple methods would be messy, just redirect.
             return UTEntityAABBUtil.getEntitiesInAABBexcluding(instance, entityIn, aabb, predicate, ORIGINAL_MAX_ENTITY_RADIUS);

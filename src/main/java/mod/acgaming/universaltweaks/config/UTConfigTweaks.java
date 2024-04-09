@@ -1736,6 +1736,7 @@ public class UTConfigTweaks
 
         public static class EntityRadiusCheckCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Entity Radius Check Toggle")
             @Config.Comment
                 ({

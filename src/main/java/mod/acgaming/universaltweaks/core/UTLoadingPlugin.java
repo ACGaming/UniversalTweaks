@@ -522,6 +522,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle && UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeToggle;
             case "mixins.tweaks.performance.oredictionarycheck.json":
                 return UTConfigTweaks.PERFORMANCE.utOreDictionaryCheckToggle;
+            case "mixins.tweaks.performance.pathfinding.json":
+                return UTConfigTweaks.PERFORMANCE.utPathfindingChunkCacheFixToggle;
             case "mixins.tweaks.performance.prefixcheck.json":
                 return UTConfigTweaks.PERFORMANCE.utPrefixCheckToggle;
             case "mixins.tweaks.performance.redstone.json":
