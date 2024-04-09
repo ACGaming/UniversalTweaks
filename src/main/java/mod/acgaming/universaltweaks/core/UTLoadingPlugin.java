@@ -128,6 +128,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             configs.add("mixins.tweaks.misc.commands.seed.json");
             configs.add("mixins.tweaks.misc.credits.json");
             configs.add("mixins.tweaks.misc.difficulty.client.json");
+            configs.add("mixins.tweaks.misc.gui.keybindlistentry.json");
             configs.add("mixins.tweaks.misc.gui.lanserverproperties.json");
             configs.add("mixins.tweaks.misc.gui.overlaymessage.json");
             configs.add("mixins.tweaks.misc.gui.potionduration.json");
@@ -314,6 +315,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return UTConfigTweaks.MISC.utCopyWorldSeedToggle;
                 case "mixins.tweaks.misc.credits.json":
                     return UTConfigTweaks.MISC.utSkipCreditsToggle;
+                case "mixins.tweaks.misc.gui.keybindlistentry.json":
+                    return UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow;
                 case "mixins.tweaks.misc.gui.lanserverproperties.json":
                     return UTConfigTweaks.MISC.utLANServerProperties;
                 case "mixins.tweaks.misc.gui.overlaymessage.json":

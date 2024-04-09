@@ -1273,6 +1273,11 @@ public class UTConfigTweaks
         public boolean utLANServerProperties = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Prevent Keybinds from Overflowing Screen")
+        @Config.Comment("Always indent keybind entries from the screen edge, preventing them from overflowing off the left side when particularly long keybind names are present")
+        public boolean utPreventKeybindingEntryOverflow = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Compact Messages")
         @Config.Comment("Removes duplicate messages and instead put a number behind the message how often it was repeated")
         public boolean utCompactMessagesToggle = false;
