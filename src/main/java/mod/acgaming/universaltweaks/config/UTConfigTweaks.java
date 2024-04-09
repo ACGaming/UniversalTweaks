@@ -179,6 +179,11 @@ public class UTConfigTweaks
         public boolean utUnsupportedPumpkinPlacing = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("End Crystal Placing")
+        @Config.Comment("Allows placing End Crystals without requiring Obsidian or Bedrock below")
+        public boolean utEndCrystalAnywherePlacing = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Sugar Cane Size")
         @Config.Comment("Determines how tall sugar cane can grow")
         public int utSugarCaneSize = 3;
