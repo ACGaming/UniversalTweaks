@@ -19,11 +19,6 @@ public class UTChunkMixin
     {
         final double ORIGINAL_MAX_ENTITY_RADIUS = 2.0D;
         if (original == ORIGINAL_MAX_ENTITY_RADIUS || !UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeToggle) return original;
-
-        for (Class<? extends Entity> target : UTEntityRadiusCheck.searchTargets)
-        {
-            if (clazz.equals(target)) return ORIGINAL_MAX_ENTITY_RADIUS;
-        }
-        return original;
+        return UTEntityRadiusCheck.searchTargets.contains(clazz) ? ORIGINAL_MAX_ENTITY_RADIUS : original;
     }
 }

@@ -1736,26 +1736,34 @@ public class UTConfigTweaks
 
         public static class EntityRadiusCheckCategory
         {
-            @Config.Name("Reduce Search Size Toggle")
+            @Config.Name("[1] Entity Radius Check Toggle")
             @Config.Comment
                 ({
-                    "Reduces the search size of various getEntitiesWithinAABB functions for specified entity types",
-                    "Only useful if you have a mod that increases World.MAX_ENTITY_RADIUS",
+                    "Toggles all tweaks in this category",
+                    "IMPORTANT: These tweaks are only effective if you have mod(s) that increase World.MAX_ENTITY_RADIUS!",
                     "(Lycanites Mobs, Advanced Rocketry, Immersive Railroading, etc.)"
                 })
+            public boolean utEntityRadiusCheckCategoryToggle = true;
+
+            @Config.Name("[2] Reduce Search Size Toggle")
+            @Config.Comment("Reduces the search size of various AABB functions for specified entity types")
             public boolean utReduceSearchSizeToggle = true;
 
-            @Config.Name("Reduce Search Size Targets")
+            @Config.Name("[3] Reduce Search Size Targets")
             @Config.Comment
                 ({
                     "The entity types to reduce the search size for",
-                    "Specify by the fully qualified class name"
+                    "Specify by their fully qualified class name"
                 })
             public String[] utReduceSearchSizeTargets = new String[]
                 {
                     "net.minecraft.entity.item.EntityItem",
                     "net.minecraft.entity.player.EntityPlayer"
                 };
+
+            @Config.Name("[4] Less Collisions Toggle")
+            @Config.Comment("Reduces size of collision checks for most vanilla entity types")
+            public boolean utLessCollisionsToggle = true;
         }
     }
 

@@ -224,6 +224,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.performance.autosave.json");
         configs.add("mixins.tweaks.performance.craftingcache.json");
         configs.add("mixins.tweaks.performance.dyeblending.json");
+        configs.add("mixins.tweaks.performance.entityradiuscheck.lesscollisions.json");
         configs.add("mixins.tweaks.performance.entityradiuscheck.reducesearchsize.json");
         configs.add("mixins.tweaks.performance.oredictionarycheck.json");
         configs.add("mixins.tweaks.performance.pathfinding.json");
@@ -515,6 +516,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.PERFORMANCE.utCraftingCacheToggle;
             case "mixins.tweaks.performance.dyeblending.json":
                 return UTConfigTweaks.PERFORMANCE.utDyeBlendingToggle;
+            case "mixins.tweaks.performance.entityradiuscheck.lesscollisions.json":
+                return UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle && UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utLessCollisionsToggle;
+            case "mixins.tweaks.performance.entityradiuscheck.reducesearchsize.json":
+                return UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle && UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeToggle;
             case "mixins.tweaks.performance.oredictionarycheck.json":
                 return UTConfigTweaks.PERFORMANCE.utOreDictionaryCheckToggle;
             case "mixins.tweaks.performance.prefixcheck.json":

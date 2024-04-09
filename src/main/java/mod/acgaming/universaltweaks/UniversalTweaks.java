@@ -206,7 +206,7 @@ public class UniversalTweaks
     public void onLoadComplete(FMLLoadCompleteEvent event)
     {
         if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.onLoadComplete();
-        if (UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeToggle) UTEntityRadiusCheck.onLoadComplete();
+        if (UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle) UTEntityRadiusCheck.onLoadComplete();
         if (UTConfigGeneral.DEBUG.utLoadingTimeToggle) LOGGER.info("The game loaded in approximately {} seconds", (System.currentTimeMillis() - UTLoadingPlugin.launchTime) / 1000F);
         if (UTObsoleteModsHandler.showObsoleteMods && UTObsoleteModsHandler.obsoleteModsMessage().size() > 5 && !UTConfigGeneral.DEBUG.utBypassIncompatibilityToggle)
         {
