@@ -396,6 +396,11 @@ public class UTConfigMods
         public boolean utDuplicationFixesToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Creative Mill Harvestability")
+        @Config.Comment("Fixes the Creative Mill Generator not respecting the Creative Block Breaking config")
+        public boolean utFixCreativeMillHarvestability = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Mutable Machine Block Drops")
         @Config.Comment("Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list")
         public boolean utMutableBlockDrops = true;

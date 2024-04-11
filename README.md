@@ -267,6 +267,7 @@ All changes are toggleable via config files.
 * **Extra Utilities 2**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Mutable Machine Block Drops:** Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list.
+    * **Creative Mill Harvestability:** Fixes the Creative Mill Generator not respecting the Creative Block Breaking config
 * **Forestry**
     * **Arborist Villager Trades:** Adds custom emerald to germling trades to the arborist villager
     * **Disable Bee Damage Armor Bypass:** Disables damage caused by bees bypassing player armor

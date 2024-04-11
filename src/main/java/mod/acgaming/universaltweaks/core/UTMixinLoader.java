@@ -47,6 +47,7 @@ public class UTMixinLoader implements ILateMixinLoader
         configs.add("mixins.mods.elenaidodge2.json");
         configs.add("mixins.mods.epicsiegemod.json");
         configs.add("mixins.mods.erebus.json");
+        configs.add("mixins.mods.extrautilities.breakcreativemill.json");
         configs.add("mixins.mods.extrautilities.mutabledrops.json");
         configs.add("mixins.mods.extrautilities.dupes.json");
         configs.add("mixins.mods.forestry.cocoa.json");
@@ -154,6 +155,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 return Loader.isModLoaded("epicsiegemod");
             case "mixins.mods.erebus.json":
                 return Loader.isModLoaded("erebus");
+            case "mixins.mods.extrautilities.breakcreativemill.json":
+                return Loader.isModLoaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utFixCreativeMillHarvestability;
             case "mixins.mods.extrautilities.mutabledrops.json":
                 return Loader.isModLoaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utMutableBlockDrops;
             case "mixins.mods.extrautilities.dupes.json":
