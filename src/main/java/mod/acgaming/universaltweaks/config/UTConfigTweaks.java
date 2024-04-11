@@ -21,6 +21,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePoti
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
+import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
 
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
 public class UTConfigTweaks
@@ -1765,6 +1766,16 @@ public class UTConfigTweaks
             @Config.Name("[4] Less Collisions Toggle")
             @Config.Comment("Reduces size of collision checks for most vanilla entity types")
             public boolean utLessCollisionsToggle = true;
+
+            @Config.Name("[5] Less Collisions Extra Targets")
+            @Config.Comment
+                ({
+                    "The extra entity types to reduce the size of collision checks for",
+                    "Syntax - modid:name;radius",
+                    "Vanilla ids aren't allowed because they are already included",
+                    "Most types should be specified with the vanilla default radius: 2.0"
+                })
+            public String[] utLessCollisionsExtraTargets = new String[]{};
         }
     }
 
@@ -1864,6 +1875,11 @@ public class UTConfigTweaks
                 if (MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
                 if (MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
+                if (PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle)
+                {
+                    if (PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeToggle) UTEntityRadiusCheck.initSearchTargets();
+                    if (PERFORMANCE.ENTITY_RADIUS_CHECK.utLessCollisionsToggle) UTEntityRadiusCheck.initCollisionTargets();
+                }
                 if (ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
                 if (ITEMS.utCustomUseDurations.length > 0) UTCustomUseDuration.initItemUseMaps();
                 if (ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
