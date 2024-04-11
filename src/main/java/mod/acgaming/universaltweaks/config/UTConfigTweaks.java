@@ -1754,12 +1754,12 @@ public class UTConfigTweaks
             @Config.Comment
                 ({
                     "The entity types to reduce the search size for",
-                    "Specify by their fully qualified class name"
+                    "Syntax - modid:name"
                 })
             public String[] utReduceSearchSizeTargets = new String[]
                 {
-                    "net.minecraft.entity.item.EntityItem",
-                    "net.minecraft.entity.player.EntityPlayer"
+                    "minecraft:item",
+                    "minecraft:player"
                 };
 
             @Config.Name("[4] Less Collisions Toggle")

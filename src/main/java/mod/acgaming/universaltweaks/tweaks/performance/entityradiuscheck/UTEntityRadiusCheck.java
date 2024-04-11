@@ -8,6 +8,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
@@ -26,7 +27,6 @@ import net.minecraftforge.registries.RegistryManager;
 import com.google.common.collect.ImmutableSet;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
-import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 
 public class UTEntityRadiusCheck
 {
@@ -41,26 +41,26 @@ public class UTEntityRadiusCheck
 
     private static void initSearchTargets()
     {
-        searchTargets = new HashSet<>();
+        final ResourceLocation playerId = new ResourceLocation("player");
+        Set<Class<? extends Entity>> out = new HashSet<>();
         // Read config for classes
-        for (String className : UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeTargets)
+        for (String entityId : UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeTargets)
         {
-            try
+            // Special case of player
+            if (entityId.equals(playerId.toString()))
             {
-                Class<?> clazz = UTReflectionUtil.getClassLoaded(className);
-                if (clazz == null)
-                {
-                    UniversalTweaks.LOGGER.warn("UTEntityRadiusCheck ::: Invalid class name " + className + "! Skipping this entry.");
-                    continue;
-                }
-                Class<? extends Entity> target = clazz.asSubclass(Entity.class);
-                searchTargets.add(target);
+                out.add(EntityPlayer.class);
+                continue;
             }
-            catch (ClassCastException ex)
+            Class<? extends Entity> entityClazz = EntityList.getClass(new ResourceLocation(entityId));
+            if (entityClazz == null)
             {
-                UniversalTweaks.LOGGER.warn("UTEntityRadiusCheck ::: Class " + className + " is not an Entity! Skipping this entry.");
+                UniversalTweaks.LOGGER.warn("UTEntityRadiusCheck ::: Invalid entity id " + entityId + "in \"[3] Reduce Search Size Targets\"! Skipping this entry.");
+                continue;
             }
+            out.add(entityClazz);
         }
+        if (!out.isEmpty()) searchTargets = out;
     }
 
     private static void initCollisionTargets()
@@ -76,11 +76,11 @@ public class UTEntityRadiusCheck
             public boolean test(Class<? extends Entity> entityClazz)
             {
                 return EntityLivingBase.class.isAssignableFrom(entityClazz) &&
-                    !(entityClazz == EntityWolf.class ||        // (1)
-                        AbstractHorse.class.isAssignableFrom(entityClazz) || // (2)
+                    !(entityClazz == EntityWolf.class ||                        // (1)
+                        AbstractHorse.class.isAssignableFrom(entityClazz) ||    // (2)
                         entityClazz == EntityPlayer.class ||
-                        entityClazz == EntityDragon.class ||    // (4)
-                        entityClazz == EntityWither.class       // (4)
+                        entityClazz == EntityDragon.class ||                    // (4)
+                        entityClazz == EntityWither.class                       // (4)
                     );
             }
         };
