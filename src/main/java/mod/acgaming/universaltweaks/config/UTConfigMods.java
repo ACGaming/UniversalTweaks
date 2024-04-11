@@ -394,6 +394,11 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Mutable Block Drops")
+        @Config.Comment("Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list")
+        public boolean utMutableBlockDrops = true;
     }
 
     public static class ForestryCategory
