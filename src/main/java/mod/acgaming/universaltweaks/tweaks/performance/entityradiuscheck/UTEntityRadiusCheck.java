@@ -40,7 +40,6 @@ public class UTEntityRadiusCheck
     {
         if (UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeToggle) initSearchTargets();
         if (UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utLessCollisionsToggle) initCollisionTargets();
-        World.MAX_ENTITY_RADIUS = 200;
     }
 
     public static void initSearchTargets()

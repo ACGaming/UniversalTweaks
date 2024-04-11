@@ -1722,7 +1722,7 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("No Pathfinding Chunk Loading")
-        @Config.Comment("Prevents mob pathfinding from loading new/unloaded chunks when building chunk caches")
+        @Config.Comment("Disables mob pathfinding from loading new/unloaded chunks when building chunk caches")
         public boolean utPathfindingChunkCacheFixToggle = true;
 
         @Config.RequiresMcRestart
@@ -1764,7 +1764,7 @@ public class UTConfigTweaks
                 };
 
             @Config.Name("[4] Less Collisions Toggle")
-            @Config.Comment("Reduces size of collision checks for most vanilla entity types")
+            @Config.Comment("Reduces size of collision checks for most vanilla and specified entity types")
             public boolean utLessCollisionsToggle = true;
 
             @Config.Name("[5] Less Collisions Extra Targets")
