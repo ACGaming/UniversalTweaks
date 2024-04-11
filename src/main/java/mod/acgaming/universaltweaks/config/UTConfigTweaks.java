@@ -179,6 +179,11 @@ public class UTConfigTweaks
         public boolean utUnsupportedPumpkinPlacing = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("End Crystal Placing")
+        @Config.Comment("Allows placing End Crystals without requiring Obsidian or Bedrock below")
+        public boolean utEndCrystalAnywherePlacing = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Sugar Cane Size")
         @Config.Comment("Determines how tall sugar cane can grow")
         public int utSugarCaneSize = 3;
@@ -1268,6 +1273,11 @@ public class UTConfigTweaks
         public boolean utLANServerProperties = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Prevent Keybinds from Overflowing Screen")
+        @Config.Comment("Always indent keybind entries from the screen edge, preventing them from overflowing off the left side when particularly long keybind names are present")
+        public boolean utPreventKeybindingEntryOverflow = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Compact Messages")
         @Config.Comment("Removes duplicate messages and instead put a number behind the message how often it was repeated")
         public boolean utCompactMessagesToggle = false;
@@ -1700,6 +1710,11 @@ public class UTConfigTweaks
         @Config.Name("Disable Fancy Missing Model")
         @Config.Comment("Improves rendering performance by removing the resource location text on missing models")
         public boolean utDisableFancyMissingModelToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Mob Spawner Entity")
+        @Config.Comment("Improves rendering performance by disabling rendering the entity inside mob spawners")
+        public boolean utDisableMobSpawnerRendering = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Faster Background Startup")

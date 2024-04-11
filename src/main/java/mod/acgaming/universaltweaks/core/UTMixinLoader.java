@@ -51,7 +51,9 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.elenaidodge2.json", () -> loaded("elenaidodge2"));
             put("mixins.mods.epicsiegemod.json", () -> loaded("epicsiegemod"));
             put("mixins.mods.erebus.json", () -> loaded("erebus"));
+            put("mixins.mods.extrautilities.breakcreativemill.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utFixCreativeMillHarvestability);
             put("mixins.mods.extrautilities.dupes.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDuplicationFixesToggle);
+            put("mixins.mods.extrautilities.mutabledrops.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utMutableBlockDrops);
             put("mixins.mods.forestry.cocoa.json", () -> loaded("forestry"));
             put("mixins.mods.forestry.dupes.json", () -> loaded("forestry") && UTConfigMods.FORESTRY.utFOCocoaBeansToggle);
             put("mixins.mods.forestry.extratrees.json", () -> loaded("forestry") && UTConfigMods.FORESTRY.utDuplicationFixesToggle);
@@ -69,6 +71,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.nuclearcraft.json", () -> loaded("nuclearcraft"));
             put("mixins.mods.quark.dupes.json", () -> loaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
             put("mixins.mods.reskillable.json", () -> loaded("reskillable"));
+            put("mixins.mods.rftoolsdimensions.json", () -> loaded("rftoolsdim"));
             put("mixins.mods.roost.contenttweaker.json", () -> loaded("contenttweaker"));
             put("mixins.mods.simpledifficulty.json", () -> loaded("simpledifficulty"));
             put("mixins.mods.spiceoflife.dupes.json", () -> loaded("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);

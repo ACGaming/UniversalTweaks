@@ -125,12 +125,14 @@ All changes are toggleable via config files.
 * **Disable Audio Debug:** Improves loading times by removing debug code for missing sounds and subtitles
 * **Disable Creeper Music Discs:** Disables creepers dropping music discs when slain by skeletons
 * **Disable Fancy Missing Model:** Improves rendering performance by removing the resource location text on missing models
+* **Disable Mob Spawner Entity Render:** Disables rendering an entity inside of Mob Spawners
 * **Disable Narrator:** Disables the narrator functionality entirely
 * **Disable Sleeping:** Disables skipping night by using a bed while making it still able to set spawn
 * **Disable Villager Trade Leveling:** Disables leveling of villager careers, only allowing base level trades
 * **Disable Villager Trade Restock:** Disables restocking of villager trades, only allowing one trade per offer
 * **Disable Wither Targeting AI:** Disables withers targeting animals
 * **Easy Breeding:** Enables easy breeding of animals by tossing food on the ground
+* **End Crystal Placing:** Allows placing End Crystals without requiring Obsidian or Bedrock below
 * **End Portal Parallax:** Re-implements parallax rendering of the end portal from 1.11 and older
 * **Explosion Block Drop Chance:** Determines the numerator of the block drop formula on explosions
 * **Falling Block Lifespan:** Determines how long falling blocks remain in ticks until they are dropped under normal circumstances
@@ -264,6 +266,8 @@ All changes are toggleable via config files.
     * **Disable Digger AI Debug:** Disables leftover debug logging inside the digger AI of the beta builds
 * **Extra Utilities 2**
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Mutable Machine Block Drops:** Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list.
+    * **Creative Mill Harvestability:** Fixes the Creative Mill Generator not respecting the Creative Block Breaking config
 * **Forestry**
     * **Arborist Villager Trades:** Adds custom emerald to germling trades to the arborist villager
     * **Disable Bee Damage Armor Bypass:** Disables damage caused by bees bypassing player armor
@@ -298,6 +302,8 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Quark**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **RFTools Dimension**
+    * **Properly Unregister Dimensions:** Fixes a bug where joining a world or server with any RFTools Dimension registered would disallow entering another world without that dimension until restarting.
 * **Roost**
     * **Early Register CT Chickens:** Improves load time by registering ContentTweaker chickens early for Roost to detect them
 * **Simple Difficulty**

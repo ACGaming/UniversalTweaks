@@ -52,6 +52,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.buttons.snooper.client.json", () -> UTConfigTweaks.MISC.utSnooperToggle);
             put("mixins.tweaks.misc.commands.seed.json", () -> UTConfigTweaks.MISC.utCopyWorldSeedToggle);
             put("mixins.tweaks.misc.credits.json", () -> UTConfigTweaks.MISC.utSkipCreditsToggle);
+            put("mixins.tweaks.misc.gui.keybindlistentry.json", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
             put("mixins.tweaks.misc.gui.lanserverproperties.json", () -> UTConfigTweaks.MISC.utLANServerProperties);
             put("mixins.tweaks.misc.gui.overlaymessage.json", () -> UTConfigTweaks.MISC.utOverlayMessageHeight != -4);
             put("mixins.tweaks.misc.gui.potionduration.json", () -> UTConfigTweaks.MISC.utPotionDurationToggle);
@@ -66,6 +67,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.performance.audioreload.json", () -> UTConfigTweaks.PERFORMANCE.utDisableAudioDebugToggle && !surgeLoaded);
             put("mixins.tweaks.performance.fps.json", () -> UTConfigTweaks.PERFORMANCE.utUncapFPSToggle);
             put("mixins.tweaks.performance.missingmodel.json", () -> UTConfigTweaks.PERFORMANCE.utDisableFancyMissingModelToggle);
+            put("mixins.tweaks.performance.mobspawnerrender.json", () -> UTConfigTweaks.PERFORMANCE.utDisableMobSpawnerRendering);
             put("mixins.tweaks.performance.resourcemanager.json", () -> UTConfigTweaks.PERFORMANCE.utCheckAnimatedModelsToggle);
             put("mixins.tweaks.world.loading.client.json", () -> UTConfigTweaks.PERFORMANCE.utWorldLoadingToggle);
         }
@@ -122,6 +124,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.world.witchhuts.json", () -> UTConfigBugfixes.WORLD.utWitchStructuresToggle);
             put("mixins.tweaks.blocks.bedobstruction.json", () -> UTConfigTweaks.BLOCKS.utBedObstructionToggle);
             put("mixins.tweaks.blocks.breakablebedrock.json", () -> UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle);
+            put("mixins.tweaks.blocks.endcrystal.json", () -> UTConfigTweaks.BLOCKS.utEndCrystalAnywherePlacing);
             put("mixins.tweaks.blocks.explosion.json", () -> UTConfigTweaks.BLOCKS.utExplosionDropChance != 1.0D);
             put("mixins.tweaks.blocks.falling.json", () -> UTConfigTweaks.BLOCKS.utFallingBlockLifespan != 600);
             put("mixins.tweaks.blocks.growthsize.json", () -> UTConfigTweaks.BLOCKS.utCactusSize != 3 && UTConfigTweaks.BLOCKS.utSugarCaneSize != 3 && UTConfigTweaks.BLOCKS.utVineSize != 0);
