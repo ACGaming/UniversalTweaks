@@ -3,6 +3,7 @@ package mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.lessco
 import java.util.List;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
@@ -15,11 +16,10 @@ import mod.acgaming.universaltweaks.util.UTEntityAABBUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
-// Courtesy of jchung01
-@Mixin(value = World.class)
-public class UTWorldMixin
+@Mixin(value = EntityLivingBase.class)
+public class UTEntityLivingBaseMixin
 {
-    @WrapOperation(method = "getEntitiesWithinAABBExcludingEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getEntitiesInAABBexcluding(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;"))
+    @WrapOperation(method = "collideWithNearbyEntities", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getEntitiesInAABBexcluding(Lnet/minecraft/entity/Entity;Lnet/minecraft/util/math/AxisAlignedBB;Lcom/google/common/base/Predicate;)Ljava/util/List;"))
     private List<Entity> utReducedRadiusAABBCall(World instance, Entity entityIn, AxisAlignedBB aabb, Predicate<? super Entity> predicate, Operation<List<Entity>> original)
     {
         final double ORIGINAL_MAX_ENTITY_RADIUS = 2.0D;
