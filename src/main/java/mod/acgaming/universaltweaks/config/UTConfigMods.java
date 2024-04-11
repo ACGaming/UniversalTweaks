@@ -396,7 +396,7 @@ public class UTConfigMods
         public boolean utDuplicationFixesToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Mutable Block Drops")
+        @Config.Name("Mutable Machine Block Drops")
         @Config.Comment("Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list")
         public boolean utMutableBlockDrops = true;
     }
