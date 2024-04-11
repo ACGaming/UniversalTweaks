@@ -290,6 +290,8 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Mob Stages**
     * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
+* **Modular Routers**
+    * **Particle Thread Fix:** Fixes particles being added from the wrong thread which corrupted the particle manager
 * **MrTJPCore**
     * **Memory Leak Fix:** Fixes a memory leak associated with EntityPlayer
 * **Nether Chest**
