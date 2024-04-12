@@ -1,8 +1,12 @@
 package mod.acgaming.universaltweaks.core;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Supplier;
 
+import com.google.common.collect.ImmutableMap;
 import net.minecraftforge.fml.common.Loader;
 
 import mod.acgaming.universaltweaks.config.UTConfigMods;
@@ -10,234 +14,109 @@ import zone.rong.mixinbooter.ILateMixinLoader;
 
 public class UTMixinLoader implements ILateMixinLoader
 {
+    private static final Map<String, Supplier<Boolean>> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
+    {
+        {
+            put("mixins.mods.cbmultipart.client.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
+            put("mixins.mods.compactmachines.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
+            put("mixins.mods.crafttweaker.json", () -> loaded("crafttweaker"));
+            put("mixins.mods.hwyla.json", () -> loaded("waila"));
+            put("mixins.mods.modularrouters.json", () -> loaded("modularrouters") && UTConfigMods.MODULAR_ROUTERS.utParticleThreadToggle);
+            put("mixins.mods.roost.json", () -> loaded("roost") && loaded("contenttweaker"));
+            put("mixins.mods.storagedrawers.client.json", () -> loaded("storagedrawers"));
+            put("mixins.mods.thaumcraft.entities.client.json", () -> loaded("thaumcraft"));
+        }
+    });
+
+    private static final Map<String, Supplier<Boolean>> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
+    {
+        {
+            put("mixins.mods.abyssalcraft.json", () -> loaded("abyssalcraft"));
+            put("mixins.mods.actuallyadditions.dupes.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle);
+            put("mixins.mods.actuallyadditions.json", () -> loaded("actuallyadditions"));
+            put("mixins.mods.aoa3.json", () -> loaded("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
+            put("mixins.mods.arcanearchives.dupes.json", () -> loaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
+            put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
+            put("mixins.mods.bloodmagic.dupes.json", () -> loaded("bloodmagic"));
+            put("mixins.mods.bloodmagic.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);
+            put("mixins.mods.botania.dupes.json", () -> loaded("botania"));
+            put("mixins.mods.botania.json", () -> loaded("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle);
+            put("mixins.mods.cbmultipart.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
+            put("mixins.mods.ceramics.json", () -> loaded("ceramics"));
+            put("mixins.mods.chisel.tcomplement.dupes.json", () -> loaded("chisel") && loaded("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle);
+            put("mixins.mods.cofhcore.json", () -> loaded("cofhcore"));
+            put("mixins.mods.collective.json", () -> loaded("collective"));
+            put("mixins.mods.cqrepoured.json", () -> loaded("cqrepoured"));
+            put("mixins.mods.effortlessbuilding.json", () -> loaded("effortlessbuilding"));
+            put("mixins.mods.elementarystaffs.json", () -> loaded("element"));
+            put("mixins.mods.elenaidodge2.json", () -> loaded("elenaidodge2"));
+            put("mixins.mods.epicsiegemod.json", () -> loaded("epicsiegemod"));
+            put("mixins.mods.erebus.json", () -> loaded("erebus"));
+            put("mixins.mods.extrautilities.breakcreativemill.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utFixCreativeMillHarvestability);
+            put("mixins.mods.extrautilities.dupes.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDuplicationFixesToggle);
+            put("mixins.mods.extrautilities.mutabledrops.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utMutableBlockDrops);
+            put("mixins.mods.forestry.cocoa.json", () -> loaded("forestry"));
+            put("mixins.mods.forestry.dupes.json", () -> loaded("forestry") && UTConfigMods.FORESTRY.utFOCocoaBeansToggle);
+            put("mixins.mods.forestry.extratrees.json", () -> loaded("forestry") && UTConfigMods.FORESTRY.utDuplicationFixesToggle);
+            put("mixins.mods.forestry.json", () -> loaded("extratrees"));
+            put("mixins.mods.industrialcraft.dupes.json", () -> loaded("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle);
+            put("mixins.mods.industrialforegoing.dupes.json", () -> loaded("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utDuplicationFixesToggle);
+            put("mixins.mods.infernalmobs.json", () -> loaded("infernalmobs"));
+            put("mixins.mods.ironbackpacks.dupes.json", () -> loaded("ironbackpacks") && UTConfigMods.IRON_BACKPACKS.utDuplicationFixesToggle);
+            put("mixins.mods.itemstages.json", () -> loaded("itemstages"));
+            put("mixins.mods.mekanism.dupes.json", () -> loaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle);
+            put("mixins.mods.mobstages.json", () -> loaded("mobstages"));
+            put("mixins.mods.mrtjpcore.json", () -> loaded("mrtjpcore") && UTConfigMods.MRTJPCORE.utMemoryLeakFixToggle);
+            put("mixins.mods.netherchest.dupes.json", () -> loaded("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle);
+            put("mixins.mods.netherrocks.json", () -> loaded("netherrocks"));
+            put("mixins.mods.nuclearcraft.json", () -> loaded("nuclearcraft"));
+            put("mixins.mods.quark.dupes.json", () -> loaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
+            put("mixins.mods.reskillable.json", () -> loaded("reskillable"));
+            put("mixins.mods.rftoolsdimensions.json", () -> loaded("rftoolsdim"));
+            put("mixins.mods.roost.contenttweaker.json", () -> loaded("contenttweaker"));
+            put("mixins.mods.simpledifficulty.json", () -> loaded("simpledifficulty"));
+            put("mixins.mods.spiceoflife.dupes.json", () -> loaded("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);
+            put("mixins.mods.tconstruct.json", () -> loaded("tconstruct"));
+            put("mixins.mods.tconstruct.oredictcache.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
+            put("mixins.mods.tconstruct.toolcustomization.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle);
+            put("mixins.mods.tconstruct.toolcustomization.plustic.json", () -> loaded("tconstruct") && loaded("plustic") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle);
+            put("mixins.mods.techreborn.json", () -> loaded("techreborn"));
+            put("mixins.mods.thaumcraft.dupes.json", () -> loaded("thaumcraft") && UTConfigMods.THAUMCRAFT.utDuplicationFixesToggle);
+            put("mixins.mods.thaumcraft.enderio.dupes.json", () -> loaded("thaumcraft") && loaded("enderio") && UTConfigMods.THAUMCRAFT.utDuplicationFixesToggle);
+            put("mixins.mods.thaumcraft.entities.server.json", () -> loaded("thaumcraft"));
+            put("mixins.mods.thaumcraft.foci.focuseffects.json", () -> loaded("thaumcraft"));
+            put("mixins.mods.thaumcraft.foci.focusmediums.json", () -> loaded("thaumcraft"));
+            put("mixins.mods.thaumcraft.json", () -> loaded("thaumcraft"));
+            put("mixins.mods.thaumicwonders.dupes.json", () -> loaded("thaumicwonders") && UTConfigMods.THAUMIC_WONDERS.utDuplicationFixesToggle);
+            put("mixins.mods.thefarlanders.dupes.json", () -> loaded("farlanders") && UTConfigMods.THE_FARLANDERS.utDuplicationFixesToggle);
+            put("mixins.mods.thermalexpansion.dupes.json", () -> loaded("thermalexpansion"));
+            put("mixins.mods.thermalexpansion.json", () -> loaded("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle);
+            put("mixins.mods.tinyprogressions.dupes.json", () -> loaded("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle);
+        }
+    });
+
+    private static boolean loaded(String modid)
+    {
+        return Loader.isModLoaded(modid);
+    }
+
     @Override
     public List<String> getMixinConfigs()
     {
         List<String> configs = new ArrayList<>();
-        // CLIENT ONLY
         if (UTLoadingPlugin.isClient)
         {
-            configs.add("mixins.mods.cbmultipart.client.json");
-            configs.add("mixins.mods.compactmachines.json");
-            configs.add("mixins.mods.crafttweaker.json");
-            configs.add("mixins.mods.hwyla.json");
-            configs.add("mixins.mods.modularrouters.json");
-            configs.add("mixins.mods.roost.json");
-            configs.add("mixins.mods.storagedrawers.client.json");
-            configs.add("mixins.mods.thaumcraft.entities.client.json");
+            configs.addAll(clientsideMixinConfigs.keySet());
         }
-        // COMMON
-        configs.add("mixins.mods.aoa3.json");
-        configs.add("mixins.mods.abyssalcraft.json");
-        configs.add("mixins.mods.actuallyadditions.dupes.json");
-        configs.add("mixins.mods.actuallyadditions.json");
-        configs.add("mixins.mods.arcanearchives.dupes.json");
-        configs.add("mixins.mods.biomesoplenty.json");
-        configs.add("mixins.mods.bloodmagic.dupes.json");
-        configs.add("mixins.mods.bloodmagic.json");
-        configs.add("mixins.mods.botania.dupes.json");
-        configs.add("mixins.mods.botania.json");
-        configs.add("mixins.mods.cbmultipart.json");
-        configs.add("mixins.mods.ceramics.json");
-        configs.add("mixins.mods.chisel.tcomplement.dupes.json");
-        configs.add("mixins.mods.cofhcore.json");
-        configs.add("mixins.mods.collective.json");
-        configs.add("mixins.mods.cqrepoured.json");
-        configs.add("mixins.mods.effortlessbuilding.json");
-        configs.add("mixins.mods.elementarystaffs.json");
-        configs.add("mixins.mods.elenaidodge2.json");
-        configs.add("mixins.mods.epicsiegemod.json");
-        configs.add("mixins.mods.erebus.json");
-        configs.add("mixins.mods.extrautilities.breakcreativemill.json");
-        configs.add("mixins.mods.extrautilities.mutabledrops.json");
-        configs.add("mixins.mods.extrautilities.dupes.json");
-        configs.add("mixins.mods.forestry.cocoa.json");
-        configs.add("mixins.mods.forestry.dupes.json");
-        configs.add("mixins.mods.forestry.extratrees.json");
-        configs.add("mixins.mods.forestry.json");
-        configs.add("mixins.mods.industrialcraft.dupes.json");
-        configs.add("mixins.mods.industrialforegoing.dupes.json");
-        configs.add("mixins.mods.infernalmobs.json");
-        configs.add("mixins.mods.ironbackpacks.dupes.json");
-        configs.add("mixins.mods.itemstages.json");
-        configs.add("mixins.mods.mekanism.dupes.json");
-        configs.add("mixins.mods.mobstages.json");
-        configs.add("mixins.mods.mrtjpcore.json");
-        configs.add("mixins.mods.netherchest.dupes.json");
-        configs.add("mixins.mods.netherrocks.json");
-        configs.add("mixins.mods.nuclearcraft.json");
-        configs.add("mixins.mods.quark.dupes.json");
-        configs.add("mixins.mods.reskillable.json");
-        configs.add("mixins.mods.rftoolsdimensions.json");
-        configs.add("mixins.mods.roost.contenttweaker.json");
-        configs.add("mixins.mods.simpledifficulty.json");
-        configs.add("mixins.mods.spiceoflife.dupes.json");
-        configs.add("mixins.mods.tconstruct.json");
-        configs.add("mixins.mods.tconstruct.toolcustomization.json");
-        configs.add("mixins.mods.tconstruct.toolcustomization.plustic.json");
-        configs.add("mixins.mods.tconstruct.oredictcache.json");
-        configs.add("mixins.mods.techreborn.json");
-        configs.add("mixins.mods.thaumcraft.dupes.json");
-        configs.add("mixins.mods.thaumcraft.enderio.dupes.json");
-        configs.add("mixins.mods.thaumcraft.entities.server.json");
-        configs.add("mixins.mods.thaumcraft.foci.focuseffects.json");
-        configs.add("mixins.mods.thaumcraft.foci.focusmediums.json");
-        configs.add("mixins.mods.thaumcraft.json");
-        configs.add("mixins.mods.thaumicwonders.dupes.json");
-        configs.add("mixins.mods.thefarlanders.dupes.json");
-        configs.add("mixins.mods.thermalexpansion.dupes.json");
-        configs.add("mixins.mods.thermalexpansion.json");
-        configs.add("mixins.mods.tinyprogressions.dupes.json");
+        configs.addAll(commonMixinConfigs.keySet());
         return configs;
     }
 
     @Override
     public boolean shouldMixinConfigQueue(String mixinConfig)
     {
-        if (UTLoadingPlugin.isClient)
-        {
-            switch (mixinConfig)
-            {
-                case "mixins.mods.cbmultipart.client.json":
-                    return Loader.isModLoaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle;
-                case "mixins.mods.compactmachines.json":
-                    return Loader.isModLoaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle;
-                case "mixins.mods.crafttweaker.json":
-                    return Loader.isModLoaded("crafttweaker");
-                case "mixins.mods.hwyla.json":
-                    return Loader.isModLoaded("waila");
-                case "mixins.mods.modularrouters.json":
-                    return Loader.isModLoaded("modularrouters") && UTConfigMods.MODULAR_ROUTERS.utParticleThreadToggle;
-                case "mixins.mods.roost.json":
-                    return Loader.isModLoaded("roost") && Loader.isModLoaded("contenttweaker");
-                case "mixins.mods.storagedrawers.client.json":
-                    return Loader.isModLoaded("storagedrawers");
-                case "mixins.mods.thaumcraft.entities.client.json":
-                    return Loader.isModLoaded("thaumcraft");
-            }
-        }
-        switch (mixinConfig)
-        {
-            case "mixins.mods.aoa3.json":
-                return Loader.isModLoaded("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle;
-            case "mixins.mods.abyssalcraft.json":
-                return Loader.isModLoaded("abyssalcraft");
-            case "mixins.mods.actuallyadditions.dupes.json":
-                return Loader.isModLoaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle;
-            case "mixins.mods.actuallyadditions.json":
-                return Loader.isModLoaded("actuallyadditions");
-            case "mixins.mods.arcanearchives.dupes.json":
-                return Loader.isModLoaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle;
-            case "mixins.mods.biomesoplenty.json":
-                return Loader.isModLoaded("biomesoplenty");
-            case "mixins.mods.bloodmagic.json":
-                return Loader.isModLoaded("bloodmagic");
-            case "mixins.mods.bloodmagic.dupes.json":
-                return Loader.isModLoaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle;
-            case "mixins.mods.botania.json":
-                return Loader.isModLoaded("botania");
-            case "mixins.mods.botania.dupes.json":
-                return Loader.isModLoaded("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle;
-            case "mixins.mods.cbmultipart.json":
-                return Loader.isModLoaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle;
-            case "mixins.mods.ceramics.json":
-                return Loader.isModLoaded("ceramics");
-            case "mixins.mods.cofhcore.json":
-                return Loader.isModLoaded("cofhcore");
-            case "mixins.mods.collective.json":
-                return Loader.isModLoaded("collective");
-            case "mixins.mods.cqrepoured.json":
-                return Loader.isModLoaded("cqrepoured");
-            case "mixins.mods.effortlessbuilding.json":
-                return Loader.isModLoaded("effortlessbuilding");
-            case "mixins.mods.elementarystaffs.json":
-                return Loader.isModLoaded("element");
-            case "mixins.mods.elenaidodge2.json":
-                return Loader.isModLoaded("elenaidodge2");
-            case "mixins.mods.epicsiegemod.json":
-                return Loader.isModLoaded("epicsiegemod");
-            case "mixins.mods.erebus.json":
-                return Loader.isModLoaded("erebus");
-            case "mixins.mods.extrautilities.breakcreativemill.json":
-                return Loader.isModLoaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utFixCreativeMillHarvestability;
-            case "mixins.mods.extrautilities.mutabledrops.json":
-                return Loader.isModLoaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utMutableBlockDrops;
-            case "mixins.mods.extrautilities.dupes.json":
-                return Loader.isModLoaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDuplicationFixesToggle;
-            case "mixins.mods.forestry.json":
-                return Loader.isModLoaded("forestry");
-            case "mixins.mods.forestry.cocoa.json":
-                return Loader.isModLoaded("forestry") && UTConfigMods.FORESTRY.utFOCocoaBeansToggle;
-            case "mixins.mods.forestry.dupes.json":
-                return Loader.isModLoaded("forestry") && UTConfigMods.FORESTRY.utDuplicationFixesToggle;
-            case "mixins.mods.forestry.extratrees.json":
-                return Loader.isModLoaded("extratrees");
-            case "mixins.mods.industrialcraft.dupes.json":
-                return Loader.isModLoaded("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle;
-            case "mixins.mods.industrialforegoing.dupes.json":
-                return Loader.isModLoaded("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utDuplicationFixesToggle;
-            case "mixins.mods.infernalmobs.json":
-                return Loader.isModLoaded("infernalmobs");
-            case "mixins.mods.ironbackpacks.dupes.json":
-                return Loader.isModLoaded("ironbackpacks") && UTConfigMods.IRON_BACKPACKS.utDuplicationFixesToggle;
-            case "mixins.mods.itemstages.json":
-                return Loader.isModLoaded("itemstages");
-            case "mixins.mods.mekanism.dupes.json":
-                return Loader.isModLoaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle;
-            case "mixins.mods.mobstages.json":
-                return Loader.isModLoaded("mobstages");
-            case "mixins.mods.mrtjpcore.json":
-                return Loader.isModLoaded("mrtjpcore") && UTConfigMods.MRTJPCORE.utMemoryLeakFixToggle;
-            case "mixins.mods.netherchest.dupes.json":
-                return Loader.isModLoaded("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle;
-            case "mixins.mods.netherrocks.json":
-                return Loader.isModLoaded("netherrocks");
-            case "mixins.mods.nuclearcraft.json":
-                return Loader.isModLoaded("nuclearcraft");
-            case "mixins.mods.quark.dupes.json":
-                return Loader.isModLoaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle;
-            case "mixins.mods.reskillable.json":
-                return Loader.isModLoaded("reskillable");
-            case "mixins.mods.rftoolsdimensions.json":
-                return Loader.isModLoaded("rftoolsdim");
-            case "mixins.mods.roost.contenttweaker.json":
-                return Loader.isModLoaded("contenttweaker");
-            case "mixins.mods.simpledifficulty.json":
-                return Loader.isModLoaded("simpledifficulty");
-            case "mixins.mods.spiceoflife.dupes.json":
-                return Loader.isModLoaded("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle;
-            case "mixins.mods.chisel.tcomplement.dupes.json":
-                return Loader.isModLoaded("chisel") && Loader.isModLoaded("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle;
-            case "mixins.mods.techreborn.json":
-                return Loader.isModLoaded("techreborn");
-            case "mixins.mods.thaumcraft.json":
-            case "mixins.mods.thaumcraft.foci.focuseffects.json":
-            case "mixins.mods.thaumcraft.foci.focusmediums.json":
-            case "mixins.mods.thaumcraft.entities.server.json":
-                return Loader.isModLoaded("thaumcraft");
-            case "mixins.mods.thaumcraft.dupes.json":
-                return Loader.isModLoaded("thaumcraft") && UTConfigMods.THAUMCRAFT.utDuplicationFixesToggle;
-            case "mixins.mods.thaumcraft.enderio.dupes.json":
-                return Loader.isModLoaded("thaumcraft") && Loader.isModLoaded("enderio") && UTConfigMods.THAUMCRAFT.utDuplicationFixesToggle;
-            case "mixins.mods.thaumicwonders.dupes.json":
-                return Loader.isModLoaded("thaumicwonders") && UTConfigMods.THAUMIC_WONDERS.utDuplicationFixesToggle;
-            case "mixins.mods.thefarlanders.dupes.json":
-                return Loader.isModLoaded("farlanders") && UTConfigMods.THE_FARLANDERS.utDuplicationFixesToggle;
-            case "mixins.mods.thermalexpansion.json":
-                return Loader.isModLoaded("thermalexpansion");
-            case "mixins.mods.thermalexpansion.dupes.json":
-                return Loader.isModLoaded("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle;
-            case "mixins.mods.tconstruct.json":
-                return Loader.isModLoaded("tconstruct");
-            case "mixins.mods.tconstruct.toolcustomization.json":
-                return Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle;
-            case "mixins.mods.tconstruct.toolcustomization.plustic.json":
-                return Loader.isModLoaded("tconstruct") && Loader.isModLoaded("plustic") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle;
-            case "mixins.mods.tconstruct.oredictcache.json":
-                return Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle;
-            case "mixins.mods.tinyprogressions.dupes.json":
-                return Loader.isModLoaded("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle;
-        }
-        return true;
+        Supplier<Boolean> sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : null;
+        Supplier<Boolean> commonSupplier = commonMixinConfigs.get(mixinConfig);
+        return sidedSupplier != null ? sidedSupplier.get() : commonSupplier == null || commonSupplier.get();
     }
 }
