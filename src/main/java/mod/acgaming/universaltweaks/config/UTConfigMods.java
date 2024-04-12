@@ -119,6 +119,10 @@ public class UTConfigMods
     @Config.Name("Mob Stages")
     public static final MobStagesCategory MOB_STAGES = new MobStagesCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.modularrouters")
+    @Config.Name("Modular Routers")
+    public static final ModularRoutersCategory MODULAR_ROUTERS = new ModularRoutersCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.mrtjpcore")
     @Config.Name("MrTJPCore")
     public static final MrTJPCoreCategory MRTJPCORE = new MrTJPCoreCategory();
@@ -508,6 +512,14 @@ public class UTConfigMods
         @Config.Name("Spawning Rules Fixes")
         @Config.Comment("Fixes mob replacement ignoring entity spawning rules")
         public boolean utSpawningRules = true;
+    }
+
+    public static class ModularRoutersCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Particle Thread Fix")
+        @Config.Comment("Fixes particles being added from the wrong thread which corrupted the particle manager")
+        public boolean utParticleThreadToggle = true;
     }
 
     public static class MrTJPCoreCategory

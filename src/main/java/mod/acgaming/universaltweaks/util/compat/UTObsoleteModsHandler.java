@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Loader;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import net.minecraftforge.fml.common.ModContainer;
 
 public class UTObsoleteModsHandler
@@ -142,25 +143,13 @@ public class UTObsoleteModsHandler
         }
 
         // Mods checked by class
-        if (isClassLoaded("com.chocohead.biab.BornInABarn")) messages.add("Born in a Barn");
-        if (isClassLoaded("io.github.jikuja.LocaleTweaker") && UTConfigBugfixes.MISC.utLocaleToggle) messages.add("LocaleFixer");
-        if (isClassLoaded("com.cleanroommc.blockdelayremover.BlockDelayRemoverCore") && UTConfigTweaks.BLOCKS.utBlockHitDelay != 5) messages.add("Block Delay Remover");
-        if (isClassLoaded("io.github.barteks2x.chunkgenlimiter.ChunkGenLimitMod") && UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) messages.add("Chunk Generation Limiter");
+        if (UTReflectionUtil.isClassLoaded("com.chocohead.biab.BornInABarn")) messages.add("Born in a Barn");
+        if (UTReflectionUtil.isClassLoaded("io.github.jikuja.LocaleTweaker") && UTConfigBugfixes.MISC.utLocaleToggle) messages.add("LocaleFixer");
+        if (UTReflectionUtil.isClassLoaded("com.cleanroommc.blockdelayremover.BlockDelayRemoverCore") && UTConfigTweaks.BLOCKS.utBlockHitDelay != 5) messages.add("Block Delay Remover");
+        if (UTReflectionUtil.isClassLoaded("io.github.barteks2x.chunkgenlimiter.ChunkGenLimitMod") && UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) messages.add("Chunk Generation Limiter");
         messages.add("");
         messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning3").getFormattedText());
         return messages;
     }
 
-    private static boolean isClassLoaded(String className)
-    {
-        try
-        {
-            Class.forName(className);
-            return true;
-        }
-        catch (ClassNotFoundException ignored)
-        {
-            return false;
-        }
-    }
 }

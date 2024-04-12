@@ -185,6 +185,7 @@ dependencies {
     compileOnly 'curse.maven:industrialcraft-242638:3078604'
     compileOnly 'curse.maven:ironbackpacks-227049:2564573'
     compileOnly 'curse.maven:mekanism-268560:2835175'
+    compileOnly 'curse.maven:modular-routers-250294:2954953'
     compileOnly 'curse.maven:mrtjpcore-229002:2735197'
     compileOnly 'curse.maven:netherchest-268888:2655413'
     compileOnly 'curse.maven:netherrocks-226140:2628297'
@@ -203,7 +204,7 @@ dependencies {
     compileOnly 'curse.maven:tinkerscomplement-272671:2843439'
     compileOnly 'curse.maven:tinyprogressions-250850:2721018'
     compileOnly 'maven.modrinth:industrial-foregoing:1.12.13-237'
-    // implementation 'TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal'
+    // runtimeOnly 'TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal'
 
     if (project.use_mixins.toBoolean()) {
         String mixin = modUtils.enableMixins("zone.rong:mixinbooter:9.1", "universaltweaks.refmap.json")

@@ -13,6 +13,7 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
 @IFMLLoadingPlugin.Name("UniversalTweaksCore")
@@ -179,7 +180,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.performance.autosave.json", () -> UTConfigTweaks.PERFORMANCE.utAutoSaveInterval != 900);
             put("mixins.tweaks.performance.craftingcache.json", () -> UTConfigTweaks.PERFORMANCE.utCraftingCacheToggle);
             put("mixins.tweaks.performance.dyeblending.json", () -> UTConfigTweaks.PERFORMANCE.utDyeBlendingToggle);
+            put("mixins.tweaks.performance.entityradiuscheck.lesscollisions.json", () -> UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle && UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utLessCollisionsToggle);
+            put("mixins.tweaks.performance.entityradiuscheck.reducesearchsize.json", () -> UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle && UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeToggle);
             put("mixins.tweaks.performance.oredictionarycheck.json", () -> UTConfigTweaks.PERFORMANCE.utOreDictionaryCheckToggle);
+            put("mixins.tweaks.performance.pathfinding.json", () -> UTConfigTweaks.PERFORMANCE.utPathfindingChunkCacheFixToggle);
             put("mixins.tweaks.performance.prefixcheck.json", () -> UTConfigTweaks.PERFORMANCE.utPrefixCheckToggle);
             put("mixins.tweaks.performance.redstone.json", () -> UTConfigTweaks.PERFORMANCE.utRedstoneLightingToggle);
             put("mixins.tweaks.performance.texturemapcheck.json", () -> UTConfigTweaks.PERFORMANCE.utTextureMapCheckToggle);
@@ -200,33 +204,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             Locale.setDefault(Locale.ENGLISH);
         }
 
-        try
-        {
-            Class.forName("com.therandomlabs.randompatches.core.RPCore");
-            randomPatchesLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
-
-        try
-        {
-            Class.forName("meldexun.renderlib.RenderLib");
-            renderLibLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
-
-        try
-        {
-            Class.forName("org.spongepowered.mod.util.CompatibilityException");
-            spongeForgeLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
-
-        try
-        {
-            Class.forName("net.darkhax.surge.core.SurgeLoadingPlugin");
-            surgeLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
+        randomPatchesLoaded = UTReflectionUtil.isClassLoaded("com.therandomlabs.randompatches.core.RPCore");
+        renderLibLoaded = UTReflectionUtil.isClassLoaded("meldexun.renderlib.RenderLib");
+        spongeForgeLoaded = UTReflectionUtil.isClassLoaded("org.spongepowered.mod.util.CompatibilityException");
+        surgeLoaded = UTReflectionUtil.isClassLoaded("net.darkhax.surge.core.SurgeLoadingPlugin");
     }
 
     @Override

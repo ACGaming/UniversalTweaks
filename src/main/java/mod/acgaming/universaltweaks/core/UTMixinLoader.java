@@ -21,6 +21,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.compactmachines.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
             put("mixins.mods.crafttweaker.json", () -> loaded("crafttweaker"));
             put("mixins.mods.hwyla.json", () -> loaded("waila"));
+            put("mixins.mods.modularrouters.json", () -> loaded("modularrouters") && UTConfigMods.MODULAR_ROUTERS.utParticleThreadToggle);
             put("mixins.mods.roost.json", () -> loaded("roost") && loaded("contenttweaker"));
             put("mixins.mods.storagedrawers.client.json", () -> loaded("storagedrawers"));
             put("mixins.mods.thaumcraft.entities.client.json", () -> loaded("thaumcraft"));

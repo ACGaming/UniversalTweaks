@@ -134,6 +134,10 @@ All changes are toggleable via config files.
 * **Easy Breeding:** Enables easy breeding of animals by tossing food on the ground
 * **End Crystal Placing:** Allows placing End Crystals without requiring Obsidian or Bedrock below
 * **End Portal Parallax:** Re-implements parallax rendering of the end portal from 1.11 and older
+* **Entity Radius Check**
+    * These tweaks are only effective if you have mod(s) that increase `World.MAX_ENTITY_RADIUS`! (Lycanites Mobs, Advanced Rocketry, Immersive Railroading, etc.)
+    * Reduces the search size of various AABB functions for specified entity types to improve performance
+    * Reduces size of collision checks for most vanilla and specified entity types to improve performance
 * **Explosion Block Drop Chance:** Determines the numerator of the block drop formula on explosions
 * **Falling Block Lifespan:** Determines how long falling blocks remain in ticks until they are dropped under normal circumstances
 * **Fast Dye Blending:** Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry
@@ -174,6 +178,7 @@ All changes are toggleable via config files.
 * **No Golems:** Disables the manual creation of golems and withers
 * **No Leftover Breath Bottles:** Disables dragon's breath from leaving off empty bottles when a stack is brewed with
 * **No Night Vision Flash:** Disables the flashing effect when the night vision potion effect is about to run out
+* **No Pathfinding Chunk Loading:** Disables mob pathfinding from loading new/unloaded chunks when building chunk caches to improve performance
 * **No Potion Shift:** Disables the inventory shift when potion effects are active
 * **No Portal Spawning:** Prevents zombie pigmen spawning from nether portals
 * **No Redstone Lighting:** Disables lighting of active redstone, repeaters, and comparators to improve performance
@@ -290,6 +295,8 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Mob Stages**
     * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
+* **Modular Routers**
+    * **Particle Thread Fix:** Fixes particles being added from the wrong thread which corrupted the particle manager
 * **MrTJPCore**
     * **Memory Leak Fix:** Fixes a memory leak associated with EntityPlayer
 * **Nether Chest**
