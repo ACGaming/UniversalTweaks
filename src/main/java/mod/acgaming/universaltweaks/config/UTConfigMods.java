@@ -390,6 +390,11 @@ public class UTConfigMods
         @Config.Name("Preserved Blocks Fix")
         @Config.Comment("Prevents HWYLA/TOP crashes with preserved blocks")
         public boolean utEBPreservedBlocksToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Quake Hammer Texture")
+        @Config.Comment("Fixes the Quake Hammer using the incorrect config option to control its size")
+        public boolean utFixQuakeHammerTexture = true;
     }
 
     public static class ExtraUtilitiesCategory

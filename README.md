@@ -341,6 +341,7 @@ All changes are toggleable via config files.
     * **Memory Leak Fix:** Fixes a client-side memory leak when wearing Void Fortress armor
 * **The Erebus**
     * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
+    * **Fix Quake Hammer Texture:** Fixes the Quake Hammer using the incorrect config option to control its size
 * **The Farlanders**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Thermal Expansion**
