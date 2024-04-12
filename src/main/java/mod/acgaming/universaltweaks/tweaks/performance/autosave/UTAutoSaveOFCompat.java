@@ -12,6 +12,7 @@ import net.minecraft.launchwrapper.Launch;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
+import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 
 public class UTAutoSaveOFCompat
 {
@@ -20,9 +21,9 @@ public class UTAutoSaveOFCompat
     public static void updateOFConfig()
     {
         if (!UTLoadingPlugin.isClient) return;
+        if (!UTReflectionUtil.isClassLoaded("optifine.OptiFineTweaker")) return;
         try
         {
-            Class.forName("optifine.OptiFineTweaker");
             UniversalTweaks.LOGGER.info("OptiFine detected, updating config file...");
 
             Path ofConfigPath = Paths.get(rootFolder + File.separator + "optionsof.txt");

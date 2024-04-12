@@ -14,6 +14,7 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
 @IFMLLoadingPlugin.Name("UniversalTweaksCore")
@@ -38,33 +39,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             Locale.setDefault(Locale.ENGLISH);
         }
 
-        try
-        {
-            Class.forName("com.therandomlabs.randompatches.core.RPCore");
-            randomPatchesLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
-
-        try
-        {
-            Class.forName("meldexun.renderlib.RenderLib");
-            renderLibLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
-
-        try
-        {
-            Class.forName("org.spongepowered.mod.util.CompatibilityException");
-            spongeForgeLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
-
-        try
-        {
-            Class.forName("net.darkhax.surge.core.SurgeLoadingPlugin");
-            surgeLoaded = true;
-        }
-        catch (ClassNotFoundException ignored) {}
+        randomPatchesLoaded = UTReflectionUtil.isClassLoaded("com.therandomlabs.randompatches.core.RPCore");
+        renderLibLoaded = UTReflectionUtil.isClassLoaded("meldexun.renderlib.RenderLib");
+        spongeForgeLoaded = UTReflectionUtil.isClassLoaded("org.spongepowered.mod.util.CompatibilityException");
+        surgeLoaded = UTReflectionUtil.isClassLoaded("net.darkhax.surge.core.SurgeLoadingPlugin");
     }
 
     @Override
@@ -250,7 +228,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         configs.add("mixins.tweaks.performance.autosave.json");
         configs.add("mixins.tweaks.performance.craftingcache.json");
         configs.add("mixins.tweaks.performance.dyeblending.json");
+        configs.add("mixins.tweaks.performance.entityradiuscheck.lesscollisions.json");
+        configs.add("mixins.tweaks.performance.entityradiuscheck.reducesearchsize.json");
         configs.add("mixins.tweaks.performance.oredictionarycheck.json");
+        configs.add("mixins.tweaks.performance.pathfinding.json");
         configs.add("mixins.tweaks.performance.prefixcheck.json");
         configs.add("mixins.tweaks.performance.redstone.json");
         configs.add("mixins.tweaks.performance.texturemapcheck.json");
@@ -547,8 +528,14 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return UTConfigTweaks.PERFORMANCE.utCraftingCacheToggle;
             case "mixins.tweaks.performance.dyeblending.json":
                 return UTConfigTweaks.PERFORMANCE.utDyeBlendingToggle;
+            case "mixins.tweaks.performance.entityradiuscheck.lesscollisions.json":
+                return UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle && UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utLessCollisionsToggle;
+            case "mixins.tweaks.performance.entityradiuscheck.reducesearchsize.json":
+                return UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle && UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeToggle;
             case "mixins.tweaks.performance.oredictionarycheck.json":
                 return UTConfigTweaks.PERFORMANCE.utOreDictionaryCheckToggle;
+            case "mixins.tweaks.performance.pathfinding.json":
+                return UTConfigTweaks.PERFORMANCE.utPathfindingChunkCacheFixToggle;
             case "mixins.tweaks.performance.prefixcheck.json":
                 return UTConfigTweaks.PERFORMANCE.utPrefixCheckToggle;
             case "mixins.tweaks.performance.redstone.json":

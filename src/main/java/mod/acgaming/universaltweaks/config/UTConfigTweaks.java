@@ -21,6 +21,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePoti
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
+import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
 
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
 public class UTConfigTweaks
@@ -1686,6 +1687,10 @@ public class UTConfigTweaks
 
     public static class PerformanceCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.performance.entityradiuscheck")
+        @Config.Name("Entity Radius Check")
+        public final EntityRadiusCheckCategory ENTITY_RADIUS_CHECK = new EntityRadiusCheckCategory();
+
         @Config.RequiresMcRestart
         @Config.Name("Auto Save Interval")
         @Config.Comment("Determines the interval in ticks between world auto saves")
@@ -1756,6 +1761,11 @@ public class UTConfigTweaks
         public boolean utTextureMapCheckToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("No Pathfinding Chunk Loading")
+        @Config.Comment("Disables mob pathfinding from loading new/unloaded chunks when building chunk caches")
+        public boolean utPathfindingChunkCacheFixToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Redstone Lighting")
         @Config.Comment("Disables lighting of active redstone, repeaters, and comparators to improve performance")
         public boolean utRedstoneLightingToggle = false;
@@ -1764,6 +1774,49 @@ public class UTConfigTweaks
         @Config.Name("Uncap FPS")
         @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
         public boolean utUncapFPSToggle = true;
+
+        public static class EntityRadiusCheckCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Entity Radius Check Toggle")
+            @Config.Comment
+                ({
+                    "Toggles all tweaks in this category",
+                    "IMPORTANT: These tweaks are only effective if you have mod(s) that increase World.MAX_ENTITY_RADIUS!",
+                    "(Lycanites Mobs, Advanced Rocketry, Immersive Railroading, etc.)"
+                })
+            public boolean utEntityRadiusCheckCategoryToggle = true;
+
+            @Config.Name("[2] Reduce Search Size Toggle")
+            @Config.Comment("Reduces the search size of various AABB functions for specified entity types")
+            public boolean utReduceSearchSizeToggle = true;
+
+            @Config.Name("[3] Reduce Search Size Targets")
+            @Config.Comment
+                ({
+                    "The entity types to reduce the search size for",
+                    "Syntax - modid:name"
+                })
+            public String[] utReduceSearchSizeTargets = new String[]
+                {
+                    "minecraft:item",
+                    "minecraft:player"
+                };
+
+            @Config.Name("[4] Less Collisions Toggle")
+            @Config.Comment("Reduces size of collision checks for most vanilla and specified entity types")
+            public boolean utLessCollisionsToggle = true;
+
+            @Config.Name("[5] Less Collisions Extra Targets")
+            @Config.Comment
+                ({
+                    "The extra entity types to reduce the size of collision checks for",
+                    "Syntax - modid:name;radius",
+                    "Vanilla ids aren't allowed because they are already included",
+                    "Most types should be specified with the vanilla default radius: 2.0"
+                })
+            public String[] utLessCollisionsExtraTargets = new String[]{};
+        }
     }
 
     public static class WorldCategory
@@ -1862,6 +1915,11 @@ public class UTConfigTweaks
                 if (MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
                 if (MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
+                if (PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle)
+                {
+                    if (PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeToggle) UTEntityRadiusCheck.initSearchTargets();
+                    if (PERFORMANCE.ENTITY_RADIUS_CHECK.utLessCollisionsToggle) UTEntityRadiusCheck.initCollisionTargets();
+                }
                 if (ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
                 if (ITEMS.utCustomUseDurations.length > 0) UTCustomUseDuration.initItemUseMaps();
                 if (ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
