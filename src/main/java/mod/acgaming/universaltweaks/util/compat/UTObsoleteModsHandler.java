@@ -76,6 +76,7 @@ public class UTObsoleteModsHandler
             put("ikwid", () -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlTutorialToggle);
             put("infwithmend", () -> UTConfigTweaks.ITEMS.INFINITY.utInfinityEnchantmentConflicts);
             put("insomniac", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
+            put("infinityworkswithallarrows", () -> UTConfigTweaks.ITEMS.INFINITY.utAllArrowsAreInfinite);
             put("inventoryspam", () -> UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle);
             put("keydescfix", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
             put("lanserverproperties", () -> UTConfigTweaks.MISC.utLANServerProperties);
