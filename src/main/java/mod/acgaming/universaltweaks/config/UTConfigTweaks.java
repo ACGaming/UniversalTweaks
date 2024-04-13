@@ -1023,6 +1023,10 @@ public class UTConfigTweaks
             @Config.Name("[2] Infinity Conflict")
             @Config.Comment("Allows the Infinity Enchantment to be combined with Mending")
             public boolean utInfinityEnchantmentConflicts = false;
+
+            @Config.Name("[3] Infinity Affects All Arrows")
+            @Config.Comment("Allows the Infinity Enchantment to apply to all arrows (e.g. Tipped Arrows)")
+            public boolean utAllArrowsAreInfinite = false;
         }
 
         public static class ItemEntitiesCategory
