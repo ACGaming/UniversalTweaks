@@ -98,6 +98,7 @@ All changes are toggleable via config files.
     * Prevents the fire animation overlay from being displayed when the player is immune to fire
 * **Better Harvest:** Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking
 * **Better Ignition:** Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them
+* **Better Ping Display:** Displays the ping in milliseconds of players when viewing the server list
 * **Better Placement:** Removes the delay between placing blocks
 * **Block Dispenser:** Allows dispensers to place blocks
 * **Block Hit Delay:** Sets the delay in ticks between breaking blocks
