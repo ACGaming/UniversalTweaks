@@ -888,6 +888,10 @@ public class UTConfigTweaks
         @Config.Name("Attack Cooldown")
         public final AttackCooldownCategory ATTACK_COOLDOWN = new AttackCooldownCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.items.infinity")
+        @Config.Name("Mending")
+        public final InfinityCategory INFINITY = new InfinityCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.items.itementities")
         @Config.Name("Item Entities")
         public final ItemEntitiesCategory ITEM_ENTITIES = new ItemEntitiesCategory();
@@ -922,10 +926,6 @@ public class UTConfigTweaks
         @Config.Name("No Leftover Breath Bottles")
         @Config.Comment("Disables dragon's breath from being a container item and leaving off empty bottles when a stack is brewed with")
         public boolean utLeftoverBreathBottleToggle = true;
-
-        @Config.Name("Bow Infinity")
-        @Config.Comment("Bows enchanted with Infinity no longer require arrows")
-        public boolean utBowInfinityToggle = true;
 
         @Config.Name("Custom Rarity")
         @Config.Comment
@@ -1012,6 +1012,17 @@ public class UTConfigTweaks
             @Config.Name("[3] Hide Attack Speed Tooltip")
             @Config.Comment("Hides attack speed tooltips of weapons")
             public boolean utAttackCooldownTooltips = true;
+        }
+
+        public static class InfinityCategory
+        {
+            @Config.Name("[1] Arrowless Infinity")
+            @Config.Comment("Bows enchanted with Infinity no longer require arrows")
+            public boolean utBowInfinityToggle = true;
+
+            @Config.Name("[2] Infinity Conflict")
+            @Config.Comment("Allows the Infinity Enchantment to be combined with Mending")
+            public boolean utInfinityEnchantmentConflicts = false;
         }
 
         public static class ItemEntitiesCategory

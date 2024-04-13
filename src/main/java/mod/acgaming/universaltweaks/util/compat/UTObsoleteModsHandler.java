@@ -35,7 +35,7 @@ public class UTObsoleteModsHandler
             put("blockfire", () -> UTConfigBugfixes.ENTITIES.utBlockFireToggle);
             put("blockoverlayfix", () -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
             put("bottomsugarcanharvest", () -> UTConfigTweaks.BLOCKS.utSugarCaneSize != 3);
-            put("bowinfinityfix", () -> UTConfigTweaks.ITEMS.utBowInfinityToggle);
+            put("bowinfinityfix", () -> UTConfigTweaks.ITEMS.INFINITY.utBowInfinityToggle);
             put("breedablekillerrabbit", () -> UTConfigTweaks.ENTITIES.utRabbitKillerChance > 0.0D);
             put("burnbabyburn", () -> UTConfigTweaks.ENTITIES.utBurningBabyZombiesToggle);
             put("chickensshed", () -> UTConfigTweaks.ENTITIES.CHICKEN_SHEDDING.utChickenSheddingToggle);
@@ -74,6 +74,7 @@ public class UTObsoleteModsHandler
             put("horsefallfix", () -> UTConfigBugfixes.ENTITIES.utHorseFallingToggle);
             put("horsestandstill", () -> UTConfigTweaks.ENTITIES.utSaddledWanderingToggle);
             put("ikwid", () -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlTutorialToggle);
+            put("infwithmend", () -> UTConfigTweaks.ITEMS.INFINITY.utInfinityEnchantmentConflicts);
             put("insomniac", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
             put("inventoryspam", () -> UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle);
             put("keydescfix", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
