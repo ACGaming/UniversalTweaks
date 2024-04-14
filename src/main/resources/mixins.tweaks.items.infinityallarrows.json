@@ -1,0 +1,7 @@
+{
+  "package": "mod.acgaming.universaltweaks.tweaks.items.bowinfinity.infinityallarrows.mixin",
+  "refmap": "universaltweaks.refmap.json",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": ["UTItemArrowMixin"]
+}

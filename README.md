@@ -102,7 +102,10 @@ All changes are toggleable via config files.
 * **Block Dispenser:** Allows dispensers to place blocks
 * **Block Hit Delay:** Sets the delay in ticks between breaking blocks
 * **Boat Speed:** Sets the acceleration value for controlling boats
-* **Bow Infinity Remedy:** Bows enchanted with Infinity no longer require arrows
+* **Infinity:**
+    * **Bow Infinity Remedy:** Bows enchanted with Infinity no longer require arrows
+    * **Mending and Infinity:** Allows the Infinity Enchantment to be combined with Mending
+    * **Infinity Affects All Arrows:** Allows the Infinity Enchantment to apply to all arrows (e.g. Tipped Arrows)
 * **Breakable Bedrock:** Allows customizable mining of bedrock
 * **Burning Baby Zombies:** Lets baby zombies burn in daylight as in Minecraft 1.13+
 * **Charged Creeper Spawning:** Sets the chance for creepers to spawn charged
