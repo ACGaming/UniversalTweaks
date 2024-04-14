@@ -53,6 +53,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.buttons.snooper.client.json", () -> UTConfigTweaks.MISC.utSnooperToggle);
             put("mixins.tweaks.misc.chat.compactmessage.json", () -> UTConfigTweaks.MISC.utCompactMessagesToggle);
             put("mixins.tweaks.misc.chat.maximumlines.json", () -> UTConfigTweaks.MISC.utChatLines != 100);
+            put("mixins.tweaks.misc.chat.keepsentmessages.json", () -> UTConfigTweaks.MISC.utKeepSentMessageHistory);
             put("mixins.tweaks.misc.commands.seed.json", () -> UTConfigTweaks.MISC.utCopyWorldSeedToggle);
             put("mixins.tweaks.misc.credits.json", () -> UTConfigTweaks.MISC.utSkipCreditsToggle);
             put("mixins.tweaks.misc.gui.keybindlistentry.json", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);

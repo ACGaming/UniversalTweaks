@@ -1261,6 +1261,11 @@ public class UTConfigTweaks
         public int utChatLines = 100;
 
         @Config.RequiresMcRestart
+        @Config.Name("Keep Sent Messages")
+        @Config.Comment("Don't clear sent message history on leaving the world")
+        public boolean utKeepSentMessageHistory = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Copy World Seed")
         @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
         public boolean utCopyWorldSeedToggle = false;

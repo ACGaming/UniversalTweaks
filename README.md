@@ -159,6 +159,7 @@ All changes are toggleable via config files.
 * **Incurable Potions:** Excludes potion effects from being curable with curative items like buckets of milk
 * **Infinite Music:** Lets background music play continuously without delays
 * **Item Entities:** Enables the modification of item entity properties
+* **Keep Sent Messages:** Don't clear sent message history on leaving the world
 * **LAN Server Properties:** Enhance the vanilla 'Open to LAN' GUI for listening port customization, removal of enforced authentication and more
 * **Lenient Paths:** Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)
 * **Lightning**
