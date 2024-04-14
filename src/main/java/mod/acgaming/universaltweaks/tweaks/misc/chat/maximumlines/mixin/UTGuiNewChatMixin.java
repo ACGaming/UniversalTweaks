@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.misc.chatlines.mixin;
+package mod.acgaming.universaltweaks.tweaks.misc.chat.maximumlines.mixin;
 
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.client.gui.GuiNewChat;

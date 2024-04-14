@@ -1,5 +1,5 @@
 {
-  "package": "mod.acgaming.universaltweaks.tweaks.misc.chatlines.mixin",
+  "package": "mod.acgaming.universaltweaks.tweaks.misc.chat.maximumlines.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
