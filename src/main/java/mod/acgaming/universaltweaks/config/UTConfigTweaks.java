@@ -1251,6 +1251,16 @@ public class UTConfigTweaks
         public boolean utPotionDurationToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Chat Lines")
+        @Config.Comment
+            ({
+                "Sets the maximum number of chat lines to display",
+                "100 is the vanilla default",
+                "0 or less functionally disables the chat"
+            })
+        public int utChatLines = 100;
+
+        @Config.RequiresMcRestart
         @Config.Name("Copy World Seed")
         @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
         public boolean utCopyWorldSeedToggle = false;

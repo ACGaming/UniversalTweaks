@@ -51,6 +51,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.buttons.anaglyph.json", () -> UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle);
             put("mixins.tweaks.misc.buttons.realms.json", () -> UTConfigTweaks.MISC.utRealmsButtonToggle && !randomPatchesLoaded);
             put("mixins.tweaks.misc.buttons.snooper.client.json", () -> UTConfigTweaks.MISC.utSnooperToggle);
+            put("mixins.tweaks.misc.chatlines.json", () -> UTConfigTweaks.MISC.utChatLines != 100);
             put("mixins.tweaks.misc.commands.seed.json", () -> UTConfigTweaks.MISC.utCopyWorldSeedToggle);
             put("mixins.tweaks.misc.credits.json", () -> UTConfigTweaks.MISC.utSkipCreditsToggle);
             put("mixins.tweaks.misc.gui.keybindlistentry.json", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
