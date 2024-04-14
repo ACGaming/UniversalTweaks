@@ -1703,6 +1703,10 @@ public class UTConfigTweaks
             @Config.Name("[8] Debug Logging")
             @Config.Comment("Enables debug logging to log class names of displayed toasts to the log")
             public boolean utToastNameLogging = false;
+
+            @Config.Name("[9] Clear Toast Keybind")
+            @Config.Comment("Enables a keybind (default: CTRL+0) to clear all active toasts")
+            public boolean utClearToastKeybind = true;
         }
     }
 

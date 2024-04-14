@@ -36,6 +36,8 @@ public class UTKeybindings extends KeyBinding
 
     public static void initialize()
     {
+        UTClearToastKeybind.createKeybind();
+
         for (Key key : keys)
         {
             key.getKey();
