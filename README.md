@@ -109,12 +109,14 @@ All changes are toggleable via config files.
 * **Breakable Bedrock:** Allows customizable mining of bedrock
 * **Burning Baby Zombies:** Lets baby zombies burn in daylight as in Minecraft 1.13+
 * **Charged Creeper Spawning:** Sets the chance for creepers to spawn charged
-* **Chat Lines:** Sets the maximum number of chat lines to display
+* **Chat:**
+  * **Chat Lines:** Sets the maximum number of chat lines to display
+  * **Compact Messages:** Removes duplicate messages and instead put a number behind the message how often it was repeated
+  * **Keep Sent Messages:** Don't clear sent message history on leaving the world
 * **Check Animated Models:** Improves model load times by checking if an animated model exists before trying to load it
 * **Chicken Shedding:** Allows chickens to have a chance to shed feathers (similarly to laying eggs)
 * **Chunk Gen Limit:** Limits maximum chunk generation per tick for improved server performance
 * **Cobweb Slowness:** Modifies the applied slowness factor when entities are moving in cobwebs
-* **Compact Messages:** Removes duplicate messages and instead put a number behind the message how often it was repeated
 * **Copy World Seed:** Enables clicking of `/seed` world seed in chat to copy to clipboard
 * **Crafting Cache:** Adds an IRecipe cache to improve recipe performance in large modpacks
 * **Creeper Confetti:** Replaces deadly creeper explosions with delightful confetti (with a configurable chance)
@@ -159,7 +161,6 @@ All changes are toggleable via config files.
 * **Incurable Potions:** Excludes potion effects from being curable with curative items like buckets of milk
 * **Infinite Music:** Lets background music play continuously without delays
 * **Item Entities:** Enables the modification of item entity properties
-* **Keep Sent Messages:** Don't clear sent message history on leaving the world
 * **LAN Server Properties:** Enhance the vanilla 'Open to LAN' GUI for listening port customization, removal of enforced authentication and more
 * **Lenient Paths:** Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)
 * **Lightning**
