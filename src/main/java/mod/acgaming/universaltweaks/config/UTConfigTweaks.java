@@ -1218,6 +1218,10 @@ public class UTConfigTweaks
         @Config.Name("Armor Curve")
         public final ArmorCurveCategory ARMOR_CURVE = new ArmorCurveCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.chat")
+        @Config.Name("Chat")
+        public final ChatCategory CHAT = new ChatCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.incurablepotions")
         @Config.Name("Incurable Potions")
         public final IncurablePotionsCategory INCURABLE_POTIONS = new IncurablePotionsCategory();
@@ -1249,21 +1253,6 @@ public class UTConfigTweaks
         @Config.Name("Accurate Potion Duration")
         @Config.Comment("Always displays the actual potion duration instead of `**:**`")
         public boolean utPotionDurationToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Chat Lines")
-        @Config.Comment
-            ({
-                "Sets the maximum number of chat lines to display",
-                "100 is the vanilla default",
-                "0 or less functionally disables the chat"
-            })
-        public int utChatLines = 100;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Keep Sent Messages")
-        @Config.Comment("Don't clear sent message history on leaving the world")
-        public boolean utKeepSentMessageHistory = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Copy World Seed")
@@ -1307,11 +1296,6 @@ public class UTConfigTweaks
         @Config.Name("Prevent Keybinds from Overflowing Screen")
         @Config.Comment("Always indent keybind entries from the screen edge, preventing them from overflowing off the left side when particularly long keybind names are present")
         public boolean utPreventKeybindingEntryOverflow = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Compact Messages")
-        @Config.Comment("Removes duplicate messages and instead put a number behind the message how often it was repeated")
-        public boolean utCompactMessagesToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Linear XP Amount")
@@ -1471,6 +1455,30 @@ public class UTConfigTweaks
             @Config.Comment("Enables debug logging for easier config validation")
             public boolean utArmorCurveLogging = false;
         }
+
+        public static class ChatCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Chat Lines")
+            @Config.Comment
+                ({
+                    "Sets the maximum number of chat lines to display",
+                    "100 is the vanilla default",
+                    "0 or less functionally disables the chat"
+                })
+            public int utChatLines = 100;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[2] Keep Sent Messages")
+            @Config.Comment("Don't clear sent message history on leaving the world")
+            public boolean utKeepSentMessageHistory = false;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[3] Compact Messages")
+            @Config.Comment("Removes duplicate messages and instead put a number behind the message how often it was repeated")
+            public boolean utCompactMessagesToggle = false;
+        }
+
 
         public static class IncurablePotionsCategory
         {

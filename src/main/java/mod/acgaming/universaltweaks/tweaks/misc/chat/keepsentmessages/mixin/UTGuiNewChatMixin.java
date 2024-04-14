@@ -13,7 +13,7 @@ public class UTGuiNewChatMixin
     @Inject(method = "clearChatMessages", at = @At(value = "INVOKE", target = "Ljava/util/List;clear()V", ordinal = 2), cancellable = true)
     public void utKeepSentMessageHistory(boolean clearHistory, CallbackInfo ci)
     {
-        if (!UTConfigTweaks.MISC.utKeepSentMessageHistory) return;
+        if (!UTConfigTweaks.MISC.CHAT.utKeepSentMessageHistory) return;
         ci.cancel();
     }
 }

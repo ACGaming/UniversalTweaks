@@ -13,7 +13,7 @@ public class UTGuiNewChatMixin
     public int utAdvancementToast(int original)
     {
         // Prevents negative config numbers generating an NPE
-        if (UTConfigTweaks.MISC.utChatLines < 0) return 0;
-        return UTConfigTweaks.MISC.utChatLines;
+        if (UTConfigTweaks.MISC.CHAT.utChatLines < 0) return 0;
+        return UTConfigTweaks.MISC.CHAT.utChatLines;
     }
 }

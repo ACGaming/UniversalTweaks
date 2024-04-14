@@ -50,7 +50,7 @@ public abstract class UTCompactMessageMixin
     @Inject(method = "setChatLine", at = @At("HEAD"))
     public void utCompactMessage(ITextComponent chatComponent, int chatLineId, int updateCounter, boolean displayOnly, CallbackInfo ci)
     {
-        if (!UTConfigTweaks.MISC.utCompactMessagesToggle) return;
+        if (!UTConfigTweaks.MISC.CHAT.utCompactMessagesToggle) return;
         int count = 1;
         int chatSize = MathHelper.floor(this.getChatWidth() / this.getChatScale());
         List<ITextComponent> splittedText = GuiUtilRenderComponents.splitText(chatComponent, chatSize, this.mc.fontRenderer, false, false);
