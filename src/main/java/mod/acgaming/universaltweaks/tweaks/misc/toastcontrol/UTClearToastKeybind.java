@@ -18,7 +18,7 @@ public class UTClearToastKeybind extends UTKeybindings.Key
 
     public static void createKeybind()
     {
-        if (UTConfigTweaks.MISC.TOAST_CONTROL.utClearToastKeybind) UTKeybindings.addKey(new UTClearToastKeybind());
+        if (UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlToggle && UTConfigTweaks.MISC.TOAST_CONTROL.utClearToastKeybind) UTKeybindings.addKey(new UTClearToastKeybind());
     }
 
     @SideOnly(Side.CLIENT)
