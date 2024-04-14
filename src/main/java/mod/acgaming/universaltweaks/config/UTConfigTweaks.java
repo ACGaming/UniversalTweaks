@@ -1697,6 +1697,31 @@ public class UTConfigTweaks
             @Config.Name("[5] Disable Tutorial Toasts")
             @Config.Comment("Determines if tutorial toasts are blocked. Blocks useless things like use WASD to move.")
             public boolean utToastControlTutorialToggle = true;
+
+            @Config.Name("[6] Toast Control List")
+            @Config.Comment
+                    ({
+                            "List of class names of Toasts to prevent displaying",
+                            "Behavior depends on the list mode",
+                            "Syntax: full class name"
+                    })
+            public String[] utToastControlClassList = new String[] {};
+
+            @Config.Name("[7] List Mode")
+            @Config.Comment
+                    ({
+                            "Blacklist Mode: Toast classes which can't be added to the queue, others can",
+                            "Whitelist Mode: Toast classes which can be added to the queue, others can't"
+                    })
+            public EnumLists utToastControlClassListMode = EnumLists.BLACKLIST;
+
+            @Config.Name("[8] Debug Logging")
+            @Config.Comment("Enables debug logging to log class names of displayed toasts to the log")
+            public boolean utToastNameLogging = false;
+
+            @Config.Name("[9] Clear Toast Keybind")
+            @Config.Comment("Enables a keybind (default: CTRL+0) to clear all active toasts")
+            public boolean utClearToastKeybind = true;
         }
     }
 

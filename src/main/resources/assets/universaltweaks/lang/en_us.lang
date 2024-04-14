@@ -3,6 +3,9 @@ msg.universaltweaks.obsoletemods.warning1=Universal Tweaks has replaced and impr
 msg.universaltweaks.obsoletemods.warning2=Therefore, the following mods are now incompatible with Universal Tweaks:
 msg.universaltweaks.obsoletemods.warning3=Consider removing them from your game or disabling the respective features.
 
+# KEYBINDS
+keybind.universaltweaks.clear_toasts=Clear Toasts
+
 # TOGGLE CHEATS
 btn.universaltweaks.cheats.enabled=Cheats: ON
 btn.universaltweaks.cheats.disabled=Cheats: OFF

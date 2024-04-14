@@ -55,6 +55,7 @@ import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFComp
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
 import mod.acgaming.universaltweaks.tweaks.world.stronghold.UTStronghold;
 import mod.acgaming.universaltweaks.tweaks.world.stronghold.worldgen.SafeStrongholdWorldGenerator;
+import mod.acgaming.universaltweaks.util.UTKeybindings;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
 import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
 import net.tardis.mod.proxy.ClientProxy;
@@ -163,6 +164,8 @@ public class UniversalTweaks
         if (UTConfigTweaks.MISC.utLANServerProperties) MinecraftForge.EVENT_BUS.register(UTLanServerProperties.class);
         if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) UTPickupNotificationOverlay.init();
         if (Loader.isModLoaded("botania")) MinecraftForge.EVENT_BUS.register(UTBotaniaFancySkybox.class);
+        UTKeybindings.initialize();
+        LOGGER.info(NAME + " client initialized");
     }
 
     @Mod.EventHandler
@@ -188,6 +191,7 @@ public class UniversalTweaks
         if (UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfigTweaks.MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
         if (UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlTutorialToggle) UTTutorialToast.utTutorialToast();
         if (Loader.isModLoaded("botania")) UTBotaniaFancySkybox.initDimList();
+        LOGGER.info(NAME + " client post-initialized");
     }
 
     @Mod.EventHandler
