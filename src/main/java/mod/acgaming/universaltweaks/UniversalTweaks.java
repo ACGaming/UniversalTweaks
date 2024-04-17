@@ -22,6 +22,7 @@ import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.abyssalcraft.UTAbyssalCraftEvents;
 import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
 import mod.acgaming.universaltweaks.mods.arcanearchives.UTArcaneArchivesEvents;
+import mod.acgaming.universaltweaks.mods.astralsorcery.UTClearOnChange;
 import mod.acgaming.universaltweaks.mods.bloodmagic.UTBloodMagicEvents;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.mods.cqrepoured.UTGoldenFeatherEvent;
@@ -163,6 +164,7 @@ public class UniversalTweaks
         if (UTConfigTweaks.MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
         if (UTConfigTweaks.MISC.utLANServerProperties) MinecraftForge.EVENT_BUS.register(UTLanServerProperties.class);
         if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) UTPickupNotificationOverlay.init();
+        if (Loader.isModLoaded("astralsorcery") && UTConfigMods.ASTRAL_SORCERY.utClearEffectsOnDimensionChange) MinecraftForge.EVENT_BUS.register(new UTClearOnChange());
         if (Loader.isModLoaded("botania")) MinecraftForge.EVENT_BUS.register(UTBotaniaFancySkybox.class);
         UTKeybindings.initialize();
         LOGGER.info(NAME + " client initialized");

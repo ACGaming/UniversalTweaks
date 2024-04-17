@@ -256,6 +256,10 @@ public class UTConfigMods
         @Config.Name("Sooty Marble Rendering Fix")
         @Config.Comment("Fixes Sooty Marble Pillar blocking the proper rendering of adjacent fluids due to inverted logic")
         public boolean utSootyMarbleRendering = true;
+
+        @Config.Name("Clear Particle Effects")
+        @Config.Comment("Fixes a bug where particle effects would continue to render after changing dimensions")
+        public boolean utClearEffectsOnDimensionChange = true;
     }
 
     public static class AOACategory
