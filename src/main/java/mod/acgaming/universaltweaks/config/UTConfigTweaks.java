@@ -1325,6 +1325,11 @@ public class UTConfigTweaks
         public boolean utPotionShiftToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Hide Personal Effect Particles")
+        @Config.Comment("Disables potion effect particles emitting from yourself")
+        public boolean utPoVEffectParticles = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Smelting XP")
         @Config.Comment("Disables the experience reward when smelting items in furnaces")
         public boolean utSmeltingXPToggle = false;
