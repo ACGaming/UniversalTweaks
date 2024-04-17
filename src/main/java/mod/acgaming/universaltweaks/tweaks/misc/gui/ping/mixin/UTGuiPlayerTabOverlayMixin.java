@@ -20,7 +20,7 @@ public abstract class UTGuiPlayerTabOverlayMixin
     @Unique
     private static final int PING_TEXT_RENDER_OFFSET = 13;
     @Unique
-    private static final int EXTRA_WIDTH = 37;
+    private static final String MAXIMUM_EXTRA_WIDTH_STRING = "9999ms";
 
     @Shadow
     @Final
@@ -41,7 +41,7 @@ public abstract class UTGuiPlayerTabOverlayMixin
     private int utAdjustTotalWidth(int original)
     {
         if (!UTConfigTweaks.MISC.utBetterPing) return original;
-        return original + EXTRA_WIDTH;
+        return original + mc.fontRenderer.getStringWidth(MAXIMUM_EXTRA_WIDTH_STRING) + 3;
     }
 
     @Inject(method = "drawPing", at = @At(value = "HEAD"))
