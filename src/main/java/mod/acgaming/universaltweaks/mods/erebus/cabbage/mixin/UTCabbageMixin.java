@@ -37,32 +37,10 @@ public abstract class UTCabbageMixin extends BlockCrops
     }
 
     @Override
-    public void getDrops(@Nonnull NonNullList<ItemStack> drops, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, @Nonnull IBlockState state, int fortune)
+    public int damageDropped(IBlockState blockState)
     {
-        if (!UTConfigMods.EREBUS.utCabbageDrop) return;
-        Random rand = world instanceof World ? ((World) world).rand : RANDOM;
-        int age = getAge(state);
-
-        int count = quantityDropped(state, 0, rand);
-        for (int i = 0; i < count; i++)
-        {
-            Item item = this.getItemDropped(state, rand, 0);
-            if (item != Items.AIR)
-            {
-                drops.add(new ItemStack(item, 1, ItemErebusFood.EnumFoodType.CABBAGE.ordinal()));
-            }
-        }
-
-        if (age >= getMaxAge())
-        {
-            for (int i = 0; i < 3 + fortune; ++i)
-            {
-                if (rand.nextInt(2 * getMaxAge()) <= age)
-                {
-                    drops.add(new ItemStack(this.getSeed(), 1, 0));
-                }
-            }
-        }
+        if (!UTConfigMods.EREBUS.utCabbageDrop) return 0;
+        return ItemErebusFood.EnumFoodType.CABBAGE.ordinal();
     }
 
     @ModifyReturnValue(method = "getCrop", at = @At("RETURN"))
