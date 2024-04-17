@@ -7,6 +7,7 @@ import net.minecraft.client.network.NetworkPlayerInfo;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
@@ -20,6 +21,7 @@ public abstract class UTGuiPlayerTabOverlayMixin
     @Final
     private Minecraft mc;
 
+    @Unique
     private static int utColorForTime(int responseTime)
     {
         if (responseTime <= 0) return 0xFFFFFF; // white
