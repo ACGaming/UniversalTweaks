@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // Courtesy of WaitingIdly
 @Mixin(value = BlockBlackMarble.class, remap = false)
-public abstract class BlockBlackMarbleMixin
+public abstract class UTBlockBlackMarbleMixin
 {
     // copies the implementation from BlockMarble because that code is written correctly.
     @Inject(method = "doesSideBlockRendering", at = @At("HEAD"), cancellable = true)
