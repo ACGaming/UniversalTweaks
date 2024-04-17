@@ -35,7 +35,7 @@ public abstract class UTCabbageMixin extends BlockCrops
     @Override
     public int damageDropped(IBlockState blockState)
     {
-        if (!UTConfigMods.EREBUS.utCabbageDrop) return 0;
+        if (!UTConfigMods.EREBUS.utCabbageDrop) return super.damageDropped(blockState);
         return ItemErebusFood.EnumFoodType.CABBAGE.ordinal();
     }
 
