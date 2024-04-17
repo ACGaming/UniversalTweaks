@@ -23,7 +23,7 @@ import java.util.List;
 @Mixin(value = BlockCabbage.class, remap = false)
 public abstract class UTCabbageMixin extends BlockCrops
 {
-    @Inject(method = "getDrops", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "getDrops", at = @At("HEAD"), cancellable = true)
     private void utOverrideDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune, CallbackInfoReturnable<List<ItemStack>> cir)
     {
         if (!UTConfigMods.EREBUS.utCabbageDrop) return;
