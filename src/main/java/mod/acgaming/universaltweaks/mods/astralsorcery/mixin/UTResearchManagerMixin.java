@@ -11,15 +11,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(value = ResearchManager.class, remap = false)
 public abstract class ResearchManagerMixin
 {
-    @Redirect(method = "informCraftingInfusionCompletion", at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;warn(Ljava/lang/String;)V"))
+    @Redirect(method = {"informCraftingInfusionCompletion", "informCraftingAltarCompletion"}, at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;warn(Ljava/lang/String;)V"))
     private static void utInformCraftingInfusionCompletion(Logger logger, String log)
-    {
-        if (!UTConfigMods.ASTRAL_SORCERY.utMissingPlayerLogLevelDowngrade) return;
-        logger.debug(log);
-    }
-
-    @Redirect(method = "informCraftingAltarCompletion", at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;warn(Ljava/lang/String;)V"))
-    private static void utInformCraftingAltarCompletion(Logger logger, String log)
     {
         if (!UTConfigMods.ASTRAL_SORCERY.utMissingPlayerLogLevelDowngrade) return;
         logger.debug(log);
