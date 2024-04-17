@@ -25,12 +25,15 @@ public abstract class UTBlockBlackMarbleMixin
         IBlockState other = world.getBlockState(pos.offset(face));
         if (MiscUtils.isFluidBlock(other) && (marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR || marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_BOTTOM || marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_TOP)) {
             cir.setReturnValue(false);
+            return;
         }
         if (marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_TOP) {
             cir.setReturnValue(face == EnumFacing.UP);
+            return;
         }
         if (marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_BOTTOM) {
             cir.setReturnValue(face == EnumFacing.DOWN);
+            return;
         }
         cir.setReturnValue(state.isOpaqueCube());
     }
