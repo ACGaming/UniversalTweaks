@@ -36,6 +36,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.actuallyadditions.json", () -> loaded("actuallyadditions"));
             put("mixins.mods.aoa3.json", () -> loaded("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
             put("mixins.mods.arcanearchives.dupes.json", () -> loaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
+            put("mixins.mods.astralsorcery.json", () -> loaded("astralsorcery"));
             put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
             put("mixins.mods.bloodmagic.dupes.json", () -> loaded("bloodmagic"));
             put("mixins.mods.bloodmagic.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);

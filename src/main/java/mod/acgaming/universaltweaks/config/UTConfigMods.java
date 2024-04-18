@@ -27,6 +27,10 @@ public class UTConfigMods
     @Config.Name("Arcane Archives")
     public static final ArcaneArchivesCategory ARCANE_ARCHIVES = new ArcaneArchivesCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.astralsorcery")
+    @Config.Name("Astral Sorcery")
+    public static final AstralSorceryCategory ASTRAL_SORCERY = new AstralSorceryCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.aoa")
     @Config.Name("Advent of Ascension")
     public static final AOACategory AOA = new AOACategory();
@@ -241,6 +245,21 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class AstralSorceryCategory
+    {
+        @Config.Name("Downgrade Missing Player Log Level")
+        @Config.Comment("Downgrades the message when completing a recipe without an initializing player from a warning to a debug")
+        public boolean utMissingPlayerLogLevelDowngrade = true;
+
+        @Config.Name("Sooty Marble Rendering Fix")
+        @Config.Comment("Fixes Sooty Marble Pillar blocking the proper rendering of adjacent fluids due to inverted logic")
+        public boolean utSootyMarbleRendering = true;
+
+        @Config.Name("Clear Particle Effects")
+        @Config.Comment("Fixes a bug where particle effects would continue to render after changing dimensions")
+        public boolean utClearEffectsOnDimensionChange = true;
     }
 
     public static class AOACategory
