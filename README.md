@@ -347,6 +347,7 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Memory Leak Fix:** Fixes a client-side memory leak when wearing Void Fortress armor
 * **The Erebus**
+    * **Fix Cabbage Drop:** Fixes Cabbage not dropping the correct items in some situations
     * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
     * **Fix Quake Hammer Texture:** Fixes the Quake Hammer using the incorrect config option to control its size
 * **The Farlanders**

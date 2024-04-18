@@ -387,6 +387,11 @@ public class UTConfigMods
     public static class ErebusCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Fix Cabbage Drop")
+        @Config.Comment("Fixes Cabbage not dropping the correct items in some situations")
+        public boolean utCabbageDrop = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Preserved Blocks Fix")
         @Config.Comment("Prevents HWYLA/TOP crashes with preserved blocks")
         public boolean utEBPreservedBlocksToggle = true;
