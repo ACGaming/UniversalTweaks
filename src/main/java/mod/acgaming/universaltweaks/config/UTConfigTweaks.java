@@ -1293,6 +1293,11 @@ public class UTConfigTweaks
         public boolean utLANServerProperties = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Better Ping Display")
+        @Config.Comment("Displays the ping in milliseconds of players when viewing the server list")
+        public boolean utBetterPing = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Prevent Keybinds from Overflowing Screen")
         @Config.Comment("Always indent keybind entries from the screen edge, preventing them from overflowing off the left side when particularly long keybind names are present")
         public boolean utPreventKeybindingEntryOverflow = true;
