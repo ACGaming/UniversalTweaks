@@ -68,7 +68,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.entities.tracker.json", () -> UTConfigBugfixes.ENTITIES.utEntityTrackerToggle && !spongeForgeLoaded);
             put("mixins.bugfixes.entities.untippedarrowparticles.json", () -> UTConfigBugfixes.ENTITIES.utUntippedArrowParticlesToggle);
             put("mixins.bugfixes.misc.crafteditemstatistics.json", () -> UTConfigBugfixes.MISC.utCraftedItemStatisticsToggle);
-            put("mixins.bugfixes.misc.enchantment.json", () -> UTConfigBugfixes.MISC.utBlastProtectionKnockbackToggle);
             put("mixins.bugfixes.misc.packetsize.json", () -> UTConfigBugfixes.MISC.utPacketSize > 0x200000 && !spongeForgeLoaded && !randomPatchesLoaded);
             put("mixins.bugfixes.misc.particlespawning.json", () -> UTConfigBugfixes.MISC.utParticleSpawningToggle);
             put("mixins.bugfixes.world.chunksaving.json", () -> UTConfigBugfixes.WORLD.utChunkSavingToggle && !spongeForgeLoaded);

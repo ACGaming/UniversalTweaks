@@ -316,11 +316,6 @@ public class UTConfigBugfixes
         public boolean utAccurateSmoothLighting = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Blast Protection Knockback")
-        @Config.Comment("Fixes the blast protection enchantment not reducing knockback from explosions except at very high levels")
-        public boolean utBlastProtectionKnockbackToggle = false;
-
-        @Config.RequiresMcRestart
         @Config.Name("Crafted Item Statistics")
         @Config.Comment("Fixes crafted item statistics not increasing correctly when items are crafted with shift-click or drop methods")
         public boolean utCraftedItemStatisticsToggle = true;
