@@ -2,12 +2,12 @@ package mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.lessco
 
 import java.util.List;
 
+import com.google.common.base.Predicate;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
-import com.google.common.base.Predicate;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;

@@ -1,9 +1,10 @@
 package mod.acgaming.universaltweaks.tweaks.misc.gui.ping.mixin;
 
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiPlayerTabOverlay;
 import net.minecraft.client.network.NetworkPlayerInfo;
+
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,10 +23,6 @@ public abstract class UTGuiPlayerTabOverlayMixin
     @Unique
     private static final String MAXIMUM_EXTRA_WIDTH_STRING = "9999ms";
 
-    @Shadow
-    @Final
-    private Minecraft mc;
-
     @Unique
     private static int utColorForTime(int responseTime)
     {
@@ -36,6 +33,10 @@ public abstract class UTGuiPlayerTabOverlayMixin
         if (responseTime < 10000) return 0xFF0000; // red
         return 0xFFFFFF; // white (again)
     }
+
+    @Shadow
+    @Final
+    private Minecraft mc;
 
     @ModifyConstant(method = "renderPlayerlist", constant = @Constant(intValue = 13))
     private int utAdjustTotalWidth(int original)

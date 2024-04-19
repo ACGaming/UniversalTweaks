@@ -1,7 +1,7 @@
 package mod.acgaming.universaltweaks.mods.modularrouters.mixin;
 
 
-import java.awt.Color;
+import java.awt.*;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;
@@ -22,7 +22,7 @@ public class UTParticleBeamMessageMixin
     {
         Minecraft.getMinecraft().addScheduledTask(() ->
         {
-           original.call(world, orig, end, flatColor, size);
+            original.call(world, orig, end, flatColor, size);
         });
     }
 }

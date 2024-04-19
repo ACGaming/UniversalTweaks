@@ -1,7 +1,5 @@
 package mod.acgaming.universaltweaks.tweaks.blocks.farmlandtrample;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
@@ -12,6 +10,9 @@ import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+
 // Courtesy of WaitingIdly
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTFarmlandTrample
@@ -19,7 +20,7 @@ public class UTFarmlandTrample
     @SubscribeEvent
     public static void utFarmlandTrample(BlockEvent.FarmlandTrampleEvent event)
     {
-         switch (UTConfigTweaks.BLOCKS.utFarmlandTrample)
+        switch (UTConfigTweaks.BLOCKS.utFarmlandTrample)
         {
             case DEFAULT:
                 break;

@@ -1,7 +1,8 @@
 package mod.acgaming.universaltweaks.util;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTClearToastKeybind;
+import java.util.ArrayList;
+import java.util.List;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.client.settings.IKeyConflictContext;
@@ -14,20 +15,14 @@ import net.minecraftforge.fml.common.gameevent.InputEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.ArrayList;
-import java.util.List;
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTClearToastKeybind;
 
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 @SideOnly(Side.CLIENT)
 public class UTKeybindings extends KeyBinding
 {
     private static final List<Key> keys = new ArrayList<>();
-
-    protected UTKeybindings(UTKeybindings.Key key)
-    {
-        super(key.getDescription(), key.getKeyConflictContext(), key.getKeyModifier(), key.getKeyCode(), UniversalTweaks.NAME);
-        ClientRegistry.registerKeyBinding(this);
-    }
 
     public static void addKey(UTKeybindings.Key key)
     {
@@ -53,6 +48,12 @@ public class UTKeybindings extends KeyBinding
         {
             if (key.getKey().isPressed()) key.handleKeybind();
         }
+    }
+
+    protected UTKeybindings(UTKeybindings.Key key)
+    {
+        super(key.getDescription(), key.getKeyConflictContext(), key.getKeyModifier(), key.getKeyCode(), UniversalTweaks.NAME);
+        ClientRegistry.registerKeyBinding(this);
     }
 
     public static abstract class Key

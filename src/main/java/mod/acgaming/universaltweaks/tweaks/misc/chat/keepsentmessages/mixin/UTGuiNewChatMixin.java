@@ -1,7 +1,8 @@
 package mod.acgaming.universaltweaks.tweaks.misc.chat.keepsentmessages.mixin;
 
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.client.gui.GuiNewChat;
+
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

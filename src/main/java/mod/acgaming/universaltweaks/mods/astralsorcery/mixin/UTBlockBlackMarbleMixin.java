@@ -1,12 +1,13 @@
 package mod.acgaming.universaltweaks.mods.astralsorcery.mixin;
 
-import hellfirepvp.astralsorcery.common.block.BlockBlackMarble;
-import hellfirepvp.astralsorcery.common.util.MiscUtils;
-import mod.acgaming.universaltweaks.config.UTConfigMods;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+
+import hellfirepvp.astralsorcery.common.block.BlockBlackMarble;
+import hellfirepvp.astralsorcery.common.util.MiscUtils;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,15 +24,18 @@ public abstract class UTBlockBlackMarbleMixin
         if (!UTConfigMods.ASTRAL_SORCERY.utSootyMarbleRendering) return;
         BlockBlackMarble.BlackMarbleBlockType marbleType = state.getValue(BlockBlackMarble.BLACK_MARBLE_TYPE);
         IBlockState other = world.getBlockState(pos.offset(face));
-        if (MiscUtils.isFluidBlock(other) && (marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR || marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_BOTTOM || marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_TOP)) {
+        if (MiscUtils.isFluidBlock(other) && (marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR || marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_BOTTOM || marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_TOP))
+        {
             cir.setReturnValue(false);
             return;
         }
-        if (marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_TOP) {
+        if (marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_TOP)
+        {
             cir.setReturnValue(face == EnumFacing.UP);
             return;
         }
-        if (marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_BOTTOM) {
+        if (marbleType == BlockBlackMarble.BlackMarbleBlockType.PILLAR_BOTTOM)
+        {
             cir.setReturnValue(face == EnumFacing.DOWN);
             return;
         }

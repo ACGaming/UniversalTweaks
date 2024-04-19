@@ -9,12 +9,12 @@ import java.util.function.Supplier;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.ModContainer;
 
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
-import net.minecraftforge.fml.common.ModContainer;
 
 public class UTObsoleteModsHandler
 {
@@ -140,8 +140,10 @@ public class UTObsoleteModsHandler
         messages.add("");
 
         Map<String, ModContainer> modIdMap = Loader.instance().getIndexedModList();
-        for (String modId : obsoleteModMap.keySet()) {
-            if (Loader.isModLoaded(modId) && obsoleteModMap.get(modId).get()) {
+        for (String modId : obsoleteModMap.keySet())
+        {
+            if (Loader.isModLoaded(modId) && obsoleteModMap.get(modId).get())
+            {
                 messages.add(modIdMap.get(modId).getName());
             }
         }

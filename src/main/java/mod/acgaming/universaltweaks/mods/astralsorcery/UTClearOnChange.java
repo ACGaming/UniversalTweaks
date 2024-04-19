@@ -1,8 +1,9 @@
 package mod.acgaming.universaltweaks.mods.astralsorcery;
 
-import hellfirepvp.astralsorcery.client.effect.EffectHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
+
+import hellfirepvp.astralsorcery.client.effect.EffectHandler;
 
 // Courtesy of WaitingIdly
 public class UTClearOnChange

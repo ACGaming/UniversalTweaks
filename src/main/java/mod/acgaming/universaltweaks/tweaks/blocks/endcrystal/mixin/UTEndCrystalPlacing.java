@@ -1,10 +1,11 @@
 package mod.acgaming.universaltweaks.tweaks.blocks.endcrystal.mixin;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemEndCrystal;
+
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 

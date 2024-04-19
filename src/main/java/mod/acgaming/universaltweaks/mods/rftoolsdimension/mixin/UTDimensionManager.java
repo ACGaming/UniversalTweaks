@@ -1,17 +1,15 @@
 package mod.acgaming.universaltweaks.mods.rftoolsdimension.mixin;
 
+import net.minecraftforge.common.DimensionManager;
+
 import mcjty.rftoolsdim.dimensions.RfToolsDimensionManager;
-import mcjty.rftoolsdim.dimensions.description.DimensionDescriptor;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
-import net.minecraftforge.common.DimensionManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Map;
 
 // Courtesy of WaitingIdly
 @Mixin(value = RfToolsDimensionManager.class, remap = false)

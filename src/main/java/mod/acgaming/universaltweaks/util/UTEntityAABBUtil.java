@@ -1,17 +1,16 @@
 package mod.acgaming.universaltweaks.util;
 
-import javax.annotation.Nullable;
 import java.util.List;
+import javax.annotation.Nullable;
 
+import com.google.common.base.Predicate;
+import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ClassInheritanceMultiMap;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
-
-import com.google.common.base.Predicate;
-import com.google.common.collect.Lists;
 
 /**
  * Util class mirroring a few AABB functions.
@@ -23,9 +22,9 @@ public class UTEntityAABBUtil
     /**
      * Copy of {@link World#getEntitiesInAABBexcluding} using variable entity radius.
      */
-    public static List<Entity> getEntitiesInAABBexcluding(World world, @Nullable Entity entityIn, AxisAlignedBB boundingBox, @Nullable Predicate<? super Entity > predicate, double size)
+    public static List<Entity> getEntitiesInAABBexcluding(World world, @Nullable Entity entityIn, AxisAlignedBB boundingBox, @Nullable Predicate<? super Entity> predicate, double size)
     {
-        List<Entity> list = Lists.<Entity>newArrayList();
+        List<Entity> list = Lists.newArrayList();
         int j2 = MathHelper.floor((boundingBox.minX - size) / 16.0D);
         int k2 = MathHelper.floor((boundingBox.maxX + size) / 16.0D);
         int l2 = MathHelper.floor((boundingBox.minZ - size) / 16.0D);
@@ -49,7 +48,7 @@ public class UTEntityAABBUtil
     /**
      * Copy of {@link Chunk#getEntitiesWithinAABBForEntity} using variable entity radius.
      */
-    public static void getEntitiesWithinAABBForEntity(Chunk chunk, @Nullable Entity entityIn, AxisAlignedBB aabb, List<Entity> listToFill, Predicate <? super Entity > filter, double size)
+    public static void getEntitiesWithinAABBForEntity(Chunk chunk, @Nullable Entity entityIn, AxisAlignedBB aabb, List<Entity> listToFill, Predicate<? super Entity> filter, double size)
     {
         ClassInheritanceMultiMap<Entity>[] entityLists = chunk.getEntityLists();
         int i = MathHelper.floor((aabb.minY - size) / 16.0D);

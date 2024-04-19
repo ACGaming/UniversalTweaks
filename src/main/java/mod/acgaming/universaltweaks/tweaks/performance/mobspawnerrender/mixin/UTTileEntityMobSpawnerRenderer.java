@@ -1,8 +1,9 @@
 package mod.acgaming.universaltweaks.tweaks.performance.mobspawnerrender.mixin;
 
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.client.renderer.tileentity.TileEntityMobSpawnerRenderer;
 import net.minecraft.tileentity.TileEntityMobSpawner;
+
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

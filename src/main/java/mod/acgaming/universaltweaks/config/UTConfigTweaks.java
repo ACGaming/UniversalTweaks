@@ -1733,19 +1733,19 @@ public class UTConfigTweaks
 
             @Config.Name("[6] Toast Control List")
             @Config.Comment
-                    ({
-                            "List of class names of Toasts to prevent displaying",
-                            "Behavior depends on the list mode",
-                            "Syntax: full class name"
-                    })
+                ({
+                    "List of class names of Toasts to prevent displaying",
+                    "Behavior depends on the list mode",
+                    "Syntax: full class name"
+                })
             public String[] utToastControlClassList = new String[] {};
 
             @Config.Name("[7] List Mode")
             @Config.Comment
-                    ({
-                            "Blacklist Mode: Toast classes which can't be added to the queue, others can",
-                            "Whitelist Mode: Toast classes which can be added to the queue, others can't"
-                    })
+                ({
+                    "Blacklist Mode: Toast classes which can't be added to the queue, others can",
+                    "Whitelist Mode: Toast classes which can be added to the queue, others can't"
+                })
             public EnumLists utToastControlClassListMode = EnumLists.BLACKLIST;
 
             @Config.Name("[8] Debug Logging")
@@ -1888,7 +1888,7 @@ public class UTConfigTweaks
                     "Vanilla ids aren't allowed because they are already included",
                     "Most types should be specified with the vanilla default radius: 2.0"
                 })
-            public String[] utLessCollisionsExtraTargets = new String[]{};
+            public String[] utLessCollisionsExtraTargets = new String[] {};
         }
     }
 

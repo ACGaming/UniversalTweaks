@@ -1,14 +1,15 @@
 package mod.acgaming.universaltweaks.mods.extrautilities.mutabledrops.mixin;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import net.minecraft.item.ItemStack;
+
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.rwtema.extrautils2.machine.BlockMachine;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
-import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-
-import java.util.ArrayList;
-import java.util.List;
 
 // Courtesy of WaitingIdly
 @Mixin(value = BlockMachine.class, remap = false)
