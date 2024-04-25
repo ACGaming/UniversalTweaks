@@ -484,10 +484,6 @@ public class UTConfigMods
         @Config.Name("Particle Fixes")
         @Config.Comment("Fixes broken textures for various running and landing particles")
         public boolean utParticleFixesToggle = true;
-
-        @Config.Name("Extra Trees: Particle Fixes")
-        @Config.Comment("Fixes broken textures for various running and landing particles in ExtraTrees' Blocks")
-        public boolean utETParticleFixesToggle = true;
     }
 
     public static class IndustrialCraftCategory
