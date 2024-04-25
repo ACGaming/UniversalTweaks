@@ -28,6 +28,7 @@ import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.mods.cqrepoured.UTGoldenFeatherEvent;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Burning;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Sprinting;
+import mod.acgaming.universaltweaks.mods.forestry.extratrees.UTExtraTreesParticlesFixer;
 import mod.acgaming.universaltweaks.mods.mekanism.UTMekanismFixes;
 import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.UTSimplyJetpacksEvents;
@@ -127,6 +128,14 @@ public class UniversalTweaks
         if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) UTWorldDataCapability.register();
         if (UTConfigTweaks.MISC.utSkipRegistryScreenToggle) System.setProperty("fml.queryResult", "confirm");
         LOGGER.info(NAME + " pre-initialized");
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Mod.EventHandler
+    public void preInitClient(FMLPreInitializationEvent event)
+    {
+        if (Loader.isModLoaded("extratrees")) MinecraftForge.EVENT_BUS.register(new UTExtraTreesParticlesFixer());
+        LOGGER.info(NAME + " client pre-initialized");
     }
 
     @Mod.EventHandler
