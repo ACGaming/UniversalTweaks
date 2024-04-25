@@ -480,6 +480,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.Name("Particle Fixes")
+        @Config.Comment("Fixes broken textures for various running and landing particles")
+        public boolean utParticleFixesToggle = true;
+
+        @Config.Name("Extra Trees: Particle Fixes")
+        @Config.Comment("Fixes broken textures for various running and landing particles in ExtraTrees' Blocks")
+        public boolean utETParticleFixesToggle = true;
     }
 
     public static class IndustrialCraftCategory
