@@ -24,7 +24,7 @@ public abstract class UTSleepResetsWeatherMixin extends World
     }
 
     @WrapWithCondition(method = "wakeAllPlayers", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/WorldServer;resetRainAndThunder()V"))
-    public boolean utWakeAllPlayers()
+    public boolean utWakeAllPlayers(WorldServer worldServer)
     {
         return !UTConfigBugfixes.BLOCKS.utSleepResetsWeatherToggle || this.isRaining() || this.isThundering();
     }
