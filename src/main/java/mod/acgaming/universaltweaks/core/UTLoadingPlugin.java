@@ -142,6 +142,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.world.chunks.gen.json", () -> UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle);
             put("mixins.tweaks.world.loading.server.json", () -> UTConfigTweaks.PERFORMANCE.utWorldLoadingToggle);
             put("mixins.tweaks.world.sealevel.json", () -> UTConfigTweaks.WORLD.utSeaLevel != 63);
+            put("mixins.tweaks.world.stronghold.json", () -> UTConfigTweaks.WORLD.utStrongholdToggle);
             put("mixins.tweaks.world.village.json", () -> UTConfigTweaks.WORLD.utVillageDistance != 32);
         }
     });

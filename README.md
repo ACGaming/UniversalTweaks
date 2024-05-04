@@ -217,7 +217,7 @@ All changes are toggleable via config files.
 * **Soulbound Vexes:** Summoned vexes will also die when their summoner is killed
 * **Spawn Caps:** Sets maximum spawning limits for different entity types
 * **Super Hot Torch:** Enables one-time ignition of entities by hitting them with a torch
-* **Stronghold Replacement:** Replaces stronghold generation with a safer variant
+* **Stronghold Enforcement:** Enforces stronghold generation to generate all blocks, regardless of air
 * **Swing Through Grass:** Allows hitting entities through grass instead of breaking it
 * **Tidy Chunk:** Tidies newly generated chunks by removing scattered item entities
 * **Toast Control:** Enables the control of toasts (pop-up text boxes)

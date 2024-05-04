@@ -1912,8 +1912,8 @@ public class UTConfigTweaks
         public int utSeaLevel = 63;
 
         @Config.RequiresMcRestart
-        @Config.Name("Stronghold Replacement")
-        @Config.Comment("Replaces stronghold generation with a safer variant")
+        @Config.Name("Stronghold Enforcement")
+        @Config.Comment("Enforces stronghold generation to generate all blocks, regardless of air")
         public boolean utStrongholdToggle = true;
 
         @Config.Name("Tidy Chunk")
