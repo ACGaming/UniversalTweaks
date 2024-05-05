@@ -54,8 +54,6 @@ import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThrough
 import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTTutorialToast;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
-import mod.acgaming.universaltweaks.tweaks.world.stronghold.UTStronghold;
-import mod.acgaming.universaltweaks.tweaks.world.stronghold.worldgen.SafeStrongholdWorldGenerator;
 import mod.acgaming.universaltweaks.util.UTKeybindings;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
 import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
@@ -122,7 +120,6 @@ public class UniversalTweaks
         UTPacketHandler.init();
         if (UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
         UTAutoSaveOFCompat.updateOFConfig();
-        if (UTConfigTweaks.WORLD.utStrongholdToggle) GameRegistry.registerWorldGenerator(new SafeStrongholdWorldGenerator(), Integer.MAX_VALUE);
         if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
         if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) UTWorldDataCapability.register();
         if (UTConfigTweaks.MISC.utSkipRegistryScreenToggle) System.setProperty("fml.queryResult", "confirm");
@@ -134,7 +131,6 @@ public class UniversalTweaks
     {
         if (UTConfigBugfixes.ENTITIES.utDimensionChangeToggle) MinecraftForge.EVENT_BUS.register(new UTDimensionChangeEvents());
         if (UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
-        if (UTConfigTweaks.WORLD.utStrongholdToggle) MinecraftForge.TERRAIN_GEN_BUS.register(new UTStronghold());
         if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) MinecraftForge.EVENT_BUS.register(new UTAbyssalCraftEvents());
         if (Loader.isModLoaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTArcaneArchivesEvents());
         if (Loader.isModLoaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTBloodMagicEvents());
