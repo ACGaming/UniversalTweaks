@@ -15,7 +15,16 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 // Courtesy of EverNife
 public class UTCraftingCache
 {
+
     private static final Int2ObjectLinkedOpenHashMap<UTOptionalContent<IRecipe>> NON_NBT_CRAFT_CACHE = new Int2ObjectLinkedOpenHashMap<>();
+    private static IRecipe lastMatchingRecipe = null;
+    private static final boolean isIC2ClassicLoaded = Loader.isModLoaded("ic2-classic-spmod");
+
+    public static void resetCache()
+    {
+        NON_NBT_CRAFT_CACHE.clear();
+        lastMatchingRecipe = null;
+    }
 
     public static boolean isValid(InventoryCrafting craftMatrix)
     {
@@ -25,32 +34,51 @@ public class UTCraftingCache
             // Skip NBT items
             if (itemStack.hasTagCompound()) return false;
             // Skip IC2C's stacked items
-            if (Loader.isModLoaded("ic2-classic-spmod") && itemStack.getCount() > 1) return false;
+            if (isIC2ClassicLoaded && itemStack.getCount() > 1) return false;
         }
         return true;
     }
 
     public static IRecipe findMatchingRecipeDefault(InventoryCrafting craftMatrix, World worldIn)
     {
-        for (IRecipe irecipe : CraftingManager.REGISTRY) if (irecipe.matches(craftMatrix, worldIn)) return irecipe;
+        for (IRecipe irecipe : CraftingManager.REGISTRY)
+        {
+            if (irecipe.matches(craftMatrix, worldIn))
+            {
+                lastMatchingRecipe = irecipe;
+                return irecipe;
+            }
+        }
         return null;
     }
 
     public static IRecipe findMatchingRecipe(InventoryCrafting craftMatrix, World worldIn)
     {
-        if (isValid(craftMatrix) && Loader.instance().hasReachedState(LoaderState.SERVER_STARTING))
+        if (Loader.instance().hasReachedState(LoaderState.SERVER_STARTING))
         {
-            UTOptionalContent<IRecipe> optionalContent = getOrCreateCachedRecipe(craftMatrix);
-
-            if (optionalContent.hasContent())
+            final IRecipe previousMatch = lastMatchingRecipe;
+            if (previousMatch != null && previousMatch.matches(craftMatrix, worldIn))
             {
-                IRecipe recipe = optionalContent.getContent();
-                if (recipe == null || recipe.matches(craftMatrix, worldIn)) return recipe;
+                return previousMatch;
             }
+            if (isValid(craftMatrix))
+            {
+                UTOptionalContent<IRecipe> optionalContent = getOrCreateCachedRecipe(craftMatrix);
 
-            IRecipe recipe = findMatchingRecipeDefault(craftMatrix, worldIn);
-            optionalContent.setContent(recipe);
-            return recipe;
+                if (optionalContent.hasContent())
+                {
+                    IRecipe recipe = optionalContent.getContent();
+                    if (recipe == null || recipe.matches(craftMatrix, worldIn))
+                    {
+                        lastMatchingRecipe = recipe;
+                        return recipe;
+                    }
+                }
+
+                IRecipe recipe = findMatchingRecipeDefault(craftMatrix, worldIn);
+                optionalContent.setContent(recipe);
+                return recipe;
+            }
         }
         return findMatchingRecipeDefault(craftMatrix, worldIn);
     }
