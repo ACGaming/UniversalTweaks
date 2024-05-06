@@ -53,6 +53,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.pickupnotification.UTPickupNotif
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTTutorialToast;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
+import mod.acgaming.universaltweaks.tweaks.performance.craftingcache.UTCraftingCache;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
 import mod.acgaming.universaltweaks.util.UTKeybindings;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
@@ -196,6 +197,7 @@ public class UniversalTweaks
     public void onServerStarting(FMLServerStartingEvent event)
     {
         if (UTConfigBugfixes.MISC.utHelpToggle) UTHelp.onServerStarting(event);
+        if (UTConfigTweaks.PERFORMANCE.utCraftingCacheToggle) UTCraftingCache.resetCache();
     }
 
     @Mod.EventHandler
