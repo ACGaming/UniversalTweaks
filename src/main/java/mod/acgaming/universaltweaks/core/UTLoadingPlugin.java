@@ -170,8 +170,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.buttons.realms.json", () -> UTConfigTweaks.MISC.utRealmsButtonToggle && !randomPatchesLoaded);
             put("mixins.tweaks.misc.buttons.snooper.client.json", () -> UTConfigTweaks.MISC.utSnooperToggle);
             put("mixins.tweaks.misc.chat.compactmessage.json", () -> UTConfigTweaks.MISC.CHAT.utCompactMessagesToggle);
-            put("mixins.tweaks.misc.chat.maximumlines.json", () -> UTConfigTweaks.MISC.CHAT.utChatLines != 100);
             put("mixins.tweaks.misc.chat.keepsentmessages.json", () -> UTConfigTweaks.MISC.CHAT.utKeepSentMessageHistory);
+            put("mixins.tweaks.misc.chat.maximumlines.json", () -> UTConfigTweaks.MISC.CHAT.utChatLines != 100);
             put("mixins.tweaks.misc.commands.seed.json", () -> UTConfigTweaks.MISC.utCopyWorldSeedToggle);
             put("mixins.tweaks.misc.credits.json", () -> UTConfigTweaks.MISC.utSkipCreditsToggle);
             put("mixins.tweaks.misc.gui.keybindlistentry.json", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
@@ -180,6 +180,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.gui.ping.json", () -> UTConfigTweaks.MISC.utBetterPing);
             put("mixins.tweaks.misc.gui.potionduration.json", () -> UTConfigTweaks.MISC.utPotionDurationToggle);
             put("mixins.tweaks.misc.gui.selecteditemtooltip.json", () -> UTConfigTweaks.MISC.utSelectedItemTooltipHeight != 59);
+            put("mixins.tweaks.misc.gui.textshadow.json", () -> UTConfigTweaks.MISC.utDisableTextShadow);
             put("mixins.tweaks.misc.lightning.flash.json", () -> UTConfigTweaks.MISC.LIGHTNING.utLightningFlashToggle);
             put("mixins.tweaks.misc.music.json", () -> UTConfigTweaks.MISC.utInfiniteMusicToggle);
             put("mixins.tweaks.misc.narrator.json", () -> UTConfigTweaks.MISC.utDisableNarratorToggle);
