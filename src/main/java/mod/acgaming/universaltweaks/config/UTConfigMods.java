@@ -504,6 +504,11 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Machines Max Range Off-By-One Fix")
+        @Config.Comment("Fixes an off-by-one error where IF Machines would display the max tier of range addon as one less than the actual maximum")
+        public boolean utRangeAddonNumberFix = true;
     }
 
     public static class InfernalMobsCategory
