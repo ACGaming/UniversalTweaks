@@ -195,6 +195,7 @@ dependencies {
     compileOnly 'curse.maven:projectredbase-228702:2745545'
     compileOnly 'curse.maven:projectredworld-229049:2745551'
     compileOnly 'curse.maven:quark-243121:2924091'
+    compileOnly 'curse.maven:railcraft-51195:3853491'
     compileOnly 'curse.maven:simplyjetpacks2-251792:3294422'
     compileOnly 'curse.maven:tardis-290247:2903453'
     compileOnly 'curse.maven:teslacorelib-254602:2891841'
