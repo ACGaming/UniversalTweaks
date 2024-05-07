@@ -6,6 +6,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
+// Courtesy of WaitingIdly
 @Mixin(value = FontRenderer.class)
 public class UTDisableTextShadowing
 {
