@@ -58,6 +58,7 @@ import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntit
 import mod.acgaming.universaltweaks.util.UTKeybindings;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
 import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
+import mods.railcraft.common.core.BetaMessageTickHandler;
 import net.tardis.mod.proxy.ClientProxy;
 import tonius.simplyjetpacks.network.NetworkHandler;
 
@@ -102,6 +103,7 @@ public class UniversalTweaks
         + "after:plustic;"
         + "after:projectred-exploration;"
         + "after:quark;"
+        + "after:railcraft;"
         + "after:roost;"
         + "after:simplyjetpacks;"
         + "after:spiceoflife;"
@@ -140,6 +142,10 @@ public class UniversalTweaks
         if (Loader.isModLoaded("elenaidodge2") && UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherConsumption > 0) MinecraftForge.EVENT_BUS.register(new UTED2Sprinting());
         if (Loader.isModLoaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
         if (Loader.isModLoaded("projectred-exploration") && UTConfigMods.PROJECTRED.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTProjectRedWorldEvents());
+        // Unregister reason: disable beta warning.
+        if (Loader.isModLoaded("railcraft") && UTConfigMods.RAILCRAFT.utNoBetaWarningToggle) {
+            MinecraftForge.EVENT_BUS.unregister(BetaMessageTickHandler.INSTANCE);
+        }
         if (Loader.isModLoaded("simplyjetpacks") && UTConfigMods.SIMPLY_JETPACKS.utMemoryLeakFixToggle)
         {
             MinecraftForge.EVENT_BUS.register(new UTSimplyJetpacksEvents());

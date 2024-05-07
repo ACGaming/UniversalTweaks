@@ -151,6 +151,10 @@ public class UTConfigMods
     @Config.Name("Quark")
     public static final QuarkCategory QUARK = new QuarkCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.railcraft")
+    @Config.Name("Railcraft")
+    public static final RailcraftCategory RAILCRAFT = new RailcraftCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.rftoolsdimensions")
     @Config.Name("RFTools Dimensions")
     public static final RFToolsDimensionsCategory RFTOOLS_DIMENSIONS = new RFToolsDimensionsCategory();
@@ -614,6 +618,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class RailcraftCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("No Beta Warning")
+        @Config.Comment("Disables the beta message warning on world join")
+        public boolean utNoBetaWarningToggle = true;
     }
 
     public static class RoostCategory
