@@ -1278,6 +1278,11 @@ public class UTConfigTweaks
         public boolean utDisableNarratorToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Text Shadows")
+        @Config.Comment("Disables all text shadowing, where text has a darker version of itself rendered behind the normal text, changing the appearance and can improve fps on some screens")
+        public boolean utDisableTextShadow = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("End Portal Parallax")
         @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
         public boolean utEndPortalParallaxToggle = true;

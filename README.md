@@ -135,6 +135,7 @@ All changes are toggleable via config files.
 * **Disable Mob Spawner Entity Render:** Disables rendering an entity inside of Mob Spawners
 * **Disable Narrator:** Disables the narrator functionality entirely
 * **Disable Sleeping:** Disables skipping night by using a bed while making it still able to set spawn
+* **Disable Text Shadowing:** Disables all text shadowing, where text has a darker version of itself rendered behind the normal text, changing the appearance and can improve fps on some screens
 * **Disable Villager Trade Leveling:** Disables leveling of villager careers, only allowing base level trades
 * **Disable Villager Trade Restock:** Disables restocking of villager trades, only allowing one trade per offer
 * **Disable Wither Targeting AI:** Disables withers targeting animals
