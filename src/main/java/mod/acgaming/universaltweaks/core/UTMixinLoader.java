@@ -64,6 +64,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.forestry.json", () -> loaded("forestry"));
             put("mixins.mods.industrialcraft.dupes.json", () -> loaded("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle);
             put("mixins.mods.industrialforegoing.dupes.json", () -> loaded("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utDuplicationFixesToggle);
+            put("mixins.mods.industrialforegoing.rangeaddon.json", () -> loaded("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utRangeAddonNumberFix);
             put("mixins.mods.infernalmobs.json", () -> loaded("infernalmobs"));
             put("mixins.mods.ironbackpacks.dupes.json", () -> loaded("ironbackpacks") && UTConfigMods.IRON_BACKPACKS.utDuplicationFixesToggle);
             put("mixins.mods.itemstages.json", () -> loaded("itemstages"));
