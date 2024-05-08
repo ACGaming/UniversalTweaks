@@ -419,6 +419,10 @@ public class UTConfigTweaks
         @Config.Name("Water Fall Damage")
         public final WaterFallDamageCategory WATER_FALL_DAMAGE = new WaterFallDamageCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.voidteleport")
+        @Config.Name("Void Teleport")
+        public final VoidTeleportCategory VOID_TELEPORT = new VoidTeleportCategory();
+
         @Config.Name("Adaptive XP Drops")
         @Config.Comment
             ({
@@ -879,6 +883,96 @@ public class UTConfigTweaks
             @Config.Name("[2] Damage Reduction")
             @Config.Comment("How much fall damage gets reduced by water per tick")
             public double utFallDamageValue = 2.0D;
+        }
+
+        public static class VoidTeleportCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[01] Void Teleport Toggle")
+            @Config.Comment("Enables Void Teleport, where falling out below a dimension will teleport you to the top of the dimension")
+            public boolean utVoidTeleportToggle = false;
+
+            @Config.Name("[02] Prevent Void Damage")
+            @Config.Comment
+                ({
+                    "Prevents taking a tick of void damage before being teleported",
+                    "If this is false, entities will take 4 damage every time Void Teleport activates, preventing infinite looping"
+                })
+            public boolean utPreventVoidDamage = true;
+
+            @Config.Name("[03] Target Y-Level")
+            @Config.Comment("Y level to teleport the entity")
+            public double utTargetYLevel = 300;
+
+            @Config.Name("[04] Apply Blindness on Teleport")
+            @Config.Comment("Applies the blindness effect for 3 seconds when teleporting")
+            public boolean utTeleportBlindness = true;
+
+            @Config.Name("[05] Clamp Falling Speed")
+            @Config.Comment("Prevents Y motion from being less than this")
+            public double utClampSpeedTo = -1;
+
+            @Config.Name("[06] Fall Distance Height")
+            @Config.Comment
+                ({
+                    "Height to override the fallDistance variable with when landing after having teleported",
+                    "When set to 0, [07] Fall Damage Taken applies instead"
+                })
+            public float utFallHeight = 0;
+
+            @Config.Name("[07] Fall Damage Taken")
+            @Config.Comment
+                ({
+                    "Amount of fall damage taken when landing on a block",
+                    "Negative numbers deal damage relative to the entity's max health",
+                    "Only applies if [06] Fall Distance Height is 0"
+                })
+            public float utFallDamageTaken = -1;
+
+            @Config.Name("[08] Allow Fall Damage Taken to Kill")
+            @Config.Comment
+                ({
+                    "Sets if [07] Fall Damage Taken can kill entities",
+                    "Does not apply to fall damage taken due to [06] Fall Distance Height"
+                })
+            public boolean utAllowSpecificFallDamageToKill = true;
+
+            @Config.Name("[09] Apply Void Teleport to Players")
+            @Config.Comment("Controls if players are teleported by Void Teleport")
+            public boolean utForgivePlayers = true;
+
+            @Config.Name("[10] Entity List")
+            @Config.Comment
+                ({
+                    "List of the resource location names for entities concerning Void Teleport",
+                    "Behavior depends on the list mode"
+                })
+            public String[] utEntityList = new String[] {};
+
+            @Config.Name("[11] Entity List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Entities that won't be impacted by Void Teleport, others will",
+                    "Whitelist Mode: Entities that will be impacted by Void Teleport, others won't"
+                })
+            public EnumLists utEntityListMode = EnumLists.WHITELIST;
+
+            @Config.Name("[12] Dimension List")
+            @Config.Comment
+                ({
+                    "List of dimensions concerning Void Teleport",
+                    "Behavior depends on the list mode",
+                    "Can be dimension name or ID"
+                })
+            public String[] utDimensionList = new String[] {};
+
+            @Config.Name("[13] Dimension List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Dimensions that don't have Void Teleport enabled, others do",
+                    "Whitelist Mode: Dimensions that have Void Teleport enabled, others don't"
+                })
+            public EnumLists utDimensionListMode = EnumLists.BLACKLIST;
         }
     }
 

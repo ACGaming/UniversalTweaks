@@ -231,6 +231,10 @@ All changes are toggleable via config files.
 * **Water Fall Damage:** Re-implements an improved version of pre-1.4 fall damage in water
 * **XP Bottle Amount:** Sets the amount of experience spawned by bottles o' enchanting
 * **XP Level Cap:** Sets the maximum experience level players can reach
+* **Void Teleport:**
+  * Options allow toggling the setting globally, controlling to what Y-level the entity is teleported, if blindness is applied, and how much and in what way fall damage is taken
+  * **Configure Entities:** Configures what entities can be teleported, and if the player is teleported
+  * **Configure Dimensions:** Configures what dimensions the effect can take place in
 
 ![](https://i.imgur.com/1EmHZlb.png)
 
