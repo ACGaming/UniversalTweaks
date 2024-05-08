@@ -916,9 +916,9 @@ public class UTConfigTweaks
             @Config.Comment
                 ({
                     "Height to override the fallDistance variable with when landing after having teleported",
-                    "When set to 0, [07] Fall Damage Taken applies instead"
+                    "When set to less than 0, [07] Fall Damage Taken applies instead"
                 })
-            public float utFallHeight = 0;
+            public float utFallHeight = -1;
 
             @Config.Name("[07] Fall Damage Taken")
             @Config.Comment

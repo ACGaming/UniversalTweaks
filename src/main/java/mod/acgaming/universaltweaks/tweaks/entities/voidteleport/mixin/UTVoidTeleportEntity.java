@@ -81,7 +81,7 @@ public abstract class UTVoidTeleportEntity
             if (entity.isInWater()) return;
             if (entity instanceof EntityPlayer && ((EntityPlayer) entity).capabilities.isFlying || entity instanceof EntityPlayer && ((EntityPlayer) entity).capabilities.allowFlying) return;
 
-            if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utFallHeight == 0)
+            if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utFallHeight < 0)
             {
                 entity.fallDistance = 0;
                 float setting = UTConfigTweaks.ENTITIES.VOID_TELEPORT.utFallDamageTaken;
