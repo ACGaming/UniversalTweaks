@@ -925,7 +925,7 @@ public class UTConfigTweaks
                 ({
                     "Amount of fall damage taken when landing on a block",
                     "Negative numbers deal damage relative to the entity's max health",
-                    "Only applies if [06] Fall Distance Height is 0"
+                    "Only applies if [06] Fall Distance Height is less than 0"
                 })
             public float utFallDamageTaken = -1;
 
