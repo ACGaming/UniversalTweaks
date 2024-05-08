@@ -63,8 +63,8 @@ public abstract class UTVoidTeleportEntity
         {
             if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utPreventVoidDamage) ci.cancel();
             if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTeleportBlindness) ((EntityLivingBase) (Object) this).addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 60, 3));
-            entity.setLocationAndAngles(entity.posX, UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTargetYLevel, entity.posZ, entity.rotationYaw, entity.rotationPitch);
-            entity.motionY = Math.max(UTConfigTweaks.ENTITIES.VOID_TELEPORT.utClampSpeedTo, Math.min(0, entity.motionY));
+            entity.setPosition(entity.posX, UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTargetYLevel, entity.posZ);
+            entity.motionY = Math.min(0, Math.max(UTConfigTweaks.ENTITIES.VOID_TELEPORT.utClampSpeedTo, entity.motionY));
             universalTweaks$hasFallenVoidTeleport = true;
         }
     }
