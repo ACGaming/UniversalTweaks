@@ -181,7 +181,7 @@ public class UTConfigBugfixes
         public boolean utDestroyPacketToggle = true;
 
         @Config.Name("Disconnect Dupe")
-        @Config.Comment("Fixes item duplications when players are dropping items and disconnecting (singleplayer only)")
+        @Config.Comment("Fixes item duplications when players are dropping items and disconnecting")
         public boolean utDisconnectDupeToggle = true;
 
         @Config.RequiresMcRestart
