@@ -1,35 +1,27 @@
 package mod.acgaming.universaltweaks.bugfixes.entities.disconnectdupe;
 
-import java.util.concurrent.FutureTask;
-
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.server.MinecraftServer;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-import net.minecraftforge.fml.relauncher.Side;
-
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.bugfixes.entities.disconnectdupe.mixin.PlayerListInvoker;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraftforge.event.entity.item.ItemTossEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
 
-// Courtesy of Meldexun
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
+// Courtesy of jchung01
+@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.SERVER)
 public class UTDisconnectDupe
 {
     @SubscribeEvent
-    public static void utDisconnectDupe(PlayerEvent.PlayerLoggedOutEvent event)
+    public static void utDisconnectDupe(ItemTossEvent event)
     {
-        if (!UTConfigBugfixes.ENTITIES.utDisconnectDupeToggle || event.player.world.isRemote) return;
-        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDisconnectDupe ::: Player logged out event");
-        MinecraftServer server = event.player.getServer();
-        if (server != null)
+        if (!UTConfigBugfixes.ENTITIES.utDisconnectDupeToggle || event.getPlayer().world.isRemote) return;
+        EntityPlayerMP player = (EntityPlayerMP) event.getPlayer();
+        if (!player.connection.getNetworkManager().channel().isOpen())
         {
-            server.futureTaskQueue.add(new FutureTask<>(() -> {
-                ((PlayerListInvoker) server.getPlayerList()).invokeWritePlayerData((EntityPlayerMP) event.player);
-                return null;
-            }));
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDisconnectDupe ::: Player dropped item but is disconnected! Ignoring drop.");
+            event.setCanceled(true);
         }
     }
 }
