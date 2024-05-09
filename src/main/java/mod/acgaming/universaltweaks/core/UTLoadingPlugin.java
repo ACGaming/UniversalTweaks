@@ -54,7 +54,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.entities.destroypacket.json", () -> UTConfigBugfixes.ENTITIES.utDestroyPacketToggle);
             put("mixins.bugfixes.entities.desync.json", () -> UTConfigBugfixes.ENTITIES.ENTITY_DESYNC.utEntityDesyncToggle);
             put("mixins.bugfixes.entities.dimensionchange.json", () -> UTConfigBugfixes.ENTITIES.utDimensionChangeToggle);
-            put("mixins.bugfixes.entities.disconnectdupe.json", () -> UTConfigBugfixes.ENTITIES.utDisconnectDupeToggle);
             put("mixins.bugfixes.entities.entityid.json", () -> UTConfigBugfixes.ENTITIES.utEntityIDToggle);
             put("mixins.bugfixes.entities.entitylists.json", () -> UTConfigBugfixes.ENTITIES.utEntityListsToggle);
             put("mixins.bugfixes.entities.horsefalling.json", () -> UTConfigBugfixes.ENTITIES.utHorseFallingToggle);

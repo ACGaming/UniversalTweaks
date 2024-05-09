@@ -1,7 +1,0 @@
-{
-  "package": "mod.acgaming.universaltweaks.bugfixes.entities.disconnectdupe.mixin",
-  "refmap": "universaltweaks.refmap.json",
-  "minVersion": "0.8",
-  "compatibilityLevel": "JAVA_8",
-  "mixins": ["PlayerListInvoker"]
-}
