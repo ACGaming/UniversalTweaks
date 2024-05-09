@@ -17,10 +17,10 @@ public class UTWorldClientMixin
     @Inject(method = "addEntityToWorld",
         slice = @Slice(from = @At(value = "HEAD"),
             to = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/WorldClient;spawnEntity(Lnet/minecraft/entity/Entity;)Z")),
-        at = @At(value = "INVOKE", target = "Ljava/util/Set;add(Ljava/lang/Object;)Z"))
+        at = @At(value = "INVOKE", target = "Ljava/util/Set;add(Ljava/lang/Object;)Z", ordinal = 0, remap = false))
     private void utSetIdBeforeAdd(int entityID, Entity entityToSpawn, CallbackInfo ci)
     {
-        if (UTConfigBugfixes.ENTITIES.utEntityListAdditionToggle)
+        if (UTConfigBugfixes.ENTITIES.ENTITY_LISTS.utWorldAdditionsToggle)
         {
             entityToSpawn.setEntityId(entityID);
         }

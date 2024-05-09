@@ -146,6 +146,10 @@ public class UTConfigBugfixes
         @Config.Name("Entity Desync")
         public final EntityDesyncCategory ENTITY_DESYNC = new EntityDesyncCategory();
 
+        @Config.LangKey("cfg.universaltweaks.bugfixes.entities.entitylists")
+        @Config.Name("Entity Lists")
+        public final EntityListsCategory ENTITY_LISTS = new EntityListsCategory();
+
         @Config.RequiresMcRestart
         @Config.Name("Attack Radius")
         @Config.Comment("Improves the attack radius of hostile mobs by checking the line of sight with raytracing")
@@ -211,16 +215,6 @@ public class UTConfigBugfixes
         @Config.Name("Entity ID")
         @Config.Comment("Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0")
         public boolean utEntityIDToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Entity List Addition")
-        @Config.Comment("Fixes client-side memory leak where some entity ids are not set before being added to the entity list")
-        public boolean utEntityListAdditionToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Entity Lists")
-        @Config.Comment("Fixes entity lists often not getting updated correctly")
-        public boolean utEntityListsToggle = true;
 
         @Config.Name("Entity NaN Values")
         @Config.Comment("Prevents corruption of entities caused by invalid health or damage values")
@@ -306,6 +300,19 @@ public class UTConfigBugfixes
                     "pixelmon:empty_pokeball",
                     "pixelmon:occupied_pokeball"
                 };
+        }
+
+        public static class EntityListsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Chunk Updates")
+            @Config.Comment("Fixes chunk entity lists often not getting updated correctly")
+            public boolean utChunkUpdatesToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("World Additions")
+            @Config.Comment("Fixes client-side memory leak where some entity ids are not set before being added to the world's entity list")
+            public boolean utWorldAdditionsToggle = true;
         }
     }
 

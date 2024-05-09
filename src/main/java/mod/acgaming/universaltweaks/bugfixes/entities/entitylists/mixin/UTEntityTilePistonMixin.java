@@ -25,12 +25,12 @@ public abstract class UTEntityTilePistonMixin extends TileEntity
     @Inject(method = "moveCollidedEntities", at = @At(value = "INVOKE", target = "Ljava/lang/ThreadLocal;set(Ljava/lang/Object;)V", ordinal = 1, shift = At.Shift.AFTER), locals = LocalCapture.CAPTURE_FAILHARD)
     public void utUpdateEntity(float p_184322_1_, CallbackInfo ci, EnumFacing enumfacing, double d0, List list, AxisAlignedBB axisalignedbb, List list1, boolean flag, int i, Entity entity, double d1)
     {
-        if (UTConfigBugfixes.ENTITIES.utEntityListsToggle) world.updateEntityWithOptionalForce(entity, false);
+        if (UTConfigBugfixes.ENTITIES.ENTITY_LISTS.utChunkUpdatesToggle) world.updateEntityWithOptionalForce(entity, false);
     }
 
     @Surrogate
     public void utUpdateEntity(float p_184322_1_, CallbackInfo ci, EnumFacing enumfacing, double d0, List list, AxisAlignedBB axisalignedbb, List list1, boolean flag, int i, Entity entity, double d1, int quark0)
     {
-        if (UTConfigBugfixes.ENTITIES.utEntityListsToggle) world.updateEntityWithOptionalForce(entity, false);
+        if (UTConfigBugfixes.ENTITIES.ENTITY_LISTS.utChunkUpdatesToggle) world.updateEntityWithOptionalForce(entity, false);
     }
 }

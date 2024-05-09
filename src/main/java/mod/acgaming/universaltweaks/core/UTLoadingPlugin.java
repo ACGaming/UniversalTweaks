@@ -55,7 +55,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.entities.desync.json", () -> UTConfigBugfixes.ENTITIES.ENTITY_DESYNC.utEntityDesyncToggle);
             put("mixins.bugfixes.entities.dimensionchange.json", () -> UTConfigBugfixes.ENTITIES.utDimensionChangeToggle);
             put("mixins.bugfixes.entities.entityid.json", () -> UTConfigBugfixes.ENTITIES.utEntityIDToggle);
-            put("mixins.bugfixes.entities.entitylists.json", () -> UTConfigBugfixes.ENTITIES.utEntityListsToggle);
+            put("mixins.bugfixes.entities.entitylists.json", () -> UTConfigBugfixes.ENTITIES.ENTITY_LISTS.utChunkUpdatesToggle);
             put("mixins.bugfixes.entities.horsefalling.json", () -> UTConfigBugfixes.ENTITIES.utHorseFallingToggle);
             put("mixins.bugfixes.entities.maxhealth.json", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
             put("mixins.bugfixes.entities.minecart.json", () -> UTConfigBugfixes.ENTITIES.utMinecartAIToggle);
@@ -153,7 +153,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.blocks.blockoverlay.json", () -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
             put("mixins.bugfixes.blocks.miningglitch.client.json", () -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
             put("mixins.bugfixes.entities.elytra.json", () -> UTConfigBugfixes.ENTITIES.utElytraDeploymentLandingToggle);
-            put("mixins.bugfixes.entities.entitylists.client.json", () -> UTConfigBugfixes.ENTITIES.utEntityListAdditionToggle);
+            put("mixins.bugfixes.entities.entitylists.client.json", () -> UTConfigBugfixes.ENTITIES.ENTITY_LISTS.utWorldAdditionsToggle);
             put("mixins.bugfixes.entities.villagermantle.json", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
             put("mixins.bugfixes.misc.depthmask.json", () -> UTConfigBugfixes.MISC.utDepthMaskToggle);
             put("mixins.bugfixes.misc.modelgap.json", () -> UTConfigBugfixes.MISC.MODEL_GAP.utModelGapToggle);
