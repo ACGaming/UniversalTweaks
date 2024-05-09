@@ -153,6 +153,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.blocks.blockoverlay.json", () -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
             put("mixins.bugfixes.blocks.miningglitch.client.json", () -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
             put("mixins.bugfixes.entities.elytra.json", () -> UTConfigBugfixes.ENTITIES.utElytraDeploymentLandingToggle);
+            put("mixins.bugfixes.entities.entitylists.client.json", () -> UTConfigBugfixes.ENTITIES.utEntityListAdditionToggle);
             put("mixins.bugfixes.entities.villagermantle.json", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
             put("mixins.bugfixes.misc.depthmask.json", () -> UTConfigBugfixes.MISC.utDepthMaskToggle);
             put("mixins.bugfixes.misc.modelgap.json", () -> UTConfigBugfixes.MISC.MODEL_GAP.utModelGapToggle);

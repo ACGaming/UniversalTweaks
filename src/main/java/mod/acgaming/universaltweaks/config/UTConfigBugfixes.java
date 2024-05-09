@@ -213,6 +213,11 @@ public class UTConfigBugfixes
         public boolean utEntityIDToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Entity List Addition")
+        @Config.Comment("Fixes client-side memory leak where some entity ids are not set before being added to the entity list")
+        public boolean utEntityListAdditionToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Entity Lists")
         @Config.Comment("Fixes entity lists often not getting updated correctly")
         public boolean utEntityListsToggle = true;
