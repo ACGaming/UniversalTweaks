@@ -57,14 +57,14 @@ public abstract class UTVoidTeleportEntity
     public void utTransferPlayerToDimension(CallbackInfo ci)
     {
         if (!UTConfigTweaks.ENTITIES.VOID_TELEPORT.utVoidTeleportToggle) return;
-        Entity entity = (Entity) (Object) this;
+        EntityLivingBase entity = (EntityLivingBase) (Object) this;
         if (!isEnabledForDimension(entity.dimension)) return;
         if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utMaxCombo >= 0 && entity.getEntityData().getInteger(universalTweaks$combo) > UTConfigTweaks.ENTITIES.VOID_TELEPORT.utMaxCombo) return;
 
         if ((UTConfigTweaks.ENTITIES.VOID_TELEPORT.utForgivePlayers && entity instanceof EntityPlayer) || isEnabledForEntity(entity))
         {
             if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utPreventVoidDamage) ci.cancel();
-            if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTeleportBlindness) ((EntityLivingBase) (Object) this).addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 60, 3));
+            if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTeleportBlindness) entity.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 60, 3));
 
             int highestClearLocation = entity.getEntityWorld().getHeight(MathHelper.floor(entity.posX), MathHelper.floor(entity.posZ));
             int targetY = UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTargetYLevel < highestClearLocation ? highestClearLocation : UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTargetYLevel;
