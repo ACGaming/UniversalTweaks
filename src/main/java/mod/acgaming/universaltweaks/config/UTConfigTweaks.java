@@ -937,11 +937,15 @@ public class UTConfigTweaks
                 })
             public boolean utAllowSpecificFallDamageToKill = true;
 
-            @Config.Name("[09] Apply Void Teleport to Players")
+            @Config.Name("[09] Maximum Times to Teleport Consecutively")
+            @Config.Comment("Maximum number of times to teleport the entity without the entity landing before no longer teleporting. Used to prevent infinite loops")
+            public int utMaxCombo = 100;
+
+            @Config.Name("[10] Apply Void Teleport to Players")
             @Config.Comment("Controls if players are teleported by Void Teleport")
             public boolean utForgivePlayers = true;
 
-            @Config.Name("[10] Entity List")
+            @Config.Name("[11] Entity List")
             @Config.Comment
                 ({
                     "List of the resource location names for entities concerning Void Teleport",
@@ -949,7 +953,7 @@ public class UTConfigTweaks
                 })
             public String[] utEntityList = new String[] {};
 
-            @Config.Name("[11] Entity List Mode")
+            @Config.Name("[12] Entity List Mode")
             @Config.Comment
                 ({
                     "Blacklist Mode: Entities that won't be impacted by Void Teleport, others will",
@@ -957,7 +961,7 @@ public class UTConfigTweaks
                 })
             public EnumLists utEntityListMode = EnumLists.WHITELIST;
 
-            @Config.Name("[12] Dimension List")
+            @Config.Name("[13] Dimension List")
             @Config.Comment
                 ({
                     "List of dimensions concerning Void Teleport",
@@ -966,7 +970,7 @@ public class UTConfigTweaks
                 })
             public String[] utDimensionList = new String[] {};
 
-            @Config.Name("[13] Dimension List Mode")
+            @Config.Name("[14] Dimension List Mode")
             @Config.Comment
                 ({
                     "Blacklist Mode: Dimensions that don't have Void Teleport enabled, others do",

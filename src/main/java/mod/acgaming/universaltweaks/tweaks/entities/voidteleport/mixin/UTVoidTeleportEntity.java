@@ -28,7 +28,7 @@ import java.util.List;
 public abstract class UTVoidTeleportEntity
 {
     @Unique
-    private static final String universalTweaks$hasFallenVoidTeleport = "universalTweaks$hasFallenVoidTeleport";
+    private static final String universalTweaks$combo = "universalTweaks$consecutiveVoidTeleportTimes";
 
     @Unique
     private static boolean isEnabledForDimension(int dimension)
@@ -58,6 +58,7 @@ public abstract class UTVoidTeleportEntity
         if (!UTConfigTweaks.ENTITIES.VOID_TELEPORT.utVoidTeleportToggle) return;
         Entity entity = (Entity) (Object) this;
         if (!isEnabledForDimension(entity.dimension)) return;
+        if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utMaxCombo >= 0 && entity.getEntityData().getInteger(universalTweaks$combo) > UTConfigTweaks.ENTITIES.VOID_TELEPORT.utMaxCombo) return;
 
         if ((UTConfigTweaks.ENTITIES.VOID_TELEPORT.utForgivePlayers && entity instanceof EntityPlayer) || isEnabledForEntity(entity))
         {
@@ -65,7 +66,14 @@ public abstract class UTVoidTeleportEntity
             if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTeleportBlindness) ((EntityLivingBase) (Object) this).addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 60, 3));
             entity.setPosition(entity.posX, UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTargetYLevel, entity.posZ);
             entity.motionY = Math.min(0, Math.max(UTConfigTweaks.ENTITIES.VOID_TELEPORT.utClampSpeedTo, entity.motionY));
-            entity.getEntityData().setBoolean(universalTweaks$hasFallenVoidTeleport, true);
+            if (entity.getEntityData().hasKey(universalTweaks$combo))
+            {
+                entity.getEntityData().setInteger(universalTweaks$combo, entity.getEntityData().getInteger(universalTweaks$combo) + 1);
+            }
+            else
+            {
+                entity.getEntityData().setInteger(universalTweaks$combo, 1);
+            }
         }
     }
 
@@ -74,9 +82,9 @@ public abstract class UTVoidTeleportEntity
     {
         if (!UTConfigTweaks.ENTITIES.VOID_TELEPORT.utVoidTeleportToggle) return;
         EntityLivingBase entity = (EntityLivingBase) (Object) this;
-        if (onGroundIn && entity.getEntityData().getBoolean(universalTweaks$hasFallenVoidTeleport))
+        if (onGroundIn && entity.getEntityData().hasKey(universalTweaks$combo))
         {
-            entity.getEntityData().removeTag(universalTweaks$hasFallenVoidTeleport);
+            entity.getEntityData().removeTag(universalTweaks$combo);
 
             if (entity.isInWater()) return;
             if (entity instanceof EntityPlayer && (((EntityPlayer) entity).capabilities.isFlying || ((EntityPlayer) entity).capabilities.allowFlying)) return;
