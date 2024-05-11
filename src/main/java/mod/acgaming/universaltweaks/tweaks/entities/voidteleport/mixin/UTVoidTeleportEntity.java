@@ -12,6 +12,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;
 import org.spongepowered.asm.mixin.Mixin;
@@ -64,8 +65,12 @@ public abstract class UTVoidTeleportEntity
         {
             if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utPreventVoidDamage) ci.cancel();
             if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTeleportBlindness) ((EntityLivingBase) (Object) this).addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 60, 3));
-            entity.setPosition(entity.posX, UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTargetYLevel, entity.posZ);
+
+            int highestClearLocation = entity.getEntityWorld().getHeight(MathHelper.floor(entity.posX), MathHelper.floor(entity.posZ));
+            int targetY = UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTargetYLevel < highestClearLocation ? highestClearLocation : UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTargetYLevel;
+            entity.setPosition(entity.posX, targetY, entity.posZ);
             entity.motionY = Math.min(0, Math.max(UTConfigTweaks.ENTITIES.VOID_TELEPORT.utClampSpeedTo, entity.motionY));
+
             if (entity.getEntityData().hasKey(universalTweaks$combo))
             {
                 entity.getEntityData().setInteger(universalTweaks$combo, entity.getEntityData().getInteger(universalTweaks$combo) + 1);

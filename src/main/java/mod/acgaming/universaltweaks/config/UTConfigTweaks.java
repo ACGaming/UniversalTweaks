@@ -901,8 +901,12 @@ public class UTConfigTweaks
             public boolean utPreventVoidDamage = true;
 
             @Config.Name("[03] Target Y-Level")
-            @Config.Comment("Y level to teleport the entity")
-            public double utTargetYLevel = 300;
+            @Config.Comment
+                ({
+                    "Y-level to teleport the entity",
+                    "If the target Y-level is lower than the highest block in that coordinate, will teleport the entity to the highest location instead"
+                })
+            public int utTargetYLevel = 300;
 
             @Config.Name("[04] Apply Blindness on Teleport")
             @Config.Comment("Applies the blindness effect for 3 seconds when teleporting")
