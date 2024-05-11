@@ -21,7 +21,7 @@ public abstract class UTWorldMixin
         at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;setPositionNonDirty()Z", ordinal = 0))
     public boolean utAlwaysLoadChunk(Entity entityIn)
     {
-        if (UTConfigBugfixes.ENTITIES.utEntityListsToggle)
+        if (UTConfigBugfixes.ENTITIES.ENTITY_LISTS.utChunkUpdatesToggle)
         {
             return true;
         }
