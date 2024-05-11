@@ -84,6 +84,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.blocks.overhaulbeacon.json", () -> UTConfigTweaks.BLOCKS.OVERHAUL_BEACON.utOverhaulBeaconToggle);
             put("mixins.tweaks.blocks.pumpkinplacing.json", () -> UTConfigTweaks.BLOCKS.utUnsupportedPumpkinPlacing);
             put("mixins.tweaks.blocks.sapling.json", () -> UTConfigTweaks.BLOCKS.SAPLING_BEHAVIOR.utSaplingBehaviorToggle);
+            put("mixins.tweaks.blocks.witherstructure.json", () -> UTConfigTweaks.ENTITIES.utWitherPlacement);
             put("mixins.tweaks.entities.ai.json", () -> UTConfigTweaks.ENTITIES.utAIReplacementToggle);
             put("mixins.tweaks.entities.ai.saddledwandering.json", () -> UTConfigTweaks.ENTITIES.utSaddledWanderingToggle);
             put("mixins.tweaks.entities.ai.wither.json", () -> UTConfigTweaks.ENTITIES.utWitherAIToggle);
