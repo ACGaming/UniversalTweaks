@@ -28,7 +28,7 @@ import java.util.List;
 public abstract class UTVoidTeleportEntity
 {
     @Unique
-    private boolean universalTweaks$hasFallenVoidTeleport = false;
+    private static final String universalTweaks$hasFallenVoidTeleport = "universalTweaks$hasFallenVoidTeleport";
 
     @Unique
     private static boolean isEnabledForDimension(int dimension)
@@ -65,7 +65,7 @@ public abstract class UTVoidTeleportEntity
             if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTeleportBlindness) ((EntityLivingBase) (Object) this).addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 60, 3));
             entity.setPosition(entity.posX, UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTargetYLevel, entity.posZ);
             entity.motionY = Math.min(0, Math.max(UTConfigTweaks.ENTITIES.VOID_TELEPORT.utClampSpeedTo, entity.motionY));
-            universalTweaks$hasFallenVoidTeleport = true;
+            entity.getEntityData().setBoolean(universalTweaks$hasFallenVoidTeleport, true);
         }
     }
 
@@ -73,10 +73,10 @@ public abstract class UTVoidTeleportEntity
     public void utUpdateFallState(double y, boolean onGroundIn, IBlockState state, BlockPos pos, CallbackInfo ci)
     {
         if (!UTConfigTweaks.ENTITIES.VOID_TELEPORT.utVoidTeleportToggle) return;
-        if (onGroundIn && universalTweaks$hasFallenVoidTeleport)
+        EntityLivingBase entity = (EntityLivingBase) (Object) this;
+        if (onGroundIn && entity.getEntityData().getBoolean(universalTweaks$hasFallenVoidTeleport))
         {
-            EntityLivingBase entity = (EntityLivingBase) (Object) this;
-            universalTweaks$hasFallenVoidTeleport = false;
+            entity.getEntityData().removeTag(universalTweaks$hasFallenVoidTeleport);
 
             if (entity.isInWater()) return;
             if (entity instanceof EntityPlayer && ((EntityPlayer) entity).capabilities.isFlying || entity instanceof EntityPlayer && ((EntityPlayer) entity).capabilities.allowFlying) return;
