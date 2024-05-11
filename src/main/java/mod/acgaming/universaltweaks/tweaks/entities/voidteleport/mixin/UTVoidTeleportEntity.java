@@ -79,7 +79,7 @@ public abstract class UTVoidTeleportEntity
             entity.getEntityData().removeTag(universalTweaks$hasFallenVoidTeleport);
 
             if (entity.isInWater()) return;
-            if (entity instanceof EntityPlayer && ((EntityPlayer) entity).capabilities.isFlying || entity instanceof EntityPlayer && ((EntityPlayer) entity).capabilities.allowFlying) return;
+            if (entity instanceof EntityPlayer && (((EntityPlayer) entity).capabilities.isFlying || ((EntityPlayer) entity).capabilities.allowFlying)) return;
 
             if (UTConfigTweaks.ENTITIES.VOID_TELEPORT.utFallHeight < 0)
             {
