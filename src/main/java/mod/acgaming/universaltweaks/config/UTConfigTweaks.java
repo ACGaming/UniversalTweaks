@@ -501,6 +501,11 @@ public class UTConfigTweaks
         public boolean utWitherPlacement = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Weaken Golem Structure Requirements")
+        @Config.Comment("Allows creating Iron Golems with non-air blocks in the bottom corners of the structure")
+        public boolean utGolemPlacement = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("First Person Burning Overlay")
         @Config.Comment("Sets the offset for the fire overlay in first person when the player is burning")
         public double utFirstPersonBurningOverlay = -0.3D;
