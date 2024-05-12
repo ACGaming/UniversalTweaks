@@ -428,6 +428,11 @@ public class UTConfigMods
     public static class ExtraUtilitiesCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Fix Deep Dark Stats")
+        @Config.Comment("Fixes Mob Attack and Health Statistics being repeatedly doubled")
+        public boolean utDeepDarkStats = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
