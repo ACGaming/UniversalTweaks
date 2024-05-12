@@ -233,6 +233,7 @@ All changes are toggleable via config files.
 * **Village Distance:** Sets the village generation distance in chunks
 * **Void Fog:** Re-implements pre-1.8 void fog and void particles
 * **Water Fall Damage:** Re-implements an improved version of pre-1.4 fall damage in water
+* **Weaken Golem Structure Requirements:** Allows creating Golem with non-air blocks in the bottom corners of the structure
 * **Weaken Wither Structure Requirements:** Allows creating Withers with non-air blocks in the bottom corners of the structure
 * **XP Bottle Amount:** Sets the amount of experience spawned by bottles o' enchanting
 * **XP Level Cap:** Sets the maximum experience level players can reach
