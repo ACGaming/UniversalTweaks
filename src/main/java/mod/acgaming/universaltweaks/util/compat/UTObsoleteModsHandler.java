@@ -126,6 +126,7 @@ public class UTObsoleteModsHandler
             put("tramplestopper", () -> UTConfigTweaks.BLOCKS.utFarmlandTrample != UTConfigTweaks.TrampleOptions.DEFAULT);
             put("unloader", () -> UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle);
             put("villagermantlefix", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
+            put("voidfog", () -> UTConfigTweaks.WORLD.utVoidFogToggle);
             put("watercontrolextreme", () -> UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle);
         }
     });

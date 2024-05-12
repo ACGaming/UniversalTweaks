@@ -1939,6 +1939,11 @@ public class UTConfigTweaks
             })
         public int utVillageDistance = 32;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Void Fog")
+        @Config.Comment("Re-implements pre-1.8 void fog and void particles")
+        public boolean utVoidFogToggle = false;
+
         public static class ChunkGenLimitCategory
         {
             @Config.RequiresMcRestart
