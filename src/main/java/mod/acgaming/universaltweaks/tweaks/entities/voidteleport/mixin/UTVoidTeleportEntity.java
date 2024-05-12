@@ -68,7 +68,7 @@ public abstract class UTVoidTeleportEntity
 
             int highestClearLocation = entity.getEntityWorld().getHeight(MathHelper.floor(entity.posX), MathHelper.floor(entity.posZ));
             int targetY = UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTargetYLevel < highestClearLocation ? highestClearLocation : UTConfigTweaks.ENTITIES.VOID_TELEPORT.utTargetYLevel;
-            entity.setPosition(entity.posX, targetY, entity.posZ);
+            entity.setPositionAndUpdate(entity.posX, targetY, entity.posZ);
             entity.motionY = Math.min(0, Math.max(UTConfigTweaks.ENTITIES.VOID_TELEPORT.utClampSpeedTo, entity.motionY));
 
             if (entity.getEntityData().hasKey(universalTweaks$combo))
