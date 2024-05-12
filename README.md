@@ -232,6 +232,7 @@ All changes are toggleable via config files.
     * **Taming:** Allows taming of undead horses
 * **Village Distance:** Sets the village generation distance in chunks
 * **Water Fall Damage:** Re-implements an improved version of pre-1.4 fall damage in water
+* **Weaken Wither Structure Requirements:** Allows creating Withers with non-air blocks in the bottom corners of the structure
 * **XP Bottle Amount:** Sets the amount of experience spawned by bottles o' enchanting
 * **XP Level Cap:** Sets the maximum experience level players can reach
 

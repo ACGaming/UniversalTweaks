@@ -496,6 +496,11 @@ public class UTConfigTweaks
         public boolean utWitherAIToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Weaken Wither Structure Requirements")
+        @Config.Comment("Allows creating Withers with non-air blocks in the bottom corners of the structure")
+        public boolean utWitherPlacement = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("First Person Burning Overlay")
         @Config.Comment("Sets the offset for the fire overlay in first person when the player is burning")
         public double utFirstPersonBurningOverlay = -0.3D;
