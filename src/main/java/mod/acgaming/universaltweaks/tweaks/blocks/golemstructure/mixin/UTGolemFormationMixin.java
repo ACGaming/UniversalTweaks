@@ -19,7 +19,7 @@ public abstract class UTGolemFormationMixin
     private boolean utOverrideRemovalLogic(World world, BlockPos pos, IBlockState newState, int flags, @Local(ordinal = 0) int j, @Local(ordinal = 1) int k)
     {
         if (!UTConfigTweaks.ENTITIES.utGolemPlacement) return true;
-        return k != 2 || (j != 0 && j != 2);
+        return (k != 0 && k != 2) || (j != 0 && j != 2);
     }
 
     @ModifyReceiver(method = {"getGolemPattern", "getGolemBasePattern"}, at = @At(value = "INVOKE", target = "Lnet/minecraft/block/state/pattern/FactoryBlockPattern;build()Lnet/minecraft/block/state/pattern/BlockPattern;"))
