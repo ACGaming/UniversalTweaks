@@ -198,7 +198,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.performance.mobspawnerrender.json", () -> UTConfigTweaks.PERFORMANCE.utDisableMobSpawnerRendering);
             put("mixins.tweaks.performance.resourcemanager.json", () -> UTConfigTweaks.PERFORMANCE.utCheckAnimatedModelsToggle);
             put("mixins.tweaks.world.loading.client.json", () -> UTConfigTweaks.PERFORMANCE.utWorldLoadingToggle);
-            put("mixins.tweaks.world.voidfog.json", () -> UTConfigTweaks.WORLD.utVoidFogToggle);
+            put("mixins.tweaks.world.voidfog.json", () -> UTConfigTweaks.WORLD.VOID_FOG.utVoidFogToggle);
         }
     });
     public static long launchTime;

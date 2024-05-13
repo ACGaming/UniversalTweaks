@@ -2,13 +2,6 @@ package mod.acgaming.universaltweaks.config;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import net.minecraftforge.common.config.Config;
-import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
 import com.cleanroommc.configanytime.ConfigAnytime;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
@@ -22,6 +15,11 @@ import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
 public class UTConfigTweaks
@@ -2019,6 +2017,10 @@ public class UTConfigTweaks
         @Config.Name("Dimension Unload")
         public final DimensionUnloadCategory DIMENSION_UNLOAD = new DimensionUnloadCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.world.voidfog")
+        @Config.Name("Void Fog")
+        public final VoidFogCategory VOID_FOG = new VoidFogCategory();
+
         @Config.RequiresMcRestart
         @Config.Name("Sea Level")
         @Config.Comment
@@ -2045,11 +2047,6 @@ public class UTConfigTweaks
                 "Vanilla default is 32"
             })
         public int utVillageDistance = 32;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Void Fog")
-        @Config.Comment("Re-implements pre-1.8 void fog and void particles")
-        public boolean utVoidFogToggle = false;
 
         public static class ChunkGenLimitCategory
         {
@@ -2089,6 +2086,59 @@ public class UTConfigTweaks
                     "0",
                     "overworld"
                 };
+        }
+
+        public static class VoidFogCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Void Fog Toggle")
+            @Config.Comment("Re-implements pre-1.8 void fog and void particles")
+            public boolean utVoidFogToggle = false;
+
+            @Config.Name("[2] Dimension List")
+            @Config.Comment
+                ({
+                    "List of dimensions concerning void fog and particles",
+                    "Behavior depends on the list mode",
+                    "Can be dimension name or ID"
+                })
+            public String[] utVoidFogDimensionList = new String[] {"overworld"};
+
+            @Config.Name("[3] Dimension List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Dimensions that don't have void fog and particles enabled, others do",
+                    "Whitelist Mode: Dimensions that have void fog and particles enabled, others don't"
+                })
+            public EnumLists utVoidFogDimensionListMode = EnumLists.WHITELIST;
+
+            @Config.Name("[4] Fog In Creative/Spectator")
+            @Config.Comment("Renders void fog in creative and spectator mode")
+            public boolean utVoidFogCreativeSpectator = false;
+
+            @Config.Name("[5] Fog In Superflat")
+            @Config.Comment("Renders void fog in the superflat world type")
+            public boolean utVoidFogSuperflat = false;
+
+            @Config.Name("[6] Fog On Night Vision")
+            @Config.Comment("Renders void fog when the player has night vision")
+            public boolean utVoidFogNightVision = false;
+
+            @Config.Name("[7] Particles In Creative/Spectator")
+            @Config.Comment("Renders void particles in creative and spectator mode")
+            public boolean utVoidParticlesCreativeSpectator = true;
+
+            @Config.Name("[8] Particles In Superflat")
+            @Config.Comment("Renders void particles in the superflat world type")
+            public boolean utVoidParticlesSuperflat = false;
+
+            @Config.Name("[9] Particle Spawn Y Level")
+            @Config.Comment("Determines the maximum Y level of the player at which void particles are spawned")
+            public int utVoidParticleSpawnYLevel = 8;
+
+            @Config.Name("[10] Particle Spawn Iterations")
+            @Config.Comment("Determines the amount of iterations for checking void particle spawns per animate tick")
+            public int utVoidParticleSpawnIterations = 1000;
         }
     }
 
