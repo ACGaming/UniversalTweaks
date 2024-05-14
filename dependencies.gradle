@@ -1,3 +1,6 @@
+//file:noinspection DependencyNotationArgument
+//file:noinspection GrUnresolvedAccess
+// TODO remove when fixed in RFG ^
 /*
  * Add your dependencies here. Supported configurations:
  *  - api("group:name:version:classifier"): if you use the types from this dependency in the public API of this mod
