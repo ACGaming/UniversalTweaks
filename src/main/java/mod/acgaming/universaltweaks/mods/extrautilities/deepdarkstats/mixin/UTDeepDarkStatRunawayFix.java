@@ -24,7 +24,7 @@ public abstract class UTDeepDarkStatRunawayFix
     @Unique
     private static final AttributeModifier ATTACK_MODIFIER = new AttributeModifier(ATTACK_MODIFIER_ID, "Deep Dark Attack Doubling", 1, 2);
 
-    @Redirect(method = "noMobs", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ai/attributes/IAttributeInstance;setBaseValue(D)V", ordinal = 0))
+    @Redirect(method = "noMobs", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ai/attributes/IAttributeInstance;setBaseValue(D)V", ordinal = 0, remap = true))
     private static void utFixMaxHealth(IAttributeInstance attributeInstance, double original)
     {
         if (!UTConfigMods.EXTRA_UTILITIES.utDeepDarkStats)
@@ -36,7 +36,7 @@ public abstract class UTDeepDarkStatRunawayFix
         attributeInstance.applyModifier(HEALTH_MODIFIER);
     }
 
-    @Redirect(method = "noMobs", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ai/attributes/IAttributeInstance;setBaseValue(D)V", ordinal = 1))
+    @Redirect(method = "noMobs", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ai/attributes/IAttributeInstance;setBaseValue(D)V", ordinal = 1, remap = true))
     private static void utFixAttackDamage(IAttributeInstance attributeInstance, double original)
     {
         if (!UTConfigMods.EXTRA_UTILITIES.utDeepDarkStats)
