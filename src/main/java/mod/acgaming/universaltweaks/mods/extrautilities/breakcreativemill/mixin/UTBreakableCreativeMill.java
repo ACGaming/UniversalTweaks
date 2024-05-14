@@ -9,10 +9,10 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 // Courtesy of WaitingIdly
-@Mixin(value = BlockPassiveGenerator.class, remap = false)
+@Mixin(value = BlockPassiveGenerator.class)
 public abstract class UTBreakableCreativeMill extends XUBlockStatic
 {
-    @ModifyExpressionValue(method = "getBlockHardness", at = @At(value = "FIELD", target = "Lcom/rwtema/extrautils2/ExtraUtils2;allowCreativeBlocksToBeBroken:Z"))
+    @ModifyExpressionValue(method = "getBlockHardness", at = @At(value = "FIELD", target = "Lcom/rwtema/extrautils2/ExtraUtils2;allowCreativeBlocksToBeBroken:Z", remap = false))
     private boolean utBreakCreativeMill(boolean original)
     {
         if (!UTConfigMods.EXTRA_UTILITIES.utFixCreativeMillHarvestability) return original;

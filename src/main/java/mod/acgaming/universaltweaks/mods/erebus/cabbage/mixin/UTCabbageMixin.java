@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // Courtesy of WaitingIdly
-@Mixin(value = BlockCabbage.class, remap = false)
+@Mixin(value = BlockCabbage.class)
 public abstract class UTCabbageMixin extends BlockCrops
 {
     @Override
@@ -31,7 +31,7 @@ public abstract class UTCabbageMixin extends BlockCrops
         return ItemErebusFood.EnumFoodType.CABBAGE.ordinal();
     }
 
-    @Inject(method = "getDrops", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "getDrops", at = @At("HEAD"), remap = false, cancellable = true)
     private void utOverrideDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune, CallbackInfoReturnable<List<ItemStack>> cir)
     {
         if (!UTConfigMods.EREBUS.utCabbageDrop) return;
