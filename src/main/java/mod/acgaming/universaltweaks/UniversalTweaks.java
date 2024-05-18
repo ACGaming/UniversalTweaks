@@ -48,6 +48,7 @@ import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntit
 import mod.acgaming.universaltweaks.tweaks.world.voidfog.UTVoidFog;
 import mod.acgaming.universaltweaks.util.UTKeybindings;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
+import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
 import mods.railcraft.common.core.BetaMessageTickHandler;
 import net.minecraftforge.common.MinecraftForge;
@@ -160,7 +161,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
         if (Loader.isModLoaded("projectred-exploration") && UTConfigMods.PROJECTRED.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTProjectRedWorldEvents());
         // Unregister reason: disable beta warning.
-        if (Loader.isModLoaded("railcraft") && UTConfigMods.RAILCRAFT.utNoBetaWarningToggle)
+        if (Loader.isModLoaded("railcraft") && UTConfigMods.RAILCRAFT.utNoBetaWarningToggle && UTReflectionUtil.isClassLoaded("mods.railcraft.common.core.BetaMessageTickHandler"))
         {
             MinecraftForge.EVENT_BUS.unregister(BetaMessageTickHandler.INSTANCE);
         }
