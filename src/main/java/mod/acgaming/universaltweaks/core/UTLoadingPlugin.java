@@ -165,6 +165,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.misc.spectatormenu.json", () -> UTConfigBugfixes.MISC.utSpectatorMenuToggle);
             put("mixins.bugfixes.misc.startup.json", () -> UTConfigTweaks.PERFORMANCE.utFasterBackgroundStartupToggle);
             put("mixins.bugfixes.world.frustumculling.json", () -> UTConfigBugfixes.WORLD.utFrustumCullingToggle);
+            put("mixins.tweaks.blocks.betterplacement.json", () -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
             put("mixins.tweaks.entities.autojump.json", () -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
             put("mixins.tweaks.entities.burning.player.json", () -> UTConfigTweaks.ENTITIES.utFirstPersonBurningOverlay != -0.3D);
             put("mixins.tweaks.items.attackcooldown.client.json", () -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
