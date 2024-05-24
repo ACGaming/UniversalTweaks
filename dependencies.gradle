@@ -147,6 +147,8 @@ dependencies {
     implementation 'com.udojava:EvalEx:2.7'
     embed 'com.udojava:EvalEx:2.7'
 
+    runtimeOnly 'com.cleanroommc:strip-latest-forge-requirements:1.0'
+
     // compiles all mods, and selectively enables mods being debugged
     mod_dependencies.entrySet().forEach {
         def mod = rfg.deobf(it.key)
