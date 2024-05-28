@@ -1375,6 +1375,11 @@ public class UTConfigTweaks
         public boolean utPotionDurationToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Always Return to Main Menu")
+        @Config.Comment("Always returns the player to the main menu when quitting the game")
+        public boolean utReturnToMainMenu = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Copy World Seed")
         @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
         public boolean utCopyWorldSeedToggle = false;
