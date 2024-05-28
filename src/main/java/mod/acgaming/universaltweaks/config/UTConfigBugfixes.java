@@ -207,6 +207,11 @@ public class UTConfigBugfixes
         public boolean utElytraDeploymentLandingToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fixes Invisible Player when Flying with Elytra")
+        @Config.Comment("Fixes the player model occasionally disappearing when flying with elytra in a straight line in third-person mode")
+        public boolean utFixInvisiblePlayerModelWithElytra = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Entity Bounding Box")
         @Config.Comment("Saves entity bounding boxes to tags to prevent breakouts and suffocation")
         public boolean utEntityAABBToggle = true;

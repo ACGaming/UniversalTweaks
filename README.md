@@ -49,6 +49,7 @@ All changes are toggleable via config files.
 * **Exhaustion:** Fixes saturation depleting in peaceful mode
 * **Falling Block Entity Damage:** Only damage living entities hit by falling blocks, prevents killing items and XP
 * **Faster Background Startup:** Fixes slow background startup edge case caused by checking tooltips during the loading process
+* **Fixes Invisible Player when Flying with Elytra:** Fixes the player model occasionally disappearing when flying with elytra in a straight line in third-person mode
 * **Frustum Culling:** Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * **Help:** Replaces the help command, sorts and reports broken commands
 * **Hopper Bounding Box:** Slims down the hopper bounding box for easier access of nearby blocks
