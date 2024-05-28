@@ -75,7 +75,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.netherchest.dupes.json", () -> loaded("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle);
             put("mixins.mods.netherrocks.json", () -> loaded("netherrocks"));
             put("mixins.mods.nuclearcraft.json", () -> loaded("nuclearcraft"));
-            put("mixins.mods.openblocks.json", () -> loaded("openblocks"));
+            put("mixins.mods.openblocks.json", () -> loaded("openblocks") && UTConfigMods.OPEN_BLOCKS.utLastStandFixToggle);
             put("mixins.mods.quark.dupes.json", () -> loaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
             put("mixins.mods.reskillable.json", () -> loaded("reskillable"));
             put("mixins.mods.rftoolsdimensions.json", () -> loaded("rftoolsdim"));

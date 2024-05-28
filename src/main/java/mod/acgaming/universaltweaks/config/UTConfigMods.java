@@ -143,6 +143,10 @@ public class UTConfigMods
     @Config.Name("NuclearCraft")
     public static final NuclearCraftCategory NUCLEARCRAFT = new NuclearCraftCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.openblocks")
+    @Config.Name("OpenBlocks")
+    public static final OpenBlocksCategory OPEN_BLOCKS = new OpenBlocksCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.projectred")
     @Config.Name("ProjectRed")
     public static final ProjectRedCategory PROJECTRED = new ProjectRedCategory();
@@ -612,6 +616,18 @@ public class UTConfigMods
             CONCURRENT_LINKED_HASHMAP,
             CONCURRENT_LINKED_QUEUE
         }
+    }
+
+    public static class OpenBlocksCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Last Stand Trigger Fix")
+        @Config.Comment
+            ({
+                "Fixes the Last Stand enchantment triggering too early on pre-mitigation damage (before enchants, potions, etc)",
+                "instead of on post-mitigation damage."
+            })
+        public boolean utLastStandFixToggle = true;
     }
 
     public static class ProjectRedCategory
