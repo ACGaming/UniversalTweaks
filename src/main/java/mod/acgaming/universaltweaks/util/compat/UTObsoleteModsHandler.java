@@ -127,6 +127,7 @@ public class UTObsoleteModsHandler
             put("toastcontrol", () -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlToggle);
             put("tramplestopper", () -> UTConfigTweaks.BLOCKS.utFarmlandTrample != UTConfigTweaks.TrampleOptions.DEFAULT);
             put("unloader", () -> UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle);
+            put("unridekeybind", () -> UTConfigTweaks.MISC.utUseSeparateDismountKey);
             put("villagermantlefix", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
             put("voidfog", () -> UTConfigTweaks.WORLD.VOID_FOG.utVoidFogToggle);
             put("watercontrolextreme", () -> UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle);

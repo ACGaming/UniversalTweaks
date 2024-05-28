@@ -16,6 +16,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.tweaks.entities.playerdismount.UTDismountKeybind;
 import mod.acgaming.universaltweaks.tweaks.misc.narrator.UTNarratorKeybind;
 import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTClearToastKeybind;
 
@@ -33,6 +34,7 @@ public class UTKeybindings extends KeyBinding
     public static void initialize()
     {
         UTClearToastKeybind.createKeybind();
+        UTDismountKeybind.createKeybind();
         UTNarratorKeybind.createKeybind();
 
         for (Key key : keys)

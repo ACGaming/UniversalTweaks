@@ -1545,6 +1545,11 @@ public class UTConfigTweaks
         public boolean utSkipRegistryScreenToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Use Separate Dismount Key")
+        @Config.Comment("Makes the dismount keybind separate from LSHIFT, allowing it to be rebound independently")
+        public boolean utUseSeparateDismountKey = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Use Separate Narrator Key")
         @Config.Comment("Allows using a custom Narrator key, instead of being stuck with CTRL+B")
         public boolean utUseCustomNarratorKeybind = false;

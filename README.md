@@ -237,6 +237,7 @@ All changes are toggleable via config files.
 * **Undead Horses**
     * **Burning:** Lets untamed undead horses burn in daylight
     * **Taming:** Allows taming of undead horses
+* **Use Separate Dismount Key:** Makes the dismount keybind separate from LSHIFT, allowing it to be rebound independently
 * **Use Separate Narrator Key:** Allows using a custom Narrator key, instead of being stuck with CTRL+B
 * **Village Distance:** Sets the village generation distance in chunks
 * **Void Fog:** Re-implements pre-1.8 void fog and void particles
