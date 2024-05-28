@@ -1428,6 +1428,16 @@ public class UTConfigTweaks
         public boolean utBetterPing = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Glint Overlay on Potions")
+        @Config.Comment("Disables the glint overlay on potions")
+        public boolean utDisablePotionGlint = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Glint Overlay on Enchantment Books")
+        @Config.Comment("Disables the glint overlay on enchantment books")
+        public boolean utDisableEnchantmentBookGlint = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Prevent Keybinds from Overflowing Screen")
         @Config.Comment("Always indent keybind entries from the screen edge, preventing them from overflowing off the left side when particularly long keybind names are present")
         public boolean utPreventKeybindingEntryOverflow = true;

@@ -181,6 +181,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.chat.maximumlines.json", () -> UTConfigTweaks.MISC.CHAT.utChatLines != 100);
             put("mixins.tweaks.misc.commands.seed.json", () -> UTConfigTweaks.MISC.utCopyWorldSeedToggle);
             put("mixins.tweaks.misc.credits.json", () -> UTConfigTweaks.MISC.utSkipCreditsToggle);
+            put("mixins.tweaks.misc.glint.enchantedbook.json", () -> UTConfigTweaks.MISC.utDisableEnchantmentBookGlint);
+            put("mixins.tweaks.misc.glint.potion.json", () -> UTConfigTweaks.MISC.utDisablePotionGlint);
             put("mixins.tweaks.misc.gui.keybindlistentry.json", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
             put("mixins.tweaks.misc.gui.lanserverproperties.json", () -> UTConfigTweaks.MISC.utLANServerProperties);
             put("mixins.tweaks.misc.gui.overlaymessage.json", () -> UTConfigTweaks.MISC.utOverlayMessageHeight != -4);
