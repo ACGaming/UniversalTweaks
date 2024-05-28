@@ -205,6 +205,7 @@ All changes are toggleable via config files.
 * **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
+* **Prevent Observer Activating on Placement:** Controls if the observer activates itself on the first tick when it is placed
 * **Prevent Placing Buckets in Portals:** Prevents placing of liquid source blocks overriding portal blocks
 * **Pumpkin Placing:** Allows placing Pumpkins and Jack'O'Lanterns without a supporting block
 * **Rabbit Killer Spawning:** Configurable chance for rabbits to spawn as the killer bunny variant

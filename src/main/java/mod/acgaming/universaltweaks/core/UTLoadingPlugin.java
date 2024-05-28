@@ -83,6 +83,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.blocks.hitdelay.json", () -> UTConfigTweaks.BLOCKS.utBlockHitDelay != 5);
             put("mixins.tweaks.blocks.leafdecay.json", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
             put("mixins.tweaks.blocks.lenientpaths.json", () -> UTConfigTweaks.BLOCKS.utLenientPathsToggle);
+            put("mixins.tweaks.blocks.observer.json", () -> UTConfigTweaks.BLOCKS.utPreventObserverActivatesOnPlacement);
             put("mixins.tweaks.blocks.overhaulbeacon.json", () -> UTConfigTweaks.BLOCKS.OVERHAUL_BEACON.utOverhaulBeaconToggle);
             put("mixins.tweaks.blocks.pumpkinplacing.json", () -> UTConfigTweaks.BLOCKS.utUnsupportedPumpkinPlacing);
             put("mixins.tweaks.blocks.sapling.json", () -> UTConfigTweaks.BLOCKS.SAPLING_BEHAVIOR.utSaplingBehaviorToggle);

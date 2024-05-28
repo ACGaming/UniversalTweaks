@@ -159,6 +159,11 @@ public class UTConfigTweaks
         public int utFallingBlockLifespan = 600;
 
         @Config.RequiresMcRestart
+        @Config.Name("Prevent Observer Activating on Placement")
+        @Config.Comment("Controls if the observer activates itself on the first tick when it is placed")
+        public boolean utPreventObserverActivatesOnPlacement = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Render End Portal Bottom")
         @Config.Comment("Controls if the End Portal renders its texture on the bottom face")
         public boolean utRenderEndPortalBottom = true;
