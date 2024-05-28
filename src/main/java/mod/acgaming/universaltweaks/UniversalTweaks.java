@@ -19,6 +19,7 @@ import mod.acgaming.universaltweaks.mods.cqrepoured.UTGoldenFeatherEvent;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Burning;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Sprinting;
 import mod.acgaming.universaltweaks.mods.mekanism.UTMekanismFixes;
+import mod.acgaming.universaltweaks.mods.openblocks.UTOpenBlocksEvents;
 import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.UTSimplyJetpacksEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageClientStatesReset;
@@ -73,7 +74,7 @@ public class UniversalTweaks
     public static final String MODID = Tags.MOD_ID;
     public static final String NAME = Tags.MOD_NAME;
     public static final String VERSION = Tags.VERSION;
-    public static final String DEPENDENCIES = "required-after:mixinbooter@[8.0,);required-after:configanytime;"
+    public static final String DEPENDENCIES = "required-after:mixinbooter@[8.9,);required-after:configanytime;"
         + "after:abyssalcraft;"
         + "after:actuallyadditions;"
         + "after:aoa3;"
@@ -113,6 +114,7 @@ public class UniversalTweaks
         + "after:netherchest;"
         + "after:netherrocks;"
         + "after:nuclearcraft;"
+        + "after:openblocks;"
         + "after:plustic;"
         + "after:projectred-exploration;"
         + "after:quark;"
@@ -159,6 +161,7 @@ public class UniversalTweaks
         if (Loader.isModLoaded("elenaidodge2") && UTConfigMods.ELENAI_DODGE_2.utED2ExtinguishingDodgeChance > 0) MinecraftForge.EVENT_BUS.register(new UTED2Burning());
         if (Loader.isModLoaded("elenaidodge2") && UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherConsumption > 0) MinecraftForge.EVENT_BUS.register(new UTED2Sprinting());
         if (Loader.isModLoaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
+        if (Loader.isModLoaded("openblocks")) MinecraftForge.EVENT_BUS.register(new UTOpenBlocksEvents());
         if (Loader.isModLoaded("projectred-exploration") && UTConfigMods.PROJECTRED.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTProjectRedWorldEvents());
         // Unregister reason: disable beta warning.
         if (Loader.isModLoaded("railcraft") && UTConfigMods.RAILCRAFT.utNoBetaWarningToggle && UTReflectionUtil.isClassLoaded("mods.railcraft.common.core.BetaMessageTickHandler"))
