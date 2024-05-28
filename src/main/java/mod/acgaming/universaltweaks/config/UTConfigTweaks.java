@@ -1959,6 +1959,11 @@ public class UTConfigTweaks
         public boolean utWorldLoadingToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Improve Language Switching Speed")
+        @Config.Comment("Improves the speed of switching languages in the Language GUI")
+        public boolean utImproveLanguageSwitchingSpeed = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Mute Advancement Errors")
         @Config.Comment("Silences advancement errors")
         public boolean utAdvancementCheckToggle = false;
