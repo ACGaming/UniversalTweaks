@@ -159,6 +159,11 @@ public class UTConfigTweaks
         public int utFallingBlockLifespan = 600;
 
         @Config.RequiresMcRestart
+        @Config.Name("Render End Portal Bottom")
+        @Config.Comment("Controls if the End Portal renders its texture on the bottom face")
+        public boolean utRenderEndPortalBottom = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fast Leaf Decay")
         @Config.Comment("Makes leaves decay faster when trees are chopped")
         public boolean utLeafDecayToggle = true;

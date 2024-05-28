@@ -209,6 +209,7 @@ All changes are toggleable via config files.
 * **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu
 * **Remove Recipe Book:** Removes the recipe book button from GUIs
 * **Remove Snooper:** Forcefully turns off the snooper and hides the snooper settings button from the options menu
+* **Render End Portal Bottom:** Controls if the End Portal renders its texture on the bottom face
 * **Riding Exhaustion:** Enables depleting saturation when riding mounts
 * **Sapling Behavior:** Allows customization of sapling behavior while utilizing an optimized method
 * **Sea Level:** Sets the default height of the overworld's sea level
