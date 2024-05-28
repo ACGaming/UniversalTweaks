@@ -1038,6 +1038,11 @@ public class UTConfigTweaks
         public boolean utHardcoreBucketsToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Prevent Placing Buckets in Portals")
+        @Config.Comment("Prevents placing of liquid source blocks overriding portal blocks")
+        public boolean utPreventBucketPlacingInPortal = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Leftover Breath Bottles")
         @Config.Comment("Disables dragon's breath from being a container item and leaving off empty bottles when a stack is brewed with")
         public boolean utLeftoverBreathBottleToggle = true;
