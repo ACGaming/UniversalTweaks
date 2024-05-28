@@ -112,6 +112,7 @@ public class UTObsoleteModsHandler
             put("preventghost", () -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
             put("quickleafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
             put("rallyhealth", () -> UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle);
+            put("rebind_narrator", () -> UTConfigTweaks.MISC.utUseCustomNarratorKeybind);
             put("salwayseat", () -> UTConfigTweaks.ITEMS.utAlwaysEatToggle);
             put("savemystronghold", () -> UTConfigTweaks.WORLD.utStrongholdToggle);
             put("sleepsooner", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);

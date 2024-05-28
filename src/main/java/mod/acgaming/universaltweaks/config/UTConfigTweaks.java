@@ -1544,6 +1544,11 @@ public class UTConfigTweaks
             })
         public boolean utSkipRegistryScreenToggle = false;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Use Separate Narrator Key")
+        @Config.Comment("Allows using a custom Narrator key, instead of being stuck with CTRL+B")
+        public boolean utUseCustomNarratorKeybind = false;
+
         @Config.Name("Toggle Cheats Button")
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
         public boolean utToggleCheatsToggle = true;
