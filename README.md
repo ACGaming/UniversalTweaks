@@ -329,6 +329,8 @@ All changes are toggleable via config files.
     * **Right Click Harvesting Fix:** Prevents crashing with mods implementing right click crop harvesting
 * **NuclearCraft**
     * **Radiation Environment Map:** Changes the data table of the radiation environment handler to improve tick time
+* **OpenBlocks**
+    * **Last Stand Trigger Fix:** Fixes the Last Stand enchantment triggering too early on pre-mitigation damage (before enchants, potions, etc), instead of on post-mitigation damage.
 * **ProjectRed**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Quark**
