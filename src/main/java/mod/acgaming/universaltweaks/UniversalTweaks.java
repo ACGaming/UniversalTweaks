@@ -2,7 +2,6 @@ package mod.acgaming.universaltweaks;
 
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync;
-import mod.acgaming.universaltweaks.bugfixes.entities.dimensionchange.UTDimensionChangeEvents;
 import mod.acgaming.universaltweaks.bugfixes.misc.help.UTHelp;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
@@ -46,7 +45,6 @@ import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTTutorialToast;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.craftingcache.UTCraftingCache;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
-import mod.acgaming.universaltweaks.tweaks.world.voidfog.UTVoidFog;
 import mod.acgaming.universaltweaks.util.UTKeybindings;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
@@ -152,7 +150,6 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        if (UTConfigBugfixes.ENTITIES.utDimensionChangeToggle) MinecraftForge.EVENT_BUS.register(new UTDimensionChangeEvents());
         if (UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
         if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) MinecraftForge.EVENT_BUS.register(new UTAbyssalCraftEvents());
         if (Loader.isModLoaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTArcaneArchivesEvents());
