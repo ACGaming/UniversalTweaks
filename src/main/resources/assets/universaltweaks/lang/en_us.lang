@@ -5,6 +5,8 @@ msg.universaltweaks.obsoletemods.warning3=Consider removing them from your game 
 
 # KEYBINDS
 keybind.universaltweaks.clear_toasts=Clear Toasts
+keybind.universaltweaks.dismount=Dismount
+keybind.universaltweaks.narrator=Toggle Narrator
 
 # TOGGLE CHEATS
 btn.universaltweaks.cheats.enabled=Cheats: ON

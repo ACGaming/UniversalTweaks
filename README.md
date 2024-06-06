@@ -49,6 +49,7 @@ All changes are toggleable via config files.
 * **Exhaustion:** Fixes saturation depleting in peaceful mode
 * **Falling Block Entity Damage:** Only damage living entities hit by falling blocks, prevents killing items and XP
 * **Faster Background Startup:** Fixes slow background startup edge case caused by checking tooltips during the loading process
+* **Fixes Invisible Player when Flying with Elytra:** Fixes the player model occasionally disappearing when flying with elytra in a straight line in third-person mode
 * **Frustum Culling:** Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * **Help:** Replaces the help command, sorts and reports broken commands
 * **Hopper Bounding Box:** Slims down the hopper bounding box for easier access of nearby blocks
@@ -85,6 +86,7 @@ All changes are toggleable via config files.
 * **Adaptive XP Drops:** Scales dropped experience from entities based on their health
 * **AI Improvements:** Replaces/removes entity AI for improved server performance
 * **Always Eat:** Allows the consumption of food at any time, regardless of the hunger bar
+* **Always Return to Main Menu:** Always returns the player to the main menu when quitting the game
 * **Armed Armor Stands:** Enables arms for armor stands by default
 * **Armor Curve:** Adjusts the armor scaling and degradation formulae for mobs and players
 * **Attributes:** Sets custom ranges for entity attributes
@@ -136,6 +138,8 @@ All changes are toggleable via config files.
 * **Disable Fancy Missing Model:** Improves rendering performance by removing the resource location text on missing models
 * **Disable Mob Spawner Entity Render:** Disables rendering an entity inside of Mob Spawners
 * **Disable Narrator:** Disables the narrator functionality entirely
+* **Disable Glint Overlay on Enchantment Books:** Disables the glint overlay on enchantment books
+* **Disable Glint Overlay on Potions:** Disables the glint overlay on potions
 * **Disable Sleeping:** Disables skipping night by using a bed while making it still able to set spawn
 * **Disable Text Shadowing:** Disables all text shadowing, where text has a darker version of itself rendered behind the normal text, changing the appearance and can improve fps on some screens
 * **Disable Villager Trade Leveling:** Disables leveling of villager careers, only allowing base level trades
@@ -162,6 +166,7 @@ All changes are toggleable via config files.
 * **Hide Personal Effect Particles:** Disables potion effect particles emitting from yourself
 * **Horizontal Collision Damage:** Applies horizontal collision damage to the player akin to elytra collision
 * **Husk & Stray Spawning:** Lets husks and strays spawn underground like regular zombies and skeletons
+* **Improve Language Switching Speed:** Improves the speed of switching languages in the Language GUI
 * **Improved Entity Tracker Warning:** Provides more information to addPacket removed entity warnings
 * **Incurable Potions:** Excludes potion effects from being curable with curative items like buckets of milk
 * **Infinite Music:** Lets background music play continuously without delays
@@ -200,6 +205,8 @@ All changes are toggleable via config files.
 * **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
+* **Prevent Observer Activating on Placement:** Controls if the observer activates itself on the first tick when it is placed
+* **Prevent Placing Buckets in Portals:** Prevents placing of liquid source blocks overriding portal blocks
 * **Pumpkin Placing:** Allows placing Pumpkins and Jack'O'Lanterns without a supporting block
 * **Rabbit Killer Spawning:** Configurable chance for rabbits to spawn as the killer bunny variant
 * **Rabbit Toast Spawning:** Configurable chance for rabbits to spawn as the Toast variant
@@ -208,6 +215,7 @@ All changes are toggleable via config files.
 * **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu
 * **Remove Recipe Book:** Removes the recipe book button from GUIs
 * **Remove Snooper:** Forcefully turns off the snooper and hides the snooper settings button from the options menu
+* **Render End Portal Bottom:** Controls if the End Portal renders its texture on the bottom face
 * **Riding Exhaustion:** Enables depleting saturation when riding mounts
 * **Sapling Behavior:** Allows customization of sapling behavior while utilizing an optimized method
 * **Sea Level:** Sets the default height of the overworld's sea level
@@ -230,6 +238,8 @@ All changes are toggleable via config files.
 * **Undead Horses**
     * **Burning:** Lets untamed undead horses burn in daylight
     * **Taming:** Allows taming of undead horses
+* **Use Separate Dismount Key:** Makes the dismount keybind separate from LSHIFT, allowing it to be rebound independently
+* **Use Separate Narrator Key:** Allows using a custom Narrator key, instead of being stuck with CTRL+B
 * **Village Distance:** Sets the village generation distance in chunks
 * **Void Fog:** Re-implements pre-1.8 void fog and void particles
 * **Water Fall Damage:** Re-implements an improved version of pre-1.4 fall damage in water

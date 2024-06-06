@@ -159,6 +159,16 @@ public class UTConfigTweaks
         public int utFallingBlockLifespan = 600;
 
         @Config.RequiresMcRestart
+        @Config.Name("Prevent Observer Activating on Placement")
+        @Config.Comment("Controls if the observer activates itself on the first tick when it is placed")
+        public boolean utPreventObserverActivatesOnPlacement = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Render End Portal Bottom")
+        @Config.Comment("Controls if the End Portal renders its texture on the bottom face")
+        public boolean utRenderEndPortalBottom = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fast Leaf Decay")
         @Config.Comment("Makes leaves decay faster when trees are chopped")
         public boolean utLeafDecayToggle = true;
@@ -1033,6 +1043,11 @@ public class UTConfigTweaks
         public boolean utHardcoreBucketsToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Prevent Placing Buckets in Portals")
+        @Config.Comment("Prevents placing of liquid source blocks overriding portal blocks")
+        public boolean utPreventBucketPlacingInPortal = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Leftover Breath Bottles")
         @Config.Comment("Disables dragon's breath from being a container item and leaving off empty bottles when a stack is brewed with")
         public boolean utLeftoverBreathBottleToggle = true;
@@ -1365,6 +1380,11 @@ public class UTConfigTweaks
         public boolean utPotionDurationToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Always Return to Main Menu")
+        @Config.Comment("Always returns the player to the main menu when quitting the game")
+        public boolean utReturnToMainMenu = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Copy World Seed")
         @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
         public boolean utCopyWorldSeedToggle = false;
@@ -1411,6 +1431,16 @@ public class UTConfigTweaks
         @Config.Name("Better Ping Display")
         @Config.Comment("Displays the ping in milliseconds of players when viewing the server list")
         public boolean utBetterPing = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Glint Overlay on Potions")
+        @Config.Comment("Disables the glint overlay on potions")
+        public boolean utDisablePotionGlint = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Glint Overlay on Enchantment Books")
+        @Config.Comment("Disables the glint overlay on enchantment books")
+        public boolean utDisableEnchantmentBookGlint = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Prevent Keybinds from Overflowing Screen")
@@ -1518,6 +1548,16 @@ public class UTConfigTweaks
                 "Identical to the launch parameter `-Dfml.queryResult=confirm`"
             })
         public boolean utSkipRegistryScreenToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Use Separate Dismount Key")
+        @Config.Comment("Makes the dismount keybind separate from LSHIFT, allowing it to be rebound independently")
+        public boolean utUseSeparateDismountKey = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Use Separate Narrator Key")
+        @Config.Comment("Allows using a custom Narrator key, instead of being stuck with CTRL+B")
+        public boolean utUseCustomNarratorKeybind = false;
 
         @Config.Name("Toggle Cheats Button")
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
@@ -1932,6 +1972,11 @@ public class UTConfigTweaks
                 "May have side effects such as slower chunk generation"
             })
         public boolean utWorldLoadingToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Improve Language Switching Speed")
+        @Config.Comment("Improves the speed of switching languages in the Language GUI")
+        public boolean utImproveLanguageSwitchingSpeed = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Mute Advancement Errors")

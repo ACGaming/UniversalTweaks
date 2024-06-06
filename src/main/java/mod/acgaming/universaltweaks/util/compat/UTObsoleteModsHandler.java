@@ -112,6 +112,7 @@ public class UTObsoleteModsHandler
             put("preventghost", () -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
             put("quickleafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
             put("rallyhealth", () -> UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle);
+            put("rebind_narrator", () -> UTConfigTweaks.MISC.utUseCustomNarratorKeybind);
             put("salwayseat", () -> UTConfigTweaks.ITEMS.utAlwaysEatToggle);
             put("savemystronghold", () -> UTConfigTweaks.WORLD.utStrongholdToggle);
             put("sleepsooner", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
@@ -126,6 +127,7 @@ public class UTObsoleteModsHandler
             put("toastcontrol", () -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlToggle);
             put("tramplestopper", () -> UTConfigTweaks.BLOCKS.utFarmlandTrample != UTConfigTweaks.TrampleOptions.DEFAULT);
             put("unloader", () -> UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle);
+            put("unridekeybind", () -> UTConfigTweaks.MISC.utUseSeparateDismountKey);
             put("villagermantlefix", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
             put("voidfog", () -> UTConfigTweaks.WORLD.VOID_FOG.utVoidFogToggle);
             put("watercontrolextreme", () -> UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle);
