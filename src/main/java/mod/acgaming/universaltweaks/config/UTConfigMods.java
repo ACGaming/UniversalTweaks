@@ -835,6 +835,16 @@ public class UTConfigMods
             @Config.Name("[12] Rift: Impact Sound")
             @Config.Comment("Adds an impact sound to the rift focus effect")
             public boolean utTCRiftFocusImpactSoundToggle = true;
+            
+            @Config.RequiresMcRestart
+            @Config.Name("[13] Exchange: Cast Sound Revamp")
+            @Config.Comment("Overhauls the exchange focus effect cast sound")
+            public boolean utTCExchangeFocusSoundRevampToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[14] Exchange: Impact Sound")
+            @Config.Comment("Adds an impact sound to the exchange focus effect")
+            public boolean utTCExchangeFocusImpactSoundToggle = true;
         }
 
         public static class FocusMediumsCategory
