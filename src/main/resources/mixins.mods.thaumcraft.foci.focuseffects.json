@@ -3,5 +3,5 @@
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
-  "mixins": ["UTBreakFocusMixin", "UTEarthFocusMixin", "UTFireFocusMixin", "UTFluxFocusMixin", "UTFrostFocusMixin", "UTHealFocusMixin", "UTRiftFocusMixin"]
+  "mixins": ["UTBreakFocusMixin", "UTEarthFocusMixin", "UTExchangeFocusMixin", "UTFireFocusMixin", "UTFluxFocusMixin", "UTFrostFocusMixin", "UTHealFocusMixin", "UTRiftFocusMixin"]
 }
