@@ -537,6 +537,11 @@ public class UTConfigTweaks
         public boolean utModernKnockbackToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Minecart Drops Itself")
+        @Config.Comment("Replaces vanilla Minecarts dropping a Minecart and the contained item, and instead drop the combined item")
+        public boolean utMinecartDropsType = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Portal Spawning")
         @Config.Comment("Prevents zombie pigmen spawning from nether portals")
         public boolean utPortalSpawningToggle = false;
