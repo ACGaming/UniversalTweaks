@@ -212,7 +212,7 @@ All changes are toggleable via config files.
 * **Rabbit Toast Spawning:** Configurable chance for rabbits to spawn as the Toast variant
 * **Rally Health:** Adds Bloodborne's Rally system to Minecraft, regain lost health when attacking back within the risk time
 * **Remove 3D Anaglyph Button:** Removes the 3D Anaglyph button from the video settings menu
-* **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu
+* **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu and silences notifications
 * **Remove Recipe Book:** Removes the recipe book button from GUIs
 * **Remove Snooper:** Forcefully turns off the snooper and hides the snooper settings button from the options menu
 * **Render End Portal Bottom:** Controls if the End Portal renders its texture on the bottom face
