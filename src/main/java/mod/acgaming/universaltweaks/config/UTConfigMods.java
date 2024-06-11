@@ -179,6 +179,10 @@ public class UTConfigMods
     @Config.Name("Spice Of Life")
     public static final SpiceOfLifeCategory SPICE_OF_LIFE = new SpiceOfLifeCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.steamworld")
+    @Config.Name("SteamWorld")
+    public static final SteamWorldCategory STEAMWORLD = new SteamWorldCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.sd")
     @Config.Name("Storage Drawers")
     public static final StorageDrawersCategory STORAGE_DRAWERS = new StorageDrawersCategory();
@@ -698,6 +702,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class SteamWorldCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Sky of Old Dimension Fix")
+        @Config.Comment("Fixes a Stack Overflow crash when entering the Sky of Old Dimension")
+        public boolean utSkyOfOldFixToggle = true;
     }
 
     public static class StorageDrawersCategory
