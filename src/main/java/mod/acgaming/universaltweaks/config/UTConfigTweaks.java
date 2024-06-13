@@ -159,6 +159,11 @@ public class UTConfigTweaks
         public int utFallingBlockLifespan = 600;
 
         @Config.RequiresMcRestart
+        @Config.Name("Improve Barrier Particle Display")
+        @Config.Comment("Causes Barrier Particles to always be displayed to players in Creative mode")
+        public boolean utBarrierParticleDisplay = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Prevent Observer Activating on Placement")
         @Config.Comment("Controls if the observer activates itself on the first tick when it is placed")
         public boolean utPreventObserverActivatesOnPlacement = false;
