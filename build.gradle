@@ -171,6 +171,7 @@ dependencies {
     compileOnly rfg.deobf('curse.maven:rftools-dimensions-240950:2707390')
     compileOnly rfg.deobf('curse.maven:actuallyaditions-228404:2844115')
     compileOnly rfg.deobf('curse.maven:extrautilities-225561:2678374')
+    compileOnly rfg.deobf('curse.maven:steamworld-282607:2641200')
     compileOnly 'curse.maven:applecore-224472:2969118'
     compileOnly 'curse.maven:arcanearchives-311357:3057332'
     compileOnly 'curse.maven:bewitchment-285439:3044569'

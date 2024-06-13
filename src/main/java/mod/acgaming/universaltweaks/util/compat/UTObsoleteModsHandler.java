@@ -117,6 +117,7 @@ public class UTObsoleteModsHandler
             put("savemystronghold", () -> UTConfigTweaks.WORLD.utStrongholdToggle);
             put("sleepsooner", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
             put("smooth-scrolling-everywhere", () -> UTConfigTweaks.MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle);
+            put("steamworldpatcher", () -> UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
             put("stepupfix", () -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
             put("stg", () -> UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle);
             put("superhot", () -> UTConfigTweaks.ITEMS.utSuperHotTorchToggle);
