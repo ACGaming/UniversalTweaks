@@ -357,6 +357,8 @@ All changes are toggleable via config files.
     * **Memory Leak Fix:** Fixes a client-side memory leak associated with EntityPlayer
 * **Spice Of Life**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **SteamWorld**
+    * **Sky of Old Dimension Fix:** Fixes a Stack Overflow crash when entering the Sky of Old Dimension
 * **Storage Drawers**
     * **Render Range:** Approximate range in blocks at which drawers render contained items
 * **Tardis**
