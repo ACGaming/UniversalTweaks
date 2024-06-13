@@ -203,6 +203,7 @@ All changes are toggleable via config files.
 * **Offhand Improvement:** Prevents placing offhand blocks when blocks or food are held in the mainhand
 * **Overhaul Beacon:** Change how beacon construct and range apply per level
 * **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
+* **Particle Limit:** Limits particles to a set amount. Should not be set too low, as it will cause particles to appear for a single tick before vanishing
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
 * **Prevent Observer Activating on Placement:** Controls if the observer activates itself on the first tick when it is placed

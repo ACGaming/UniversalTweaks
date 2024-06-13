@@ -1480,6 +1480,16 @@ public class UTConfigTweaks
         public boolean utPoVEffectParticles = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Particle Limit")
+        @Config.Comment
+            ({
+                "Limits particles to a set amount. Should not be set too low, as it will cause particles to appear for a single tick before vanishing",
+                "Vanilla default is 16384",
+                "Less than or equal to 0 is set to the default"
+            })
+        public int utParticleLimit = 50;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Smelting XP")
         @Config.Comment("Disables the experience reward when smelting items in furnaces")
         public boolean utSmeltingXPToggle = false;
