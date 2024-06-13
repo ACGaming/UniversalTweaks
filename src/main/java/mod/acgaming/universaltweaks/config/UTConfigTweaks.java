@@ -1979,6 +1979,15 @@ public class UTConfigTweaks
         public boolean utImproveLanguageSwitchingSpeed = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Improve Server Connection Speed")
+        @Config.Comment
+            ({
+                "Improves the speed of connecting to servers by setting the InetAddress host name to the IP in situations",
+                "where it can be represented as the IP address, preventing getHostFromNameService from being to be run"
+            })
+        public boolean utImproveServerConnectionSpeed = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Mute Advancement Errors")
         @Config.Comment("Silences advancement errors")
         public boolean utAdvancementCheckToggle = false;
