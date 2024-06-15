@@ -24,6 +24,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.modularrouters.json", () -> loaded("modularrouters") && UTConfigMods.MODULAR_ROUTERS.utParticleThreadToggle);
             put("mixins.mods.roost.json", () -> loaded("roost") && loaded("contenttweaker"));
             put("mixins.mods.storagedrawers.client.json", () -> loaded("storagedrawers"));
+            put("mixins.mods.tconstruct.client.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utParticleFixesToggle);
             put("mixins.mods.thaumcraft.entities.client.json", () -> loaded("thaumcraft"));
         }
     });
@@ -77,6 +78,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.nuclearcraft.json", () -> loaded("nuclearcraft"));
             put("mixins.mods.openblocks.json", () -> loaded("openblocks") && UTConfigMods.OPEN_BLOCKS.utLastStandFixToggle);
             put("mixins.mods.quark.dupes.json", () -> loaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
+            put("mixins.mods.requiousfrakto.json", () -> loaded("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);
             put("mixins.mods.reskillable.json", () -> loaded("reskillable"));
             put("mixins.mods.rftoolsdimensions.json", () -> loaded("rftoolsdim"));
             put("mixins.mods.roost.contenttweaker.json", () -> loaded("contenttweaker"));

@@ -153,6 +153,7 @@ dependencies {
     compileOnly rfg.deobf('curse.maven:openblocks-228816:2699056')
     compileOnly rfg.deobf('curse.maven:reborn-core-237903:3330308')
     compileOnly rfg.deobf('curse.maven:reskillable-286382:2815686')
+    compileOnly rfg.deobf('curse.maven:requious-frakto-336748:3218640')
     compileOnly rfg.deobf('curse.maven:roost-277711:2702080')
     compileOnly rfg.deobf('curse.maven:simpledifficulty-360779:3613814')
     compileOnly rfg.deobf('curse.maven:storage-drawers-223852:2952606')
