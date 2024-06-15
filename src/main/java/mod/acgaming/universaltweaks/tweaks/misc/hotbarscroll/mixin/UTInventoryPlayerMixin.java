@@ -18,7 +18,7 @@ public abstract class UTInventoryPlayerMixin
     public int currentItem;
 
     @Inject(method = "changeCurrentItem", at = @At("HEAD"), cancellable = true)
-    private void utDefaultDifficultyMP(int direction, CallbackInfo ci)
+    private void utCancelOnRollover(int direction, CallbackInfo ci)
     {
         if (!UTConfigTweaks.MISC.utDisableHotbarScrollWrapping) return;
         int target = currentItem - (int) Math.signum(direction);
