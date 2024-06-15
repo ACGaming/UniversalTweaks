@@ -436,6 +436,15 @@ public class UTConfigMods
     public static class ExtraUtilitiesCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Catch Radar Exception")
+        @Config.Comment
+            ({
+                "When near some inventories, the Radar feature (find in nearby inventories) will entirely break",
+                "this catches the AbstractMethodException thrown, allowing other nearby inventories to be searched"
+            })
+        public boolean utCatchRadarException = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Deep Dark Stats")
         @Config.Comment("Fixes Mob Attack and Health Statistics being repeatedly doubled")
         public boolean utDeepDarkStats = true;
