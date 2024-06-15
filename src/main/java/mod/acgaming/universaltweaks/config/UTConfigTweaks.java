@@ -1443,6 +1443,11 @@ public class UTConfigTweaks
         public boolean utDisableEnchantmentBookGlint = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Hotbar Scroll Wrapping")
+        @Config.Comment("Disables using the scroll wheel to change hotbar slots wrapping")
+        public boolean utDisableHotbarScrollWrapping = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Prevent Keybinds from Overflowing Screen")
         @Config.Comment("Always indent keybind entries from the screen edge, preventing them from overflowing off the left side when particularly long keybind names are present")
         public boolean utPreventKeybindingEntryOverflow = true;
