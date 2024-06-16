@@ -1487,7 +1487,7 @@ public class UTConfigTweaks
                 "Vanilla default is 16384",
                 "Less than or equal to 0 is set to the default"
             })
-        public int utParticleLimit = 50;
+        public int utParticleLimit = -1;
 
         @Config.RequiresMcRestart
         @Config.Name("No Smelting XP")
