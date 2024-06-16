@@ -1531,7 +1531,7 @@ public class UTConfigTweaks
         @Config.Name("Remove Realms Button")
         @Config.Comment
             ({
-                "Removes the redundant Minecraft Realms button from the main menu",
+                "Removes the redundant Minecraft Realms button from the main menu and silences notifications",
                 "Incompatible with RandomPatches"
             })
         public boolean utRealmsButtonToggle = true;
