@@ -161,7 +161,7 @@ public class UTConfigTweaks
         @Config.RequiresMcRestart
         @Config.Name("Improve Barrier Particle Display")
         @Config.Comment("Causes Barrier Particles to always be displayed to players in Creative mode")
-        public boolean utBarrierParticleDisplay = true;
+        public boolean utBarrierParticleDisplay = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Prevent Observer Activating on Placement")
