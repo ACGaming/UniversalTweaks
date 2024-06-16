@@ -8,6 +8,7 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
+// Courtesy of WaitingIdly
 @Mixin(ParticleManager.class)
 public class UTParticleManagerMixin
 {
