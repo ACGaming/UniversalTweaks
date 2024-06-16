@@ -168,6 +168,7 @@ All changes are toggleable via config files.
 * **Husk & Stray Spawning:** Lets husks and strays spawn underground like regular zombies and skeletons
 * **Improve Barrier Particle Display:** Causes Barrier Particles to always be displayed to players in Creative mode
 * **Improve Language Switching Speed:** Improves the speed of switching languages in the Language GUI
+* **Improve Server Connection Speed:** Improves the speed of connecting to servers by setting the InetAddress host name to the IP in situations where it can be represented as the IP address, preventing getHostFromNameService from being to be run
 * **Improved Entity Tracker Warning:** Provides more information to addPacket removed entity warnings
 * **Incurable Potions:** Excludes potion effects from being curable with curative items like buckets of milk
 * **Infinite Music:** Lets background music play continuously without delays
