@@ -14,7 +14,7 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of WaitingIdly
 @Mixin(WorldClient.class)
-public class UTBarrierParticle
+public class UTBarrierParticleMixin
 {
     @Shadow
     @Final
