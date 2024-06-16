@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 
+// Courtesy of WaitingIdly
 @Mixin(value = Radar.PacketPing.class, remap = false)
 public abstract class UTRadarPingMixin
 {
