@@ -159,6 +159,11 @@ public class UTConfigTweaks
         public int utFallingBlockLifespan = 600;
 
         @Config.RequiresMcRestart
+        @Config.Name("Improve Barrier Particle Display")
+        @Config.Comment("Causes Barrier Particles to always be displayed to players in Creative mode")
+        public boolean utBarrierParticleDisplay = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Prevent Observer Activating on Placement")
         @Config.Comment("Controls if the observer activates itself on the first tick when it is placed")
         public boolean utPreventObserverActivatesOnPlacement = false;
@@ -535,6 +540,11 @@ public class UTConfigTweaks
         @Config.Name("Modern Knockback")
         @Config.Comment("Backports 1.16+ knockback to 1.12: Knockback resistance is now a scale instead of a probability")
         public boolean utModernKnockbackToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Minecart Drops Itself")
+        @Config.Comment("Replaces vanilla Minecarts dropping a Minecart and the contained item, and instead drop the combined item")
+        public boolean utMinecartDropsType = false;
 
         @Config.RequiresMcRestart
         @Config.Name("No Portal Spawning")
@@ -1485,6 +1495,16 @@ public class UTConfigTweaks
         public boolean utPoVEffectParticles = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Particle Limit")
+        @Config.Comment
+            ({
+                "Limits particles to a set amount. Should not be set too low, as it will cause particles to appear for a single tick before vanishing",
+                "Vanilla default is 16384",
+                "Less than or equal to 0 is set to the default"
+            })
+        public int utParticleLimit = -1;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Smelting XP")
         @Config.Comment("Disables the experience reward when smelting items in furnaces")
         public boolean utSmeltingXPToggle = false;
@@ -1516,7 +1536,7 @@ public class UTConfigTweaks
         @Config.Name("Remove Realms Button")
         @Config.Comment
             ({
-                "Removes the redundant Minecraft Realms button from the main menu",
+                "Removes the redundant Minecraft Realms button from the main menu and silences notifications",
                 "Incompatible with RandomPatches"
             })
         public boolean utRealmsButtonToggle = true;
@@ -1982,6 +2002,15 @@ public class UTConfigTweaks
         @Config.Name("Improve Language Switching Speed")
         @Config.Comment("Improves the speed of switching languages in the Language GUI")
         public boolean utImproveLanguageSwitchingSpeed = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Improve Server Connection Speed")
+        @Config.Comment
+            ({
+                "Improves the speed of connecting to servers by setting the InetAddress host name to the IP in situations",
+                "where it can be represented as the IP address, preventing getHostFromNameService from being to be run"
+            })
+        public boolean utImproveServerConnectionSpeed = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Mute Advancement Errors")

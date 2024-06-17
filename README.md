@@ -167,7 +167,9 @@ All changes are toggleable via config files.
 * **Hide Personal Effect Particles:** Disables potion effect particles emitting from yourself
 * **Horizontal Collision Damage:** Applies horizontal collision damage to the player akin to elytra collision
 * **Husk & Stray Spawning:** Lets husks and strays spawn underground like regular zombies and skeletons
+* **Improve Barrier Particle Display:** Causes Barrier Particles to always be displayed to players in Creative mode
 * **Improve Language Switching Speed:** Improves the speed of switching languages in the Language GUI
+* **Improve Server Connection Speed:** Improves the speed of connecting to servers by setting the InetAddress host name to the IP in situations where it can be represented as the IP address, preventing getHostFromNameService from being to be run
 * **Improved Entity Tracker Warning:** Provides more information to addPacket removed entity warnings
 * **Incurable Potions:** Excludes potion effects from being curable with curative items like buckets of milk
 * **Infinite Music:** Lets background music play continuously without delays
@@ -184,6 +186,7 @@ All changes are toggleable via config files.
 * **Load Sounds:** Plays sounds when the game or the world are loaded
 * **Mending Overpowered:** If mending fix is enabled, repairs entire damaged inventory with XP
 * **Mending:** Only repairs damaged equipment with XP
+* **Minecart Drops Itself:** Replaces vanilla Minecarts dropping a Minecart and the contained item, and instead drop the combined item
 * **Mob Despawn Improvement:** Mobs carrying picked up items will drop their equipment and despawn properly
 * **Modern Knockback:** Backports 1.16+ knockback to 1.12: Knockback resistance is now a scale instead of a probability
 * **More Banner Layers:** Sets the amount of applicable pattern layers for banners
@@ -204,6 +207,7 @@ All changes are toggleable via config files.
 * **Offhand Improvement:** Prevents placing offhand blocks when blocks or food are held in the mainhand
 * **Overhaul Beacon:** Change how beacon construct and range apply per level
 * **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
+* **Particle Limit:** Limits particles to a set amount. Should not be set too low, as it will cause particles to appear for a single tick before vanishing
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
 * **Prevent Observer Activating on Placement:** Controls if the observer activates itself on the first tick when it is placed
@@ -213,7 +217,7 @@ All changes are toggleable via config files.
 * **Rabbit Toast Spawning:** Configurable chance for rabbits to spawn as the Toast variant
 * **Rally Health:** Adds Bloodborne's Rally system to Minecraft, regain lost health when attacking back within the risk time
 * **Remove 3D Anaglyph Button:** Removes the 3D Anaglyph button from the video settings menu
-* **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu
+* **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu and silences notifications
 * **Remove Recipe Book:** Removes the recipe book button from GUIs
 * **Remove Snooper:** Forcefully turns off the snooper and hides the snooper settings button from the options menu
 * **Render End Portal Bottom:** Controls if the End Portal renders its texture on the bottom face
@@ -303,6 +307,7 @@ All changes are toggleable via config files.
 * **Epic Siege Mod**
     * **Disable Digger AI Debug:** Disables leftover debug logging inside the digger AI of the beta builds
 * **Extra Utilities 2**
+    * **Catch Radar Exception:** Fixes the Radar feature (find in nearby inventories) entirely breaking when near some inventories
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fix Deep Dark Stats:** Fixes Mob Attack and Health Statistics being repeatedly doubled
     * **Mutable Machine Block Drops:** Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list.

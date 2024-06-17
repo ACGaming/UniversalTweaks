@@ -159,6 +159,10 @@ public class UTConfigMods
     @Config.Name("Railcraft")
     public static final RailcraftCategory RAILCRAFT = new RailcraftCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.requiousfrakto")
+    @Config.Name("Requious Frakto")
+    public static final RequiousFraktoCategory REQUIOUS_FRAKTO = new RequiousFraktoCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.rftoolsdimensions")
     @Config.Name("RFTools Dimensions")
     public static final RFToolsDimensionsCategory RFTOOLS_DIMENSIONS = new RFToolsDimensionsCategory();
@@ -436,6 +440,15 @@ public class UTConfigMods
     public static class ExtraUtilitiesCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Catch Radar Exception")
+        @Config.Comment
+            ({
+                "When near some inventories, the Radar feature (find in nearby inventories) will entirely break",
+                "this catches the AbstractMethodException thrown, allowing other nearby inventories to be searched"
+            })
+        public boolean utCatchRadarException = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Deep Dark Stats")
         @Config.Comment("Fixes Mob Attack and Health Statistics being repeatedly doubled")
         public boolean utDeepDarkStats = true;
@@ -656,6 +669,14 @@ public class UTConfigMods
         @Config.Name("No Beta Warning")
         @Config.Comment("Disables the beta message warning on world join")
         public boolean utNoBetaWarningToggle = true;
+    }
+
+    public static class RequiousFraktoCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Particle Fixes")
+        @Config.Comment("Fixes server world being leaked to various particles")
+        public boolean utParticleFixesToggle = true;
     }
 
     public static class RoostCategory
@@ -963,6 +984,11 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Particle Fixes")
+        @Config.Comment("Fixes server world being leaked to various particles")
+        public boolean utParticleFixesToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Tool Customization")
