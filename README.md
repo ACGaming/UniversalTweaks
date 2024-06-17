@@ -136,6 +136,7 @@ All changes are toggleable via config files.
 * **Disable Audio Debug:** Improves loading times by removing debug code for missing sounds and subtitles
 * **Disable Creeper Music Discs:** Disables creepers dropping music discs when slain by skeletons
 * **Disable Fancy Missing Model:** Improves rendering performance by removing the resource location text on missing models
+* **Disable Hotbar Scroll Wrapping:** Disables using the scroll wheel to change hotbar slots wrapping
 * **Disable Mob Spawner Entity Render:** Disables rendering an entity inside of Mob Spawners
 * **Disable Narrator:** Disables the narrator functionality entirely
 * **Disable Glint Overlay on Enchantment Books:** Disables the glint overlay on enchantment books
