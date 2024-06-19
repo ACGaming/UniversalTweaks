@@ -142,6 +142,7 @@ dependencies {
     compileOnly rfg.deobf('curse.maven:ceramics-250617:3158763')
     compileOnly rfg.deobf('curse.maven:chameleon-230497:2450900')
     compileOnly rfg.deobf('curse.maven:chickens-241941:2537643')
+    compileOnly rfg.deobf('curse.maven:codechickenlib-242818:2779848')
     compileOnly rfg.deobf('curse.maven:collective-342584:3533131')
     compileOnly rfg.deobf('curse.maven:cqrepoured-303422:3953103')
     compileOnly rfg.deobf('curse.maven:elementary-staffs-346007:2995593')
@@ -177,7 +178,6 @@ dependencies {
     compileOnly 'curse.maven:arcanearchives-311357:3057332'
     compileOnly 'curse.maven:bewitchment-285439:3044569'
     compileOnly 'curse.maven:chisel-235279:2915375'
-    compileOnly 'curse.maven:codechickenlib-242818:2779848'
     compileOnly 'curse.maven:cofhworld-271384:2920434'
     compileOnly 'curse.maven:compactmachines-224218:2707509'
     compileOnly 'curse.maven:effortlessbuilding-302113:2847346'

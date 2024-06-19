@@ -46,6 +46,8 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.cbmultipart.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
             put("mixins.mods.ceramics.json", () -> loaded("ceramics"));
             put("mixins.mods.chisel.tcomplement.dupes.json", () -> loaded("chisel") && loaded("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle);
+            // TODO: add config
+            put("mixins.mods.codechickenlib.json", () -> loaded("codechickenlib"));
             put("mixins.mods.cofhcore.json", () -> loaded("cofhcore"));
             put("mixins.mods.collective.json", () -> loaded("collective"));
             put("mixins.mods.cqrepoured.json", () -> loaded("cqrepoured"));
