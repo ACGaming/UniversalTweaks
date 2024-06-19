@@ -183,6 +183,7 @@ dependencies {
     compileOnly 'curse.maven:effortlessbuilding-302113:2847346'
     compileOnly 'curse.maven:endercore-231868:2972849'
     compileOnly 'curse.maven:enderio-64578:2989201'
+    compileOnly 'curse.maven:enderstorage-245174:2755787'
     compileOnly 'curse.maven:extrautilities-225561:2678374'
     compileOnly 'curse.maven:forgemultipartcbe-258426:2755790' // aka "CB Multipart"
     compileOnly 'curse.maven:guideapi-228832:2645992'

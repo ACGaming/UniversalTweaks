@@ -54,6 +54,8 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.effortlessbuilding.json", () -> loaded("effortlessbuilding"));
             put("mixins.mods.elementarystaffs.json", () -> loaded("element"));
             put("mixins.mods.elenaidodge2.json", () -> loaded("elenaidodge2"));
+            // TODO: add config
+            put("mixins.mods.enderstorage.json", () -> loaded("enderstorage"));
             put("mixins.mods.epicsiegemod.json", () -> loaded("epicsiegemod"));
             put("mixins.mods.erebus.cabbage.json", () -> loaded("erebus") && UTConfigMods.EREBUS.utCabbageDrop);
             put("mixins.mods.erebus.json", () -> loaded("erebus"));
