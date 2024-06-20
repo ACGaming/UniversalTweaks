@@ -152,7 +152,7 @@ dependencies {
     compileOnly rfg.deobf('curse.maven:modtweaker-220954:3840577')
     compileOnly rfg.deobf('curse.maven:nuclearcraft-226254:3784145')
     compileOnly rfg.deobf('curse.maven:openblocks-228816:2699056')
-    implementation rfg.deobf('curse.maven:opencomputers-223008:5274236')
+    compileOnly rfg.deobf('curse.maven:opencomputers-223008:5274236')
     compileOnly rfg.deobf('curse.maven:reborn-core-237903:3330308')
     compileOnly rfg.deobf('curse.maven:reskillable-286382:2815686')
     compileOnly rfg.deobf('curse.maven:requious-frakto-336748:3218640')
