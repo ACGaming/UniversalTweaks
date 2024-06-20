@@ -10,6 +10,7 @@ import net.minecraft.server.management.PlayerChunkMapEntry;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.network.handshake.NetworkDispatcher;
 import net.minecraftforge.fml.common.network.internal.FMLProxyPacket;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,6 +24,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  * This mixin retains PacketCustom payloads, increasing the ref count by the number of players
  * that are to receive the packet. This is necessary as the payload is shared between all receivers
  * and each receiver releases the payload in {@link UTPacketCustomReleaseMixin}.
+ * <p>
+ * CCL doesn't fully utilize Forge's built-in networking, so this mixin adds the missing behavior that
+ * {@link net.minecraftforge.fml.common.network.FMLOutboundHandler.OutboundTarget#selectNetworks} and
+ * {@link net.minecraftforge.fml.common.network.FMLOutboundHandler#write} 
+ * would normally do to clean up packets.
  * @author jchung01
  */
 @Mixin(value = PacketCustom.class, remap = false)
@@ -78,12 +84,14 @@ public abstract class UTPacketCustomRetainMixin
     }
 
     @Unique
-    private static void ut$retainForPlayers(Packet<INetHandler> packet, Predicate<? super EntityPlayerMP> condition)
+    private static void ut$retainForPlayers(Packet<INetHandler> packet, Predicate<EntityPlayerMP> condition)
     {
         if (packet instanceof FMLProxyPacket)
         {
             List<EntityPlayerMP> playerList = FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().getPlayers();
-            int retainCount = (int) (playerList.stream().filter(condition).count() - 1);
+            // Check for null dispatchers like Forge's FMLOutboundHandler.OutboundTarget#selectNetworks does.
+            Predicate<EntityPlayerMP> hasNetworkDispatcher = player -> player.connection.netManager.channel().attr(NetworkDispatcher.FML_DISPATCHER).get() != null;
+            int retainCount = (int) (playerList.stream().filter(condition.and(hasNetworkDispatcher)).count() - 1);
             if (retainCount > 0) ((FMLProxyPacket) packet).payload().retain(retainCount);
         }
     }
