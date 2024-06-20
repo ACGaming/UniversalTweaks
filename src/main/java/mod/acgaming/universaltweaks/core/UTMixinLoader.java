@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 import com.google.common.collect.ImmutableMap;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraftforge.fml.common.Loader;
 
 import mod.acgaming.universaltweaks.config.UTConfigMods;
@@ -39,6 +40,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.arcanearchives.dupes.json", () -> loaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
             put("mixins.mods.astralsorcery.json", () -> loaded("astralsorcery"));
             put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
+            put("mixins.mods.biomesoplenty.sealevel.json", () -> loaded("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
             put("mixins.mods.bloodmagic.dupes.json", () -> loaded("bloodmagic"));
             put("mixins.mods.bloodmagic.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);
             put("mixins.mods.botania.dupes.json", () -> loaded("botania"));

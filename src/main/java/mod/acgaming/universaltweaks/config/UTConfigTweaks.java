@@ -2105,6 +2105,7 @@ public class UTConfigTweaks
         @Config.Comment
             ({
                 "Sets the default height of the overworld's sea level",
+                "Supported chunk generators: Vanilla, Biomes O' Plenty",
                 "Vanilla default is 63"
             })
         public int utSeaLevel = 63;
