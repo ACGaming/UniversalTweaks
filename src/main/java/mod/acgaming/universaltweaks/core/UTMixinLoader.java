@@ -48,12 +48,14 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.cbmultipart.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
             put("mixins.mods.ceramics.json", () -> loaded("ceramics"));
             put("mixins.mods.chisel.tcomplement.dupes.json", () -> loaded("chisel") && loaded("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle);
+            put("mixins.mods.codechickenlib.json", () -> loaded("codechickenlib") && UTConfigMods.CCL.utPacketLeakFixToggle);
             put("mixins.mods.cofhcore.json", () -> loaded("cofhcore"));
             put("mixins.mods.collective.json", () -> loaded("collective"));
             put("mixins.mods.cqrepoured.json", () -> loaded("cqrepoured"));
             put("mixins.mods.effortlessbuilding.json", () -> loaded("effortlessbuilding"));
             put("mixins.mods.elementarystaffs.json", () -> loaded("element"));
             put("mixins.mods.elenaidodge2.json", () -> loaded("elenaidodge2"));
+            put("mixins.mods.enderstorage.json", () -> loaded("enderstorage") && UTConfigMods.ENDER_STORAGE.utFrequencyTrackFixToggle);
             put("mixins.mods.epicsiegemod.json", () -> loaded("epicsiegemod"));
             put("mixins.mods.erebus.cabbage.json", () -> loaded("erebus") && UTConfigMods.EREBUS.utCabbageDrop);
             put("mixins.mods.erebus.json", () -> loaded("erebus"));
@@ -80,6 +82,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.netherrocks.json", () -> loaded("netherrocks"));
             put("mixins.mods.nuclearcraft.json", () -> loaded("nuclearcraft"));
             put("mixins.mods.openblocks.json", () -> loaded("openblocks") && UTConfigMods.OPEN_BLOCKS.utLastStandFixToggle);
+            put("mixins.mods.opencomputers.json", () -> loaded("opencomputers") && UTConfigMods.OPEN_COMPUTERS.utPacketLeakFixToggle);
             put("mixins.mods.quark.dupes.json", () -> loaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
             put("mixins.mods.requiousfrakto.json", () -> loaded("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);
             put("mixins.mods.reskillable.json", () -> loaded("reskillable"));

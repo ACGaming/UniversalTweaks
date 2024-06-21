@@ -292,6 +292,8 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Chocolate Quest Repoured**
     * **Legacy Golden Feather:** Restores the golden feather behavior from the original Better Dungeons mod
+* **CodeChicken Lib**
+    * **Packet Leak Fix:** Fixes network ByteBuf leaks from PacketCustom
 * **CoFH Core**
     * **Vorpal Enchantment Damage:** Sets the damage multiplier of the Vorpal enchantment
 * **Compact Machines**
@@ -304,6 +306,8 @@ All changes are toggleable via config files.
     * **Extinguishing Dodges:** Chance per dodge to extinguish the player when burning
     * **Feathers Helper API Fix:** Fixes server-sided crashes when the Feathers Helper API is utilized
     * **Sprinting Integration:** Configurable consumption of feathers when the player is sprinting
+* **Ender Storage**
+    * **Fix Frequency Tracking:** Fixes storage frequencies being tracked multiple times
 * **Epic Siege Mod**
     * **Disable Digger AI Debug:** Disables leftover debug logging inside the digger AI of the beta builds
 * **Extra Utilities 2**
@@ -347,6 +351,8 @@ All changes are toggleable via config files.
     * **Radiation Environment Map:** Changes the data table of the radiation environment handler to improve tick time
 * **OpenBlocks**
     * **Last Stand Trigger Fix:** Fixes the Last Stand enchantment triggering too early on pre-mitigation damage (before enchants, potions, etc), instead of on post-mitigation damage.
+* **OpenComputers**
+    * **Packet Leak Fix:** Fixes network ByteBuf leaks from PacketHandler
 * **ProjectRed**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Quark**

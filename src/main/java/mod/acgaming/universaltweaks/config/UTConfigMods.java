@@ -51,6 +51,10 @@ public class UTConfigMods
     @Config.Name("CB Multipart/Forge Multipart CBE")
     public static final CBMultipartCategory CB_MULTIPART = new CBMultipartCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.ccl")
+    @Config.Name("CodeChicken Lib")
+    public static final CodeChickenLibCategory CCL = new CodeChickenLibCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.chisel")
     @Config.Name("Chisel")
     public static final ChiselCategory CHISEL = new ChiselCategory();
@@ -78,6 +82,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.elenaidodge2")
     @Config.Name("Elenai Dodge 2")
     public static final ElenaiDodge2Category ELENAI_DODGE_2 = new ElenaiDodge2Category();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.enderstorage")
+    @Config.Name("Ender Storage")
+    public static final EnderStorageCategory ENDER_STORAGE = new EnderStorageCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.esm")
     @Config.Name("Epic Siege Mod")
@@ -146,6 +154,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.openblocks")
     @Config.Name("OpenBlocks")
     public static final OpenBlocksCategory OPEN_BLOCKS = new OpenBlocksCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.opencomputers")
+    @Config.Name("OpenComputers")
+    public static final OpenComputersCategory OPEN_COMPUTERS = new OpenComputersCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.projectred")
     @Config.Name("ProjectRed")
@@ -354,6 +366,14 @@ public class UTConfigMods
         public boolean utCQRGoldenFeatherToggle = true;
     }
 
+    public static class CodeChickenLibCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Packet Leak Fix")
+        @Config.Comment("Fixes network ByteBuf leaks from PacketCustom")
+        public boolean utPacketLeakFixToggle = true;
+    }
+
     public static class CoFHCoreCategory
     {
         @Config.Name("Vorpal Enchantment Damage")
@@ -409,6 +429,14 @@ public class UTConfigMods
         @Config.Name("Sprinting Feather Requirement")
         @Config.Comment("Sets the amount of half-feathers required to start sprinting")
         public int utED2SprintingFeatherRequirement = 6;
+    }
+
+    public static class EnderStorageCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Frequency Tracking")
+        @Config.Comment("Fixes storage frequencies being tracked multiple times")
+        public boolean utFrequencyTrackFixToggle = true;
     }
 
     public static class EpicSiegeModCategory
@@ -645,6 +673,14 @@ public class UTConfigMods
                 "instead of on post-mitigation damage."
             })
         public boolean utLastStandFixToggle = true;
+    }
+
+    public static class OpenComputersCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Packet Leak Fix")
+        @Config.Comment("Fixes network ByteBuf leaks from PacketHandler")
+        public boolean utPacketLeakFixToggle = true;
     }
 
     public static class ProjectRedCategory
