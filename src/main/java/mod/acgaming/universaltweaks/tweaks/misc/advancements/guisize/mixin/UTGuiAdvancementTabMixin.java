@@ -4,6 +4,7 @@ import net.minecraft.client.gui.advancements.AdvancementTabType;
 import net.minecraft.client.gui.advancements.GuiAdvancementTab;
 import net.minecraft.client.gui.advancements.GuiScreenAdvancements;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
@@ -84,4 +85,11 @@ public abstract class UTGuiAdvancementTabMixin
         return UTAdvancementInfo.utPageHeight(screen.height) / 16 + 1;
     }
 
+    // prevents changing the fade value from 0
+    @ModifyExpressionValue(method = "drawToolTips", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;clamp(FFF)F"))
+    private float utRemoveFade(float original)
+    {
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utDisableFadeOnHover) return original;
+        return 0;
+    }
 }

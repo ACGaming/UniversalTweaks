@@ -1637,6 +1637,11 @@ public class UTConfigTweaks
             @Config.Name("[07] Hide Invalid Arrow Buttons")
             @Config.Comment("Hides page switching buttons when at the maximum/minimum page count")
             public boolean utHideInvalidArrowButtons = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[08] Disable Background Fade on Hover")
+            @Config.Comment("Disables the background fading when hovering over an advancement")
+            public boolean utDisableFadeOnHover = true;
         }
 
         public static class ArmorCurveCategory
