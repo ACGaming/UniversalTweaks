@@ -83,7 +83,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @Inject(method = "drawScreen", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/FontRenderer;drawStringWithShadow(Ljava/lang/String;FFI)I", shift = At.Shift.AFTER))
     private void utHideInvalidButtons(CallbackInfo ci)
     {
-        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utHideInvalidArrowButtons)
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utHideInvalidArrowButtons || buttonLeft == null || buttonRight == null)
         {
             return;
         }
