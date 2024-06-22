@@ -2,7 +2,15 @@ package mod.acgaming.universaltweaks.config;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
 import com.cleanroommc.configanytime.ConfigAnytime;
+
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
@@ -15,11 +23,6 @@ import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
-import net.minecraftforge.common.config.Config;
-import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
 public class UTConfigTweaks
@@ -1349,6 +1352,10 @@ public class UTConfigTweaks
 
     public static class MiscCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.advancements")
+        @Config.Name("Advancements")
+        public final AdvancementsCategory ADVANCEMENTS = new AdvancementsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.armorcurve")
         @Config.Name("Armor Curve")
         public final ArmorCurveCategory ARMOR_CURVE = new ArmorCurveCategory();
@@ -1592,6 +1599,40 @@ public class UTConfigTweaks
                 "-1 for vanilla default"
             })
         public int utXPLevelCap = -1;
+
+
+        public static class AdvancementsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[01] Advancements Toggle")
+            @Config.Comment("Enables Advancement GUI Tweaks")
+            public boolean utAdvancementsToggle = false;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[02] Size Toggle")
+            @Config.Comment("Enables the Vertical and Horizontal Margin settings")
+            public boolean utSizeToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[03] Vertical Margin")
+            @Config.Comment("Sets the minimum Vertical Margin of the Advancement GUI. Too high a number may cause the advancement box to render incorrectly, depending on screen size and GUI scale")
+            public int utVerticalMargin = 30;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[04] Horizontal Margin")
+            @Config.Comment("Sets the minimum Horizontal Margin of the Advancement GUI. Too high a number may cause the advancement box to render incorrectly, depending on screen size and GUI scale")
+            public int utHorizontalMargin = 30;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[05] Move Arrow Buttons")
+            @Config.Comment("Move the Arrow Buttons visible to change focused advancement page from above the advancement box to in the empty top corners, preventing them from going offscreen and being unusable on most vertical margin settings")
+            public boolean utMoveArrowButtons = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[06] Hide Page Header")
+            @Config.Comment("Hides the page number header, as it will go offscreen and be unusable on most vertical margin settings, and is rarely needed due to the increased page size")
+            public boolean utHidePageHeader = true;
+        }
 
         public static class ArmorCurveCategory
         {
