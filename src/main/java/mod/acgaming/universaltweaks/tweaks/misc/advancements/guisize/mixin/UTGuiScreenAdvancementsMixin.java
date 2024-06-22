@@ -1,7 +1,9 @@
 package mod.acgaming.universaltweaks.tweaks.misc.advancements.guisize.mixin;
 
 import java.util.List;
+import java.util.Map;
 
+import net.minecraft.advancements.Advancement;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.advancements.GuiAdvancementTab;
@@ -10,6 +12,7 @@ import net.minecraft.client.gui.advancements.GuiScreenAdvancements;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -31,13 +34,17 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @Shadow(remap = false)
     private static int maxPages;
 
+    @Shadow
+    @Final
+    private Map<Advancement, GuiAdvancementTab> tabs;
+    @Shadow
+    private GuiAdvancementTab selectedTab;
+
     @Unique
     private GuiButton buttonLeft;
     @Unique
     private GuiButton buttonRight;
 
-    @Shadow
-    private GuiAdvancementTab selectedTab;
 
     /**
      * @reason ensure the maxPages field is set to 0 on gui size update, otherwise it is only updated if >0, meaning it will always linger at 1+
@@ -62,7 +69,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     }
 
     /**
-     * @reason puts the left arrow button to a variable to control visibility state in {@link #utHideInvalidButtons}
+     * @reason saves the left arrow button to a variable to control visibility state in {@link #utHideInvalidButtons}
      */
     @WrapOperation(method = "initGui", at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 0))
     private boolean utStoreLeftButton(List<GuiButton> list, Object button, Operation<Boolean> original)
@@ -70,12 +77,13 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
         if (UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle && UTConfigTweaks.MISC.ADVANCEMENTS.utHideInvalidArrowButtons)
         {
             buttonLeft = (GuiButton) button;
+            buttonLeft.visible = tabPage != 0;
         }
         return original.call(list, button);
     }
 
     /**
-     * @reason puts the right arrow button to a variable to control visibility state in {@link #utHideInvalidButtons}
+     * @reason saves the right arrow button to a variable to control visibility state in {@link #utHideInvalidButtons}
      */
     @WrapOperation(method = "initGui", at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 1))
     private boolean utStoreRightButton(List<GuiButton> list, Object button, Operation<Boolean> original)
@@ -83,6 +91,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
         if (UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle && UTConfigTweaks.MISC.ADVANCEMENTS.utHideInvalidArrowButtons)
         {
             buttonRight = (GuiButton) button;
+            buttonRight.visible = tabPage != tabs.size() / UTAdvancementInfo.utMaximumTabCountPerPage(width, height);
         }
         return original.call(list, button);
     }
