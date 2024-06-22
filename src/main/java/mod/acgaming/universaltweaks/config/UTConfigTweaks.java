@@ -1608,37 +1608,30 @@ public class UTConfigTweaks
             @Config.Comment("Enables Advancement GUI Tweaks")
             public boolean utAdvancementsToggle = false;
 
-            @Config.RequiresMcRestart
             @Config.Name("[02] Size Toggle")
             @Config.Comment("Enables the Vertical and Horizontal Margin settings")
             public boolean utSizeToggle = true;
 
-            @Config.RequiresMcRestart
             @Config.Name("[03] Vertical Margin")
             @Config.Comment("Sets the minimum Vertical Margin of the Advancement GUI. Too high a number may cause the advancement box to render incorrectly, depending on screen size and GUI scale")
             public int utVerticalMargin = 50;
 
-            @Config.RequiresMcRestart
             @Config.Name("[04] Horizontal Margin")
             @Config.Comment("Sets the minimum Horizontal Margin of the Advancement GUI. Too high a number may cause the advancement box to render incorrectly, depending on screen size and GUI scale")
             public int utHorizontalMargin = 50;
 
-            @Config.RequiresMcRestart
             @Config.Name("[05] Move Arrow Buttons")
             @Config.Comment("Move the Arrow Buttons visible to change focused advancement page from above the advancement box to in the empty top corners, preventing them from going offscreen and being unusable on most vertical margin settings")
             public boolean utMoveArrowButtons = true;
 
-            @Config.RequiresMcRestart
             @Config.Name("[06] Hide Page Header")
             @Config.Comment("Hides the page number header, as it will go offscreen and be unusable on most vertical margin settings, and is rarely needed due to the increased page size")
             public boolean utHidePageHeader = false;
 
-            @Config.RequiresMcRestart
             @Config.Name("[07] Hide Invalid Arrow Buttons")
             @Config.Comment("Hides page switching buttons when at the maximum/minimum page count")
             public boolean utHideInvalidArrowButtons = true;
 
-            @Config.RequiresMcRestart
             @Config.Name("[08] Disable Background Fade on Hover")
             @Config.Comment("Disables the background fading when hovering over an advancement")
             public boolean utDisableFadeOnHover = true;
