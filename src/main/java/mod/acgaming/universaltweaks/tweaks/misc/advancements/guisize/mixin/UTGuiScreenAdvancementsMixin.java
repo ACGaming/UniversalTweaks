@@ -107,7 +107,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @Inject(method = "initGui", at = @At("TAIL"))
     private void utFocusActiveTab(CallbackInfo ci)
     {
-        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle || selectedTab == null)
         {
             return;
         }
@@ -172,7 +172,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @ModifyExpressionValue(method = "renderWindow", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/resources/I18n;format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;"))
     private String utHeaderTitle(String original)
     {
-        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utAddFocusedTabTitleToHeader)
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utAddFocusedTabTitleToHeader || selectedTab == null)
         {
             return original;
         }
