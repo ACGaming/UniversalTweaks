@@ -245,6 +245,26 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     }
 
     /**
+     * @reason adjust the horizontal location used for where the internal text is located
+     */
+    @ModifyConstant(method = "renderInside", constant = @Constant(intValue = 117))
+    private int utDrawContentsWidth(int original)
+    {
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
+        return (UTAdvancementInfo.utPageWidth(width, 2) - 4) / 2;
+    }
+
+    /**
+     * @reason adjust the vertical location used for where the internal text is located
+     */
+    @ModifyConstant(method = "renderInside", constant = @Constant(intValue = 56))
+    private int utDrawContentsHeight(int original)
+    {
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
+        return UTAdvancementInfo.utPageHeight(height, 3) / 2;
+    }
+
+    /**
      * @reason render the advancement display in an expandable way, cutting and repeatedly rendering some sections to
      * extend the size
      */
