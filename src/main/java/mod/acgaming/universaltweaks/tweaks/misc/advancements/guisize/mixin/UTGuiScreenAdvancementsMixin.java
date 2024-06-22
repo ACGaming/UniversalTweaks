@@ -33,7 +33,10 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @WrapOperation(method = "initGui", at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/advancements/AdvancementTabType;MAX_TABS:I"))
     private int utAdjustMaxTabs(Operation<Integer> original)
     {
-        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original.call();
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
+        {
+            return original.call();
+        }
         return UTAdvancementInfo.utMaximumTabCountPerPage(width, height);
     }
 
@@ -43,7 +46,10 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @Inject(method = "initGui", at = @At("TAIL"))
     private void utFocusActiveTab(CallbackInfo ci)
     {
-        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return;
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
+        {
+            return;
+        }
         tabPage = selectedTab.getPage();
     }
 
@@ -105,7 +111,10 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @ModifyConstant(method = {"initGui", "mouseClicked", "drawScreen"}, constant = @Constant(intValue = 252))
     private int utAdjustWidthPosition(int original)
     {
-        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
+        {
+            return original;
+        }
         return UTAdvancementInfo.utPageWidth(width) - 4;
     }
 
@@ -115,7 +124,10 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @ModifyConstant(method = "drawScreen", constant = @Constant(intValue = 126))
     private int utAdjustHalfWidthPosition(int original)
     {
-        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
+        {
+            return original;
+        }
         return (UTAdvancementInfo.utPageWidth(width) - 4) / 2;
     }
 
@@ -125,7 +137,10 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @ModifyConstant(method = {"initGui", "mouseClicked", "drawScreen"}, constant = @Constant(intValue = 140))
     private int utAdjustHeightPosition(int original)
     {
-        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
+        {
+            return original;
+        }
         return UTAdvancementInfo.utPageHeight(height);
     }
 
@@ -135,7 +150,10 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @ModifyConstant(method = "renderInside", constant = @Constant(intValue = 234))
     private int utRenderWidthPosition(int original)
     {
-        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
+        {
+            return original;
+        }
         return UTAdvancementInfo.utPageWidth(width, 2) - 4;
     }
 
@@ -145,7 +163,10 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @ModifyConstant(method = "renderInside", constant = @Constant(intValue = 113))
     private int utRenderHeightPosition(int original)
     {
-        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
+        {
+            return original;
+        }
         return UTAdvancementInfo.utPageHeight(height, 3);
     }
 
