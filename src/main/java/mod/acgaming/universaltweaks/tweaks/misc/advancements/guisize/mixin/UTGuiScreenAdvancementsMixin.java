@@ -39,6 +39,15 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     private GuiAdvancementTab selectedTab;
 
     /**
+     * @reason ensure the maxPages field is set to 0 on gui size update, otherwise it is only updated if >0, meaning it will always linger at 1+
+     */
+    @Inject(method = "initGui", at = @At("HEAD"))
+    private void utAdjustMaxTabs(CallbackInfo ci)
+    {
+        maxPages = 0;
+    }
+
+    /**
      * @reason adjust the maximum number of tabs from a final static field to a number based on the height and width
      */
     @WrapOperation(method = "initGui", at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/advancements/AdvancementTabType;MAX_TABS:I"))
