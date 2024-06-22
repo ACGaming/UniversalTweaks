@@ -56,7 +56,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     /**
      * @reason prevent displaying the page number or total, as there is nowhere to put it and it goes offscreen
      */
-    @WrapOperation(method = "drawScreen", at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/advancements/GuiScreenAdvancements;maxPages:I", remap = false))
+    @WrapOperation(method = "drawScreen", at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/advancements/GuiScreenAdvancements;maxPages:I", remap = false, ordinal = 0))
     private int utDisableMaxPageText(Operation<Integer> original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utHidePageHeader)
