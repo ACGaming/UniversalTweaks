@@ -7,6 +7,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.advancements.GuiAdvancementTab;
 import net.minecraft.client.gui.advancements.GuiScreenAdvancements;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import org.spongepowered.asm.mixin.Mixin;
@@ -163,6 +164,19 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
             return original;
         }
         return ARROW_ADJUSTMENT;
+    }
+
+    /**
+     * @reason replaces the header always being 'Advancements' to also include the title of the focused advancement tab
+     */
+    @ModifyExpressionValue(method = "renderWindow", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/resources/I18n;format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;"))
+    private String utHeaderTitle(String original)
+    {
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utAddFocusedTabTitleToHeader)
+        {
+            return original;
+        }
+        return original + " - " + selectedTab.getTitle();
     }
 
     /**

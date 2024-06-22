@@ -1635,6 +1635,10 @@ public class UTConfigTweaks
             @Config.Name("[08] Disable Background Fade on Hover")
             @Config.Comment("Disables the background fading when hovering over an advancement")
             public boolean utDisableFadeOnHover = true;
+
+            @Config.Name("[09] Add Advancement Tab Title to Header")
+            @Config.Comment("Makes the focused Advancement Tab Title be added to the header, which otherwise is just 'Advancements' for every tab")
+            public boolean utAddFocusedTabTitleToHeader = true;
         }
 
         public static class ArmorCurveCategory
