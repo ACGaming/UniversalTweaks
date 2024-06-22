@@ -191,7 +191,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     /**
      * @reason adjust the location used for the width
      */
-    @ModifyConstant(method = {"initGui", "mouseClicked", "drawScreen"}, constant = @Constant(intValue = 252))
+    @ModifyConstant(method = {"initGui", "mouseClicked", "drawScreen"}, constant = @Constant(intValue = UTAdvancementInfo.DEFAULT_WIDTH))
     private int utAdjustWidthPosition(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
@@ -204,7 +204,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     /**
      * @reason adjust the location used to indicate half the width for drawing the header text
      */
-    @ModifyConstant(method = "drawScreen", constant = @Constant(intValue = 126))
+    @ModifyConstant(method = "drawScreen", constant = @Constant(intValue = UTAdvancementInfo.DEFAULT_WIDTH / 2))
     private int utAdjustHalfWidthPosition(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
@@ -217,7 +217,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     /**
      * @reason adjust the location used for the height
      */
-    @ModifyConstant(method = {"initGui", "mouseClicked", "drawScreen"}, constant = @Constant(intValue = 140))
+    @ModifyConstant(method = {"initGui", "mouseClicked", "drawScreen"}, constant = @Constant(intValue = UTAdvancementInfo.DEFAULT_HEIGHT))
     private int utAdjustHeightPosition(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
@@ -230,7 +230,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     /**
      * @reason adjust the location used for the width when padded
      */
-    @ModifyConstant(method = "renderInside", constant = @Constant(intValue = 234))
+    @ModifyConstant(method = "renderInside", constant = @Constant(intValue = UTAdvancementInfo.DEFAULT_WIDTH - 18))
     private int utRenderWidthPosition(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
@@ -243,7 +243,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     /**
      * @reason adjust the location used for the height when padded
      */
-    @ModifyConstant(method = "renderInside", constant = @Constant(intValue = 113))
+    @ModifyConstant(method = "renderInside", constant = @Constant(intValue = UTAdvancementInfo.DEFAULT_HEIGHT - 27))
     private int utRenderHeightPosition(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle)
@@ -256,7 +256,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     /**
      * @reason adjust the horizontal location used for where the internal text is located
      */
-    @ModifyConstant(method = "renderInside", constant = @Constant(intValue = 117))
+    @ModifyConstant(method = "renderInside", constant = @Constant(intValue = (UTAdvancementInfo.DEFAULT_WIDTH - 18) / 2))
     private int utDrawContentsWidth(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
@@ -266,7 +266,7 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     /**
      * @reason adjust the vertical location used for where the internal text is located
      */
-    @ModifyConstant(method = "renderInside", constant = @Constant(intValue = 56))
+    @ModifyConstant(method = "renderInside", constant = @Constant(intValue = (UTAdvancementInfo.DEFAULT_HEIGHT - 27) / 2))
     private int utDrawContentsHeight(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
@@ -287,8 +287,8 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
         }
 
         // default texture location information
-        final int texture_width = 252;
-        final int texture_height = 140;
+        final int texture_width = UTAdvancementInfo.DEFAULT_WIDTH;
+        final int texture_height = UTAdvancementInfo.DEFAULT_HEIGHT;
         final int texture_corner = 30;
         // location to draw to
         final int width = UTAdvancementInfo.utPageWidth(this.width) - 4;

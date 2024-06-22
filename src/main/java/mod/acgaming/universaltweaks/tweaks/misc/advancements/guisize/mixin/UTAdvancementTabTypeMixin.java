@@ -28,7 +28,7 @@ public abstract class UTAdvancementTabTypeMixin
         return UTAdvancementInfo.utTabCountForSide(Minecraft.getMinecraft().currentScreen.width, Minecraft.getMinecraft().currentScreen.height, instance == AdvancementTabType.LEFT || instance == AdvancementTabType.RIGHT);
     }
 
-    @ModifyConstant(method = "getX", constant = @Constant(intValue = 248))
+    @ModifyConstant(method = "getX", constant = @Constant(intValue = UTAdvancementInfo.DEFAULT_WIDTH - 4))
     private int utOverrideX(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle || Minecraft.getMinecraft().currentScreen == null)
@@ -38,7 +38,7 @@ public abstract class UTAdvancementTabTypeMixin
         return UTAdvancementInfo.utPageWidth(Minecraft.getMinecraft().currentScreen.width) - 8;
     }
 
-    @ModifyConstant(method = "getY", constant = @Constant(intValue = 136))
+    @ModifyConstant(method = "getY", constant = @Constant(intValue = UTAdvancementInfo.DEFAULT_HEIGHT - 4))
     private int utOverrideY(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle || Minecraft.getMinecraft().currentScreen == null)

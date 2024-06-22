@@ -5,6 +5,8 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 // Courtesy of WaitingIdly
 public class UTAdvancementInfo
 {
+    public static final int DEFAULT_WIDTH = 252;
+    public static final int DEFAULT_HEIGHT = 140;
     private static final int PADDING = 9;
     private static final int HEIGHT_MULT = 28;
     private static final int WIDTH_MULT = 32;

@@ -41,14 +41,14 @@ public abstract class UTGuiAdvancementTabMixin
     }
 
     // update the size
-    @ModifyConstant(method = {"drawContents", "scroll", "drawToolTips"}, constant = @Constant(intValue = 234))
+    @ModifyConstant(method = {"drawContents", "scroll", "drawToolTips"}, constant = @Constant(intValue = UTAdvancementInfo.DEFAULT_WIDTH - 18))
     private int utDrawWidth(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
         return UTAdvancementInfo.utPageWidth(screen.width, 2) - 4;
     }
 
-    @ModifyConstant(method = {"drawContents", "scroll", "drawToolTips"}, constant = @Constant(intValue = 113))
+    @ModifyConstant(method = {"drawContents", "scroll", "drawToolTips"}, constant = @Constant(intValue = UTAdvancementInfo.DEFAULT_HEIGHT - 27))
     private int utDrawHeight(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
@@ -56,14 +56,14 @@ public abstract class UTGuiAdvancementTabMixin
     }
 
     // origin of the shown tree within the scrollable space
-    @ModifyConstant(method = "drawContents", constant = @Constant(intValue = 117))
+    @ModifyConstant(method = "drawContents", constant = @Constant(intValue = (UTAdvancementInfo.DEFAULT_WIDTH - 18) / 2))
     private int utDrawContentsWidth(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
         return (UTAdvancementInfo.utPageWidth(screen.width, 2) - 4) / 2;
     }
 
-    @ModifyConstant(method = "drawContents", constant = @Constant(intValue = 56))
+    @ModifyConstant(method = "drawContents", constant = @Constant(intValue = (UTAdvancementInfo.DEFAULT_HEIGHT - 27) / 2))
     private int utDrawContentsHeight(int original)
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
