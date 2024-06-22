@@ -1,5 +1,8 @@
 package mod.acgaming.universaltweaks.tweaks.misc.advancements.guisize.mixin;
 
+import java.util.List;
+
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.advancements.GuiAdvancementTab;
 import net.minecraft.client.gui.advancements.GuiScreenAdvancements;
@@ -24,6 +27,14 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
 
     @Shadow(remap = false)
     private static int tabPage;
+    @Shadow(remap = false)
+    private static int maxPages;
+
+    @Unique
+    private GuiButton buttonLeft;
+    @Unique
+    private GuiButton buttonRight;
+
     @Shadow
     private GuiAdvancementTab selectedTab;
 
@@ -38,6 +49,46 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
             return original.call();
         }
         return UTAdvancementInfo.utMaximumTabCountPerPage(width, height);
+    }
+
+    /**
+     * @reason puts the left arrow button to a variable to control visibility state in {@link #utHideInvalidButtons}
+     */
+    @WrapOperation(method = "initGui", at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 0))
+    private boolean utStoreLeftButton(List<GuiButton> list, Object button, Operation<Boolean> original)
+    {
+        if (UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle && UTConfigTweaks.MISC.ADVANCEMENTS.utHideInvalidArrowButtons)
+        {
+            buttonLeft = (GuiButton) button;
+        }
+        return original.call(list, button);
+    }
+
+    /**
+     * @reason puts the right arrow button to a variable to control visibility state in {@link #utHideInvalidButtons}
+     */
+    @WrapOperation(method = "initGui", at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", ordinal = 1))
+    private boolean utStoreRightButton(List<GuiButton> list, Object button, Operation<Boolean> original)
+    {
+        if (UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle && UTConfigTweaks.MISC.ADVANCEMENTS.utHideInvalidArrowButtons)
+        {
+            buttonRight = (GuiButton) button;
+        }
+        return original.call(list, button);
+    }
+
+    /**
+     * @reason hide page switching buttons when at the maximum/minimum page count
+     */
+    @Inject(method = "drawScreen", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/FontRenderer;drawStringWithShadow(Ljava/lang/String;FFI)I", shift = At.Shift.AFTER))
+    private void utHideInvalidButtons(CallbackInfo ci)
+    {
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utHideInvalidArrowButtons)
+        {
+            return;
+        }
+        buttonLeft.visible = tabPage != 0;
+        buttonRight.visible = tabPage != maxPages;
     }
 
     /**

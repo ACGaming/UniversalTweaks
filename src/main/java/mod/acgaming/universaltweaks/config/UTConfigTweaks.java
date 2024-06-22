@@ -1632,6 +1632,11 @@ public class UTConfigTweaks
             @Config.Name("[06] Hide Page Header")
             @Config.Comment("Hides the page number header, as it will go offscreen and be unusable on most vertical margin settings, and is rarely needed due to the increased page size")
             public boolean utHidePageHeader = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[07] Hide Invalid Arrow Buttons")
+            @Config.Comment("Hides page switching buttons when at the maximum/minimum page count")
+            public boolean utHideInvalidArrowButtons = true;
         }
 
         public static class ArmorCurveCategory
