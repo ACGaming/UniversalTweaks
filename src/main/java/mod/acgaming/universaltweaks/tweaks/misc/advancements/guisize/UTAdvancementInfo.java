@@ -21,9 +21,19 @@ public class UTAdvancementInfo
         return height / HEIGHT_MULT * HEIGHT_MULT;
     }
 
+    private static int utClampWidth(int width)
+    {
+        return Math.max(width, DEFAULT_WIDTH);
+    }
+
+    private static int utClampHeight(int height)
+    {
+        return Math.max(height, DEFAULT_HEIGHT);
+    }
+
     public static int utPageWidth(int externalWidth)
     {
-        return utStepwiseWidth(externalWidth - UTConfigTweaks.MISC.ADVANCEMENTS.utHorizontalMargin * 2);
+        return utStepwiseWidth(utClampWidth(externalWidth - UTConfigTweaks.MISC.ADVANCEMENTS.utHorizontalMargin * 2));
     }
 
     public static int utPageWidth(int externalWidth, int padding)
@@ -33,7 +43,7 @@ public class UTAdvancementInfo
 
     public static int utPageHeight(int externalHeight)
     {
-        return utStepwiseHeight(externalHeight - UTConfigTweaks.MISC.ADVANCEMENTS.utVerticalMargin * 2);
+        return utStepwiseHeight(utClampHeight(externalHeight - UTConfigTweaks.MISC.ADVANCEMENTS.utVerticalMargin * 2));
     }
 
     public static int utPageHeight(int externalHeight, int padding)
