@@ -1616,12 +1616,12 @@ public class UTConfigTweaks
             @Config.RequiresMcRestart
             @Config.Name("[03] Vertical Margin")
             @Config.Comment("Sets the minimum Vertical Margin of the Advancement GUI. Too high a number may cause the advancement box to render incorrectly, depending on screen size and GUI scale")
-            public int utVerticalMargin = 30;
+            public int utVerticalMargin = 50;
 
             @Config.RequiresMcRestart
             @Config.Name("[04] Horizontal Margin")
             @Config.Comment("Sets the minimum Horizontal Margin of the Advancement GUI. Too high a number may cause the advancement box to render incorrectly, depending on screen size and GUI scale")
-            public int utHorizontalMargin = 30;
+            public int utHorizontalMargin = 50;
 
             @Config.RequiresMcRestart
             @Config.Name("[05] Move Arrow Buttons")
@@ -1631,7 +1631,7 @@ public class UTConfigTweaks
             @Config.RequiresMcRestart
             @Config.Name("[06] Hide Page Header")
             @Config.Comment("Hides the page number header, as it will go offscreen and be unusable on most vertical margin settings, and is rarely needed due to the increased page size")
-            public boolean utHidePageHeader = true;
+            public boolean utHidePageHeader = false;
 
             @Config.RequiresMcRestart
             @Config.Name("[07] Hide Invalid Arrow Buttons")
