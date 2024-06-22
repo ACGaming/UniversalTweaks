@@ -110,6 +110,16 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     }
 
     /**
+     * @reason adjust the location used to indicate half the width for drawing the header text
+     */
+    @ModifyConstant(method = "drawScreen", constant = @Constant(intValue = 126))
+    private int utAdjustHalfWidthPosition(int original)
+    {
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utSizeToggle) return original;
+        return (UTAdvancementInfo.utPageWidth(width) - 4) / 2;
+    }
+
+    /**
      * @reason adjust the location used for the height
      */
     @ModifyConstant(method = {"initGui", "mouseClicked", "drawScreen"}, constant = @Constant(intValue = 140))
