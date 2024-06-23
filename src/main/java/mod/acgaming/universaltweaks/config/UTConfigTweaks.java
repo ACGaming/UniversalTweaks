@@ -2,6 +2,7 @@ package mod.acgaming.universaltweaks.config;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import com.cleanroommc.configanytime.ConfigAnytime;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
@@ -1349,6 +1350,10 @@ public class UTConfigTweaks
 
     public static class MiscCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.advancements")
+        @Config.Name("Advancements")
+        public final AdvancementsCategory ADVANCEMENTS = new AdvancementsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.armorcurve")
         @Config.Name("Armor Curve")
         public final ArmorCurveCategory ARMOR_CURVE = new ArmorCurveCategory();
@@ -1597,6 +1602,47 @@ public class UTConfigTweaks
                 "-1 for vanilla default"
             })
         public int utXPLevelCap = -1;
+
+
+        public static class AdvancementsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[01] Advancements Toggle")
+            @Config.Comment("Enables Advancement GUI Tweaks")
+            public boolean utAdvancementsToggle = false;
+
+            @Config.Name("[02] Size Toggle")
+            @Config.Comment("Enables the Vertical and Horizontal Margin settings")
+            public boolean utSizeToggle = true;
+
+            @Config.Name("[03] Vertical Margin")
+            @Config.Comment("Sets the minimum Vertical Margin of the Advancement GUI. Too high a number may cause the advancement box to render incorrectly, depending on screen size and GUI scale")
+            public int utVerticalMargin = 50;
+
+            @Config.Name("[04] Horizontal Margin")
+            @Config.Comment("Sets the minimum Horizontal Margin of the Advancement GUI. Too high a number may cause the advancement box to render incorrectly, depending on screen size and GUI scale")
+            public int utHorizontalMargin = 50;
+
+            @Config.Name("[05] Move Arrow Buttons")
+            @Config.Comment("Move the Arrow Buttons visible to change focused advancement page from above the advancement box to in the empty top corners, preventing them from going offscreen and being unusable on most vertical margin settings")
+            public boolean utMoveArrowButtons = true;
+
+            @Config.Name("[06] Hide Page Header")
+            @Config.Comment("Hides the page number header, as it will go offscreen and be unusable on most vertical margin settings, and is rarely needed due to the increased page size")
+            public boolean utHidePageHeader = false;
+
+            @Config.Name("[07] Hide Invalid Arrow Buttons")
+            @Config.Comment("Hides page switching buttons when at the maximum/minimum page count")
+            public boolean utHideInvalidArrowButtons = true;
+
+            @Config.Name("[08] Disable Background Fade on Hover")
+            @Config.Comment("Disables the background fading when hovering over an advancement")
+            public boolean utDisableFadeOnHover = true;
+
+            @Config.Name("[09] Add Advancement Tab Title to Header")
+            @Config.Comment("Makes the focused Advancement Tab Title be added to the header, which otherwise is just 'Advancements' for every tab")
+            public boolean utAddFocusedTabTitleToHeader = true;
+        }
 
         public static class ArmorCurveCategory
         {

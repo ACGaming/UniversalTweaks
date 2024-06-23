@@ -83,6 +83,12 @@ All changes are toggleable via config files.
 ### **🔧 TWEAKS**
 
 * **Accurate Potion Duration:** Always displays the actual potion duration instead of `**:**`
+* **Advancement GUI**
+    * Allows increasing the Advancement GUI to scale with the screen size
+    * Moves the page buttons to in-line with the rest of the GUI instead of hovering significantly
+    * Hides page switching buttons when at the maximum/minimum page count
+    * Disables the background fading when hovering over an advancement
+    * Adds Advancement Page Title text to the Advancement GUI header
 * **Adaptive XP Drops:** Scales dropped experience from entities based on their health
 * **AI Improvements:** Replaces/removes entity AI for improved server performance
 * **Always Eat:** Allows the consumption of food at any time, regardless of the hunger bar
