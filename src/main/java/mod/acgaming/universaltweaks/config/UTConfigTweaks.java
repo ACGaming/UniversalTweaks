@@ -1401,8 +1401,12 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Copy World Seed")
-        @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
-        public boolean utCopyWorldSeedToggle = false;
+        @Config.Comment
+            ({
+                "Enables clicking of `/seed` world seed in chat to copy to clipboard",
+                "Required on server AND client"
+            })
+        public boolean utCopyWorldSeedToggle = true;
 
         @Config.Name("Damage Tilt")
         @Config.Comment("Restores feature to tilt the camera when damaged")

@@ -35,6 +35,7 @@ import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
+import mod.acgaming.universaltweaks.util.UTCommands;
 import mod.acgaming.universaltweaks.tweaks.misc.endportal.UTEndPortalParallax;
 import mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties.UTLanServerProperties;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
@@ -215,6 +216,7 @@ public class UniversalTweaks
         if (UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfigTweaks.MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
         if (UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlTutorialToggle) UTTutorialToast.utTutorialToast();
         if (Loader.isModLoaded("botania")) UTBotaniaFancySkybox.initDimList();
+        UTCommands.initClientCommands();
         LOGGER.info(NAME + " client post-initialized");
     }
 
