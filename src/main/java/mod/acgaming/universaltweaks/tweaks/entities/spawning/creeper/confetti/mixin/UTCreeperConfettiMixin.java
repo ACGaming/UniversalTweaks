@@ -47,7 +47,12 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
         double chargedChance = UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiChance;
         if (chargedChance <= 0.0D || !UTRandomUtil.chance(chargedChance, new Random(this.getUniqueID().getMostSignificantBits() & Long.MAX_VALUE))) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCreeperConfetti ::: Explode");
-        if (this.world.isRemote) spawnParticles(this.getEntityWorld(), this.getPosition(), this.getPowered());
+        if (this.world.isRemote)
+        {
+            BlockPos pos = this.getPosition();
+            boolean powered = this.getPowered();
+            this.world.makeFireworks(pos.getX(), pos.getY() + (powered ? 2.5F : 0.5F), pos.getZ(), 0, 0, 0, generateTag(powered));
+        }
         else
         {
             this.dead = true;
@@ -56,14 +61,6 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
             this.damagePlayers(((EntityCreeper) (Object) this));
         }
         ci.cancel();
-    }
-
-    @Unique
-    @SideOnly(Side.CLIENT)
-    public void spawnParticles(World world, BlockPos pos, boolean powered)
-    {
-        ParticleManager particleManager = Minecraft.getMinecraft().effectRenderer;
-        particleManager.addEffect(new ParticleFirework.Starter(world, pos.getX(), pos.getY() + (powered ? 2.5F : 0.5F), pos.getZ(), 0, 0, 0, particleManager, generateTag(powered)));
     }
 
     @Unique
