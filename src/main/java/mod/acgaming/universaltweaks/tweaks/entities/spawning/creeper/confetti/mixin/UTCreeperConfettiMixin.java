@@ -60,7 +60,7 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
     @Inject(method = "<init>", at = @At(value = "TAIL"))
     private void utInitConfetti(World worldIn, CallbackInfo ci)
     {
-        if (this.world.isRemote) return;
+        if (worldIn == null || worldIn.isRemote) return;
         double chargedChance = UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiChance;
         if (chargedChance > 0.0D && UTRandomUtil.chance(chargedChance, this.rand))
         {
