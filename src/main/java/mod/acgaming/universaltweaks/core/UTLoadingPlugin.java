@@ -154,6 +154,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.world.village.json", () -> UTConfigTweaks.WORLD.utVillageDistance != 32);
         }
     });
+    public static boolean openModsLoaded;
     public static boolean surgeLoaded;
     private static final Map<String, Supplier<Boolean>> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
     {
@@ -162,7 +163,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.blocks.blockoverlay.json", () -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
             put("mixins.bugfixes.blocks.miningglitch.client.json", () -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
             put("mixins.bugfixes.entities.elytra.json", () -> UTConfigBugfixes.ENTITIES.utElytraDeploymentLandingToggle);
-            put("mixins.bugfixes.entities.elytrarender.json", () -> UTConfigBugfixes.ENTITIES.utFixInvisiblePlayerModelWithElytra);
+            put("mixins.bugfixes.entities.elytrarender.json", () -> UTConfigBugfixes.ENTITIES.utFixInvisiblePlayerModelWithElytra && !openModsLoaded);
             put("mixins.bugfixes.entities.entitylists.client.json", () -> UTConfigBugfixes.ENTITIES.ENTITY_LISTS.utWorldAdditionsToggle);
             put("mixins.bugfixes.entities.villagermantle.json", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
             put("mixins.bugfixes.misc.depthmask.json", () -> UTConfigBugfixes.MISC.utDepthMaskToggle);
@@ -229,6 +230,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             Locale.setDefault(Locale.ENGLISH);
         }
 
+        openModsLoaded = UTReflectionUtil.isClassLoaded("openmods.core.OpenModsClassTransformer");
         randomPatchesLoaded = UTReflectionUtil.isClassLoaded("com.therandomlabs.randompatches.core.RPCore");
         renderLibLoaded = UTReflectionUtil.isClassLoaded("meldexun.renderlib.RenderLib");
         spongeForgeLoaded = UTReflectionUtil.isClassLoaded("org.spongepowered.mod.util.CompatibilityException");
