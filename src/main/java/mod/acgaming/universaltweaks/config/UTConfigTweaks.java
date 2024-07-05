@@ -1063,6 +1063,11 @@ public class UTConfigTweaks
         @Config.Comment("Disables dragon's breath from being a container item and leaving off empty bottles when a stack is brewed with")
         public boolean utLeftoverBreathBottleToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Glass Bottle Consumes Water Source")
+        @Config.Comment("Causes Glass Bottles to consume the source block of water")
+        public boolean utGlassBottlesConsumeWaterSource = false;
+
         @Config.Name("Custom Rarity")
         @Config.Comment
             ({
