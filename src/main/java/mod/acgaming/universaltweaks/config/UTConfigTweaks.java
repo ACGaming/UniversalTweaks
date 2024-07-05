@@ -1134,6 +1134,11 @@ public class UTConfigTweaks
             })
         public int utXPBottleAmount = -1;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Prevent Mob Eggs from Changing Spawners")
+        @Config.Comment("Prevents using Mob Spawner Eggs to change what a Spawner is spawning")
+        public boolean utPreventMobEggsFromChangingSpawner = false;
+
         public static class AttackCooldownCategory
         {
             @Config.RequiresMcRestart
