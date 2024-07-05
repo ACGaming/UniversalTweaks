@@ -64,6 +64,7 @@ public class UTObsoleteModsHandler
             put("erebusfix", () -> UTConfigMods.EREBUS.utEBPreservedBlocksToggle);
             put("experiencebugfix", () -> UTConfigBugfixes.ENTITIES.utDimensionChangeToggle);
             put("eyltrafix", () -> UTConfigBugfixes.ENTITIES.utElytraDeploymentLandingToggle);
+            put("f5fix", () -> UTConfigTweaks.ENTITIES.utThirdPersonIgnoresNonSolidBlocks);
             put("fastbench", () -> UTConfigTweaks.PERFORMANCE.utCraftingCacheToggle);
             put("fastleafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
             put("fencejumper", () -> UTConfigTweaks.BLOCKS.utFenceWallJumpToggle);

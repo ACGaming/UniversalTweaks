@@ -243,6 +243,7 @@ All changes are toggleable via config files.
 * **Super Hot Torch:** Enables one-time ignition of entities by hitting them with a torch
 * **Stronghold Enforcement:** Enforces stronghold generation to generate all blocks, regardless of air
 * **Swing Through Grass:** Allows hitting entities through grass instead of breaking it
+* **Third Person Ignores Non-solid Blocks:** When viewing in third person, don't stop the camera on non-solid blocks
 * **Tidy Chunk:** Tidies newly generated chunks by removing scattered item entities
 * **Toast Control:** Enables the control of toasts (pop-up text boxes)
 * **Toggle Cheats Button:** Adds a button to the pause menu to toggle cheats

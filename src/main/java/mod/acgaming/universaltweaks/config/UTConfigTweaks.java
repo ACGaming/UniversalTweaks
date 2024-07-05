@@ -529,6 +529,11 @@ public class UTConfigTweaks
         public double utFirstPersonBurningOverlay = -0.3D;
 
         @Config.RequiresMcRestart
+        @Config.Name("Third Person Ignores Non-solid Blocks")
+        @Config.Comment("When viewing in third person, don't stop the camera on non-solid blocks")
+        public boolean utThirdPersonIgnoresNonSolidBlocks = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Husk & Stray Spawning")
         @Config.Comment("Lets husks and strays spawn underground like regular zombies and skeletons")
         public boolean utHuskStraySpawningToggle = true;
