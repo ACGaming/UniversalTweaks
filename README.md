@@ -168,6 +168,7 @@ All changes are toggleable via config files.
 * **Fence/Wall Jump:** Allows the player to jump over fences and walls
 * **Finite Water:** Prevents creation of infinite water sources outside of ocean and river biomes
 * **First Person Burning Overlay:** Sets the offset for the fire overlay in first person when the player is burning
+* **Glass Bottle Consumes Water Source:** Causes Glass Bottles to consume the source block of water
 * **Growth Size:** Configurable growth height/length for sugar cane, cacti and vines
 * **Hardcore Buckets:** Prevents placing of liquid source blocks in the world
 * **Hide Personal Effect Particles:** Disables potion effect particles emitting from yourself

@@ -36,6 +36,7 @@ public class UTObsoleteModsHandler
             put("blockdispenser", () -> UTConfigTweaks.BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle);
             put("blockfire", () -> UTConfigBugfixes.ENTITIES.utBlockFireToggle);
             put("blockoverlayfix", () -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
+            put("bottlefix", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
             put("bottomsugarcanharvest", () -> UTConfigTweaks.BLOCKS.utSugarCaneSize != 3);
             put("bowinfinityfix", () -> UTConfigTweaks.ITEMS.INFINITY.utBowInfinityToggle);
             put("breedablekillerrabbit", () -> UTConfigTweaks.ENTITIES.utRabbitKillerChance > 0.0D);
@@ -117,12 +118,14 @@ public class UTObsoleteModsHandler
             put("savemystronghold", () -> UTConfigTweaks.WORLD.utStrongholdToggle);
             put("sleepsooner", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
             put("smooth-scrolling-everywhere", () -> UTConfigTweaks.MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle);
+            put("sourcebottles", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
             put("steamworldpatcher", () -> UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
             put("stepupfix", () -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
             put("stg", () -> UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle);
             put("superhot", () -> UTConfigTweaks.ITEMS.utSuperHotTorchToggle);
             put("surge", () -> true);
             put("tconfixes", () -> true);
+            put("thirstybottles", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
             put("tidychunk", () -> UTConfigTweaks.WORLD.utTidyChunkToggle);
             put("tinkersoredictcache", () -> UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
             put("toastcontrol", () -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlToggle);
