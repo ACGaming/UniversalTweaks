@@ -2,7 +2,6 @@ package mod.acgaming.universaltweaks.config;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import com.cleanroommc.configanytime.ConfigAnytime;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
@@ -474,10 +473,17 @@ public class UTConfigTweaks
         @Config.Comment("Sets the acceleration value for controlling boats")
         public double utBoatSpeed = 0.04D;
 
-        @Config.RequiresMcRestart
         @Config.Name("Burning Baby Zombies")
         @Config.Comment("Lets baby zombies burn in daylight as in Minecraft 1.13+")
         public boolean utBurningBabyZombiesToggle = true;
+
+        @Config.Name("Burning Skeletons")
+        @Config.Comment("Lets skeletons burn in daylight")
+        public boolean utBurningSkeletonsToggle = true;
+
+        @Config.Name("Burning Zombies")
+        @Config.Comment("Lets zombies burn in daylight")
+        public boolean utBurningZombiesToggle = true;
 
         @Config.Name("Creeper Charged Spawning Chance")
         @Config.Comment("Sets the chance for creepers to spawn charged")

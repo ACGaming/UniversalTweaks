@@ -1,8 +1,7 @@
-package mod.acgaming.universaltweaks.tweaks.entities.burning.zombie.mixin;
-
-import net.minecraft.entity.monster.EntityZombie;
+package mod.acgaming.universaltweaks.tweaks.entities.burning.mobs.mixin;
 
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import net.minecraft.entity.monster.EntityZombie;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

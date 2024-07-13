@@ -94,7 +94,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.entities.ai.wither.json", () -> UTConfigTweaks.ENTITIES.utWitherAIToggle);
             put("mixins.tweaks.entities.armedarmorstands.json", () -> UTConfigTweaks.ENTITIES.utArmedArmorStandsToggle);
             put("mixins.tweaks.entities.burning.horse.json", () -> UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utBurningUndeadHorsesToggle);
-            put("mixins.tweaks.entities.burning.zombie.json", () -> UTConfigTweaks.ENTITIES.utBurningBabyZombiesToggle);
+            put("mixins.tweaks.entities.burning.mobs.json", () -> UTConfigTweaks.ENTITIES.utBurningBabyZombiesToggle);
             put("mixins.tweaks.entities.damage.arrow.json", () -> UTConfigTweaks.ENTITIES.utCriticalArrowDamage != -1);
             put("mixins.tweaks.entities.damage.collision.json", () -> UTConfigTweaks.ENTITIES.COLLISION_DAMAGE.utCollisionDamageToggle);
             put("mixins.tweaks.entities.damage.falling.json", () -> UTConfigTweaks.ENTITIES.WATER_FALL_DAMAGE.utFallDamageToggle);
