@@ -119,6 +119,8 @@ All changes are toggleable via config files.
     * **Infinity Affects All Arrows:** Allows the Infinity Enchantment to apply to all arrows (e.g. Tipped Arrows)
 * **Breakable Bedrock:** Allows customizable mining of bedrock
 * **Burning Baby Zombies:** Lets baby zombies burn in daylight as in Minecraft 1.13+
+* **Burning Skeletons:** Prevents skeletons burning in daylight
+* **Burning Zombies:** Prevents zombies burning in daylight
 * **Charged Creeper Spawning:** Sets the chance for creepers to spawn charged
 * **Chat:**
   * **Chat Lines:** Sets the maximum number of chat lines to display
