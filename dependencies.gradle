@@ -154,10 +154,10 @@ dependencies {
     embed 'com.udojava:EvalEx:2.7'
 
     // compiles all mods, and selectively enables mods being debugged
-    mod_dependencies.entrySet().forEach {
-        def mod = rfg.deobf(it.key)
+    mod_dependencies.forEach { key, value ->
+        final def mod = rfg.deobf(key)
         compileOnly mod
-        if (it.value.any { it.toBoolean() }) {
+        if (value.any { it.toBoolean() }) {
             runtimeOnly mod
         }
     }
