@@ -36,6 +36,7 @@ public class UTObsoleteModsHandler
             put("blockdispenser", () -> UTConfigTweaks.BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle);
             put("blockfire", () -> UTConfigBugfixes.ENTITIES.utBlockFireToggle);
             put("blockoverlayfix", () -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
+            put("bottlefix", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
             put("bottomsugarcanharvest", () -> UTConfigTweaks.BLOCKS.utSugarCaneSize != 3);
             put("bowinfinityfix", () -> UTConfigTweaks.ITEMS.INFINITY.utBowInfinityToggle);
             put("breedablekillerrabbit", () -> UTConfigTweaks.ENTITIES.utRabbitKillerChance > 0.0D);
@@ -63,10 +64,12 @@ public class UTObsoleteModsHandler
             put("erebusfix", () -> UTConfigMods.EREBUS.utEBPreservedBlocksToggle);
             put("experiencebugfix", () -> UTConfigBugfixes.ENTITIES.utDimensionChangeToggle);
             put("eyltrafix", () -> UTConfigBugfixes.ENTITIES.utElytraDeploymentLandingToggle);
+            put("f5fix", () -> UTConfigTweaks.ENTITIES.utThirdPersonIgnoresNonSolidBlocks);
             put("fastbench", () -> UTConfigTweaks.PERFORMANCE.utCraftingCacheToggle);
             put("fastleafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
             put("fencejumper", () -> UTConfigTweaks.BLOCKS.utFenceWallJumpToggle);
             put("finite-fluid-control", () -> UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle);
+            put("forgivingvoid", () -> UTConfigTweaks.ENTITIES.VOID_TELEPORT.utVoidTeleportToggle);
             put("framevoidpatch", () -> UTConfigBugfixes.BLOCKS.utItemFrameVoidToggle);
             put("getittogetherdrops", () -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle);
             put("givemebackmyhp", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
@@ -87,6 +90,7 @@ public class UTObsoleteModsHandler
             put("loginhpfix", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
             put("maxhealthfixer", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
             put("mendingfix", () -> UTConfigTweaks.ITEMS.MENDING.utMendingToggle);
+            put("mobsunscreen", () -> !UTConfigTweaks.ENTITIES.utBurningSkeletonsToggle || !UTConfigTweaks.ENTITIES.utBurningZombiesToggle);
             put("movingquickly", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
             put("mtqfix", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
             put("mup", () -> true);
@@ -111,21 +115,27 @@ public class UTObsoleteModsHandler
             put("preventghost", () -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
             put("quickleafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
             put("rallyhealth", () -> UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle);
+            put("rebind_narrator", () -> UTConfigTweaks.MISC.utUseCustomNarratorKeybind);
             put("salwayseat", () -> UTConfigTweaks.ITEMS.utAlwaysEatToggle);
             put("savemystronghold", () -> UTConfigTweaks.WORLD.utStrongholdToggle);
             put("sleepsooner", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
             put("smooth-scrolling-everywhere", () -> UTConfigTweaks.MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle);
+            put("sourcebottles", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
+            put("steamworldpatcher", () -> UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
             put("stepupfix", () -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
             put("stg", () -> UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle);
             put("superhot", () -> UTConfigTweaks.ITEMS.utSuperHotTorchToggle);
             put("surge", () -> true);
             put("tconfixes", () -> true);
+            put("thirstybottles", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
             put("tidychunk", () -> UTConfigTweaks.WORLD.utTidyChunkToggle);
             put("tinkersoredictcache", () -> UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
             put("toastcontrol", () -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlToggle);
             put("tramplestopper", () -> UTConfigTweaks.BLOCKS.utFarmlandTrample != UTConfigTweaks.TrampleOptions.DEFAULT);
             put("unloader", () -> UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle);
+            put("unridekeybind", () -> UTConfigTweaks.MISC.utUseSeparateDismountKey);
             put("villagermantlefix", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
+            put("voidfog", () -> UTConfigTweaks.WORLD.VOID_FOG.utVoidFogToggle);
             put("watercontrolextreme", () -> UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle);
         }
     });

@@ -142,6 +142,7 @@ dependencies {
     compileOnly rfg.deobf('curse.maven:ceramics-250617:3158763')
     compileOnly rfg.deobf('curse.maven:chameleon-230497:2450900')
     compileOnly rfg.deobf('curse.maven:chickens-241941:2537643')
+    compileOnly rfg.deobf('curse.maven:codechickenlib-242818:2779848')
     compileOnly rfg.deobf('curse.maven:collective-342584:3533131')
     compileOnly rfg.deobf('curse.maven:cqrepoured-303422:3953103')
     compileOnly rfg.deobf('curse.maven:elementary-staffs-346007:2995593')
@@ -150,8 +151,11 @@ dependencies {
     compileOnly rfg.deobf('curse.maven:forestry-59751:2918418')
     compileOnly rfg.deobf('curse.maven:modtweaker-220954:3840577')
     compileOnly rfg.deobf('curse.maven:nuclearcraft-226254:3784145')
+    compileOnly rfg.deobf('curse.maven:openblocks-228816:2699056')
+    compileOnly rfg.deobf('curse.maven:opencomputers-223008:5274236')
     compileOnly rfg.deobf('curse.maven:reborn-core-237903:3330308')
     compileOnly rfg.deobf('curse.maven:reskillable-286382:2815686')
+    compileOnly rfg.deobf('curse.maven:requious-frakto-336748:3218640')
     compileOnly rfg.deobf('curse.maven:roost-277711:2702080')
     compileOnly rfg.deobf('curse.maven:simpledifficulty-360779:3613814')
     compileOnly rfg.deobf('curse.maven:storage-drawers-223852:2952606')
@@ -168,17 +172,19 @@ dependencies {
     compileOnly rfg.deobf('curse.maven:mcjtylib-233105:2745846')
     compileOnly rfg.deobf('curse.maven:rftools-224641:2861573')
     compileOnly rfg.deobf('curse.maven:rftools-dimensions-240950:2707390')
-    compileOnly 'curse.maven:actuallyaditions-228404:2844115'
+    compileOnly rfg.deobf('curse.maven:actuallyaditions-228404:2844115')
+    compileOnly rfg.deobf('curse.maven:extrautilities-225561:2678374')
+    compileOnly rfg.deobf('curse.maven:steamworld-282607:2641200')
     compileOnly 'curse.maven:applecore-224472:2969118'
     compileOnly 'curse.maven:arcanearchives-311357:3057332'
     compileOnly 'curse.maven:bewitchment-285439:3044569'
     compileOnly 'curse.maven:chisel-235279:2915375'
-    compileOnly 'curse.maven:codechickenlib-242818:2779848'
     compileOnly 'curse.maven:cofhworld-271384:2920434'
     compileOnly 'curse.maven:compactmachines-224218:2707509'
     compileOnly 'curse.maven:effortlessbuilding-302113:2847346'
     compileOnly 'curse.maven:endercore-231868:2972849'
     compileOnly 'curse.maven:enderio-64578:2989201'
+    compileOnly 'curse.maven:enderstorage-245174:2755787'
     compileOnly 'curse.maven:extrautilities-225561:2678374'
     compileOnly 'curse.maven:forgemultipartcbe-258426:2755790' // aka "CB Multipart"
     compileOnly 'curse.maven:guideapi-228832:2645992'
@@ -195,6 +201,7 @@ dependencies {
     compileOnly 'curse.maven:projectredbase-228702:2745545'
     compileOnly 'curse.maven:projectredworld-229049:2745551'
     compileOnly 'curse.maven:quark-243121:2924091'
+    compileOnly 'curse.maven:railcraft-51195:3853491'
     compileOnly 'curse.maven:simplyjetpacks2-251792:3294422'
     compileOnly 'curse.maven:tardis-290247:2903453'
     compileOnly 'curse.maven:teslacorelib-254602:2891841'
@@ -206,6 +213,7 @@ dependencies {
     compileOnly 'curse.maven:tinyprogressions-250850:2721018'
     compileOnly 'maven.modrinth:industrial-foregoing:1.12.13-237'
     // runtimeOnly 'TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal'
+    // runtimeOnly 'curse.maven:openmodslib-228815:2699055'
 
     if (project.use_mixins.toBoolean()) {
         String mixin = modUtils.enableMixins("zone.rong:mixinbooter:9.1", "universaltweaks.refmap.json")

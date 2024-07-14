@@ -1,17 +1,15 @@
 package mod.acgaming.universaltweaks.tweaks.blocks.betterplacement;
 
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.math.Vec3d;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
-
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of tterrag1098, BucketOfCompasses
 public class UTBetterPlacement
@@ -47,7 +45,7 @@ public class UTBetterPlacement
                     {
                         Minecraft.getMinecraft().rightClickDelayTimer = 0;
                     }
-                    else if (UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementNewLoc && pos.equals(lastTargetPos) && side == lastTargetSide && !isDrawer(pos))
+                    else if (UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementNewLoc && pos.equals(lastTargetPos) && side == lastTargetSide && !isInteractableAt(pos))
                     {
                         Minecraft.getMinecraft().rightClickDelayTimer = 4;
                     }
@@ -59,15 +57,8 @@ public class UTBetterPlacement
         }
     }
 
-    public static boolean isDrawer(BlockPos pos)
+    private static boolean isInteractableAt(BlockPos pos)
     {
-        try
-        {
-            return Loader.isModLoaded("storagedrawers") && Minecraft.getMinecraft().world.getBlockState(pos).getBlock().getRegistryName().getNamespace().equals("storagedrawers");
-        }
-        catch (Exception e)
-        {
-            return false;
-        }
+        return ((IInteractable) Minecraft.getMinecraft().world.getBlockState(pos).getBlock()).isInteractable();
     }
 }

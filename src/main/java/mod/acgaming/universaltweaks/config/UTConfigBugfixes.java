@@ -146,6 +146,10 @@ public class UTConfigBugfixes
         @Config.Name("Entity Desync")
         public final EntityDesyncCategory ENTITY_DESYNC = new EntityDesyncCategory();
 
+        @Config.LangKey("cfg.universaltweaks.bugfixes.entities.entitylists")
+        @Config.Name("Entity Lists")
+        public final EntityListsCategory ENTITY_LISTS = new EntityListsCategory();
+
         @Config.RequiresMcRestart
         @Config.Name("Attack Radius")
         @Config.Comment("Improves the attack radius of hostile mobs by checking the line of sight with raytracing")
@@ -181,7 +185,7 @@ public class UTConfigBugfixes
         public boolean utDestroyPacketToggle = true;
 
         @Config.Name("Disconnect Dupe")
-        @Config.Comment("Fixes item duplications when players are dropping items and disconnecting (singleplayer only)")
+        @Config.Comment("Fixes item duplications when players are dropping items and disconnecting")
         public boolean utDisconnectDupeToggle = true;
 
         @Config.RequiresMcRestart
@@ -203,6 +207,15 @@ public class UTConfigBugfixes
         public boolean utElytraDeploymentLandingToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fixes Invisible Player when Flying with Elytra")
+        @Config.Comment
+            ({
+                "Fixes the player model occasionally disappearing when flying with elytra in a straight line in third-person mode",
+                "Incompatible with OpenModsLib"
+            })
+        public boolean utFixInvisiblePlayerModelWithElytra = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Entity Bounding Box")
         @Config.Comment("Saves entity bounding boxes to tags to prevent breakouts and suffocation")
         public boolean utEntityAABBToggle = true;
@@ -211,11 +224,6 @@ public class UTConfigBugfixes
         @Config.Name("Entity ID")
         @Config.Comment("Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0")
         public boolean utEntityIDToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Entity Lists")
-        @Config.Comment("Fixes entity lists often not getting updated correctly")
-        public boolean utEntityListsToggle = true;
 
         @Config.Name("Entity NaN Values")
         @Config.Comment("Prevents corruption of entities caused by invalid health or damage values")
@@ -301,6 +309,19 @@ public class UTConfigBugfixes
                     "pixelmon:empty_pokeball",
                     "pixelmon:occupied_pokeball"
                 };
+        }
+
+        public static class EntityListsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Chunk Updates")
+            @Config.Comment("Fixes chunk entity lists often not getting updated correctly")
+            public boolean utChunkUpdatesToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("World Additions")
+            @Config.Comment("Fixes client-side memory leak where some entity ids are not set before being added to the world's entity list")
+            public boolean utWorldAdditionsToggle = true;
         }
     }
 

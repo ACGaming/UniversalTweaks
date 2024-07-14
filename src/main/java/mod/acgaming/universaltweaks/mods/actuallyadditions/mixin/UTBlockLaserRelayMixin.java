@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // Courtesy of WaitingIdly
-@Mixin(value = BlockLaserRelay.class, remap = false)
+@Mixin(value = BlockLaserRelay.class)
 public abstract class UTBlockLaserRelayMixin
 {
     @Inject(method = "onBlockActivated", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/EntityPlayer;isCreative()Z"))

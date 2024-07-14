@@ -51,6 +51,10 @@ public class UTConfigMods
     @Config.Name("CB Multipart/Forge Multipart CBE")
     public static final CBMultipartCategory CB_MULTIPART = new CBMultipartCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.ccl")
+    @Config.Name("CodeChicken Lib")
+    public static final CodeChickenLibCategory CCL = new CodeChickenLibCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.chisel")
     @Config.Name("Chisel")
     public static final ChiselCategory CHISEL = new ChiselCategory();
@@ -78,6 +82,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.elenaidodge2")
     @Config.Name("Elenai Dodge 2")
     public static final ElenaiDodge2Category ELENAI_DODGE_2 = new ElenaiDodge2Category();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.enderstorage")
+    @Config.Name("Ender Storage")
+    public static final EnderStorageCategory ENDER_STORAGE = new EnderStorageCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.esm")
     @Config.Name("Epic Siege Mod")
@@ -143,6 +151,14 @@ public class UTConfigMods
     @Config.Name("NuclearCraft")
     public static final NuclearCraftCategory NUCLEARCRAFT = new NuclearCraftCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.openblocks")
+    @Config.Name("OpenBlocks")
+    public static final OpenBlocksCategory OPEN_BLOCKS = new OpenBlocksCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.opencomputers")
+    @Config.Name("OpenComputers")
+    public static final OpenComputersCategory OPEN_COMPUTERS = new OpenComputersCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.projectred")
     @Config.Name("ProjectRed")
     public static final ProjectRedCategory PROJECTRED = new ProjectRedCategory();
@@ -150,6 +166,14 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.quark")
     @Config.Name("Quark")
     public static final QuarkCategory QUARK = new QuarkCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.railcraft")
+    @Config.Name("Railcraft")
+    public static final RailcraftCategory RAILCRAFT = new RailcraftCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.requiousfrakto")
+    @Config.Name("Requious Frakto")
+    public static final RequiousFraktoCategory REQUIOUS_FRAKTO = new RequiousFraktoCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.rftoolsdimensions")
     @Config.Name("RFTools Dimensions")
@@ -170,6 +194,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.spiceoflife")
     @Config.Name("Spice Of Life")
     public static final SpiceOfLifeCategory SPICE_OF_LIFE = new SpiceOfLifeCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.steamworld")
+    @Config.Name("SteamWorld")
+    public static final SteamWorldCategory STEAMWORLD = new SteamWorldCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.sd")
     @Config.Name("Storage Drawers")
@@ -338,6 +366,14 @@ public class UTConfigMods
         public boolean utCQRGoldenFeatherToggle = true;
     }
 
+    public static class CodeChickenLibCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Packet Leak Fix")
+        @Config.Comment("Fixes network ByteBuf leaks from PacketCustom")
+        public boolean utPacketLeakFixToggle = true;
+    }
+
     public static class CoFHCoreCategory
     {
         @Config.Name("Vorpal Enchantment Damage")
@@ -395,6 +431,14 @@ public class UTConfigMods
         public int utED2SprintingFeatherRequirement = 6;
     }
 
+    public static class EnderStorageCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Frequency Tracking")
+        @Config.Comment("Fixes storage frequencies being tracked multiple times")
+        public boolean utFrequencyTrackFixToggle = true;
+    }
+
     public static class EpicSiegeModCategory
     {
         @Config.RequiresMcRestart
@@ -423,6 +467,20 @@ public class UTConfigMods
 
     public static class ExtraUtilitiesCategory
     {
+        @Config.RequiresMcRestart
+        @Config.Name("Catch Radar Exception")
+        @Config.Comment
+            ({
+                "When near some inventories, the Radar feature (find in nearby inventories) will entirely break",
+                "this catches the AbstractMethodException thrown, allowing other nearby inventories to be searched"
+            })
+        public boolean utCatchRadarException = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Deep Dark Stats")
+        @Config.Comment("Fixes Mob Attack and Health Statistics being repeatedly doubled")
+        public boolean utDeepDarkStats = true;
+
         @Config.RequiresMcRestart
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
@@ -484,10 +542,6 @@ public class UTConfigMods
         @Config.Name("Particle Fixes")
         @Config.Comment("Fixes broken textures for various running and landing particles")
         public boolean utParticleFixesToggle = true;
-
-        @Config.Name("Extra Trees: Particle Fixes")
-        @Config.Comment("Fixes broken textures for various running and landing particles in ExtraTrees' Blocks")
-        public boolean utETParticleFixesToggle = true;
     }
 
     public static class IndustrialCraftCategory
@@ -504,6 +558,11 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Machines Max Range Off-By-One Fix")
+        @Config.Comment("Fixes an off-by-one error where IF Machines would display the max tier of range addon as one less than the actual maximum")
+        public boolean utRangeAddonNumberFix = true;
     }
 
     public static class InfernalMobsCategory
@@ -604,6 +663,26 @@ public class UTConfigMods
         }
     }
 
+    public static class OpenBlocksCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Last Stand Trigger Fix")
+        @Config.Comment
+            ({
+                "Fixes the Last Stand enchantment triggering too early on pre-mitigation damage (before enchants, potions, etc)",
+                "instead of on post-mitigation damage."
+            })
+        public boolean utLastStandFixToggle = true;
+    }
+
+    public static class OpenComputersCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Packet Leak Fix")
+        @Config.Comment("Fixes network ByteBuf leaks from PacketHandler")
+        public boolean utPacketLeakFixToggle = true;
+    }
+
     public static class ProjectRedCategory
     {
         @Config.RequiresMcRestart
@@ -618,6 +697,22 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class RailcraftCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("No Beta Warning")
+        @Config.Comment("Disables the beta message warning on world join")
+        public boolean utNoBetaWarningToggle = true;
+    }
+
+    public static class RequiousFraktoCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Particle Fixes")
+        @Config.Comment("Fixes server world being leaked to various particles")
+        public boolean utParticleFixesToggle = true;
     }
 
     public static class RoostCategory
@@ -664,6 +759,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class SteamWorldCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Sky of Old Dimension Fix")
+        @Config.Comment("Fixes a Stack Overflow crash when entering the Sky of Old Dimension")
+        public boolean utSkyOfOldFixToggle = true;
     }
 
     public static class StorageDrawersCategory
@@ -801,6 +904,16 @@ public class UTConfigMods
             @Config.Name("[12] Rift: Impact Sound")
             @Config.Comment("Adds an impact sound to the rift focus effect")
             public boolean utTCRiftFocusImpactSoundToggle = true;
+            
+            @Config.RequiresMcRestart
+            @Config.Name("[13] Exchange: Cast Sound Revamp")
+            @Config.Comment("Overhauls the exchange focus effect cast sound")
+            public boolean utTCExchangeFocusSoundRevampToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[14] Exchange: Impact Sound")
+            @Config.Comment("Adds an impact sound to the exchange focus effect")
+            public boolean utTCExchangeFocusImpactSoundToggle = true;
         }
 
         public static class FocusMediumsCategory
@@ -907,6 +1020,11 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Particle Fixes")
+        @Config.Comment("Fixes server world being leaked to various particles")
+        public boolean utParticleFixesToggle = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Tool Customization")

@@ -5,6 +5,8 @@ msg.universaltweaks.obsoletemods.warning3=Consider removing them from your game 
 
 # KEYBINDS
 keybind.universaltweaks.clear_toasts=Clear Toasts
+keybind.universaltweaks.dismount=Dismount
+keybind.universaltweaks.narrator=Toggle Narrator
 
 # TOGGLE CHEATS
 btn.universaltweaks.cheats.enabled=Cheats: ON
@@ -46,6 +48,7 @@ cfg.universaltweaks.config.world=World
 
 cfg.universaltweaks.bugfixes.blocks.blockoverlay=Block Overlay
 cfg.universaltweaks.bugfixes.entities.desync=Entity Desync
+cfg.universaltweaks.bugfixes.entities.entitylists=Entity Lists
 cfg.universaltweaks.bugfixes.misc.modelgap=Model Gap
 
 cfg.universaltweaks.modintegration.abyssalcraft=AbyssalCraft
@@ -57,6 +60,7 @@ cfg.universaltweaks.modintegration.bm=Blood Magic
 cfg.universaltweaks.modintegration.bop=Biomes O' Plenty
 cfg.universaltweaks.modintegration.botania=Botania
 cfg.universaltweaks.modintegration.cbmultipart=CB Multipart/Forge Multipart CBE
+cfg.universaltweaks.modintegration.ccl=CodeChicken Lib
 cfg.universaltweaks.modintegration.chisel=Chisel
 cfg.universaltweaks.modintegration.cofhcore=CoFH Core
 cfg.universaltweaks.modintegration.compactmachines=Compact Machines
@@ -64,6 +68,7 @@ cfg.universaltweaks.modintegration.cqrepoured=Chocolate Quest Repoured
 cfg.universaltweaks.modintegration.effortlessbuilding=Effortless Building
 cfg.universaltweaks.modintegration.elementarystaffs=Elementary Staffs
 cfg.universaltweaks.modintegration.elenaidodge2=Elenai Dodge 2
+cfg.universaltweaks.modintegration.enderstorage=Ender Storage
 cfg.universaltweaks.modintegration.erebus=The Erebus
 cfg.universaltweaks.modintegration.esm=Epic Siege Mod
 cfg.universaltweaks.modintegration.extrautilities=Extra Utilities 2
@@ -80,10 +85,15 @@ cfg.universaltweaks.modintegration.mrtjpcore=MrTJPCore
 cfg.universaltweaks.modintegration.netherchest=Nether Chest
 cfg.universaltweaks.modintegration.netherrocks=Netherrocks
 cfg.universaltweaks.modintegration.nuclearcraft=NuclearCraft
+cfg.universaltweaks.modintegration.openblocks=OpenBlocks
+cfg.universaltweaks.modintegration.opencomputers=OpenComputers
 cfg.universaltweaks.modintegration.projectred=ProjectRed
 cfg.universaltweaks.modintegration.quark=Quark
 cfg.universaltweaks.modintegration.rftoolsdimensions=RFTools Dimensions
+cfg.universaltweaks.modintegration.railcraft=Railcraft
+cfg.universaltweaks.modintegration.requiousfrakto=Requious Frakto
 cfg.universaltweaks.modintegration.roost=Roost
+cfg.universaltweaks.modintegration.steamworld=SteamWorld
 cfg.universaltweaks.modintegration.sd=Storage Drawers
 cfg.universaltweaks.modintegration.simpledifficulty=Simple Difficulty
 cfg.universaltweaks.modintegration.simplyjetpacks=Simply Jetpacks
@@ -125,11 +135,13 @@ cfg.universaltweaks.tweaks.entities.sleeping=Sleeping
 cfg.universaltweaks.tweaks.entities.spawncaps=Spawn Caps
 cfg.universaltweaks.tweaks.entities.undeadhorses=Undead Horses
 cfg.universaltweaks.tweaks.entities.waterfalldamage=Water Fall Damage
+cfg.universaltweaks.tweaks.entities.voidteleport=Void Teleport
 cfg.universaltweaks.tweaks.items.attackcooldown=Attack Cooldown
 cfg.universaltweaks.tweaks.items.infinity=Infinity
 cfg.universaltweaks.tweaks.items.itementities=Item Entities
 cfg.universaltweaks.tweaks.items.mending=Mending
 cfg.universaltweaks.tweaks.items.parry=Shield Parry
+cfg.universaltweaks.tweaks.misc.advancements=Advancements
 cfg.universaltweaks.tweaks.misc.armorcurve=Armor Curve
 cfg.universaltweaks.tweaks.misc.chat=Chat
 cfg.universaltweaks.tweaks.misc.incurablepotions=Incurable Potions
@@ -142,3 +154,4 @@ cfg.universaltweaks.tweaks.misc.toastcontrol=Toast Control
 cfg.universaltweaks.tweaks.performance.entityradiuscheck=Entity Radius Check
 cfg.universaltweaks.tweaks.world.chunkgenlimit=Chunk Gen Limit
 cfg.universaltweaks.tweaks.world.dimensionunload=Dimension Unload
+cfg.universaltweaks.tweaks.world.voidfog=Void Fog

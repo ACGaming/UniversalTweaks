@@ -39,7 +39,9 @@ All changes are toggleable via config files.
 * **Entity Bounding Boxes:** Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * **Entity Desync:** Fixes entity motion desyncs most notable with arrows and thrown items
 * **Entity ID:** Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0
-* **Entity Lists:** Fixes entity lists often not getting updated correctly
+* **Entity Lists**
+    * **Chunk Updates:** Fixes chunk entity lists often not getting updated correctly
+    * **World Additions:** Fixes client-side memory leak where some entity ids are not set before being added to the world's entity list
 * **Entity NaN:** Prevents corruption of entities caused by invalid health or damage values
 * **Entity Suffocation:** Pushes entities out of blocks when growing up to prevent suffocation
 * **Entity Tracker:** Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
@@ -47,6 +49,7 @@ All changes are toggleable via config files.
 * **Exhaustion:** Fixes saturation depleting in peaceful mode
 * **Falling Block Entity Damage:** Only damage living entities hit by falling blocks, prevents killing items and XP
 * **Faster Background Startup:** Fixes slow background startup edge case caused by checking tooltips during the loading process
+* **Fixes Invisible Player when Flying with Elytra:** Fixes the player model occasionally disappearing when flying with elytra in a straight line in third-person mode
 * **Frustum Culling:** Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * **Help:** Replaces the help command, sorts and reports broken commands
 * **Hopper Bounding Box:** Slims down the hopper bounding box for easier access of nearby blocks
@@ -80,9 +83,16 @@ All changes are toggleable via config files.
 ### **🔧 TWEAKS**
 
 * **Accurate Potion Duration:** Always displays the actual potion duration instead of `**:**`
+* **Advancement GUI**
+    * Allows increasing the Advancement GUI to scale with the screen size
+    * Moves the page buttons to in-line with the rest of the GUI instead of hovering significantly
+    * Hides page switching buttons when at the maximum/minimum page count
+    * Disables the background fading when hovering over an advancement
+    * Adds Advancement Page Title text to the Advancement GUI header
 * **Adaptive XP Drops:** Scales dropped experience from entities based on their health
 * **AI Improvements:** Replaces/removes entity AI for improved server performance
 * **Always Eat:** Allows the consumption of food at any time, regardless of the hunger bar
+* **Always Return to Main Menu:** Always returns the player to the main menu when quitting the game
 * **Armed Armor Stands:** Enables arms for armor stands by default
 * **Armor Curve:** Adjusts the armor scaling and degradation formulae for mobs and players
 * **Attributes:** Sets custom ranges for entity attributes
@@ -109,6 +119,8 @@ All changes are toggleable via config files.
     * **Infinity Affects All Arrows:** Allows the Infinity Enchantment to apply to all arrows (e.g. Tipped Arrows)
 * **Breakable Bedrock:** Allows customizable mining of bedrock
 * **Burning Baby Zombies:** Lets baby zombies burn in daylight as in Minecraft 1.13+
+* **Burning Skeletons:** Prevents skeletons burning in daylight
+* **Burning Zombies:** Prevents zombies burning in daylight
 * **Charged Creeper Spawning:** Sets the chance for creepers to spawn charged
 * **Chat:**
   * **Chat Lines:** Sets the maximum number of chat lines to display
@@ -132,9 +144,13 @@ All changes are toggleable via config files.
 * **Disable Audio Debug:** Improves loading times by removing debug code for missing sounds and subtitles
 * **Disable Creeper Music Discs:** Disables creepers dropping music discs when slain by skeletons
 * **Disable Fancy Missing Model:** Improves rendering performance by removing the resource location text on missing models
+* **Disable Hotbar Scroll Wrapping:** Disables using the scroll wheel to change hotbar slots wrapping
 * **Disable Mob Spawner Entity Render:** Disables rendering an entity inside of Mob Spawners
 * **Disable Narrator:** Disables the narrator functionality entirely
+* **Disable Glint Overlay on Enchantment Books:** Disables the glint overlay on enchantment books
+* **Disable Glint Overlay on Potions:** Disables the glint overlay on potions
 * **Disable Sleeping:** Disables skipping night by using a bed while making it still able to set spawn
+* **Disable Text Shadowing:** Disables all text shadowing, where text has a darker version of itself rendered behind the normal text, changing the appearance and can improve fps on some screens
 * **Disable Villager Trade Leveling:** Disables leveling of villager careers, only allowing base level trades
 * **Disable Villager Trade Restock:** Disables restocking of villager trades, only allowing one trade per offer
 * **Disable Wither Targeting AI:** Disables withers targeting animals
@@ -154,11 +170,15 @@ All changes are toggleable via config files.
 * **Fence/Wall Jump:** Allows the player to jump over fences and walls
 * **Finite Water:** Prevents creation of infinite water sources outside of ocean and river biomes
 * **First Person Burning Overlay:** Sets the offset for the fire overlay in first person when the player is burning
+* **Glass Bottle Consumes Water Source:** Causes Glass Bottles to consume the source block of water
 * **Growth Size:** Configurable growth height/length for sugar cane, cacti and vines
 * **Hardcore Buckets:** Prevents placing of liquid source blocks in the world
 * **Hide Personal Effect Particles:** Disables potion effect particles emitting from yourself
 * **Horizontal Collision Damage:** Applies horizontal collision damage to the player akin to elytra collision
 * **Husk & Stray Spawning:** Lets husks and strays spawn underground like regular zombies and skeletons
+* **Improve Barrier Particle Display:** Causes Barrier Particles to always be displayed to players in Creative mode
+* **Improve Language Switching Speed:** Improves the speed of switching languages in the Language GUI
+* **Improve Server Connection Speed:** Improves the speed of connecting to servers by setting the InetAddress host name to the IP in situations where it can be represented as the IP address, preventing getHostFromNameService from being to be run
 * **Improved Entity Tracker Warning:** Provides more information to addPacket removed entity warnings
 * **Incurable Potions:** Excludes potion effects from being curable with curative items like buckets of milk
 * **Infinite Music:** Lets background music play continuously without delays
@@ -175,6 +195,7 @@ All changes are toggleable via config files.
 * **Load Sounds:** Plays sounds when the game or the world are loaded
 * **Mending Overpowered:** If mending fix is enabled, repairs entire damaged inventory with XP
 * **Mending:** Only repairs damaged equipment with XP
+* **Minecart Drops Itself:** Replaces vanilla Minecarts dropping a Minecart and the contained item, and instead drop the combined item
 * **Mob Despawn Improvement:** Mobs carrying picked up items will drop their equipment and despawn properly
 * **Modern Knockback:** Backports 1.16+ knockback to 1.12: Knockback resistance is now a scale instead of a probability
 * **More Banner Layers:** Sets the amount of applicable pattern layers for banners
@@ -195,16 +216,21 @@ All changes are toggleable via config files.
 * **Offhand Improvement:** Prevents placing offhand blocks when blocks or food are held in the mainhand
 * **Overhaul Beacon:** Change how beacon construct and range apply per level
 * **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
+* **Particle Limit:** Limits particles to a set amount. Should not be set too low, as it will cause particles to appear for a single tick before vanishing
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
+* **Prevent Mob Eggs from Changing Spawners:** Prevents using Mob Spawner Eggs to change what a Spawner is spawning
+* **Prevent Observer Activating on Placement:** Controls if the observer activates itself on the first tick when it is placed
+* **Prevent Placing Buckets in Portals:** Prevents placing of liquid source blocks overriding portal blocks
 * **Pumpkin Placing:** Allows placing Pumpkins and Jack'O'Lanterns without a supporting block
 * **Rabbit Killer Spawning:** Configurable chance for rabbits to spawn as the killer bunny variant
 * **Rabbit Toast Spawning:** Configurable chance for rabbits to spawn as the Toast variant
 * **Rally Health:** Adds Bloodborne's Rally system to Minecraft, regain lost health when attacking back within the risk time
 * **Remove 3D Anaglyph Button:** Removes the 3D Anaglyph button from the video settings menu
-* **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu
+* **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu and silences notifications
 * **Remove Recipe Book:** Removes the recipe book button from GUIs
 * **Remove Snooper:** Forcefully turns off the snooper and hides the snooper settings button from the options menu
+* **Render End Portal Bottom:** Controls if the End Portal renders its texture on the bottom face
 * **Riding Exhaustion:** Enables depleting saturation when riding mounts
 * **Sapling Behavior:** Allows customization of sapling behavior while utilizing an optimized method
 * **Sea Level:** Sets the default height of the overworld's sea level
@@ -217,8 +243,9 @@ All changes are toggleable via config files.
 * **Soulbound Vexes:** Summoned vexes will also die when their summoner is killed
 * **Spawn Caps:** Sets maximum spawning limits for different entity types
 * **Super Hot Torch:** Enables one-time ignition of entities by hitting them with a torch
-* **Stronghold Replacement:** Replaces stronghold generation with a safer variant
+* **Stronghold Enforcement:** Enforces stronghold generation to generate all blocks, regardless of air
 * **Swing Through Grass:** Allows hitting entities through grass instead of breaking it
+* **Third Person Ignores Non-solid Blocks:** When viewing in third person, don't stop the camera on non-solid blocks
 * **Tidy Chunk:** Tidies newly generated chunks by removing scattered item entities
 * **Toast Control:** Enables the control of toasts (pop-up text boxes)
 * **Toggle Cheats Button:** Adds a button to the pause menu to toggle cheats
@@ -227,10 +254,19 @@ All changes are toggleable via config files.
 * **Undead Horses**
     * **Burning:** Lets untamed undead horses burn in daylight
     * **Taming:** Allows taming of undead horses
+* **Use Separate Dismount Key:** Makes the dismount keybind separate from LSHIFT, allowing it to be rebound independently
+* **Use Separate Narrator Key:** Allows using a custom Narrator key, instead of being stuck with CTRL+B
 * **Village Distance:** Sets the village generation distance in chunks
+* **Void Fog:** Re-implements pre-1.8 void fog and void particles
 * **Water Fall Damage:** Re-implements an improved version of pre-1.4 fall damage in water
+* **Weaken Golem Structure Requirements:** Allows creating Golem with non-air blocks in the bottom corners of the structure
+* **Weaken Wither Structure Requirements:** Allows creating Withers with non-air blocks in the bottom corners of the structure
 * **XP Bottle Amount:** Sets the amount of experience spawned by bottles o' enchanting
 * **XP Level Cap:** Sets the maximum experience level players can reach
+* **Void Teleport:**
+  * Options allow toggling the setting globally, controlling to what Y-level the entity is teleported, if blindness is applied, maximum number of consecutive times, and how much and in what way fall damage is taken
+  * **Configure Entities:** Configures what entities can be teleported, and if the player is teleported
+  * **Configure Dimensions:** Configures what dimensions the effect can take place in
 
 ![](https://i.imgur.com/1EmHZlb.png)
 
@@ -267,6 +303,8 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Chocolate Quest Repoured**
     * **Legacy Golden Feather:** Restores the golden feather behavior from the original Better Dungeons mod
+* **CodeChicken Lib**
+    * **Packet Leak Fix:** Fixes network ByteBuf leaks from PacketCustom
 * **CoFH Core**
     * **Vorpal Enchantment Damage:** Sets the damage multiplier of the Vorpal enchantment
 * **Compact Machines**
@@ -279,10 +317,14 @@ All changes are toggleable via config files.
     * **Extinguishing Dodges:** Chance per dodge to extinguish the player when burning
     * **Feathers Helper API Fix:** Fixes server-sided crashes when the Feathers Helper API is utilized
     * **Sprinting Integration:** Configurable consumption of feathers when the player is sprinting
+* **Ender Storage**
+    * **Fix Frequency Tracking:** Fixes storage frequencies being tracked multiple times
 * **Epic Siege Mod**
     * **Disable Digger AI Debug:** Disables leftover debug logging inside the digger AI of the beta builds
 * **Extra Utilities 2**
+    * **Catch Radar Exception:** Fixes the Radar feature (find in nearby inventories) entirely breaking when near some inventories
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Fix Deep Dark Stats:** Fixes Mob Attack and Health Statistics being repeatedly doubled
     * **Mutable Machine Block Drops:** Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list.
     * **Creative Mill Harvestability:** Fixes the Creative Mill Generator not respecting the Creative Block Breaking config
 * **Forestry**
@@ -296,6 +338,7 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Industrial Foregoing**
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Machines Max Range Off-By-One Fix:** Fixes an off-by-one error where IF Machines would display the max tier of range addon as one less than the actual maximum
 * **Infernal Mobs**
     * **Sticky Recall Compatibility:** Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment
     * **Sticky Pedestal Compatibility:** Enables compatibility between Infernal Mobs' Sticky effect and Reliquary's Pedestal
@@ -317,10 +360,16 @@ All changes are toggleable via config files.
     * **Right Click Harvesting Fix:** Prevents crashing with mods implementing right click crop harvesting
 * **NuclearCraft**
     * **Radiation Environment Map:** Changes the data table of the radiation environment handler to improve tick time
+* **OpenBlocks**
+    * **Last Stand Trigger Fix:** Fixes the Last Stand enchantment triggering too early on pre-mitigation damage (before enchants, potions, etc), instead of on post-mitigation damage.
+* **OpenComputers**
+    * **Packet Leak Fix:** Fixes network ByteBuf leaks from PacketHandler
 * **ProjectRed**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Quark**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **Railcraft**
+  * **No Beta Warning:** Disables the beta message warning on world join
 * **RFTools Dimension**
     * **Properly Unregister Dimensions:** Fixes a bug where joining a world or server with any RFTools Dimension registered would disallow entering another world without that dimension until restarting.
 * **Roost**
@@ -331,6 +380,8 @@ All changes are toggleable via config files.
     * **Memory Leak Fix:** Fixes a client-side memory leak associated with EntityPlayer
 * **Spice Of Life**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **SteamWorld**
+    * **Sky of Old Dimension Fix:** Fixes a Stack Overflow crash when entering the Sky of Old Dimension
 * **Storage Drawers**
     * **Render Range:** Approximate range in blocks at which drawers render contained items
 * **Tardis**

@@ -1,5 +1,8 @@
 package mod.acgaming.universaltweaks.tweaks.world.loading;
 
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.MinecraftException;
 import net.minecraft.world.WorldServer;
@@ -11,10 +14,6 @@ import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-
-import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Unnoen & tie
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
@@ -37,8 +36,8 @@ public class UTUnloader
     @SuppressWarnings("ConstantConditions")
     public static void utHandleDimUnload(Integer id)
     {
-        WorldServer worldServer = DimensionManager.getWorld(id);
-        ChunkProviderServer chunkProviderServer = worldServer.getChunkProvider();
+        if (!DimensionManager.isDimensionRegistered(id)) return;
+
         DimensionType dimensionType = DimensionManager.getProviderType(id);
         String dimensionName = "";
 
@@ -48,6 +47,9 @@ public class UTUnloader
         {
             if (dimensionName.matches(dimConfig) || Integer.toString(id).matches(dimConfig)) return;
         }
+
+        WorldServer worldServer = DimensionManager.getWorld(id);
+        ChunkProviderServer chunkProviderServer = worldServer.getChunkProvider();
 
         if (!worldServer.provider.getDimensionType().shouldLoadSpawn()
             && ForgeChunkManager.getPersistentChunksFor(worldServer).isEmpty()

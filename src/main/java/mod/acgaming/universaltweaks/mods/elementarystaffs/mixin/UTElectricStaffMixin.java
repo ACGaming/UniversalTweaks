@@ -42,4 +42,10 @@ public abstract class UTElectricStaffMixin extends Item
         p.getHeldItem(handIn).damageItem(1, p);
         cir.setReturnValue(super.onItemRightClick(worldIn, p, handIn));
     }
+
+    @Override
+    public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged)
+    {
+        return false;
+    }
 }
