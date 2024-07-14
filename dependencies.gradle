@@ -45,6 +45,7 @@
 // When adding additional elements, sort by alphabetical name
 final def mod_dependencies = [
     'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684'         : [debug_crafttweaker, debug_stages],
+    'TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal': [debug_tech_reborn],
     'codechicken:ChickenASM:1.12-1.0.2.9'                             : [debug_forgemultipartcbe, debug_project_red],
     'com.blamejared:MTLib:3.0.5.15'                                   : [debug_crafttweaker],
     'com.enderio:endercore:0.5.78'                                    : [debug_enderio],
@@ -59,7 +60,7 @@ final def mod_dependencies = [
     'curse.maven:astral-sorcery-241721:3044416'                       : [debug_astral_sorcery],
     'curse.maven:atomicstrykers-infernal-mobs-227875:3431758'         : [debug_atomicstrykers_infernal_mobs],
     'curse.maven:autoreglib-250363:2746011'                           : [debug_quark],
-    'curse.maven:baubles-227083:2518667'                              : [debug_astral_sorcery, debug_bewitchment, debug_botania, debug_thaumic_wonders, debug_thaumcraft],
+    'curse.maven:baubles-227083:2518667'                              : [debug_astral_sorcery, debug_bewitchment, debug_botania, debug_thaumcraft, debug_thaumic_wonders],
     'curse.maven:bewitchment-285439:3044569'                          : [debug_bewitchment],
     'curse.maven:binnies-mods-223525:2916129'                         : [debug_binnies_mods],
     'curse.maven:biomes-o-plenty-220318:2842510'                      : [debug_biomes_o_plenty],
@@ -69,7 +70,7 @@ final def mod_dependencies = [
     'curse.maven:chameleon-230497:2450900'                            : [debug_storage_drawers],
     'curse.maven:chickens-241941:2537643'                             : [debug_chickens],
     'curse.maven:chisel-235279:2915375'                               : [debug_chisel],
-    'curse.maven:codechickenlib-242818:2779848'                       : [debug_forgemultipartcbe, debug_project_red, debug_thermal_expansion, debug_mrtjpcore],
+    'curse.maven:codechickenlib-242818:2779848'                       : [debug_enderstorage, debug_forgemultipartcbe, debug_mrtjpcore, debug_project_red, debug_thermal_expansion],
     'curse.maven:cofh_core-69162:2920433'                             : [debug_thermal_expansion],
     'curse.maven:cofhworld-271384:2920434'                            : [debug_thermal_expansion],
     'curse.maven:collective-342584:3533131'                           : [debug_collective],
@@ -79,6 +80,7 @@ final def mod_dependencies = [
     'curse.maven:effortlessbuilding-302113:2847346'                   : [debug_effortless_building],
     'curse.maven:elementary-staffs-346007:2995593'                    : [debug_elementary_staffs],
     'curse.maven:elenaidodge2-442962:3343308'                         : [debug_elenai_dodge_2],
+    'curse.maven:enderstorage-245174:2755787'                         : [debug_enderstorage],
     'curse.maven:epic-siege-mod-229449:3356157'                       : [debug_epic_siege_mod],
     'curse.maven:extrautilities-225561:2678374'                       : [debug_extra_utilities_2],
     'curse.maven:forestry-59751:2918418'                              : [debug_forestry, debug_binnies_mods],
@@ -98,6 +100,9 @@ final def mod_dependencies = [
     'curse.maven:netherchest-268888:2655413'                          : [debug_netherchest],
     'curse.maven:netherrocks-226140:2628297'                          : [debug_netherrocks],
     'curse.maven:nuclearcraft-226254:3784145'                         : [debug_nuclearcraft],
+    'curse.maven:openblocks-228816:2699056'                           : [debug_openblocks],
+    'curse.maven:opencomputers-223008:5274236'                        : [debug_opencomputers],
+    'curse.maven:openmodslib-228815:2699055'                          : [debug_openblocks],
     'curse.maven:patchouli-306770:3162874'                            : [debug_bewitchment],
     'curse.maven:plustic-376903:4703532'                              : [debug_tinkers_construct],
     'curse.maven:projectredbase-228702:2745545'                       : [debug_project_red],
@@ -107,6 +112,7 @@ final def mod_dependencies = [
     'curse.maven:reach-fix-556777:4633407'                            : [debug_cqrepoured],
     'curse.maven:reborn-core-237903:3330308'                          : [debug_tech_reborn],
     'curse.maven:redstone-flux-270789:2920436'                        : [debug_thermal_expansion],
+    'curse.maven:requious-frakto-336748:3218640'                      : [debug_requious_frakto],
     'curse.maven:reskillable-286382:2815686'                          : [debug_reskillable],
     'curse.maven:rftools-224641:2861573'                              : [debug_rftools],
     'curse.maven:rftools-dimensions-240950:2707390'                   : [debug_rftools],
@@ -115,6 +121,7 @@ final def mod_dependencies = [
     'curse.maven:simplecore-226136:2629840'                           : [debug_netherrocks],
     'curse.maven:simpledifficulty-360779:3613814'                     : [debug_simple_difficulty],
     'curse.maven:simplyjetpacks2-251792:3294422'                      : [debug_simply_jetpacks_2],
+    'curse.maven:steamworld-282607:2641200'                           : [debug_steamworld],
     'curse.maven:storage-drawers-223852:2952606'                      : [debug_storage_drawers],
     'curse.maven:tardis-290247:2903453'                               : [debug_tardis],
     'curse.maven:tech-reborn-233564:2966851'                          : [debug_tech_reborn],
@@ -134,7 +141,6 @@ final def mod_dependencies = [
     'net.darkhax.gamestages:GameStages-1.12.2:2.0.120'                : [debug_stages],
     'net.darkhax.itemstages:ItemStages-1.12.2:2.0.51'                 : [debug_stages],
     'net.darkhax.mobstages:MobStages-1.12.2:2.0.13'                   : [debug_stages],
-    'TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal': [debug_tech_reborn],
 ]
 
 
