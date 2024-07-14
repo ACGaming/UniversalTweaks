@@ -31,6 +31,9 @@ btn.universaltweaks.lanserverproperties.port=Listening Port
 btn.universaltweaks.lanserverproperties.spawn_animals=Spawn Animals
 btn.universaltweaks.lanserverproperties.spawn_npcs=Spawn NPCs
 
+# COMPACT MESSAGES
+msg.universaltweaks.compactmessages.count=This message has been repeated %s times
+
 # CONFIG
 # Doesn't need to be translated because config is English in general
 cfg.universaltweaks.config.blocks=Blocks

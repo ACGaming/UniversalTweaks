@@ -27,3 +27,6 @@ btn.universaltweaks.lanserverproperties.online_mode_desc=Deaktivierung ermöglic
 btn.universaltweaks.lanserverproperties.port=Abhörender Port
 btn.universaltweaks.lanserverproperties.spawn_animals=Erschaffe Tiere
 btn.universaltweaks.lanserverproperties.spawn_npcs=Erschaffe NPCs
+
+# COMPACT MESSAGES
+msg.universaltweaks.compactmessages.count=Diese Nachricht wurde %s mal/e wiederholt
