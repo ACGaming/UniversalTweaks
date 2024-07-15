@@ -1,0 +1,12 @@
+// Add any additional repositories for your dependencies here
+
+repositories {
+    maven {
+        name 'SpongePowered Maven'
+        url 'https://repo.spongepowered.org/maven'
+    }
+    maven {
+        name 'ChickenASM'
+        url 'https://nexus.covers1624.net/repository/maven-releases/'
+    }
+}

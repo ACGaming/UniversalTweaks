@@ -1,0 +1,165 @@
+//file:noinspection DependencyNotationArgument
+//file:noinspection GrUnresolvedAccess
+// TODO remove when fixed in RFG ^
+/*
+ * Add your dependencies here. Supported configurations:
+ *  - api("group:name:version:classifier"): if you use the types from this dependency in the public API of this mod
+ *       Available at runtime and compiletime for mods depending on this mod
+ *  - implementation("g:n:v:c"): if you need this for internal implementation details of the mod, but none of it is visible via the public API
+ *       Available at runtime but not compiletime for mods depending on this mod
+ *  - compileOnly("g:n:v:c"): if the mod you're building doesn't need this dependency during runtime at all, e.g. for optional mods
+ *       Not available at all for mods depending on this mod, only visible at compiletime for this mod
+ *  - compileOnlyApi("g:n:v:c"): like compileOnly, but also visible at compiletime for mods depending on this mod
+ *       Available at compiletime but not runtime for mods depending on this mod
+ *  - runtimeOnlyNonPublishable("g:n:v:c"): if you want to include a mod in this mod's runClient/runServer runs, but not publish it as a dependency
+ *       Not available at all for mods depending on this mod, only visible at runtime for this mod
+ *  - devOnlyNonPublishable("g:n:v:c"): a combination of runtimeOnlyNonPublishable and compileOnly for dependencies present at both compiletime and runtime,
+ *       but not published as Maven dependencies - useful for RFG-deobfuscated dependencies or local testing
+ *  - runtimeOnly("g:n:v:c"): if you don't need this at compile time, but want it to be present at runtime
+ *       Available at runtime for mods depending on this mod
+ *  - annotationProcessor("g:n:v:c"): mostly for java compiler plugins, if you know you need this, use it, otherwise don't worry
+ *  - testCONFIG("g:n:v:c") - replace CONFIG by one of the above (except api), same as above but for the test sources instead of main
+ *
+ *  - shadowImplementation("g:n:v:c"): effectively the same as API, but the dependency is included in your jar under a renamed package name
+ *       Requires you to enable usesShadowedDependencies in gradle.properties
+ *       For more info, see https://github.com/GregTechCEu/Buildscripts/blob/master/docs/shadow.md
+ *
+ * You can exclude transitive dependencies (dependencies of the chosen dependency) by appending { transitive = false } if needed,
+ * but use this sparingly as it can break using your mod as another mod's dependency if you're not careful.
+ *
+ * To depend on obfuscated jars you can use `devOnlyNonPublishable(rfg.deobf("dep:spec:1.2.3"))` to fetch an obfuscated jar from maven,
+ * or `devOnlyNonPublishable(rfg.deobf(project.files("libs/my-mod-jar.jar")))` to use a file.
+ *
+ * To add a mod with CurseMaven, replace '("g:n:v:c")' in the above with 'rfg.deobf("curse.maven:project_slug-project_id:file_id")'
+ * Example: devOnlyNonPublishable(rfg.deobf("curse.maven:top-245211:2667280"))
+ *
+ * Gradle names for some of the configuration can be misleading, compileOnlyApi and runtimeOnly both get published as dependencies in Maven, but compileOnly does not.
+ * The buildscript adds runtimeOnlyNonPublishable to also have a runtime dependency that's not published.
+ *
+ * For more details, see https://docs.gradle.org/8.4/userguide/java_library_plugin.html#sec:java_library_configurations_graph
+ */
+
+// A hash map of mod to debug options that will enable it in runtime.
+// Anything that should be handled differently than always being "compileOnly" and also being "runtimeOnly" when debug enabled
+// should be handled in the main dependencies function.
+// When adding additional elements, sort by alphabetical name
+final def mod_dependencies = [
+    'CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684'         : [debug_crafttweaker, debug_stages],
+    'TechReborn:TechReborn-ModCompatibility-1.12.2:1.4.0.76:universal': [debug_tech_reborn],
+    'codechicken:ChickenASM:1.12-1.0.2.9'                             : [debug_forgemultipartcbe, debug_project_red],
+    'com.blamejared:MTLib:3.0.5.15'                                   : [debug_crafttweaker],
+    'com.enderio:endercore:0.5.78'                                    : [debug_enderio],
+    'com.teamacronymcoders.base:base:1.12.2-3.14.0'                   : [debug_crafttweaker],
+    'com.teamacronymcoders:ContentTweaker:1.12.2-4.10.0'              : [debug_crafttweaker],
+    'crazypants:enderio:5.3.72'                                       : [debug_enderio],
+    'curse.maven:abyssalcraft-53686:3425234'                          : [debug_abyssalcraft],
+    'curse.maven:actuallyaditions-228404:2844115'                     : [debug_actually_additions],
+    'curse.maven:advent-of-ascension-311054:3054253'                  : [debug_advent_of_ascension],
+    'curse.maven:applecore-224472:2969118'                            : [debug_the_spice_of_life],
+    'curse.maven:arcanearchives-311357:3057332'                       : [debug_arcane_archives],
+    'curse.maven:astral-sorcery-241721:3044416'                       : [debug_astral_sorcery],
+    'curse.maven:atomicstrykers-infernal-mobs-227875:3431758'         : [debug_atomicstrykers_infernal_mobs],
+    'curse.maven:autoreglib-250363:2746011'                           : [debug_quark],
+    'curse.maven:baubles-227083:2518667'                              : [debug_astral_sorcery, debug_bewitchment, debug_botania, debug_thaumcraft, debug_thaumic_wonders],
+    'curse.maven:bewitchment-285439:3044569'                          : [debug_bewitchment],
+    'curse.maven:binnies-mods-223525:2916129'                         : [debug_binnies_mods],
+    'curse.maven:biomes-o-plenty-220318:2842510'                      : [debug_biomes_o_plenty],
+    'curse.maven:blood-magic-224791:2822288'                          : [debug_blood_magic],
+    'curse.maven:botania-225643:3330934'                              : [debug_botania],
+    'curse.maven:ceramics-250617:3158763'                             : [debug_ceramics],
+    'curse.maven:chameleon-230497:2450900'                            : [debug_storage_drawers],
+    'curse.maven:chickens-241941:2537643'                             : [debug_chickens],
+    'curse.maven:chisel-235279:2915375'                               : [debug_chisel],
+    'curse.maven:codechickenlib-242818:2779848'                       : [debug_enderstorage, debug_forgemultipartcbe, debug_mrtjpcore, debug_project_red, debug_thermal_expansion],
+    'curse.maven:cofh_core-69162:2920433'                             : [debug_thermal_expansion],
+    'curse.maven:cofhworld-271384:2920434'                            : [debug_thermal_expansion],
+    'curse.maven:collective-342584:3533131'                           : [debug_collective],
+    'curse.maven:compactmachines-224218:2707509'                      : [debug_compact_machines],
+    'curse.maven:cqrepoured-303422:3953103'                           : [debug_cqrepoured],
+    'curse.maven:ctm-267602:2915363'                                  : [debug_chisel],
+    'curse.maven:effortlessbuilding-302113:2847346'                   : [debug_effortless_building],
+    'curse.maven:elementary-staffs-346007:2995593'                    : [debug_elementary_staffs],
+    'curse.maven:elenaidodge2-442962:3343308'                         : [debug_elenai_dodge_2],
+    'curse.maven:enderstorage-245174:2755787'                         : [debug_enderstorage],
+    'curse.maven:epic-siege-mod-229449:3356157'                       : [debug_epic_siege_mod],
+    'curse.maven:extrautilities-225561:2678374'                       : [debug_extra_utilities_2],
+    'curse.maven:forestry-59751:2918418'                              : [debug_forestry, debug_binnies_mods],
+    'curse.maven:forgemultipartcbe-258426:2755790'                    : [debug_forgemultipartcbe, debug_project_red],
+    'curse.maven:geckolib-388172:4020277'                             : [debug_cqrepoured],
+    'curse.maven:guideapi-228832:2645992'                             : [debug_blood_magic],
+    'curse.maven:hwyla-253449:2568751'                                : [debug_hwyla],
+    'curse.maven:industrialcraft-242638:3078604'                      : [debug_industrialcraft],
+    'curse.maven:ironbackpacks-227049:2564573'                        : [debug_iron_backpacks],
+    'curse.maven:mantle-74924:2713386'                                : [debug_tinkers_construct],
+    'curse.maven:mcjtylib-233105:2745846'                             : [debug_rftools],
+    'curse.maven:mekanism-268560:2835175'                             : [debug_mekanism],
+    'curse.maven:modtweaker-220954:3840577'                           : [debug_crafttweaker],
+    'curse.maven:modular-routers-250294:2954953'                      : [debug_modular_routers],
+    'curse.maven:mrtjpcore-229002:2735197'                            : [debug_mrtjpcore, debug_project_red],
+    'curse.maven:mysticallib-277064:3483816'                          : [debug_arcane_archives],
+    'curse.maven:netherchest-268888:2655413'                          : [debug_netherchest],
+    'curse.maven:netherrocks-226140:2628297'                          : [debug_netherrocks],
+    'curse.maven:nuclearcraft-226254:3784145'                         : [debug_nuclearcraft],
+    'curse.maven:openblocks-228816:2699056'                           : [debug_openblocks],
+    'curse.maven:opencomputers-223008:5274236'                        : [debug_opencomputers],
+    'curse.maven:openmodslib-228815:2699055'                          : [debug_openblocks],
+    'curse.maven:patchouli-306770:3162874'                            : [debug_bewitchment],
+    'curse.maven:plustic-376903:4703532'                              : [debug_tinkers_construct],
+    'curse.maven:projectredbase-228702:2745545'                       : [debug_project_red],
+    'curse.maven:projectredworld-229049:2745551'                      : [debug_project_red],
+    'curse.maven:quark-243121:2924091'                                : [debug_quark],
+    'curse.maven:railcraft-51195:3853491'                             : [debug_railcraft],
+    'curse.maven:reach-fix-556777:4633407'                            : [debug_cqrepoured],
+    'curse.maven:reborn-core-237903:3330308'                          : [debug_tech_reborn],
+    'curse.maven:redstone-flux-270789:2920436'                        : [debug_thermal_expansion],
+    'curse.maven:requious-frakto-336748:3218640'                      : [debug_requious_frakto],
+    'curse.maven:reskillable-286382:2815686'                          : [debug_reskillable],
+    'curse.maven:rftools-224641:2861573'                              : [debug_rftools],
+    'curse.maven:rftools-dimensions-240950:2707390'                   : [debug_rftools],
+    'curse.maven:roost-277711:2702080'                                : [debug_chickens],
+    'curse.maven:shadowfacts-forgelin-248453:2785465'                 : [debug_industrial_foregoing],
+    'curse.maven:simplecore-226136:2629840'                           : [debug_netherrocks],
+    'curse.maven:simpledifficulty-360779:3613814'                     : [debug_simple_difficulty],
+    'curse.maven:simplyjetpacks2-251792:3294422'                      : [debug_simply_jetpacks_2],
+    'curse.maven:steamworld-282607:2641200'                           : [debug_steamworld],
+    'curse.maven:storage-drawers-223852:2952606'                      : [debug_storage_drawers],
+    'curse.maven:tardis-290247:2903453'                               : [debug_tardis],
+    'curse.maven:tech-reborn-233564:2966851'                          : [debug_tech_reborn],
+    'curse.maven:teslacorelib-254602:2891841'                         : [debug_industrial_foregoing],
+    'curse.maven:thaumcraft-223628:2629023'                           : [debug_thaumcraft, debug_thaumic_wonders],
+    'curse.maven:thaumicwonders-316704:2787954'                       : [debug_thaumic_wonders],
+    'curse.maven:the-erebus-220698:3211974'                           : [debug_erebus],
+    'curse.maven:thefarlanders-336432:2805139'                        : [debug_the_farlanders],
+    'curse.maven:thermal-expansion-69163:2926431'                     : [debug_thermal_expansion],
+    'curse.maven:thermalfoundation-222880:2926428'                    : [debug_thermal_expansion],
+    'curse.maven:thespiceoflife-220811:2571951'                       : [debug_the_spice_of_life],
+    'curse.maven:tinkers_construct-74072:2902483'                     : [debug_tinkers_construct],
+    'curse.maven:tinkerscomplement-272671:2843439'                    : [debug_tinkers_construct],
+    'curse.maven:tinyprogressions-250850:2721018'                     : [debug_tiny_progressions],
+    'maven.modrinth:industrial-foregoing:1.12.13-237'                 : [debug_industrial_foregoing],
+    'net.darkhax.bookshelf:Bookshelf-1.12.2:2.3.590'                  : [debug_stages],
+    'net.darkhax.gamestages:GameStages-1.12.2:2.0.120'                : [debug_stages],
+    'net.darkhax.itemstages:ItemStages-1.12.2:2.0.51'                 : [debug_stages],
+    'net.darkhax.mobstages:MobStages-1.12.2:2.0.13'                   : [debug_stages],
+]
+
+
+dependencies {
+    // Libraries
+    implementation 'com.cleanroommc:configanytime:2.0'
+
+    implementation 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
+    embed 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
+    implementation 'com.udojava:EvalEx:2.7'
+    embed 'com.udojava:EvalEx:2.7'
+
+    // compiles all mods, and selectively enables mods being debugged
+    mod_dependencies.forEach { key, value ->
+        final def mod = rfg.deobf(key)
+        compileOnly mod
+        if (value.any { it.toBoolean() }) {
+            runtimeOnly mod
+        }
+    }
+
+}
