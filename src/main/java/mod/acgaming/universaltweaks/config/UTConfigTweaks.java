@@ -2046,6 +2046,11 @@ public class UTConfigTweaks
         public boolean utDisableMobSpawnerRendering = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Rain Particles")
+        @Config.Comment("Prevents Rain and Snow Particles from rendering when Raining or Thundering")
+        public boolean utDisableRainParticles = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Faster Background Startup")
         @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
         public boolean utFasterBackgroundStartupToggle = true;
