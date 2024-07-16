@@ -34,13 +34,13 @@ public abstract class UTContainerPersonalChestMixin extends ContainerMekanism<Ti
     @Override
     public boolean canInteractWith(EntityPlayer player)
     {
-        if (isBlock) return super.func_75145_c(player);
+        if (isBlock) return super.canInteractWith(player);
 
         final ItemStack currentItem = player.getHeldItemMainhand();
         if (itemInventory instanceof InventoryPersonalChest)
         {
             final ItemStack stack = ((InventoryPersonalChest) itemInventory).getStack();
-            return super.func_75145_c(player) && !stack.isEmpty() && currentItem == stack && BlockStateMachine.MachineType.get(stack) == BlockStateMachine.MachineType.PERSONAL_CHEST;
+            return super.canInteractWith(player) && !stack.isEmpty() && currentItem == stack && BlockStateMachine.MachineType.get(stack) == BlockStateMachine.MachineType.PERSONAL_CHEST;
         }
         return false;
     }

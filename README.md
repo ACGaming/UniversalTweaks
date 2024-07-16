@@ -147,6 +147,7 @@ All changes are toggleable via config files.
 * **Disable Hotbar Scroll Wrapping:** Disables using the scroll wheel to change hotbar slots wrapping
 * **Disable Mob Spawner Entity Render:** Disables rendering an entity inside of Mob Spawners
 * **Disable Narrator:** Disables the narrator functionality entirely
+* **Disable Rain Particles:** Prevents Rain and Snow Particles from rendering when Raining or Thundering
 * **Disable Glint Overlay on Enchantment Books:** Disables the glint overlay on enchantment books
 * **Disable Glint Overlay on Potions:** Disables the glint overlay on potions
 * **Disable Sleeping:** Disables skipping night by using a bed while making it still able to set spawn
