@@ -41,10 +41,10 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.astralsorcery.json", () -> loaded("astralsorcery"));
             put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
             put("mixins.mods.biomesoplenty.sealevel.json", () -> loaded("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
-            put("mixins.mods.bloodmagic.dupes.json", () -> loaded("bloodmagic"));
-            put("mixins.mods.bloodmagic.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);
-            put("mixins.mods.botania.dupes.json", () -> loaded("botania"));
-            put("mixins.mods.botania.json", () -> loaded("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle);
+            put("mixins.mods.bloodmagic.dupes.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);
+            put("mixins.mods.bloodmagic.json", () -> loaded("bloodmagic"));
+            put("mixins.mods.botania.dupes.json", () -> loaded("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle);
+            put("mixins.mods.botania.json", () -> loaded("botania"));
             put("mixins.mods.cbmultipart.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
             put("mixins.mods.ceramics.json", () -> loaded("ceramics"));
             put("mixins.mods.chisel.tcomplement.dupes.json", () -> loaded("chisel") && loaded("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle);
@@ -104,8 +104,8 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.thaumcraft.json", () -> loaded("thaumcraft"));
             put("mixins.mods.thaumicwonders.dupes.json", () -> loaded("thaumicwonders") && UTConfigMods.THAUMIC_WONDERS.utDuplicationFixesToggle);
             put("mixins.mods.thefarlanders.dupes.json", () -> loaded("farlanders") && UTConfigMods.THE_FARLANDERS.utDuplicationFixesToggle);
-            put("mixins.mods.thermalexpansion.dupes.json", () -> loaded("thermalexpansion"));
-            put("mixins.mods.thermalexpansion.json", () -> loaded("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle);
+            put("mixins.mods.thermalexpansion.dupes.json", () -> loaded("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle);
+            put("mixins.mods.thermalexpansion.json", () -> loaded("thermalexpansion"));
             put("mixins.mods.tinyprogressions.dupes.json", () -> loaded("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle);
         }
     });
