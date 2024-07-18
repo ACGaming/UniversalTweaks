@@ -7,14 +7,8 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(CPacketCustomPayload.class)
-public class UTCPacketCustomPayloadMixin
+public class UTCPacketCustomPayloadCommonMixin
 {
-    @ModifyConstant(method = "<init>(Ljava/lang/String;Lnet/minecraft/network/PacketBuffer;)V", constant = @Constant(intValue = 32767))
-    public int utPacketSizeCustomPayloadInit(int constant)
-    {
-        return UTConfigBugfixes.MISC.utPacketSize;
-    }
-
     @ModifyConstant(method = "readPacketData", constant = @Constant(intValue = 32767))
     public int utPacketSizeCustomPayloadRead(int constant)
     {
