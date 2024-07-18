@@ -51,7 +51,7 @@ public abstract class UTEntityPickarangMixin extends EntityThrowable
     @Shadow
     public abstract int getEfficiencyModifier();
 
-    @Inject(method = "func_70071_h_", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "onUpdate", at = @At("HEAD"), cancellable = true, remap = true)
     public void onUpdate(CallbackInfo info)
     {
         IS_PICKARANG_UPDATING.set(true);
@@ -139,6 +139,7 @@ public abstract class UTEntityPickarangMixin extends EntityThrowable
                     {
                         for (EntityItem item : items)
                         {
+                            // CHANGE START: wrap block with check
                             if (!item.isDead)
                             {
                                 ItemStack drop = item.getItem();
@@ -146,11 +147,14 @@ public abstract class UTEntityPickarangMixin extends EntityThrowable
                                     player.dropItem(drop, false);
                                 item.setDead();
                             }
+                            // CHANGE END
                         }
 
                         for (EntityXPOrb xpOrb : xp)
                         {
+                            // CHANGE START: wrap call with check
                             if (!xpOrb.isDead) xpOrb.onCollideWithPlayer(player);
+                            // CHANGE END
                         }
 
                         for (Entity riding : getPassengers())
