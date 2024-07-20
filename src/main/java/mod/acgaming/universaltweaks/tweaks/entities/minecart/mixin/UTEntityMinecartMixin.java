@@ -19,7 +19,7 @@ public abstract class UTEntityMinecartMixin
     {
         if (!UTConfigTweaks.ENTITIES.utMinecartDropsType || !(instance instanceof EntityMinecartFurnace || instance instanceof EntityMinecartChest || instance instanceof EntityMinecartTNT || instance instanceof EntityMinecartHopper))
         {
-            return original.call(instance, instance, y);
+            return original.call(instance, item, y);
         }
         ItemStack itemstack = instance.getCartItem().copy();
         if (instance.hasCustomName()) itemstack.setStackDisplayName(instance.getCustomNameTag());

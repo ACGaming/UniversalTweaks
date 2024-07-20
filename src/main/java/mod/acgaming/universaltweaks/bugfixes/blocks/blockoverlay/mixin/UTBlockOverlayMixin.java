@@ -23,7 +23,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class UTBlockOverlayMixin
 {
     @Shadow
-    private WorldClient world;
+    public WorldClient world;
 
     @Shadow
     @Final

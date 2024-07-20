@@ -11,9 +11,9 @@ import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 
 // Courtesy of WaitingIdly, TheRandomLabs (RandomPatches)
 @Mixin(value = RenderPlayer.class)
-public abstract class UTRenderPlayerMixin
+public class UTRenderPlayerMixin
 {
-    @WrapOperation(method = "applyRotations", at = @At(value = "INVOKE", target = "Ljava/lang/Math;acos(D)D"))
+    @WrapOperation(method = "applyRotations(Lnet/minecraft/client/entity/AbstractClientPlayer;FFF)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;acos(D)D"))
     private double utClampToPreventInvisiblePlayerOnElytra(double instance, Operation<Double> original)
     {
         if (!UTConfigBugfixes.ENTITIES.utFixInvisiblePlayerModelWithElytra) return original.call(instance);

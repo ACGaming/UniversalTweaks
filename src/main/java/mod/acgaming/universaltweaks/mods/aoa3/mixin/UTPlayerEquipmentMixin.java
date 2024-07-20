@@ -21,7 +21,6 @@ public class UTPlayerEquipmentMixin
         shouldUpdate.set(true);
     }
 
-    // TODO: Replace with v2.WrapWithCondition once we depend on MixinBooter 9.x
     @WrapWithCondition(method = "tickEquipment", at = @At(value = "INVOKE", target = "Lnet/minecraft/inventory/Container;detectAndSendChanges()V", remap = true))
     private boolean utUpdateInventoryIfAllowed(Container instance, @Share("shouldUpdate") LocalBooleanRef shouldUpdate)
     {

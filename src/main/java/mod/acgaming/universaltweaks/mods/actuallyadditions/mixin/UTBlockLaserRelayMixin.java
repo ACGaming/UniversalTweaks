@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(value = BlockLaserRelay.class)
 public abstract class UTBlockLaserRelayMixin
 {
-    @Inject(method = "onBlockActivated", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/EntityPlayer;isCreative()Z"))
+    @Inject(method = "onBlockActivated", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/EntityPlayer;isCreative()Z"), cancellable = true)
     public void utOnBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing par6, float par7, float par8, float par9, CallbackInfoReturnable<Boolean> cir)
     {
         if (!UTConfigMods.ACTUALLY_ADDITIONS.utLaserUpgradeVoid) return;
