@@ -2052,8 +2052,12 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Faster Background Startup")
-        @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
-        public boolean utFasterBackgroundStartupToggle = true;
+        @Config.Comment
+            ({
+                "Fixes slow background startup edge case caused by checking tooltips during the loading process",
+                "May have side effects concerning tooltips"
+            })
+        public boolean utFasterBackgroundStartupToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Fast Dye Blending")
