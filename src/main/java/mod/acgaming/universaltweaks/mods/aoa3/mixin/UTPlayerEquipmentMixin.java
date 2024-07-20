@@ -2,7 +2,7 @@ package mod.acgaming.universaltweaks.mods.aoa3.mixin;
 
 import net.minecraft.inventory.Container;
 
-import com.llamalad7.mixinextras.injector.WrapWithCondition;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef;
 import net.tslat.aoa3.utils.player.PlayerDataManager.PlayerEquipment;

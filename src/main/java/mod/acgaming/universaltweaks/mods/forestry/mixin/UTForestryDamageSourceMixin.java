@@ -1,6 +1,6 @@
 package mod.acgaming.universaltweaks.mods.forestry.mixin;
 
-import com.llamalad7.mixinextras.injector.WrapWithCondition;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import forestry.core.utils.DamageSourceForestry;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;

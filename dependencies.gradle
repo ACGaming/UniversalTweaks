@@ -146,7 +146,7 @@ final def mod_dependencies = [
 
 dependencies {
     // Libraries
-    implementation 'com.cleanroommc:configanytime:2.0'
+    implementation 'com.cleanroommc:configanytime:3.0'
 
     implementation 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
     embed 'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.4.2'
