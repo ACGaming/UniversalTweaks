@@ -25,11 +25,7 @@ public class UTPlayerEquipmentMixin
     @WrapWithCondition(method = "tickEquipment", at = @At(value = "INVOKE", target = "Lnet/minecraft/inventory/Container;detectAndSendChanges()V", remap = true))
     private boolean utUpdateInventoryIfAllowed(Container instance, @Share("shouldUpdate") LocalBooleanRef shouldUpdate)
     {
-        if (shouldUpdate.get())
-        {
-            shouldUpdate.set(false);
-            return true;
-        }
-        return false;
+        // Last use of the LocalRef, so no need to reset.
+        return shouldUpdate.get();
     }
 }

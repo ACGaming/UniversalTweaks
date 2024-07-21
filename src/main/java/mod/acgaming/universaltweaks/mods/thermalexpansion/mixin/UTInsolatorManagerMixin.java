@@ -26,7 +26,7 @@ public class UTInsolatorManagerMixin
         if (!UTConfigMods.THERMAL_EXPANSION.utTEInsolatorCustomMonoculture) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInsolatorManagerMixin ::: Add custom fertilizers");
         // EXTRA FERTILIZERS
-        for (ItemStack item : UTInsolatorExpansion.additionalFertilizers)
+        for (ItemStack item : UTInsolatorExpansion.getFertilizers())
         {
             if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInsolatorManagerMixin ::: Adding fertilizer: " + item.toString());
             // adding the fertilizer is enough for TE to recognize the recipe(s) for Monoculture Cycle

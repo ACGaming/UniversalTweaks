@@ -294,7 +294,7 @@ All changes are toggleable via config files.
 * **Blood Magic**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
-    * **World Unload Memory Leak Fix:** Fixes memory leak when unloading worlds/switching dimensions
+    * **Memory Leak Fix:** Fixes memory leak when unloading worlds/switching dimensions
 * **Botania**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
@@ -308,6 +308,8 @@ All changes are toggleable via config files.
     * **Packet Leak Fix:** Fixes network ByteBuf leaks from PacketCustom
 * **CoFH Core**
     * **Vorpal Enchantment Damage:** Sets the damage multiplier of the Vorpal enchantment
+* **Collective**
+    * **Memory Leak Fix:** Fixes memory leak when unloading worlds/switching dimensions
 * **Compact Machines**
     * **Invisible Wall Render Fix:** Fixes some compact machine walls being invisible if [Nothirium](https://www.curseforge.com/minecraft/mc-mods/nothirium) 0.2.x (and up) or [Vintagium](https://github.com/Asek3/sodium-1.12) is installed
 * **Effortless Building**
@@ -371,6 +373,8 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Railcraft**
   * **No Beta Warning:** Disables the beta message warning on world join
+* **Requious Frakto**
+  * **Particle Fixes:** Fixes server world being leaked to various particles
 * **RFTools Dimension**
     * **Properly Unregister Dimensions:** Fixes a bug where joining a world or server with any RFTools Dimension registered would disallow entering another world without that dimension until restarting.
 * **Roost**
@@ -402,7 +406,6 @@ All changes are toggleable via config files.
     * **Wisp Particles:** Increases particle size of wisps similar to legacy versions
 * **Thaumic Wonders**
     * **Duplication Fixes:** Fixes various duplication exploits
-    * **Memory Leak Fix:** Fixes a client-side memory leak when wearing Void Fortress armor
 * **The Erebus**
     * **Fix Cabbage Drop:** Fixes Cabbage not dropping the correct items in some situations
     * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
@@ -419,6 +422,7 @@ All changes are toggleable via config files.
     * **Material Blacklist:** Hides tool/bow materials in the 'Materials and You' book
     * **Offhand Shuriken:** Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand
     * **Ore Dictionary Cache:** Caches all ore dictionary smelting recipes to speed up game loading
+    * **Particle Fixes:** Fixes server world being leaked to various particles
     * **Projectile Despawning:** Despawns unbreakable projectiles faster to improve framerates
     * **Tool Customization:** Sets the attack damage cutoff at which diminishing returns start for any Tinkers' tool and sets the rate at which a tool's attack damage incrementally decays depending on its damage cutoff
 * **Tiny Progressions**

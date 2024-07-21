@@ -10,10 +10,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import thaumcraft.api.items.ItemsTC;
 
 // Courtesy of Focamacho
-@Mixin(value = DSUContainer.class, remap = false)
+@Mixin(value = DSUContainer.class)
 public class UTDSUContainerMixin
 {
-    @Inject(method = "func_75145_c", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "canInteractWith", at = @At("HEAD"), cancellable = true)
     private void canInteractWith(EntityPlayer player, CallbackInfoReturnable<Boolean> info)
     {
         if (((DSUContainer) (Object) this).getSlot(1).getStack().getItem().equals(ItemsTC.primordialPearl)) info.setReturnValue(false);
