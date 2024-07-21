@@ -67,6 +67,10 @@ public class UTConfigMods
     @Config.Name("CoFH Core")
     public static final CoFHCoreCategory COFH_CORE = new CoFHCoreCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.collective")
+    @Config.Name("Collective")
+    public static final CollectiveCategory COLLECTIVE = new CollectiveCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.compactmachines")
     @Config.Name("Compact Machines")
     public static final CompactMachinesCoreCategory COMPACT_MACHINES = new CompactMachinesCoreCategory();
@@ -314,7 +318,7 @@ public class UTConfigMods
         public boolean utBMOptimizeSoulForgeToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("World Unload Memory Leak Fix")
+        @Config.Name("Memory Leak Fix")
         @Config.Comment("Fixes memory leak when unloading worlds/switching dimensions")
         public boolean utBMWorldUnloadToggle = true;
 
@@ -379,6 +383,14 @@ public class UTConfigMods
         @Config.Name("Vorpal Enchantment Damage")
         @Config.Comment("Sets the damage multiplier of the Vorpal enchantment")
         public double utCoFHVorpalDamage = 10.0D;
+    }
+
+    public static class CollectiveCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Memory Leak Fix")
+        @Config.Comment("Fixes memory leak when unloading worlds/switching dimensions")
+        public boolean utMemoryLeakFixToggle = true;
     }
 
     public static class CompactMachinesCoreCategory
