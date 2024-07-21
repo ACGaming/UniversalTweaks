@@ -8,6 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 // Courtesy of Sk1erLLC
+@SuppressWarnings("UnresolvedMixinReference")
 @Mixin(targets = "net.minecraft.client.renderer.BlockModelRenderer$AmbientOcclusionFace")
 public class UTSmoothLightingMixin
 {

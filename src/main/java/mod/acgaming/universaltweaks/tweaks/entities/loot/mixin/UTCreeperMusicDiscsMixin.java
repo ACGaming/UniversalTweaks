@@ -3,7 +3,7 @@ package mod.acgaming.universaltweaks.tweaks.entities.loot.mixin;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.item.Item;
 
-import com.llamalad7.mixinextras.injector.WrapWithCondition;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;

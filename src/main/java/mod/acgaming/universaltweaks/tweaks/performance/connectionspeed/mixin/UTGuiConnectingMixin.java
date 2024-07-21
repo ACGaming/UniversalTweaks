@@ -12,6 +12,7 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.tweaks.performance.connectionspeed.UTConnectionPatch;
 
 // Courtesy of WaitingIdly
+@SuppressWarnings("UnresolvedMixinReference")
 @Mixin(targets = "net.minecraft.client.multiplayer.GuiConnecting$1")
 public class UTGuiConnectingMixin
 {

@@ -18,7 +18,7 @@ public class UTContainerRepairMixin
 {
     @Shadow
     @Final
-    private IInventory inputSlots;
+    public IInventory inputSlots;
 
     @Inject(method = "canInteractWith", at = @At("HEAD"), cancellable = true)
     private void canInteractWith(EntityPlayer player, CallbackInfoReturnable<Boolean> info)

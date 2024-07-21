@@ -12,7 +12,6 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(value = Config.class, remap = false)
 public class UTConfigMixin
 {
-    // MixinBooter 8.9 (MixinExtras 0.2.1) required!
     @WrapOperation(method = "register", at = @At(value = "NEW", target = "()Lopenblocks/enchantments/LastStandEnchantmentsHandler;"))
     private static LastStandEnchantmentsHandler utCaptureLastStandHandler(Operation<LastStandEnchantmentsHandler> original)
     {
