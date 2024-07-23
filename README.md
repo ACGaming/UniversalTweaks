@@ -394,16 +394,12 @@ All changes are toggleable via config files.
 * **Tech Reborn**
     * **Optimized Rolling Machine:** Optimizes the Rolling Machine to reduce tick time
 * **Thaumcraft**
-    * **Duplication Fixes:** Fixes various duplication exploits
-    * **Firebat Particles:** Adds particles to firebats similar to legacy versions
-    * **Flower Bounding Box:** Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs
     * **Focus Effects**
         * Revamps the cast sounds of certain focus effects to provide better variety
         * Adds impact sounds (like air or curse) to various focus effects that lack it
     * **Focus Mediums:** Makes several focus mediums play additional cast sounds to make them stand out more
     * **Spiderlike Eldritch Crabs:** Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders
     * **Stable Thaumometer:** Stops the thaumometer from bobbing rapidly when using it to scan objects
-    * **Wisp Particles:** Increases particle size of wisps similar to legacy versions
 * **Thaumic Wonders**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **The Erebus**
