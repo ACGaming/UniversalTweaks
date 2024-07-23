@@ -812,37 +812,17 @@ public class UTConfigMods
     public static class ThaumcraftCategory
     {
         @Config.RequiresMcRestart
-        @Config.Name("Flower Bounding Box")
-        @Config.Comment("Fixes the bounding box always being at the center in both cinderpearls and shimmerleafs")
-        public boolean utTCFlowerBoundingBoxToggle = true;
-
-        @Config.RequiresMcRestart
         @Config.Name("Stable Thaumometer")
         @Config.Comment("Stops the thaumometer from bobbing rapidly when using it to scan objects")
         public boolean utTCStableThaumometerToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Duplication Fixes")
-        @Config.Comment("Fixes various duplication exploits")
-        public boolean utDuplicationFixesToggle = true;
     }
 
     public static class ThaumcraftEntitiesCategory
     {
         @Config.RequiresMcRestart
-        @Config.Name("Firebat Particles")
-        @Config.Comment("Adds particles to firebats similar to legacy versions")
-        public boolean utTCFirebatParticlesToggle = true;
-
-        @Config.RequiresMcRestart
         @Config.Name("Spiderlike Eldritch Crabs")
         @Config.Comment("Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders")
         public boolean utTCSpiderlikeEldritchCrabToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Wisp Particles")
-        @Config.Comment("Increases particle size of wisps similar to legacy versions")
-        public boolean utTCWispParticlesToggle = true;
     }
 
     public static class ThaumcraftFociCategory

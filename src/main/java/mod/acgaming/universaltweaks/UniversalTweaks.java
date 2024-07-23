@@ -26,7 +26,6 @@ import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageC
 import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructEvents;
 import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructMaterials;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
-import mod.acgaming.universaltweaks.mods.thaumcraft.UTThaumcraftEvents;
 import mod.acgaming.universaltweaks.tweaks.blocks.betterplacement.UTBetterPlacement;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.blocks.dispenser.UTBlockDispenser;
@@ -176,7 +175,6 @@ public class UniversalTweaks
         // Unregister reason: event handler adds to an unused map that is never cleared.
         if (Loader.isModLoaded("tardis") && UTConfigMods.TARDIS.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.unregister(ClientProxy.class);
         if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTTConstructEvents());
-        if (Loader.isModLoaded("thaumcraft") && UTConfigMods.THAUMCRAFT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTThaumcraftEvents());
         LOGGER.info(NAME + " initialized");
     }
 
