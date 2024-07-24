@@ -1,10 +1,12 @@
 package mod.acgaming.universaltweaks.bugfixes.misc.particlespawning.mixin;
 
 import java.util.Objects;
-import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.ServerWorldEventHandler;
 import net.minecraft.world.WorldServer;
+
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;

@@ -1,8 +1,5 @@
 package mod.acgaming.universaltweaks.tweaks.world.loading;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.MinecraftException;
 import net.minecraft.world.WorldServer;
@@ -14,6 +11,10 @@ import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Unnoen & tie
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)

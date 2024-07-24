@@ -3,9 +3,9 @@ package mod.acgaming.universaltweaks.mods.openblocks.mixin;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import mod.acgaming.universaltweaks.mods.openblocks.UTOpenBlocksEvents;
+import openblocks.Config;
 import openblocks.enchantments.LastStandEnchantmentsHandler;
 import org.spongepowered.asm.mixin.Mixin;
-import openblocks.Config;
 import org.spongepowered.asm.mixin.injection.At;
 
 // Courtesy of jchung01

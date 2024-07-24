@@ -1,5 +1,14 @@
 package mod.acgaming.universaltweaks;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync;
 import mod.acgaming.universaltweaks.bugfixes.misc.help.UTHelp;
@@ -35,7 +44,6 @@ import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
-import mod.acgaming.universaltweaks.util.UTCommands;
 import mod.acgaming.universaltweaks.tweaks.misc.endportal.UTEndPortalParallax;
 import mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties.UTLanServerProperties;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
@@ -46,25 +54,13 @@ import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTTutorialToast;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.craftingcache.UTCraftingCache;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
+import mod.acgaming.universaltweaks.util.UTCommands;
 import mod.acgaming.universaltweaks.util.UTKeybindings;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
 import mods.railcraft.common.core.BetaMessageTickHandler;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.tardis.mod.proxy.ClientProxy;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import tonius.simplyjetpacks.network.NetworkHandler;
 
 @Mod(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME, version = UniversalTweaks.VERSION, acceptedMinecraftVersions = "[1.12.2]", dependencies = UniversalTweaks.DEPENDENCIES)

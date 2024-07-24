@@ -4,13 +4,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.world.GameType;
 
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of WaitingIdly
 @Mixin(WorldClient.class)

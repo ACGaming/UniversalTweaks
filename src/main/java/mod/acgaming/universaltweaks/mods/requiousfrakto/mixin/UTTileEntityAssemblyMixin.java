@@ -1,7 +1,8 @@
 package mod.acgaming.universaltweaks.mods.requiousfrakto.mixin;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.tileentity.TileEntity;
+
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import requious.tile.TileEntityAssembly;

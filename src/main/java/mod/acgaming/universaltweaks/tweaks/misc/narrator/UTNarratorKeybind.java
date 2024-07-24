@@ -1,5 +1,6 @@
 package mod.acgaming.universaltweaks.tweaks.misc.narrator;
 
+import org.lwjgl.input.Keyboard;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiControls;
 import net.minecraft.client.gui.ScreenChatOptions;
@@ -8,8 +9,6 @@ import net.minecraftforge.client.settings.IKeyConflictContext;
 import net.minecraftforge.client.settings.KeyModifier;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import org.lwjgl.input.Keyboard;
 
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTKeybindings;
@@ -31,17 +30,17 @@ public class UTNarratorKeybind extends UTKeybindings.Key
         }
     };
 
-    public UTNarratorKeybind()
-    {
-        super("narrator", CONTEXT, KeyModifier.CONTROL, Keyboard.KEY_B);
-    }
-
     public static void createKeybind()
     {
         if (!UTConfigTweaks.MISC.utDisableNarratorToggle && UTConfigTweaks.MISC.utUseCustomNarratorKeybind)
         {
             UTKeybindings.addKey(new UTNarratorKeybind());
         }
+    }
+
+    public UTNarratorKeybind()
+    {
+        super("narrator", CONTEXT, KeyModifier.CONTROL, Keyboard.KEY_B);
     }
 
     @SideOnly(Side.CLIENT)

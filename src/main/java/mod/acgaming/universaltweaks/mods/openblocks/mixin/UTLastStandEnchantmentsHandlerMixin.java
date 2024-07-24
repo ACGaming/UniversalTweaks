@@ -1,6 +1,7 @@
 package mod.acgaming.universaltweaks.mods.openblocks.mixin;
 
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+
 import mod.acgaming.universaltweaks.mods.openblocks.WrappedLivingHurtEvent;
 import openblocks.enchantments.LastStandEnchantmentsHandler;
 import org.spongepowered.asm.mixin.Mixin;
@@ -22,7 +23,7 @@ public class UTLastStandEnchantmentsHandlerMixin
     @Inject(method = "onHurt", at = @At(value = "HEAD"), cancellable = true)
     private void utCheckEvent(LivingHurtEvent event, CallbackInfo ci)
     {
-         if (!(event instanceof WrappedLivingHurtEvent))
+        if (!(event instanceof WrappedLivingHurtEvent))
         {
             ci.cancel();
         }

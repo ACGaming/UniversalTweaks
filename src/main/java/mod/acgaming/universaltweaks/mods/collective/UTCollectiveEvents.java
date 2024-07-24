@@ -4,6 +4,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
 import com.natamus.collective.events.CollectiveEvents;
 
 public class UTCollectiveEvents

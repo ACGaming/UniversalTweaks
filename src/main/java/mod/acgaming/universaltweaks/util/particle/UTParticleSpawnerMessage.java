@@ -1,8 +1,8 @@
 package mod.acgaming.universaltweaks.util.particle;
 
-import io.netty.buffer.ByteBuf;
-import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.util.UTPacketHandler;
+import java.util.List;
+import java.util.Random;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -14,8 +14,9 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-import java.util.List;
-import java.util.Random;
+import io.netty.buffer.ByteBuf;
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.util.UTPacketHandler;
 
 public class UTParticleSpawnerMessage implements IMessage
 {
@@ -53,9 +54,11 @@ public class UTParticleSpawnerMessage implements IMessage
     private float particleSpeed;
     private int particleCount;
     private boolean longDistance;
-    /** These are the block/item ids and possibly metaData ids that are used to color or texture the particle. */
+    /**
+     * These are the block/item ids and possibly metaData ids that are used to color or texture the particle.
+     */
     private int[] particleArguments;
-        
+
     public UTParticleSpawnerMessage() {}
 
     private UTParticleSpawnerMessage(EnumParticleTypes type, UTParticleSituationEnum situation, boolean longDistance, float x, float y, float z, float xOffset, float yOffset, float zOffset, float speed, int count, int... particleArguments)
@@ -73,7 +76,7 @@ public class UTParticleSpawnerMessage implements IMessage
         this.particleCount = count;
         this.particleArguments = particleArguments;
     }
-    
+
     @Override
     public void fromBytes(ByteBuf buf)
     {
@@ -163,7 +166,7 @@ public class UTParticleSpawnerMessage implements IMessage
                             return;
                         }
                     }
-                } 
+                }
             });
             return null;
         }

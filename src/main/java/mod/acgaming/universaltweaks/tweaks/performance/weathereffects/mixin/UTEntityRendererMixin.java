@@ -7,10 +7,9 @@ import net.minecraft.util.EnumParticleTypes;
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 @Mixin(EntityRenderer.class)
 public abstract class UTEntityRendererMixin

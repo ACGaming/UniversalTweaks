@@ -1,10 +1,5 @@
 package mod.acgaming.universaltweaks.tweaks.misc.commands.seed.mixin;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
-import mod.acgaming.universaltweaks.tweaks.misc.commands.seed.UTCopyCommand;
 import net.minecraft.command.CommandShowSeed;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentString;
@@ -12,6 +7,12 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.HoverEvent;
+
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.tweaks.misc.commands.seed.UTCopyCommand;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 

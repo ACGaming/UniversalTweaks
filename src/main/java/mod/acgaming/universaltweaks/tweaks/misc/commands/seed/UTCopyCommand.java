@@ -2,9 +2,7 @@ package mod.acgaming.universaltweaks.tweaks.misc.commands.seed;
 
 import java.util.Arrays;
 import javax.annotation.Nonnull;
-import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -12,6 +10,10 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.client.IClientCommand;
+
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 public class UTCopyCommand extends CommandBase implements IClientCommand
 {
@@ -32,12 +34,6 @@ public class UTCopyCommand extends CommandBase implements IClientCommand
     }
 
     @Override
-    public boolean checkPermission(@Nonnull MinecraftServer server, @Nonnull ICommandSender sender)
-    {
-        return true;
-    }
-
-    @Override
     public void execute(@Nonnull MinecraftServer server, ICommandSender sender, @Nonnull String[] args) throws CommandException
     {
         // Sanity check
@@ -54,6 +50,12 @@ public class UTCopyCommand extends CommandBase implements IClientCommand
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCopyCommand :: Copy seed");
         GuiScreen.setClipboardString(buildString(args, 0));
         sender.sendMessage(new TextComponentString("\nCopied seed to clipboard!"));
+    }
+
+    @Override
+    public boolean checkPermission(@Nonnull MinecraftServer server, @Nonnull ICommandSender sender)
+    {
+        return true;
     }
 
     @Override

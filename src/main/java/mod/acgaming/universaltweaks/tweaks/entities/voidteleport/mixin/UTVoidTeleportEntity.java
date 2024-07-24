@@ -1,6 +1,8 @@
 package mod.acgaming.universaltweaks.tweaks.entities.voidteleport.mixin;
 
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import java.util.Arrays;
+import java.util.List;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -15,14 +17,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;
+
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Arrays;
-import java.util.List;
 
 // Courtesy of WaitingIdly
 @Mixin(EntityLivingBase.class)

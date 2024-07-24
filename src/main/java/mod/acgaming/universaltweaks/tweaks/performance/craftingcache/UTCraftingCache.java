@@ -17,8 +17,8 @@ public class UTCraftingCache
 {
 
     private static final Int2ObjectLinkedOpenHashMap<UTOptionalContent<IRecipe>> NON_NBT_CRAFT_CACHE = new Int2ObjectLinkedOpenHashMap<>();
-    private static IRecipe lastMatchingRecipe = null;
     private static final boolean isIC2ClassicLoaded = Loader.isModLoaded("ic2-classic-spmod");
+    private static IRecipe lastMatchingRecipe = null;
 
     public static void resetCache()
     {

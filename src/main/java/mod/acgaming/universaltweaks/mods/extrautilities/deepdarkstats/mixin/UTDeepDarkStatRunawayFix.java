@@ -1,15 +1,16 @@
 package mod.acgaming.universaltweaks.mods.extrautilities.deepdarkstats.mixin;
 
-import com.rwtema.extrautils2.dimensions.deep_dark.WorldProviderDeepDark;
-import mod.acgaming.universaltweaks.config.UTConfigMods;
+import java.util.UUID;
+
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
+
+import com.rwtema.extrautils2.dimensions.deep_dark.WorldProviderDeepDark;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-
-import java.util.UUID;
 
 // Courtesy of WaitingIdly
 @Mixin(value = WorldProviderDeepDark.class, remap = false)

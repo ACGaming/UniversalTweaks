@@ -2,7 +2,7 @@ package mod.acgaming.universaltweaks.mods.codechickenlib.mixin;
 
 import java.util.List;
 import java.util.function.Predicate;
-import codechicken.lib.packet.PacketCustom;
+
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.network.INetHandler;
 import net.minecraft.network.Packet;
@@ -12,6 +12,8 @@ import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.handshake.NetworkDispatcher;
 import net.minecraftforge.fml.common.network.internal.FMLProxyPacket;
+
+import codechicken.lib.packet.PacketCustom;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -27,16 +29,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  * <p>
  * CCL doesn't fully utilize Forge's built-in networking, so this mixin adds the missing behavior that
  * {@link net.minecraftforge.fml.common.network.FMLOutboundHandler.OutboundTarget#selectNetworks} and
- * {@link net.minecraftforge.fml.common.network.FMLOutboundHandler#write} 
+ * {@link net.minecraftforge.fml.common.network.FMLOutboundHandler#write}
  * would normally do to clean up packets.
+ *
  * @author jchung01
  */
 @Mixin(value = PacketCustom.class, remap = false)
 public abstract class UTPacketCustomRetainMixin
 {
-    @Shadow
-    public abstract boolean release();
-
     @Inject(method = "sendToClients(Lnet/minecraft/network/Packet;)V", at = @At(value = "HEAD"))
     private static void utRetainForAllClients(Packet<INetHandler> packet, CallbackInfo ci)
     {
@@ -74,15 +74,6 @@ public abstract class UTPacketCustomRetainMixin
         ut$retainForPlayers(packet, player -> FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().canSendCommands(player.getGameProfile()));
     }
 
-    /**
-     * Release this buf after copying it, just to be safe.
-     */
-    @Inject(method = "toPacket", at = @At(value = "RETURN"))
-    private void utReleaseOriginal(CallbackInfoReturnable<FMLProxyPacket> cir)
-    {
-        this.release();
-    }
-
     @Unique
     private static void ut$retainForPlayers(Packet<INetHandler> packet, Predicate<EntityPlayerMP> condition)
     {
@@ -94,5 +85,17 @@ public abstract class UTPacketCustomRetainMixin
             int retainCount = (int) (playerList.stream().filter(condition.and(hasNetworkDispatcher)).count() - 1);
             if (retainCount > 0) ((FMLProxyPacket) packet).payload().retain(retainCount);
         }
+    }
+
+    @Shadow
+    public abstract boolean release();
+
+    /**
+     * Release this buf after copying it, just to be safe.
+     */
+    @Inject(method = "toPacket", at = @At(value = "RETURN"))
+    private void utReleaseOriginal(CallbackInfoReturnable<FMLProxyPacket> cir)
+    {
+        this.release();
     }
 }

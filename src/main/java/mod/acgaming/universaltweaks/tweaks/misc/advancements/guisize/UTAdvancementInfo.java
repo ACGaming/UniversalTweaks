@@ -11,26 +11,6 @@ public class UTAdvancementInfo
     private static final int HEIGHT_MULT = 28;
     private static final int WIDTH_MULT = 32;
 
-    private static int utStepwiseWidth(int width)
-    {
-        return width / WIDTH_MULT * WIDTH_MULT;
-    }
-
-    private static int utStepwiseHeight(int height)
-    {
-        return height / HEIGHT_MULT * HEIGHT_MULT;
-    }
-
-    private static int utClampWidth(int width)
-    {
-        return Math.max(width, DEFAULT_WIDTH);
-    }
-
-    private static int utClampHeight(int height)
-    {
-        return Math.max(height, DEFAULT_HEIGHT);
-    }
-
     public static int utPageWidth(int externalWidth)
     {
         return utStepwiseWidth(utClampWidth(externalWidth - UTConfigTweaks.MISC.ADVANCEMENTS.utHorizontalMargin * 2));
@@ -51,16 +31,6 @@ public class UTAdvancementInfo
         return utPageHeight(externalHeight) - padding * PADDING;
     }
 
-    private static int utTabCountForWidth(int width)
-    {
-        return utPageWidth(width) / WIDTH_MULT;
-    }
-
-    private static int utTabCountForHeight(int height)
-    {
-        return utPageHeight(height) / HEIGHT_MULT;
-    }
-
     public static int utTabCountForSide(int width, int height, boolean isVertical)
     {
         return isVertical ? utTabCountForHeight(height) : utTabCountForWidth(width);
@@ -69,5 +39,35 @@ public class UTAdvancementInfo
     public static int utMaximumTabCountPerPage(int width, int height)
     {
         return (utTabCountForWidth(width) + utTabCountForHeight(height)) * 2;
+    }
+
+    private static int utStepwiseWidth(int width)
+    {
+        return width / WIDTH_MULT * WIDTH_MULT;
+    }
+
+    private static int utStepwiseHeight(int height)
+    {
+        return height / HEIGHT_MULT * HEIGHT_MULT;
+    }
+
+    private static int utClampWidth(int width)
+    {
+        return Math.max(width, DEFAULT_WIDTH);
+    }
+
+    private static int utClampHeight(int height)
+    {
+        return Math.max(height, DEFAULT_HEIGHT);
+    }
+
+    private static int utTabCountForWidth(int width)
+    {
+        return utPageWidth(width) / WIDTH_MULT;
+    }
+
+    private static int utTabCountForHeight(int height)
+    {
+        return utPageHeight(height) / HEIGHT_MULT;
     }
 }

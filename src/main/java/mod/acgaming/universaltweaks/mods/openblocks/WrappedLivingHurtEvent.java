@@ -6,6 +6,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 /**
  * Same as LivingHurtEvent, but only fired manually by the last stand handler.
+ *
  * @author jchung01
  */
 public class WrappedLivingHurtEvent extends LivingHurtEvent

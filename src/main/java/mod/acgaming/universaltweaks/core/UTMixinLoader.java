@@ -7,10 +7,10 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 import com.google.common.collect.ImmutableMap;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraftforge.fml.common.Loader;
 
 import mod.acgaming.universaltweaks.config.UTConfigMods;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import zone.rong.mixinbooter.ILateMixinLoader;
 
 public class UTMixinLoader implements ILateMixinLoader

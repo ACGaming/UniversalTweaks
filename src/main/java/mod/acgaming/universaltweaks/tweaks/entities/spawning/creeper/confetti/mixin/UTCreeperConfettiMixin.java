@@ -1,11 +1,8 @@
 package mod.acgaming.universaltweaks.tweaks.entities.spawning.creeper.confetti.mixin;
 
 import java.util.List;
+
 import com.google.common.collect.Lists;
-import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
-import mod.acgaming.universaltweaks.util.UTRandomUtil;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.item.ItemDye;
@@ -17,6 +14,11 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+
+import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.util.UTRandomUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -45,6 +47,7 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
 
     /**
      * Register confetti DataParameter.
+     *
      * @author jchung01
      */
     @Inject(method = "entityInit", at = @At(value = "TAIL"))
@@ -55,6 +58,7 @@ public abstract class UTCreeperConfettiMixin extends EntityMob
 
     /**
      * Determine on spawn if this creeper should explode into confetti.
+     *
      * @author jchung01
      */
     @Inject(method = "<init>", at = @At(value = "TAIL"))
