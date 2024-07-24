@@ -85,7 +85,6 @@ cfg.universaltweaks.tweaks.blocks.breakablebedrock=Roca madre rompible
 cfg.universaltweaks.tweaks.blocks.finitewater=Agua finita
 cfg.universaltweaks.tweaks.entities.attributes=Atributos
 cfg.universaltweaks.tweaks.entities.betterburning=Mejor quemado
-cfg.universaltweaks.tweaks.entities.collisiondamage=Daño por colisión
 cfg.universaltweaks.tweaks.entities.damagevelocity=Velocidad de daño
 cfg.universaltweaks.tweaks.entities.easybreeding=Reproducción fácil
 cfg.universaltweaks.tweaks.entities.nogolems=No Golems

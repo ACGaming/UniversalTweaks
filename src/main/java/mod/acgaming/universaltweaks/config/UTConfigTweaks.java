@@ -388,10 +388,6 @@ public class UTConfigTweaks
         @Config.Name("Cobweb Slowness")
         public final CobwebSlownessCategory COBWEB_SLOWNESS = new CobwebSlownessCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.entities.collisiondamage")
-        @Config.Name("Collision Damage")
-        public final CollisionDamageCategory COLLISION_DAMAGE = new CollisionDamageCategory();
-
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.creeperconfetti")
         @Config.Name("Creeper Confetti")
         public final CreeperConfettiCategory CREEPER_CONFETTI = new CreeperConfettiCategory();
@@ -729,22 +725,6 @@ public class UTConfigTweaks
             @Config.Name("[3] Vertical Slowness Factor")
             @Config.Comment("The slowness factor that gets multiplied with the vertical entity speed")
             public double utCobwebSlownessFactorV = 0.05000000074505806D;
-        }
-
-        public static class CollisionDamageCategory
-        {
-            @Config.RequiresMcRestart
-            @Config.Name("[1] Collision Damage Toggle")
-            @Config.Comment("Applies horizontal collision damage to the player akin to elytra collision")
-            public boolean utCollisionDamageToggle = false;
-
-            @Config.Name("[2] Damage Factor")
-            @Config.Comment
-                ({
-                    "The damage factor that gets multiplied with the player speed",
-                    "Vanilla default for elytra damage is 10"
-                })
-            public int utCollisionDamageFactor = 10;
         }
 
         public static class CreeperConfettiCategory

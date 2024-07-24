@@ -122,7 +122,6 @@ cfg.universaltweaks.tweaks.entities.attributes=Attributes
 cfg.universaltweaks.tweaks.entities.betterburning=Better Burning
 cfg.universaltweaks.tweaks.entities.chickenshedding=Chicken Shedding
 cfg.universaltweaks.tweaks.entities.cobwebslowness=Cobweb Slowness
-cfg.universaltweaks.tweaks.entities.collisiondamage=Collision Damage
 cfg.universaltweaks.tweaks.entities.creeperconfetti=Creeper Confetti
 cfg.universaltweaks.tweaks.entities.damagevelocity=Damage Velocity
 cfg.universaltweaks.tweaks.entities.easybreeding=Easy Breeding

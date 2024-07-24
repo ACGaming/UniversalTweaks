@@ -45,7 +45,6 @@ public class UTObsoleteModsHandler
             put("cie", () -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle);
             put("classiccombat", () -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
             put("cleardespawn", () -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEClearDespawnToggle);
-            put("collisiondamage", () -> UTConfigTweaks.ENTITIES.COLLISION_DAMAGE.utCollisionDamageToggle);
             put("configurablecane", () -> UTConfigTweaks.BLOCKS.utSugarCaneSize != 3);
             put("configurabledespawntimer", () -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle);
             put("continousmusic", () -> UTConfigTweaks.MISC.utInfiniteMusicToggle);
