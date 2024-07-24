@@ -346,8 +346,12 @@ public class UTConfigBugfixes
 
         @Config.RequiresMcRestart
         @Config.Name("Depth Mask")
-        @Config.Comment("Fixes entity and particle rendering issues by enabling depth buffer writing")
-        public boolean utDepthMaskToggle = true;
+        @Config.Comment
+            ({
+                "Fixes entity and particle rendering issues by enabling depth buffer writing",
+                "Can cause issues with modded particles"
+            })
+        public boolean utDepthMaskToggle = false;
 
         @Config.Name("Help Command")
         @Config.Comment("Replaces the help command, sorts and reports broken commands")
