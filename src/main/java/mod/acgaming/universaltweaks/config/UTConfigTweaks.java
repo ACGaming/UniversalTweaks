@@ -1446,7 +1446,7 @@ public class UTConfigTweaks
         @Config.RequiresMcRestart
         @Config.Name("End Portal Parallax")
         @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
-        public boolean utEndPortalParallaxToggle = true;
+        public boolean utEndPortalParallaxToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Infinite Music")
