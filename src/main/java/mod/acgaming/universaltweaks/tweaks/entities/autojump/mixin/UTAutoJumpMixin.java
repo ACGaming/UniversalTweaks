@@ -37,8 +37,7 @@ public class UTAutoJumpMixin
                     if (ut$stepAssisted) player.stepHeight -= 0.65f;
                     ut$stepHeightOverride = player.stepHeight;
                 }
-                // Something other than sneaking reduced the step height, clear the saved step height.
-                else if (player.stepHeight < 1.0f && player.stepHeight != baseStepHeight)
+                else if (player.stepHeight < 1.0f)
                 {
                     ut$stepHeightOverride = 0.0f;
                 }
