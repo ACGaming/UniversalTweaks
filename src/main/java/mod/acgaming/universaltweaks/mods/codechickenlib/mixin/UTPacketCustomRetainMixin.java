@@ -15,12 +15,10 @@ import net.minecraftforge.fml.common.network.internal.FMLProxyPacket;
 
 import codechicken.lib.packet.PacketCustom;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
  * This mixin retains PacketCustom payloads, increasing the ref count by the number of players
@@ -87,15 +85,8 @@ public abstract class UTPacketCustomRetainMixin
         }
     }
 
-    @Shadow
-    public abstract boolean release();
-
-    /**
-     * Release this buf after copying it, just to be safe.
-     */
-    @Inject(method = "toPacket", at = @At(value = "RETURN"))
-    private void utReleaseOriginal(CallbackInfoReturnable<FMLProxyPacket> cir)
-    {
-        this.release();
-    }
+    // Releasing the PacketCustom on copy to packet would be ideal, but some mods still use the PacketCustom after calling this...
+    // But there isn't any other good way (AFAIK) to release without knowing a mod's specific usage.
+    // Excluding this prevents crashes from deallocating too early, but could there be leaks? If so, needs more investigation.
+    // @Inject(method = "toPacket", at = @At(value = "RETURN"))
 }
