@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 import net.minecraft.item.ItemStack;
 
+import net.minecraftforge.fml.common.Loader;
+
 import com.blamejared.compat.thermalexpansion.Insolator;
 import crafttweaker.annotations.ModOnly;
 import crafttweaker.annotations.ZenRegister;
@@ -56,7 +58,7 @@ public class UTInsolatorExpansion
     public static List<ItemStack> getFertilizers()
     {
         List<ItemStack> fertilizers = Collections.emptyList();
-        if (additionalFertilizers != null)
+        if (additionalFertilizers != null && Loader.isModLoaded("crafttweaker"))
         {
             fertilizers = additionalFertilizers.stream().map(CraftTweakerMC::getItemStack).collect(Collectors.toList());
             additionalFertilizers = null;
