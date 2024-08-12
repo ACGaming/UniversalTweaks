@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // Courtesy of jchung01
-@Mixin(value = LastStandEnchantmentsHandler.class, remap = false)
+@Mixin(value = LastStandEnchantmentsHandler.class, remap = false, priority = 1010)
 public abstract class UTLastStandEnchantmentsHandlerMixin
 {
     @Shadow
