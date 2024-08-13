@@ -399,6 +399,16 @@ public class UTConfigMods
         @Config.Name("Invisible Wall Render Fix")
         @Config.Comment("Fixes some compact machine walls being invisible if Nothirium 0.2.x (and up) or Vintagium is installed")
         public boolean utCMRenderFixToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Allowed Spawns Improvement")
+        @Config.Comment
+            ({
+                "Improves server performance by properly controlling spawn checks (effectiveness depends on CM's config)",
+                "Disable both 'allowHostileSpawns' and 'allowPeacefulSpawns' in the CM config for best performance",
+                "Does nothing if both config values are true"
+            })
+        public boolean utAllowedSpawnsImprovementToggle = true;
     }
 
     public static class EffortlessBuildingCategory
