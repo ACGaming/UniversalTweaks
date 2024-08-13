@@ -27,6 +27,7 @@ public class UTObsoleteModsHandler
             put("bannerpatch", () -> UTConfigBugfixes.BLOCKS.utBannerBoundingBoxToggle);
             put("bedbreakbegone", () -> UTConfigTweaks.BLOCKS.utBedObstructionToggle);
             put("bedfix", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
+            put("bedpatch", () -> true); // Fix integrated in Forge 14.23.2.2643 (#4784)
             put("bedsaynosleep", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
             put("betterburning", () -> UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBArrowsToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBCookedToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBExtinguishToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBOverlayToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBSpreadingToggle);
             put("betterpingdisplay", () -> UTConfigTweaks.MISC.utBetterPing);
@@ -158,7 +159,7 @@ public class UTObsoleteModsHandler
         }
 
         // Mods checked by class
-        if (UTReflectionUtil.isClassLoaded("com.chocohead.biab.BornInABarn")) messages.add("Born in a Barn");
+        if (UTReflectionUtil.isClassLoaded("com.chocohead.biab.BornInABarn")) messages.add("Born in a Barn"); // Fix integrated in Forge 14.23.2.2623 (#4689)
         if (UTReflectionUtil.isClassLoaded("io.github.jikuja.LocaleTweaker") && UTConfigBugfixes.MISC.utLocaleToggle) messages.add("LocaleFixer");
         if (UTReflectionUtil.isClassLoaded("com.cleanroommc.blockdelayremover.BlockDelayRemoverCore") && UTConfigTweaks.BLOCKS.utBlockHitDelay != 5) messages.add("Block Delay Remover");
         if (UTReflectionUtil.isClassLoaded("io.github.barteks2x.chunkgenlimiter.ChunkGenLimitMod") && UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) messages.add("Chunk Generation Limiter");
