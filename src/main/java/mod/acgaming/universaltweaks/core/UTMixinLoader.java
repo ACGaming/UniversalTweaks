@@ -19,7 +19,7 @@ public class UTMixinLoader implements ILateMixinLoader
     {
         {
             put("mixins.mods.cbmultipart.client.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
-            put("mixins.mods.compactmachines.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
+            put("mixins.mods.compactmachines.render.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
             put("mixins.mods.crafttweaker.json", () -> loaded("crafttweaker"));
             put("mixins.mods.hwyla.json", () -> loaded("waila"));
             put("mixins.mods.modularrouters.json", () -> loaded("modularrouters") && UTConfigMods.MODULAR_ROUTERS.utParticleThreadToggle);
@@ -51,6 +51,8 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.codechickenlib.json", () -> loaded("codechickenlib") && UTConfigMods.CCL.utPacketLeakFixToggle);
             put("mixins.mods.cofhcore.json", () -> loaded("cofhcore"));
             put("mixins.mods.collective.json", () -> loaded("collective"));
+            // TODO: Add config
+            put("mixins.mods.compactmachines.spawns.json", () -> loaded("compactmachines3"));
             put("mixins.mods.cqrepoured.json", () -> loaded("cqrepoured"));
             put("mixins.mods.effortlessbuilding.json", () -> loaded("effortlessbuilding"));
             put("mixins.mods.elementarystaffs.json", () -> loaded("element"));

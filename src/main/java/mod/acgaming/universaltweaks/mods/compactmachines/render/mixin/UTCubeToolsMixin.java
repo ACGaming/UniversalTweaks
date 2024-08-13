@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.compactmachines.mixin;
+package mod.acgaming.universaltweaks.mods.compactmachines.render.mixin;
 
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
