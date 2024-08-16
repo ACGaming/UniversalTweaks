@@ -1,6 +1,7 @@
 package mod.acgaming.universaltweaks.bugfixes.entities.disconnectdupe;
 
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -19,7 +20,7 @@ public class UTDisconnectDupe
     {
         if (!UTConfigBugfixes.ENTITIES.utDisconnectDupeToggle || event.getPlayer().world.isRemote) return;
         EntityPlayerMP player = (EntityPlayerMP) event.getPlayer();
-        if (!player.connection.getNetworkManager().channel().isOpen())
+        if (!(player instanceof FakePlayer) && player.connection != null && !player.connection.getNetworkManager().channel().isOpen())
         {
             if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTDisconnectDupe ::: Player dropped item but is disconnected! Ignoring drop.");
             event.setCanceled(true);
