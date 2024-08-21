@@ -12,6 +12,7 @@ import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
@@ -152,6 +153,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.world.village.json", () -> UTConfigTweaks.WORLD.utVillageDistance != 32);
         }
     });
+    public static boolean emojicordLoaded;
     public static boolean openModsLoaded;
     public static boolean surgeLoaded;
     private static final Map<String, Supplier<Boolean>> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
@@ -171,6 +173,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.misc.spectatormenu.json", () -> UTConfigBugfixes.MISC.utSpectatorMenuToggle);
             put("mixins.bugfixes.misc.startup.json", () -> UTConfigTweaks.PERFORMANCE.utFasterBackgroundStartupToggle);
             put("mixins.bugfixes.world.frustumculling.json", () -> UTConfigBugfixes.WORLD.utFrustumCullingToggle);
+            put("mixins.mods.emojicord.emojicontext.json", () -> UTConfigMods.EMOJICORD.utEmojiContextToggle && emojicordLoaded);
             put("mixins.tweaks.blocks.betterplacement.json", () -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
             put("mixins.tweaks.blocks.hitdelay.json", () -> UTConfigTweaks.BLOCKS.utBlockHitDelay != 5);
             put("mixins.tweaks.entities.autojump.json", () -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
@@ -232,6 +235,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             Locale.setDefault(Locale.ENGLISH);
         }
 
+        emojicordLoaded = UTReflectionUtil.isClassLoaded("net.teamfruit.emojicord.asm.EmojicordCorePlugin");
         openModsLoaded = UTReflectionUtil.isClassLoaded("openmods.core.OpenModsClassTransformer");
         randomPatchesLoaded = UTReflectionUtil.isClassLoaded("com.therandomlabs.randompatches.core.RPCore");
         renderLibLoaded = UTReflectionUtil.isClassLoaded("meldexun.renderlib.RenderLib");
