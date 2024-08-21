@@ -318,6 +318,8 @@ All changes are toggleable via config files.
     * **Extinguishing Dodges:** Chance per dodge to extinguish the player when burning
     * **Feathers Helper API Fix:** Fixes server-sided crashes when the Feathers Helper API is utilized
     * **Sprinting Integration:** Configurable consumption of feathers when the player is sprinting
+* **Emojicord**
+    * **Emoji Context:** Improves emoji context calculation to improve fps when rendering a lot of text
 * **Ender Storage**
     * **Fix Frequency Tracking:** Fixes storage frequencies being tracked multiple times
 * **Epic Siege Mod**
