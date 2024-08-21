@@ -87,6 +87,10 @@ public class UTConfigMods
     @Config.Name("Elenai Dodge 2")
     public static final ElenaiDodge2Category ELENAI_DODGE_2 = new ElenaiDodge2Category();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.emojicord")
+    @Config.Name("Emojicord")
+    public static final EmojicordCategory EMOJICORD = new EmojicordCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.enderstorage")
     @Config.Name("Ender Storage")
     public static final EnderStorageCategory ENDER_STORAGE = new EnderStorageCategory();
@@ -441,6 +445,14 @@ public class UTConfigMods
         @Config.Name("Sprinting Feather Requirement")
         @Config.Comment("Sets the amount of half-feathers required to start sprinting")
         public int utED2SprintingFeatherRequirement = 6;
+    }
+
+    public static class EmojicordCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Emoji Context")
+        @Config.Comment("Improves emoji context calculation to improve fps when rendering a lot of text")
+        public boolean utEmojiContextToggle = true;
     }
 
     public static class EnderStorageCategory

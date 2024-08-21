@@ -80,6 +80,7 @@ final def mod_dependencies = [
     'curse.maven:effortlessbuilding-302113:2847346'                   : [debug_effortless_building],
     'curse.maven:elementary-staffs-346007:2995593'                    : [debug_elementary_staffs],
     'curse.maven:elenaidodge2-442962:3343308'                         : [debug_elenai_dodge_2],
+    'curse.maven:emojicord-349107:4000684'                            : [debug_emojicord],
     'curse.maven:enderstorage-245174:2755787'                         : [debug_enderstorage],
     'curse.maven:epic-siege-mod-229449:3356157'                       : [debug_epic_siege_mod],
     'curse.maven:extrautilities-225561:2678374'                       : [debug_extra_utilities_2],
