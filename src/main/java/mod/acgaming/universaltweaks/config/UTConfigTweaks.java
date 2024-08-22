@@ -1545,7 +1545,11 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Remove 3D Anaglyph Button")
-        @Config.Comment("Removes the 3D Anaglyph button from the video settings menu")
+        @Config.Comment
+            ({
+                "Removes the 3D Anaglyph button from the video settings menu",
+                "Incompatible with OptiFine"
+            })
         public boolean ut3DAnaglyphButtonToggle = true;
 
         @Config.RequiresMcRestart

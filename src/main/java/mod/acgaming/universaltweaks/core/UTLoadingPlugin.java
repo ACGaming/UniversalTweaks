@@ -24,6 +24,17 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 {
     public static final boolean isClient = FMLLaunchHandler.side().isClient();
     public static final boolean isDev = FMLLaunchHandler.isDeobfuscatedEnvironment();
+
+    public static boolean emojicordLoaded;
+    public static boolean openModsLoaded;
+    public static boolean optiFineLoaded;
+    public static boolean randomPatchesLoaded;
+    public static boolean renderLibLoaded;
+    public static boolean spongeForgeLoaded;
+    public static boolean surgeLoaded;
+
+    public static long launchTime;
+
     private static final Map<String, Supplier<Boolean>> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
     {
         {
@@ -31,9 +42,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.difficulty.server.json", () -> true);
         }
     });
-    public static boolean randomPatchesLoaded;
-    public static boolean renderLibLoaded;
-    public static boolean spongeForgeLoaded;
+
     private static final Map<String, Supplier<Boolean>> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
     {
         {
@@ -153,9 +162,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.world.village.json", () -> UTConfigTweaks.WORLD.utVillageDistance != 32);
         }
     });
-    public static boolean emojicordLoaded;
-    public static boolean openModsLoaded;
-    public static boolean surgeLoaded;
+
     private static final Map<String, Supplier<Boolean>> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
     {
         {
@@ -224,7 +231,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.world.voidfog.json", () -> UTConfigTweaks.WORLD.VOID_FOG.utVoidFogToggle);
         }
     });
-    public static long launchTime;
 
     static
     {
@@ -237,6 +243,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 
         emojicordLoaded = UTReflectionUtil.isClassLoaded("net.teamfruit.emojicord.asm.EmojicordCorePlugin");
         openModsLoaded = UTReflectionUtil.isClassLoaded("openmods.core.OpenModsClassTransformer");
+        optiFineLoaded = UTReflectionUtil.isClassLoaded("optifine.OptiFineTweaker");
         randomPatchesLoaded = UTReflectionUtil.isClassLoaded("com.therandomlabs.randompatches.core.RPCore");
         renderLibLoaded = UTReflectionUtil.isClassLoaded("meldexun.renderlib.RenderLib");
         spongeForgeLoaded = UTReflectionUtil.isClassLoaded("org.spongepowered.mod.util.CompatibilityException");
