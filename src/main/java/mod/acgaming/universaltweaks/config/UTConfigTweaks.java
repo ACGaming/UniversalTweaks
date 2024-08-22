@@ -2017,7 +2017,11 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Crafting Cache")
-        @Config.Comment("Adds an IRecipe cache to improve recipe performance in larger modpacks")
+        @Config.Comment
+            ({
+                "Adds an IRecipe cache to improve recipe performance in larger modpacks",
+                "Incompatible with KemonoCraft"
+            })
         public boolean utCraftingCacheToggle = true;
 
         @Config.RequiresMcRestart
