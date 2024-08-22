@@ -2070,7 +2070,11 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Improve Language Switching Speed")
-        @Config.Comment("Improves the speed of switching languages in the Language GUI")
+        @Config.Comment
+            ({
+                "Improves the speed of switching languages in the Language GUI",
+                "Incompatible with OptiFine"
+            })
         public boolean utImproveLanguageSwitchingSpeed = true;
 
         @Config.RequiresMcRestart

@@ -5,6 +5,7 @@ import net.minecraftforge.client.resource.IResourceType;
 import net.minecraftforge.fml.client.FMLClientHandler;
 
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -17,7 +18,7 @@ public abstract class UTLanguageListMixin
     @Redirect(method = "elementClicked", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/fml/client/FMLClientHandler;refreshResources([Lnet/minecraftforge/client/resource/IResourceType;)V", remap = false))
     public void utImproveLanguageSwitchingPerformance(FMLClientHandler handler, IResourceType[] resources)
     {
-        if (!UTConfigTweaks.PERFORMANCE.utImproveLanguageSwitchingSpeed) return;
+        if (!UTConfigTweaks.PERFORMANCE.utImproveLanguageSwitchingSpeed || UTLoadingPlugin.optiFineLoaded) return;
         Minecraft mc = Minecraft.getMinecraft();
         mc.getLanguageManager().onResourceManagerReload(mc.getResourceManager());
     }
