@@ -21,6 +21,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
+// Courtesy of jchung01
 @Mixin(value = ObeliskSpecialRenderer.class, remap = false)
 public abstract class UTObeliskSpecialRendererMixin<T extends TileEntityBase> extends ManagedTESR<T>
 {
@@ -29,7 +30,6 @@ public abstract class UTObeliskSpecialRendererMixin<T extends TileEntityBase> ex
     private Random rand;
 
     @Shadow
-    @Nonnull
     protected abstract ItemStack getFloatingItem(T te);
 
     protected UTObeliskSpecialRendererMixin(Block block)

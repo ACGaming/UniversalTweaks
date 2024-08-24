@@ -18,18 +18,14 @@ public class UTMixinLoader implements ILateMixinLoader
     private static final Map<String, Supplier<Boolean>> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
     {
         {
-            // TODO: add config
-            put("mixins.mods.bibliocraft.json", () -> loaded("bibliocraft"));
+            put("mixins.mods.bibliocraft.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utDisableVersionCheckToggle);
             put("mixins.mods.cbmultipart.client.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
-            // TODO: add config
-            put("mixins.mods.compactmachines.memory.json", () -> loaded("compactmachines3"));
+            put("mixins.mods.compactmachines.memory.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utMemoryLeakFixToggle);
             put("mixins.mods.compactmachines.render.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
             put("mixins.mods.crafttweaker.json", () -> loaded("crafttweaker"));
-            // TODO: add config
-            put("mixins.mods.enderio.json", () -> loaded("enderio"));
+            put("mixins.mods.enderio.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
             put("mixins.mods.hwyla.json", () -> loaded("waila"));
-            // TODO: add config
-            put("mixins.mods.ironchests.json", () -> loaded("ironchest"));
+            put("mixins.mods.ironchests.json", () -> loaded("ironchest") && UTConfigMods.IRON_CHESTS.utReplaceItemRenderer);
             put("mixins.mods.modularrouters.json", () -> loaded("modularrouters") && UTConfigMods.MODULAR_ROUTERS.utParticleThreadToggle);
             put("mixins.mods.roost.json", () -> loaded("roost") && loaded("contenttweaker"));
             put("mixins.mods.storagedrawers.client.json", () -> loaded("storagedrawers"));

@@ -285,6 +285,8 @@ All changes are toggleable via config files.
     * **Improved Player Tick:** Improves AoA player ticking by only sending inventory changes when necessary
 * **Arcane Archives**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **Bibliocraft**
+    * **Disable Version Check:** Fixes client-side memory leak by disabling version check
 * **Binnie's Mods**
     * **Gather Windfall:** Allows Forestry farms to pick up ExtraTrees fruit
 * **Biomes O' Plenty**
@@ -309,8 +311,9 @@ All changes are toggleable via config files.
 * **Collective**
     * **Memory Leak Fix:** Fixes memory leak when unloading worlds/switching dimensions
 * **Compact Machines**
-    * **Invisible Wall Render Fix:** Fixes some compact machine walls being invisible if [Nothirium](https://www.curseforge.com/minecraft/mc-mods/nothirium) 0.2.x (and up) or [Vintagium](https://github.com/Asek3/sodium-1.12) is installed
     * **Allowed Spawns Improvement:** Improves server performance by properly controlling spawn checks (effectiveness depends on CM's config)
+    * **Invisible Wall Render Fix:** Fixes some compact machine walls being invisible if [Nothirium](https://www.curseforge.com/minecraft/mc-mods/nothirium) 0.2.x (and up) or [Vintagium](https://github.com/Asek3/sodium-1.12) is installed
+    * **Memory Leak Fix:** Fixes client-side memory leak associated with miniaturization recipes
 * **Effortless Building**
     * **Block Transmutation Fix:** Fixes Effortless Building ignoring Metadata when checking for items in inventory
 * **Elementary Staffs**
@@ -321,6 +324,8 @@ All changes are toggleable via config files.
     * **Sprinting Integration:** Configurable consumption of feathers when the player is sprinting
 * **Emojicord**
     * **Emoji Context:** Improves emoji context calculation to improve fps when rendering a lot of text
+* **Ender IO**
+    * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one 
 * **Ender Storage**
     * **Fix Frequency Tracking:** Fixes storage frequencies being tracked multiple times
 * **Epic Siege Mod**
@@ -348,6 +353,8 @@ All changes are toggleable via config files.
     * **Sticky Pedestal Compatibility:** Enables compatibility between Infernal Mobs' Sticky effect and Reliquary's Pedestal
 * **Iron Backpacks**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **Iron Chests**
+    * **Replace Crystal Chest/Shulker Renderer:** Fixes client-side memory leak by replacing the crystal chest/shulker box renderer with a simpler one (Note: Disables stack size rendering)
 * **Item Stages**
     * **Ingredient Matching:** Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues
 * **Mekanism**
