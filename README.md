@@ -310,6 +310,7 @@ All changes are toggleable via config files.
     * **Memory Leak Fix:** Fixes memory leak when unloading worlds/switching dimensions
 * **Compact Machines**
     * **Invisible Wall Render Fix:** Fixes some compact machine walls being invisible if [Nothirium](https://www.curseforge.com/minecraft/mc-mods/nothirium) 0.2.x (and up) or [Vintagium](https://github.com/Asek3/sodium-1.12) is installed
+    * **Allowed Spawns Improvement:** Improves server performance by properly controlling spawn checks (effectiveness depends on CM's config)
 * **Effortless Building**
     * **Block Transmutation Fix:** Fixes Effortless Building ignoring Metadata when checking for items in inventory
 * **Elementary Staffs**
