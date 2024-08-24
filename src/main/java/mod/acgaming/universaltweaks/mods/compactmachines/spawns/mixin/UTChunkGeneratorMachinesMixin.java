@@ -5,28 +5,36 @@ import java.util.List;
 
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import org.dave.compactmachines3.misc.ConfigurationHandler;
 import org.dave.compactmachines3.world.ChunkGeneratorMachines;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
 
 // Courtesy of jchung01
 @Mixin(value = ChunkGeneratorMachines.class)
 public class UTChunkGeneratorMachinesMixin
 {
+    @Shadow(remap = false)
+    @Final
+    private World world;
+
     /**
      * Another spot the CM config should control spawns; here for redundancy.
+     * @reason Control mob spawn based on type
+     * @author jchung01
      */
-    @ModifyReturnValue(method = "getPossibleCreatures", at = @At(value = "RETURN"))
-    private List<Biome.SpawnListEntry> utCheckAllowedCreatures(List<Biome.SpawnListEntry> original, EnumCreatureType creatureType, BlockPos pos)
+    @Overwrite
+    public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos)
     {
         if ((creatureType.getPeacefulCreature() && ConfigurationHandler.MachineSettings.allowPeacefulSpawns) ||
             (!creatureType.getPeacefulCreature() && ConfigurationHandler.MachineSettings.allowHostileSpawns))
         {
-            return original;
+            return this.world.getBiome(pos).getSpawnableList(creatureType);
         }
         else return Collections.emptyList();
     }
