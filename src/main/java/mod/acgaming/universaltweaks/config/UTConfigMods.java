@@ -35,6 +35,10 @@ public class UTConfigMods
     @Config.Name("Advent of Ascension")
     public static final AOACategory AOA = new AOACategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.bibliocraft")
+    @Config.Name("BiblioCraft")
+    public static final BiblioCraftCategory BIBLIOCRAFT = new BiblioCraftCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.bop")
     @Config.Name("Biomes O' Plenty")
     public static final BiomesOPlentyCategory BIOMES_O_PLENTY = new BiomesOPlentyCategory();
@@ -91,6 +95,10 @@ public class UTConfigMods
     @Config.Name("Emojicord")
     public static final EmojicordCategory EMOJICORD = new EmojicordCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.enderio")
+    @Config.Name("Ender IO")
+    public static final EnderIOCategory ENDER_IO = new EnderIOCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.enderstorage")
     @Config.Name("Ender Storage")
     public static final EnderStorageCategory ENDER_STORAGE = new EnderStorageCategory();
@@ -126,6 +134,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.ironbackpacks")
     @Config.Name("Iron Backpacks")
     public static final IronBackpacksCategory IRON_BACKPACKS = new IronBackpacksCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.ironchests")
+    @Config.Name("Iron Chests")
+    public static final IronChestsCategory IRON_CHESTS = new IronChestsCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.itemstages")
     @Config.Name("Item Stages")
@@ -306,6 +318,14 @@ public class UTConfigMods
         public boolean utImprovedPlayerTickToggle = true;
     }
 
+    public static class BiblioCraftCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Version Check")
+        @Config.Comment("Fixes client-side memory leak by disabling version check")
+        public boolean utDisableVersionCheckToggle = true;
+    }
+
     public static class BiomesOPlentyCategory
     {
         @Config.RequiresMcRestart
@@ -400,11 +420,6 @@ public class UTConfigMods
     public static class CompactMachinesCoreCategory
     {
         @Config.RequiresMcRestart
-        @Config.Name("Invisible Wall Render Fix")
-        @Config.Comment("Fixes some compact machine walls being invisible if Nothirium 0.2.x (and up) or Vintagium is installed")
-        public boolean utCMRenderFixToggle = true;
-
-        @Config.RequiresMcRestart
         @Config.Name("Allowed Spawns Improvement")
         @Config.Comment
             ({
@@ -413,6 +428,16 @@ public class UTConfigMods
                 "Does nothing if both config values are true"
             })
         public boolean utAllowedSpawnsImprovementToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Invisible Wall Render Fix")
+        @Config.Comment("Fixes some compact machine walls being invisible if Nothirium 0.2.x (and up) or Vintagium is installed")
+        public boolean utCMRenderFixToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Memory Leak Fix")
+        @Config.Comment("Fixes client-side memory leak associated with miniaturization recipes")
+        public boolean utMemoryLeakFixToggle = true;
     }
 
     public static class EffortlessBuildingCategory
@@ -463,6 +488,14 @@ public class UTConfigMods
         @Config.Name("Emoji Context")
         @Config.Comment("Improves emoji context calculation to improve fps when rendering a lot of text")
         public boolean utEmojiContextToggle = true;
+    }
+
+    public static class EnderIOCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Replace Obelisk Renderer")
+        @Config.Comment("Fixes client-side memory leak by replacing obelisk renderer with a simpler one")
+        public boolean utReplaceItemRenderer = true;
     }
 
     public static class EnderStorageCategory
@@ -618,6 +651,18 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class IronChestsCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Replace Crystal Chest/Shulker Renderer")
+        @Config.Comment
+            ({
+                "Fixes client-side memory leak by replacing the crystal chest/shulker box renderer with a simpler one",
+                "Note: Stack sizes are not rendered, similar to modern versions of this mod"
+            })
+        public boolean utReplaceItemRenderer = true;
     }
 
     public static class ItemStagesCategory
@@ -1047,7 +1092,7 @@ public class UTConfigMods
 
         @Config.LangKey("cfg.universaltweaks.modintegration.tcon.toolcustomization")
         @Config.Name("Tool Customization")
-        public final TinkersConstructCategory.ToolCustomizationCategory TOOL_CUSTOMIZATION = new TinkersConstructCategory.ToolCustomizationCategory();
+        public final ToolCustomizationCategory TOOL_CUSTOMIZATION = new ToolCustomizationCategory();
 
         public static class ToolCustomizationCategory
         {
