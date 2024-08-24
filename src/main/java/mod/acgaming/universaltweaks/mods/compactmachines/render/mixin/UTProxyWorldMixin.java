@@ -21,7 +21,7 @@ import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
-import mod.acgaming.universaltweaks.mods.compactmachines.DummyWorld;
+import mod.acgaming.universaltweaks.mods.compactmachines.render.DummyWorld;
 import org.dave.compactmachines3.world.ProxyWorld;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;

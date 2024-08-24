@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.compactmachines;
+package mod.acgaming.universaltweaks.mods.compactmachines.render;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
