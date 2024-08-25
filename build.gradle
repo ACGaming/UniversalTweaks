@@ -1,4 +1,4 @@
-//version: 1720840170
+//version: 1723428048
 /*
  * DO NOT CHANGE THIS FILE!
  * Also, you may replace this file at any time if there is an update available.
@@ -1391,7 +1391,7 @@ def getChangelog() {
 
 // Buildscript updating
 
-def buildscriptGradleVersion = '8.5'
+def buildscriptGradleVersion = '8.9'
 
 tasks.named('wrapper', Wrapper).configure {
     gradleVersion = buildscriptGradleVersion
