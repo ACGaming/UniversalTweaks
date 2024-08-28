@@ -66,6 +66,8 @@ public class UTBlockOverlay
                 bufferBuilder.setTranslation(-x, -(y - player.getEyeHeight()), -z);
             }
             IBlockState state1 = state.getActualState(world, pos);
+            // Call extendedBlockState if it has one: see BlockRendererDispatcher#renderBlock()
+            state1 = state.getBlock().getExtendedState(state1, world, pos);
             mc.getBlockRendererDispatcher().getBlockModelRenderer().renderModel(world, mc.getBlockRendererDispatcher().getModelForState(state1), state1, pos, bufferBuilder, false);
         });
 
