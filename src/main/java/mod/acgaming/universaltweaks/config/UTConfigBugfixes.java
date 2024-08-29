@@ -112,10 +112,7 @@ public class UTConfigBugfixes
                     "Excludes blocks from the block overlay bugfix",
                     "Syntax: modid:block"
                 })
-            public String[] utBlockOverlayBlacklist = new String[]
-                {
-                    "appliedenergistics2:drive"
-                };
+            public String[] utBlockOverlayBlacklist = new String[] {};
 
             @Config.Name("[3] Whitelist")
             @Config.Comment
