@@ -30,9 +30,9 @@ public class UTBlockOverlayMixin
     private Minecraft mc;
 
     @Inject(method = "renderBlockLayer(Lnet/minecraft/util/BlockRenderLayer;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/ChunkRenderContainer;renderChunkLayer(Lnet/minecraft/util/BlockRenderLayer;)V"))
-    public void utBlockOverlay(BlockRenderLayer blockLayerIn, CallbackInfo info)
+    public void utRenderBlockOverlay(BlockRenderLayer blockLayerIn, CallbackInfo info)
     {
-        if (!UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle) return;
+        if (!UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle || !UTBlockOverlay.shouldRender()) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBlockOverlay ::: Render block layer");
         Block block = world.getBlockState(mc.player.getPosition().up()).getBlock();
         if ((blockLayerIn == BlockRenderLayer.SOLID && !UTBlockOverlayLists.blacklistedBlocks.contains(block)) || UTBlockOverlayLists.whitelistedBlocks.contains(block))
