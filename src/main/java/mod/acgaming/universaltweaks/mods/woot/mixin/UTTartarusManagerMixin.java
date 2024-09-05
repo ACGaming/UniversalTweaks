@@ -39,4 +39,23 @@ public class UTTartarusManagerMixin implements ITartarusCleaner
             worldWoot.removeEntityDangerously(entity);
         }
     }
+
+    @Override
+    public void ut$freeBoxes()
+    {
+        for (SpawnBox box : spawnBoxMap.values())
+        {
+            box.clearUsed();
+        }
+    }
+
+    @Override
+    public boolean ut$areBoxesInUse()
+    {
+        for (SpawnBox box: spawnBoxMap.values())
+        {
+            if (box.isUsed()) return true;
+        }
+        return false;
+    }
 }
