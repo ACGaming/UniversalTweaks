@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.compactmachines.mixin;
+package mod.acgaming.universaltweaks.mods.compactmachines.memory.mixin;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -21,7 +21,7 @@ import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
-import mod.acgaming.universaltweaks.mods.compactmachines.render.DummyWorld;
+import mod.acgaming.universaltweaks.mods.compactmachines.memory.DummyWorld;
 import org.dave.compactmachines3.world.ProxyWorld;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
