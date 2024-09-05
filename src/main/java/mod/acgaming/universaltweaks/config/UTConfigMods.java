@@ -263,6 +263,10 @@ public class UTConfigMods
     @Config.Name("Tiny Progressions")
     public static final TinyProgressionsCategory TINY_PROGRESSIONS = new TinyProgressionsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.woot")
+    @Config.Name("Woot")
+    public static final WootCategory WOOT = new WootCategory();
+
     public static class AbyssalCraftCategory
     {
         @Config.RequiresMcRestart
@@ -1155,6 +1159,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class WootCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Cleanup Simulated Kills")
+        @Config.Comment("Remove any leftover entities spawned on simulated mob's death")
+        public boolean utCleanupSimulatedKillsToggle = true;
     }
 
     static
