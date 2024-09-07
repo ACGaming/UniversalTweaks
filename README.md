@@ -431,3 +431,5 @@ All changes are toggleable via config files.
     * **Tool Customization:** Sets the attack damage cutoff at which diminishing returns start for any Tinkers' tool and sets the rate at which a tool's attack damage incrementally decays depending on its damage cutoff
 * **Tiny Progressions**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **Woot**
+    * **Cleanup Simulated Kills:** Remove any leftover entities spawned on simulated mob's death

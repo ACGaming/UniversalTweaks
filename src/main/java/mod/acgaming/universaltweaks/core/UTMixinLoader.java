@@ -109,6 +109,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.thermalexpansion.dupes.json", () -> loaded("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle);
             put("mixins.mods.thermalexpansion.json", () -> loaded("thermalexpansion"));
             put("mixins.mods.tinyprogressions.dupes.json", () -> loaded("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle);
+            put("mixins.mods.woot.json", () -> loaded("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle);
         }
     });
 
