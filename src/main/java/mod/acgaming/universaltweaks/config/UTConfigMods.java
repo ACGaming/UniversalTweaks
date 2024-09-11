@@ -566,6 +566,11 @@ public class UTConfigMods
         @Config.Name("Mutable Machine Block Drops")
         @Config.Comment("Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list")
         public boolean utMutableBlockDrops = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Downgrade Potion Recipes Log Level")
+        @Config.Comment("Downgrades the message when creating a potion recipe from info to a debug")
+        public boolean utDowngradePotionLogging = true;
     }
 
     public static class ForestryCategory
