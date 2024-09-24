@@ -343,6 +343,8 @@ All changes are toggleable via config files.
     * **Replanting Cocoa Beans:** Allows Forestry farms to automatically replant cocoa beans
 * **HWYLA**
   * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
+* **In Control!**
+    * **Spawn Rule Stats Fix:** Fixes onJoin spawn rules repeatedly modifying mob attack/health/speed
 * **IndustrialCraft 2**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Industrial Foregoing**

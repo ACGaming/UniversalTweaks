@@ -119,6 +119,10 @@ public class UTConfigMods
     @Config.Name("Forestry")
     public static final ForestryCategory FORESTRY = new ForestryCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.incontrol")
+    @Config.Name("In Control!")
+    public static final InControlCategory INCONTROL = new InControlCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.industrialcraft")
     @Config.Name("IndustrialCraft 2")
     public static final IndustrialCraftCategory INDUSTRIALCRAFT = new IndustrialCraftCategory();
@@ -613,6 +617,14 @@ public class UTConfigMods
         @Config.Name("Particle Fixes")
         @Config.Comment("Fixes broken textures for various running and landing particles")
         public boolean utParticleFixesToggle = true;
+    }
+
+    public static class InControlCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Spawn Rule Stats Fix")
+        @Config.Comment("Fixes onJoin spawn rules repeatedly modifying mob attack/health/speed")
+        public boolean utStatsFixToggle = true;
     }
 
     public static class IndustrialCraftCategory

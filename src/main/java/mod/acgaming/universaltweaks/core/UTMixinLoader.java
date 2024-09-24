@@ -74,8 +74,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.forestry.dupes.json", () -> loaded("forestry") && UTConfigMods.FORESTRY.utDuplicationFixesToggle);
             put("mixins.mods.forestry.extratrees.json", () -> loaded("extratrees"));
             put("mixins.mods.forestry.json", () -> loaded("forestry"));
-            // TODO: Add config
-            put("mixins.mods.incontrol.json", () -> loaded("incontrol"));
+            put("mixins.mods.incontrol.json", () -> loaded("incontrol") && UTConfigMods.INCONTROL.utStatsFixToggle);
             put("mixins.mods.industrialcraft.dupes.json", () -> loaded("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle);
             put("mixins.mods.industrialforegoing.dupes.json", () -> loaded("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utDuplicationFixesToggle);
             put("mixins.mods.industrialforegoing.rangeaddon.json", () -> loaded("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utRangeAddonNumberFix);
