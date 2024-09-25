@@ -1,5 +1,6 @@
 package mod.acgaming.universaltweaks.tweaks.misc.timeouts.mixin;
 
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
@@ -12,6 +13,6 @@ public class UTClientReadTimeoutMixin
     @ModifyConstant(method = "initChannel", constant = @Constant(intValue = 30))
     private int utModifyReadTimeout(int original)
     {
-        return 90;
+        return UTConfigTweaks.MISC.TIMEOUTS.utReadTimeout;
     }
 }
