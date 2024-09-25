@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+// Courtesy of jchung01
 @Mixin(value = SummonAidRule.class, remap = false)
 public abstract class UTSummonAidRuleMixin extends RuleBase<SummonEventGetter>
 {
