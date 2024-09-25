@@ -152,6 +152,7 @@ cfg.universaltweaks.tweaks.misc.loadsounds=Load Sounds
 cfg.universaltweaks.tweaks.misc.pickupnotification=Pickup Notification
 cfg.universaltweaks.tweaks.misc.smoothscrolling=Smooth Scrolling
 cfg.universaltweaks.tweaks.misc.stg=Swing Through Grass
+cfg.universaltweaks.tweaks.misc.timeouts=Connection Timeouts
 cfg.universaltweaks.tweaks.misc.toastcontrol=Toast Control
 cfg.universaltweaks.tweaks.performance.entityradiuscheck=Entity Radius Check
 cfg.universaltweaks.tweaks.world.chunkgenlimit=Chunk Gen Limit
