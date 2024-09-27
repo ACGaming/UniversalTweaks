@@ -130,6 +130,8 @@ All changes are toggleable via config files.
 * **Chicken Shedding:** Allows chickens to have a chance to shed feathers (similarly to laying eggs)
 * **Chunk Gen Limit:** Limits maximum chunk generation per tick for improved server performance
 * **Cobweb Slowness:** Modifies the applied slowness factor when entities are moving in cobwebs
+* **Connection Timeouts:** Allows configuring read/login timeouts
+    * Helps slow clients log into a server of a large modpack
 * **Copy World Seed:** Enables clicking of `/seed` world seed in chat to copy to clipboard
 * **Crafting Cache:** Adds an IRecipe cache to improve recipe performance in large modpacks
 * **Creeper Confetti:** Replaces deadly creeper explosions with delightful confetti (with a configurable chance)

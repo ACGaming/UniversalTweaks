@@ -20,6 +20,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
+import mod.acgaming.universaltweaks.tweaks.misc.timeouts.UTTimeoutManager;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
 
@@ -1374,6 +1375,10 @@ public class UTConfigTweaks
         @Config.Name("Chat")
         public final ChatCategory CHAT = new ChatCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.timeouts")
+        @Config.Name("Connection Timeouts")
+        public final TimeoutsCategory TIMEOUTS = new TimeoutsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.incurablepotions")
         @Config.Name("Incurable Potions")
         public final IncurablePotionsCategory INCURABLE_POTIONS = new IncurablePotionsCategory();
@@ -1948,6 +1953,34 @@ public class UTConfigTweaks
             public String[] utSwingThroughGrassWhitelist = new String[] {};
         }
 
+        public static class TimeoutsCategory
+        {
+            @Config.Name("[1] Connection Timeouts Toggle")
+            @Config.Comment
+                ({
+                    "Allows configuring read/login timeouts.",
+                    "If you are having trouble logging into a server of a large modpack, try changing the timeouts below."
+                })
+            public boolean utTimeoutsToggle = true;
+
+            @Config.Name("[2] Read Timeout")
+            @Config.Comment
+                ({
+                    "The connection read timeout in seconds.",
+                    "This value is used on both client and server.",
+                    "On the server, also extends the time allowed to respond to a KeepAlive packet."
+                })
+            public int utReadTimeout = 90;
+
+            @Config.Name("[3] Login Timeout")
+            @Config.Comment
+                ({
+                    "The login timeout in seconds. (Vanilla default: 600 ticks, or 30 secs)",
+                    "Only used on the server.",
+                })
+            public int utLoginTimeout = 90;
+        }
+
         public static class ToastControlCategory
         {
             @Config.RequiresMcRestart
@@ -2303,6 +2336,7 @@ public class UTConfigTweaks
     static
     {
         ConfigAnytime.register(UTConfigTweaks.class);
+        UTTimeoutManager.init();
     }
 
     @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
