@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.actuallyadditions.mixin;
+package mod.acgaming.universaltweaks.mods.actuallyadditions.relayupgrade.mixin;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
