@@ -339,6 +339,7 @@ All changes are toggleable via config files.
     * **Fix Deep Dark Stats:** Fixes Mob Attack and Health Statistics being repeatedly doubled
     * **Mutable Machine Block Drops:** Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list.
     * **Creative Mill Harvestability:** Fixes the Creative Mill Generator not respecting the Creative Block Breaking config
+    * **Downgrade Potion Recipes Log Level:** Downgrades the message when creating a potion recipe from info to a debug
 * **Forestry**
     * **Arborist Villager Trades:** Adds custom emerald to germling trades to the arborist villager
     * **Disable Bee Damage Armor Bypass:** Disables damage caused by bees bypassing player armor
