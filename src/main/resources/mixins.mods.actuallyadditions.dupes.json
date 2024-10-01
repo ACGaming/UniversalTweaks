@@ -1,5 +1,5 @@
 {
-  "package": "mod.acgaming.universaltweaks.mods.actuallyadditions.mixin",
+  "package": "mod.acgaming.universaltweaks.mods.actuallyadditions.dupes.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

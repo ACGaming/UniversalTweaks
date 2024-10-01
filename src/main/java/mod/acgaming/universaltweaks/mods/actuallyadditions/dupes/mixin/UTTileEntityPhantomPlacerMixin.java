@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.actuallyadditions.mixin;
+package mod.acgaming.universaltweaks.mods.actuallyadditions.dupes.mixin;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
