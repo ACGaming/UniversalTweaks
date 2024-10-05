@@ -195,6 +195,10 @@ public class UTConfigMods
     @Config.Name("Railcraft")
     public static final RailcraftCategory RAILCRAFT = new RailcraftCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.randomthings")
+    @Config.Name("Random Things")
+    public static final RandomThingsCategory RANDOM_THINGS = new RandomThingsCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.requiousfrakto")
     @Config.Name("Requious Frakto")
     public static final RequiousFraktoCategory REQUIOUS_FRAKTO = new RequiousFraktoCategory();
@@ -818,6 +822,10 @@ public class UTConfigMods
         @Config.Name("No Beta Warning")
         @Config.Comment("Disables the beta message warning on world join")
         public boolean utNoBetaWarningToggle = true;
+    }
+
+    public static class RandomThingsCategory
+    {
     }
 
     public static class RequiousFraktoCategory

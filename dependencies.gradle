@@ -114,6 +114,7 @@ final def mod_dependencies = [
     'curse.maven:projectredworld-229049:2745551'                      : [debug_project_red],
     'curse.maven:quark-243121:2924091'                                : [debug_quark],
     'curse.maven:railcraft-51195:3853491'                             : [debug_railcraft],
+    'curse.maven:random-things-59816:2905241'                         : [debug_random_things],
     'curse.maven:reach-fix-556777:4633407'                            : [debug_cqrepoured],
     'curse.maven:reborn-core-237903:3330308'                          : [debug_tech_reborn],
     'curse.maven:redstone-flux-270789:2920436'                        : [debug_thermal_expansion],

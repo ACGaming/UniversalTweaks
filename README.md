@@ -385,6 +385,7 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Quark**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **Random Things**
 * **Railcraft**
   * **No Beta Warning:** Disables the beta message warning on world join
 * **Requious Frakto**
