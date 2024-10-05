@@ -826,6 +826,10 @@ public class UTConfigMods
 
     public static class RandomThingsCategory
     {
+        @Config.RequiresMcRestart
+        @Config.Name("Anvil Crafting Fix")
+        @Config.Comment("Fixes a bug where crafting the output of an Anvil recipe would modify the recipe, preventing crafts until restart")
+        public boolean utAnvilCraftFix = true;
     }
 
     public static class RequiousFraktoCategory

@@ -386,6 +386,7 @@ All changes are toggleable via config files.
 * **Quark**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Random Things**
+  * **Anvil Crafting Fix:** Fixes a bug where crafting the output of an Anvil recipe would modify the recipe, preventing crafts until restart
 * **Railcraft**
   * **No Beta Warning:** Disables the beta message warning on world join
 * **Requious Frakto**
