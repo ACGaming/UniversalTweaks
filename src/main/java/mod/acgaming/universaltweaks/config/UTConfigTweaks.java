@@ -1792,19 +1792,27 @@ public class UTConfigTweaks
             public EnumSoundModes utLoadSoundMode = EnumSoundModes.NOTHING;
 
             @Config.Name("[2] Minecraft Loaded Sounds")
-            @Config.Comment({"Sounds to play when Minecraft is loaded", "Syntax: eventname;pitch"})
+            @Config.Comment
+                ({
+                    "Sounds to play when Minecraft is loaded",
+                    "Syntax: eventname;pitch;volume"
+                })
             public String[] utLoadSoundMC = new String[]
                 {
-                    "entity.experience_orb.pickup;1.0",
-                    "entity.player.levelup;1.0"
+                    "entity.experience_orb.pickup;1.0;1.0",
+                    "entity.player.levelup;1.0;1.0"
                 };
 
             @Config.Name("[3] World Loaded Sounds")
-            @Config.Comment({"Sounds to play when the world is loaded", "Syntax: eventname;pitch"})
+            @Config.Comment
+                ({
+                    "Sounds to play when the world is loaded",
+                    "Syntax: eventname;pitch;volume"
+                })
             public String[] utLoadSoundWorld = new String[]
                 {
-                    "entity.experience_orb.pickup;1.0",
-                    "entity.player.levelup;1.0"
+                    "entity.experience_orb.pickup;1.0;1.0",
+                    "entity.player.levelup;1.0;1.0"
                 };
 
             public enum EnumSoundModes
