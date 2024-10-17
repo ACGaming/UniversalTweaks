@@ -1951,6 +1951,17 @@ public class UTConfigTweaks
                     "Syntax: modid:block"
                 })
             public String[] utSwingThroughGrassWhitelist = new String[] {};
+
+            @Config.Name("[4] Item Blacklist")
+            @Config.Comment
+                ({
+                    "Excludes items from the swing through grass tweak",
+                    "Syntax: modid:item"
+                })
+            public String[] utSwingThroughGrassItemBlacklist = new String[]
+                {
+                    "erebus:wand_of_animation"
+                };
         }
 
         public static class TimeoutsCategory
