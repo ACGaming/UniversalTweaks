@@ -46,7 +46,6 @@ cfg.universaltweaks.config.world=World
 cfg.universaltweaks.bugfixes.blocks.blockoverlay=Block Overlay
 cfg.universaltweaks.bugfixes.entities.desync=Entity Desync
 cfg.universaltweaks.bugfixes.entities.entitylists=Entity Lists
-cfg.universaltweaks.bugfixes.misc.modelgap=Model Gap
 
 cfg.universaltweaks.modintegration.abyssalcraft=AbyssalCraft
 cfg.universaltweaks.modintegration.actuallyadditions=Actually Additions

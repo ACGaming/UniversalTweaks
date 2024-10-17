@@ -30,7 +30,6 @@ cfg.universaltweaks.config.world=Mundo
 
 cfg.universaltweaks.bugfixes.blocks.blockoverlay=Block Overlay
 cfg.universaltweaks.bugfixes.entities.desync=Entity Desync
-cfg.universaltweaks.bugfixes.misc.modelgap=Brechas en modelos
 
 cfg.universaltweaks.modintegration.abyssalcraft=AbyssalCraft
 cfg.universaltweaks.modintegration.actuallyadditions=Actually Additions
