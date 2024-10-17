@@ -16,7 +16,6 @@ import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.inventory.ContainerPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -251,13 +250,10 @@ public class UTPickupNotificationOverlay extends GuiScreen
         {
             if (player.inventoryContainer != null)
             {
-                player.inventoryContainer = new UTContainerWrapper((ContainerPlayer) player.inventoryContainer, player, () -> {
-                    previous = null;
-                    dimLoadTicks = 0;
-                });
                 playerEntity = player;
             }
             previous = null;
+            dimLoadTicks = 0;
         }
 
         if (player.dimension != dim)
