@@ -41,7 +41,7 @@ public class UTSwingThroughGrass
         Entity entity = getEntityBehindGrass(event.getWorld(), event.getPos(), event.getEntityPlayer());
         if (entity != null)
         {
-            entity.processInitialInteract(event.getEntityPlayer(), event.getHand());
+            event.getEntityPlayer().interactOn(entity, event.getHand());
             event.setCanceled(true);
         }
     }
