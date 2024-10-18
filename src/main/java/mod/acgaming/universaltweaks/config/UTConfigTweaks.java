@@ -200,6 +200,10 @@ public class UTConfigTweaks
         @Config.Comment("Allows placing End Crystals without requiring Obsidian or Bedrock below")
         public boolean utEndCrystalAnywherePlacing = false;
 
+        @Config.Name("Projectiles Bounce Off Slime Blocks")
+        @Config.Comment("Lets projectiles like arrows bounce off slime blocks")
+        public boolean utSlimeBlockProjectiles = false;
+
         @Config.RequiresMcRestart
         @Config.Name("Sugar Cane Size")
         @Config.Comment("Determines how tall sugar cane can grow")

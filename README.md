@@ -222,6 +222,7 @@ All changes are toggleable via config files.
 * **Prevent Mob Eggs from Changing Spawners:** Prevents using Mob Spawner Eggs to change what a Spawner is spawning
 * **Prevent Observer Activating on Placement:** Controls if the observer activates itself on the first tick when it is placed
 * **Prevent Placing Buckets in Portals:** Prevents placing of liquid source blocks overriding portal blocks
+* **Projectiles Bounce Off Slime Blocks:** Lets projectiles like arrows bounce off slime blocks
 * **Pumpkin Placing:** Allows placing Pumpkins and Jack'O'Lanterns without a supporting block
 * **Rabbit Killer Spawning:** Configurable chance for rabbits to spawn as the killer bunny variant
 * **Rabbit Toast Spawning:** Configurable chance for rabbits to spawn as the Toast variant
