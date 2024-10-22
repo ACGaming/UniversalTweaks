@@ -321,6 +321,7 @@ All changes are toggleable via config files.
     * **Block Transmutation Fix:** Fixes Effortless Building ignoring Metadata when checking for items in inventory
 * **Elementary Staffs**
     * **Electric Staff Port:** Reintroduces the 1.5 electric staff behavior along with some subtle particles
+    * **Health Staff Player Healing:** Lets the health staff also heal other players (and potentially more living entities)
 * **Elenai Dodge 2**
     * **Extinguishing Dodges:** Chance per dodge to extinguish the player when burning
     * **Feathers Helper API Fix:** Fixes server-sided crashes when the Feathers Helper API is utilized

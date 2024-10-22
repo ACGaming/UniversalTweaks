@@ -479,6 +479,11 @@ public class UTConfigMods
         @Config.Name("Electric Staff Port")
         @Config.Comment("Reintroduces the 1.5 electric staff behavior along with some subtle particles")
         public boolean utESElectricStaffToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Health Staff Player Healing")
+        @Config.Comment("Lets the health staff also heal other players (and potentially more living entities)")
+        public boolean utESHealthStaffToggle = true;
     }
 
     public static class ElenaiDodge2Category
@@ -1009,7 +1014,7 @@ public class UTConfigMods
             @Config.Name("[12] Rift: Impact Sound")
             @Config.Comment("Adds an impact sound to the rift focus effect")
             public boolean utTCRiftFocusImpactSoundToggle = true;
-            
+
             @Config.RequiresMcRestart
             @Config.Name("[13] Exchange: Cast Sound Revamp")
             @Config.Comment("Overhauls the exchange focus effect cast sound")
