@@ -126,7 +126,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.items.attackcooldown.server.json", () -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
             put("mixins.tweaks.items.bottle.json", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
             put("mixins.tweaks.items.bucket.json", () -> UTConfigTweaks.ITEMS.utPreventBucketPlacingInPortal);
-            put("mixins.tweaks.items.eating.json", () -> UTConfigTweaks.ITEMS.utAlwaysEatToggle);
+            put("mixins.tweaks.items.eating.json", () -> UTConfigTweaks.ITEMS.utAlwaysEatToggle || UTConfigTweaks.ITEMS.utSmartEatToggle);
             put("mixins.tweaks.items.hardcorebuckets.json", () -> UTConfigTweaks.ITEMS.utHardcoreBucketsToggle);
             put("mixins.tweaks.items.infinityallarrows.json", () -> UTConfigTweaks.ITEMS.INFINITY.utAllArrowsAreInfinite);
             put("mixins.tweaks.items.infinitymending.json", () -> UTConfigTweaks.ITEMS.INFINITY.utInfinityEnchantmentConflicts);

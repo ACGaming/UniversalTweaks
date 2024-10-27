@@ -1133,6 +1133,11 @@ public class UTConfigTweaks
             })
         public String[] utCustomUseDurations = new String[] {};
 
+        @Config.RequiresMcRestart
+        @Config.Name("Smart Eat")
+        @Config.Comment("Requires the hunger bar to be missing food points equal to or more than the amount restored by the food")
+        public boolean utSmartEatToggle = false;
+
         @Config.Name("Super Hot Torch")
         @Config.Comment("Enables one-time ignition of entities by hitting them with a torch")
         public boolean utSuperHotTorchToggle = false;

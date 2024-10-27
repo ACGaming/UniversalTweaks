@@ -240,6 +240,7 @@ All changes are toggleable via config files.
 * **Skip Credits:** Skips the credits screen after the player goes through the end podium portal
 * **Skip Missing Registry Entries Screen:** Automatically confirms the 'Missing Registry Entries' screen on world load
 * **Sleeping Time:** Determines at which time of day sleeping is allowed in ticks (0 - 24000)
+* **Smart Eat:** Requires the hunger bar to be missing food points equal to or more than the amount restored by the food
 * **Smooth Scrolling:** Adds smooth scrolling to every in-game list
 * **Soulbound Vexes:** Summoned vexes will also die when their summoner is killed
 * **Spawn Caps:** Sets maximum spawning limits for different entity types
