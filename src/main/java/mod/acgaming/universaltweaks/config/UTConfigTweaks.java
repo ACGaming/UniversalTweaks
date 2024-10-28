@@ -2283,23 +2283,23 @@ public class UTConfigTweaks
             @Config.Comment("Sets custom values for the vanilla cave generation")
             public boolean utCaveGenToggle = false;
 
-            @Config.Name("[2] Random Iterations")
+            @Config.Name("[2] Cave Size")
             @Config.Comment
                 ({
-                    "Bound for the random chance to recursively generate rooms and tunnels",
+                    "Size of cave systems",
                     "40 for pre-1.7 generation",
                     "15 for vanilla default"
                 })
-            public int utCaveGenIterations = 15;
+            public int utCaveGenSize = 15;
 
-            @Config.Name("[3] Random Iteration Breaks")
+            @Config.Name("[3] Cave Rarity")
             @Config.Comment
                 ({
-                    "Bound for the random chance to stop recursively generate rooms and tunnels",
+                    "Chance for generating cave systems",
                     "15 for pre-1.7 generation",
                     "7 for vanilla default"
                 })
-            public int utCaveGenIterationBreaks = 7;
+            public int utCaveGenRarity = 7;
         }
 
         public static class ChunkGenLimitCategory

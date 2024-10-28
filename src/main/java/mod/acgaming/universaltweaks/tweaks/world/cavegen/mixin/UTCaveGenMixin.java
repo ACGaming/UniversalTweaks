@@ -12,14 +12,14 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 public abstract class UTCaveGenMixin
 {
     @ModifyArg(method = "recursiveGenerate", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-    public int utCaveGenIterations(int bound)
+    public int utCaveGenSize(int bound)
     {
-        return UTConfigTweaks.WORLD.CAVE_GEN.utCaveGenIterations;
+        return UTConfigTweaks.WORLD.CAVE_GEN.utCaveGenSize;
     }
 
     @ModifyArg(method = "recursiveGenerate", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-    public int utCaveGenIterationBreaks(int bound)
+    public int utCaveGenRarity(int bound)
     {
-        return UTConfigTweaks.WORLD.CAVE_GEN.utCaveGenIterationBreaks;
+        return UTConfigTweaks.WORLD.CAVE_GEN.utCaveGenRarity;
     }
 }
