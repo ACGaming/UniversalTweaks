@@ -2232,6 +2232,10 @@ public class UTConfigTweaks
 
     public static class WorldCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.world.cavegen")
+        @Config.Name("Cave Generation")
+        public final CaveGenCategory CAVE_GEN = new CaveGenCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.world.chunkgenlimit")
         @Config.Name("Chunk Gen Limit")
         public final ChunkGenLimitCategory CHUNK_GEN_LIMIT = new ChunkGenLimitCategory();
@@ -2271,6 +2275,32 @@ public class UTConfigTweaks
                 "Vanilla default is 32"
             })
         public int utVillageDistance = 32;
+
+        public static class CaveGenCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Cave Generation Toggle")
+            @Config.Comment("Sets custom values for the vanilla cave generation")
+            public boolean utCaveGenToggle = false;
+
+            @Config.Name("[2] Random Iterations")
+            @Config.Comment
+                ({
+                    "Bound for the random chance to recursively generate rooms and tunnels",
+                    "40 for pre-1.7 generation",
+                    "15 for vanilla default"
+                })
+            public int utCaveGenIterations = 15;
+
+            @Config.Name("[3] Random Iteration Breaks")
+            @Config.Comment
+                ({
+                    "Bound for the random chance to stop recursively generate rooms and tunnels",
+                    "15 for pre-1.7 generation",
+                    "7 for vanilla default"
+                })
+            public int utCaveGenIterationBreaks = 7;
+        }
 
         public static class ChunkGenLimitCategory
         {
