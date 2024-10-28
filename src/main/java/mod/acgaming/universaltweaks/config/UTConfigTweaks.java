@@ -858,6 +858,11 @@ public class UTConfigTweaks
             @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")
             public boolean utDisableSleepingToggle = false;
 
+            @Config.RequiresMcRestart
+            @Config.Name("Disable Sleeping Setting Spawn")
+            @Config.Comment("Disables setting the spawn point by using a bed while making it still able to sleep")
+            public boolean utDisableSettingSpawnToggle = false;
+
             @Config.Name("Sleeping Time")
             @Config.RangeInt(min = -1, max = 23999)
             @Config.Comment

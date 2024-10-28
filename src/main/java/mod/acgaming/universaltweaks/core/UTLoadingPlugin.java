@@ -111,6 +111,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.entities.loot.json", () -> UTConfigTweaks.ENTITIES.utCreeperMusicDiscsToggle);
             put("mixins.tweaks.entities.minecart.json", () -> UTConfigTweaks.ENTITIES.utMinecartDropsType);
             put("mixins.tweaks.entities.saturation.json", () -> UTConfigTweaks.ENTITIES.utRidingExhaustion != 0.0D);
+            put("mixins.tweaks.entities.sleeping.json", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSettingSpawnToggle);
             put("mixins.tweaks.entities.spawning.caps.json", () -> UTConfigTweaks.ENTITIES.SPAWN_CAPS.utSpawnCapsToggle);
             put("mixins.tweaks.entities.spawning.creeper.confetti.json", () -> UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiChance != 0.0D);
             put("mixins.tweaks.entities.spawning.golem.json", () -> UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGIronGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGSnowGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGWitherToggle);

@@ -152,6 +152,7 @@ All changes are toggleable via config files.
 * **Disable Glint Overlay on Enchantment Books:** Disables the glint overlay on enchantment books
 * **Disable Glint Overlay on Potions:** Disables the glint overlay on potions
 * **Disable Sleeping:** Disables skipping night by using a bed while making it still able to set spawn
+* **Disable Sleeping Setting Spawn:** Disables setting the spawn point by using a bed while making it still able to sleep
 * **Disable Text Shadowing:** Disables all text shadowing, where text has a darker version of itself rendered behind the normal text, changing the appearance and can improve fps on some screens
 * **Disable Villager Trade Leveling:** Disables leveling of villager careers, only allowing base level trades
 * **Disable Villager Trade Restock:** Disables restocking of villager trades, only allowing one trade per offer
