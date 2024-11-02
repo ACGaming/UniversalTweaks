@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.entities.autojump.mixin;
+package mod.acgaming.universaltweaks.tweaks.entities.jumping.autojump.mixin;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
