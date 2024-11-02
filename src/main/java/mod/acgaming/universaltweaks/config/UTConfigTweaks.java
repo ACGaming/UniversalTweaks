@@ -488,6 +488,10 @@ public class UTConfigTweaks
         @Config.Comment("Lets zombies burn in daylight")
         public boolean utBurningZombiesToggle = true;
 
+        @Config.Name("Coyote Time Jumping")
+        @Config.Comment("Lets the player jump a couple frames after stepping off a ledge, similar to jumping in many platformers")
+        public boolean utCoyoteTimeJumpingToggle = false;
+
         @Config.Name("Creeper Charged Spawning Chance")
         @Config.Comment("Sets the chance for creepers to spawn charged")
         @Config.RangeDouble(min = 0.0D, max = 1.0D)

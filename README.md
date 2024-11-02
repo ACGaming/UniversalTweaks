@@ -133,6 +133,7 @@ All changes are toggleable via config files.
 * **Connection Timeouts:** Allows configuring read/login timeouts
     * Helps slow clients log into a server of a large modpack
 * **Copy World Seed:** Enables clicking of `/seed` world seed in chat to copy to clipboard
+* **Coyote Time Jumping:** Lets the player jump a couple frames after stepping off a ledge, similar to jumping in many platformers
 * **Crafting Cache:** Adds an IRecipe cache to improve recipe performance in large modpacks
 * **Creeper Confetti:** Replaces deadly creeper explosions with delightful confetti (with a configurable chance)
 * **Critical Arrow Damage:** Sets the additional damage that critical arrows deal
