@@ -347,9 +347,6 @@ All changes are toggleable via config files.
     * **Downgrade Potion Recipes Log Level:** Downgrades the message when creating a potion recipe from info to a debug
 * **Forestry**
     * **Arborist Villager Trades:** Adds custom emerald to germling trades to the arborist villager
-    * **Disable Bee Damage Armor Bypass:** Disables damage caused by bees bypassing player armor
-    * **Duplication Fixes:** Fixes various duplication exploits
-    * **Replanting Cocoa Beans:** Allows Forestry farms to automatically replant cocoa beans
 * **HWYLA**
   * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
 * **In Control!**

@@ -622,28 +622,9 @@ public class UTConfigMods
         public String[] utFOArboristDeals = new String[] {};
 
         @Config.RequiresMcRestart
-        @Config.Name("Disable Bee Damage Armor Bypass")
-        @Config.Comment("Disables damage caused by bees bypassing player armor")
-        public boolean utFOBeeDamageArmorBypassToggle = true;
-
-        @Config.RequiresMcRestart
         @Config.Name("Extra Trees: Gather Windfall")
         @Config.Comment("Allows Forestry farms to pick up ExtraTrees fruit")
         public boolean utFOGatherWindfallToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Replanting Cocoa Beans")
-        @Config.Comment("Allows Forestry farms to automatically replant cocoa beans")
-        public boolean utFOCocoaBeansToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Duplication Fixes")
-        @Config.Comment("Fixes various duplication exploits")
-        public boolean utDuplicationFixesToggle = true;
-
-        @Config.Name("Particle Fixes")
-        @Config.Comment("Fixes broken textures for various running and landing particles")
-        public boolean utParticleFixesToggle = true;
     }
 
     public static class InControlCategory
