@@ -1451,6 +1451,16 @@ public class UTConfigTweaks
         @Config.Comment("Sets the default difficulty for newly generated worlds")
         public EnumDifficulty utDefaultDifficulty = EnumDifficulty.NORMAL;
 
+
+        @Config.RequiresMcRestart
+        @Config.Name("Default Gui Text Color")
+        @Config.Comment
+            ({
+                "Sets the default gui text color (hex rgb code). It is useful for dark mode texture pack",
+                "404040 for vanilla default"
+            })
+        public String utDefaultGuiTextColor = "404040";
+
         @Config.RequiresMcRestart
         @Config.Name("Disable Advancements")
         @Config.Comment("Prevents the advancement system from loading entirely")
