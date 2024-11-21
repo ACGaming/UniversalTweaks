@@ -142,6 +142,7 @@ All changes are toggleable via config files.
 * **Damage Tilt:** Restores feature to tilt the camera when damaged
 * **Damage Velocity:** Enables the modification of damage sources that change the entity's velocity
 * **Default Difficulty:** Sets the default difficulty for newly generated worlds
+* **Default GUI Text Color:** Sets the default GUI text color (HEX RGB code) which can improve readability in dark mode resource packs
 * **Dimension Unload:** Unloads dimensions not in use to free up resources
 * **Disable Advancements:** Prevents the advancement system from loading entirely
 * **Disable Audio Debug:** Improves loading times by removing debug code for missing sounds and subtitles

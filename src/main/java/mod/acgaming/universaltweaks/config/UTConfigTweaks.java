@@ -1453,10 +1453,10 @@ public class UTConfigTweaks
 
 
         @Config.RequiresMcRestart
-        @Config.Name("Default Gui Text Color")
+        @Config.Name("Default GUI Text Color")
         @Config.Comment
             ({
-                "Sets the default gui text color (hex rgb code). It is useful for dark mode texture pack",
+                "Sets the default GUI text color (HEX RGB code) which can improve readability in dark mode resource packs",
                 "404040 for vanilla default"
             })
         public String utDefaultGuiTextColor = "404040";
