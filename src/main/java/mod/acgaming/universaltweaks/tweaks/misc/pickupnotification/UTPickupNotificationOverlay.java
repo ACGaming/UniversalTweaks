@@ -45,7 +45,14 @@ public class UTPickupNotificationOverlay extends GuiScreen
 
     private static ItemStack safeCopy(ItemStack stack)
     {
-        return stack.copy();
+        try
+        {
+            return stack.copy();
+        }
+        catch (Exception e)
+        {
+            return ItemStack.EMPTY;
+        }
     }
 
     private final List<ChangeInfo> changeEntries = Lists.newArrayList();
@@ -291,12 +298,12 @@ public class UTPickupNotificationOverlay extends GuiScreen
             ItemStack stack = player.inventory.getStackInSlot(i);
             ItemStack old = previous[i];
             if (isChangeMeaningful(old, stack)) changes.add(Pair.of(old, stack));
-            previous[i] = stack.copy();
+            previous[i] = safeCopy(stack);
         }
 
         ItemStack stackInCursor = player.inventory.getItemStack();
         if (isChangeMeaningful(stackInCursor, previousInCursor)) changes.add(Pair.of(previousInCursor, stackInCursor));
-        previousInCursor = stackInCursor.copy();
+        previousInCursor = safeCopy(stackInCursor);
 
         if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNExperience)
         {
