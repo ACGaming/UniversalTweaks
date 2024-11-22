@@ -854,6 +854,21 @@ public class UTConfigMods
         @Config.Name("Iron Canteen Interaction Fix")
         @Config.Comment("Fixes the interaction of iron canteens with rain collectors")
         public boolean utRainCollectorCanteenToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Altitude Modifier: Sea Level")
+        @Config.Comment("Sets the sea level for altitude modifier calculations")
+        public int utAltitudeSeaLevel = 64;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Altitude Modifier: Above Sea Level Multiplier")
+        @Config.Comment("Sets the multiplier above sea level for altitude modifier calculations")
+        public double utAltitudeMultiplierAboveSeaLevel = 1.0D;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Altitude Modifier: Below Sea Level Multiplier")
+        @Config.Comment("Sets the multiplier below sea level for altitude modifier calculations")
+        public double utAltitudeMultiplierBelowSeaLevel = 1.0D;
     }
 
     public static class SimplyJetpacksCategory

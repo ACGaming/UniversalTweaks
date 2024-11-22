@@ -400,6 +400,7 @@ All changes are toggleable via config files.
     * **Early Register CT Chickens:** Improves load time by registering ContentTweaker chickens early for Roost to detect them
 * **Simple Difficulty**
     * **Iron Canteen Interaction Fix:** Fixes the interaction of iron canteens with rain collectors
+    * **Altitude Modifier:** Sets additional variables for altitude modifier calculations
 * **Simply Jetpacks**
     * **Memory Leak Fix:** Fixes a client-side memory leak associated with EntityPlayer
 * **Spice Of Life**
