@@ -916,6 +916,11 @@ public class UTConfigTweaks
             @Config.Name("Taming Undead Horses")
             @Config.Comment("Allows taming of undead horses")
             public boolean utTamingUndeadHorsesToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("No Skeleton Trap Spawning")
+            @Config.Comment("Prevents skeleton traps spawning during thunderstorms")
+            public boolean utSkeletonTrapSpawningToggle = false;
         }
 
         public static class WaterFallDamageCategory
