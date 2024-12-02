@@ -216,6 +216,7 @@ All changes are toggleable via config files.
 * **No Portal Spawning:** Prevents zombie pigmen spawning from nether portals
 * **No Redstone Lighting:** Disables lighting of active redstone, repeaters, and comparators to improve performance
 * **No Saddled Wandering:** Stops horses wandering around when saddled
+* **No Skeleton Trap Spawning:** Prevents skeleton traps spawning during thunderstorms
 * **No Smelting XP:** Disables the experience reward when smelting items in furnaces
 * **Offhand Improvement:** Prevents placing offhand blocks when blocks or food are held in the mainhand
 * **Overhaul Beacon:** Change how beacon construct and range apply per level
