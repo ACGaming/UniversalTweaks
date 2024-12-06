@@ -2,6 +2,13 @@ package mod.acgaming.universaltweaks.config;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
 import com.cleanroommc.configanytime.ConfigAnytime;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
@@ -13,13 +20,9 @@ import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
+import mod.acgaming.universaltweaks.tweaks.misc.timeouts.UTTimeoutManager;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
-import net.minecraftforge.common.config.Config;
-import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
 public class UTConfigTweaks
@@ -196,6 +199,10 @@ public class UTConfigTweaks
         @Config.Name("End Crystal Placing")
         @Config.Comment("Allows placing End Crystals without requiring Obsidian or Bedrock below")
         public boolean utEndCrystalAnywherePlacing = false;
+
+        @Config.Name("Projectiles Bounce Off Slime Blocks")
+        @Config.Comment("Lets projectiles like arrows bounce off slime blocks")
+        public boolean utSlimeBlockProjectiles = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Sugar Cane Size")
@@ -388,10 +395,6 @@ public class UTConfigTweaks
         @Config.Name("Cobweb Slowness")
         public final CobwebSlownessCategory COBWEB_SLOWNESS = new CobwebSlownessCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.entities.collisiondamage")
-        @Config.Name("Collision Damage")
-        public final CollisionDamageCategory COLLISION_DAMAGE = new CollisionDamageCategory();
-
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.creeperconfetti")
         @Config.Name("Creeper Confetti")
         public final CreeperConfettiCategory CREEPER_CONFETTI = new CreeperConfettiCategory();
@@ -484,6 +487,10 @@ public class UTConfigTweaks
         @Config.Name("Burning Zombies")
         @Config.Comment("Lets zombies burn in daylight")
         public boolean utBurningZombiesToggle = true;
+
+        @Config.Name("Coyote Time Jumping")
+        @Config.Comment("Lets the player jump a couple frames after stepping off a ledge, similar to jumping in many platformers")
+        public boolean utCoyoteTimeJumpingToggle = false;
 
         @Config.Name("Creeper Charged Spawning Chance")
         @Config.Comment("Sets the chance for creepers to spawn charged")
@@ -597,55 +604,64 @@ public class UTConfigTweaks
             public boolean utAttributesToggle = true;
 
             @Config.Name("[02] Max Health Min")
-            public double utAttributeMaxHealthMin = -65536;
+            @Config.RangeDouble(min = 0)
+            public double utAttributeMaxHealthMin = 0;
 
             @Config.Name("[03] Max Health Max")
             public double utAttributeMaxHealthMax = 65536;
 
             @Config.Name("[04] Follow Range Min")
-            public double utAttributeFollowRangeMin = -65536;
+            @Config.RangeDouble(min = 0)
+            public double utAttributeFollowRangeMin = 0;
 
             @Config.Name("[05] Follow Range Max")
             public double utAttributeFollowRangeMax = 65536;
 
             @Config.Name("[06] Knockback Resistance Min")
-            public double utAttributeKnockbackResistanceMin = -65536;
+            @Config.RangeDouble(min = 0)
+            public double utAttributeKnockbackResistanceMin = 0;
 
             @Config.Name("[07] Knockback Resistance Max")
             public double utAttributeKnockbackResistanceMax = 65536;
 
             @Config.Name("[08] Movement Speed Min")
-            public double utAttributeMovementSpeedMin = -65536;
+            @Config.RangeDouble(min = 0)
+            public double utAttributeMovementSpeedMin = 0;
 
             @Config.Name("[09] Movement Speed Max")
             public double utAttributeMovementSpeedMax = 65536;
 
             @Config.Name("[10] Flying Speed Min")
-            public double utAttributeFlyingSpeedMin = -65536;
+            @Config.RangeDouble(min = 0)
+            public double utAttributeFlyingSpeedMin = 0;
 
             @Config.Name("[11] Flying Speed Max")
             public double utAttributeFlyingSpeedMax = 65536;
 
             @Config.Name("[12] Attack Damage Min")
-            public double utAttributeAttackDamageMin = -65536;
+            @Config.RangeDouble(min = 0)
+            public double utAttributeAttackDamageMin = 0;
 
             @Config.Name("[13] Attack Damage Max")
             public double utAttributeAttackDamageMax = 65536;
 
             @Config.Name("[14] Attack Speed Min")
-            public double utAttributeAttackSpeedMin = -65536;
+            @Config.RangeDouble(min = 0)
+            public double utAttributeAttackSpeedMin = 0;
 
             @Config.Name("[15] Attack Speed Max")
             public double utAttributeAttackSpeedMax = 65536;
 
             @Config.Name("[16] Armor Min")
-            public double utAttributeArmorMin = -65536;
+            @Config.RangeDouble(min = 0)
+            public double utAttributeArmorMin = 0;
 
             @Config.Name("[17] Armor Max")
             public double utAttributeArmorMax = 65536;
 
             @Config.Name("[18] Armor Toughness Min")
-            public double utAttributeArmorToughnessMin = -65536;
+            @Config.RangeDouble(min = 0)
+            public double utAttributeArmorToughnessMin = 0;
 
             @Config.Name("[19] Armor Toughness Max")
             public double utAttributeArmorToughnessMax = 65536;
@@ -720,22 +736,6 @@ public class UTConfigTweaks
             @Config.Name("[3] Vertical Slowness Factor")
             @Config.Comment("The slowness factor that gets multiplied with the vertical entity speed")
             public double utCobwebSlownessFactorV = 0.05000000074505806D;
-        }
-
-        public static class CollisionDamageCategory
-        {
-            @Config.RequiresMcRestart
-            @Config.Name("[1] Collision Damage Toggle")
-            @Config.Comment("Applies horizontal collision damage to the player akin to elytra collision")
-            public boolean utCollisionDamageToggle = false;
-
-            @Config.Name("[2] Damage Factor")
-            @Config.Comment
-                ({
-                    "The damage factor that gets multiplied with the player speed",
-                    "Vanilla default for elytra damage is 10"
-                })
-            public int utCollisionDamageFactor = 10;
         }
 
         public static class CreeperConfettiCategory
@@ -862,6 +862,11 @@ public class UTConfigTweaks
             @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")
             public boolean utDisableSleepingToggle = false;
 
+            @Config.RequiresMcRestart
+            @Config.Name("Disable Sleeping Setting Spawn")
+            @Config.Comment("Disables setting the spawn point by using a bed while making it still able to sleep")
+            public boolean utDisableSettingSpawnToggle = false;
+
             @Config.Name("Sleeping Time")
             @Config.RangeInt(min = -1, max = 23999)
             @Config.Comment
@@ -911,6 +916,11 @@ public class UTConfigTweaks
             @Config.Name("Taming Undead Horses")
             @Config.Comment("Allows taming of undead horses")
             public boolean utTamingUndeadHorsesToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("No Skeleton Trap Spawning")
+            @Config.Comment("Prevents skeleton traps spawning during thunderstorms")
+            public boolean utSkeletonTrapSpawningToggle = false;
         }
 
         public static class WaterFallDamageCategory
@@ -1136,6 +1146,11 @@ public class UTConfigTweaks
                 "         -> custommod:customshield:1;42;69"
             })
         public String[] utCustomUseDurations = new String[] {};
+
+        @Config.RequiresMcRestart
+        @Config.Name("Smart Eat")
+        @Config.Comment("Requires the hunger bar to be missing food points equal to or more than the amount restored by the food")
+        public boolean utSmartEatToggle = false;
 
         @Config.Name("Super Hot Torch")
         @Config.Comment("Enables one-time ignition of entities by hitting them with a torch")
@@ -1383,6 +1398,10 @@ public class UTConfigTweaks
         @Config.Name("Chat")
         public final ChatCategory CHAT = new ChatCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.timeouts")
+        @Config.Name("Connection Timeouts")
+        public final TimeoutsCategory TIMEOUTS = new TimeoutsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.incurablepotions")
         @Config.Name("Incurable Potions")
         public final IncurablePotionsCategory INCURABLE_POTIONS = new IncurablePotionsCategory();
@@ -1437,6 +1456,16 @@ public class UTConfigTweaks
         @Config.Comment("Sets the default difficulty for newly generated worlds")
         public EnumDifficulty utDefaultDifficulty = EnumDifficulty.NORMAL;
 
+
+        @Config.RequiresMcRestart
+        @Config.Name("Default GUI Text Color")
+        @Config.Comment
+            ({
+                "Sets the default GUI text color (HEX RGB code) which can improve readability in dark mode resource packs",
+                "404040 for vanilla default"
+            })
+        public String utDefaultGuiTextColor = "404040";
+
         @Config.RequiresMcRestart
         @Config.Name("Disable Advancements")
         @Config.Comment("Prevents the advancement system from loading entirely")
@@ -1455,7 +1484,7 @@ public class UTConfigTweaks
         @Config.RequiresMcRestart
         @Config.Name("End Portal Parallax")
         @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
-        public boolean utEndPortalParallaxToggle = true;
+        public boolean utEndPortalParallaxToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Infinite Music")
@@ -1539,11 +1568,6 @@ public class UTConfigTweaks
         @Config.Comment("Disables the experience reward when smelting items in furnaces")
         public boolean utSmeltingXPToggle = false;
 
-        @Config.RequiresMcRestart
-        @Config.Name("Improved Entity Tracker Warning")
-        @Config.Comment("Provides more information to addPacket removed entity warnings")
-        public boolean utImprovedEntityTrackerToggle = true;
-
         @Config.Name("Offhand Improvement")
         @Config.Comment("Prevents placing offhand blocks when blocks or food are held in the mainhand")
         public boolean utOffhandToggle = true;
@@ -1559,7 +1583,11 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Remove 3D Anaglyph Button")
-        @Config.Comment("Removes the 3D Anaglyph button from the video settings menu")
+        @Config.Comment
+            ({
+                "Removes the 3D Anaglyph button from the video settings menu",
+                "Incompatible with OptiFine"
+            })
         public boolean ut3DAnaglyphButtonToggle = true;
 
         @Config.RequiresMcRestart
@@ -1797,19 +1825,27 @@ public class UTConfigTweaks
             public EnumSoundModes utLoadSoundMode = EnumSoundModes.NOTHING;
 
             @Config.Name("[2] Minecraft Loaded Sounds")
-            @Config.Comment({"Sounds to play when Minecraft is loaded", "Syntax: eventname;pitch"})
+            @Config.Comment
+                ({
+                    "Sounds to play when Minecraft is loaded",
+                    "Syntax: eventname;pitch;volume"
+                })
             public String[] utLoadSoundMC = new String[]
                 {
-                    "entity.experience_orb.pickup;1.0",
-                    "entity.player.levelup;1.0"
+                    "entity.experience_orb.pickup;1.0;1.0",
+                    "entity.player.levelup;1.0;1.0"
                 };
 
             @Config.Name("[3] World Loaded Sounds")
-            @Config.Comment({"Sounds to play when the world is loaded", "Syntax: eventname;pitch"})
+            @Config.Comment
+                ({
+                    "Sounds to play when the world is loaded",
+                    "Syntax: eventname;pitch;volume"
+                })
             public String[] utLoadSoundWorld = new String[]
                 {
-                    "entity.experience_orb.pickup;1.0",
-                    "entity.player.levelup;1.0"
+                    "entity.experience_orb.pickup;1.0;1.0",
+                    "entity.player.levelup;1.0;1.0"
                 };
 
             public enum EnumSoundModes
@@ -1956,6 +1992,45 @@ public class UTConfigTweaks
                     "Syntax: modid:block"
                 })
             public String[] utSwingThroughGrassWhitelist = new String[] {};
+
+            @Config.Name("[4] Item Blacklist")
+            @Config.Comment
+                ({
+                    "Excludes items from the swing through grass tweak",
+                    "Syntax: modid:item"
+                })
+            public String[] utSwingThroughGrassItemBlacklist = new String[]
+                {
+                    "erebus:wand_of_animation"
+                };
+        }
+
+        public static class TimeoutsCategory
+        {
+            @Config.Name("[1] Connection Timeouts Toggle")
+            @Config.Comment
+                ({
+                    "Allows configuring read/login timeouts.",
+                    "If you are having trouble logging into a server of a large modpack, try changing the timeouts below."
+                })
+            public boolean utTimeoutsToggle = true;
+
+            @Config.Name("[2] Read Timeout")
+            @Config.Comment
+                ({
+                    "The connection read timeout in seconds.",
+                    "This value is used on both client and server.",
+                    "On the server, also extends the time allowed to respond to a KeepAlive packet."
+                })
+            public int utReadTimeout = 90;
+
+            @Config.Name("[3] Login Timeout")
+            @Config.Comment
+                ({
+                    "The login timeout in seconds. (Vanilla default: 600 ticks, or 30 secs)",
+                    "Only used on the server.",
+                })
+            public int utLoginTimeout = 90;
         }
 
         public static class ToastControlCategory
@@ -2027,7 +2102,11 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Crafting Cache")
-        @Config.Comment("Adds an IRecipe cache to improve recipe performance in larger modpacks")
+        @Config.Comment
+            ({
+                "Adds an IRecipe cache to improve recipe performance in larger modpacks",
+                "Incompatible with KemonoCraft"
+            })
         public boolean utCraftingCacheToggle = true;
 
         @Config.RequiresMcRestart
@@ -2046,9 +2125,18 @@ public class UTConfigTweaks
         public boolean utDisableMobSpawnerRendering = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Rain Particles")
+        @Config.Comment("Prevents Rain and Snow Particles from rendering when Raining or Thundering")
+        public boolean utDisableRainParticles = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Faster Background Startup")
-        @Config.Comment("Fixes slow background startup edge case caused by checking tooltips during the loading process")
-        public boolean utFasterBackgroundStartupToggle = true;
+        @Config.Comment
+            ({
+                "Fixes slow background startup edge case caused by checking tooltips during the loading process",
+                "May have side effects concerning tooltips"
+            })
+        public boolean utFasterBackgroundStartupToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Fast Dye Blending")
@@ -2071,7 +2159,11 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Improve Language Switching Speed")
-        @Config.Comment("Improves the speed of switching languages in the Language GUI")
+        @Config.Comment
+            ({
+                "Improves the speed of switching languages in the Language GUI",
+                "Incompatible with OptiFine"
+            })
         public boolean utImproveLanguageSwitchingSpeed = true;
 
         @Config.RequiresMcRestart
@@ -2159,6 +2251,10 @@ public class UTConfigTweaks
 
     public static class WorldCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.world.cavegen")
+        @Config.Name("Cave Generation")
+        public final CaveGenCategory CAVE_GEN = new CaveGenCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.world.chunkgenlimit")
         @Config.Name("Chunk Gen Limit")
         public final ChunkGenLimitCategory CHUNK_GEN_LIMIT = new ChunkGenLimitCategory();
@@ -2198,6 +2294,32 @@ public class UTConfigTweaks
                 "Vanilla default is 32"
             })
         public int utVillageDistance = 32;
+
+        public static class CaveGenCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Cave Generation Toggle")
+            @Config.Comment("Sets custom values for the vanilla cave generation")
+            public boolean utCaveGenToggle = false;
+
+            @Config.Name("[2] Cave Size")
+            @Config.Comment
+                ({
+                    "Size of cave systems",
+                    "40 for pre-1.7 generation",
+                    "15 for vanilla default"
+                })
+            public int utCaveGenSize = 15;
+
+            @Config.Name("[3] Cave Rarity")
+            @Config.Comment
+                ({
+                    "Chance for generating cave systems",
+                    "15 for pre-1.7 generation",
+                    "7 for vanilla default"
+                })
+            public int utCaveGenRarity = 7;
+        }
 
         public static class ChunkGenLimitCategory
         {
@@ -2296,6 +2418,7 @@ public class UTConfigTweaks
     static
     {
         ConfigAnytime.register(UTConfigTweaks.class);
+        UTTimeoutManager.init();
     }
 
     @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)

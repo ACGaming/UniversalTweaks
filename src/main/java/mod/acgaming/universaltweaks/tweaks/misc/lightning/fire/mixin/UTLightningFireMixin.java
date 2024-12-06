@@ -5,7 +5,7 @@ import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import com.llamalad7.mixinextras.injector.WrapWithCondition;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

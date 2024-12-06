@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class UTSlotCraftingMixin extends Slot
 {
     @Shadow
-    private int amountCrafted;
+    public int amountCrafted;
 
     public UTSlotCraftingMixin(IInventory inventoryIn, int index, int xPosition, int yPosition)
     {

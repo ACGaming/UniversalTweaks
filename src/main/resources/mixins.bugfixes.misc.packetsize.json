@@ -3,5 +3,6 @@
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
-  "mixins": ["UTNettyCompressionDecoderMixin", "UTPacketBufferMixin"]
+  "mixins": ["UTCPacketCustomPayloadCommonMixin", "UTNettyCompressionDecoderMixin", "UTPacketBufferMixin", "UTSPacketCustomPayloadMixin"],
+  "client": ["UTCPacketCustomPayloadClientMixin"]
 }

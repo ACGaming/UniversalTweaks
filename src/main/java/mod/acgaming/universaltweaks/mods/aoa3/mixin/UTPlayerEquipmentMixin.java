@@ -2,7 +2,7 @@ package mod.acgaming.universaltweaks.mods.aoa3.mixin;
 
 import net.minecraft.inventory.Container;
 
-import com.llamalad7.mixinextras.injector.WrapWithCondition;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef;
 import net.tslat.aoa3.utils.player.PlayerDataManager.PlayerEquipment;
@@ -21,15 +21,10 @@ public class UTPlayerEquipmentMixin
         shouldUpdate.set(true);
     }
 
-    // TODO: Replace with v2.WrapWithCondition once we depend on MixinBooter 9.x
     @WrapWithCondition(method = "tickEquipment", at = @At(value = "INVOKE", target = "Lnet/minecraft/inventory/Container;detectAndSendChanges()V", remap = true))
     private boolean utUpdateInventoryIfAllowed(Container instance, @Share("shouldUpdate") LocalBooleanRef shouldUpdate)
     {
-        if (shouldUpdate.get())
-        {
-            shouldUpdate.set(false);
-            return true;
-        }
-        return false;
+        // Last use of the LocalRef, so no need to reset.
+        return shouldUpdate.get();
     }
 }

@@ -1,14 +1,15 @@
 package mod.acgaming.universaltweaks.tweaks.blocks.witherstructure.mixin;
 
-import com.llamalad7.mixinextras.injector.ModifyReceiver;
-import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
-import com.llamalad7.mixinextras.sugar.Local;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.block.BlockSkull;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.FactoryBlockPattern;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import com.llamalad7.mixinextras.injector.ModifyReceiver;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
+import com.llamalad7.mixinextras.sugar.Local;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 

@@ -21,7 +21,7 @@ public class UTAutoSaveOFCompat
     public static void updateOFConfig()
     {
         if (!UTLoadingPlugin.isClient) return;
-        if (!UTReflectionUtil.isClassLoaded("optifine.OptiFineTweaker")) return;
+        if (!UTLoadingPlugin.optiFineLoaded) return;
         try
         {
             UniversalTweaks.LOGGER.info("OptiFine detected, updating config file...");

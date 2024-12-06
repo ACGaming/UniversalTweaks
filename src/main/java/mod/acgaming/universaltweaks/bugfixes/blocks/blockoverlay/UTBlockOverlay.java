@@ -23,16 +23,28 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockPos.MutableBlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.relauncher.Side;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 
 // Courtesy of Meldexun
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTBlockOverlay
 {
+    /**
+     * Flag to only render block overlay when expected.
+     * Necessary as some other mods (i.e. Portal Gun) render the world an additional time sometime in the pass.
+     */
+    private static boolean render = false;
+
+    public static boolean shouldRender()
+    {
+        return render;
+    }
+
+    public static void setRender(boolean value)
+    {
+        UTBlockOverlay.render = value;
+    }
+
     @SuppressWarnings("deprecation")
     public static void renderNearbyBlocks(float partialTicks)
     {
@@ -66,6 +78,8 @@ public class UTBlockOverlay
                 bufferBuilder.setTranslation(-x, -(y - player.getEyeHeight()), -z);
             }
             IBlockState state1 = state.getActualState(world, pos);
+            // Call extendedBlockState if it has one: see BlockRendererDispatcher#renderBlock()
+            state1 = state.getBlock().getExtendedState(state1, world, pos);
             mc.getBlockRendererDispatcher().getBlockModelRenderer().renderModel(world, mc.getBlockRendererDispatcher().getModelForState(state1), state1, pos, bufferBuilder, false);
         });
 

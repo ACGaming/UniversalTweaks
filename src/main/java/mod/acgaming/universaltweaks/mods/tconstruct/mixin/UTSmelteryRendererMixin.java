@@ -15,7 +15,7 @@ import slimeknights.tconstruct.smeltery.tileentity.TileSmeltery;
 @Mixin(value = SmelteryRenderer.class, remap = false)
 public abstract class UTSmelteryRendererMixin extends SmelteryTankRenderer<TileSmeltery>
 {
-    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lslimeknights/tconstruct/smeltery/client/SmelteryRenderer;renderFluids(Lslimeknights/tconstruct/library/smeltery/SmelteryTank;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/BlockPos;DDD)V", shift = At.Shift.AFTER), cancellable = true)
+    @Inject(method = "render(Lslimeknights/tconstruct/smeltery/tileentity/TileSmeltery;DDDFIF)V", at = @At(value = "INVOKE", target = "Lslimeknights/tconstruct/smeltery/client/SmelteryRenderer;renderFluids(Lslimeknights/tconstruct/library/smeltery/SmelteryTank;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/BlockPos;DDD)V", shift = At.Shift.AFTER), cancellable = true)
     public void utSmelteryRenderer(@Nonnull TileSmeltery smeltery, double x, double y, double z, float partialTicks, int destroyStage, float alpha, CallbackInfo ci)
     {
         if (UTConfigMods.TINKERS_CONSTRUCT.utMaximumItemRendersInSmeltery < 0) return;

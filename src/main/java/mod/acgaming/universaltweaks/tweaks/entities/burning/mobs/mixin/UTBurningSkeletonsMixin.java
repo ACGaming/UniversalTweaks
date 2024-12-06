@@ -1,9 +1,10 @@
 package mod.acgaming.universaltweaks.tweaks.entities.burning.mobs.mixin;
 
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.entity.monster.AbstractSkeleton;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.world.World;
+
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;

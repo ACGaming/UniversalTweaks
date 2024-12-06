@@ -3,7 +3,7 @@ package mod.acgaming.universaltweaks.mods.elenaidodge2.mixin;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
 import com.elenai.elenaidodge2.api.FeathersHelper;
-import com.llamalad7.mixinextras.injector.WrapWithCondition;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

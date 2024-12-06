@@ -5,10 +5,9 @@ import net.minecraft.item.ItemStack;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of WaitingIdly
 @Mixin(value = EntityMinecart.class)
@@ -19,7 +18,7 @@ public abstract class UTEntityMinecartMixin
     {
         if (!UTConfigTweaks.ENTITIES.utMinecartDropsType || !(instance instanceof EntityMinecartFurnace || instance instanceof EntityMinecartChest || instance instanceof EntityMinecartTNT || instance instanceof EntityMinecartHopper))
         {
-            return original.call(instance, instance, y);
+            return original.call(instance, item, y);
         }
         ItemStack itemstack = instance.getCartItem().copy();
         if (instance.hasCustomName()) itemstack.setStackDisplayName(instance.getCustomNameTag());

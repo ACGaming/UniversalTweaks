@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // Courtesy of Focamacho
-@Mixin(value = EntityFlyingCarpet.class, remap = false)
+@Mixin(value = EntityFlyingCarpet.class)
 public abstract class UTEntityFlyingCarpetMixin extends Entity
 {
     public UTEntityFlyingCarpetMixin(World worldIn)
@@ -20,7 +20,7 @@ public abstract class UTEntityFlyingCarpetMixin extends Entity
         super(worldIn);
     }
 
-    @Inject(method = "func_184230_a", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "processInitialInteract", at = @At("HEAD"), cancellable = true)
     private void processInitialInteract(EntityPlayer player, EnumHand hand, CallbackInfoReturnable<Boolean> info)
     {
         if (this.isDead) info.setReturnValue(true);

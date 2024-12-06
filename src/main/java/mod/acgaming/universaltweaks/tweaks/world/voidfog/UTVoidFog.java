@@ -2,9 +2,11 @@ package mod.acgaming.universaltweaks.tweaks.world.voidfog;
 
 import java.util.Arrays;
 import java.util.List;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;
+
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 public abstract class UTVoidFog
 {

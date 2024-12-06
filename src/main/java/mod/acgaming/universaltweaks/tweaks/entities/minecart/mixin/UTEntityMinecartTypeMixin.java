@@ -6,10 +6,9 @@ import net.minecraft.entity.item.EntityMinecartHopper;
 import net.minecraft.entity.item.EntityMinecartTNT;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of WaitingIdly
 @Mixin(value = {EntityMinecartFurnace.class, EntityMinecartChest.class, EntityMinecartTNT.class, EntityMinecartHopper.class})

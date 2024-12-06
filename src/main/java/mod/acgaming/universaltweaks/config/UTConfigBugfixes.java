@@ -327,10 +327,6 @@ public class UTConfigBugfixes
 
     public static class MiscCategory
     {
-        @Config.LangKey("cfg.universaltweaks.bugfixes.misc.modelgap")
-        @Config.Name("Model Gap")
-        public final ModelGapCategory MODEL_GAP = new ModelGapCategory();
-
         @Config.RequiresMcRestart
         @Config.Name("Accurate Smooth Lighting")
         @Config.Comment("Improves the accuracy of smooth lighting by checking for suffocation and light opacity")
@@ -343,8 +339,12 @@ public class UTConfigBugfixes
 
         @Config.RequiresMcRestart
         @Config.Name("Depth Mask")
-        @Config.Comment("Fixes entity and particle rendering issues by enabling depth buffer writing")
-        public boolean utDepthMaskToggle = true;
+        @Config.Comment
+            ({
+                "Fixes entity and particle rendering issues by enabling depth buffer writing",
+                "Can cause issues with modded particles"
+            })
+        public boolean utDepthMaskToggle = false;
 
         @Config.Name("Help Command")
         @Config.Comment("Replaces the help command, sorts and reports broken commands")
@@ -379,32 +379,6 @@ public class UTConfigBugfixes
                 "Incompatible with SpongeForge and RandomPatches"
             })
         public int utPacketSize = 0x1000000;
-
-        public static class ModelGapCategory
-        {
-            @Config.RequiresMcRestart
-            @Config.Name("[1] Model Gap Toggle")
-            @Config.Comment("Fixes transparent gaps in all 3D models of blocks and items")
-            public boolean utModelGapToggle = true;
-
-            @Config.Name("[2] Recess Value")
-            @Config.Comment
-                ({
-                    "Quad X/Y offset",
-                    "Moves the quad toward the center of the item",
-                    "Use to hide gaps, keep as close to 0 as possible"
-                })
-            public double utModelGapRecess = 0.007D;
-
-            @Config.Name("[3] Expansion Value")
-            @Config.Comment
-                ({
-                    "Quad expansion increment",
-                    "Enlarges each quad",
-                    "Use to hide gaps, keep as close to 0 as possible"
-                })
-            public double utModelGapExpansion = 0.008D;
-        }
     }
 
     public static class WorldCategory

@@ -1,8 +1,5 @@
 package mod.acgaming.universaltweaks.tweaks.world.voidfog.mixin;
 
-import com.llamalad7.mixinextras.sugar.Local;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
-import mod.acgaming.universaltweaks.tweaks.world.voidfog.UTVoidFog;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -16,6 +13,10 @@ import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.storage.ISaveHandler;
 import net.minecraft.world.storage.WorldInfo;
+
+import com.llamalad7.mixinextras.sugar.Local;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.tweaks.world.voidfog.UTVoidFog;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -27,8 +28,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(WorldClient.class)
 public abstract class UTVoidFogParticlesMixin extends World
 {
-    @Shadow @Final private Minecraft mc;
-    @Unique private boolean ut$shouldRender;
+    @Shadow
+    @Final
+    private Minecraft mc;
+    @Unique
+    private boolean ut$shouldRender;
 
     protected UTVoidFogParticlesMixin(ISaveHandler saveHandlerIn, WorldInfo info, WorldProvider providerIn, Profiler profilerIn, boolean client)
     {

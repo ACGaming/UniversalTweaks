@@ -1,8 +1,9 @@
 package mod.acgaming.universaltweaks.bugfixes.entities.entitylists.mixin;
 
-import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.Entity;
+
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

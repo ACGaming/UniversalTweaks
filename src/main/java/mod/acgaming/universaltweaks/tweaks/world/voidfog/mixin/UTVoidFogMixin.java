@@ -1,13 +1,14 @@
 package mod.acgaming.universaltweaks.tweaks.world.voidfog.mixin;
 
-import com.llamalad7.mixinextras.sugar.Local;
-import com.llamalad7.mixinextras.sugar.ref.LocalFloatRef;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
-import mod.acgaming.universaltweaks.tweaks.world.voidfog.UTVoidFog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.world.WorldType;
+
+import com.llamalad7.mixinextras.sugar.Local;
+import com.llamalad7.mixinextras.sugar.ref.LocalFloatRef;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.tweaks.world.voidfog.UTVoidFog;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,8 +20,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(EntityRenderer.class)
 public abstract class UTVoidFogMixin
 {
-    @Shadow @Final private Minecraft mc;
-    @Unique private boolean ut$shouldRender;
+    @Shadow
+    @Final
+    private Minecraft mc;
+    @Unique
+    private boolean ut$shouldRender;
 
     /**
      * Injects ported 1.7.10 void fog code into the "setupFog" method of the EntityRenderer class.

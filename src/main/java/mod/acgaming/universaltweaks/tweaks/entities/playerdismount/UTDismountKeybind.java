@@ -1,11 +1,10 @@
 package mod.acgaming.universaltweaks.tweaks.entities.playerdismount;
 
+import org.lwjgl.input.Keyboard;
 import net.minecraftforge.client.settings.KeyConflictContext;
 import net.minecraftforge.client.settings.KeyModifier;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import org.lwjgl.input.Keyboard;
 
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTKeybindings;
@@ -15,11 +14,6 @@ public class UTDismountKeybind extends UTKeybindings.Key
 {
     public static UTKeybindings.Key key;
 
-    public UTDismountKeybind()
-    {
-        super("dismount", KeyConflictContext.IN_GAME, KeyModifier.NONE, Keyboard.KEY_LSHIFT);
-    }
-
     public static void createKeybind()
     {
         if (UTConfigTweaks.MISC.utUseSeparateDismountKey)
@@ -27,6 +21,11 @@ public class UTDismountKeybind extends UTKeybindings.Key
             key = new UTDismountKeybind();
             UTKeybindings.addKey(key);
         }
+    }
+
+    public UTDismountKeybind()
+    {
+        super("dismount", KeyConflictContext.IN_GAME, KeyModifier.NONE, Keyboard.KEY_LSHIFT);
     }
 
     /**

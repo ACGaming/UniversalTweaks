@@ -1,5 +1,14 @@
 package mod.acgaming.universaltweaks;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync;
 import mod.acgaming.universaltweaks.bugfixes.misc.help.UTHelp;
@@ -14,18 +23,17 @@ import mod.acgaming.universaltweaks.mods.arcanearchives.UTArcaneArchivesEvents;
 import mod.acgaming.universaltweaks.mods.astralsorcery.UTClearOnChange;
 import mod.acgaming.universaltweaks.mods.bloodmagic.UTBloodMagicEvents;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
+import mod.acgaming.universaltweaks.mods.collective.UTCollectiveEvents;
 import mod.acgaming.universaltweaks.mods.cqrepoured.UTGoldenFeatherEvent;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Burning;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Sprinting;
 import mod.acgaming.universaltweaks.mods.mekanism.UTMekanismFixes;
-import mod.acgaming.universaltweaks.mods.openblocks.UTOpenBlocksEvents;
 import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.UTSimplyJetpacksEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageClientStatesReset;
 import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructEvents;
 import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructMaterials;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
-import mod.acgaming.universaltweaks.mods.thaumcraft.UTThaumcraftEvents;
 import mod.acgaming.universaltweaks.tweaks.blocks.betterplacement.UTBetterPlacement;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.blocks.dispenser.UTBlockDispenser;
@@ -35,7 +43,6 @@ import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
-import mod.acgaming.universaltweaks.util.UTCommands;
 import mod.acgaming.universaltweaks.tweaks.misc.endportal.UTEndPortalParallax;
 import mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties.UTLanServerProperties;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
@@ -46,25 +53,13 @@ import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTTutorialToast;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.craftingcache.UTCraftingCache;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
+import mod.acgaming.universaltweaks.util.UTCommands;
 import mod.acgaming.universaltweaks.util.UTKeybindings;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
 import mods.railcraft.common.core.BetaMessageTickHandler;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartedEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.tardis.mod.proxy.ClientProxy;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import tonius.simplyjetpacks.network.NetworkHandler;
 
 @Mod(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME, version = UniversalTweaks.VERSION, acceptedMinecraftVersions = "[1.12.2]", dependencies = UniversalTweaks.DEPENDENCIES)
@@ -73,7 +68,7 @@ public class UniversalTweaks
     public static final String MODID = Tags.MOD_ID;
     public static final String NAME = Tags.MOD_NAME;
     public static final String VERSION = Tags.VERSION;
-    public static final String DEPENDENCIES = "required-after:mixinbooter@[8.9,);required-after:configanytime;"
+    public static final String DEPENDENCIES = "required-after:mixinbooter@[9.0,);required-after:configanytime@[3.0,);"
         + "after:abyssalcraft;"
         + "after:actuallyadditions;"
         + "after:aoa3;"
@@ -93,6 +88,7 @@ public class UniversalTweaks
         + "after:effortlessbuilding;"
         + "after:element;"
         + "after:elenaidodge2;"
+        + "after:emojicord;"
         + "after:enderio;"
         + "after:epicsiegemod;"
         + "after:erebus;"
@@ -155,11 +151,11 @@ public class UniversalTweaks
         if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) MinecraftForge.EVENT_BUS.register(new UTAbyssalCraftEvents());
         if (Loader.isModLoaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTArcaneArchivesEvents());
         if (Loader.isModLoaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTBloodMagicEvents());
+        if (Loader.isModLoaded("collective") && UTConfigMods.COLLECTIVE.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.register(new UTCollectiveEvents());
         if (Loader.isModLoaded("cqrepoured") && UTConfigMods.CHOCOLATE_QUEST.utCQRGoldenFeatherToggle) MinecraftForge.EVENT_BUS.register(new UTGoldenFeatherEvent());
         if (Loader.isModLoaded("elenaidodge2") && UTConfigMods.ELENAI_DODGE_2.utED2ExtinguishingDodgeChance > 0) MinecraftForge.EVENT_BUS.register(new UTED2Burning());
         if (Loader.isModLoaded("elenaidodge2") && UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherConsumption > 0) MinecraftForge.EVENT_BUS.register(new UTED2Sprinting());
         if (Loader.isModLoaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
-        if (Loader.isModLoaded("openblocks") && UTConfigMods.OPEN_BLOCKS.utLastStandFixToggle) MinecraftForge.EVENT_BUS.register(new UTOpenBlocksEvents());
         if (Loader.isModLoaded("projectred-exploration") && UTConfigMods.PROJECTRED.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTProjectRedWorldEvents());
         // Unregister reason: disable beta warning.
         if (Loader.isModLoaded("railcraft") && UTConfigMods.RAILCRAFT.utNoBetaWarningToggle && UTReflectionUtil.isClassLoaded("mods.railcraft.common.core.BetaMessageTickHandler"))
@@ -174,7 +170,6 @@ public class UniversalTweaks
         // Unregister reason: event handler adds to an unused map that is never cleared.
         if (Loader.isModLoaded("tardis") && UTConfigMods.TARDIS.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.unregister(ClientProxy.class);
         if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTTConstructEvents());
-        if (Loader.isModLoaded("thaumcraft") && UTConfigMods.THAUMCRAFT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTThaumcraftEvents());
         LOGGER.info(NAME + " initialized");
     }
 

@@ -1,6 +1,5 @@
 package mod.acgaming.universaltweaks.tweaks.blocks.betterplacement;
 
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -10,6 +9,8 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
+
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of tterrag1098, BucketOfCompasses
 public class UTBetterPlacement

@@ -30,7 +30,6 @@ cfg.universaltweaks.config.world=Mundo
 
 cfg.universaltweaks.bugfixes.blocks.blockoverlay=Block Overlay
 cfg.universaltweaks.bugfixes.entities.desync=Entity Desync
-cfg.universaltweaks.bugfixes.misc.modelgap=Brechas en modelos
 
 cfg.universaltweaks.modintegration.abyssalcraft=AbyssalCraft
 cfg.universaltweaks.modintegration.actuallyadditions=Actually Additions
@@ -85,7 +84,6 @@ cfg.universaltweaks.tweaks.blocks.breakablebedrock=Roca madre rompible
 cfg.universaltweaks.tweaks.blocks.finitewater=Agua finita
 cfg.universaltweaks.tweaks.entities.attributes=Atributos
 cfg.universaltweaks.tweaks.entities.betterburning=Mejor quemado
-cfg.universaltweaks.tweaks.entities.collisiondamage=Daño por colisión
 cfg.universaltweaks.tweaks.entities.damagevelocity=Velocidad de daño
 cfg.universaltweaks.tweaks.entities.easybreeding=Reproducción fácil
 cfg.universaltweaks.tweaks.entities.nogolems=No Golems

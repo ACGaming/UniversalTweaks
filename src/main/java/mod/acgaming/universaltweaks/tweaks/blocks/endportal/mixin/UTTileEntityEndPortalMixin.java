@@ -4,10 +4,9 @@ import net.minecraft.tileentity.TileEntityEndPortal;
 import net.minecraft.util.EnumFacing;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of WaitingIdly, TheRandomLabs (RandomPatches)
 @Mixin(value = TileEntityEndPortal.class)

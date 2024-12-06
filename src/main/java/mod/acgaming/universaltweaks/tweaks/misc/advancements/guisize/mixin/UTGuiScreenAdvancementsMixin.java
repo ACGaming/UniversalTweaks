@@ -12,15 +12,14 @@ import net.minecraft.client.gui.advancements.GuiScreenAdvancements;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.tweaks.misc.advancements.guisize.UTAdvancementInfo;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
-import mod.acgaming.universaltweaks.tweaks.misc.advancements.guisize.UTAdvancementInfo;
 
 // Courtesy of WaitingIdly
 @Mixin(GuiScreenAdvancements.class)

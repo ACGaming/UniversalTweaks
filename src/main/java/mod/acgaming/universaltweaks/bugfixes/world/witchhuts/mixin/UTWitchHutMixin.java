@@ -23,5 +23,5 @@ public abstract class UTWitchHutMixin
     }
 
     @Shadow
-    protected abstract void updateBoundingBox();
+    public abstract void updateBoundingBox();
 }
