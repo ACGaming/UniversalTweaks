@@ -25,7 +25,6 @@ public class UTSurvivalHelperMixin
     {
         if (!UTConfigMods.EFFORTLESS_BUILDING.utEFTransmutationFixToggle) return;
         int meta = blockState.getBlock().damageDropped(blockState);
-        origstack = ItemStack.EMPTY;
         for (int i = 0; i < player.inventory.mainInventory.size(); i++)
         {
             ItemStack stack = player.inventory.mainInventory.get(i);
