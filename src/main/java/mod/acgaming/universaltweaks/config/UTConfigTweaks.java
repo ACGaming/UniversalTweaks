@@ -92,6 +92,10 @@ public class UTConfigTweaks
 
     public static class BlocksCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.anvil")
+        @Config.Name("Anvil")
+        public final AnvilCategory ANVIL = new AnvilCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.betterplacement")
         @Config.Name("Better Placement")
         public final BetterPlacementCategory BETTER_PLACEMENT = new BetterPlacementCategory();
@@ -217,6 +221,14 @@ public class UTConfigTweaks
                 "0 = Infinite (vanilla default)"
             })
         public int utVineSize = 0;
+
+        public static class AnvilCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Anvil XP Level Cap")
+            @Config.Comment("Sets the experience level cap for anvil recipes")
+            public int utAnvilXPLevelCap = 40;
+        }
 
         public static class BetterPlacementCategory
         {

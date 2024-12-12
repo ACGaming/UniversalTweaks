@@ -120,6 +120,7 @@ cfg.universaltweaks.modintegration.tr=Tech Reborn
 cfg.universaltweaks.modintegration.woot=Woot
 cfg.universaltweaks.modintegration=Mod Integration
 
+cfg.universaltweaks.tweaks.blocks.anvil=Anvil
 cfg.universaltweaks.tweaks.blocks.betterplacement=Better Placement
 cfg.universaltweaks.tweaks.blocks.blockdispenser=Block Dispenser
 cfg.universaltweaks.tweaks.blocks.breakablebedrock=Breakable Bedrock
