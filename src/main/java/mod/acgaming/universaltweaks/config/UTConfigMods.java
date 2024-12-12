@@ -111,6 +111,10 @@ public class UTConfigMods
     @Config.Name("The Erebus")
     public static final ErebusCategory EREBUS = new ErebusCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.evilcraft")
+    @Config.Name("EvilCraft")
+    public static final EvilCraftCategory EVIL_CRAFT = new EvilCraftCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.extrautilities")
     @Config.Name("Extra Utilities 2")
     public static final ExtraUtilitiesCategory EXTRA_UTILITIES = new ExtraUtilitiesCategory();
@@ -560,6 +564,14 @@ public class UTConfigMods
         @Config.Name("Fix Quake Hammer Texture")
         @Config.Comment("Fixes the Quake Hammer using the incorrect config option to control its size")
         public boolean utFixQuakeHammerTexture = true;
+    }
+
+    public static class EvilCraftCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Vengeance Spirit Regex Cache")
+        @Config.Comment("Cache the result of Vengeance Spirit checks against the config, which may attempt to build and check against hundreds of Regex Patterns every tick")
+        public boolean utVengeanceSpiritCache = true;
     }
 
     public static class ExtraUtilitiesCategory
