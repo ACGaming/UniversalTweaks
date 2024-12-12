@@ -118,6 +118,7 @@ All changes are toggleable via config files.
     * **Mending and Infinity:** Allows the Infinity Enchantment to be combined with Mending
     * **Infinity Affects All Arrows:** Allows the Infinity Enchantment to apply to all arrows (e.g. Tipped Arrows)
 * **Breakable Bedrock:** Allows customizable mining of bedrock
+* **Broadcast Sounds:** Controls broadcasting of Ender Dragon, End portal creation and Wither sounds
 * **Burning Baby Zombies:** Lets baby zombies burn in daylight as in Minecraft 1.13+
 * **Burning Skeletons:** Prevents skeletons burning in daylight
 * **Burning Zombies:** Prevents zombies burning in daylight

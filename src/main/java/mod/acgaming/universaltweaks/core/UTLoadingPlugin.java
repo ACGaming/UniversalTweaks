@@ -144,6 +144,9 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.lightning.damage.json", () -> UTConfigTweaks.MISC.LIGHTNING.utLightningDamage != 5.0D || UTConfigTweaks.MISC.LIGHTNING.utLightningFireTicks != 8);
             put("mixins.tweaks.misc.lightning.fire.json", () -> UTConfigTweaks.MISC.LIGHTNING.utLightningFireToggle);
             put("mixins.tweaks.misc.recipebook.server.json", () -> UTConfigTweaks.MISC.utRecipeBookToggle);
+            put("mixins.tweaks.misc.sound.broadcast.dragon.json", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundDragon);
+            put("mixins.tweaks.misc.sound.broadcast.endportal.json", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundEndPortal);
+            put("mixins.tweaks.misc.sound.broadcast.wither.json", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundWither);
             put("mixins.tweaks.misc.timeouts.json", () -> UTConfigTweaks.MISC.TIMEOUTS.utTimeoutsToggle);
             put("mixins.tweaks.misc.xp.cap.json", () -> UTConfigTweaks.MISC.utXPLevelCap > -1);
             put("mixins.tweaks.misc.xp.linear.json", () -> UTConfigTweaks.MISC.utLinearXP > 0);

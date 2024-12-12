@@ -1406,6 +1406,10 @@ public class UTConfigTweaks
         @Config.Name("Armor Curve")
         public final ArmorCurveCategory ARMOR_CURVE = new ArmorCurveCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.sound.broadcast")
+        @Config.Name("Broadcast Sounds")
+        public final BroadcastSoundsCategory BROADCAST_SOUNDS = new BroadcastSoundsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.chat")
         @Config.Name("Chat")
         public final ChatCategory CHAT = new ChatCategory();
@@ -1780,6 +1784,23 @@ public class UTConfigTweaks
             public boolean utCompactMessagesToggle = false;
         }
 
+        public static class BroadcastSoundsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast Ender Dragon Death Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundDragon = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast End Portal Creation Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundEndPortal = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast Wither Death Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundWither = true;
+        }
 
         public static class IncurablePotionsCategory
         {
