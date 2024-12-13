@@ -429,6 +429,8 @@ All changes are toggleable via config files.
     * **Fix Cabbage Drop:** Fixes Cabbage not dropping the correct items in some situations
     * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
     * **Fix Quake Hammer Texture:** Fixes the Quake Hammer using the incorrect config option to control its size
+* **EvilCraft**
+    * **Vengeance Spirit Regex Cache:** Cache the result of Vengeance Spirit checks against the config, which may attempt to build and check against hundreds of Regex Patterns every tick
 * **The Farlanders**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Thermal Expansion**
