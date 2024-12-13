@@ -1,5 +1,5 @@
 {
-  "package": "mod.acgaming.universaltweaks.mods.enderio.mixin",
+  "package": "mod.acgaming.universaltweaks.mods.enderio.itemrender.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
