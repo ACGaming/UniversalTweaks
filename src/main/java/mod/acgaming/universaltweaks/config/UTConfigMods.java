@@ -527,6 +527,11 @@ public class UTConfigMods
     public static class EnderIOCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Fix Chorus Farming StackOverflow")
+        @Config.Comment("Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow")
+        public boolean utChorusStackOverflow = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Replace Obelisk Renderer")
         @Config.Comment("Fixes client-side memory leak by replacing obelisk renderer with a simpler one")
         public boolean utReplaceItemRenderer = true;

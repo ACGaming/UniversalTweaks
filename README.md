@@ -337,7 +337,8 @@ All changes are toggleable via config files.
 * **Emojicord**
     * **Emoji Context:** Improves emoji context calculation to improve fps when rendering a lot of text
 * **Ender IO**
-    * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one 
+    * **Fix Chorus Farming StackOverflow:** Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow
+    * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one
 * **Ender Storage**
     * **Fix Frequency Tracking:** Fixes storage frequencies being tracked multiple times
 * **Epic Siege Mod**
