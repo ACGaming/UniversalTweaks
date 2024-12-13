@@ -117,12 +117,12 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.entities.spawning.golem.json", () -> UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGIronGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGSnowGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGWitherToggle);
             put("mixins.tweaks.entities.spawning.husk.json", () -> UTConfigTweaks.ENTITIES.utHuskStraySpawningToggle);
             put("mixins.tweaks.entities.spawning.portal.json", () -> UTConfigTweaks.ENTITIES.utPortalSpawningToggle);
+            put("mixins.tweaks.entities.spawning.skeletontrap.json", () -> UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utSkeletonTrapSpawningToggle);
             put("mixins.tweaks.entities.spawning.stray.json", () -> UTConfigTweaks.ENTITIES.utHuskStraySpawningToggle);
             put("mixins.tweaks.entities.speed.boat.json", () -> UTConfigTweaks.ENTITIES.utBoatSpeed != 0.04D);
             put("mixins.tweaks.entities.speed.cobweb.json", () -> UTConfigTweaks.ENTITIES.COBWEB_SLOWNESS.utCobwebSlownessToggle);
             put("mixins.tweaks.entities.speed.player.json", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
             put("mixins.tweaks.entities.taming.horse.json", () -> UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utTamingUndeadHorsesToggle);
-            put("mixins.tweaks.entities.spawning.skeletontrap.json", () -> UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utSkeletonTrapSpawningToggle);
             put("mixins.tweaks.entities.trading.json", () -> UTConfigTweaks.ENTITIES.utVillagerTradeLevelingToggle || UTConfigTweaks.ENTITIES.utVillagerTradeRestockToggle);
             put("mixins.tweaks.entities.voidteleport.json", () -> UTConfigTweaks.ENTITIES.VOID_TELEPORT.utVoidTeleportToggle);
             put("mixins.tweaks.items.attackcooldown.server.json", () -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
@@ -189,8 +189,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.mods.emojicord.emojicontext.json", () -> UTConfigMods.EMOJICORD.utEmojiContextToggle && emojicordLoaded);
             put("mixins.tweaks.blocks.betterplacement.json", () -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
             put("mixins.tweaks.blocks.hitdelay.json", () -> UTConfigTweaks.BLOCKS.utBlockHitDelay != 5);
-            put("mixins.tweaks.entities.jumping.autojump.json", () -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
             put("mixins.tweaks.entities.burning.player.json", () -> UTConfigTweaks.ENTITIES.utFirstPersonBurningOverlay != -0.3D);
+            put("mixins.tweaks.entities.jumping.autojump.json", () -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
             put("mixins.tweaks.entities.playerdismount.json", () -> UTConfigTweaks.MISC.utUseSeparateDismountKey);
             put("mixins.tweaks.entities.playerf5.json", () -> UTConfigTweaks.ENTITIES.utThirdPersonIgnoresNonSolidBlocks);
             put("mixins.tweaks.items.attackcooldown.client.json", () -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
