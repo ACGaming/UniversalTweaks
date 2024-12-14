@@ -11,6 +11,10 @@ public class UTAdvancementInfo
     private static final int HEIGHT_MULT = 28;
     private static final int WIDTH_MULT = 32;
 
+    public static int lastScrollX = -1;
+    public static int lastScrollY = -1;
+    public static int lastSelectedTabIndex;
+
     public static int utPageWidth(int externalWidth)
     {
         return utStepwiseWidth(utClampWidth(externalWidth - UTConfigTweaks.MISC.ADVANCEMENTS.utHorizontalMargin * 2));

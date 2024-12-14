@@ -44,7 +44,6 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
     @Unique
     private GuiButton buttonRight;
 
-
     /**
      * @reason ensure the maxPages field is set to 0 on gui size update, otherwise it is only updated if >0, meaning it will always linger at 1+
      */
@@ -315,6 +314,21 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
         utRenderTextureRepeating(left, top + texture_corner, texture_corner, bottom - top - texture_corner * 2, 0, texture_corner, texture_corner, texture_height - texture_corner * 2);
     }
 
+    /**
+     * @reason remember the current tab scroll position
+     */
+    @Inject(method = "onGuiClosed", at = @At("HEAD"))
+    private void utRememberTabScrollPosition(CallbackInfo ci)
+    {
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utRememberTabScrollPosition || selectedTab == null)
+        {
+            return;
+        }
+        UTAdvancementInfo.lastScrollX = (((UTGuiAdvancementTabAccessor) selectedTab).getScrollX());
+        UTAdvancementInfo.lastScrollY = (((UTGuiAdvancementTabAccessor) selectedTab).getScrollY());
+        UTAdvancementInfo.lastSelectedTabIndex = (((UTGuiAdvancementTabAccessor) selectedTab).getIndex());
+    }
+
     @Unique
     private void utRenderTextureRepeating(int x, int y, int width, int height, int textureX, int textureY, int textureWidth, int textureHeight)
     {
@@ -330,5 +344,4 @@ public abstract class UTGuiScreenAdvancementsMixin extends GuiScreen
             }
         }
     }
-
 }

@@ -1711,6 +1711,10 @@ public class UTConfigTweaks
             @Config.Name("[09] Add Advancement Tab Title to Header")
             @Config.Comment("Makes the focused Advancement Tab Title be added to the header, which otherwise is just 'Advancements' for every tab")
             public boolean utAddFocusedTabTitleToHeader = true;
+
+            @Config.Name("[10] Remember Tab Scroll Position")
+            @Config.Comment("Remembers and restores the last advancement tab scroll position")
+            public boolean utRememberTabScrollPosition = false;
         }
 
         public static class ArmorCurveCategory
