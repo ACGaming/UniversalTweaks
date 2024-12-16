@@ -105,6 +105,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.tconstruct.toolcustomization.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle);
             put("mixins.mods.tconstruct.toolcustomization.plustic.json", () -> loaded("tconstruct") && loaded("plustic") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle);
             put("mixins.mods.techreborn.json", () -> loaded("techreborn"));
+            put("mixins.mods.testdummy.copyarmor.json", () -> loaded("testdummy") && UTConfigMods.TEST_DUMMY.utCopyArmor);
             put("mixins.mods.thaumcraft.foci.focuseffects.json", () -> loaded("thaumcraft"));
             put("mixins.mods.thaumcraft.foci.focusmediums.json", () -> loaded("thaumcraft"));
             put("mixins.mods.thaumcraft.json", () -> loaded("thaumcraft"));
