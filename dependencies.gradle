@@ -134,6 +134,7 @@ final def mod_dependencies = [
     'curse.maven:tardis-290247:2903453'                               : [debug_tardis],
     'curse.maven:tech-reborn-233564:2966851'                          : [debug_tech_reborn],
     'curse.maven:teslacorelib-254602:2891841'                         : [debug_industrial_foregoing],
+    'curse.maven:test_dummy-225738:2503041'                           : [debug_test_dummy],
     'curse.maven:thaumcraft-223628:2629023'                           : [debug_thaumcraft, debug_thaumic_wonders],
     'curse.maven:thaumicwonders-316704:2787954'                       : [debug_thaumic_wonders],
     'curse.maven:the-erebus-220698:3211974'                           : [debug_erebus],
