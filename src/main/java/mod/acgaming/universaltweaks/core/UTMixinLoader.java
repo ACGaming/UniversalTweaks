@@ -63,6 +63,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.elenaidodge2.json", () -> loaded("elenaidodge2"));
             put("mixins.mods.enderio.chorus.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utChorusStackOverflow);
             put("mixins.mods.enderio.cyclebutton.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utSaveFilterCycleButtonProperly);
+            put("mixins.mods.enderio.soulbinderjei.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utFixSoulBinderJEI);
             put("mixins.mods.enderstorage.json", () -> loaded("enderstorage") && UTConfigMods.ENDER_STORAGE.utFrequencyTrackFixToggle);
             put("mixins.mods.epicsiegemod.json", () -> loaded("epicsiegemod"));
             put("mixins.mods.erebus.cabbage.json", () -> loaded("erebus") && UTConfigMods.EREBUS.utCabbageDrop);

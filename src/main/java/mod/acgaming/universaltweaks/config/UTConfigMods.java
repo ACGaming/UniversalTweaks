@@ -536,6 +536,11 @@ public class UTConfigMods
         public boolean utChorusStackOverflow = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Soul Binder JEI Appearance")
+        @Config.Comment("Fix the Soul Binder having empty ingredients or displaying filled soul vials in the output slot incorrectly")
+        public boolean utFixSoulBinderJEI = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Replace Obelisk Renderer")
         @Config.Comment("Fixes client-side memory leak by replacing obelisk renderer with a simpler one")
         public boolean utReplaceItemRenderer = true;

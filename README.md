@@ -338,6 +338,7 @@ All changes are toggleable via config files.
     * **Emoji Context:** Improves emoji context calculation to improve fps when rendering a lot of text
 * **Ender IO**
     * **Fix Chorus Farming StackOverflow:** Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow
+    * **Fix Soul Binder JEI Appearance:** Fixes the Soul Binder having empty ingredients or displaying filled soul vials in the output slot incorrectly
     * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one
     * **Save Filter Cycle Buttons Properly:** Fixes an issue where Cycle Buttons for Damage do not report being clicked when in the Picker Overlay, preventing changing Damage values until clicked again
 * **Ender Storage**
