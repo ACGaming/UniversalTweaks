@@ -374,6 +374,8 @@ All changes are toggleable via config files.
     * **Ingredient Matching:** Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues
 * **Mekanism**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **MmmMmmMmmMmm**
+    * **Copy Armor Stacks to Dummy:** Instead of deleting the original itemstack being equipped, use a copy of it and do not drop armor
 * **Mob Stages**
     * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
 * **Modular Routers**
