@@ -539,6 +539,11 @@ public class UTConfigMods
         @Config.Name("Replace Obelisk Renderer")
         @Config.Comment("Fixes client-side memory leak by replacing obelisk renderer with a simpler one")
         public boolean utReplaceItemRenderer = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Save Filter Cycle Buttons Properly")
+        @Config.Comment("Fixes an issue where Cycle Buttons for Damage do not report being clicked when in the Picker Overlay, preventing changing Damage values until clicked again")
+        public boolean utSaveFilterCycleButtonProperly = true;
     }
 
     public static class EnderStorageCategory
