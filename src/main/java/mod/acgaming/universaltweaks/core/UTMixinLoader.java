@@ -23,7 +23,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.compactmachines.memory.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utMemoryLeakFixToggle);
             put("mixins.mods.compactmachines.render.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
             put("mixins.mods.crafttweaker.json", () -> loaded("crafttweaker"));
-            put("mixins.mods.enderio.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
+            put("mixins.mods.enderio.itemrender.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
             put("mixins.mods.hwyla.json", () -> loaded("waila"));
             put("mixins.mods.ironchests.json", () -> loaded("ironchest") && UTConfigMods.IRON_CHESTS.utReplaceItemRenderer);
             put("mixins.mods.modularrouters.json", () -> loaded("modularrouters") && UTConfigMods.MODULAR_ROUTERS.utParticleThreadToggle);
@@ -61,6 +61,9 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.effortlessbuilding.json", () -> loaded("effortlessbuilding"));
             put("mixins.mods.elementarystaffs.json", () -> loaded("element"));
             put("mixins.mods.elenaidodge2.json", () -> loaded("elenaidodge2"));
+            put("mixins.mods.enderio.chorus.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utChorusStackOverflow);
+            put("mixins.mods.enderio.cyclebutton.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utSaveFilterCycleButtonProperly);
+            put("mixins.mods.enderio.soulbinderjei.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utFixSoulBinderJEI);
             put("mixins.mods.enderstorage.json", () -> loaded("enderstorage") && UTConfigMods.ENDER_STORAGE.utFrequencyTrackFixToggle);
             put("mixins.mods.epicsiegemod.json", () -> loaded("epicsiegemod"));
             put("mixins.mods.erebus.cabbage.json", () -> loaded("erebus") && UTConfigMods.EREBUS.utCabbageDrop);
@@ -97,13 +100,14 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.rftoolsdimensions.json", () -> loaded("rftoolsdim"));
             put("mixins.mods.roost.contenttweaker.json", () -> loaded("contenttweaker"));
             put("mixins.mods.simpledifficulty.json", () -> loaded("simpledifficulty"));
-            put("mixins.mods.steamworld.json", () -> loaded("steamworld") && UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
             put("mixins.mods.spiceoflife.dupes.json", () -> loaded("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);
+            put("mixins.mods.steamworld.json", () -> loaded("steamworld") && UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
             put("mixins.mods.tconstruct.json", () -> loaded("tconstruct"));
             put("mixins.mods.tconstruct.oredictcache.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
             put("mixins.mods.tconstruct.toolcustomization.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle);
             put("mixins.mods.tconstruct.toolcustomization.plustic.json", () -> loaded("tconstruct") && loaded("plustic") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle);
             put("mixins.mods.techreborn.json", () -> loaded("techreborn"));
+            put("mixins.mods.testdummy.copyarmor.json", () -> loaded("testdummy") && UTConfigMods.TEST_DUMMY.utCopyArmor);
             put("mixins.mods.thaumcraft.foci.focuseffects.json", () -> loaded("thaumcraft"));
             put("mixins.mods.thaumcraft.foci.focusmediums.json", () -> loaded("thaumcraft"));
             put("mixins.mods.thaumcraft.json", () -> loaded("thaumcraft"));

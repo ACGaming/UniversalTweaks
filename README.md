@@ -337,7 +337,10 @@ All changes are toggleable via config files.
 * **Emojicord**
     * **Emoji Context:** Improves emoji context calculation to improve fps when rendering a lot of text
 * **Ender IO**
-    * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one 
+    * **Fix Chorus Farming StackOverflow:** Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow
+    * **Fix Soul Binder JEI Appearance:** Fixes the Soul Binder having empty ingredients or displaying filled soul vials in the output slot incorrectly
+    * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one
+    * **Save Filter Cycle Buttons Properly:** Fixes an issue where Cycle Buttons for Damage do not report being clicked when in the Picker Overlay, preventing changing Damage values until clicked again
 * **Ender Storage**
     * **Fix Frequency Tracking:** Fixes storage frequencies being tracked multiple times
 * **Epic Siege Mod**
@@ -371,6 +374,8 @@ All changes are toggleable via config files.
     * **Ingredient Matching:** Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues
 * **Mekanism**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **MmmMmmMmmMmm**
+    * **Copy Armor Stacks to Dummy:** Instead of deleting the original itemstack being equipped, use a copy of it and do not drop armor
 * **Mob Stages**
     * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
 * **Modular Routers**
