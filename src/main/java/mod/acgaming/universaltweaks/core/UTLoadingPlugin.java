@@ -1,7 +1,7 @@
 package mod.acgaming.universaltweaks.core;
 
 import java.util.*;
-import java.util.function.Supplier;
+import java.util.function.BooleanSupplier;
 import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableMap;
@@ -35,7 +35,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 
     public static long launchTime;
 
-    private static final Map<String, Supplier<Boolean>> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, BooleanSupplier> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
     {
         {
             put("mixins.tweaks.misc.buttons.snooper.server.json", () -> UTConfigTweaks.MISC.utSnooperToggle);
@@ -43,7 +43,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         }
     });
 
-    private static final Map<String, Supplier<Boolean>> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, BooleanSupplier> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
     {
         {
             put("mixins.bugfixes.blocks.comparatortiming.json", () -> UTConfigBugfixes.BLOCKS.utComparatorTimingToggle);
@@ -170,7 +170,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         }
     });
 
-    private static final Map<String, Supplier<Boolean>> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, BooleanSupplier> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
     {
         {
             put("mixins.bugfixes.blocks.banner.json", () -> UTConfigBugfixes.BLOCKS.utBannerBoundingBoxToggle && !renderLibLoaded);
@@ -307,8 +307,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             // Causes crashes in dev env only
             return !mixinConfig.equals("mixins.tweaks.misc.armorcurve.json");
         }
-        Supplier<Boolean> sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : null;
-        Supplier<Boolean> commonSupplier = commonMixinConfigs.get(mixinConfig);
-        return sidedSupplier != null ? sidedSupplier.get() : commonSupplier == null || commonSupplier.get();
+        BooleanSupplier sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : null;
+        BooleanSupplier commonSupplier = commonMixinConfigs.get(mixinConfig);
+        return sidedSupplier != null ? sidedSupplier.getAsBoolean() : commonSupplier == null || commonSupplier.getAsBoolean();
     }
 }
