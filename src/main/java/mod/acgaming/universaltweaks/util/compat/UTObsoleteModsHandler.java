@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Supplier;
+import java.util.function.BooleanSupplier;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.util.text.TextComponentTranslation;
@@ -18,7 +18,7 @@ import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 
 public class UTObsoleteModsHandler
 {
-    private static final Map<String, Supplier<Boolean>> obsoleteModMap = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, BooleanSupplier> obsoleteModMap = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
     {
         {
             put("aiimprovements", () -> UTConfigTweaks.ENTITIES.utAIReplacementToggle || UTConfigTweaks.ENTITIES.utAIRemovalToggle);
@@ -153,7 +153,7 @@ public class UTObsoleteModsHandler
         Map<String, ModContainer> modIdMap = Loader.instance().getIndexedModList();
         for (String modId : obsoleteModMap.keySet())
         {
-            if (Loader.isModLoaded(modId) && obsoleteModMap.get(modId).get())
+            if (Loader.isModLoaded(modId) && obsoleteModMap.get(modId).getAsBoolean())
             {
                 messages.add(modIdMap.get(modId).getName());
             }
