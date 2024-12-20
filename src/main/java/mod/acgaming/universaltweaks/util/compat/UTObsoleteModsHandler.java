@@ -197,11 +197,4 @@ public class UTObsoleteModsHandler
     {
         hasShownObsoleteMods = value;
     }
-
-    public static void resetObsoleteMods()
-    {
-        hasShownObsoleteMods = false;
-        obsoleteModsList = null;
-    }
-
 }

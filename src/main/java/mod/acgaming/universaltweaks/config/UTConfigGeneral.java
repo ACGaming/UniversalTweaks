@@ -46,7 +46,7 @@ public class UTConfigGeneral
             if (event.getModID().equals(UniversalTweaks.MODID))
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
-                UTObsoleteModsHandler.resetObsoleteMods();
+                UTObsoleteModsHandler.setHasShownObsoleteMods(false);
             }
         }
     }
