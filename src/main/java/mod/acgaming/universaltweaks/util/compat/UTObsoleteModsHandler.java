@@ -12,6 +12,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
 
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
@@ -141,7 +142,13 @@ public class UTObsoleteModsHandler
         }
     });
 
-    public static boolean showObsoleteMods = true;
+    private static List<String> obsoleteModsList;
+    private static boolean hasShownObsoleteMods = false;
+
+    public static boolean hasObsoleteModsMessage()
+    {
+        return !UTObsoleteModsHandler.hasShownObsoleteMods() && !UTConfigGeneral.DEBUG.utBypassIncompatibilityToggle && !getObsoleteModsList().isEmpty();
+    }
 
     public static List<String> obsoleteModsMessage()
     {
@@ -149,7 +156,21 @@ public class UTObsoleteModsHandler
         messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning1").getFormattedText());
         messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning2").getFormattedText());
         messages.add("");
+        messages.addAll(getObsoleteModsList());
+        messages.add("");
+        messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning3").getFormattedText());
+        return messages;
+    }
 
+    private static List<String> getObsoleteModsList()
+    {
+        if (obsoleteModsList == null) obsoleteModsList = generateObsoleteModsList();
+        return obsoleteModsList;
+    }
+
+    private static List<String> generateObsoleteModsList()
+    {
+        List<String> messages = new ArrayList<>();
         Map<String, ModContainer> modIdMap = Loader.instance().getIndexedModList();
         for (String modId : obsoleteModMap.keySet())
         {
@@ -164,9 +185,23 @@ public class UTObsoleteModsHandler
         if (UTReflectionUtil.isClassLoaded("io.github.jikuja.LocaleTweaker") && UTConfigBugfixes.MISC.utLocaleToggle) messages.add("LocaleFixer");
         if (UTReflectionUtil.isClassLoaded("com.cleanroommc.blockdelayremover.BlockDelayRemoverCore") && UTConfigTweaks.BLOCKS.utBlockHitDelay != 5) messages.add("Block Delay Remover");
         if (UTReflectionUtil.isClassLoaded("io.github.barteks2x.chunkgenlimiter.ChunkGenLimitMod") && UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) messages.add("Chunk Generation Limiter");
-        messages.add("");
-        messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning3").getFormattedText());
         return messages;
+    }
+
+    public static boolean hasShownObsoleteMods()
+    {
+        return hasShownObsoleteMods;
+    }
+
+    public static void setHasShownObsoleteMods(boolean value)
+    {
+        hasShownObsoleteMods = value;
+    }
+
+    public static void resetObsoleteMods()
+    {
+        hasShownObsoleteMods = false;
+        obsoleteModsList = null;
     }
 
 }
