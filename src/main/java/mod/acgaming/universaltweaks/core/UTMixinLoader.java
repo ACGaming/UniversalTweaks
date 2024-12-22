@@ -50,6 +50,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.bloodmagic.json", () -> loaded("bloodmagic"));
             put("mixins.mods.botania.dupes.json", () -> loaded("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle);
             put("mixins.mods.botania.json", () -> loaded("botania"));
+            put("mixins.mods.bwm.json", () -> loaded("betterwithmods") && UTConfigMods.BWM.utBeaconNBTLoadingFix);
             put("mixins.mods.cbmultipart.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
             put("mixins.mods.ceramics.json", () -> loaded("ceramics"));
             put("mixins.mods.chisel.tcomplement.dupes.json", () -> loaded("chisel") && loaded("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle);

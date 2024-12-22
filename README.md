@@ -309,6 +309,8 @@ All changes are toggleable via config files.
 * **Botania**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
+* **Better with Mods**
+    * **Beacon NBT Loading Fix:** Fixes BWM beacons reading null tags from vanilla beacons
 * **CB Multipart**
     * **Memory Leak Fix:** Fixes a memory leak associated with EntityPlayer
 * **Chisel**
