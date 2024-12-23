@@ -51,6 +51,10 @@ public class UTConfigMods
     @Config.Name("Botania")
     public static final BotaniaCategory BOTANIA = new BotaniaCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.bwm")
+    @Config.Name("Better with Mods")
+    public static final BWMCategory BWM = new BWMCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.cbmultipart")
     @Config.Name("CB Multipart/Forge Multipart CBE")
     public static final CBMultipartCategory CB_MULTIPART = new CBMultipartCategory();
@@ -401,6 +405,13 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class BWMCategory
+    {
+        @Config.Name("Beacon NBT Loading Fix")
+        @Config.Comment("Fixes BWM beacons reading null tags from vanilla beacons")
+        public boolean utBeaconNBTLoadingFix = true;
     }
 
     public static class CBMultipartCategory
