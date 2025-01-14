@@ -31,6 +31,7 @@ public class UTObsoleteModsHandler
             put("bedfix", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
             put("bedpatch", () -> true); // Fix integrated in Forge 14.23.2.2643 (#4784)
             put("bedsaynosleep", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
+            put("betteradvancements", () -> UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle);
             put("betterburning", () -> UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBArrowsToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBCookedToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBExtinguishToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBOverlayToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBSpreadingToggle);
             put("betterpingdisplay", () -> UTConfigTweaks.MISC.utBetterPing);
             put("betterplacement", () -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
