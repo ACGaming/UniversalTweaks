@@ -226,6 +226,7 @@ All changes are toggleable via config files.
 * **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
 * **Particle Limit:** Limits particles to a set amount. Should not be set too low, as it will cause particles to appear for a single tick before vanishing
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
+* **Piston Block Blacklist:** Integrates a blacklist of blocks which are not allowed to be pushed by pistons
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
 * **Prevent Mob Eggs from Changing Spawners:** Prevents using Mob Spawner Eggs to change what a Spawner is spawning
 * **Prevent Observer Activating on Placement:** Controls if the observer activates itself on the first tick when it is placed

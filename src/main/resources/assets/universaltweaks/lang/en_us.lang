@@ -128,6 +128,7 @@ cfg.universaltweaks.tweaks.blocks.breakablebedrock=Breakable Bedrock
 cfg.universaltweaks.tweaks.blocks.finitewater=Finite Water
 cfg.universaltweaks.tweaks.blocks.miningglitch=Mining Glitch
 cfg.universaltweaks.tweaks.blocks.overhaulbeacon=Overhaul Beacon
+cfg.universaltweaks.tweaks.blocks.piston=Piston
 cfg.universaltweaks.tweaks.blocks.sapling=Sapling Behavior
 cfg.universaltweaks.tweaks.entities.attributes=Attributes
 cfg.universaltweaks.tweaks.entities.betterburning=Better Burning

@@ -13,6 +13,7 @@ import com.cleanroommc.configanytime.ConfigAnytime;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
+import mod.acgaming.universaltweaks.tweaks.blocks.piston.UTPistonBlockBlacklist;
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
@@ -115,6 +116,10 @@ public class UTConfigTweaks
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.overhaulbeacon")
         @Config.Name("Overhaul Beacon")
         public final OverhaulBeaconCategory OVERHAUL_BEACON = new OverhaulBeaconCategory();
+
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.piston")
+        @Config.Name("Piston")
+        public final PistonCategory PISTON = new PistonCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.sapling")
         @Config.Name("Sapling Behavior")
@@ -365,6 +370,22 @@ public class UTConfigTweaks
             {
                 utOverhaulBeaconBlocksModifier.put("modid:example", 1D);
             }
+        }
+
+        public static class PistonCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Piston Block Blacklist Toggle")
+            @Config.Comment("Integrates a blacklist of blocks which are not allowed to be pushed by pistons")
+            public boolean utPistonBlockBlacklistToggle = false;
+
+            @Config.Name("[2] Piston Block Blacklist")
+            @Config.Comment
+                ({
+                    "Blacklist of blocks which are not allowed to be pushed by pistons",
+                    "Syntax: modid:block"
+                })
+            public String[] utPistonBlockBlacklist = new String[] {};
         }
 
         public static class SaplingBehaviorCategory
@@ -2473,6 +2494,7 @@ public class UTConfigTweaks
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
                 if (BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
+                if (BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
                 if (MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
                 if (MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
