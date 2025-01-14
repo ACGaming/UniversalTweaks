@@ -92,6 +92,7 @@ All changes are toggleable via config files.
 * **AI Improvements:** Replaces/removes entity AI for improved server performance
 * **Always Eat:** Allows the consumption of food at any time, regardless of the hunger bar
 * **Always Return to Main Menu:** Always returns the player to the main menu when quitting the game
+* **Anvil XP Level Cap:** Sets the experience level cap for anvil recipes
 * **Armed Armor Stands:** Enables arms for armor stands by default
 * **Armor Curve:** Adjusts the armor scaling and degradation formulae for mobs and players
 * **Attributes:** Sets custom ranges for entity attributes
@@ -117,6 +118,7 @@ All changes are toggleable via config files.
     * **Mending and Infinity:** Allows the Infinity Enchantment to be combined with Mending
     * **Infinity Affects All Arrows:** Allows the Infinity Enchantment to apply to all arrows (e.g. Tipped Arrows)
 * **Breakable Bedrock:** Allows customizable mining of bedrock
+* **Broadcast Sounds:** Controls broadcasting of Ender Dragon, End portal creation and Wither sounds
 * **Burning Baby Zombies:** Lets baby zombies burn in daylight as in Minecraft 1.13+
 * **Burning Skeletons:** Prevents skeletons burning in daylight
 * **Burning Zombies:** Prevents zombies burning in daylight
@@ -176,6 +178,7 @@ All changes are toggleable via config files.
 * **Fence/Wall Jump:** Allows the player to jump over fences and walls
 * **Finite Water:** Prevents creation of infinite water sources outside of ocean and river biomes
 * **First Person Burning Overlay:** Sets the offset for the fire overlay in first person when the player is burning
+* **Forge Mod List Improvements:** Improves the Forge mod list GUI by remembering last searches and supporting pipes `|` to look up multiple mods
 * **Glass Bottle Consumes Water Source:** Causes Glass Bottles to consume the source block of water
 * **Growth Size:** Configurable growth height/length for sugar cane, cacti and vines
 * **Hardcore Buckets:** Prevents placing of liquid source blocks in the world
@@ -223,6 +226,7 @@ All changes are toggleable via config files.
 * **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
 * **Particle Limit:** Limits particles to a set amount. Should not be set too low, as it will cause particles to appear for a single tick before vanishing
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
+* **Piston Block Blacklist:** Integrates a blacklist of blocks which are not allowed to be pushed by pistons
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
 * **Prevent Mob Eggs from Changing Spawners:** Prevents using Mob Spawner Eggs to change what a Spawner is spawning
 * **Prevent Observer Activating on Placement:** Controls if the observer activates itself on the first tick when it is placed
@@ -307,6 +311,8 @@ All changes are toggleable via config files.
 * **Botania**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
+* **Better with Mods**
+    * **Beacon NBT Loading Fix:** Fixes BWM beacons reading null tags from vanilla beacons
 * **CB Multipart**
     * **Memory Leak Fix:** Fixes a memory leak associated with EntityPlayer
 * **Chisel**
@@ -335,7 +341,10 @@ All changes are toggleable via config files.
 * **Emojicord**
     * **Emoji Context:** Improves emoji context calculation to improve fps when rendering a lot of text
 * **Ender IO**
-    * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one 
+    * **Fix Chorus Farming StackOverflow:** Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow
+    * **Fix Soul Binder JEI Appearance:** Fixes the Soul Binder having empty ingredients or displaying filled soul vials in the output slot incorrectly
+    * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one
+    * **Save Filter Cycle Buttons Properly:** Fixes an issue where Cycle Buttons for Damage do not report being clicked when in the Picker Overlay, preventing changing Damage values until clicked again
 * **Ender Storage**
     * **Fix Frequency Tracking:** Fixes storage frequencies being tracked multiple times
 * **Epic Siege Mod**
@@ -369,6 +378,8 @@ All changes are toggleable via config files.
     * **Ingredient Matching:** Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues
 * **Mekanism**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **MmmMmmMmmMmm**
+    * **Copy Armor Stacks to Dummy:** Instead of deleting the original itemstack being equipped, use a copy of it and do not drop armor
 * **Mob Stages**
     * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
 * **Modular Routers**
@@ -427,6 +438,8 @@ All changes are toggleable via config files.
     * **Fix Cabbage Drop:** Fixes Cabbage not dropping the correct items in some situations
     * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
     * **Fix Quake Hammer Texture:** Fixes the Quake Hammer using the incorrect config option to control its size
+* **EvilCraft**
+    * **Vengeance Spirit Regex Cache:** Cache the result of Vengeance Spirit checks against the config, which may attempt to build and check against hundreds of Regex Patterns every tick
 * **The Farlanders**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Thermal Expansion**

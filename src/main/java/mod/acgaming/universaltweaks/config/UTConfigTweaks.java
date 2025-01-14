@@ -13,6 +13,7 @@ import com.cleanroommc.configanytime.ConfigAnytime;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
+import mod.acgaming.universaltweaks.tweaks.blocks.piston.UTPistonBlockBlacklist;
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
@@ -92,6 +93,10 @@ public class UTConfigTweaks
 
     public static class BlocksCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.anvil")
+        @Config.Name("Anvil")
+        public final AnvilCategory ANVIL = new AnvilCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.betterplacement")
         @Config.Name("Better Placement")
         public final BetterPlacementCategory BETTER_PLACEMENT = new BetterPlacementCategory();
@@ -111,6 +116,10 @@ public class UTConfigTweaks
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.overhaulbeacon")
         @Config.Name("Overhaul Beacon")
         public final OverhaulBeaconCategory OVERHAUL_BEACON = new OverhaulBeaconCategory();
+
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.piston")
+        @Config.Name("Piston")
+        public final PistonCategory PISTON = new PistonCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.sapling")
         @Config.Name("Sapling Behavior")
@@ -217,6 +226,14 @@ public class UTConfigTweaks
                 "0 = Infinite (vanilla default)"
             })
         public int utVineSize = 0;
+
+        public static class AnvilCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Anvil XP Level Cap")
+            @Config.Comment("Sets the experience level cap for anvil recipes")
+            public int utAnvilXPLevelCap = 40;
+        }
 
         public static class BetterPlacementCategory
         {
@@ -353,6 +370,22 @@ public class UTConfigTweaks
             {
                 utOverhaulBeaconBlocksModifier.put("modid:example", 1D);
             }
+        }
+
+        public static class PistonCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Piston Block Blacklist Toggle")
+            @Config.Comment("Integrates a blacklist of blocks which are not allowed to be pushed by pistons")
+            public boolean utPistonBlockBlacklistToggle = false;
+
+            @Config.Name("[2] Piston Block Blacklist")
+            @Config.Comment
+                ({
+                    "Blacklist of blocks which are not allowed to be pushed by pistons",
+                    "Syntax: modid:block"
+                })
+            public String[] utPistonBlockBlacklist = new String[] {};
         }
 
         public static class SaplingBehaviorCategory
@@ -1394,6 +1427,10 @@ public class UTConfigTweaks
         @Config.Name("Armor Curve")
         public final ArmorCurveCategory ARMOR_CURVE = new ArmorCurveCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.sound.broadcast")
+        @Config.Name("Broadcast Sounds")
+        public final BroadcastSoundsCategory BROADCAST_SOUNDS = new BroadcastSoundsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.chat")
         @Config.Name("Chat")
         public final ChatCategory CHAT = new ChatCategory();
@@ -1485,6 +1522,11 @@ public class UTConfigTweaks
         @Config.Name("End Portal Parallax")
         @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
         public boolean utEndPortalParallaxToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Forge Mod List Improvements")
+        @Config.Comment("Improves the Forge mod list GUI by remembering last searches and supporting pipes `|` to look up multiple mods")
+        public boolean utForgeModListImprovements = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Infinite Music")
@@ -1695,6 +1737,10 @@ public class UTConfigTweaks
             @Config.Name("[09] Add Advancement Tab Title to Header")
             @Config.Comment("Makes the focused Advancement Tab Title be added to the header, which otherwise is just 'Advancements' for every tab")
             public boolean utAddFocusedTabTitleToHeader = true;
+
+            @Config.Name("[10] Remember Tab Scroll Position")
+            @Config.Comment("Remembers and restores the last advancement tab scroll position")
+            public boolean utRememberTabScrollPosition = false;
         }
 
         public static class ArmorCurveCategory
@@ -1768,6 +1814,23 @@ public class UTConfigTweaks
             public boolean utCompactMessagesToggle = false;
         }
 
+        public static class BroadcastSoundsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast Ender Dragon Death Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundDragon = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast End Portal Creation Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundEndPortal = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast Wither Death Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundWither = true;
+        }
 
         public static class IncurablePotionsCategory
         {
@@ -2431,6 +2494,7 @@ public class UTConfigTweaks
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
                 if (BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
+                if (BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
                 if (MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
                 if (MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();

@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.enderio.mixin;
+package mod.acgaming.universaltweaks.mods.enderio.itemrender.mixin;
 
 import java.util.Random;
 import javax.annotation.Nonnull;

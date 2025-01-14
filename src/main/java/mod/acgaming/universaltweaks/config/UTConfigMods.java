@@ -51,6 +51,10 @@ public class UTConfigMods
     @Config.Name("Botania")
     public static final BotaniaCategory BOTANIA = new BotaniaCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.bwm")
+    @Config.Name("Better with Mods")
+    public static final BWMCategory BWM = new BWMCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.cbmultipart")
     @Config.Name("CB Multipart/Forge Multipart CBE")
     public static final CBMultipartCategory CB_MULTIPART = new CBMultipartCategory();
@@ -110,6 +114,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.erebus")
     @Config.Name("The Erebus")
     public static final ErebusCategory EREBUS = new ErebusCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.evilcraft")
+    @Config.Name("EvilCraft")
+    public static final EvilCraftCategory EVIL_CRAFT = new EvilCraftCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.extrautilities")
     @Config.Name("Extra Utilities 2")
@@ -238,6 +246,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.tr")
     @Config.Name("Tech Reborn")
     public static final TechRebornCategory TECH_REBORN = new TechRebornCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.test_dummy")
+    @Config.Name("MmmMmmMmmMmm")
+    public static final TestDummyCategory TEST_DUMMY = new TestDummyCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.tc")
     @Config.Name("Thaumcraft")
@@ -395,6 +407,13 @@ public class UTConfigMods
         public boolean utDuplicationFixesToggle = true;
     }
 
+    public static class BWMCategory
+    {
+        @Config.Name("Beacon NBT Loading Fix")
+        @Config.Comment("Fixes BWM beacons reading null tags from vanilla beacons")
+        public boolean utBeaconNBTLoadingFix = true;
+    }
+
     public static class CBMultipartCategory
     {
         @Config.RequiresMcRestart
@@ -523,9 +542,24 @@ public class UTConfigMods
     public static class EnderIOCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Fix Chorus Farming StackOverflow")
+        @Config.Comment("Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow")
+        public boolean utChorusStackOverflow = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Soul Binder JEI Appearance")
+        @Config.Comment("Fix the Soul Binder having empty ingredients or displaying filled soul vials in the output slot incorrectly")
+        public boolean utFixSoulBinderJEI = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Replace Obelisk Renderer")
         @Config.Comment("Fixes client-side memory leak by replacing obelisk renderer with a simpler one")
         public boolean utReplaceItemRenderer = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Save Filter Cycle Buttons Properly")
+        @Config.Comment("Fixes an issue where Cycle Buttons for Damage do not report being clicked when in the Picker Overlay, preventing changing Damage values until clicked again")
+        public boolean utSaveFilterCycleButtonProperly = true;
     }
 
     public static class EnderStorageCategory
@@ -560,6 +594,14 @@ public class UTConfigMods
         @Config.Name("Fix Quake Hammer Texture")
         @Config.Comment("Fixes the Quake Hammer using the incorrect config option to control its size")
         public boolean utFixQuakeHammerTexture = true;
+    }
+
+    public static class EvilCraftCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Vengeance Spirit Regex Cache")
+        @Config.Comment("Cache the result of Vengeance Spirit checks against the config, which may attempt to build and check against hundreds of Regex Patterns every tick")
+        public boolean utVengeanceSpiritCache = true;
     }
 
     public static class ExtraUtilitiesCategory
@@ -921,6 +963,18 @@ public class UTConfigMods
         @Config.Name("Optimized Rolling Machine")
         @Config.Comment("Optimizes the Rolling Machine to reduce tick time")
         public boolean utOptimizeRollingMachineToggle = true;
+    }
+
+    public static class TestDummyCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Copy Armor Stacks to Dummy")
+        @Config.Comment
+            ({
+                "Instead of deleting the original itemstack being equipped, use a copy of it and do not drop armor.",
+                "This is primarily relevant for fixing a duplication bug involving EnderIO Armor and its interact with being \"destroyed\""
+            })
+        public boolean utCopyArmor = true;
     }
 
     public static class ThaumcraftCategory
