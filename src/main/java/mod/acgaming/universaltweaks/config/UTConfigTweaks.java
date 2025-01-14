@@ -1503,6 +1503,11 @@ public class UTConfigTweaks
         public boolean utEndPortalParallaxToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Forge Mod List Improvements")
+        @Config.Comment("Improves the Forge mod list GUI by remembering last searches and supporting pipes `|` to look up multiple mods")
+        public boolean utForgeModListImprovements = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Infinite Music")
         @Config.Comment("Lets background music play continuously without delays")
         public boolean utInfiniteMusicToggle = false;
