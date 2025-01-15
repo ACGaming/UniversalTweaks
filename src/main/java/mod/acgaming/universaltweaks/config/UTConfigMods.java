@@ -187,10 +187,6 @@ public class UTConfigMods
     @Config.Name("OpenBlocks")
     public static final OpenBlocksCategory OPEN_BLOCKS = new OpenBlocksCategory();
 
-    @Config.LangKey("cfg.universaltweaks.modintegration.opencomputers")
-    @Config.Name("OpenComputers")
-    public static final OpenComputersCategory OPEN_COMPUTERS = new OpenComputersCategory();
-
     @Config.LangKey("cfg.universaltweaks.modintegration.projectred")
     @Config.Name("ProjectRed")
     public static final ProjectRedCategory PROJECTRED = new ProjectRedCategory();
@@ -818,14 +814,6 @@ public class UTConfigMods
                 "instead of on post-mitigation damage."
             })
         public boolean utLastStandFixToggle = true;
-    }
-
-    public static class OpenComputersCategory
-    {
-        @Config.RequiresMcRestart
-        @Config.Name("Packet Leak Fix")
-        @Config.Comment("Fixes network ByteBuf leaks from PacketHandler")
-        public boolean utPacketLeakFixToggle = true;
     }
 
     public static class ProjectRedCategory

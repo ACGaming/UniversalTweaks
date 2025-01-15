@@ -109,7 +109,6 @@ final def mod_dependencies = [
     'curse.maven:netherrocks-226140:2628297'                          : [debug_netherrocks],
     'curse.maven:nuclearcraft-226254:3784145'                         : [debug_nuclearcraft],
     'curse.maven:openblocks-228816:2699056'                           : [debug_openblocks],
-    'curse.maven:opencomputers-223008:5274236'                        : [debug_opencomputers],
     'curse.maven:openmodslib-228815:2699055'                          : [debug_openblocks],
     'curse.maven:patchouli-306770:3162874'                            : [debug_bewitchment],
     'curse.maven:plustic-376903:4703532'                              : [debug_tinkers_construct],

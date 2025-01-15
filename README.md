@@ -394,8 +394,6 @@ All changes are toggleable via config files.
     * **Radiation Environment Map:** Changes the data table of the radiation environment handler to improve tick time
 * **OpenBlocks**
     * **Last Stand Trigger Fix:** Fixes the Last Stand enchantment triggering too early on pre-mitigation damage (before enchants, potions, etc), instead of on post-mitigation damage.
-* **OpenComputers**
-    * **Packet Leak Fix:** Fixes network ByteBuf leaks from PacketHandler
 * **ProjectRed**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Quark**
