@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.misc.recipebook;
+package mod.acgaming.universaltweaks.tweaks.misc.recipebook.compat;
 
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.LoaderState;

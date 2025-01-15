@@ -31,6 +31,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.storagedrawers.client.json", () -> loaded("storagedrawers"));
             put("mixins.mods.tconstruct.client.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utParticleFixesToggle);
             put("mixins.mods.thaumcraft.entities.client.json", () -> loaded("thaumcraft"));
+            put("mixins.tweaks.misc.recipebook.betweenlands.client.json", () -> loaded("thebetweenlands") && UTConfigTweaks.MISC.utRecipeBookToggle);
         }
     });
 

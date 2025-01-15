@@ -137,6 +137,7 @@ final def mod_dependencies = [
     'curse.maven:test_dummy-225738:2503041'                           : [debug_test_dummy],
     'curse.maven:thaumcraft-223628:2629023'                           : [debug_thaumcraft, debug_thaumic_wonders],
     'curse.maven:thaumicwonders-316704:2787954'                       : [debug_thaumic_wonders],
+    'curse.maven:the-betweenlands-243363:4479688'                     : [debug_the_betweenlands],
     'curse.maven:the-erebus-220698:3211974'                           : [debug_erebus],
     'curse.maven:thefarlanders-336432:2805139'                        : [debug_the_farlanders],
     'curse.maven:thermal-expansion-69163:2926431'                     : [debug_thermal_expansion],
