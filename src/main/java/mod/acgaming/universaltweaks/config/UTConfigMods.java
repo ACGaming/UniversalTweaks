@@ -341,6 +341,10 @@ public class UTConfigMods
         @Config.Name("Clear Particle Effects")
         @Config.Comment("Fixes a bug where particle effects would continue to render after changing dimensions")
         public boolean utClearEffectsOnDimensionChange = true;
+
+        @Config.Name("Fix Division By Zero Crystal Tool")
+        @Config.Comment("Fixes a bug where merging Crystal Tool Properties could result in a division by zero")
+        public boolean utEmptyPropertiesZero = true;
     }
 
     public static class AOACategory
