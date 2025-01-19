@@ -761,6 +761,10 @@ public class UTConfigMods
 
     public static class ModularMagicCategory
     {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Null Ingredient")
+        @Config.Comment("Fix a Null Pointer Exception caused by not checking if the Aspect List ingredient is null before attempting to rendering it")
+        public boolean utEnsureIngredientNotNull = true;
     }
 
     public static class ModularRoutersCategory

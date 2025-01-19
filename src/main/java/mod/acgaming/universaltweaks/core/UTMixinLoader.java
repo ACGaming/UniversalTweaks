@@ -26,6 +26,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.enderio.itemrender.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
             put("mixins.mods.hwyla.json", () -> loaded("waila"));
             put("mixins.mods.ironchests.json", () -> loaded("ironchest") && UTConfigMods.IRON_CHESTS.utReplaceItemRenderer);
+            put("mixins.mods.modularmagic.nullingredient.json", () -> loaded("modularmagic") && UTConfigMods.MODULAR_MAGIC.utEnsureIngredientNotNull);
             put("mixins.mods.modularrouters.json", () -> loaded("modularrouters") && UTConfigMods.MODULAR_ROUTERS.utParticleThreadToggle);
             put("mixins.mods.roost.json", () -> loaded("roost") && loaded("contenttweaker"));
             put("mixins.mods.storagedrawers.client.json", () -> loaded("storagedrawers"));

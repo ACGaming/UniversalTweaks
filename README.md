@@ -384,6 +384,7 @@ All changes are toggleable via config files.
 * **Mob Stages**
     * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
 * **Modular Magic**
+    * **Fix Null Ingredient:** Fix a Null Pointer Exception caused by not checking if the Aspect List ingredient is null before attempting to rendering it
 * **Modular Routers**
     * **Particle Thread Fix:** Fixes particles being added from the wrong thread which corrupted the particle manager
 * **MrTJPCore**
