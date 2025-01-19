@@ -383,6 +383,7 @@ All changes are toggleable via config files.
     * **Copy Armor Stacks to Dummy:** Instead of deleting the original itemstack being equipped, use a copy of it and do not drop armor
 * **Mob Stages**
     * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
+* **Modular Magic**
 * **Modular Routers**
     * **Particle Thread Fix:** Fixes particles being added from the wrong thread which corrupted the particle manager
 * **MrTJPCore**

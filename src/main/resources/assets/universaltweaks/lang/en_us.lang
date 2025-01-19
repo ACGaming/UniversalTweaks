@@ -86,6 +86,7 @@ cfg.universaltweaks.modintegration.ironchests=Iron Chests
 cfg.universaltweaks.modintegration.itemstages=Item Stages
 cfg.universaltweaks.modintegration.mekanism=Mekanism
 cfg.universaltweaks.modintegration.mobstages=Mob Stages
+cfg.universaltweaks.modintegration.modularmagic=Modular Magic
 cfg.universaltweaks.modintegration.modularrouters=Modular Routers
 cfg.universaltweaks.modintegration.mrtjpcore=MrTJPCore
 cfg.universaltweaks.modintegration.netherchest=Nether Chest

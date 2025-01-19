@@ -102,6 +102,8 @@ final def mod_dependencies = [
     'curse.maven:mcjtylib-233105:2745846'                             : [debug_rftools],
     'curse.maven:mekanism-268560:2835175'                             : [debug_mekanism],
     'curse.maven:modtweaker-220954:3840577'                           : [debug_crafttweaker],
+    'curse.maven:modular-machinery-270790:2761302'                    : [debug_modular_magic],
+    'curse.maven:modular-magic-324318:2947301'                        : [debug_modular_magic],
     'curse.maven:modular-routers-250294:2954953'                      : [debug_modular_routers],
     'curse.maven:mrtjpcore-229002:2735197'                            : [debug_mrtjpcore, debug_project_red],
     'curse.maven:mysticallib-277064:3483816'                          : [debug_arcane_archives],

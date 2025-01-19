@@ -163,6 +163,10 @@ public class UTConfigMods
     @Config.Name("Mob Stages")
     public static final MobStagesCategory MOB_STAGES = new MobStagesCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.modularmagic")
+    @Config.Name("Modular Magic")
+    public static final ModularMagicCategory MODULAR_MAGIC = new ModularMagicCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.modularrouters")
     @Config.Name("Modular Routers")
     public static final ModularRoutersCategory MODULAR_ROUTERS = new ModularRoutersCategory();
@@ -753,6 +757,10 @@ public class UTConfigMods
         @Config.Name("Spawning Rules Fixes")
         @Config.Comment("Fixes mob replacement ignoring entity spawning rules")
         public boolean utSpawningRules = true;
+    }
+
+    public static class ModularMagicCategory
+    {
     }
 
     public static class ModularRoutersCategory
