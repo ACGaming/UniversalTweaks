@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+// Courtesy of WaitingIdly
 @Mixin(value = ToolCrystalProperties.class, remap = false)
 public abstract class UTToolCrystalPropertiesMixin
 {
