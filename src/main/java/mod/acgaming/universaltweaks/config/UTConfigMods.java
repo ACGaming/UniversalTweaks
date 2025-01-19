@@ -763,7 +763,7 @@ public class UTConfigMods
     {
         @Config.RequiresMcRestart
         @Config.Name("Fix Null Ingredient")
-        @Config.Comment("Fix a Null Pointer Exception caused by not checking if the Aspect List ingredient is null before attempting to rendering it")
+        @Config.Comment("Fix a Null Pointer Exception in a few places caused by not checking if the ingredient is null before attempting to rendering it")
         public boolean utEnsureIngredientNotNull = true;
     }
 
