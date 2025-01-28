@@ -15,7 +15,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // Courtesy of WaitingIdly
 @Mixin(GuiAdvancementTab.class)
@@ -38,6 +40,16 @@ public abstract class UTGuiAdvancementTabMixin
     @Shadow
     @Final
     private GuiScreenAdvancements screen;
+
+    @Shadow
+    private int scrollX;
+    @Shadow
+    private int scrollY;
+    @Shadow
+    @Final
+    private int index;
+    @Shadow
+    private boolean centered;
 
     // update the size
     @ModifyConstant(method = {"drawContents", "scroll", "drawToolTips"}, constant = @Constant(intValue = UTAdvancementInfo.DEFAULT_WIDTH - 18))
@@ -90,5 +102,20 @@ public abstract class UTGuiAdvancementTabMixin
     {
         if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utDisableFadeOnHover) return original;
         return 0;
+    }
+
+    /**
+     * @reason restore the last tab scroll position
+     */
+    @Inject(method = "drawContents", at = @At("HEAD"))
+    private void utRestoreTabScrollPosition(CallbackInfo ci)
+    {
+        if (!UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle || !UTConfigTweaks.MISC.ADVANCEMENTS.utRememberTabScrollPosition || UTAdvancementInfo.lastScrollX == -1 || UTAdvancementInfo.lastScrollY == -1 || UTAdvancementInfo.lastSelectedTabIndex != index || centered)
+        {
+            return;
+        }
+        scrollX = UTAdvancementInfo.lastScrollX;
+        scrollY = UTAdvancementInfo.lastScrollY;
+        centered = true;
     }
 }

@@ -6,6 +6,7 @@ import net.minecraftforge.items.IItemHandler;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.rwtema.extrautils2.crafting.Radar;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,7 +25,7 @@ public abstract class UTRadarPingMixin
         }
         catch (AbstractMethodError e)
         {
-            e.printStackTrace();
+            if (UTConfigGeneral.DEBUG.utDebugToggle) e.printStackTrace();
             return ItemStack.EMPTY;
         }
     }

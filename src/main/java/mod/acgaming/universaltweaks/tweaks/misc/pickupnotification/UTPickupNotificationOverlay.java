@@ -16,7 +16,6 @@ import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.inventory.ContainerPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -46,7 +45,14 @@ public class UTPickupNotificationOverlay extends GuiScreen
 
     private static ItemStack safeCopy(ItemStack stack)
     {
-        return stack.copy();
+        try
+        {
+            return stack.copy();
+        }
+        catch (Exception e)
+        {
+            return ItemStack.EMPTY;
+        }
     }
 
     private final List<ChangeInfo> changeEntries = Lists.newArrayList();
@@ -251,13 +257,10 @@ public class UTPickupNotificationOverlay extends GuiScreen
         {
             if (player.inventoryContainer != null)
             {
-                player.inventoryContainer = new UTContainerWrapper((ContainerPlayer) player.inventoryContainer, player, () -> {
-                    previous = null;
-                    dimLoadTicks = 0;
-                });
                 playerEntity = player;
             }
             previous = null;
+            dimLoadTicks = 0;
         }
 
         if (player.dimension != dim)
@@ -295,12 +298,12 @@ public class UTPickupNotificationOverlay extends GuiScreen
             ItemStack stack = player.inventory.getStackInSlot(i);
             ItemStack old = previous[i];
             if (isChangeMeaningful(old, stack)) changes.add(Pair.of(old, stack));
-            previous[i] = stack.copy();
+            previous[i] = safeCopy(stack);
         }
 
         ItemStack stackInCursor = player.inventory.getItemStack();
         if (isChangeMeaningful(stackInCursor, previousInCursor)) changes.add(Pair.of(previousInCursor, stackInCursor));
-        previousInCursor = stackInCursor.copy();
+        previousInCursor = safeCopy(stackInCursor);
 
         if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPUNExperience)
         {

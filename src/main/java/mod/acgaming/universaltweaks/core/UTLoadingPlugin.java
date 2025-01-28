@@ -1,7 +1,7 @@
 package mod.acgaming.universaltweaks.core;
 
 import java.util.*;
-import java.util.function.Supplier;
+import java.util.function.BooleanSupplier;
 import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableMap;
@@ -35,15 +35,15 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 
     public static long launchTime;
 
-    private static final Map<String, Supplier<Boolean>> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, BooleanSupplier> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
     {
         {
             put("mixins.tweaks.misc.buttons.snooper.server.json", () -> UTConfigTweaks.MISC.utSnooperToggle);
-            put("mixins.tweaks.misc.difficulty.server.json", () -> true);
+            put("mixins.tweaks.misc.difficulty.multiplayer.json", () -> true);
         }
     });
 
-    private static final Map<String, Supplier<Boolean>> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, BooleanSupplier> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
     {
         {
             put("mixins.bugfixes.blocks.comparatortiming.json", () -> UTConfigBugfixes.BLOCKS.utComparatorTimingToggle);
@@ -95,6 +95,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.blocks.lenientpaths.json", () -> UTConfigTweaks.BLOCKS.utLenientPathsToggle);
             put("mixins.tweaks.blocks.observer.json", () -> UTConfigTweaks.BLOCKS.utPreventObserverActivatesOnPlacement);
             put("mixins.tweaks.blocks.overhaulbeacon.json", () -> UTConfigTweaks.BLOCKS.OVERHAUL_BEACON.utOverhaulBeaconToggle);
+            put("mixins.tweaks.blocks.piston.json", () -> UTConfigTweaks.BLOCKS.PISTON.utPistonBlockBlacklistToggle);
             put("mixins.tweaks.blocks.pumpkinplacing.json", () -> UTConfigTweaks.BLOCKS.utUnsupportedPumpkinPlacing);
             put("mixins.tweaks.blocks.sapling.json", () -> UTConfigTweaks.BLOCKS.SAPLING_BEHAVIOR.utSaplingBehaviorToggle);
             put("mixins.tweaks.blocks.witherstructure.json", () -> UTConfigTweaks.ENTITIES.utWitherPlacement);
@@ -111,11 +112,13 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.entities.loot.json", () -> UTConfigTweaks.ENTITIES.utCreeperMusicDiscsToggle);
             put("mixins.tweaks.entities.minecart.json", () -> UTConfigTweaks.ENTITIES.utMinecartDropsType);
             put("mixins.tweaks.entities.saturation.json", () -> UTConfigTweaks.ENTITIES.utRidingExhaustion != 0.0D);
+            put("mixins.tweaks.entities.sleeping.json", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSettingSpawnToggle);
             put("mixins.tweaks.entities.spawning.caps.json", () -> UTConfigTweaks.ENTITIES.SPAWN_CAPS.utSpawnCapsToggle);
             put("mixins.tweaks.entities.spawning.creeper.confetti.json", () -> UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiChance != 0.0D);
             put("mixins.tweaks.entities.spawning.golem.json", () -> UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGIronGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGSnowGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGWitherToggle);
             put("mixins.tweaks.entities.spawning.husk.json", () -> UTConfigTweaks.ENTITIES.utHuskStraySpawningToggle);
             put("mixins.tweaks.entities.spawning.portal.json", () -> UTConfigTweaks.ENTITIES.utPortalSpawningToggle);
+            put("mixins.tweaks.entities.spawning.skeletontrap.json", () -> UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utSkeletonTrapSpawningToggle);
             put("mixins.tweaks.entities.spawning.stray.json", () -> UTConfigTweaks.ENTITIES.utHuskStraySpawningToggle);
             put("mixins.tweaks.entities.speed.boat.json", () -> UTConfigTweaks.ENTITIES.utBoatSpeed != 0.04D);
             put("mixins.tweaks.entities.speed.cobweb.json", () -> UTConfigTweaks.ENTITIES.COBWEB_SLOWNESS.utCobwebSlownessToggle);
@@ -126,7 +129,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.items.attackcooldown.server.json", () -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
             put("mixins.tweaks.items.bottle.json", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
             put("mixins.tweaks.items.bucket.json", () -> UTConfigTweaks.ITEMS.utPreventBucketPlacingInPortal);
-            put("mixins.tweaks.items.eating.json", () -> UTConfigTweaks.ITEMS.utAlwaysEatToggle);
+            put("mixins.tweaks.items.eating.json", () -> UTConfigTweaks.ITEMS.utAlwaysEatToggle || UTConfigTweaks.ITEMS.utSmartEatToggle);
             put("mixins.tweaks.items.hardcorebuckets.json", () -> UTConfigTweaks.ITEMS.utHardcoreBucketsToggle);
             put("mixins.tweaks.items.infinityallarrows.json", () -> UTConfigTweaks.ITEMS.INFINITY.utAllArrowsAreInfinite);
             put("mixins.tweaks.items.infinitymending.json", () -> UTConfigTweaks.ITEMS.INFINITY.utInfinityEnchantmentConflicts);
@@ -138,10 +141,14 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.armorcurve.json", () -> UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle);
             put("mixins.tweaks.misc.bannerlayers.json", () -> UTConfigTweaks.MISC.utBannerLayers != 6);
             put("mixins.tweaks.misc.commands.seed.json", () -> UTConfigTweaks.MISC.utCopyWorldSeedToggle);
+            put("mixins.tweaks.misc.difficulty.singleplayer.json", () -> true);
             put("mixins.tweaks.misc.incurablepotions.json", () -> UTConfigTweaks.MISC.INCURABLE_POTIONS.utIncurablePotionsToggle);
             put("mixins.tweaks.misc.lightning.damage.json", () -> UTConfigTweaks.MISC.LIGHTNING.utLightningDamage != 5.0D || UTConfigTweaks.MISC.LIGHTNING.utLightningFireTicks != 8);
             put("mixins.tweaks.misc.lightning.fire.json", () -> UTConfigTweaks.MISC.LIGHTNING.utLightningFireToggle);
             put("mixins.tweaks.misc.recipebook.server.json", () -> UTConfigTweaks.MISC.utRecipeBookToggle);
+            put("mixins.tweaks.misc.sound.broadcast.dragon.json", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundDragon);
+            put("mixins.tweaks.misc.sound.broadcast.endportal.json", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundEndPortal);
+            put("mixins.tweaks.misc.sound.broadcast.wither.json", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundWither);
             put("mixins.tweaks.misc.timeouts.json", () -> UTConfigTweaks.MISC.TIMEOUTS.utTimeoutsToggle);
             put("mixins.tweaks.misc.xp.cap.json", () -> UTConfigTweaks.MISC.utXPLevelCap > -1);
             put("mixins.tweaks.misc.xp.linear.json", () -> UTConfigTweaks.MISC.utLinearXP > 0);
@@ -156,6 +163,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.performance.pathfinding.json", () -> UTConfigTweaks.PERFORMANCE.utPathfindingChunkCacheFixToggle);
             put("mixins.tweaks.performance.prefixcheck.json", () -> UTConfigTweaks.PERFORMANCE.utPrefixCheckToggle);
             put("mixins.tweaks.performance.redstone.json", () -> UTConfigTweaks.PERFORMANCE.utRedstoneLightingToggle);
+            put("mixins.tweaks.world.cavegen.json", () -> UTConfigTweaks.WORLD.CAVE_GEN.utCaveGenToggle);
             put("mixins.tweaks.world.chunks.gen.json", () -> UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle);
             put("mixins.tweaks.world.loading.server.json", () -> UTConfigTweaks.PERFORMANCE.utWorldLoadingToggle);
             put("mixins.tweaks.world.sealevel.json", () -> UTConfigTweaks.WORLD.utSeaLevel != 63);
@@ -164,7 +172,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         }
     });
 
-    private static final Map<String, Supplier<Boolean>> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, BooleanSupplier> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
     {
         {
             put("mixins.bugfixes.blocks.banner.json", () -> UTConfigBugfixes.BLOCKS.utBannerBoundingBoxToggle && !renderLibLoaded);
@@ -175,7 +183,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.entities.entitylists.client.json", () -> UTConfigBugfixes.ENTITIES.ENTITY_LISTS.utWorldAdditionsToggle);
             put("mixins.bugfixes.entities.villagermantle.json", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
             put("mixins.bugfixes.misc.depthmask.json", () -> UTConfigBugfixes.MISC.utDepthMaskToggle);
-            put("mixins.bugfixes.misc.modelgap.json", () -> UTConfigBugfixes.MISC.MODEL_GAP.utModelGapToggle);
             put("mixins.bugfixes.misc.potionamplifier.json", () -> UTConfigBugfixes.MISC.utPotionAmplifierVisibilityToggle);
             put("mixins.bugfixes.misc.smoothlighting.json", () -> UTConfigBugfixes.MISC.utAccurateSmoothLighting);
             put("mixins.bugfixes.misc.spectatormenu.json", () -> UTConfigBugfixes.MISC.utSpectatorMenuToggle);
@@ -184,8 +191,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.mods.emojicord.emojicontext.json", () -> UTConfigMods.EMOJICORD.utEmojiContextToggle && emojicordLoaded);
             put("mixins.tweaks.blocks.betterplacement.json", () -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
             put("mixins.tweaks.blocks.hitdelay.json", () -> UTConfigTweaks.BLOCKS.utBlockHitDelay != 5);
-            put("mixins.tweaks.entities.autojump.json", () -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
             put("mixins.tweaks.entities.burning.player.json", () -> UTConfigTweaks.ENTITIES.utFirstPersonBurningOverlay != -0.3D);
+            put("mixins.tweaks.entities.jumping.autojump.json", () -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
             put("mixins.tweaks.entities.playerdismount.json", () -> UTConfigTweaks.MISC.utUseSeparateDismountKey);
             put("mixins.tweaks.entities.playerf5.json", () -> UTConfigTweaks.ENTITIES.utThirdPersonIgnoresNonSolidBlocks);
             put("mixins.tweaks.items.attackcooldown.client.json", () -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
@@ -200,8 +207,10 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.credits.json", () -> UTConfigTweaks.MISC.utSkipCreditsToggle);
             put("mixins.tweaks.misc.glint.enchantedbook.json", () -> UTConfigTweaks.MISC.utDisableEnchantmentBookGlint);
             put("mixins.tweaks.misc.glint.potion.json", () -> UTConfigTweaks.MISC.utDisablePotionGlint);
+            put("mixins.tweaks.misc.gui.defaultguitextcolor.json", () -> !UTConfigTweaks.MISC.utDefaultGuiTextColor.equals("404040"));
             put("mixins.tweaks.misc.gui.keybindlistentry.json", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
             put("mixins.tweaks.misc.gui.lanserverproperties.json", () -> UTConfigTweaks.MISC.utLANServerProperties);
+            put("mixins.tweaks.misc.gui.modlist.json", () -> UTConfigTweaks.MISC.utForgeModListImprovements);
             put("mixins.tweaks.misc.gui.overlaymessage.json", () -> UTConfigTweaks.MISC.utOverlayMessageHeight != -4);
             put("mixins.tweaks.misc.gui.ping.json", () -> UTConfigTweaks.MISC.utBetterPing);
             put("mixins.tweaks.misc.gui.potionduration.json", () -> UTConfigTweaks.MISC.utPotionDurationToggle);
@@ -301,8 +310,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             // Causes crashes in dev env only
             return !mixinConfig.equals("mixins.tweaks.misc.armorcurve.json");
         }
-        Supplier<Boolean> sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : null;
-        Supplier<Boolean> commonSupplier = commonMixinConfigs.get(mixinConfig);
-        return sidedSupplier != null ? sidedSupplier.get() : commonSupplier == null || commonSupplier.get();
+        BooleanSupplier sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : null;
+        BooleanSupplier commonSupplier = commonMixinConfigs.get(mixinConfig);
+        return sidedSupplier != null ? sidedSupplier.getAsBoolean() : commonSupplier == null || commonSupplier.getAsBoolean();
     }
 }

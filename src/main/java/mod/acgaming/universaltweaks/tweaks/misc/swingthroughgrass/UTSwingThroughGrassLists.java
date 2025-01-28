@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
@@ -14,11 +15,13 @@ public class UTSwingThroughGrassLists
 {
     protected static List<Block> blacklistedBlocks = new ArrayList<>();
     protected static List<Block> whitelistedBlocks = new ArrayList<>();
+    protected static List<Item> blacklistedItems = new ArrayList<>();
 
     public static void initLists()
     {
         blacklistedBlocks.clear();
         whitelistedBlocks.clear();
+        blacklistedItems.clear();
         try
         {
             for (String entry : UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassBlacklist)
@@ -30,6 +33,11 @@ public class UTSwingThroughGrassLists
             {
                 ResourceLocation resLoc = new ResourceLocation(entry);
                 if (ForgeRegistries.BLOCKS.containsKey(resLoc)) whitelistedBlocks.add(ForgeRegistries.BLOCKS.getValue(resLoc));
+            }
+            for (String entry : UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassItemBlacklist)
+            {
+                ResourceLocation resLoc = new ResourceLocation(entry);
+                if (ForgeRegistries.ITEMS.containsKey(resLoc)) blacklistedItems.add(ForgeRegistries.ITEMS.getValue(resLoc));
             }
         }
         catch (Exception e)

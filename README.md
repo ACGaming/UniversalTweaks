@@ -61,7 +61,6 @@ All changes are toggleable via config files.
 * **Max Health:** Corrects maximum player health on joining by setting the last saved health value
 * **Minecart AI:** Fixes non-player entities being able to control minecarts
 * **Mining Glitch:** Prevents ghost blocks by sending additional movement packets
-* **Model Gap:** Fixes transparent gaps in all 3D models of blocks and items
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
 * **Particle Spawning:** Fixes various particle types not showing up on the client
@@ -93,6 +92,7 @@ All changes are toggleable via config files.
 * **AI Improvements:** Replaces/removes entity AI for improved server performance
 * **Always Eat:** Allows the consumption of food at any time, regardless of the hunger bar
 * **Always Return to Main Menu:** Always returns the player to the main menu when quitting the game
+* **Anvil XP Level Cap:** Sets the experience level cap for anvil recipes
 * **Armed Armor Stands:** Enables arms for armor stands by default
 * **Armor Curve:** Adjusts the armor scaling and degradation formulae for mobs and players
 * **Attributes:** Sets custom ranges for entity attributes
@@ -118,9 +118,11 @@ All changes are toggleable via config files.
     * **Mending and Infinity:** Allows the Infinity Enchantment to be combined with Mending
     * **Infinity Affects All Arrows:** Allows the Infinity Enchantment to apply to all arrows (e.g. Tipped Arrows)
 * **Breakable Bedrock:** Allows customizable mining of bedrock
+* **Broadcast Sounds:** Controls broadcasting of Ender Dragon, End portal creation and Wither sounds
 * **Burning Baby Zombies:** Lets baby zombies burn in daylight as in Minecraft 1.13+
 * **Burning Skeletons:** Prevents skeletons burning in daylight
 * **Burning Zombies:** Prevents zombies burning in daylight
+* **Cave Generation:** Sets custom values for the vanilla cave generation
 * **Charged Creeper Spawning:** Sets the chance for creepers to spawn charged
 * **Chat:**
   * **Chat Lines:** Sets the maximum number of chat lines to display
@@ -133,6 +135,7 @@ All changes are toggleable via config files.
 * **Connection Timeouts:** Allows configuring read/login timeouts
     * Helps slow clients log into a server of a large modpack
 * **Copy World Seed:** Enables clicking of `/seed` world seed in chat to copy to clipboard
+* **Coyote Time Jumping:** Lets the player jump a couple frames after stepping off a ledge, similar to jumping in many platformers
 * **Crafting Cache:** Adds an IRecipe cache to improve recipe performance in large modpacks
 * **Creeper Confetti:** Replaces deadly creeper explosions with delightful confetti (with a configurable chance)
 * **Critical Arrow Damage:** Sets the additional damage that critical arrows deal
@@ -141,6 +144,7 @@ All changes are toggleable via config files.
 * **Damage Tilt:** Restores feature to tilt the camera when damaged
 * **Damage Velocity:** Enables the modification of damage sources that change the entity's velocity
 * **Default Difficulty:** Sets the default difficulty for newly generated worlds
+* **Default GUI Text Color:** Sets the default GUI text color (HEX RGB code) which can improve readability in dark mode resource packs
 * **Dimension Unload:** Unloads dimensions not in use to free up resources
 * **Disable Advancements:** Prevents the advancement system from loading entirely
 * **Disable Audio Debug:** Improves loading times by removing debug code for missing sounds and subtitles
@@ -153,6 +157,7 @@ All changes are toggleable via config files.
 * **Disable Glint Overlay on Enchantment Books:** Disables the glint overlay on enchantment books
 * **Disable Glint Overlay on Potions:** Disables the glint overlay on potions
 * **Disable Sleeping:** Disables skipping night by using a bed while making it still able to set spawn
+* **Disable Sleeping Setting Spawn:** Disables setting the spawn point by using a bed while making it still able to sleep
 * **Disable Text Shadowing:** Disables all text shadowing, where text has a darker version of itself rendered behind the normal text, changing the appearance and can improve fps on some screens
 * **Disable Villager Trade Leveling:** Disables leveling of villager careers, only allowing base level trades
 * **Disable Villager Trade Restock:** Disables restocking of villager trades, only allowing one trade per offer
@@ -173,6 +178,7 @@ All changes are toggleable via config files.
 * **Fence/Wall Jump:** Allows the player to jump over fences and walls
 * **Finite Water:** Prevents creation of infinite water sources outside of ocean and river biomes
 * **First Person Burning Overlay:** Sets the offset for the fire overlay in first person when the player is burning
+* **Forge Mod List Improvements:** Improves the Forge mod list GUI by remembering last searches and supporting pipes `|` to look up multiple mods
 * **Glass Bottle Consumes Water Source:** Causes Glass Bottles to consume the source block of water
 * **Growth Size:** Configurable growth height/length for sugar cane, cacti and vines
 * **Hardcore Buckets:** Prevents placing of liquid source blocks in the world
@@ -213,16 +219,19 @@ All changes are toggleable via config files.
 * **No Portal Spawning:** Prevents zombie pigmen spawning from nether portals
 * **No Redstone Lighting:** Disables lighting of active redstone, repeaters, and comparators to improve performance
 * **No Saddled Wandering:** Stops horses wandering around when saddled
+* **No Skeleton Trap Spawning:** Prevents skeleton traps spawning during thunderstorms
 * **No Smelting XP:** Disables the experience reward when smelting items in furnaces
 * **Offhand Improvement:** Prevents placing offhand blocks when blocks or food are held in the mainhand
 * **Overhaul Beacon:** Change how beacon construct and range apply per level
 * **Overlay Message Height:** Sets the Y value of the overlay message (action bar), displayed for playing records etc.
 * **Particle Limit:** Limits particles to a set amount. Should not be set too low, as it will cause particles to appear for a single tick before vanishing
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
+* **Piston Block Blacklist:** Integrates a blacklist of blocks which are not allowed to be pushed by pistons
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
 * **Prevent Mob Eggs from Changing Spawners:** Prevents using Mob Spawner Eggs to change what a Spawner is spawning
 * **Prevent Observer Activating on Placement:** Controls if the observer activates itself on the first tick when it is placed
 * **Prevent Placing Buckets in Portals:** Prevents placing of liquid source blocks overriding portal blocks
+* **Projectiles Bounce Off Slime Blocks:** Lets projectiles like arrows bounce off slime blocks
 * **Pumpkin Placing:** Allows placing Pumpkins and Jack'O'Lanterns without a supporting block
 * **Rabbit Killer Spawning:** Configurable chance for rabbits to spawn as the killer bunny variant
 * **Rabbit Toast Spawning:** Configurable chance for rabbits to spawn as the Toast variant
@@ -240,6 +249,7 @@ All changes are toggleable via config files.
 * **Skip Credits:** Skips the credits screen after the player goes through the end podium portal
 * **Skip Missing Registry Entries Screen:** Automatically confirms the 'Missing Registry Entries' screen on world load
 * **Sleeping Time:** Determines at which time of day sleeping is allowed in ticks (0 - 24000)
+* **Smart Eat:** Requires the hunger bar to be missing food points equal to or more than the amount restored by the food
 * **Smooth Scrolling:** Adds smooth scrolling to every in-game list
 * **Soulbound Vexes:** Summoned vexes will also die when their summoner is killed
 * **Spawn Caps:** Sets maximum spawning limits for different entity types
@@ -279,10 +289,12 @@ All changes are toggleable via config files.
 * **Actually Additions**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Laser Upgrade Voiding:** Fixes Laser Upgrades voiding instead of applying if there is only one item in the stack
+    * **Item Laser Particles Graphics:** Sets what level of Graphic Setting is required to disable the Item Particles generated by Item Lasers transferring items
 * **Astral Sorcery**
   * **Missing Player Log Level:** Downgrades the message when completing a recipe without an initializing player from a warning to a debug
   * **Sooty Marble Rendering:** Fixes Sooty Marble Pillar blocking the proper rendering of adjacent fluids due to inverted logic
   * **Clear Particle Effects:** Fixes a bug where particle effects would continue to render after changing dimensions
+  * **Fix Division By Zero Crystal Tool:** Fixes a bug where merging Crystal Tool Properties could result in a division by zero
 * **Advent of Ascension**
     * **Improved Player Tick:** Improves AoA player ticking by only sending inventory changes when necessary
 * **Arcane Archives**
@@ -300,6 +312,8 @@ All changes are toggleable via config files.
 * **Botania**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
+* **Better with Mods**
+    * **Beacon NBT Loading Fix:** Fixes BWM beacons reading null tags from vanilla beacons
 * **CB Multipart**
     * **Memory Leak Fix:** Fixes a memory leak associated with EntityPlayer
 * **Chisel**
@@ -318,8 +332,11 @@ All changes are toggleable via config files.
     * **Memory Leak Fix:** Fixes client-side memory leak associated with miniaturization recipes
 * **Effortless Building**
     * **Block Transmutation Fix:** Fixes Effortless Building ignoring Metadata when checking for items in inventory
+* **Electroblob's Wizardry**
+    * **Construct's Armory Armor Fix:** Fixes crash when wearing armors from Construct's Armory
 * **Elementary Staffs**
     * **Electric Staff Port:** Reintroduces the 1.5 electric staff behavior along with some subtle particles
+    * **Health Staff Player Healing:** Lets the health staff also heal other players (and potentially more living entities)
 * **Elenai Dodge 2**
     * **Extinguishing Dodges:** Chance per dodge to extinguish the player when burning
     * **Feathers Helper API Fix:** Fixes server-sided crashes when the Feathers Helper API is utilized
@@ -327,7 +344,10 @@ All changes are toggleable via config files.
 * **Emojicord**
     * **Emoji Context:** Improves emoji context calculation to improve fps when rendering a lot of text
 * **Ender IO**
-    * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one 
+    * **Fix Chorus Farming StackOverflow:** Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow
+    * **Fix Soul Binder JEI Appearance:** Fixes the Soul Binder having empty ingredients or displaying filled soul vials in the output slot incorrectly
+    * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one
+    * **Save Filter Cycle Buttons Properly:** Fixes an issue where Cycle Buttons for Damage do not report being clicked when in the Picker Overlay, preventing changing Damage values until clicked again
 * **Ender Storage**
     * **Fix Frequency Tracking:** Fixes storage frequencies being tracked multiple times
 * **Epic Siege Mod**
@@ -338,11 +358,9 @@ All changes are toggleable via config files.
     * **Fix Deep Dark Stats:** Fixes Mob Attack and Health Statistics being repeatedly doubled
     * **Mutable Machine Block Drops:** Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list.
     * **Creative Mill Harvestability:** Fixes the Creative Mill Generator not respecting the Creative Block Breaking config
+    * **Downgrade Potion Recipes Log Level:** Downgrades the message when creating a potion recipe from info to a debug
 * **Forestry**
     * **Arborist Villager Trades:** Adds custom emerald to germling trades to the arborist villager
-    * **Disable Bee Damage Armor Bypass:** Disables damage caused by bees bypassing player armor
-    * **Duplication Fixes:** Fixes various duplication exploits
-    * **Replanting Cocoa Beans:** Allows Forestry farms to automatically replant cocoa beans
 * **HWYLA**
   * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
 * **In Control!**
@@ -363,8 +381,12 @@ All changes are toggleable via config files.
     * **Ingredient Matching:** Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues
 * **Mekanism**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **MmmMmmMmmMmm**
+    * **Copy Armor Stacks to Dummy:** Instead of deleting the original itemstack being equipped, use a copy of it and do not drop armor
 * **Mob Stages**
     * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
+* **Modular Magic**
+    * **Fix Null Ingredient:** Fix a Null Pointer Exception in a few places caused by not checking if the ingredient is null before attempting to rendering it
 * **Modular Routers**
     * **Particle Thread Fix:** Fixes particles being added from the wrong thread which corrupted the particle manager
 * **MrTJPCore**
@@ -377,12 +399,12 @@ All changes are toggleable via config files.
     * **Radiation Environment Map:** Changes the data table of the radiation environment handler to improve tick time
 * **OpenBlocks**
     * **Last Stand Trigger Fix:** Fixes the Last Stand enchantment triggering too early on pre-mitigation damage (before enchants, potions, etc), instead of on post-mitigation damage.
-* **OpenComputers**
-    * **Packet Leak Fix:** Fixes network ByteBuf leaks from PacketHandler
 * **ProjectRed**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Quark**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **Random Things**
+  * **Anvil Crafting Fix:** Fixes a bug where crafting the output of an Anvil recipe would modify the recipe, preventing crafts until restart
 * **Railcraft**
   * **No Beta Warning:** Disables the beta message warning on world join
 * **Requious Frakto**
@@ -393,6 +415,7 @@ All changes are toggleable via config files.
     * **Early Register CT Chickens:** Improves load time by registering ContentTweaker chickens early for Roost to detect them
 * **Simple Difficulty**
     * **Iron Canteen Interaction Fix:** Fixes the interaction of iron canteens with rain collectors
+    * **Altitude Modifier:** Sets additional variables for altitude modifier calculations
 * **Simply Jetpacks**
     * **Memory Leak Fix:** Fixes a client-side memory leak associated with EntityPlayer
 * **Spice Of Life**
@@ -418,6 +441,8 @@ All changes are toggleable via config files.
     * **Fix Cabbage Drop:** Fixes Cabbage not dropping the correct items in some situations
     * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
     * **Fix Quake Hammer Texture:** Fixes the Quake Hammer using the incorrect config option to control its size
+* **EvilCraft**
+    * **Vengeance Spirit Regex Cache:** Cache the result of Vengeance Spirit checks against the config, which may attempt to build and check against hundreds of Regex Patterns every tick
 * **The Farlanders**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Thermal Expansion**

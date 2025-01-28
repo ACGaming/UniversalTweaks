@@ -33,8 +33,8 @@ public class UTED2Sprinting
     {
         if (event.phase == TickEvent.Phase.START
             && event.player instanceof EntityPlayerSP
-            && (((EntityPlayerSP) event.player).sprintingTicksLeft < 5 || FeathersHelper.getFeatherLevel((EntityPlayerSP) event.player) == 0)
-            && FeathersHelper.getFeatherLevel((EntityPlayerSP) event.player) < UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherRequirement)
+            && (((EntityPlayerSP) event.player).sprintingTicksLeft < 5 || FeathersHelper.getFeatherLevel((EntityPlayerSP) event.player) - FeathersHelper.getWeight((EntityPlayerSP) event.player) == 0)
+            && FeathersHelper.getFeatherLevel((EntityPlayerSP) event.player) - FeathersHelper.getWeight((EntityPlayerSP) event.player) < UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherRequirement)
         {
             event.player.setSprinting(false);
             KeyBinding.setKeyBindState(Minecraft.getMinecraft().gameSettings.keyBindSprint.getKeyCode(), false);

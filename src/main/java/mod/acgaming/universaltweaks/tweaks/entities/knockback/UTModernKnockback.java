@@ -11,7 +11,7 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTModernKnockback
 {
     @SubscribeEvent

@@ -13,6 +13,7 @@ import com.cleanroommc.configanytime.ConfigAnytime;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
+import mod.acgaming.universaltweaks.tweaks.blocks.piston.UTPistonBlockBlacklist;
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
@@ -92,6 +93,10 @@ public class UTConfigTweaks
 
     public static class BlocksCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.anvil")
+        @Config.Name("Anvil")
+        public final AnvilCategory ANVIL = new AnvilCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.betterplacement")
         @Config.Name("Better Placement")
         public final BetterPlacementCategory BETTER_PLACEMENT = new BetterPlacementCategory();
@@ -111,6 +116,10 @@ public class UTConfigTweaks
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.overhaulbeacon")
         @Config.Name("Overhaul Beacon")
         public final OverhaulBeaconCategory OVERHAUL_BEACON = new OverhaulBeaconCategory();
+
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.piston")
+        @Config.Name("Piston")
+        public final PistonCategory PISTON = new PistonCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.sapling")
         @Config.Name("Sapling Behavior")
@@ -200,6 +209,10 @@ public class UTConfigTweaks
         @Config.Comment("Allows placing End Crystals without requiring Obsidian or Bedrock below")
         public boolean utEndCrystalAnywherePlacing = false;
 
+        @Config.Name("Projectiles Bounce Off Slime Blocks")
+        @Config.Comment("Lets projectiles like arrows bounce off slime blocks")
+        public boolean utSlimeBlockProjectiles = false;
+
         @Config.RequiresMcRestart
         @Config.Name("Sugar Cane Size")
         @Config.Comment("Determines how tall sugar cane can grow")
@@ -213,6 +226,14 @@ public class UTConfigTweaks
                 "0 = Infinite (vanilla default)"
             })
         public int utVineSize = 0;
+
+        public static class AnvilCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Anvil XP Level Cap")
+            @Config.Comment("Sets the experience level cap for anvil recipes")
+            public int utAnvilXPLevelCap = 40;
+        }
 
         public static class BetterPlacementCategory
         {
@@ -351,6 +372,22 @@ public class UTConfigTweaks
             }
         }
 
+        public static class PistonCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Piston Block Blacklist Toggle")
+            @Config.Comment("Integrates a blacklist of blocks which are not allowed to be pushed by pistons")
+            public boolean utPistonBlockBlacklistToggle = false;
+
+            @Config.Name("[2] Piston Block Blacklist")
+            @Config.Comment
+                ({
+                    "Blacklist of blocks which are not allowed to be pushed by pistons",
+                    "Syntax: modid:block"
+                })
+            public String[] utPistonBlockBlacklist = new String[] {};
+        }
+
         public static class SaplingBehaviorCategory
         {
             @Config.RequiresMcRestart
@@ -483,6 +520,10 @@ public class UTConfigTweaks
         @Config.Name("Burning Zombies")
         @Config.Comment("Lets zombies burn in daylight")
         public boolean utBurningZombiesToggle = true;
+
+        @Config.Name("Coyote Time Jumping")
+        @Config.Comment("Lets the player jump a couple frames after stepping off a ledge, similar to jumping in many platformers")
+        public boolean utCoyoteTimeJumpingToggle = false;
 
         @Config.Name("Creeper Charged Spawning Chance")
         @Config.Comment("Sets the chance for creepers to spawn charged")
@@ -854,6 +895,11 @@ public class UTConfigTweaks
             @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")
             public boolean utDisableSleepingToggle = false;
 
+            @Config.RequiresMcRestart
+            @Config.Name("Disable Sleeping Setting Spawn")
+            @Config.Comment("Disables setting the spawn point by using a bed while making it still able to sleep")
+            public boolean utDisableSettingSpawnToggle = false;
+
             @Config.Name("Sleeping Time")
             @Config.RangeInt(min = -1, max = 23999)
             @Config.Comment
@@ -903,6 +949,11 @@ public class UTConfigTweaks
             @Config.Name("Taming Undead Horses")
             @Config.Comment("Allows taming of undead horses")
             public boolean utTamingUndeadHorsesToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("No Skeleton Trap Spawning")
+            @Config.Comment("Prevents skeleton traps spawning during thunderstorms")
+            public boolean utSkeletonTrapSpawningToggle = false;
         }
 
         public static class WaterFallDamageCategory
@@ -1128,6 +1179,11 @@ public class UTConfigTweaks
                 "         -> custommod:customshield:1;42;69"
             })
         public String[] utCustomUseDurations = new String[] {};
+
+        @Config.RequiresMcRestart
+        @Config.Name("Smart Eat")
+        @Config.Comment("Requires the hunger bar to be missing food points equal to or more than the amount restored by the food")
+        public boolean utSmartEatToggle = false;
 
         @Config.Name("Super Hot Torch")
         @Config.Comment("Enables one-time ignition of entities by hitting them with a torch")
@@ -1371,6 +1427,10 @@ public class UTConfigTweaks
         @Config.Name("Armor Curve")
         public final ArmorCurveCategory ARMOR_CURVE = new ArmorCurveCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.sound.broadcast")
+        @Config.Name("Broadcast Sounds")
+        public final BroadcastSoundsCategory BROADCAST_SOUNDS = new BroadcastSoundsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.chat")
         @Config.Name("Chat")
         public final ChatCategory CHAT = new ChatCategory();
@@ -1433,6 +1493,16 @@ public class UTConfigTweaks
         @Config.Comment("Sets the default difficulty for newly generated worlds")
         public EnumDifficulty utDefaultDifficulty = EnumDifficulty.NORMAL;
 
+
+        @Config.RequiresMcRestart
+        @Config.Name("Default GUI Text Color")
+        @Config.Comment
+            ({
+                "Sets the default GUI text color (HEX RGB code) which can improve readability in dark mode resource packs",
+                "404040 for vanilla default"
+            })
+        public String utDefaultGuiTextColor = "404040";
+
         @Config.RequiresMcRestart
         @Config.Name("Disable Advancements")
         @Config.Comment("Prevents the advancement system from loading entirely")
@@ -1452,6 +1522,11 @@ public class UTConfigTweaks
         @Config.Name("End Portal Parallax")
         @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
         public boolean utEndPortalParallaxToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Forge Mod List Improvements")
+        @Config.Comment("Improves the Forge mod list GUI by remembering last searches and supporting pipes `|` to look up multiple mods")
+        public boolean utForgeModListImprovements = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Infinite Music")
@@ -1662,6 +1737,10 @@ public class UTConfigTweaks
             @Config.Name("[09] Add Advancement Tab Title to Header")
             @Config.Comment("Makes the focused Advancement Tab Title be added to the header, which otherwise is just 'Advancements' for every tab")
             public boolean utAddFocusedTabTitleToHeader = true;
+
+            @Config.Name("[10] Remember Tab Scroll Position")
+            @Config.Comment("Remembers and restores the last advancement tab scroll position")
+            public boolean utRememberTabScrollPosition = false;
         }
 
         public static class ArmorCurveCategory
@@ -1735,6 +1814,23 @@ public class UTConfigTweaks
             public boolean utCompactMessagesToggle = false;
         }
 
+        public static class BroadcastSoundsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast Ender Dragon Death Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundDragon = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast End Portal Creation Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundEndPortal = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast Wither Death Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundWither = true;
+        }
 
         public static class IncurablePotionsCategory
         {
@@ -1792,19 +1888,27 @@ public class UTConfigTweaks
             public EnumSoundModes utLoadSoundMode = EnumSoundModes.NOTHING;
 
             @Config.Name("[2] Minecraft Loaded Sounds")
-            @Config.Comment({"Sounds to play when Minecraft is loaded", "Syntax: eventname;pitch"})
+            @Config.Comment
+                ({
+                    "Sounds to play when Minecraft is loaded",
+                    "Syntax: eventname;pitch;volume"
+                })
             public String[] utLoadSoundMC = new String[]
                 {
-                    "entity.experience_orb.pickup;1.0",
-                    "entity.player.levelup;1.0"
+                    "entity.experience_orb.pickup;1.0;1.0",
+                    "entity.player.levelup;1.0;1.0"
                 };
 
             @Config.Name("[3] World Loaded Sounds")
-            @Config.Comment({"Sounds to play when the world is loaded", "Syntax: eventname;pitch"})
+            @Config.Comment
+                ({
+                    "Sounds to play when the world is loaded",
+                    "Syntax: eventname;pitch;volume"
+                })
             public String[] utLoadSoundWorld = new String[]
                 {
-                    "entity.experience_orb.pickup;1.0",
-                    "entity.player.levelup;1.0"
+                    "entity.experience_orb.pickup;1.0;1.0",
+                    "entity.player.levelup;1.0;1.0"
                 };
 
             public enum EnumSoundModes
@@ -1951,6 +2055,17 @@ public class UTConfigTweaks
                     "Syntax: modid:block"
                 })
             public String[] utSwingThroughGrassWhitelist = new String[] {};
+
+            @Config.Name("[4] Item Blacklist")
+            @Config.Comment
+                ({
+                    "Excludes items from the swing through grass tweak",
+                    "Syntax: modid:item"
+                })
+            public String[] utSwingThroughGrassItemBlacklist = new String[]
+                {
+                    "erebus:wand_of_animation"
+                };
         }
 
         public static class TimeoutsCategory
@@ -2199,6 +2314,10 @@ public class UTConfigTweaks
 
     public static class WorldCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.world.cavegen")
+        @Config.Name("Cave Generation")
+        public final CaveGenCategory CAVE_GEN = new CaveGenCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.world.chunkgenlimit")
         @Config.Name("Chunk Gen Limit")
         public final ChunkGenLimitCategory CHUNK_GEN_LIMIT = new ChunkGenLimitCategory();
@@ -2238,6 +2357,32 @@ public class UTConfigTweaks
                 "Vanilla default is 32"
             })
         public int utVillageDistance = 32;
+
+        public static class CaveGenCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Cave Generation Toggle")
+            @Config.Comment("Sets custom values for the vanilla cave generation")
+            public boolean utCaveGenToggle = false;
+
+            @Config.Name("[2] Cave Size")
+            @Config.Comment
+                ({
+                    "Size of cave systems",
+                    "40 for pre-1.7 generation",
+                    "15 for vanilla default"
+                })
+            public int utCaveGenSize = 15;
+
+            @Config.Name("[3] Cave Rarity")
+            @Config.Comment
+                ({
+                    "Chance for generating cave systems",
+                    "15 for pre-1.7 generation",
+                    "7 for vanilla default"
+                })
+            public int utCaveGenRarity = 7;
+        }
 
         public static class ChunkGenLimitCategory
         {
@@ -2349,6 +2494,7 @@ public class UTConfigTweaks
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
                 if (BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
+                if (BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
                 if (MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
                 if (MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Supplier;
+import java.util.function.BooleanSupplier;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.util.text.TextComponentTranslation;
@@ -12,23 +12,26 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
 
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 
 public class UTObsoleteModsHandler
 {
-    private static final Map<String, Supplier<Boolean>> obsoleteModMap = ImmutableMap.copyOf(new HashMap<String, Supplier<Boolean>>()
+    private static final Map<String, BooleanSupplier> obsoleteModMap = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
     {
         {
             put("aiimprovements", () -> UTConfigTweaks.ENTITIES.utAIReplacementToggle || UTConfigTweaks.ENTITIES.utAIRemovalToggle);
             put("armorcurve", () -> UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle);
             put("attributefix", () -> UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributesToggle);
+            put("badwithernocookiereloaded", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundDragon || !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundEndPortal || !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundWither);
             put("bannerpatch", () -> UTConfigBugfixes.BLOCKS.utBannerBoundingBoxToggle);
             put("bedbreakbegone", () -> UTConfigTweaks.BLOCKS.utBedObstructionToggle);
             put("bedfix", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
             put("bedpatch", () -> true); // Fix integrated in Forge 14.23.2.2643 (#4784)
             put("bedsaynosleep", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
+            put("betteradvancements", () -> UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle);
             put("betterburning", () -> UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBArrowsToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBCookedToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBExtinguishToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBOverlayToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBSpreadingToggle);
             put("betterpingdisplay", () -> UTConfigTweaks.MISC.utBetterPing);
             put("betterplacement", () -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
@@ -140,7 +143,13 @@ public class UTObsoleteModsHandler
         }
     });
 
-    public static boolean showObsoleteMods = true;
+    private static List<String> obsoleteModsList;
+    private static boolean hasShownObsoleteMods = false;
+
+    public static boolean hasObsoleteModsMessage()
+    {
+        return !UTObsoleteModsHandler.hasShownObsoleteMods() && !UTConfigGeneral.DEBUG.utBypassIncompatibilityToggle && !getObsoleteModsList().isEmpty();
+    }
 
     public static List<String> obsoleteModsMessage()
     {
@@ -148,11 +157,25 @@ public class UTObsoleteModsHandler
         messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning1").getFormattedText());
         messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning2").getFormattedText());
         messages.add("");
+        messages.addAll(getObsoleteModsList());
+        messages.add("");
+        messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning3").getFormattedText());
+        return messages;
+    }
 
+    private static List<String> getObsoleteModsList()
+    {
+        if (obsoleteModsList == null) obsoleteModsList = generateObsoleteModsList();
+        return obsoleteModsList;
+    }
+
+    private static List<String> generateObsoleteModsList()
+    {
+        List<String> messages = new ArrayList<>();
         Map<String, ModContainer> modIdMap = Loader.instance().getIndexedModList();
         for (String modId : obsoleteModMap.keySet())
         {
-            if (Loader.isModLoaded(modId) && obsoleteModMap.get(modId).get())
+            if (Loader.isModLoaded(modId) && obsoleteModMap.get(modId).getAsBoolean())
             {
                 messages.add(modIdMap.get(modId).getName());
             }
@@ -163,9 +186,16 @@ public class UTObsoleteModsHandler
         if (UTReflectionUtil.isClassLoaded("io.github.jikuja.LocaleTweaker") && UTConfigBugfixes.MISC.utLocaleToggle) messages.add("LocaleFixer");
         if (UTReflectionUtil.isClassLoaded("com.cleanroommc.blockdelayremover.BlockDelayRemoverCore") && UTConfigTweaks.BLOCKS.utBlockHitDelay != 5) messages.add("Block Delay Remover");
         if (UTReflectionUtil.isClassLoaded("io.github.barteks2x.chunkgenlimiter.ChunkGenLimitMod") && UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) messages.add("Chunk Generation Limiter");
-        messages.add("");
-        messages.add(new TextComponentTranslation("msg.universaltweaks.obsoletemods.warning3").getFormattedText());
         return messages;
     }
 
+    public static boolean hasShownObsoleteMods()
+    {
+        return hasShownObsoleteMods;
+    }
+
+    public static void setHasShownObsoleteMods(boolean value)
+    {
+        hasShownObsoleteMods = value;
+    }
 }
