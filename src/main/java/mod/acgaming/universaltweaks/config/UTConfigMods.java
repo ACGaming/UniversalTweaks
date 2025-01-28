@@ -503,8 +503,8 @@ public class UTConfigMods
     public static class ElectroblobsWizardryCategory
     {
         @Config.RequiresMcRestart
-        @Config.Name("Fix Construct's Armory Armors Crash")
-        @Config.Comment("Fixes crash when wearing armors from the Construct's Armory mod")
+        @Config.Name("Construct's Armory Armor Fix")
+        @Config.Comment("Fixes crash when wearing armors from Construct's Armory")
         public boolean utConstructsArmoryFixToggle = true;
     }
 

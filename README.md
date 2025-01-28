@@ -332,6 +332,8 @@ All changes are toggleable via config files.
     * **Memory Leak Fix:** Fixes client-side memory leak associated with miniaturization recipes
 * **Effortless Building**
     * **Block Transmutation Fix:** Fixes Effortless Building ignoring Metadata when checking for items in inventory
+* **Electroblob's Wizardry**
+    * **Construct's Armory Armor Fix:** Fixes crash when wearing armors from Construct's Armory
 * **Elementary Staffs**
     * **Electric Staff Port:** Reintroduces the 1.5 electric staff behavior along with some subtle particles
     * **Health Staff Player Healing:** Lets the health staff also heal other players (and potentially more living entities)
