@@ -91,6 +91,10 @@ public class UTConfigMods
     @Config.Name("Elementary Staffs")
     public static final ElementaryStaffsCategory ELEMENTARY_STAFFS = new ElementaryStaffsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.electroblobswizardry")
+    @Config.Name("Electroblob's Wizardry")
+    public static final ElectroblobsWizardryCategory ELECTROBLOBS_WIZARDRY = new ElectroblobsWizardryCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.elenaidodge2")
     @Config.Name("Elenai Dodge 2")
     public static final ElenaiDodge2Category ELENAI_DODGE_2 = new ElenaiDodge2Category();
@@ -494,6 +498,14 @@ public class UTConfigMods
         @Config.Name("Block Transmutation Fix")
         @Config.Comment("Fixes Effortless Building ignoring Metadata when checking for items in inventory")
         public boolean utEFTransmutationFixToggle = true;
+    }
+
+    public static class ElectroblobsWizardryCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Construct's Armory Armors Crash")
+        @Config.Comment("Fixes crash when wearing armors from the Construct's Armory mod")
+        public boolean utConstructsArmoryFixToggle = true;
     }
 
     public static class ElementaryStaffsCategory

@@ -63,6 +63,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.compactmachines.spawns.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utAllowedSpawnsImprovementToggle);
             put("mixins.mods.cqrepoured.json", () -> loaded("cqrepoured"));
             put("mixins.mods.effortlessbuilding.json", () -> loaded("effortlessbuilding") && UTConfigMods.EFFORTLESS_BUILDING.utEFTransmutationFixToggle);
+            put("mixins.mods.electroblobswizardry.json", () -> loaded("ebwizardry") && loaded("conarm") && UTConfigMods.ELECTROBLOBS_WIZARDRY.utConstructsArmoryFixToggle);
             put("mixins.mods.elementarystaffs.json", () -> loaded("element"));
             put("mixins.mods.elenaidodge2.json", () -> loaded("elenaidodge2"));
             put("mixins.mods.enderio.chorus.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utChorusStackOverflow);
