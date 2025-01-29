@@ -25,6 +25,15 @@ public class UTTartarusSchoolMixin
     @Shadow
     private int spawnId;
 
+    /**
+     * @reason Load Woot dim earlier so {@link UTWootTicketManager}'s callback doesn't fire late and clear the allocated spawn box.
+     */
+    @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lipsis/woot/loot/schools/TartarusManager;allocateSpawnBoxId()I"))
+    private void ut$loadWorldBeforeAllocate(ITickTracker tickTracker, World world, BlockPos origin, IFarmSetup farmSetup, CallbackInfo ci)
+    {
+        Woot.wootDimensionManager.getWorldServer(world);
+    }
+
     @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lipsis/woot/loot/schools/TartarusManager;spawnInBox(Lnet/minecraft/world/World;ILipsis/woot/util/WootMobName;Lipsis/woot/util/EnumEnchantKey;)V", shift = At.Shift.AFTER))
     private void ut$cleanupOnDeath(ITickTracker tickTracker, World world, BlockPos origin, IFarmSetup farmSetup, CallbackInfo ci)
     {

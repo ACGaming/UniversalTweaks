@@ -46,7 +46,12 @@ public class UTWootTicketManager
         }
     }
 
-    public static void callback(List<ForgeChunkManager.Ticket> tickets, World world)
+    public static void init()
+    {
+        ForgeChunkManager.setForcedChunkLoadingCallback(Woot.instance, UTWootTicketManager::callback);
+    }
+
+    private static void callback(List<ForgeChunkManager.Ticket> tickets, World world)
     {
         int dim = world.provider.getDimension();
         if (dim != Woot.wootDimensionManager.getDimensionId()) return;
