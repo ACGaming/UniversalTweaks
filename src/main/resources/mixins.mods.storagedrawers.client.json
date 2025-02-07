@@ -3,5 +3,18 @@
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
-  "client": ["UTDrawersRendererMixin"]
+  "client": [
+    "UTDrawersRendererMixin"
+  ],
+  "mixins": [
+    "UTDrawerControllerMixin",
+    "UTDrawerControllerMixin$RepositoryMixin",
+    "UTDrawerControllerMixin$SlotRecordMixin",
+    "UTDrawerGroupMixin",
+    "UTDrawerGroupMixin$DrawerDataMixin",
+    "UTDrawerHandlerMixin",
+    "UTDrawerRepositoryMixin",
+    "UTFractionalGroupMixin",
+    "UTFractionalGroupMixin$FractionalDataMixin"
+  ]
 }
