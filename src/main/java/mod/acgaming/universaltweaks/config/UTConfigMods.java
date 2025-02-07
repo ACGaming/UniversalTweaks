@@ -83,6 +83,10 @@ public class UTConfigMods
     @Config.Name("Compact Machines")
     public static final CompactMachinesCoreCategory COMPACT_MACHINES = new CompactMachinesCoreCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.corpse")
+    @Config.Name("Corpse")
+    public static final CorpseCategory CORPSE = new CorpseCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.effortlessbuilding")
     @Config.Name("Effortless Building")
     public static final EffortlessBuildingCategory EFFORTLESS_BUILDING = new EffortlessBuildingCategory();
@@ -490,6 +494,14 @@ public class UTConfigMods
         @Config.Name("Memory Leak Fix")
         @Config.Comment("Fixes client-side memory leak associated with miniaturization recipes")
         public boolean utMemoryLeakFixToggle = true;
+    }
+
+    public static class CorpseCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Opening GUIs Off-thread Fix")
+        @Config.Comment("Fixes opening up GUIs on a non-client thread")
+        public boolean utOpeningGuisOffThreadFixToggle = true;
     }
 
     public static class EffortlessBuildingCategory
