@@ -79,6 +79,7 @@ final def mod_dependencies = [
     'curse.maven:collective-342584:3533131'                           : [debug_collective],
     'curse.maven:compactmachines-224218:2707509'                      : [debug_compact_machines],
     'curse.maven:constructs-armory-287683:3174535'                    : [debug_tinkers_construct],
+    'curse.maven:corpse-316582:3010808'                               : [debug_corpse],
     'curse.maven:cqrepoured-303422:3953103'                           : [debug_cqrepoured],
     'curse.maven:ctm-267602:2915363'                                  : [debug_chisel],
     'curse.maven:cyclops-core-232758:3159497'                         : [debug_evilcraft],
