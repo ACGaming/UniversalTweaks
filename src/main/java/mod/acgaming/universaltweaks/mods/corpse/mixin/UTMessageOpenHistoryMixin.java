@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(MessageOpenHistory.class)
+@Mixin(value = MessageOpenHistory.class, remap = false)
 public class UTMessageOpenHistoryMixin
 {
     @WrapMethod(method = "onMessage(Lde/maxhenkel/corpse/net/MessageOpenHistory;Lnet/minecraftforge/fml/common/network/simpleimpl/MessageContext;)Lnet/minecraftforge/fml/common/network/simpleimpl/IMessage;")
