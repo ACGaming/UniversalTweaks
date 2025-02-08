@@ -15,9 +15,11 @@ public interface IAuxData
     Object UT$getData(String key);
 
     @NotNull
-    default Int2IntMap getOrCreateData() {
+    default Int2IntMap getOrCreateData()
+    {
         Int2IntMap v = (Int2IntMap) UT$getData(KEY);
-        if (v == null) {
+        if (v == null)
+        {
             v = new Int2IntArrayMap();
             UT$setData(KEY, v);
         }

@@ -968,6 +968,11 @@ public class UTConfigMods
     public static class StorageDrawersCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Item Voiding Fix")
+        @Config.Comment("Prevents voiding of items when near capacity limits")
+        public boolean utSDItemVoidingFixToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Render Range")
         @Config.Comment
             ({

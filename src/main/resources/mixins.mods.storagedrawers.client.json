@@ -5,16 +5,5 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "UTDrawersRendererMixin"
-  ],
-  "mixins": [
-    "UTDrawerControllerMixin",
-    "UTDrawerControllerMixin$RepositoryMixin",
-    "UTDrawerControllerMixin$SlotRecordMixin",
-    "UTDrawerGroupMixin",
-    "UTDrawerGroupMixin$DrawerDataMixin",
-    "UTDrawerHandlerMixin",
-    "UTDrawerRepositoryMixin",
-    "UTFractionalGroupMixin",
-    "UTFractionalGroupMixin$FractionalDataMixin"
   ]
 }

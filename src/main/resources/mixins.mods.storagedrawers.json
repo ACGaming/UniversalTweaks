@@ -1,0 +1,17 @@
+{
+  "package": "mod.acgaming.universaltweaks.mods.storagedrawers.mixin",
+  "refmap": "universaltweaks.refmap.json",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "UTDrawerControllerMixin",
+    "UTDrawerControllerMixin$RepositoryMixin",
+    "UTDrawerControllerMixin$SlotRecordMixin",
+    "UTDrawerGroupMixin",
+    "UTDrawerGroupMixin$DrawerDataMixin",
+    "UTDrawerHandlerMixin",
+    "UTDrawerRepositoryMixin",
+    "UTFractionalGroupMixin",
+    "UTFractionalGroupMixin$FractionalDataMixin"
+  ]
+}

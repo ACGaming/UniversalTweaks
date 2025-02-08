@@ -8,7 +8,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(value = StandardDrawerGroup.class, remap = false)
-public abstract class UTDrawerGroupMixin {
+public abstract class UTDrawerGroupMixin
+{
 
     @Mixin(value = StandardDrawerGroup.DrawerData.class, remap = false)
     public abstract static class DrawerDataMixin implements IAuxData
@@ -21,12 +22,14 @@ public abstract class UTDrawerGroupMixin {
         public abstract Object getExtendedData(String key);
 
         @Override
-        public void UT$setData(String key, Object value) {
+        public void UT$setData(String key, Object value)
+        {
             setExtendedData(key, value);
         }
 
         @Override
-        public @Nullable Object UT$getData(String key) {
+        public @Nullable Object UT$getData(String key)
+        {
             return getExtendedData(key);
         }
     }
