@@ -32,7 +32,7 @@ public class UTCoyoteTimeJumping
         if (player.onGround) jumped = false;
         if (player.motionY > 0.1) jumped = true;
         if (jumped || player.isOnLadder() || player.isInWater() || player.isInLava() || player.world.collidesWithAnyBlock(player.getEntityBoundingBox().expand(0, -0.001, 0))) return;
-        if (player.motionY < 0.1 && player.movementInput.jump && player.fallDistance < 1 && !player.isElytraFlying())
+        if (player.motionY < 0.1 && player.movementInput != null && player.movementInput.jump && player.fallDistance < 1 && !player.isElytraFlying())
         {
             jumped = true;
             player.jump();
