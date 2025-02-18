@@ -391,6 +391,11 @@ public class UTConfigMods
         public boolean utBMOptimizeSoulForgeToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Ritual Fix")
+        @Config.Comment("Fixes ritual resetting on chunk/world unload")
+        public boolean utBMRitualToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Memory Leak Fix")
         @Config.Comment("Fixes memory leak when unloading worlds/switching dimensions")
         public boolean utBMWorldUnloadToggle = true;

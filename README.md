@@ -307,8 +307,9 @@ All changes are toggleable via config files.
     * **Hot Spring Water:** Fixes rapid inflection of regeneration effects in hot spring water
 * **Blood Magic**
     * **Duplication Fixes:** Fixes various duplication exploits
-    * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
     * **Memory Leak Fix:** Fixes memory leak when unloading worlds/switching dimensions
+    * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
+    * **Ritual Fix:** Fixes ritual resetting on chunk/world unload
 * **Botania**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
