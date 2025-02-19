@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.tweaks.misc.advancements.screenshot.UTAdvancementScreenshotMessage;
 import mod.acgaming.universaltweaks.tweaks.misc.damagetilt.UTDamageTiltMessage;
 import mod.acgaming.universaltweaks.util.particle.UTParticleSpawnerMessage;
 
@@ -18,5 +19,6 @@ public class UTPacketHandler
     {
         instance.registerMessage(UTDamageTiltMessage.Handler.class, UTDamageTiltMessage.class, id++, Side.CLIENT);
         instance.registerMessage(UTParticleSpawnerMessage.Handler.class, UTParticleSpawnerMessage.class, id++, Side.CLIENT);
+        instance.registerMessage(UTAdvancementScreenshotMessage.Handler.class, UTAdvancementScreenshotMessage.class, id++, Side.CLIENT);
     }
 }

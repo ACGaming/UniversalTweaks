@@ -1471,6 +1471,10 @@ public class UTConfigTweaks
         @Config.Comment("Always displays the actual potion duration instead of `**:**`")
         public boolean utPotionDurationToggle = true;
 
+        @Config.Name("Advancement Screenshot")
+        @Config.Comment("Silently takes a screenshot every time an advancement is achieved")
+        public boolean utAdvancementScreenshotToggle = false;
+
         @Config.RequiresMcRestart
         @Config.Name("Always Return to Main Menu")
         @Config.Comment("Always returns the player to the main menu when quitting the game")

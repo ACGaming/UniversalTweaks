@@ -82,6 +82,7 @@ All changes are toggleable via config files.
 ### **🔧 TWEAKS**
 
 * **Accurate Potion Duration:** Always displays the actual potion duration instead of `**:**`
+* **Advancement Screenshot:** Silently takes a screenshot every time an advancement is achieved
 * **Advancement GUI**
     * Allows increasing the Advancement GUI to scale with the screen size
     * Moves the page buttons to in-line with the rest of the GUI instead of hovering significantly
