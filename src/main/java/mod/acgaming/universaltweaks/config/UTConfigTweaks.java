@@ -498,7 +498,7 @@ public class UTConfigTweaks
         @Config.RequiresMcRestart
         @Config.Name("Auto Jump Replacement")
         @Config.Comment("Replaces auto jump with an increased step height (singleplayer only)")
-        public boolean utAutoJumpToggle = true;
+        public boolean utAutoJumpToggle = false;
 
         @Config.Name("Better Ignition")
         @Config.Comment("Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them")
