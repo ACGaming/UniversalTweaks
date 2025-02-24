@@ -5,6 +5,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.event.entity.living.LivingKnockBackEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
@@ -14,7 +15,7 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 @Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTModernKnockback
 {
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utModernKnockback(LivingKnockBackEvent event)
     {
         if (!UTConfigTweaks.ENTITIES.utModernKnockbackToggle) return;
