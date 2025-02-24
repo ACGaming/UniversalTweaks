@@ -288,7 +288,7 @@ public class UTConfigBugfixes
         @Config.RequiresMcRestart
         @Config.Name("Villager Mantle Hoods")
         @Config.Comment("Returns missing hoods to villager mantles")
-        public boolean utVillagerMantleToggle = true;
+        public boolean utVillagerMantleToggle = false;
 
         public static class EntityDesyncCategory
         {
