@@ -208,7 +208,6 @@ All changes are toggleable via config files.
 * **Modern Knockback:** Backports 1.16+ knockback to 1.12: Knockback resistance is now a scale instead of a probability
 * **More Banner Layers:** Sets the amount of applicable pattern layers for banners
 * **Mute Advancement Errors:** Silences advancement errors
-* **Mute Ore Dictionary Errors:** Silences ore dictionary errors
 * **Mute Texture Map Errors:** Silences texture map errors
 * **No Attack Cooldown:** Disables the 1.9 combat update attack cooldown
 * **No Crafting Repair:** Disables crafting recipes for repairing tools

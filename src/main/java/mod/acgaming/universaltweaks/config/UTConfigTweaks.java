@@ -2248,11 +2248,6 @@ public class UTConfigTweaks
         public boolean utAdvancementCheckToggle = false;
 
         @Config.RequiresMcRestart
-        @Config.Name("Mute Ore Dictionary Errors")
-        @Config.Comment("Silences ore dictionary errors")
-        public boolean utOreDictionaryCheckToggle = false;
-
-        @Config.RequiresMcRestart
         @Config.Name("Mute Texture Map Errors")
         @Config.Comment("Silences texture map errors")
         public boolean utTextureMapCheckToggle = false;
