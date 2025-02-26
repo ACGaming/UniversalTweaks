@@ -24,8 +24,12 @@ public class UTAdvancementScreenshotMessage implements IMessage
         public IMessage onMessage(UTAdvancementScreenshotMessage message, MessageContext ctx)
         {
             Minecraft.getMinecraft().addScheduledTask(() -> {
-                Minecraft mc = Minecraft.getMinecraft();
-                ScreenShotHelper.saveScreenshot(mc.gameDir, mc.displayWidth, mc.displayHeight, mc.getFramebuffer());
+                try
+                {
+                    Minecraft mc = Minecraft.getMinecraft();
+                    ScreenShotHelper.saveScreenshot(mc.gameDir, mc.displayWidth, mc.displayHeight, mc.getFramebuffer());
+                }
+                catch (Exception ignored) {}
             });
             return null;
         }
