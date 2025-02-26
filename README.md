@@ -344,8 +344,6 @@ All changes are toggleable via config files.
     * **Extinguishing Dodges:** Chance per dodge to extinguish the player when burning
     * **Feathers Helper API Fix:** Fixes server-sided crashes when the Feathers Helper API is utilized
     * **Sprinting Integration:** Configurable consumption of feathers when the player is sprinting
-* **Emojicord**
-    * **Emoji Context:** Improves emoji context calculation to improve fps when rendering a lot of text
 * **Ender IO**
     * **Fix Chorus Farming StackOverflow:** Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow
     * **Fix Soul Binder JEI Appearance:** Fixes the Soul Binder having empty ingredients or displaying filled soul vials in the output slot incorrectly

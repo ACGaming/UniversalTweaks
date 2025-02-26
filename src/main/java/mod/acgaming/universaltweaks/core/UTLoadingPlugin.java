@@ -25,7 +25,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public static final boolean isClient = FMLLaunchHandler.side().isClient();
     public static final boolean isDev = FMLLaunchHandler.isDeobfuscatedEnvironment();
 
-    public static boolean emojicordLoaded;
     public static boolean openModsLoaded;
     public static boolean optiFineLoaded;
     public static boolean randomPatchesLoaded;
@@ -187,7 +186,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.misc.spectatormenu.json", () -> UTConfigBugfixes.MISC.utSpectatorMenuToggle);
             put("mixins.bugfixes.misc.startup.json", () -> UTConfigTweaks.PERFORMANCE.utFasterBackgroundStartupToggle);
             put("mixins.bugfixes.world.frustumculling.json", () -> UTConfigBugfixes.WORLD.utFrustumCullingToggle);
-            put("mixins.mods.emojicord.emojicontext.json", () -> UTConfigMods.EMOJICORD.utEmojiContextToggle && emojicordLoaded);
             put("mixins.tweaks.blocks.betterplacement.json", () -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
             put("mixins.tweaks.blocks.hitdelay.json", () -> UTConfigTweaks.BLOCKS.utBlockHitDelay != 5);
             put("mixins.tweaks.entities.burning.player.json", () -> UTConfigTweaks.ENTITIES.utFirstPersonBurningOverlay != -0.3D);
@@ -251,7 +249,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             Locale.setDefault(Locale.ENGLISH);
         }
 
-        emojicordLoaded = UTReflectionUtil.isClassLoaded("net.teamfruit.emojicord.asm.EmojicordCorePlugin");
         openModsLoaded = UTReflectionUtil.isClassLoaded("openmods.core.OpenModsClassTransformer");
         optiFineLoaded = UTReflectionUtil.isClassLoaded("optifine.OptiFineTweaker");
         randomPatchesLoaded = UTReflectionUtil.isClassLoaded("com.therandomlabs.randompatches.core.RPCore");

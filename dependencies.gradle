@@ -87,7 +87,6 @@ final def mod_dependencies = [
     'curse.maven:electroblobs-wizardry-265642:5354477'                : [debug_electroblobs_wizardry],
     'curse.maven:elementary-staffs-346007:2995593'                    : [debug_elementary_staffs],
     'curse.maven:elenaidodge2-442962:3343308'                         : [debug_elenai_dodge_2],
-    'curse.maven:emojicord-349107:4000684'                            : [debug_emojicord],
     'curse.maven:enderstorage-245174:2755787'                         : [debug_enderstorage],
     'curse.maven:epic-siege-mod-229449:3356157'                       : [debug_epic_siege_mod],
     'curse.maven:evilcraft-74610:2811267'                             : [debug_evilcraft],

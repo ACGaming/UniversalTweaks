@@ -90,7 +90,6 @@ public class UniversalTweaks
         + "after:effortlessbuilding;"
         + "after:element;"
         + "after:elenaidodge2;"
-        + "after:emojicord;"
         + "after:enderio;"
         + "after:epicsiegemod;"
         + "after:erebus;"
