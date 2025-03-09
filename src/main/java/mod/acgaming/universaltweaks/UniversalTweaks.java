@@ -79,6 +79,7 @@ public class UniversalTweaks
         + "after:biomesoplenty;"
         + "after:bloodmagic;"
         + "after:botania;"
+        + "after:buildcraftcore;"
         + "after:ceramics;"
         + "after:chisel;"
         + "after:cofhcore;"
@@ -128,6 +129,7 @@ public class UniversalTweaks
         + "after:techreborn;"
         + "after:thaumcraft;"
         + "after:thaumicwonders;"
+        + "after:thebetweenlands;"
         + "after:thermalexpansion;"
         + "after:tp;"
         + "after:waila";
