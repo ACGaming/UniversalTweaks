@@ -62,6 +62,7 @@ All changes are toggleable via config files.
 * **Minecart AI:** Fixes non-player entities being able to control minecarts
 * **Mining Glitch:** Prevents ghost blocks by sending additional movement packets
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
+* **Overlay Message Fade Out:** Fixes Forge's overlay message (action bar) fade out regression
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
 * **Particle Spawning:** Fixes various particle types not showing up on the client
 * **Piston Progress:** Properly saves the last state of pistons to tags

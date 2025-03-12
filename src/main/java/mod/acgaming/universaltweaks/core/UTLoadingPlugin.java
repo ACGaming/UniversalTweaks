@@ -181,6 +181,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.entities.elytrarender.json", () -> UTConfigBugfixes.ENTITIES.utFixInvisiblePlayerModelWithElytra && !openModsLoaded);
             put("mixins.bugfixes.entities.entitylists.client.json", () -> UTConfigBugfixes.ENTITIES.ENTITY_LISTS.utWorldAdditionsToggle);
             put("mixins.bugfixes.entities.villagermantle.json", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
+            put("mixins.bugfixes.misc.actionbar.json", () -> UTConfigBugfixes.MISC.utOverlayMessageFadeOut);
             put("mixins.bugfixes.misc.depthmask.json", () -> UTConfigBugfixes.MISC.utDepthMaskToggle);
             put("mixins.bugfixes.misc.potionamplifier.json", () -> UTConfigBugfixes.MISC.utPotionAmplifierVisibilityToggle);
             put("mixins.bugfixes.misc.smoothlighting.json", () -> UTConfigBugfixes.MISC.utAccurateSmoothLighting);
