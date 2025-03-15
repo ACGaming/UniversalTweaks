@@ -88,6 +88,7 @@ public class UTObsoleteModsHandler
             put("insomniac", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
             put("inventoryspam", () -> UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle);
             put("keydescfix", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
+            put("ksyxis", () -> UTConfigTweaks.PERFORMANCE.utWorldLoadingToggle);
             put("lanserverproperties", () -> UTConfigTweaks.MISC.utLANServerProperties);
             put("leafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
             put("letmedespawn", () -> UTConfigTweaks.ENTITIES.utMobDespawnToggle);
