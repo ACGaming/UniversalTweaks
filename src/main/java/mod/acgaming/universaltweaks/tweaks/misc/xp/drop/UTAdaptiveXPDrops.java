@@ -1,5 +1,6 @@
 package mod.acgaming.universaltweaks.tweaks.misc.xp.drop;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -14,7 +15,7 @@ public class UTAdaptiveXPDrops
     @SubscribeEvent
     public static void utAdaptiveXPDrops(LivingExperienceDropEvent event)
     {
-        if (UTConfigTweaks.ENTITIES.utAdaptiveXPFactor <= 0) return;
+        if (UTConfigTweaks.ENTITIES.utAdaptiveXPFactor <= 0 || event.getEntityLiving() instanceof EntityPlayer) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTAdaptiveXPDrops ::: Living experience drop event");
         event.setDroppedExperience(Math.max(1, (int) (event.getEntityLiving().getMaxHealth() * UTConfigTweaks.ENTITIES.utAdaptiveXPFactor)));
     }
