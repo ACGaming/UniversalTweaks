@@ -403,6 +403,11 @@ public class UTConfigBugfixes
         public boolean utFrustumCullingToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Portal Location Link")
+        @Config.Comment("Ensures portals link to their original overworld portal if within close distance")
+        public boolean utPortalLocationLink = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Portal Traveling Dupe")
         @Config.Comment("Fixes duplication issues that can occur when entities travel through portals")
         public boolean utPortalTravelingDupeToggle = true;

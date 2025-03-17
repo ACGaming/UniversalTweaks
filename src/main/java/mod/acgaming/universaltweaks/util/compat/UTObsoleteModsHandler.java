@@ -103,6 +103,7 @@ public class UTObsoleteModsHandler
             put("nanfix", () -> UTConfigBugfixes.ENTITIES.utEntityNaNToggle);
             put("nanpolice", () -> UTConfigBugfixes.ENTITIES.utEntityNaNToggle);
             put("naturallychargedcreepers", () -> UTConfigTweaks.ENTITIES.utCreeperChargedChance > 0);
+            put("netherportalfix", () -> UTConfigBugfixes.WORLD.utPortalLocationLink);
             put("noadvancements", () -> UTConfigTweaks.MISC.utDisableAdvancementsToggle);
             put("nobounce", () -> UTConfigMods.THAUMCRAFT.utTCStableThaumometerToggle);
             put("nodoze", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
