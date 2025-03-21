@@ -163,6 +163,10 @@ public class UTConfigMods
     @Config.Name("Mekanism")
     public static final MekanismCategory MEKANISM = new MekanismCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.moartinkers")
+    @Config.Name("Moar Tinkers")
+    public static final MoarTinkersCategory MOAR_TINKERS = new MoarTinkersCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.mobstages")
     @Config.Name("Mob Stages")
     public static final MobStagesCategory MOB_STAGES = new MobStagesCategory();
@@ -766,6 +770,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class MoarTinkersCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Bauble Compat")
+        @Config.Comment("Enables Energy Eater/Repair to pull from baubles")
+        public boolean utBaubleCompat = true;
     }
 
     public static class MobStagesCategory

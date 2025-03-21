@@ -94,6 +94,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.ironbackpacks.dupes.json", () -> loaded("ironbackpacks") && UTConfigMods.IRON_BACKPACKS.utDuplicationFixesToggle);
             put("mixins.mods.itemstages.json", () -> loaded("itemstages"));
             put("mixins.mods.mekanism.dupes.json", () -> loaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle);
+            put("mixins.mods.moartinkers.json", () -> loaded("moartinkers") && UTConfigMods.MOAR_TINKERS.utBaubleCompat);
             put("mixins.mods.mobstages.json", () -> loaded("mobstages"));
             put("mixins.mods.mrtjpcore.json", () -> loaded("mrtjpcore") && UTConfigMods.MRTJPCORE.utMemoryLeakFixToggle);
             put("mixins.mods.netherchest.dupes.json", () -> loaded("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle);
