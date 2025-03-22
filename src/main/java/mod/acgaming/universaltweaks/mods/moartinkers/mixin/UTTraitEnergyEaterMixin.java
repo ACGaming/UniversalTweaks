@@ -14,13 +14,12 @@ import mod.acgaming.universaltweaks.mods.moartinkers.UTBaubleHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
+// Courtesy of kurrycat2004
 @Mixin(value = TraitEnergyEater.class, remap = false)
 public class UTTraitEnergyEaterMixin
 {
-    @ModifyReceiver(method = "miningSpeed",
-        at = @At(value = "INVOKE", target = "Ljava/util/List;addAll(Ljava/util/Collection;)Z", ordinal = 0))
-    private List<ItemStack> utInjectBaubleCompatMining(List<ItemStack> instance, Collection<? extends ItemStack> es,
-                                                       ItemStack tool, PlayerEvent.BreakSpeed event)
+    @ModifyReceiver(method = "miningSpeed", at = @At(value = "INVOKE", target = "Ljava/util/List;addAll(Ljava/util/Collection;)Z", ordinal = 0))
+    private List<ItemStack> utInjectBaubleCompatMining(List<ItemStack> instance, Collection<? extends ItemStack> es, ItemStack tool, PlayerEvent.BreakSpeed event)
     {
         if (UTBaubleCompat.isBaublesLoaded())
         {
@@ -29,10 +28,8 @@ public class UTTraitEnergyEaterMixin
         return instance;
     }
 
-    @ModifyReceiver(method = "damage",
-        at = @At(value = "INVOKE", target = "Ljava/util/List;addAll(Ljava/util/Collection;)Z", ordinal = 0))
-    private List<ItemStack> utInjectBaubleCompatDamage(List<ItemStack> instance, Collection<? extends ItemStack> es,
-                                                       ItemStack tool, EntityLivingBase player)
+    @ModifyReceiver(method = "damage", at = @At(value = "INVOKE", target = "Ljava/util/List;addAll(Ljava/util/Collection;)Z", ordinal = 0))
+    private List<ItemStack> utInjectBaubleCompatDamage(List<ItemStack> instance, Collection<? extends ItemStack> es, ItemStack tool, EntityLivingBase player)
     {
         if (UTBaubleCompat.isBaublesLoaded())
         {

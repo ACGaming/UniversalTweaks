@@ -386,6 +386,8 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **MmmMmmMmmMmm**
     * **Copy Armor Stacks to Dummy:** Instead of deleting the original itemstack being equipped, use a copy of it and do not drop armor
+* **Moar Tinkers**
+    * **Baubles Compatibility:** Enables Energy Eater/Repair to pull from baubles
 * **Mob Stages**
     * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
 * **Modular Magic**

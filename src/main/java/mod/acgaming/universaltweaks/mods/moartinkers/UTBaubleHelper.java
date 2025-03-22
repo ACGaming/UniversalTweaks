@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import baubles.api.cap.BaublesCapabilities;
 import baubles.api.cap.IBaublesItemHandler;
 
+// Courtesy of kurrycat2004
 public class UTBaubleHelper
 {
     public static List<ItemStack> getBaublesInventory(Entity entity)

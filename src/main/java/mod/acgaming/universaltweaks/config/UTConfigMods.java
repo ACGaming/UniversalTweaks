@@ -775,9 +775,9 @@ public class UTConfigMods
     public static class MoarTinkersCategory
     {
         @Config.RequiresMcRestart
-        @Config.Name("Bauble Compat")
+        @Config.Name("Baubles Compatibility")
         @Config.Comment("Enables Energy Eater/Repair to pull from baubles")
-        public boolean utBaubleCompat = true;
+        public boolean utBaublesCompatibility = true;
     }
 
     public static class MobStagesCategory
