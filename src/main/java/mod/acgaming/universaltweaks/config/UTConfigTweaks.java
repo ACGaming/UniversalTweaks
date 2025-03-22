@@ -1,8 +1,5 @@
 package mod.acgaming.universaltweaks.config;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -10,6 +7,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.cleanroommc.configanytime.ConfigAnytime;
+import java.util.HashMap;
+import java.util.Map;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
@@ -864,6 +863,18 @@ public class UTConfigTweaks
                     "Increase if you get the infamous 'Player moved too quickly' messages"
                 })
             public double utPlayerVehicleSpeed = 100;
+
+            @Config.Name("[7] Movement Speed Affects Jumping")
+            @Config.Comment("Lets movement speed affect the player's jump height")
+            public boolean utPlayerJumpSpeed = false;
+
+            @Config.Name("[8] Movement Speed Affects Air Speed")
+            @Config.Comment("Lets movement speed affect the player's air speed")
+            public boolean utPlayerAirSpeed = false;
+
+            @Config.Name("[9] Air Speed Sprinting Factor")
+            @Config.Comment("Determines how much sprinting boosts the player's air speed")
+            public double utPlayerAirSpeedSprintingFactor = 0.3D;
         }
 
         public static class RallyHealthCategory
