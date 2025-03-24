@@ -154,7 +154,7 @@ final def mod_dependencies = [
     'curse.maven:tinyprogressions-250850:2721018'                     : [debug_tiny_progressions],
     'curse.maven:woot-244049:2712670'                                 : [debug_woot],
     'maven.modrinth:industrial-foregoing:1.12.13-237'                 : [debug_industrial_foregoing],
-    'net.darkhax.bookshelf:Bookshelf-1.12.2:2.3.590'                  : [debug_stages],
+    'net.darkhax.bookshelf:Bookshelf-1.12.2:2.3.590'                  : [debug_stages, debug_bookshelf],
     'net.darkhax.gamestages:GameStages-1.12.2:2.0.120'                : [debug_stages],
     'net.darkhax.itemstages:ItemStages-1.12.2:2.0.51'                 : [debug_stages],
     'net.darkhax.mobstages:MobStages-1.12.2:2.0.13'                   : [debug_stages],

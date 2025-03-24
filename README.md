@@ -213,6 +213,7 @@ All changes are toggleable via config files.
 * **Mute Texture Map Errors:** Silences texture map errors
 * **No Attack Cooldown:** Disables the 1.9 combat update attack cooldown
 * **No Crafting Repair:** Disables crafting recipes for repairing tools
+* **No Enchantment Table Obstruction:** Allows blocks between enchantment tables and bookshelves
 * **No Golems:** Disables the manual creation of golems and withers
 * **No Leftover Breath Bottles:** Disables dragon's breath from leaving off empty bottles when a stack is brewed with
 * **No Night Vision Flash:** Disables the flashing effect when the night vision potion effect is about to run out

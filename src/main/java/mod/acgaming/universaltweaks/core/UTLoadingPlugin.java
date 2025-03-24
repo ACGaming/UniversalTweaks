@@ -12,7 +12,6 @@ import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
@@ -85,6 +84,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.blocks.barrier.json", () -> UTConfigTweaks.BLOCKS.utBarrierParticleDisplay);
             put("mixins.tweaks.blocks.bedobstruction.json", () -> UTConfigTweaks.BLOCKS.utBedObstructionToggle);
             put("mixins.tweaks.blocks.breakablebedrock.json", () -> UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle);
+            put("mixins.tweaks.blocks.enchantmenttable.json", () -> UTConfigTweaks.BLOCKS.utEnchantmentTableObstructionToggle);
             put("mixins.tweaks.blocks.endcrystal.json", () -> UTConfigTweaks.BLOCKS.utEndCrystalAnywherePlacing);
             put("mixins.tweaks.blocks.endportal.json", () -> UTConfigTweaks.BLOCKS.utRenderEndPortalBottom);
             put("mixins.tweaks.blocks.explosion.json", () -> UTConfigTweaks.BLOCKS.utExplosionDropChance != 1.0D);

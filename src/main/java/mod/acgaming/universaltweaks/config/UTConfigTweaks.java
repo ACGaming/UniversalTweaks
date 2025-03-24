@@ -195,6 +195,11 @@ public class UTConfigTweaks
         public boolean utFenceWallJumpToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("No Enchantment Table Obstruction")
+        @Config.Comment("Allows blocks between enchantment tables and bookshelves")
+        public boolean utEnchantmentTableObstructionToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Lenient Paths")
         @Config.Comment("Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)")
         public boolean utLenientPathsToggle = true;
