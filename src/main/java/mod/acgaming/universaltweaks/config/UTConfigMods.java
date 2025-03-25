@@ -726,6 +726,11 @@ public class UTConfigMods
     public static class InfernalMobsCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Better Entity Names")
+        @Config.Comment("Gets the actual display names of entities for improved naming")
+        public boolean utIMBetterEntityNamesToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Sticky Recall Compatibility")
         @Config.Comment("Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment")
         public boolean utIMStickyRecallToggle = true;

@@ -375,6 +375,7 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Machines Max Range Off-By-One Fix:** Fixes an off-by-one error where IF Machines would display the max tier of range addon as one less than the actual maximum
 * **Infernal Mobs**
+    * **Better Entity Names:** Gets the actual display names of entities for improved naming
     * **Sticky Recall Compatibility:** Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment
     * **Sticky Pedestal Compatibility:** Enables compatibility between Infernal Mobs' Sticky effect and Reliquary's Pedestal
 * **Iron Backpacks**
