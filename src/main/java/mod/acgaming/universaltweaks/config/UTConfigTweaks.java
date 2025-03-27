@@ -24,6 +24,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.timeouts.UTTimeoutManager;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
 import mod.acgaming.universaltweaks.tweaks.world.chunks.gen.UTChunkGenLimit;
+import mod.acgaming.universaltweaks.tweaks.world.voidfog.UTVoidFog;
 
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
 public class UTConfigTweaks
@@ -2540,6 +2541,7 @@ public class UTConfigTweaks
                 if (ITEMS.utCustomUseDurations.length > 0) UTCustomUseDuration.initItemUseMaps();
                 if (ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
                 if (WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) UTChunkGenLimit.initDimensionList();
+                if (WORLD.VOID_FOG.utVoidFogToggle) UTVoidFog.initDimensionList();
                 if (UTLoadingPlugin.isClient)
                 {
                     if (MISC.LOAD_SOUNDS.utLoadSoundMode != MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
