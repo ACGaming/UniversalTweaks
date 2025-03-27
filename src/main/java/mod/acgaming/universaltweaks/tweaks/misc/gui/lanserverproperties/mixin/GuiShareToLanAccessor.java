@@ -11,6 +11,12 @@ public interface GuiShareToLanAccessor
     @Accessor("gameMode")
     String getGameMode();
 
+    @Accessor("gameMode")
+    void setGameMode(String gameMode);
+
     @Accessor("allowCheats")
     boolean getAllowCheats();
+
+    @Accessor("allowCheats")
+    void setAllowCheats(boolean allowCheats);
 }
