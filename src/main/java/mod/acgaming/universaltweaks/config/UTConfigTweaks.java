@@ -23,6 +23,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThrough
 import mod.acgaming.universaltweaks.tweaks.misc.timeouts.UTTimeoutManager;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
+import mod.acgaming.universaltweaks.tweaks.world.chunks.gen.UTChunkGenLimit;
 
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
 public class UTConfigTweaks
@@ -2413,6 +2414,23 @@ public class UTConfigTweaks
             @Config.Name("[3] Time")
             @Config.Comment("Maximum time in ms to spend generating chunks per tick per dimension")
             public int utChunkGenLimitTime = 5;
+
+            @Config.Name("[4] Dimension List")
+            @Config.Comment
+                ({
+                    "List of dimensions concerning limitation of chunk generation",
+                    "Behavior depends on the list mode",
+                    "Can be dimension name or ID"
+                })
+            public String[] utChunkGenLimitList = new String[] {"overworld"};
+
+            @Config.Name("[5] Dimension List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Dimensions that don't limit chunk generation, others do",
+                    "Whitelist Mode: Dimensions that limit chunk generation, others don't"
+                })
+            public EnumLists utChunkGenLimitListMode = EnumLists.WHITELIST;
         }
 
         public static class DimensionUnloadCategory
@@ -2521,6 +2539,7 @@ public class UTConfigTweaks
                 if (ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
                 if (ITEMS.utCustomUseDurations.length > 0) UTCustomUseDuration.initItemUseMaps();
                 if (ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
+                if (WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) UTChunkGenLimit.initDimensionList();
                 if (UTLoadingPlugin.isClient)
                 {
                     if (MISC.LOAD_SOUNDS.utLoadSoundMode != MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();

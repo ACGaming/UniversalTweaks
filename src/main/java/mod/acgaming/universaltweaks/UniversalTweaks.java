@@ -55,6 +55,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTTutorialToast;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.craftingcache.UTCraftingCache;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
+import mod.acgaming.universaltweaks.tweaks.world.chunks.gen.UTChunkGenLimit;
 import mod.acgaming.universaltweaks.util.UTCommands;
 import mod.acgaming.universaltweaks.util.UTKeybindings;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
@@ -205,6 +206,7 @@ public class UniversalTweaks
         if (UTConfigTweaks.ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
         if (UTConfigTweaks.ITEMS.utCustomUseDurations.length > 0) UTCustomUseDuration.initItemUseMaps();
         if (UTConfigTweaks.ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
+        if (UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) UTChunkGenLimit.initDimensionList();
         if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConMaterialBlacklist.length > 0) UTTConstructMaterials.utHandleBlacklistedMaterials();
         LOGGER.info(NAME + " post-initialized");
     }
