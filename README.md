@@ -302,6 +302,8 @@ All changes are toggleable via config files.
     * **Improved Player Tick:** Improves AoA player ticking by only sending inventory changes when necessary
 * **Arcane Archives**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **Backpacks**
+    * **No Offhand Interaction:** Prevents unintended offhand right-click behavior when opening backpacks
 * **Bibliocraft**
     * **Disable Version Check:** Fixes client-side memory leak by disabling version check
 * **Binnie's Mods**

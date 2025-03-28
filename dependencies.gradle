@@ -93,6 +93,7 @@ final def mod_dependencies = [
     'curse.maven:evilcraft-74610:2811267'                             : [debug_evilcraft],
     'curse.maven:extrautilities-225561:2678374'                       : [debug_extra_utilities_2],
     'curse.maven:forestry-59751:2918418'                              : [debug_forestry, debug_binnies_mods],
+    'curse.maven:forge-backpacks-59143:2554237'                       : [debug_backpack],
     'curse.maven:forgemultipartcbe-258426:2755790'                    : [debug_forgemultipartcbe, debug_project_red],
     'curse.maven:geckolib-388172:4020277'                             : [debug_cqrepoured],
     'curse.maven:guideapi-228832:2645992'                             : [debug_blood_magic],

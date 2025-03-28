@@ -48,6 +48,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.arcanearchives.dupes.json", () -> loaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
             put("mixins.mods.astralsorcery.json", () -> loaded("astralsorcery"));
             put("mixins.mods.astralsorcery.tool.json", () -> loaded("astralsorcery") && UTConfigMods.ASTRAL_SORCERY.utEmptyPropertiesZero);
+            put("mixins.mods.backpack.json", () -> loaded("backpack") && UTConfigMods.BACKPACKS.utBPNoOffhandInteractionToggle);
             put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
             put("mixins.mods.biomesoplenty.sealevel.json", () -> loaded("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
             put("mixins.mods.bloodmagic.dupes.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);

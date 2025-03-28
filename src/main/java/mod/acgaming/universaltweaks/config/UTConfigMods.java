@@ -35,6 +35,10 @@ public class UTConfigMods
     @Config.Name("Advent of Ascension")
     public static final AOACategory AOA = new AOACategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.backpack")
+    @Config.Name("Backpacks")
+    public static final BackpacksCategory BACKPACKS = new BackpacksCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.bibliocraft")
     @Config.Name("BiblioCraft")
     public static final BiblioCraftCategory BIBLIOCRAFT = new BiblioCraftCategory();
@@ -365,6 +369,14 @@ public class UTConfigMods
         @Config.Name("Improved Player Tick")
         @Config.Comment("Improves AoA player ticking by only sending inventory changes when necessary")
         public boolean utImprovedPlayerTickToggle = true;
+    }
+
+    public static class BackpacksCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("No Offhand Interaction")
+        @Config.Comment("Prevents unintended offhand right-click behavior when opening backpacks")
+        public boolean utBPNoOffhandInteractionToggle = true;
     }
 
     public static class BiblioCraftCategory
