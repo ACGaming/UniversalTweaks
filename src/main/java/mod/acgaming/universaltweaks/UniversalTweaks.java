@@ -27,7 +27,7 @@ import mod.acgaming.universaltweaks.mods.collective.UTCollectiveEvents;
 import mod.acgaming.universaltweaks.mods.cqrepoured.UTGoldenFeatherEvent;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Burning;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Sprinting;
-import mod.acgaming.universaltweaks.mods.mekanism.UTMekanismFixes;
+import mod.acgaming.universaltweaks.mods.mekanism.dupes.UTMekanismFixes;
 import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.UTSimplyJetpacksEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageClientStatesReset;

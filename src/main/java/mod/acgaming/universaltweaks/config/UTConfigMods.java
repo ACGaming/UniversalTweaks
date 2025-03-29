@@ -787,6 +787,12 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fluid Tank Extraction")
+        @Config.Comment("Fixes a logic error with extracting fluids from fluid tanks")
+        public boolean utFluidTankExtraction = true;
+
     }
 
     public static class MoarTinkersCategory
