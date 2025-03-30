@@ -340,6 +340,8 @@ All changes are toggleable via config files.
     * **Allowed Spawns Improvement:** Improves server performance by properly controlling spawn checks (effectiveness depends on CM's config)
     * **Invisible Wall Render Fix:** Fixes some compact machine walls being invisible if [Nothirium](https://www.curseforge.com/minecraft/mc-mods/nothirium) 0.2.x (and up) or [Vintagium](https://github.com/Asek3/sodium-1.12) is installed
     * **Memory Leak Fix:** Fixes client-side memory leak associated with miniaturization recipes
+* **Cooking For Blockheads**
+    * **Oven Fix:** Fixes CFB Oven consuming container fuel items
 * **Corpse**
     * **Opening GUIs Off-thread Fix:** Fixes opening up GUIs on a non-client thread
 * **Effortless Building**

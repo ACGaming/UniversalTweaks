@@ -95,6 +95,10 @@ public class UTConfigMods
     @Config.Name("Compact Machines")
     public static final CompactMachinesCoreCategory COMPACT_MACHINES = new CompactMachinesCoreCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegrations.cookingforblockheads")
+    @Config.Name("Cooking For Blockheads")
+    public static final CookingForBlockheadsCategory COOKING_FOR_BLOCKHEADS = new CookingForBlockheadsCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.corpse")
     @Config.Name("Corpse")
     public static final CorpseCategory CORPSE = new CorpseCategory();
@@ -534,6 +538,14 @@ public class UTConfigMods
         @Config.Name("Memory Leak Fix")
         @Config.Comment("Fixes client-side memory leak associated with miniaturization recipes")
         public boolean utMemoryLeakFixToggle = true;
+    }
+
+    public static class CookingForBlockheadsCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Oven Fix")
+        @Config.Comment("Fixes CFB Oven consuming container fuel items")
+        public boolean utOvenFixToggle = true;
     }
 
     public static class CorpseCategory
