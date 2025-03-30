@@ -23,6 +23,10 @@ public class UTConfigMods
     @Config.Name("Actually Additions")
     public static final ActuallyAdditionsCategory ACTUALLY_ADDITIONS = new ActuallyAdditionsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.agricraft")
+    @Config.Name("Agricraft")
+    public static final AgricraftCategory AGRICRAFT = new AgricraftCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.arcanearchives")
     @Config.Name("Arcane Archives")
     public static final ArcaneArchivesCategory ARCANE_ARCHIVES = new ArcaneArchivesCategory();
@@ -334,6 +338,13 @@ public class UTConfigMods
                 "3 or higher will never disable these particles"
             })
         public int utItemLaserParticlesGraphics = -1;
+    }
+
+    public static class AgricraftCategory {
+        @Config.RequiresMcRestart
+        @Config.Name("Ender IO Integration Fix")
+        @Config.Comment("Fixes crash when Ender IO's Farming Station attempts to harvest Agricraft crops")
+        public boolean  utEnderIOPluginFixToggle = true;
     }
 
     public static class ArcaneArchivesCategory

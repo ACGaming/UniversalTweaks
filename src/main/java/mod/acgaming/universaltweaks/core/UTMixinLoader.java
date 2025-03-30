@@ -44,6 +44,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.abyssalcraft.json", () -> loaded("abyssalcraft"));
             put("mixins.mods.actuallyadditions.dupes.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle);
             put("mixins.mods.actuallyadditions.relayupgrade.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utLaserUpgradeVoid);
+            put("mixins.mods.agricraft.json", () -> loaded("agricraft") && UTConfigMods.AGRICRAFT.utEnderIOPluginFixToggle);
             put("mixins.mods.aoa3.json", () -> loaded("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
             put("mixins.mods.arcanearchives.dupes.json", () -> loaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
             put("mixins.mods.astralsorcery.json", () -> loaded("astralsorcery"));
