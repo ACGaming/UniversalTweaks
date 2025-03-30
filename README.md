@@ -316,6 +316,7 @@ All changes are toggleable via config files.
     * **Hot Spring Water:** Fixes rapid inflection of regeneration effects in hot spring water
 * **Blood Magic**
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Fluid Routing Fix:** Fixes Routing Node fluid routing unable to support multiple liquids and soft-locking when encountering a full fluid tank
     * **Memory Leak Fix:** Fixes memory leak when unloading worlds/switching dimensions
     * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
     * **Ritual Fix:** Fixes ritual resetting on chunk/world unload
