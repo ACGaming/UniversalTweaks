@@ -53,6 +53,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.bewitchment.json", () -> loaded("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
             put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
             put("mixins.mods.biomesoplenty.sealevel.json", () -> loaded("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
+            put("mixins.mods.bloodmagic.boundtool.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);
             put("mixins.mods.bloodmagic.dupes.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);
             put("mixins.mods.bloodmagic.fluidrouting.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utFluidRoutingFixToggle);
             put("mixins.mods.bloodmagic.ritual.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBMRitualToggle);

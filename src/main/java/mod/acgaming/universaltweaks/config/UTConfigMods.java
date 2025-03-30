@@ -448,6 +448,11 @@ public class UTConfigMods
         @Config.Name("Fluid Routing Fix")
         @Config.Comment("Fixes Routing Node fluid routing unable to support multiple liquids and soft-locking when encountering a full fluid tank")
         public boolean utFluidRoutingFixToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Bound Tool Harvest Tweak")
+        @Config.Comment("Improves performance when harvesting blocks with Bound Tool's right-click and exposes block drops to HarvestDropsEvent")
+        public boolean utBoundToolTweakToggle = true;
     }
 
     public static class BotaniaCategory
