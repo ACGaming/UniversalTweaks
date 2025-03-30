@@ -306,6 +306,8 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Backpacks**
     * **No Offhand Interaction:** Prevents unintended offhand right-click behavior when opening backpacks
+* **Bewitchment**
+    * **Witches' Oven Fix:** Fixes Witches' Oven consuming container fuel items
 * **Bibliocraft**
     * **Disable Version Check:** Fixes client-side memory leak by disabling version check
 * **Binnie's Mods**

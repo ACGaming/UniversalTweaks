@@ -43,6 +43,10 @@ public class UTConfigMods
     @Config.Name("Backpacks")
     public static final BackpacksCategory BACKPACKS = new BackpacksCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.bewitchment")
+    @Config.Name("Bewitchment")
+    public static final BewitchmentCategory BEWITCHMENT = new BewitchmentCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.bibliocraft")
     @Config.Name("BiblioCraft")
     public static final BiblioCraftCategory BIBLIOCRAFT = new BiblioCraftCategory();
@@ -388,6 +392,14 @@ public class UTConfigMods
         @Config.Name("No Offhand Interaction")
         @Config.Comment("Prevents unintended offhand right-click behavior when opening backpacks")
         public boolean utBPNoOffhandInteractionToggle = true;
+    }
+
+    public static class BewitchmentCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Witches' Oven Fix")
+        @Config.Comment("Fixes Witches' Oven consuming container fuel items")
+        public boolean utWitchesOvenFixToggle = true;
     }
 
     public static class BiblioCraftCategory
