@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Mixin(value = ItemBoundTool.class, remap = false)
-public class UTItemBoundToolMixin
+public abstract class UTItemBoundToolMixin
 {
     @Shadow(remap = true)
     public abstract float getDestroySpeed(ItemStack stack, IBlockState state);
