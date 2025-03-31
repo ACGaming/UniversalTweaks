@@ -23,6 +23,10 @@ public class UTConfigMods
     @Config.Name("Actually Additions")
     public static final ActuallyAdditionsCategory ACTUALLY_ADDITIONS = new ActuallyAdditionsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.agricraft")
+    @Config.Name("Agricraft")
+    public static final AgricraftCategory AGRICRAFT = new AgricraftCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.arcanearchives")
     @Config.Name("Arcane Archives")
     public static final ArcaneArchivesCategory ARCANE_ARCHIVES = new ArcaneArchivesCategory();
@@ -38,6 +42,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.backpack")
     @Config.Name("Backpacks")
     public static final BackpacksCategory BACKPACKS = new BackpacksCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.bewitchment")
+    @Config.Name("Bewitchment")
+    public static final BewitchmentCategory BEWITCHMENT = new BewitchmentCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.bibliocraft")
     @Config.Name("BiblioCraft")
@@ -86,6 +94,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.compactmachines")
     @Config.Name("Compact Machines")
     public static final CompactMachinesCoreCategory COMPACT_MACHINES = new CompactMachinesCoreCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegrations.cookingforblockheads")
+    @Config.Name("Cooking For Blockheads")
+    public static final CookingForBlockheadsCategory COOKING_FOR_BLOCKHEADS = new CookingForBlockheadsCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.corpse")
     @Config.Name("Corpse")
@@ -336,6 +348,13 @@ public class UTConfigMods
         public int utItemLaserParticlesGraphics = -1;
     }
 
+    public static class AgricraftCategory {
+        @Config.RequiresMcRestart
+        @Config.Name("Ender IO Integration Fix")
+        @Config.Comment("Fixes crash when Ender IO's Farming Station attempts to harvest Agricraft crops")
+        public boolean  utEnderIOPluginFixToggle = true;
+    }
+
     public static class ArcaneArchivesCategory
     {
         @Config.RequiresMcRestart
@@ -379,6 +398,14 @@ public class UTConfigMods
         public boolean utBPNoOffhandInteractionToggle = true;
     }
 
+    public static class BewitchmentCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Witches' Oven Fix")
+        @Config.Comment("Fixes Witches' Oven consuming container fuel items")
+        public boolean utWitchesOvenFixToggle = true;
+    }
+
     public static class BiblioCraftCategory
     {
         @Config.RequiresMcRestart
@@ -416,6 +443,16 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fluid Routing Fix")
+        @Config.Comment("Fixes Routing Node fluid routing unable to support multiple liquids and soft-locking when encountering a full fluid tank")
+        public boolean utFluidRoutingFixToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Bound Tool Harvest Tweak")
+        @Config.Comment("Improves performance when harvesting blocks with Bound Tool's right-click and exposes block drops to HarvestDropsEvent")
+        public boolean utBoundToolTweakToggle = true;
     }
 
     public static class BotaniaCategory
@@ -511,6 +548,14 @@ public class UTConfigMods
         @Config.Name("Memory Leak Fix")
         @Config.Comment("Fixes client-side memory leak associated with miniaturization recipes")
         public boolean utMemoryLeakFixToggle = true;
+    }
+
+    public static class CookingForBlockheadsCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Oven Fix")
+        @Config.Comment("Fixes CFB Oven consuming container fuel items")
+        public boolean utOvenFixToggle = true;
     }
 
     public static class CorpseCategory

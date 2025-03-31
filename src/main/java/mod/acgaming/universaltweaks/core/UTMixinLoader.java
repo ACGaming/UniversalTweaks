@@ -44,14 +44,18 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.abyssalcraft.json", () -> loaded("abyssalcraft"));
             put("mixins.mods.actuallyadditions.dupes.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle);
             put("mixins.mods.actuallyadditions.relayupgrade.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utLaserUpgradeVoid);
+            put("mixins.mods.agricraft.json", () -> loaded("agricraft") && UTConfigMods.AGRICRAFT.utEnderIOPluginFixToggle);
             put("mixins.mods.aoa3.json", () -> loaded("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
             put("mixins.mods.arcanearchives.dupes.json", () -> loaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
             put("mixins.mods.astralsorcery.json", () -> loaded("astralsorcery"));
             put("mixins.mods.astralsorcery.tool.json", () -> loaded("astralsorcery") && UTConfigMods.ASTRAL_SORCERY.utEmptyPropertiesZero);
             put("mixins.mods.backpack.json", () -> loaded("backpack") && UTConfigMods.BACKPACKS.utBPNoOffhandInteractionToggle);
+            put("mixins.mods.bewitchment.json", () -> loaded("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
             put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
             put("mixins.mods.biomesoplenty.sealevel.json", () -> loaded("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
+            put("mixins.mods.bloodmagic.boundtool.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);
             put("mixins.mods.bloodmagic.dupes.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);
+            put("mixins.mods.bloodmagic.fluidrouting.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utFluidRoutingFixToggle);
             put("mixins.mods.bloodmagic.ritual.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBMRitualToggle);
             put("mixins.mods.bloodmagic.json", () -> loaded("bloodmagic"));
             put("mixins.mods.botania.dupes.json", () -> loaded("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle);
@@ -64,6 +68,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.cofhcore.json", () -> loaded("cofhcore"));
             put("mixins.mods.collective.json", () -> loaded("collective"));
             put("mixins.mods.compactmachines.spawns.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utAllowedSpawnsImprovementToggle);
+            put("mixins.mods.cookingforblockheads.json", () -> loaded("cookingforblockheads") && UTConfigMods.COOKING_FOR_BLOCKHEADS.utOvenFixToggle);
             put("mixins.mods.corpse.json", () -> loaded("corpse") && UTConfigMods.CORPSE.utOpeningGuisOffThreadFixToggle);
             put("mixins.mods.cqrepoured.json", () -> loaded("cqrepoured"));
             put("mixins.mods.effortlessbuilding.json", () -> loaded("effortlessbuilding") && UTConfigMods.EFFORTLESS_BUILDING.utEFTransmutationFixToggle);
