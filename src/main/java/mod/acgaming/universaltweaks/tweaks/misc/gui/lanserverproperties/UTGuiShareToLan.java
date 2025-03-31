@@ -303,7 +303,6 @@ public class UTGuiShareToLan extends GuiShareToLan
                 customSettings.setInteger("MaxPlayers", parsedMaxPlayers);
 
                 worldInfo.setDimensionData(worldServer.provider.getDimension(), nbt);
-                worldServer.getSaveHandler().saveWorldInfo(worldInfo);
 
                 UniversalTweaks.LOGGER.info("LAN Server Properties ::: Saved LAN server settings to level.dat");
             }
