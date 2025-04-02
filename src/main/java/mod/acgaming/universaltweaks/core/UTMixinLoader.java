@@ -90,7 +90,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.extrautilities.mutabledrops.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utMutableBlockDrops);
             put("mixins.mods.extrautilities.potionlogging.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDowngradePotionLogging);
             put("mixins.mods.extrautilities.radar.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utCatchRadarException);
-            put("mixins.mods.forestry.extratrees.json", () -> loaded("extratrees"));
+            put("mixins.mods.forestry.extratrees.json", () -> loaded("extratrees") && UTConfigMods.FORESTRY.utFOGatherWindfallToggle);
             put("mixins.mods.forestry.json", () -> loaded("forestry"));
             put("mixins.mods.incontrol.json", () -> loaded("incontrol") && UTConfigMods.INCONTROL.utStatsFixToggle);
             put("mixins.mods.industrialcraft.dupes.json", () -> loaded("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle);

@@ -20,6 +20,6 @@ public abstract class UTFarmLogicArborealMixin extends FarmLogicHomogeneous
     @Override
     public boolean isAcceptedWindfall(ItemStack stack)
     {
-        return UTConfigMods.FORESTRY.utFOGatherWindfallToggle && stack.getItem() instanceof ItemETFood;
+        return super.isAcceptedWindfall(stack) || (UTConfigMods.FORESTRY.utFOGatherWindfallToggle && stack.getItem() instanceof ItemETFood);
     }
 }
