@@ -16,7 +16,7 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 public class UTPortalTravelingDupe
 {
     @SubscribeEvent
-    public static void dimensionChangeEvent(EntityTravelToDimensionEvent event)
+    public static void utDimensionChangeEventPortalTravelingDupe(EntityTravelToDimensionEvent event)
     {
         if (event.getEntity().world.isRemote || !UTConfigBugfixes.WORLD.utPortalTravelingDupeToggle) return;
         if (event.getEntity() instanceof EntityLiving && !(event.getEntity() instanceof EntityPlayer))

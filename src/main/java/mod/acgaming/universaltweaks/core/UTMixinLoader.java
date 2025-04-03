@@ -18,6 +18,7 @@ public class UTMixinLoader implements ILateMixinLoader
     private static final Map<String, BooleanSupplier> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
     {
         {
+            put("mixins.mods.actuallyadditions.itemparticle.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utItemLaserParticlesGraphics > -1);
             put("mixins.mods.bibliocraft.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utDisableVersionCheckToggle);
             put("mixins.mods.cbmultipart.client.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
             put("mixins.mods.compactmachines.memory.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utMemoryLeakFixToggle);
@@ -43,15 +44,19 @@ public class UTMixinLoader implements ILateMixinLoader
         {
             put("mixins.mods.abyssalcraft.json", () -> loaded("abyssalcraft"));
             put("mixins.mods.actuallyadditions.dupes.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle);
-            put("mixins.mods.actuallyadditions.itemparticle.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utItemLaserParticlesGraphics > -1);
             put("mixins.mods.actuallyadditions.relayupgrade.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utLaserUpgradeVoid);
+            put("mixins.mods.agricraft.json", () -> loaded("agricraft") && UTConfigMods.AGRICRAFT.utEnderIOPluginFixToggle);
             put("mixins.mods.aoa3.json", () -> loaded("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
             put("mixins.mods.arcanearchives.dupes.json", () -> loaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
             put("mixins.mods.astralsorcery.json", () -> loaded("astralsorcery"));
             put("mixins.mods.astralsorcery.tool.json", () -> loaded("astralsorcery") && UTConfigMods.ASTRAL_SORCERY.utEmptyPropertiesZero);
+            put("mixins.mods.backpack.json", () -> loaded("backpack") && UTConfigMods.BACKPACKS.utBPNoOffhandInteractionToggle);
+            put("mixins.mods.bewitchment.json", () -> loaded("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
             put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
             put("mixins.mods.biomesoplenty.sealevel.json", () -> loaded("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
+            put("mixins.mods.bloodmagic.boundtool.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);
             put("mixins.mods.bloodmagic.dupes.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);
+            put("mixins.mods.bloodmagic.fluidrouting.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utFluidRoutingFixToggle);
             put("mixins.mods.bloodmagic.ritual.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBMRitualToggle);
             put("mixins.mods.bloodmagic.json", () -> loaded("bloodmagic"));
             put("mixins.mods.botania.dupes.json", () -> loaded("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle);
@@ -64,6 +69,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.cofhcore.json", () -> loaded("cofhcore"));
             put("mixins.mods.collective.json", () -> loaded("collective"));
             put("mixins.mods.compactmachines.spawns.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utAllowedSpawnsImprovementToggle);
+            put("mixins.mods.cookingforblockheads.json", () -> loaded("cookingforblockheads") && UTConfigMods.COOKING_FOR_BLOCKHEADS.utOvenFixToggle);
             put("mixins.mods.corpse.json", () -> loaded("corpse") && UTConfigMods.CORPSE.utOpeningGuisOffThreadFixToggle);
             put("mixins.mods.cqrepoured.json", () -> loaded("cqrepoured"));
             put("mixins.mods.effortlessbuilding.json", () -> loaded("effortlessbuilding") && UTConfigMods.EFFORTLESS_BUILDING.utEFTransmutationFixToggle);
@@ -85,7 +91,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.extrautilities.mutabledrops.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utMutableBlockDrops);
             put("mixins.mods.extrautilities.potionlogging.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDowngradePotionLogging);
             put("mixins.mods.extrautilities.radar.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utCatchRadarException);
-            put("mixins.mods.forestry.extratrees.json", () -> loaded("extratrees"));
+            put("mixins.mods.forestry.extratrees.json", () -> loaded("extratrees") && UTConfigMods.FORESTRY.utFOGatherWindfallToggle);
             put("mixins.mods.forestry.json", () -> loaded("forestry"));
             put("mixins.mods.incontrol.json", () -> loaded("incontrol") && UTConfigMods.INCONTROL.utStatsFixToggle);
             put("mixins.mods.industrialcraft.dupes.json", () -> loaded("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle);
@@ -95,6 +101,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.ironbackpacks.dupes.json", () -> loaded("ironbackpacks") && UTConfigMods.IRON_BACKPACKS.utDuplicationFixesToggle);
             put("mixins.mods.itemstages.json", () -> loaded("itemstages"));
             put("mixins.mods.mekanism.dupes.json", () -> loaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle);
+            put("mixins.mods.moartinkers.json", () -> loaded("moartinkers") && UTConfigMods.MOAR_TINKERS.utBaublesCompatibility);
             put("mixins.mods.mobstages.json", () -> loaded("mobstages"));
             put("mixins.mods.mrtjpcore.json", () -> loaded("mrtjpcore") && UTConfigMods.MRTJPCORE.utMemoryLeakFixToggle);
             put("mixins.mods.netherchest.dupes.json", () -> loaded("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle);
@@ -126,6 +133,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.thermalexpansion.json", () -> loaded("thermalexpansion"));
             put("mixins.mods.tinyprogressions.dupes.json", () -> loaded("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle);
             put("mixins.mods.woot.json", () -> loaded("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle);
+            put("mixins.tweaks.blocks.enchantmenttable.bookshelf.json", () -> loaded("bookshelf") && UTConfigTweaks.BLOCKS.utEnchantmentTableObstructionToggle);
         }
     });
 

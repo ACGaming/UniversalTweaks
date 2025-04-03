@@ -1,8 +1,5 @@
 package mod.acgaming.universaltweaks.config;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -10,6 +7,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.cleanroommc.configanytime.ConfigAnytime;
+import java.util.HashMap;
+import java.util.Map;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
@@ -24,6 +23,8 @@ import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThrough
 import mod.acgaming.universaltweaks.tweaks.misc.timeouts.UTTimeoutManager;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
+import mod.acgaming.universaltweaks.tweaks.world.chunks.gen.UTChunkGenLimit;
+import mod.acgaming.universaltweaks.tweaks.world.voidfog.UTVoidFog;
 
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
 public class UTConfigTweaks
@@ -194,6 +195,11 @@ public class UTConfigTweaks
         @Config.Name("Fence/Wall Jump")
         @Config.Comment("Allows the player to jump over fences and walls")
         public boolean utFenceWallJumpToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("No Enchantment Table Obstruction")
+        @Config.Comment("Allows blocks between enchantment tables and bookshelves")
+        public boolean utEnchantmentTableObstructionToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Lenient Paths")
@@ -864,6 +870,18 @@ public class UTConfigTweaks
                     "Increase if you get the infamous 'Player moved too quickly' messages"
                 })
             public double utPlayerVehicleSpeed = 100;
+
+            @Config.Name("[7] Movement Speed Affects Jumping")
+            @Config.Comment("Lets movement speed affect the player's jump height")
+            public boolean utPlayerJumpSpeed = false;
+
+            @Config.Name("[8] Movement Speed Affects Air Speed")
+            @Config.Comment("Lets movement speed affect the player's air speed")
+            public boolean utPlayerAirSpeed = false;
+
+            @Config.Name("[9] Air Speed Sprinting Factor")
+            @Config.Comment("Determines how much sprinting boosts the player's air speed")
+            public double utPlayerAirSpeedSprintingFactor = 0.3D;
         }
 
         public static class RallyHealthCategory
@@ -2397,6 +2415,23 @@ public class UTConfigTweaks
             @Config.Name("[3] Time")
             @Config.Comment("Maximum time in ms to spend generating chunks per tick per dimension")
             public int utChunkGenLimitTime = 5;
+
+            @Config.Name("[4] Dimension List")
+            @Config.Comment
+                ({
+                    "List of dimensions concerning limitation of chunk generation",
+                    "Behavior depends on the list mode",
+                    "Can be dimension name or ID"
+                })
+            public String[] utChunkGenLimitList = new String[] {"overworld"};
+
+            @Config.Name("[5] Dimension List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Dimensions that don't limit chunk generation, others do",
+                    "Whitelist Mode: Dimensions that limit chunk generation, others don't"
+                })
+            public EnumLists utChunkGenLimitListMode = EnumLists.WHITELIST;
         }
 
         public static class DimensionUnloadCategory
@@ -2505,6 +2540,8 @@ public class UTConfigTweaks
                 if (ITEMS.utCustomRarities.length > 0) UTCustomRarity.initItemRarityMap();
                 if (ITEMS.utCustomUseDurations.length > 0) UTCustomUseDuration.initItemUseMaps();
                 if (ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
+                if (WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) UTChunkGenLimit.initDimensionList();
+                if (WORLD.VOID_FOG.utVoidFogToggle) UTVoidFog.initDimensionList();
                 if (UTLoadingPlugin.isClient)
                 {
                     if (MISC.LOAD_SOUNDS.utLoadSoundMode != MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();

@@ -23,6 +23,10 @@ public class UTConfigMods
     @Config.Name("Actually Additions")
     public static final ActuallyAdditionsCategory ACTUALLY_ADDITIONS = new ActuallyAdditionsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.agricraft")
+    @Config.Name("Agricraft")
+    public static final AgricraftCategory AGRICRAFT = new AgricraftCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.arcanearchives")
     @Config.Name("Arcane Archives")
     public static final ArcaneArchivesCategory ARCANE_ARCHIVES = new ArcaneArchivesCategory();
@@ -34,6 +38,14 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.aoa")
     @Config.Name("Advent of Ascension")
     public static final AOACategory AOA = new AOACategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.backpack")
+    @Config.Name("Backpacks")
+    public static final BackpacksCategory BACKPACKS = new BackpacksCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.bewitchment")
+    @Config.Name("Bewitchment")
+    public static final BewitchmentCategory BEWITCHMENT = new BewitchmentCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.bibliocraft")
     @Config.Name("BiblioCraft")
@@ -82,6 +94,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.compactmachines")
     @Config.Name("Compact Machines")
     public static final CompactMachinesCoreCategory COMPACT_MACHINES = new CompactMachinesCoreCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegrations.cookingforblockheads")
+    @Config.Name("Cooking For Blockheads")
+    public static final CookingForBlockheadsCategory COOKING_FOR_BLOCKHEADS = new CookingForBlockheadsCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.corpse")
     @Config.Name("Corpse")
@@ -166,6 +182,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.mekanism")
     @Config.Name("Mekanism")
     public static final MekanismCategory MEKANISM = new MekanismCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.moartinkers")
+    @Config.Name("Moar Tinkers")
+    public static final MoarTinkersCategory MOAR_TINKERS = new MoarTinkersCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.mobstages")
     @Config.Name("Mob Stages")
@@ -332,6 +352,13 @@ public class UTConfigMods
         public int utItemLaserParticlesGraphics = -1;
     }
 
+    public static class AgricraftCategory {
+        @Config.RequiresMcRestart
+        @Config.Name("Ender IO Integration Fix")
+        @Config.Comment("Fixes crash when Ender IO's Farming Station attempts to harvest Agricraft crops")
+        public boolean  utEnderIOPluginFixToggle = true;
+    }
+
     public static class ArcaneArchivesCategory
     {
         @Config.RequiresMcRestart
@@ -365,6 +392,22 @@ public class UTConfigMods
         @Config.Name("Improved Player Tick")
         @Config.Comment("Improves AoA player ticking by only sending inventory changes when necessary")
         public boolean utImprovedPlayerTickToggle = true;
+    }
+
+    public static class BackpacksCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("No Offhand Interaction")
+        @Config.Comment("Prevents unintended offhand right-click behavior when opening backpacks")
+        public boolean utBPNoOffhandInteractionToggle = true;
+    }
+
+    public static class BewitchmentCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Witches' Oven Fix")
+        @Config.Comment("Fixes Witches' Oven consuming container fuel items")
+        public boolean utWitchesOvenFixToggle = true;
     }
 
     public static class BiblioCraftCategory
@@ -404,6 +447,16 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fluid Routing Fix")
+        @Config.Comment("Fixes Routing Node fluid routing unable to support multiple liquids and soft-locking when encountering a full fluid tank")
+        public boolean utFluidRoutingFixToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Bound Tool Harvest Tweak")
+        @Config.Comment("Improves performance when harvesting blocks with Bound Tool's right-click and exposes block drops to HarvestDropsEvent")
+        public boolean utBoundToolTweakToggle = true;
     }
 
     public static class BotaniaCategory
@@ -499,6 +552,14 @@ public class UTConfigMods
         @Config.Name("Memory Leak Fix")
         @Config.Comment("Fixes client-side memory leak associated with miniaturization recipes")
         public boolean utMemoryLeakFixToggle = true;
+    }
+
+    public static class CookingForBlockheadsCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Oven Fix")
+        @Config.Comment("Fixes CFB Oven consuming container fuel items")
+        public boolean utOvenFixToggle = true;
     }
 
     public static class CorpseCategory
@@ -734,6 +795,11 @@ public class UTConfigMods
     public static class InfernalMobsCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Better Entity Names")
+        @Config.Comment("Gets the actual display names of entities for improved naming")
+        public boolean utIMBetterEntityNamesToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Sticky Recall Compatibility")
         @Config.Comment("Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment")
         public boolean utIMStickyRecallToggle = true;
@@ -778,6 +844,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class MoarTinkersCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Baubles Compatibility")
+        @Config.Comment("Enables Energy Eater/Repair to pull from baubles")
+        public boolean utBaublesCompatibility = true;
     }
 
     public static class MobStagesCategory

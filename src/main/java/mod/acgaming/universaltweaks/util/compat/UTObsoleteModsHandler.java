@@ -88,6 +88,7 @@ public class UTObsoleteModsHandler
             put("insomniac", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
             put("inventoryspam", () -> UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle);
             put("keydescfix", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
+            put("ksyxis", () -> UTConfigTweaks.PERFORMANCE.utWorldLoadingToggle);
             put("lanserverproperties", () -> UTConfigTweaks.MISC.utLANServerProperties);
             put("leafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
             put("letmedespawn", () -> UTConfigTweaks.ENTITIES.utMobDespawnToggle);
@@ -102,6 +103,7 @@ public class UTObsoleteModsHandler
             put("nanfix", () -> UTConfigBugfixes.ENTITIES.utEntityNaNToggle);
             put("nanpolice", () -> UTConfigBugfixes.ENTITIES.utEntityNaNToggle);
             put("naturallychargedcreepers", () -> UTConfigTweaks.ENTITIES.utCreeperChargedChance > 0);
+            put("netherportalfix", () -> UTConfigBugfixes.WORLD.utPortalLocationLink);
             put("noadvancements", () -> UTConfigTweaks.MISC.utDisableAdvancementsToggle);
             put("nobounce", () -> UTConfigMods.THAUMCRAFT.utTCStableThaumometerToggle);
             put("nodoze", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
