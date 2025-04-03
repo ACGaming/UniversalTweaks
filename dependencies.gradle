@@ -94,6 +94,7 @@ final def mod_dependencies = [
     'curse.maven:extrautilities-225561:2678374'                       : [debug_extra_utilities_2],
     'curse.maven:forestry-59751:2918418'                              : [debug_forestry, debug_binnies_mods],
     'curse.maven:forgemultipartcbe-258426:2755790'                    : [debug_forgemultipartcbe, debug_project_red],
+    'curse.maven:fps-reducer-280294:3362160'                          : [debug_fps_reducer],
     'curse.maven:geckolib-388172:4020277'                             : [debug_cqrepoured],
     'curse.maven:guideapi-228832:2645992'                             : [debug_blood_magic],
     'curse.maven:hwyla-253449:2568751'                                : [debug_hwyla],

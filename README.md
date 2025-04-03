@@ -363,6 +363,8 @@ All changes are toggleable via config files.
     * **Downgrade Potion Recipes Log Level:** Downgrades the message when creating a potion recipe from info to a debug
 * **Forestry**
     * **Arborist Villager Trades:** Adds custom emerald to germling trades to the arborist villager
+* **FPS Reducer**
+    * **Correct FPS Display:** Fixes incorrect FPS number being displayed on the HUD
 * **HWYLA**
     * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
 * **In Control!**
