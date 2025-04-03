@@ -25,6 +25,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.compactmachines.render.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
             put("mixins.mods.crafttweaker.json", () -> loaded("crafttweaker"));
             put("mixins.mods.enderio.itemrender.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
+            put("mixins.mods.fpsreducer.json", () -> loaded("fpsreducer") && UTConfigMods.FPS_REDUCER.utCorrectFpsValue);
             put("mixins.mods.hwyla.json", () -> loaded("waila"));
             put("mixins.mods.ironchests.json", () -> loaded("ironchest") && UTConfigMods.IRON_CHESTS.utReplaceItemRenderer);
             put("mixins.mods.modularmagic.nullingredient.json", () -> loaded("modularmagic") && UTConfigMods.MODULAR_MAGIC.utEnsureIngredientNotNull);

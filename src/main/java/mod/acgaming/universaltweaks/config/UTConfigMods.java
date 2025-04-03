@@ -147,6 +147,10 @@ public class UTConfigMods
     @Config.Name("Forestry")
     public static final ForestryCategory FORESTRY = new ForestryCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.fpsreducer")
+    @Config.Name("FPS Reducer")
+    public static final FpsReducerCategory FPS_REDUCER = new FpsReducerCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.incontrol")
     @Config.Name("In Control!")
     public static final InControlCategory INCONTROL = new InControlCategory();
@@ -749,6 +753,14 @@ public class UTConfigMods
         @Config.Name("Extra Trees: Gather Windfall")
         @Config.Comment("Allows Forestry farms to pick up ExtraTrees fruit")
         public boolean utFOGatherWindfallToggle = true;
+    }
+
+    public static class FpsReducerCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Correct FPS Display")
+        @Config.Comment("Makes the HUD display the actual FPS of the game, instead of the FPS of the HUD itself")
+        public boolean utCorrectFpsValue = true;
     }
 
     public static class InControlCategory
