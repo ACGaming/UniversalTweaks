@@ -268,6 +268,7 @@ All changes are toggleable via config files.
 * **Undead Horses**
     * **Burning:** Lets untamed undead horses burn in daylight
     * **Taming:** Allows taming of undead horses
+* **Unlimited Sound Pitch Range:** Removes the hardcoded range for sound pitches (0.5-2.0)
 * **Use Separate Dismount Key:** Makes the dismount keybind separate from LSHIFT, allowing it to be rebound independently
 * **Use Separate Narrator Key:** Allows using a custom Narrator key, instead of being stuck with CTRL+B
 * **Village Distance:** Sets the village generation distance in chunks
@@ -314,7 +315,7 @@ All changes are toggleable via config files.
     * **Gather Windfall:** Allows Forestry farms to pick up ExtraTrees fruit
 * **Biomes O' Plenty**
     * **Hot Spring Water:** Fixes rapid inflection of regeneration effects in hot spring water
-* **Blood Magic** 
+* **Blood Magic**
     * **Bound Tool Harvest Tweak:** Improves performance when harvesting blocks with Bound Tool's right-click and exposes block drops to HarvestDropsEvent
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fluid Routing Fix:** Fixes Routing Node fluid routing unable to support multiple liquids and soft-locking when encountering a full fluid tank

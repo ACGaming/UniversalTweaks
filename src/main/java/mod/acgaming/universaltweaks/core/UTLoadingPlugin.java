@@ -227,6 +227,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.personalpotionparticles.json", () -> UTConfigTweaks.MISC.utPoVEffectParticles);
             put("mixins.tweaks.misc.recipebook.client.json", () -> UTConfigTweaks.MISC.utRecipeBookToggle);
             put("mixins.tweaks.misc.smoothscrolling.json", () -> UTConfigTweaks.MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle);
+            put("mixins.tweaks.misc.sound.pitch.json", () -> UTConfigTweaks.MISC.utUnlimitedSoundPitchRange);
             put("mixins.tweaks.misc.timeouts.client.json", () -> UTConfigTweaks.MISC.TIMEOUTS.utTimeoutsToggle);
             put("mixins.tweaks.misc.toastcontrol.json", () -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlToggle);
             put("mixins.tweaks.performance.audioreload.json", () -> UTConfigTweaks.PERFORMANCE.utDisableAudioDebugToggle && !surgeLoaded);
