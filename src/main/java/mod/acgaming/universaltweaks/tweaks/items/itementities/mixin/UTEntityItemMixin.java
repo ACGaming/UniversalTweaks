@@ -51,7 +51,7 @@ public abstract class UTEntityItemMixin extends Entity
     public AxisAlignedBB getCollisionBoundingBox()
     {
         if (UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10) return this.getEntityBoundingBox();
-        else return null;
+        return super.getCollisionBoundingBox();
     }
 
     @Override
@@ -71,13 +71,13 @@ public abstract class UTEntityItemMixin extends Entity
     @Override
     public boolean canBeCollidedWith()
     {
-        return UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10;
+        return UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle ? this.ticksExisted > 10 : super.canBeCollidedWith();
     }
 
     @Override
     public boolean canBePushed()
     {
-        return UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10;
+        return UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle ? this.ticksExisted > 10 : super.canBePushed();
     }
 
     @Override
@@ -94,13 +94,14 @@ public abstract class UTEntityItemMixin extends Entity
             }
         }
         playerInteraction = false;
-        return false;
+        return super.processInitialInteract(player, hand);
     }
 
     @Override
     public AxisAlignedBB getCollisionBox(Entity entity)
     {
-        return UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && this.ticksExisted > 10 || entity.canBePushed() ? entity.getEntityBoundingBox() : null;
+        if (UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEPhysicsToggle && (this.ticksExisted > 10 || entity.canBePushed())) return entity.getEntityBoundingBox();
+        return super.getCollisionBox(entity);
     }
 
     @Inject(method = "onCollideWithPlayer", at = @At("HEAD"), cancellable = true)
