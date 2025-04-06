@@ -790,7 +790,11 @@ public class UTConfigMods
 
         @Config.RequiresMcRestart
         @Config.Name("Fluid Tank Extraction")
-        @Config.Comment("Fixes a logic error with extracting fluids from fluid tanks")
+        @Config.Comment
+            ({
+                "Fixes a logic error allowing extracting fluids from fluid tanks regardless of requested fluid",
+                "Has no effect when playing with Mekanism CEu"
+            })
         public boolean utFluidTankExtraction = true;
 
     }

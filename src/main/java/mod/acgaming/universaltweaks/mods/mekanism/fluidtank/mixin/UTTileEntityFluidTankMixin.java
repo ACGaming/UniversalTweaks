@@ -26,6 +26,8 @@ public abstract class UTTileEntityFluidTankMixin
      * Converts the code as such:
      * <br><code>- fluidTank != null && FluidContainerUtils.canDrain(fluidTank.getFluid(), fluid) && !isActive || from != EnumFacing.DOWN</code>
      * <br><code>+ fluidTank != null && FluidContainerUtils.canDrain(fluidTank.getFluid(), fluid) && (!isActive || from != EnumFacing.DOWN)</code>
+     * <br>
+     * This only has a difference with Mekanism. <a href="https://github.com/sddsd2332/Mekanism-CE-Unofficial-1.12.2/commit/64e2af3ed10f359a9876315811631f44cfa603cb">Mekanism CEu</a> has this change integrated
      *
      * @author WaitingIdly
      * @reason Mekanism's default logic always returns true if the direction is anywhere except down,
