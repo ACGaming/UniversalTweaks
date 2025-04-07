@@ -802,6 +802,11 @@ public class UTConfigMods
         @Config.Name("Tool Break Fire Event")
         @Config.Comment("Fires the PlayerDestroyItemEvent when an Immersive Engineering tool breaks, fixing a number of cross-compatibility issues")
         public boolean utFireBreakEvent = true;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Tool Break Hand Replacement")
+        @Config.Comment("Fixes the tool breaking setting the main hand to empty regardless of what hand the tool is in")
+        public boolean utFixIncorrectHandReplacement = true;
     }
 
     public static class InControlCategory

@@ -103,6 +103,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.forestry.extratrees.json", () -> loaded("extratrees") && UTConfigMods.FORESTRY.utFOGatherWindfallToggle);
                 put("mixins.mods.forestry.json", () -> loaded("forestry"));
                 put("mixins.mods.immersiveengineering.toolevent.json", () -> loaded("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFireBreakEvent);
+                put("mixins.mods.immersiveengineering.toolhand.json", () -> loaded("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFixIncorrectHandReplacement);
                 put("mixins.mods.incontrol.json", () -> loaded("incontrol") && UTConfigMods.INCONTROL.utStatsFixToggle);
                 put("mixins.mods.industrialcraft.dupes.json", () -> loaded("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle);
                 put("mixins.mods.industrialforegoing.dupes.json", () -> loaded("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utDuplicationFixesToggle);
