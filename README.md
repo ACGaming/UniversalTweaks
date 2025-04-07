@@ -399,6 +399,7 @@ All changes are toggleable via config files.
     * **Ingredient Matching:** Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues
 * **Mekanism**
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Fluid Tank Extraction:** Fixes a logic error allowing extracting fluids from fluid tanks regardless of requested fluid
 * **MmmMmmMmmMmm**
     * **Copy Armor Stacks to Dummy:** Instead of deleting the original itemstack being equipped, use a copy of it and do not drop armor
 * **Moar Tinkers**

@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.mekanism.mixin;
+package mod.acgaming.universaltweaks.mods.mekanism.dupes.mixin;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 

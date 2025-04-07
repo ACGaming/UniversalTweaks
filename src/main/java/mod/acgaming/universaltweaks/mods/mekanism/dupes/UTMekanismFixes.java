@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.mekanism;
+package mod.acgaming.universaltweaks.mods.mekanism.dupes;
 
 import java.util.ArrayList;
 

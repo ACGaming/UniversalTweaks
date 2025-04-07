@@ -1,5 +1,5 @@
 {
-  "package": "mod.acgaming.universaltweaks.mods.mekanism.mixin",
+  "package": "mod.acgaming.universaltweaks.mods.mekanism.dupes.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
