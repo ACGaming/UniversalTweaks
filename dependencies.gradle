@@ -98,6 +98,7 @@ final def mod_dependencies = [
     'curse.maven:forge-backpacks-59143:2554237'                       : [debug_backpack],
     'curse.maven:forgemultipartcbe-258426:2755790'                    : [debug_forgemultipartcbe, debug_project_red],
     'curse.maven:fps-reducer-280294:3362160'                          : [debug_fps_reducer],
+    'curse.maven:gaiadimension-302529:2724738'                        : [debug_gaiadimension],
     'curse.maven:geckolib-388172:4020277'                             : [debug_cqrepoured],
     'curse.maven:guideapi-228832:2645992'                             : [debug_blood_magic],
     'curse.maven:hwyla-253449:2568751'                                : [debug_hwyla],

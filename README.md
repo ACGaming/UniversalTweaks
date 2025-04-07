@@ -378,6 +378,8 @@ All changes are toggleable via config files.
     * **Arborist Villager Trades:** Adds custom emerald to germling trades to the arborist villager
 * **FPS Reducer**
     * **Correct FPS Display:** Fixes incorrect FPS number being displayed on the HUD
+* **Gaia Dimension**
+    * **Fix Restructurer Crash:** Safely access a nullable value when checking recipes in the Restructurer
 * **HWYLA**
     * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
 * **In Control!**

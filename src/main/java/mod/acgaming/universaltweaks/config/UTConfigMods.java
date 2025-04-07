@@ -151,6 +151,10 @@ public class UTConfigMods
     @Config.Name("FPS Reducer")
     public static final FpsReducerCategory FPS_REDUCER = new FpsReducerCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.gaia_dimension")
+    @Config.Name("Gaia Dimension")
+    public static final GaiaDimensionCategory GAIA_DIMENSION = new GaiaDimensionCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.incontrol")
     @Config.Name("In Control!")
     public static final InControlCategory INCONTROL = new InControlCategory();
@@ -761,6 +765,14 @@ public class UTConfigMods
         @Config.Name("Correct FPS Display")
         @Config.Comment("Makes the HUD display the actual FPS of the game, instead of the FPS of the HUD itself")
         public boolean utCorrectFpsValue = true;
+    }
+
+    public static class GaiaDimensionCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Restructurer Crash")
+        @Config.Comment("Safely access a nullable array when checking recipes in the Restructurer")
+        public boolean utFixNPERestructurerRecipe = true;
     }
 
     public static class InControlCategory
