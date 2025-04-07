@@ -390,6 +390,7 @@ All changes are toggleable via config files.
 * **HWYLA**
     * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
 * **Immersive Engineering**
+    * **Tool Break Fire Event:** Fires the PlayerDestroyItemEvent when an Immersive Engineering tool breaks, fixing a number of cross-compatibility issues
 * **In Control!**
     * **Spawn Rule Stats Fix:** Fixes onJoin spawn rules repeatedly modifying mob attack/health/speed
 * **IndustrialCraft 2**

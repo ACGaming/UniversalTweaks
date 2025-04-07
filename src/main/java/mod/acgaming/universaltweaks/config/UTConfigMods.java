@@ -798,6 +798,10 @@ public class UTConfigMods
 
     public static class ImmersiveEngineeringCategory
     {
+        @Config.RequiresMcRestart
+        @Config.Name("Tool Break Fire Event")
+        @Config.Comment("Fires the PlayerDestroyItemEvent when an Immersive Engineering tool breaks, fixing a number of cross-compatibility issues")
+        public boolean utFireBreakEvent = true;
     }
 
     public static class InControlCategory
