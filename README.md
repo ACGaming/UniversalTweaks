@@ -464,6 +464,7 @@ All changes are toggleable via config files.
     * **Fix Quake Hammer Texture:** Fixes the Quake Hammer using the incorrect config option to control its size
 * **EvilCraft**
     * **Vengeance Spirit Regex Cache:** Cache the result of Vengeance Spirit checks against the config, which may attempt to build and check against hundreds of Regex Patterns every tick
+    * **Vengeance Spirit Random Performance:** Avoid repeatedly running intensive calculations involving spawning a random Vengeance Spirit
 * **The Farlanders**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Thermal Expansion**

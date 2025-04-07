@@ -688,6 +688,11 @@ public class UTConfigMods
         @Config.Name("Vengeance Spirit Regex Cache")
         @Config.Comment("Cache the result of Vengeance Spirit checks against the config, which may attempt to build and check against hundreds of Regex Patterns every tick")
         public boolean utVengeanceSpiritCache = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Vengeance Spirit Random Performance")
+        @Config.Comment("Avoid repeatedly running intensive calculations involving spawning a random Vengeance Spirit")
+        public boolean utVengeanceSpiritRandom = true;
     }
 
     public static class ExtraUtilitiesCategory

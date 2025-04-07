@@ -85,6 +85,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.erebus.json", () -> loaded("erebus"));
             put("mixins.mods.erebus.quakehammer.json", () -> loaded("erebus") && UTConfigMods.EREBUS.utFixQuakeHammerTexture);
             put("mixins.mods.evilcraft.vengeancespirit.regex.json", () -> loaded("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritCache);
+            put("mixins.mods.evilcraft.vengeancespirit.random.json", () -> loaded("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritRandom);
             put("mixins.mods.extrautilities.breakcreativemill.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utFixCreativeMillHarvestability);
             put("mixins.mods.extrautilities.deepdarkstats.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDeepDarkStats);
             put("mixins.mods.extrautilities.dupes.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDuplicationFixesToggle);
