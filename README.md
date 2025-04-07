@@ -389,6 +389,7 @@ All changes are toggleable via config files.
     * **Fix Restructurer Crash:** Safely access a nullable value when checking recipes in the Restructurer
 * **HWYLA**
     * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
+* **Immersive Engineering**
 * **In Control!**
     * **Spawn Rule Stats Fix:** Fixes onJoin spawn rules repeatedly modifying mob attack/health/speed
 * **IndustrialCraft 2**

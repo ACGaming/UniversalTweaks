@@ -159,6 +159,10 @@ public class UTConfigMods
     @Config.Name("Gaia Dimension")
     public static final GaiaDimensionCategory GAIA_DIMENSION = new GaiaDimensionCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.immersiveengineering")
+    @Config.Name("Immersive Engineering")
+    public static final ImmersiveEngineeringCategory IMMERSIVE_ENGINEERING = new ImmersiveEngineeringCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.incontrol")
     @Config.Name("In Control!")
     public static final InControlCategory INCONTROL = new InControlCategory();
@@ -790,6 +794,10 @@ public class UTConfigMods
         @Config.Name("Fix Restructurer Crash")
         @Config.Comment("Safely access a nullable array when checking recipes in the Restructurer")
         public boolean utFixNPERestructurerRecipe = true;
+    }
+
+    public static class ImmersiveEngineeringCategory
+    {
     }
 
     public static class InControlCategory
