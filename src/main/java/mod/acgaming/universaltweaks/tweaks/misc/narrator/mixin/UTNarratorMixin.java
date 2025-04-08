@@ -13,7 +13,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(NarratorChatListener.class)
 public class UTNarratorMixin
@@ -39,11 +38,5 @@ public class UTNarratorMixin
     public void utNarratorAnnounceMode(int p_193641_1_, CallbackInfo ci)
     {
         if (UTConfigTweaks.MISC.utDisableNarratorToggle) ci.cancel();
-    }
-
-    @Inject(method = "isActive", at = @At("RETURN"), cancellable = true)
-    public void utNarratorState(CallbackInfoReturnable<Boolean> cir)
-    {
-        if (UTConfigTweaks.MISC.utDisableNarratorToggle) cir.setReturnValue(false);
     }
 }
