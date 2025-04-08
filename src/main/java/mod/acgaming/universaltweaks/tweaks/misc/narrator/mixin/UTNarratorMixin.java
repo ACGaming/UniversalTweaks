@@ -28,12 +28,20 @@ public class UTNarratorMixin
         return new NarratorDummy();
     }
 
+    /**
+     * @author ACGaming
+     * @reason short circuit making the narrator say something
+     */
     @Inject(method = "say", at = @At("HEAD"), cancellable = true)
     public void utNarratorSay(ChatType chatTypeIn, ITextComponent message, CallbackInfo ci)
     {
         if (UTConfigTweaks.MISC.utDisableNarratorToggle) ci.cancel();
     }
 
+    /**
+     * @author ACGaming
+     * @reason short circuit making the narrator announce the mode (active/inactive)
+     */
     @Inject(method = "announceMode", at = @At("HEAD"), cancellable = true)
     public void utNarratorAnnounceMode(int p_193641_1_, CallbackInfo ci)
     {
