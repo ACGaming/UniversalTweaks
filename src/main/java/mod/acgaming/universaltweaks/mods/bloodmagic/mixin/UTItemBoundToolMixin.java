@@ -92,7 +92,8 @@ public abstract class UTItemBoundToolMixin
         at = @At(
             value = "INVOKE",
             target = "LWayofTime/bloodmagic/item/ItemBoundTool;onBoundRelease(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/player/EntityPlayer;I)V",
-            shift = At.Shift.AFTER
+            shift = At.Shift.AFTER,
+            remap = false
         ),
         remap = true
     )
