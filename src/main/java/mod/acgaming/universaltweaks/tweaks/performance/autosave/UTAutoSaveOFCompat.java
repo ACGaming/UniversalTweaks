@@ -11,8 +11,8 @@ import net.minecraft.launchwrapper.Launch;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.core.Coremods;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
-import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 
 public class UTAutoSaveOFCompat
 {
@@ -21,7 +21,7 @@ public class UTAutoSaveOFCompat
     public static void updateOFConfig()
     {
         if (!UTLoadingPlugin.isClient) return;
-        if (!UTLoadingPlugin.optiFineLoaded) return;
+        if (!Coremods.OPTIFINE.isLoaded()) return;
         try
         {
             UniversalTweaks.LOGGER.info("OptiFine detected, updating config file...");

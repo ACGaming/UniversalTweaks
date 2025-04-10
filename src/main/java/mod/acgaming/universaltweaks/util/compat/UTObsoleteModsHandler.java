@@ -15,6 +15,7 @@ import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.core.Coremods;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 
 public class UTObsoleteModsHandler
@@ -187,9 +188,10 @@ public class UTObsoleteModsHandler
 
         // Mods checked by class
         if (UTReflectionUtil.isClassLoaded("com.chocohead.biab.BornInABarn")) messages.add("Born in a Barn"); // Fix integrated in Forge 14.23.2.2623 (#4689)
-        if (UTReflectionUtil.isClassLoaded("io.github.jikuja.LocaleTweaker") && UTConfigBugfixes.MISC.utLocaleToggle) messages.add("LocaleFixer");
+        if ((UTReflectionUtil.isClassLoaded("io.github.jikuja.LocaleTweaker") || UTReflectionUtil.isClassLoaded("io.github.jikuja.LocaleFixer"))
+            && UTConfigBugfixes.MISC.utLocaleToggle) messages.add("LocaleFixer");
         if (UTReflectionUtil.isClassLoaded("com.cleanroommc.blockdelayremover.BlockDelayRemoverCore") && UTConfigTweaks.BLOCKS.utBlockHitDelay != 5) messages.add("Block Delay Remover");
-        if (UTReflectionUtil.isClassLoaded("io.github.barteks2x.chunkgenlimiter.ChunkGenLimitMod") && UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) messages.add("Chunk Generation Limiter");
+        if (Coremods.CHUNKGEN_LIMITER.isLoaded() && UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) messages.add("Chunk Generation Limiter");
         return messages;
     }
 
