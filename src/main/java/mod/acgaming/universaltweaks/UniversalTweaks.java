@@ -31,9 +31,6 @@ import mod.acgaming.universaltweaks.mods.mekanism.dupes.UTMekanismFixes;
 import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.UTSimplyJetpacksEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageClientStatesReset;
-import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructEvents;
-import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructMaterials;
-import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
 import mod.acgaming.universaltweaks.mods.woot.UTWootTicketManager;
 import mod.acgaming.universaltweaks.tweaks.blocks.betterplacement.UTBetterPlacement;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
@@ -143,7 +140,6 @@ public class UniversalTweaks
         UTPacketHandler.init();
         if (UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
         UTAutoSaveOFCompat.updateOFConfig();
-        if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
         if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) UTWorldDataCapability.register();
         if (UTConfigTweaks.MISC.utSkipRegistryScreenToggle) System.setProperty("fml.queryResult", "confirm");
         LOGGER.info(NAME + " pre-initialized");
@@ -174,7 +170,6 @@ public class UniversalTweaks
         }
         // Unregister reason: event handler adds to an unused map that is never cleared.
         if (Loader.isModLoaded("tardis") && UTConfigMods.TARDIS.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.unregister(ClientProxy.class);
-        if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTTConstructEvents());
         if (Loader.isModLoaded("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle) UTWootTicketManager.init();
         LOGGER.info(NAME + " initialized");
     }
@@ -209,7 +204,6 @@ public class UniversalTweaks
         if (UTConfigTweaks.ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
         if (UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) UTChunkGenLimit.initDimensionList();
         if (UTConfigTweaks.WORLD.VOID_FOG.utVoidFogToggle) UTVoidFog.initDimensionList();
-        if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConMaterialBlacklist.length > 0) UTTConstructMaterials.utHandleBlacklistedMaterials();
         LOGGER.info(NAME + " post-initialized");
     }
 
@@ -240,7 +234,6 @@ public class UniversalTweaks
     @Mod.EventHandler
     public void onLoadComplete(FMLLoadCompleteEvent event)
     {
-        if (Loader.isModLoaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.onLoadComplete();
         if (UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle) UTEntityRadiusCheck.onLoadComplete();
         if (UTConfigGeneral.DEBUG.utLoadingTimeToggle) LOGGER.info("The game loaded in approximately {} seconds", (System.currentTimeMillis() - UTLoadingPlugin.launchTime) / 1000F);
         if (UTObsoleteModsHandler.hasObsoleteModsMessage())

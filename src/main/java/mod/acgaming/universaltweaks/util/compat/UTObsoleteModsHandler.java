@@ -137,7 +137,6 @@ public class UTObsoleteModsHandler
             put("tconfixes", () -> true);
             put("thirstybottles", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
             put("tidychunk", () -> UTConfigTweaks.WORLD.utTidyChunkToggle);
-            put("tinkersoredictcache", () -> UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
             put("toastcontrol", () -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlToggle);
             put("tramplestopper", () -> UTConfigTweaks.BLOCKS.utFarmlandTrample != UTConfigTweaks.TrampleOptions.DEFAULT);
             put("unloader", () -> UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle);

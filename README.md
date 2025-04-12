@@ -471,14 +471,7 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Insolator Custom Monoculture:** Adds Monoculture Cycle integration to desired phytogenic insolator recipes added by ModTweaker
 * **Tinkers' Construct**
-    * **Disable Rendering Items in Smeltery:** Disables rendering items in the world when they are inside the Smeltery to prevent lag while rendering
-    * **Duplication Fixes:** Fixes various duplication exploits
-    * **Gaseous Fluids:** Excludes gaseous fluids from being transferable via faucets
-    * **Material Blacklist:** Hides tool/bow materials in the 'Materials and You' book
-    * **Offhand Shuriken:** Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand
-    * **Ore Dictionary Cache:** Caches all ore dictionary smelting recipes to speed up game loading
-    * **Particle Fixes:** Fixes server world being leaked to various particles
-    * **Projectile Despawning:** Despawns unbreakable projectiles faster to improve framerates
+    * **Ceramics: Gaseous Fluids:** Excludes gaseous fluids from being transferable via faucets
     * **Tool Customization:** Sets the attack damage cutoff at which diminishing returns start for any Tinkers' tool and sets the rate at which a tool's attack damage incrementally decays depending on its damage cutoff
 * **Tiny Progressions**
     * **Duplication Fixes:** Fixes various duplication exploits

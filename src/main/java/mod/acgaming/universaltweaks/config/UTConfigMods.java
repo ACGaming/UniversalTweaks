@@ -352,11 +352,12 @@ public class UTConfigMods
         public int utItemLaserParticlesGraphics = -1;
     }
 
-    public static class AgricraftCategory {
+    public static class AgricraftCategory
+    {
         @Config.RequiresMcRestart
         @Config.Name("Ender IO Integration Fix")
         @Config.Comment("Fixes crash when Ender IO's Farming Station attempts to harvest Agricraft crops")
-        public boolean  utEnderIOPluginFixToggle = true;
+        public boolean utEnderIOPluginFixToggle = true;
     }
 
     public static class ArcaneArchivesCategory
@@ -1260,58 +1261,9 @@ public class UTConfigMods
     public static class TinkersConstructCategory
     {
         @Config.RequiresMcRestart
-        @Config.Name("Gaseous Fluids")
+        @Config.Name("Ceramics: Gaseous Fluids")
         @Config.Comment("Excludes gaseous fluids from being transferable via faucets")
         public boolean utTConGaseousFluidsToggle = false;
-
-        @Config.Name("Maximum Items to Render in Smeltery")
-        @Config.Comment
-            ({
-                "Determines the maximum number of possible items to display before not rendering any to prevent substantial lag",
-                "0 to disable rendering items in the smeltery entirely",
-                "-1 for the default, which is always rendering items"
-            })
-        public int utMaximumItemRendersInSmeltery = -1;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Material Blacklist")
-        @Config.Comment
-            ({
-                "Hides tool/bow materials in the 'Materials and You' book",
-                "Syntax: material",
-                "Enabling debug logging prints all materials on game launch"
-            })
-        public String[] utTConMaterialBlacklist = new String[] {};
-
-        @Config.RequiresMcRestart
-        @Config.Name("Offhand Shuriken")
-        @Config.Comment("Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand")
-        public boolean utTConShurikenToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Ore Dictionary Cache")
-        @Config.Comment("Caches all ore dictionary smelting recipes to speed up game loading")
-        public boolean utTConOreDictCacheToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Projectile Despawning")
-        @Config.Comment("Despawns unbreakable projectiles faster to improve framerates")
-        public boolean utTConProjectileToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Duplication Fixes")
-        @Config.Comment("Fixes various duplication exploits")
-        public boolean utDuplicationFixesToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Particle Fixes")
-        @Config.Comment("Fixes server world being leaked to various particles")
-        public boolean utParticleFixesToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Tool Customization")
-        @Config.Comment("Enables usage of tweaks in below category to customize Tinkers' tools stats")
-        public boolean utTConToolCustomizationToggle = true;
 
         @Config.LangKey("cfg.universaltweaks.modintegration.tcon.toolcustomization")
         @Config.Name("Tool Customization")
@@ -1319,7 +1271,12 @@ public class UTConfigMods
 
         public static class ToolCustomizationCategory
         {
-            @Config.Name("General Attack Damage Cutoff")
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Tool Customization")
+            @Config.Comment("Enables usage of tweaks in below category to customize Tinkers' tools stats")
+            public boolean utTConToolCustomizationToggle = true;
+
+            @Config.Name("[2] General Attack Damage Cutoff")
             @Config.Comment
                 ({
                     "Sets the attack damage cutoff at which diminishing returns start for any Tinkers' tool not listed here",
@@ -1327,7 +1284,7 @@ public class UTConfigMods
                 })
             public float utTConToolGeneralDamageCutoff = 15.0f;
 
-            @Config.Name("Cleaver Attack Damage Cutoff")
+            @Config.Name("[3] Cleaver Attack Damage Cutoff")
             @Config.Comment
                 ({
                     "Sets the attack damage cutoff at which diminishing returns start for the cleaver",
@@ -1335,7 +1292,7 @@ public class UTConfigMods
                 })
             public float utTConToolCleaverDamageCutoff = 25.0f;
 
-            @Config.Name("Longsword Attack Damage Cutoff")
+            @Config.Name("[4] Longsword Attack Damage Cutoff")
             @Config.Comment
                 ({
                     "Sets the attack damage cutoff at which diminishing returns start for the longsword",
@@ -1343,7 +1300,7 @@ public class UTConfigMods
                 })
             public float utTConToolLongswordDamageCutoff = 18.0f;
 
-            @Config.Name("Rapier Attack Damage Cutoff")
+            @Config.Name("[5] Rapier Attack Damage Cutoff")
             @Config.Comment
                 ({
                     "Sets the attack damage cutoff at which diminishing returns start for the rapier",
@@ -1351,7 +1308,7 @@ public class UTConfigMods
                 })
             public float utTConToolRapierDamageCutoff = 13.0f;
 
-            @Config.Name("PlusTiC: Katana Attack Damage Cutoff")
+            @Config.Name("[6] PlusTiC: Katana Attack Damage Cutoff")
             @Config.Comment
                 ({
                     "Sets the attack damage cutoff at which diminishing returns start for the PlusTiC katana",
@@ -1359,7 +1316,7 @@ public class UTConfigMods
                 })
             public float utTConToolKatanaDamageCutoff = 22.0f;
 
-            @Config.Name("Attack Damage Decay Rate")
+            @Config.Name("[7] Attack Damage Decay Rate")
             @Config.Comment
                 ({
                     "Sets the rate at which a tool's attack damage incrementally decays depending on its damage cutoff",

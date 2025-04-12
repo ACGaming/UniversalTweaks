@@ -33,7 +33,6 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.modularrouters.json", () -> loaded("modularrouters") && UTConfigMods.MODULAR_ROUTERS.utParticleThreadToggle);
             put("mixins.mods.roost.json", () -> loaded("roost") && loaded("contenttweaker"));
             put("mixins.mods.storagedrawers.client.json", () -> loaded("storagedrawers"));
-            put("mixins.mods.tconstruct.client.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utParticleFixesToggle);
             put("mixins.mods.thaumcraft.entities.client.json", () -> loaded("thaumcraft"));
             put("mixins.tweaks.misc.recipebook.betweenlands.client.json", () -> loaded("thebetweenlands") && UTConfigTweaks.MISC.utRecipeBookToggle);
             put("mixins.tweaks.misc.recipebook.buildcraft.client.json", () -> loaded("buildcraftcore") && UTConfigTweaks.MISC.utRecipeBookToggle);
@@ -119,10 +118,8 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.spiceoflife.dupes.json", () -> loaded("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);
             put("mixins.mods.steamworld.json", () -> loaded("steamworld") && UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
             put("mixins.mods.storagedrawers.json", () -> loaded("storagedrawers") && UTConfigMods.STORAGE_DRAWERS.utSDItemVoidingFixToggle);
-            put("mixins.mods.tconstruct.json", () -> loaded("tconstruct"));
-            put("mixins.mods.tconstruct.oredictcache.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
-            put("mixins.mods.tconstruct.toolcustomization.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle);
-            put("mixins.mods.tconstruct.toolcustomization.plustic.json", () -> loaded("tconstruct") && loaded("plustic") && UTConfigMods.TINKERS_CONSTRUCT.utTConToolCustomizationToggle);
+            put("mixins.mods.tconstruct.toolcustomization.json", () -> loaded("tconstruct") && UTConfigMods.TINKERS_CONSTRUCT.TOOL_CUSTOMIZATION.utTConToolCustomizationToggle);
+            put("mixins.mods.tconstruct.toolcustomization.plustic.json", () -> loaded("tconstruct") && loaded("plustic") && UTConfigMods.TINKERS_CONSTRUCT.TOOL_CUSTOMIZATION.utTConToolCustomizationToggle);
             put("mixins.mods.techreborn.json", () -> loaded("techreborn"));
             put("mixins.mods.testdummy.copyarmor.json", () -> loaded("testdummy") && UTConfigMods.TEST_DUMMY.utCopyArmor);
             put("mixins.mods.thaumcraft.foci.focuseffects.json", () -> loaded("thaumcraft"));
