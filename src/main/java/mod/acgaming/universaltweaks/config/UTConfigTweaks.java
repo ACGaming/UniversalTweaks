@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
+import mod.acgaming.universaltweaks.tweaks.blocks.anvil.UTRepairableAnvil;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.blocks.piston.UTPistonBlockBlacklist;
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
@@ -239,6 +240,25 @@ public class UTConfigTweaks
             @Config.Name("Anvil XP Level Cap")
             @Config.Comment("Sets the experience level cap for anvil recipes")
             public int utAnvilXPLevelCap = 40;
+
+            @Config.Name("Repairable Anvil Toggle")
+            @Config.Comment("Allows repairing damaged anvils by right-clicking them with a repair item")
+            public boolean utRepairableAnvilToggle = false;
+
+            @Config.Name("Repairable Anvil Items")
+            @Config.Comment
+                ({
+                    "List of items which can be used to repair damaged anvils and their amount",
+                    "Syntax: modid:block, amount",
+                    "Syntax: oredict, amount"
+                })
+            public Map<String, Integer> utDamagedAnvilRepairItems = new HashMap<>();
+
+            public AnvilCategory()
+            {
+                utDamagedAnvilRepairItems.put("minecraft:iron_ingot", 9);
+                utDamagedAnvilRepairItems.put("blockIron", 1);
+            }
         }
 
         public static class BetterPlacementCategory
@@ -2532,6 +2552,7 @@ public class UTConfigTweaks
             if (event.getModID().equals(UniversalTweaks.MODID))
             {
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
+                if (BLOCKS.ANVIL.utRepairableAnvilToggle) UTRepairableAnvil.initRepairItemsList();
                 if (BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
                 if (BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
                 if (MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();

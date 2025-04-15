@@ -32,6 +32,7 @@ import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.UTSimplyJetpacksEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageClientStatesReset;
 import mod.acgaming.universaltweaks.mods.woot.UTWootTicketManager;
+import mod.acgaming.universaltweaks.tweaks.blocks.anvil.UTRepairableAnvil;
 import mod.acgaming.universaltweaks.tweaks.blocks.betterplacement.UTBetterPlacement;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.blocks.dispenser.UTBlockDispenser;
@@ -193,6 +194,7 @@ public class UniversalTweaks
     public void postInit(FMLPostInitializationEvent event)
     {
         if (UTConfigBugfixes.ENTITIES.ENTITY_DESYNC.utEntityDesyncToggle) UTEntityDesync.initBlacklistedEntityEntries();
+        if (UTConfigTweaks.BLOCKS.ANVIL.utRepairableAnvilToggle) UTRepairableAnvil.initRepairItemsList();
         if (UTConfigTweaks.BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle) UTBlockDispenser.initBlockList();
         if (UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
         if (UTConfigTweaks.BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
