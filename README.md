@@ -273,6 +273,7 @@ All changes are toggleable via config files.
 * **Use Separate Dismount Key:** Makes the dismount keybind separate from LSHIFT, allowing it to be rebound independently
 * **Use Separate Narrator Key:** Allows using a custom Narrator key, instead of being stuck with CTRL+B
 * **Village Distance:** Sets the village generation distance in chunks
+* **Villager Profession Biome Blacklist:** Disables villager professions in specified biomes
 * **Void Fog:** Re-implements pre-1.8 void fog and void particles
 * **Water Fall Damage:** Re-implements an improved version of pre-1.4 fall damage in water
 * **Weaken Golem Structure Requirements:** Allows creating Golem with non-air blocks in the bottom corners of the structure

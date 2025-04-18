@@ -38,6 +38,7 @@ import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBe
 import mod.acgaming.universaltweaks.tweaks.blocks.dispenser.UTBlockDispenser;
 import mod.acgaming.universaltweaks.tweaks.blocks.piston.UTPistonBlockBlacklist;
 import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributes;
+import mod.acgaming.universaltweaks.tweaks.entities.trading.UTVillagerProfessionBlacklist;
 import mod.acgaming.universaltweaks.tweaks.items.dragonbreath.UTLeftoverDragonBreath;
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
@@ -199,6 +200,7 @@ public class UniversalTweaks
         if (UTConfigTweaks.BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle) UTBlockDispenser.initBlockList();
         if (UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
         if (UTConfigTweaks.BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
+        if (UTConfigTweaks.ENTITIES.utVillagerProfessionBiomeBlacklist.length > 0) UTVillagerProfessionBlacklist.initVillagerProfessionBlacklist();
         if (UTConfigTweaks.MISC.ADVANCEMENT_SCREENSHOT.utAdvancementScreenshotToggle) UTAdvancementScreenshot.initAdvancementList();
         if (UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
         if (UTConfigTweaks.MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
