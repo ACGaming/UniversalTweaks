@@ -18,7 +18,7 @@ public class UTLeafDecayMixin
     @Inject(method = "beginLeavesDecay", at = @At("TAIL"))
     public void utLeafDecay(IBlockState state, World world, BlockPos pos, CallbackInfo ci)
     {
-        if (!UTConfigTweaks.BLOCKS.utLeafDecayToggle || !world.getChunk(pos).isPopulated()) return;
+        if (!UTConfigTweaks.BLOCKS.utLeafDecayToggle || !world.getChunk(pos).isPopulated() || !state.getValue(BlockLeaves.DECAYABLE)) return;
         world.scheduleUpdate(pos, state.getBlock(), MathHelper.getInt(world.rand, 10, 20));
     }
 }
