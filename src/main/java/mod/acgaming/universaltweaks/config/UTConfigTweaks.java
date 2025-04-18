@@ -17,6 +17,7 @@ import mod.acgaming.universaltweaks.tweaks.blocks.piston.UTPistonBlockBlacklist;
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
+import mod.acgaming.universaltweaks.tweaks.misc.advancements.screenshot.UTAdvancementScreenshot;
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
@@ -1461,6 +1462,10 @@ public class UTConfigTweaks
         @Config.Name("Advancements")
         public final AdvancementsCategory ADVANCEMENTS = new AdvancementsCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.advancementscreenshot")
+        @Config.Name("Advancement Screenshot")
+        public final AdvancementScreenshotCategory ADVANCEMENT_SCREENSHOT = new AdvancementScreenshotCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.armorcurve")
         @Config.Name("Armor Curve")
         public final ArmorCurveCategory ARMOR_CURVE = new ArmorCurveCategory();
@@ -1508,10 +1513,6 @@ public class UTConfigTweaks
         @Config.Name("Accurate Potion Duration")
         @Config.Comment("Always displays the actual potion duration instead of `**:**`")
         public boolean utPotionDurationToggle = true;
-
-        @Config.Name("Advancement Screenshot")
-        @Config.Comment("Silently takes a screenshot every time an advancement is achieved")
-        public boolean utAdvancementScreenshotToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Always Return to Main Menu")
@@ -1788,6 +1789,29 @@ public class UTConfigTweaks
             @Config.Name("[10] Remember Tab Scroll Position")
             @Config.Comment("Remembers and restores the last advancement tab scroll position")
             public boolean utRememberTabScrollPosition = false;
+        }
+
+        public static class AdvancementScreenshotCategory
+        {
+            @Config.Name("[1] Advancement Screenshot Toggle")
+            @Config.Comment("Silently takes a screenshot every time an advancement is achieved")
+            public boolean utAdvancementScreenshotToggle = false;
+
+            @Config.Name("[2] Advancement List")
+            @Config.Comment("Syntax: modid:advancement")
+            public String[] utAdvancementScreenshotList = new String[] {};
+
+            @Config.Name("[3] List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Advancements which are not captured, others are",
+                    "Whitelist Mode: Advancements which are captured, others are not"
+                })
+            public EnumLists utAdvancementScreenshotListMode = EnumLists.BLACKLIST;
+
+            @Config.Name("[4] Screenshot Cooldown")
+            @Config.Comment("Cooldown in ticks after each capture to prevent lag through screenshot spam")
+            public int utAdvancementScreenshotCooldown = 20;
         }
 
         public static class ArmorCurveCategory
@@ -2555,6 +2579,7 @@ public class UTConfigTweaks
                 if (BLOCKS.ANVIL.utRepairableAnvilToggle) UTRepairableAnvil.initRepairItemsList();
                 if (BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
                 if (BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
+                if (MISC.ADVANCEMENT_SCREENSHOT.utAdvancementScreenshotToggle) UTAdvancementScreenshot.initAdvancementList();
                 if (MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
                 if (MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
