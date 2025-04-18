@@ -12,7 +12,6 @@ import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 import mod.acgaming.universaltweaks.Tags;
-import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
@@ -121,7 +120,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.entities.speed.player.json", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
             put("mixins.tweaks.entities.taming.horse.json", () -> UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utTamingUndeadHorsesToggle);
             put("mixins.tweaks.entities.trading.json", () -> UTConfigTweaks.ENTITIES.utVillagerTradeLevelingToggle || UTConfigTweaks.ENTITIES.utVillagerTradeRestockToggle);
-            put("mixins.tweaks.entities.villagerprofessions.json", () -> UTConfigTweaks.ENTITIES.utVillagerProfessionBiomeBlacklist.length > 0);
+            put("mixins.tweaks.entities.villagerprofessions.json", () -> UTConfigTweaks.ENTITIES.utVillagerProfessionBiomeRestriction.length > 0);
             put("mixins.tweaks.entities.voidteleport.json", () -> UTConfigTweaks.ENTITIES.VOID_TELEPORT.utVoidTeleportToggle);
             put("mixins.tweaks.items.attackcooldown.server.json", () -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
             put("mixins.tweaks.items.bottle.json", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);

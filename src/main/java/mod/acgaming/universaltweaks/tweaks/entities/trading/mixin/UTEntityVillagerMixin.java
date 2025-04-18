@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import mod.acgaming.universaltweaks.tweaks.entities.trading.UTVillagerProfessionBlacklist;
+import mod.acgaming.universaltweaks.tweaks.entities.trading.UTVillagerProfessionRestriction;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -36,7 +36,7 @@ public abstract class UTEntityVillagerMixin extends EntityAgeable
     @Shadow
     public abstract void setProfession(int professionId);
 
-    @Inject(method = "setProfession(Lnet/minecraftforge/fml/common/registry/VillagerRegistry$VillagerProfession;)V", at = @At(value = "HEAD"), cancellable = true, remap = false)
+    @Inject(method = "setProfession(Lnet/minecraftforge/fml/common/registry/VillagerRegistry$VillagerProfession;)V", at = @At("HEAD"), cancellable = true, remap = false)
     private void utSetProfession(VillagerRegistry.VillagerProfession prof, CallbackInfo ci)
     {
         VillagerRegistry.VillagerProfession selectedProfession = ut$getValidProfession((EntityVillager) (Object) this, this.getRNG());
@@ -46,8 +46,7 @@ public abstract class UTEntityVillagerMixin extends EntityAgeable
     }
 
     /**
-     * Given a villager and its random number generator, returns a valid {@link VillagerRegistry.VillagerProfession} for the villager's current biome.
-     * "Valid" meaning the profession is not blacklisted in the current biome according to the configuration.
+     * Given a villager and its random number generator, returns a valid {@link VillagerRegistry.VillagerProfession} for the villager's current biome, respecting whitelist or blacklist configuration.
      *
      * @param villager the villager to choose a profession for
      * @param random   the villager's random number generator
@@ -61,23 +60,47 @@ public abstract class UTEntityVillagerMixin extends EntityAgeable
         Biome biome = villager.world.getBiome(pos);
         String biomeRegName = biome.getRegistryName().toString();
 
+        VillagerRegistry.VillagerProfession neet = ForgeRegistries.VILLAGER_PROFESSIONS.getValue(new ResourceLocation("minecraft:nitwit"));
+
         // Get all registered professions
         List<VillagerRegistry.VillagerProfession> professions = new ArrayList<>(ForgeRegistries.VILLAGER_PROFESSIONS.getValuesCollection());
 
-        // Get blacklisted professions for the current biome from config, default to empty array if null
-        List<String> blacklistedProfessions = Arrays.asList(UTVillagerProfessionBlacklist.VILLAGER_PROFESSION_BLACKLIST.getOrDefault(biomeRegName, new String[0]));
+        // Get config entry for the biome
+        UTVillagerProfessionRestriction.Entry configEntry = UTVillagerProfessionRestriction.VILLAGER_PROFESSION_MAP.get(biomeRegName);
+        if (configEntry == null)
+        {
+            // No config entry: allow all professions
+            return professions.get(random.nextInt(professions.size()));
+        }
 
-        // Remove blacklisted professions
-        professions.removeIf(profession -> {
-            ResourceLocation profName = profession.getRegistryName();
-            if (profName == null) return false;
-            return blacklistedProfessions.contains(profName.toString());
-        });
+        List<String> configProfessions = Arrays.asList(configEntry.professions);
 
-        // If no professions remain, fall back to nitwit
+        // Apply whitelist or blacklist
+        if (configEntry.mode.equals("whitelist"))
+        {
+            // Keep only whitelisted professions
+            professions.removeIf(profession -> {
+                ResourceLocation profName = profession.getRegistryName();
+                return profName == null || !configProfessions.contains(profName.toString());
+            });
+        }
+        else
+        {
+            // Remove blacklisted professions
+            professions.removeIf(profession -> {
+                ResourceLocation profName = profession.getRegistryName();
+                return profName != null && configProfessions.contains(profName.toString());
+            });
+        }
+
+        // If no professions remain, fall back to nitwit or first available
         if (professions.isEmpty())
         {
-            return ForgeRegistries.VILLAGER_PROFESSIONS.getValue(new ResourceLocation("minecraft:nitwit"));
+            if (neet != null)
+            {
+                return neet;
+            }
+            return ForgeRegistries.VILLAGER_PROFESSIONS.getValuesCollection().stream().findFirst().orElseThrow(() -> new IllegalStateException("No villager professions available for biome: " + biomeRegName));
         }
 
         // Select a random profession from the remaining pool

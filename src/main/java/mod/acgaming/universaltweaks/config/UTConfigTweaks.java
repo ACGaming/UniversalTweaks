@@ -14,7 +14,7 @@ import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.blocks.anvil.UTRepairableAnvil;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.blocks.piston.UTPistonBlockBlacklist;
-import mod.acgaming.universaltweaks.tweaks.entities.trading.UTVillagerProfessionBlacklist;
+import mod.acgaming.universaltweaks.tweaks.entities.trading.UTVillagerProfessionRestriction;
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
 import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
@@ -658,14 +658,14 @@ public class UTConfigTweaks
         public boolean utSoulboundVexesToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Villager Profession Biome Blacklist")
+        @Config.Name("Villager Profession Biome Restriction")
         @Config.Comment
             ({
-                "Disables villager professions in specified biomes",
-                "Syntax: modid:biome=modid:profession,modid:profession,...",
-                "Example: minecraft:plains=minecraft:librarian,minecraft:cartographer"
+                "Controls villager professions in specified biomes",
+                "Syntax: whitelist/blacklist;modid:biome=modid:profession,modid:profession,...",
+                "Example: blacklist;minecraft:plains=minecraft:librarian,minecraft:cartographer"
             })
-        public String[] utVillagerProfessionBiomeBlacklist = new String[] {};
+        public String[] utVillagerProfessionBiomeRestriction = new String[] {};
 
         public static class AttributesCategory
         {
@@ -2590,7 +2590,7 @@ public class UTConfigTweaks
                 if (BLOCKS.ANVIL.utRepairableAnvilToggle) UTRepairableAnvil.initRepairItemsList();
                 if (BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
                 if (BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
-                if (ENTITIES.utVillagerProfessionBiomeBlacklist.length > 0) UTVillagerProfessionBlacklist.initVillagerProfessionBlacklist();
+                if (ENTITIES.utVillagerProfessionBiomeRestriction.length > 0) UTVillagerProfessionRestriction.initBiomeRestrictions();
                 if (MISC.ADVANCEMENT_SCREENSHOT.utAdvancementScreenshotToggle) UTAdvancementScreenshot.initAdvancementList();
                 if (MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
                 if (MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
