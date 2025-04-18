@@ -663,7 +663,8 @@ public class UTConfigTweaks
             ({
                 "Controls villager professions in specified biomes",
                 "Syntax: whitelist/blacklist;modid:biome=modid:profession,modid:profession,...",
-                "Example: blacklist;minecraft:plains=minecraft:librarian,minecraft:cartographer"
+                "Example 1: whitelist;minecraft:plains=minecraft:librarian,minecraft:priest",
+                "Example 2: blacklist;minecraft:desert=minecraft:farmer"
             })
         public String[] utVillagerProfessionBiomeRestriction = new String[] {};
 
