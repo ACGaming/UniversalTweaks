@@ -13,6 +13,7 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.blocks.anvil.UTRepairableAnvil;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
+import mod.acgaming.universaltweaks.tweaks.blocks.endcrystal.UTEndCrystalPlacement;
 import mod.acgaming.universaltweaks.tweaks.blocks.piston.UTPistonBlockBlacklist;
 import mod.acgaming.universaltweaks.tweaks.entities.trading.UTVillagerProfessionRestriction;
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
@@ -113,6 +114,10 @@ public class UTConfigTweaks
         @Config.Name("Breakable Bedrock")
         public final BreakableBedrockCategory BREAKABLE_BEDROCK = new BreakableBedrockCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.endcrystalplacement")
+        @Config.Name("End Crystal Placement")
+        public final EndCrystalPlacementCategory END_CRYSTAL_PLACEMENT = new EndCrystalPlacementCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.finitewater")
         @Config.Name("Finite Water")
         public final FiniteWaterCategory FINITE_WATER = new FiniteWaterCategory();
@@ -212,11 +217,6 @@ public class UTConfigTweaks
         @Config.Name("Unsupported Pumpkin Placing")
         @Config.Comment("Allows placing Pumpkins and Jack'O'Lanterns without a supporting block")
         public boolean utUnsupportedPumpkinPlacing = false;
-
-        @Config.RequiresMcRestart
-        @Config.Name("End Crystal Placing")
-        @Config.Comment("Allows placing End Crystals without requiring Obsidian or Bedrock below")
-        public boolean utEndCrystalAnywherePlacing = false;
 
         @Config.Name("Projectiles Bounce Off Slime Blocks")
         @Config.Comment("Lets projectiles like arrows bounce off slime blocks")
@@ -337,6 +337,31 @@ public class UTConfigTweaks
                     "Whitelist Mode: Tools which can mine bedrock, others can't"
                 })
             public EnumLists utBreakableBedrockToolListMode = EnumLists.BLACKLIST;
+        }
+
+        public static class EndCrystalPlacementCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] End Crystal Placement Toggle")
+            @Config.Comment("Allows placing end crystals on more blocks than obsidian or bedrock below")
+            public boolean utEndCrystalPlacementToggle = false;
+
+            @Config.Name("[2] Block List")
+            @Config.Comment
+                ({
+                    "List of blocks concerning placement of end crystals",
+                    "Behavior depends on the list mode",
+                    "Syntax: modid:block"
+                })
+            public String[] utEndCrystalPlacementBlockList = new String[] {};
+
+            @Config.Name("[3] List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Blocks that don't allow placing of end crystals, others do",
+                    "Whitelist Mode: Blocks that allow placing of end crystals, others don't"
+                })
+            public EnumLists utEndCrystalPlacementListMode = EnumLists.BLACKLIST;
         }
 
         public static class FiniteWaterCategory
@@ -2590,6 +2615,7 @@ public class UTConfigTweaks
                 ConfigManager.sync(UniversalTweaks.MODID, Config.Type.INSTANCE);
                 if (BLOCKS.ANVIL.utRepairableAnvilToggle) UTRepairableAnvil.initRepairItemsList();
                 if (BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
+                if (BLOCKS.END_CRYSTAL_PLACEMENT.utEndCrystalPlacementToggle) UTEndCrystalPlacement.initBlockList();
                 if (BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
                 if (ENTITIES.utVillagerProfessionBiomeRestriction.length > 0) UTVillagerProfessionRestriction.initBiomeRestrictions();
                 if (MISC.ADVANCEMENT_SCREENSHOT.utAdvancementScreenshotToggle) UTAdvancementScreenshot.initAdvancementList();

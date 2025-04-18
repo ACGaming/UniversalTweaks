@@ -134,6 +134,7 @@ cfg.universaltweaks.tweaks.blocks.anvil=Anvil
 cfg.universaltweaks.tweaks.blocks.betterplacement=Better Placement
 cfg.universaltweaks.tweaks.blocks.blockdispenser=Block Dispenser
 cfg.universaltweaks.tweaks.blocks.breakablebedrock=Breakable Bedrock
+cfg.universaltweaks.tweaks.blocks.endcrystalplacement=End Crystal Placement
 cfg.universaltweaks.tweaks.blocks.finitewater=Finite Water
 cfg.universaltweaks.tweaks.blocks.miningglitch=Mining Glitch
 cfg.universaltweaks.tweaks.blocks.overhaulbeacon=Overhaul Beacon
@@ -177,3 +178,6 @@ cfg.universaltweaks.tweaks.world.cavegen=Cave Generation
 cfg.universaltweaks.tweaks.world.chunkgenlimit=Chunk Gen Limit
 cfg.universaltweaks.tweaks.world.dimensionunload=Dimension Unload
 cfg.universaltweaks.tweaks.world.voidfog=Void Fog
+
+# VANILLA
+entity.EnderCrystal.name=End Crystal

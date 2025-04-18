@@ -30,3 +30,6 @@ btn.universaltweaks.lanserverproperties.spawn_npcs=Erschaffe NPCs
 
 # COMPACT MESSAGES
 msg.universaltweaks.compactmessages.count=Diese Nachricht wurde %s mal/e wiederholt
+
+# VANILLA
+entity.EnderCrystal.name=Enderkristall

@@ -166,7 +166,7 @@ All changes are toggleable via config files.
 * **Disable Villager Trade Restock:** Disables restocking of villager trades, only allowing one trade per offer
 * **Disable Wither Targeting AI:** Disables withers targeting animals
 * **Easy Breeding:** Enables easy breeding of animals by tossing food on the ground
-* **End Crystal Placing:** Allows placing End Crystals without requiring Obsidian or Bedrock below
+* **End Crystal Placement:** Allows placing end crystals on more blocks than obsidian or bedrock below
 * **End Portal Parallax:** Re-implements parallax rendering of the end portal from 1.11 and older
 * **Entity Radius Check**
     * These tweaks are only effective if you have mod(s) that increase `World.MAX_ENTITY_RADIUS`! (Lycanites Mobs, Advanced Rocketry, Immersive Railroading, etc.)

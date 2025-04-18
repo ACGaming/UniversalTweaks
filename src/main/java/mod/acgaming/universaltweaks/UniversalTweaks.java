@@ -36,6 +36,7 @@ import mod.acgaming.universaltweaks.tweaks.blocks.anvil.UTRepairableAnvil;
 import mod.acgaming.universaltweaks.tweaks.blocks.betterplacement.UTBetterPlacement;
 import mod.acgaming.universaltweaks.tweaks.blocks.breakablebedrock.UTBreakableBedrock;
 import mod.acgaming.universaltweaks.tweaks.blocks.dispenser.UTBlockDispenser;
+import mod.acgaming.universaltweaks.tweaks.blocks.endcrystal.UTEndCrystalPlacement;
 import mod.acgaming.universaltweaks.tweaks.blocks.piston.UTPistonBlockBlacklist;
 import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.entities.trading.UTVillagerProfessionRestriction;
@@ -199,6 +200,7 @@ public class UniversalTweaks
         if (UTConfigTweaks.BLOCKS.ANVIL.utRepairableAnvilToggle) UTRepairableAnvil.initRepairItemsList();
         if (UTConfigTweaks.BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle) UTBlockDispenser.initBlockList();
         if (UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) UTBreakableBedrock.initToolList();
+        if (UTConfigTweaks.BLOCKS.END_CRYSTAL_PLACEMENT.utEndCrystalPlacementToggle) UTEndCrystalPlacement.initBlockList();
         if (UTConfigTweaks.BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
         if (UTConfigTweaks.ENTITIES.utVillagerProfessionBiomeRestriction.length > 0) UTVillagerProfessionRestriction.initBiomeRestrictions();
         if (UTConfigTweaks.MISC.ADVANCEMENT_SCREENSHOT.utAdvancementScreenshotToggle) UTAdvancementScreenshot.initAdvancementList();
