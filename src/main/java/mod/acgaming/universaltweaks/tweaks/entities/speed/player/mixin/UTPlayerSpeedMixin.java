@@ -14,12 +14,12 @@ public class UTPlayerSpeedMixin
     @Inject(method = "getFlySpeed", at = @At(value = "RETURN"), cancellable = true)
     public void utModifyFlySpeed(CallbackInfoReturnable<Float> cir)
     {
-        if (UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) cir.setReturnValue((float) UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerFlySpeed);
+        if (UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerFlySpeed != 0.05D) cir.setReturnValue((float) UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerFlySpeed);
     }
 
     @Inject(method = "getWalkSpeed", at = @At(value = "RETURN"), cancellable = true)
     public void utModifyWalkSpeed(CallbackInfoReturnable<Float> cir)
     {
-        if (UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle) cir.setReturnValue((float) UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerWalkSpeed);
+        if (UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerWalkSpeed != 0.1D) cir.setReturnValue((float) UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerWalkSpeed);
     }
 }

@@ -27,6 +27,16 @@ public abstract class UTPlayerAirSpeedMixin extends EntityLivingBase
         super(world);
     }
 
+    @Override
+    protected float getJumpUpwardsMotion()
+    {
+        if (!UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerJumpSpeed) return super.getJumpUpwardsMotion();
+        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPlayerAirSpeed ::: Set jump upwards motion");
+        float defaultMovementSpeed = (float) this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getBaseValue();
+        float currentMovementSpeed = (float) this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue();
+        return Math.min(super.getJumpUpwardsMotion(), (super.getJumpUpwardsMotion() / defaultMovementSpeed) * currentMovementSpeed);
+    }
+
     @Inject(method = "onLivingUpdate", at = @At(value = "HEAD"))
     private void utAirSpeed(CallbackInfo ci)
     {
@@ -38,19 +48,9 @@ public abstract class UTPlayerAirSpeedMixin extends EntityLivingBase
     }
 
     @ModifyConstant(method = "onLivingUpdate", constant = @Constant(doubleValue = 0.3))
-    private double utAirSpeedSprinting(double constant)
+    private double utAirSpeedSprinting(double factor)
     {
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPlayerAirSpeed ::: On living update -> Set air speed sprinting factor");
-        return UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerAirSpeedSprintingFactor;
-    }
-
-    @Override
-    protected float getJumpUpwardsMotion()
-    {
-        if (!UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerJumpSpeed) return super.getJumpUpwardsMotion();
-        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPlayerAirSpeed ::: Set jump upwards motion");
-        float defaultMovementSpeed = (float) this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getBaseValue();
-        float currentMovementSpeed = (float) this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue();
-        return Math.min(super.getJumpUpwardsMotion(), (super.getJumpUpwardsMotion() / defaultMovementSpeed) * currentMovementSpeed);
+        return UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerAirSpeedSprintingFactor != 0.3D ? UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerAirSpeedSprintingFactor : factor;
     }
 }
