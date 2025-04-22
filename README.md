@@ -76,6 +76,7 @@ All changes are toggleable via config files.
 * **Spectator Menu:** Fixes the spectator menu not showing player skins
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
 * **Untipped Arrow Particles:** Fixes untipped arrows emitting blue tipped arrow particles upon reloading a world
+* **Village Component Parts:** Always builds village structures with biome-specific blocks, improves compatibility with mods such as BiomeTweaker
 * **Villager Mantle:** Returns missing hoods to villager mantles
 * **Witch Huts:** Fixes witch hut structure data not accounting for the height it is generated at
 

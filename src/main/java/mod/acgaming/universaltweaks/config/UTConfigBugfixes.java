@@ -413,6 +413,15 @@ public class UTConfigBugfixes
         public boolean utPortalTravelingDupeToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Village Component Parts")
+        @Config.Comment
+            ({
+                "Always builds village structures with biome-specific blocks",
+                "Improves compatibility with mods such as BiomeTweaker"
+            })
+        public boolean utVillageComponentPartsToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Witch Huts")
         @Config.Comment("Fixes witch hut structure data not accounting for the height it is generated at")
         public boolean utWitchStructuresToggle = true;

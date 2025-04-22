@@ -76,7 +76,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.world.chunksaving.json", () -> UTConfigBugfixes.WORLD.utChunkSavingToggle && !Coremods.SPONGEFORGE.isLoaded());
             put("mixins.bugfixes.world.portal.json", () -> UTConfigBugfixes.WORLD.utPortalLocationLink);
             put("mixins.bugfixes.world.tileentities.json", () -> UTConfigBugfixes.WORLD.utTileEntityMap != UTConfigBugfixes.WorldCategory.EnumMaps.HASHMAP);
-            put("mixins.bugfixes.world.witchhuts.json", () -> UTConfigBugfixes.WORLD.utWitchStructuresToggle);
+            put("mixins.bugfixes.world.village.json", () -> UTConfigBugfixes.WORLD.utVillageComponentPartsToggle);
+            put("mixins.bugfixes.world.witchhut.json", () -> UTConfigBugfixes.WORLD.utWitchStructuresToggle);
             put("mixins.tweaks.blocks.barrier.json", () -> UTConfigTweaks.BLOCKS.utBarrierParticleDisplay);
             put("mixins.tweaks.blocks.bedobstruction.json", () -> UTConfigTweaks.BLOCKS.utBedObstructionToggle);
             put("mixins.tweaks.blocks.breakablebedrock.json", () -> UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle);

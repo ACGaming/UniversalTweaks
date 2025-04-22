@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.bugfixes.world.witchhuts.mixin;
+package mod.acgaming.universaltweaks.bugfixes.world.witchhut.mixin;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.gen.structure.StructureStart;
