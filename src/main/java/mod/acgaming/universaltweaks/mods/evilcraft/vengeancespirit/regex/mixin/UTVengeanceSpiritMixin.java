@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.evilcraft.vengeancespirit.mixin;
+package mod.acgaming.universaltweaks.mods.evilcraft.vengeancespirit.regex.mixin;
 
 import net.minecraft.util.ResourceLocation;
 
