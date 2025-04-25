@@ -74,6 +74,7 @@ public class UTObsoleteModsHandler
             put("fastleafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
             put("fencejumper", () -> UTConfigTweaks.BLOCKS.utFenceWallJumpToggle);
             put("finite-fluid-control", () -> UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle);
+            put("foodfix", () -> UTConfigBugfixes.ENTITIES.utDoubleConsumptionToggle);
             put("forgivingvoid", () -> UTConfigTweaks.ENTITIES.VOID_TELEPORT.utVoidTeleportToggle);
             put("framevoidpatch", () -> UTConfigBugfixes.BLOCKS.utItemFrameVoidToggle);
             put("getittogetherdrops", () -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle);
