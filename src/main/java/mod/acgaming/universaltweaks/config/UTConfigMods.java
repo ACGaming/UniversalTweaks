@@ -593,6 +593,15 @@ public class UTConfigMods
     public static class DivineRPGCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Fix Aquamarine Stack Size")
+        @Config.Comment
+            ({
+                "Aquamarine nominally has durability, but does not set the max stack size to 1.",
+                "As the tweak \"Fix Consuming Incorrect Hand\" fixes the bug preventing durability from being used, fixing the stack size is also needed."
+            })
+        public boolean utFixAquamarineStackSize = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Consuming Incorrect Hand")
         @Config.Comment("Fix various DivineRPG items consuming the item in the main hand regardless of the hand actually used")
         public boolean utFixHandConsumption = true;

@@ -356,6 +356,7 @@ All changes are toggleable via config files.
     * **Opening GUIs Off-thread Fix:** Fixes opening up GUIs on a non-client thread
 * **Divine RPG**
     * **Fix Consuming Incorrect Hand:** Fix various DivineRPG items consuming the item in the main hand regardless of the hand actually used
+    * **Fix Aquamarine Stack Size:** Aquamarine has durability, yet doesn't have a max stack size of 1
 * **Effortless Building**
     * **Block Transmutation Fix:** Fixes Effortless Building ignoring Metadata when checking for items in inventory
 * **Electroblob's Wizardry**
