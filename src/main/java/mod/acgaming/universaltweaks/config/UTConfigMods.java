@@ -107,6 +107,10 @@ public class UTConfigMods
     @Config.Name("Corpse")
     public static final CorpseCategory CORPSE = new CorpseCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.divineprg")
+    @Config.Name("Divine RPG")
+    public static final DivineRPGCategory DIVINE_RPG = new DivineRPGCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.effortlessbuilding")
     @Config.Name("Effortless Building")
     public static final EffortlessBuildingCategory EFFORTLESS_BUILDING = new EffortlessBuildingCategory();
@@ -584,6 +588,10 @@ public class UTConfigMods
         @Config.Name("Opening GUIs Off-thread Fix")
         @Config.Comment("Fixes opening up GUIs on a non-client thread")
         public boolean utOpeningGuisOffThreadFixToggle = true;
+    }
+
+    public static class DivineRPGCategory
+    {
     }
 
     public static class EffortlessBuildingCategory

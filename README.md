@@ -354,6 +354,7 @@ All changes are toggleable via config files.
     * **Oven Fix:** Fixes CFB Oven consuming container fuel items
 * **Corpse**
     * **Opening GUIs Off-thread Fix:** Fixes opening up GUIs on a non-client thread
+* **Divine RPG**
 * **Effortless Building**
     * **Block Transmutation Fix:** Fixes Effortless Building ignoring Metadata when checking for items in inventory
 * **Electroblob's Wizardry**
