@@ -592,6 +592,10 @@ public class UTConfigMods
 
     public static class DivineRPGCategory
     {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Consuming Incorrect Hand")
+        @Config.Comment("Fix various DivineRPG items consuming the item in the main hand regardless of the hand actually used")
+        public boolean utFixHandConsumption = true;
     }
 
     public static class EffortlessBuildingCategory
