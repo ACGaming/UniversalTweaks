@@ -113,6 +113,7 @@ public class UTObsoleteModsHandler
             put("nonvflash", () -> UTConfigTweaks.MISC.utNightVisionFlashToggle);
             put("nopotionshift", () -> UTConfigTweaks.MISC.utPotionShiftToggle);
             put("noprecipebook", () -> UTConfigTweaks.MISC.utRecipeBookToggle);
+            put("norealmsbutton", () -> UTConfigTweaks.MISC.utRealmsButtonToggle);
             put("norecipebook", () -> UTConfigTweaks.MISC.utRecipeBookToggle);
             put("oldcombat", () -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
             put("overpowered_mending", () -> UTConfigTweaks.ITEMS.MENDING.utMendingOPToggle);
