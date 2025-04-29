@@ -166,6 +166,7 @@ All changes are toggleable via config files.
 * **Disable Villager Trade Leveling:** Disables leveling of villager careers, only allowing base level trades
 * **Disable Villager Trade Restock:** Disables restocking of villager trades, only allowing one trade per offer
 * **Disable Wither Targeting AI:** Disables withers targeting animals
+* **Display Title:** Determines the title of the game window
 * **Easy Breeding:** Enables easy breeding of animals by tossing food on the ground
 * **End Crystal Placement:** Allows placing end crystals on more blocks than obsidian or bedrock below
 * **End Portal Parallax:** Re-implements parallax rendering of the end portal from 1.11 and older
@@ -285,6 +286,7 @@ All changes are toggleable via config files.
     * Options allow toggling the setting globally, controlling to what Y-level the entity is teleported, if blindness is applied, maximum number of consecutive times, and how much and in what way fall damage is taken
     * **Configure Entities:** Configures what entities can be teleported, and if the player is teleported
     * **Configure Dimensions:** Configures what dimensions the effect can take place in
+* **Window Icon:** Sets the relative path to the 16x16, 32x32 and 256x256 Minecraft window icons
 
 ![](https://i.imgur.com/1EmHZlb.png)
 

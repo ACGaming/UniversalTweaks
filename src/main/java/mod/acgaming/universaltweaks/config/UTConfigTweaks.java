@@ -1515,9 +1515,9 @@ public class UTConfigTweaks
         @Config.Name("Chat")
         public final ChatCategory CHAT = new ChatCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.misc.timeouts")
-        @Config.Name("Connection Timeouts")
-        public final TimeoutsCategory TIMEOUTS = new TimeoutsCategory();
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.gamewindow")
+        @Config.Name("Game Window")
+        public final GameWindowCategory GAME_WINDOW = new GameWindowCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.incurablepotions")
         @Config.Name("Incurable Potions")
@@ -1542,6 +1542,10 @@ public class UTConfigTweaks
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.stg")
         @Config.Name("Swing Through Grass")
         public final SwingThroughGrassCategory SWING_THROUGH_GRASS = new SwingThroughGrassCategory();
+
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.timeouts")
+        @Config.Name("Connection Timeouts")
+        public final TimeoutsCategory TIMEOUTS = new TimeoutsCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.toastcontrol")
         @Config.Name("Toast Control")
@@ -1899,6 +1903,24 @@ public class UTConfigTweaks
             public boolean utArmorCurveLogging = false;
         }
 
+        public static class BroadcastSoundsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast Ender Dragon Death Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundDragon = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast End Portal Creation Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundEndPortal = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Broadcast Wither Death Sound")
+            @Config.Comment("Plays the sound locally if disabled")
+            public boolean utBroadcastSoundWither = true;
+        }
+
         public static class ChatCategory
         {
             @Config.RequiresMcRestart
@@ -1922,22 +1944,43 @@ public class UTConfigTweaks
             public boolean utCompactMessagesToggle = false;
         }
 
-        public static class BroadcastSoundsCategory
+        public static class GameWindowCategory
         {
             @Config.RequiresMcRestart
-            @Config.Name("Broadcast Ender Dragon Death Sound")
-            @Config.Comment("Plays the sound locally if disabled")
-            public boolean utBroadcastSoundDragon = true;
+            @Config.Name("[1] Display Title")
+            @Config.Comment
+                ({
+                    "Determines the title of the game window",
+                    "Leave this blank to use the default title"
+                })
+            public String utGameWindowDisplayTitle = "";
 
             @Config.RequiresMcRestart
-            @Config.Name("Broadcast End Portal Creation Sound")
-            @Config.Comment("Plays the sound locally if disabled")
-            public boolean utBroadcastSoundEndPortal = true;
+            @Config.Name("[2] 16x16 Window Icon")
+            @Config.Comment
+                ({
+                    "Sets the relative path to the 16x16 Minecraft window icon",
+                    "Leave this, the 32x32 icon and 256x256 icon blank to use the default icon"
+                })
+            public String utGameWindowIcon16 = "";
 
             @Config.RequiresMcRestart
-            @Config.Name("Broadcast Wither Death Sound")
-            @Config.Comment("Plays the sound locally if disabled")
-            public boolean utBroadcastSoundWither = true;
+            @Config.Name("[3] 32x32 Window Icon")
+            @Config.Comment
+                ({
+                    "Sets the relative path to the 32x32 Minecraft window icon",
+                    "Leave this, the 16x16 icon and 256x256 icon blank to use the default icon"
+                })
+            public String utGameWindowIcon32 = "";
+
+            @Config.RequiresMcRestart
+            @Config.Name("[4] 256x256 Window Icon")
+            @Config.Comment
+                ({
+                    "Sets the relative path to the 256x256 Minecraft window icon",
+                    "Leave this, the 16x16 icon and 32x32 icon blank to use the default icon"
+                })
+            public String utGameWindowIcon256 = "";
         }
 
         public static class IncurablePotionsCategory

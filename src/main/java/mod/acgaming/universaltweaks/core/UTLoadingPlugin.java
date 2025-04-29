@@ -206,6 +206,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.misc.glint.enchantedbook.json", () -> UTConfigTweaks.MISC.utDisableEnchantmentBookGlint);
             put("mixins.tweaks.misc.glint.potion.json", () -> UTConfigTweaks.MISC.utDisablePotionGlint);
             put("mixins.tweaks.misc.gui.defaultguitextcolor.json", () -> !UTConfigTweaks.MISC.utDefaultGuiTextColor.equals("404040"));
+            put("mixins.tweaks.misc.gui.gamewindow.icon.json", () -> !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon16.isEmpty() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon32.isEmpty() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon256.isEmpty());
+            put("mixins.tweaks.misc.gui.gamewindow.title.json", () -> !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowDisplayTitle.isEmpty());
             put("mixins.tweaks.misc.gui.keybindlistentry.json", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
             put("mixins.tweaks.misc.gui.lanserverproperties.json", () -> UTConfigTweaks.MISC.utLANServerProperties);
             put("mixins.tweaks.misc.gui.modlist.json", () -> UTConfigTweaks.MISC.utForgeModListImprovements);
