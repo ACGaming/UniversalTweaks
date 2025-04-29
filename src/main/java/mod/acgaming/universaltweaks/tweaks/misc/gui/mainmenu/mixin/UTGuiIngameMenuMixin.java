@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.misc.mainmenu.mixin;
+package mod.acgaming.universaltweaks.tweaks.misc.gui.mainmenu.mixin;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiIngameMenu;
