@@ -78,6 +78,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.world.tileentities.json", () -> UTConfigBugfixes.WORLD.utTileEntityMap != UTConfigBugfixes.WorldCategory.EnumMaps.HASHMAP);
             put("mixins.bugfixes.world.village.json", () -> UTConfigBugfixes.WORLD.utVillageComponentPartsToggle);
             put("mixins.bugfixes.world.witchhut.json", () -> UTConfigBugfixes.WORLD.utWitchStructuresToggle);
+            put("mixins.tweaks.blocks.anvil.json", () -> UTConfigTweaks.BLOCKS.ANVIL.utAnvilXPLevelCap != 40);
             put("mixins.tweaks.blocks.barrier.json", () -> UTConfigTweaks.BLOCKS.utBarrierParticleDisplay);
             put("mixins.tweaks.blocks.bedobstruction.json", () -> UTConfigTweaks.BLOCKS.utBedObstructionToggle);
             put("mixins.tweaks.blocks.breakablebedrock.json", () -> UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle);
@@ -187,6 +188,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.bugfixes.misc.spectatormenu.json", () -> UTConfigBugfixes.MISC.utSpectatorMenuToggle);
             put("mixins.bugfixes.misc.startup.json", () -> UTConfigTweaks.PERFORMANCE.utFasterBackgroundStartupToggle);
             put("mixins.bugfixes.world.frustumculling.json", () -> UTConfigBugfixes.WORLD.utFrustumCullingToggle);
+            put("mixins.tweaks.blocks.anvil.client.json", () -> UTConfigTweaks.BLOCKS.ANVIL.utAnvilXPLevelCap != 40);
             put("mixins.tweaks.blocks.betterplacement.json", () -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
             put("mixins.tweaks.blocks.hitdelay.json", () -> UTConfigTweaks.BLOCKS.utBlockHitDelay != 5);
             put("mixins.tweaks.entities.burning.player.json", () -> UTConfigTweaks.ENTITIES.utFirstPersonBurningOverlay != -0.3D);
