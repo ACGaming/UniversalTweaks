@@ -122,6 +122,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.properpumpkins.json", () -> loaded("pumpking") && UTConfigMods.PROPER_PUMPKIN.utFacingFix);
                 put("mixins.mods.quark.dupes.json", () -> loaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
                 put("mixins.mods.randomthings.anvil.json", () -> loaded("randomthings") && UTConfigMods.RANDOM_THINGS.utAnvilCraftFix);
+                put("mixins.mods.randomthings.collector.json", () -> loaded("randomthings") && UTConfigMods.RANDOM_THINGS.utItemCollectorDupe);
                 put("mixins.mods.requiousfrakto.json", () -> loaded("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);
                 put("mixins.mods.reskillable.json", () -> loaded("reskillable"));
                 put("mixins.mods.rftoolsdimensions.json", () -> loaded("rftoolsdim"));

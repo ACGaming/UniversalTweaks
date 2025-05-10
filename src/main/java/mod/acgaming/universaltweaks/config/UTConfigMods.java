@@ -1018,6 +1018,11 @@ public class UTConfigMods
         @Config.Name("Anvil Crafting Fix")
         @Config.Comment("Fixes a bug where crafting the output of an Anvil recipe would modify the recipe, preventing crafts until restart")
         public boolean utAnvilCraftFix = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Item Collector Dupe")
+        @Config.Comment("Fixes a duplication exploit connected to the Advanced Item Collector")
+        public boolean utItemCollectorDupe = true;
     }
 
     public static class RequiousFraktoCategory
