@@ -1020,6 +1020,15 @@ public class UTConfigMods
         public boolean utAnvilCraftFix = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Spectre Dimension Teleport Stall")
+        @Config.Comment
+            ({
+                "Fix a bug where teleporting to the Spectre dimension on servers can leave the player stalled out in the void",
+                "Only applies to servers"
+            })
+        public boolean utTeleportStall = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Item Collector Dupe")
         @Config.Comment("Fixes a duplication exploit connected to the Advanced Item Collector")
         public boolean utItemCollectorDupe = true;

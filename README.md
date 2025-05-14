@@ -439,6 +439,7 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Random Things**
     * **Anvil Crafting Fix:** Fixes a bug where crafting the output of an Anvil recipe would modify the recipe, preventing crafts until restart
+    * **Fix Spectre Dimension Teleport Stall:** Fix a bug where teleporting to the Spectre dimension on servers can leave the player stalled out in the void
     * **Item Collector Dupe:** Fixes a duplication exploit connected to the Advanced Item Collector
 * **Railcraft**
     * **No Beta Warning:** Disables the beta message warning on world join
