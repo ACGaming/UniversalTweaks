@@ -227,6 +227,10 @@ public class UTConfigMods
     @Config.Name("ProjectRed")
     public static final ProjectRedCategory PROJECTRED = new ProjectRedCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.proper_pumpkin")
+    @Config.Name("Proper Pumpkin")
+    public static final ProperPumpkinCategory PROPER_PUMPKIN = new ProperPumpkinCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.quark")
     @Config.Name("Quark")
     public static final QuarkCategory QUARK = new QuarkCategory();
@@ -969,6 +973,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class ProperPumpkinCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Facing Crash Fix")
+        @Config.Comment("Fixes a bug where converting a pumpkin from a non-horizontal face would crash")
+        public boolean utFacingFix = true;
     }
 
     public static class QuarkCategory
