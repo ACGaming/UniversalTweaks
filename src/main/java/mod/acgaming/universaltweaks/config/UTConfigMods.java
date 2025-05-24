@@ -228,7 +228,7 @@ public class UTConfigMods
     public static final ProjectRedCategory PROJECTRED = new ProjectRedCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.proper_pumpkin")
-    @Config.Name("Proper Pumpkin")
+    @Config.Name("Proper Pumpkins Mod")
     public static final ProperPumpkinCategory PROPER_PUMPKIN = new ProperPumpkinCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.quark")
