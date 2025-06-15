@@ -77,7 +77,7 @@ final def mod_dependencies = [
     'curse.maven:chisel-235279:2915375'                               : [debug_chisel],
     'curse.maven:codechickenlib-242818:2779848'                       : [debug_enderstorage, debug_forgemultipartcbe, debug_mrtjpcore, debug_project_red, debug_thermal_expansion],
     'curse.maven:cofh_core-69162:2920433'                             : [debug_thermal_expansion],
-    'curse.maven:cofhworld-271384:2920434'                            : [debug_thermal_expansion],
+    'curse.maven:cofhworld-271384:2920434'                            : [debug_cofhworld, debug_thermal_expansion],
     'curse.maven:collective-342584:3533131'                           : [debug_collective],
     'curse.maven:compactmachines-224218:2707509'                      : [debug_compact_machines],
     'curse.maven:constructs-armory-287683:3174535'                    : [debug_tinkers_construct],

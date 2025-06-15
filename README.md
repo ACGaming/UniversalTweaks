@@ -342,6 +342,8 @@ All changes are toggleable via config files.
     * **Packet Leak Fix:** Fixes network ByteBuf leaks from PacketCustom
 * **CoFH Core**
     * **Vorpal Enchantment Damage:** Sets the damage multiplier of the Vorpal enchantment
+* **CoFH World**
+    * **Prevent Superflat Generation:** Prevents CoFH World features from generating in superflat world types
 * **Collective**
     * **Memory Leak Fix:** Fixes memory leak when unloading worlds/switching dimensions
 * **Compact Machines**

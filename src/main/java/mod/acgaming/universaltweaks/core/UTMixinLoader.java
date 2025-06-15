@@ -1,14 +1,13 @@
 package mod.acgaming.universaltweaks.core;
 
+import com.google.common.collect.ImmutableMap;
+import net.minecraftforge.fml.common.Loader;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BooleanSupplier;
-
-import com.google.common.collect.ImmutableMap;
-import net.minecraftforge.fml.common.Loader;
-
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import zone.rong.mixinbooter.ILateMixinLoader;
@@ -67,6 +66,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.chisel.tcomplement.dupes.json", () -> loaded("chisel") && loaded("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle);
             put("mixins.mods.codechickenlib.json", () -> loaded("codechickenlib") && UTConfigMods.CCL.utPacketLeakFixToggle);
             put("mixins.mods.cofhcore.json", () -> loaded("cofhcore"));
+            put("mixins.mods.cofhworld.json", () -> loaded("cofhworld") && UTConfigMods.COFH_WORLD.utCoFHSuperflatToggle);
             put("mixins.mods.collective.json", () -> loaded("collective"));
             put("mixins.mods.compactmachines.spawns.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utAllowedSpawnsImprovementToggle);
             put("mixins.mods.cookingforblockheads.json", () -> loaded("cookingforblockheads") && UTConfigMods.COOKING_FOR_BLOCKHEADS.utOvenFixToggle);

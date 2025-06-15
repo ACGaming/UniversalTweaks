@@ -87,6 +87,10 @@ public class UTConfigMods
     @Config.Name("CoFH Core")
     public static final CoFHCoreCategory COFH_CORE = new CoFHCoreCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.cofhworld")
+    @Config.Name("CoFH World")
+    public static final CoFHWorldCategory COFH_WORLD = new CoFHWorldCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.collective")
     @Config.Name("Collective")
     public static final CollectiveCategory COLLECTIVE = new CollectiveCategory();
@@ -530,6 +534,14 @@ public class UTConfigMods
         @Config.Name("Vorpal Enchantment Damage")
         @Config.Comment("Sets the damage multiplier of the Vorpal enchantment")
         public double utCoFHVorpalDamage = 10.0D;
+    }
+
+    public static class CoFHWorldCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Prevent Superflat Generation")
+        @Config.Comment("Prevents CoFH World features from generating in superflat world types")
+        public boolean utCoFHSuperflatToggle = false;
     }
 
     public static class CollectiveCategory
