@@ -110,6 +110,7 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.netherrocks.json", () -> loaded("netherrocks"));
             put("mixins.mods.nuclearcraft.json", () -> loaded("nuclearcraft"));
             put("mixins.mods.openblocks.json", () -> loaded("openblocks") && UTConfigMods.OPEN_BLOCKS.utLastStandFixToggle);
+            put("mixins.mods.properpumpkins.json", () -> loaded("pumpking") && UTConfigMods.PROPER_PUMPKIN.utFacingFix);
             put("mixins.mods.quark.dupes.json", () -> loaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
             put("mixins.mods.randomthings.anvil.json", () -> loaded("randomthings") && UTConfigMods.RANDOM_THINGS.utAnvilCraftFix);
             put("mixins.mods.requiousfrakto.json", () -> loaded("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);

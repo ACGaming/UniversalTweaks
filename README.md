@@ -429,6 +429,8 @@ All changes are toggleable via config files.
     * **Last Stand Trigger Fix:** Fixes the Last Stand enchantment triggering too early on pre-mitigation damage (before enchants, potions, etc), instead of on post-mitigation damage.
 * **ProjectRed**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **Proper Pumpkins**
+    * **Facing Crash Fix:** Fixes a bug where converting a pumpkin from a non-horizontal face would crash
 * **Quark**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Random Things**
