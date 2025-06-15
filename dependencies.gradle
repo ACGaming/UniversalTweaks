@@ -110,6 +110,7 @@ final def mod_dependencies = [
     'curse.maven:mantle-74924:2713386'                                : [debug_tinkers_construct, debug_moartinkers],
     'curse.maven:mcjtylib-233105:2745846'                             : [debug_rftools],
     'curse.maven:mekanism-268560:2835175'                             : [debug_mekanism],
+    'curse.maven:minejurassic-348963:3846355'                         : [debug_minejurassic],
     'curse.maven:moartinkers-263624:2579934'                          : [debug_moartinkers],
     'curse.maven:modtweaker-220954:3840577'                           : [debug_crafttweaker],
     'curse.maven:modular-machinery-270790:2761302'                    : [debug_modular_magic],

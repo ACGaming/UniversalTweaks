@@ -99,7 +99,7 @@ public class UTConfigMods
     @Config.Name("Compact Machines")
     public static final CompactMachinesCoreCategory COMPACT_MACHINES = new CompactMachinesCoreCategory();
 
-    @Config.LangKey("cfg.universaltweaks.modintegrations.cookingforblockheads")
+    @Config.LangKey("cfg.universaltweaks.modintegration.cookingforblockheads")
     @Config.Name("Cooking For Blockheads")
     public static final CookingForBlockheadsCategory COOKING_FOR_BLOCKHEADS = new CookingForBlockheadsCategory();
 
@@ -190,6 +190,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.mekanism")
     @Config.Name("Mekanism")
     public static final MekanismCategory MEKANISM = new MekanismCategory();
+
+    @Config.LangKey("cfg.universaltweaks.modintegration.minejurassic")
+    @Config.Name("MineJurassic")
+    public static final MineJurassicCategory MINEJURASSIC = new MineJurassicCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.moartinkers")
     @Config.Name("Moar Tinkers")
@@ -887,7 +891,14 @@ public class UTConfigMods
                 "Has no effect when playing with Mekanism CEu"
             })
         public boolean utFluidTankExtraction = true;
+    }
 
+    public static class MineJurassicCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Prevent Fossil Generation")
+        @Config.Comment("Prevents fossil blocks from generating in the world")
+        public boolean utMineJurassicFossilsToggle = false;
     }
 
     public static class MoarTinkersCategory
