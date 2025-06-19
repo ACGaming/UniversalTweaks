@@ -66,4 +66,10 @@ public class UTWootTicketManager
         UTWootTicketManager.ticket = tickets.get(0);
         ((ITartarusCleaner) Woot.tartarusManager).ut$freeBoxes();
     }
+
+    // Guarantee the manager doesn't leak the ticket to a different save
+    public static void resetTicket()
+    {
+        ticket = null;
+    }
 }

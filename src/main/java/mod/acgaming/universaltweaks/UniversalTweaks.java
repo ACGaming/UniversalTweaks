@@ -240,6 +240,12 @@ public class UniversalTweaks
     }
 
     @Mod.EventHandler
+    public void onServerStopped(FMLServerStoppedEvent event)
+    {
+        if (Loader.isModLoaded("woot")) UTWootTicketManager.resetTicket();
+    }
+
+    @Mod.EventHandler
     public void onLoadComplete(FMLLoadCompleteEvent event)
     {
         if (UTConfigTweaks.PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle) UTEntityRadiusCheck.onLoadComplete();
