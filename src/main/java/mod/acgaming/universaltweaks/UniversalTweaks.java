@@ -17,8 +17,6 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
-import mod.acgaming.universaltweaks.mods.abyssalcraft.UTAbyssalCraftEvents;
-import mod.acgaming.universaltweaks.mods.abyssalcraft.worlddata.UTWorldDataCapability;
 import mod.acgaming.universaltweaks.mods.arcanearchives.UTArcaneArchivesEvents;
 import mod.acgaming.universaltweaks.mods.astralsorcery.UTClearOnChange;
 import mod.acgaming.universaltweaks.mods.bloodmagic.UTBloodMagicEvents;
@@ -74,7 +72,6 @@ public class UniversalTweaks
     public static final String NAME = Tags.MOD_NAME;
     public static final String VERSION = Tags.VERSION;
     public static final String DEPENDENCIES = "required-after:mixinbooter@[10.5,);required-after:configanytime@[3.0,);"
-        + "after:abyssalcraft;"
         + "after:actuallyadditions;"
         + "after:aoa3;"
         + "after:arcanearchives;"
@@ -144,7 +141,6 @@ public class UniversalTweaks
         UTPacketHandler.init();
         if (UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
         UTAutoSaveOFCompat.updateOFConfig();
-        if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) UTWorldDataCapability.register();
         if (UTConfigTweaks.MISC.utSkipRegistryScreenToggle) System.setProperty("fml.queryResult", "confirm");
         LOGGER.info(NAME + " pre-initialized");
     }
@@ -153,7 +149,6 @@ public class UniversalTweaks
     public void init(FMLInitializationEvent event)
     {
         if (UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
-        if (Loader.isModLoaded("abyssalcraft") && UTConfigMods.ABYSSALCRAFT.utOptimizedItemTransferToggle) MinecraftForge.EVENT_BUS.register(new UTAbyssalCraftEvents());
         if (Loader.isModLoaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTArcaneArchivesEvents());
         if (Loader.isModLoaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTBloodMagicEvents());
         if (Loader.isModLoaded("collective") && UTConfigMods.COLLECTIVE.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.register(new UTCollectiveEvents());
