@@ -293,7 +293,6 @@ All changes are toggleable via config files.
 ### **⚙️ MOD INTEGRATION**
 
 * **AbyssalCraft**
-    * **Optimized Item Transport:** Optimizes AbyssalCraft's item transport system to reduce tick overhead
     * **Disable Plague Potion Clouds:** Disables AbyssalCraft's Plague-type mobs spawning lingering potion effects on death
 * **Actually Additions**
     * **Duplication Fixes:** Fixes various duplication exploits
