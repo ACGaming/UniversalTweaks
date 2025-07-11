@@ -2375,8 +2375,7 @@ public class UTConfigTweaks
         @Config.Name("Improve Language Switching Speed")
         @Config.Comment
             ({
-                "Improves the speed of switching languages in the Language GUI",
-                "Incompatible with OptiFine"
+                "Improves the speed of switching languages in the Language GUI"
             })
         public boolean utImproveLanguageSwitchingSpeed = true;
 
