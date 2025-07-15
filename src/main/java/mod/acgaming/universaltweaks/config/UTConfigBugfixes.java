@@ -384,6 +384,11 @@ public class UTConfigBugfixes
                 "Incompatible with SpongeForge and RandomPatches"
             })
         public int utPacketSize = 0x1000000;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Cull Picked-up Items")
+        @Config.Comment("Fix missing face culling during item pickup particle rendering")
+        public boolean utItemPickupCulling = true;
     }
 
     public static class WorldCategory
