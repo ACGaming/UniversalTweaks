@@ -128,7 +128,6 @@ public class UniversalTweaks
         + "after:tconstruct;"
         + "after:techreborn;"
         + "after:thaumcraft;"
-        + "after:thaumicwonders;"
         + "after:thebetweenlands;"
         + "after:thermalexpansion;"
         + "after:tp;"

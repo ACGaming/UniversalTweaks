@@ -129,7 +129,6 @@ public class UTMixinLoader implements ILateMixinLoader
             put("mixins.mods.thaumcraft.foci.focuseffects.json", () -> loaded("thaumcraft"));
             put("mixins.mods.thaumcraft.foci.focusmediums.json", () -> loaded("thaumcraft"));
             put("mixins.mods.thaumcraft.json", () -> loaded("thaumcraft"));
-            put("mixins.mods.thaumicwonders.dupes.json", () -> loaded("thaumicwonders") && UTConfigMods.THAUMIC_WONDERS.utDuplicationFixesToggle);
             put("mixins.mods.thefarlanders.dupes.json", () -> loaded("farlanders") && UTConfigMods.THE_FARLANDERS.utDuplicationFixesToggle);
             put("mixins.mods.thermalexpansion.dupes.json", () -> loaded("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle);
             put("mixins.mods.thermalexpansion.json", () -> loaded("thermalexpansion"));
