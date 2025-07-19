@@ -469,8 +469,6 @@ All changes are toggleable via config files.
     * **Focus Mediums:** Makes several focus mediums play additional cast sounds to make them stand out more
     * **Spiderlike Eldritch Crabs:** Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders
     * **Stable Thaumometer:** Stops the thaumometer from bobbing rapidly when using it to scan objects
-* **Thaumic Wonders**
-    * **Duplication Fixes:** Fixes various duplication exploits
 * **The Erebus**
     * **Fix Cabbage Drop:** Fixes Cabbage not dropping the correct items in some situations
     * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks

@@ -307,10 +307,6 @@ public class UTConfigMods
     @Config.Name("Thaumcraft: Foci")
     public static final ThaumcraftFociCategory THAUMCRAFT_FOCI = new ThaumcraftFociCategory();
 
-    @Config.LangKey("cfg.universaltweaks.modintegration.thaumicwonders")
-    @Config.Name("Thaumic Wonders")
-    public static final ThaumicWondersCategory THAUMIC_WONDERS = new ThaumicWondersCategory();
-
     @Config.LangKey("cfg.universaltweaks.modintegration.thefarlanders")
     @Config.Name("The Farlanders")
     public static final TheFarlandersCategory THE_FARLANDERS = new TheFarlandersCategory();
@@ -1268,14 +1264,6 @@ public class UTConfigMods
             @Config.Comment("Plays an additional cast sound when summoning any type of spellbat")
             public boolean utTCSpellBatMediumSoundToggle = true;
         }
-    }
-
-    public static class ThaumicWondersCategory
-    {
-        @Config.RequiresMcRestart
-        @Config.Name("Duplication Fixes")
-        @Config.Comment("Fixes various duplication exploits")
-        public boolean utDuplicationFixesToggle = true;
     }
 
     public static class TheFarlandersCategory
