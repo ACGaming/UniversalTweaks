@@ -1,6 +1,7 @@
 package mod.acgaming.universaltweaks.tweaks.blocks.betterplacement;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -15,6 +16,7 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 // Courtesy of tterrag1098, BucketOfCompasses
 public class UTBetterPlacement
 {
+    private static Type lastHitType = Type.MISS;
     private static BlockPos lastTargetPos;
     private static Vec3d lastPlayerPos;
     private static EnumFacing lastTargetSide;
@@ -26,34 +28,49 @@ public class UTBetterPlacement
         if (event.phase == Phase.START && (!UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementCreative || Minecraft.getMinecraft().player.isCreative()))
         {
             RayTraceResult hover = Minecraft.getMinecraft().objectMouseOver;
-            if (hover != null && hover.typeOfHit == Type.BLOCK)
+            if (hover != null)
             {
-                int timer = Minecraft.getMinecraft().rightClickDelayTimer;
-                BlockPos pos = hover.getBlockPos();
-                EnumFacing side = hover.sideHit;
-                Vec3d playerVector = Minecraft.getMinecraft().player.getPositionVector();
-                if (timer > 0)
+                Type hitType = hover.typeOfHit;
+                if (hitType == Type.BLOCK)
                 {
-                    if (!pos.equals(lastTargetPos) && (lastTargetPos == null || !pos.equals(lastTargetPos.offset(lastTargetSide))))
+                    int timer = Minecraft.getMinecraft().rightClickDelayTimer;
+                    BlockPos pos = hover.getBlockPos();
+                    EnumFacing side = hover.sideHit;
+                    Vec3d playerVector = Minecraft.getMinecraft().player.getPositionVector();
+
+                    // Timer not cooled down
+                    if (timer > 0)
                     {
-                        Minecraft.getMinecraft().rightClickDelayTimer = 0;
+                        // Newly targeting a block, or targeting a changed blockPos that is nor what you just placed, neither what you just removed.[*]
+                        if (lastHitType == Type.MISS || (lastHitType == Type.BLOCK && !pos.equals(lastTargetPos)
+                            // You just placed this block.
+                            && !pos.equals(lastTargetPos.offset(lastTargetSide))
+                            // [*]: Special case for blocks that you right-click to remove, e.g. by holding a Chest Transporter.
+                            && !lastTargetPos.equals(pos.offset(side))))
+                        {
+                            Minecraft.getMinecraft().rightClickDelayTimer = 0;
+                        }
                     }
+                    else
+                    {
+                        EntityPlayerSP player = Minecraft.getMinecraft().player;
+                        // This is the default behaviour of Entity#getPosition(), which is correct here instead of EntityPlayerSP#getPosition()
+                        BlockPos playerPos = new BlockPos(player.posX, player.posY + 0.5, player.posZ);
+                        // Player is building straight-up
+                        if (side == EnumFacing.UP && !playerVector.equals(lastPlayerPos) && playerPos.getX() == pos.getX() && playerPos.getZ() == pos.getZ())
+                        {
+                            Minecraft.getMinecraft().rightClickDelayTimer = 0;
+                        }
+                        else if (UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementNewLoc && pos.equals(lastTargetPos) && side == lastTargetSide && !isInteractableAt(pos))
+                        {
+                            Minecraft.getMinecraft().rightClickDelayTimer = 4;
+                        }
+                    }
+                    lastTargetPos = pos.toImmutable();
+                    lastPlayerPos = playerVector;
+                    lastTargetSide = side;
                 }
-                else
-                {
-                    BlockPos playerPos = Minecraft.getMinecraft().player.getPosition();
-                    if (side == EnumFacing.UP && !playerVector.equals(lastPlayerPos) && playerPos.getX() == pos.getX() && playerPos.getZ() == pos.getZ())
-                    {
-                        Minecraft.getMinecraft().rightClickDelayTimer = 0;
-                    }
-                    else if (UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementNewLoc && pos.equals(lastTargetPos) && side == lastTargetSide && !isInteractableAt(pos))
-                    {
-                        Minecraft.getMinecraft().rightClickDelayTimer = 4;
-                    }
-                }
-                lastTargetPos = pos.toImmutable();
-                lastPlayerPos = playerVector;
-                lastTargetSide = side;
+                lastHitType = hitType;
             }
         }
     }
