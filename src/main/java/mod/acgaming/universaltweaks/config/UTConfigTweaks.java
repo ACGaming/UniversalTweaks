@@ -2330,8 +2330,12 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Disable Fancy Missing Model")
-        @Config.Comment("Improves rendering performance by removing the resource location text on missing models")
-        public boolean utDisableFancyMissingModelToggle = true;
+        @Config.Comment
+            ({
+                "Improves rendering performance by removing the resource location text on missing models",
+                "Incompatible with HBM's Nuclear Tech Mod"
+            })
+        public boolean utDisableFancyMissingModelToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Disable Mob Spawner Entity")

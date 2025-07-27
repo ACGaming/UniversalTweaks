@@ -16,6 +16,7 @@ import mod.acgaming.universaltweaks.Tags;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import zone.rong.mixinbooter.Context;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
@@ -237,7 +238,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.performance.connectionspeed.json", () -> UTConfigTweaks.PERFORMANCE.utImproveLanguageSwitchingSpeed);
             put("mixins.tweaks.performance.fps.json", () -> UTConfigTweaks.PERFORMANCE.utUncapFPSToggle);
             put("mixins.tweaks.performance.languageswitching.json", () -> UTConfigTweaks.PERFORMANCE.utImproveLanguageSwitchingSpeed);
-            put("mixins.tweaks.performance.missingmodel.json", () -> UTConfigTweaks.PERFORMANCE.utDisableFancyMissingModelToggle);
+            put("mixins.tweaks.performance.missingmodel.json", () -> UTConfigTweaks.PERFORMANCE.utDisableFancyMissingModelToggle && !UTReflectionUtil.isClassLoaded("com.hbm.lib.RefStrings"));
             put("mixins.tweaks.performance.mobspawnerrender.json", () -> UTConfigTweaks.PERFORMANCE.utDisableMobSpawnerRendering);
             put("mixins.tweaks.performance.resourcemanager.json", () -> UTConfigTweaks.PERFORMANCE.utCheckAnimatedModelsToggle);
             put("mixins.tweaks.performance.texturemapcheck.json", () -> UTConfigTweaks.PERFORMANCE.utTextureMapCheckToggle);
