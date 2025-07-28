@@ -308,7 +308,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         if (context.inDev())
         {
             // Causes crashes in dev env only
-            return !mixinConfig.equals("mixins.tweaks.misc.armorcurve.json");
+            return !mixinConfig.equals("mixins.tweaks.misc.armorcurve.json") && !mixinConfig.equals("mixins.tweaks.misc.gui.gamewindow.icon.json");
         }
         BooleanSupplier sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : null;
         BooleanSupplier commonSupplier = commonMixinConfigs.get(mixinConfig);
