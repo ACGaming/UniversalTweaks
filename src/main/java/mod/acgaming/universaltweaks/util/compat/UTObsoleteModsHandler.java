@@ -97,6 +97,7 @@ public class UTObsoleteModsHandler
             put("loginhpfix", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
             put("maxhealthfixer", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
             put("mendingfix", () -> UTConfigTweaks.ITEMS.MENDING.utMendingToggle);
+            put("mobpc", () -> UTConfigTweaks.ENTITIES.utMobDespawnToggle);
             put("mobsunscreen", () -> !UTConfigTweaks.ENTITIES.utBurningSkeletonsToggle || !UTConfigTweaks.ENTITIES.utBurningZombiesToggle);
             put("movingquickly", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
             put("mtqfix", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
