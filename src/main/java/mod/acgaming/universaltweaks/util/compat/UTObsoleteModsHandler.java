@@ -110,6 +110,7 @@ public class UTObsoleteModsHandler
             put("noadvancements", () -> UTConfigTweaks.MISC.utDisableAdvancementsToggle);
             put("nobounce", () -> UTConfigMods.THAUMCRAFT.utTCStableThaumometerToggle);
             put("nodoze", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
+            put("noexpensive", () -> UTConfigTweaks.BLOCKS.ANVIL.utAnvilXPLevelCap != 40 || UTConfigTweaks.ITEMS.INFINITY.utInfinityEnchantmentConflicts);
             put("nomoreglowingpots", () -> UTConfigTweaks.MISC.utDisablePotionGlint);
             put("nonvflash", () -> UTConfigTweaks.MISC.utNightVisionFlashToggle);
             put("nopotionshift", () -> UTConfigTweaks.MISC.utPotionShiftToggle);
