@@ -797,7 +797,7 @@ public class UTConfigTweaks
         {
             @Config.Name("[1] Chicken Shedding")
             @Config.Comment("Enables chickens to have a chance to shed a feather")
-            public boolean utChickenSheddingToggle = true;
+            public boolean utChickenSheddingToggle = false;
 
             @Config.Name("[2] Shed Frequency")
             @Config.Comment("How frequently feathers shed from chickens (lower means more)")
