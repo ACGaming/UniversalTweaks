@@ -6,7 +6,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import net.minecraft.item.ItemStack;
-
 import net.minecraftforge.fml.common.Loader;
 
 import com.blamejared.compat.thermalexpansion.Insolator;

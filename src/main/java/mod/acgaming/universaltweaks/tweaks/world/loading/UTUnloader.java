@@ -8,7 +8,6 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.ForgeChunkManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.WorldEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
@@ -17,7 +16,6 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Unnoen & tie
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTUnloader
 {
     private static int tickCount = 0;
@@ -25,7 +23,7 @@ public class UTUnloader
     @SubscribeEvent
     public static void utUnloader(TickEvent.ServerTickEvent event)
     {
-        if (!UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle || event.phase != TickEvent.Phase.END) return;
+        if (event.phase != TickEvent.Phase.END) return;
         tickCount++;
         if (tickCount < UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderInterval) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTUnloader ::: Server tick event");

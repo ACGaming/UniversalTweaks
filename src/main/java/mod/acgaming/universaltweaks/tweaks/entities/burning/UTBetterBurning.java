@@ -14,7 +14,6 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
@@ -22,14 +21,13 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Darkhax
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTBetterBurning
 {
     // Fixes some edge cases where fire damage sources won't cause mobs to drop their cooked items
     @SubscribeEvent
     public static void utLivingDeath(LivingDeathEvent event)
     {
-        if (event.getSource().isFireDamage() && UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBCookedToggle && !event.getEntityLiving().isBurning() && !event.getEntity().world.isRemote)
+        if (UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBCookedToggle && event.getSource().isFireDamage() && !event.getEntityLiving().isBurning() && !event.getEntity().world.isRemote)
         {
             if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterBurning ::: Living death event");
             event.getEntityLiving().setFire(1);

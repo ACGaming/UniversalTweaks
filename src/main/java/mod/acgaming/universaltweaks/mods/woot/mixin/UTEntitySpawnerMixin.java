@@ -23,7 +23,7 @@ public class UTEntitySpawnerMixin
     @Inject(method = "spawnEntity", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/event/ForgeEventFactory;doSpecialSpawn(Lnet/minecraft/entity/EntityLiving;Lnet/minecraft/world/World;FFF)Z"))
     private void ut$fixInitSpawn(WootMobName wootMobName, World world, BlockPos pos, CallbackInfoReturnable<Entity> cir, @Local Entity entity)
     {
-        ((EntityLivingBase)entity).recentlyHit = 100;
+        ((EntityLivingBase) entity).recentlyHit = 100;
         entity.setPosition(pos.getX(), pos.getY(), pos.getZ());
     }
 }

@@ -6,20 +6,16 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTWitherAI
 {
     @SubscribeEvent
     public static void utWitherAI(EntityJoinWorldEvent event)
     {
-        if (!UTConfigTweaks.ENTITIES.utWitherAIToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTWitherAI ::: Entity join world event");
         Entity entity = event.getEntity();
         if (entity instanceof EntityWither)

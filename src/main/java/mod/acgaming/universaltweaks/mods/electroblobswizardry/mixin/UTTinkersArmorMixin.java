@@ -1,16 +1,13 @@
 package mod.acgaming.universaltweaks.mods.electroblobswizardry.mixin;
 
-import c4.conarm.client.models.ModelConstructsArmor;
-import c4.conarm.lib.tinkering.TinkersArmor;
-
-import mod.acgaming.universaltweaks.mods.electroblobswizardry.FixedConstructsArmoryModel;
-
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.inventory.EntityEquipmentSlot;
-
 import net.minecraft.item.ItemStack;
 
+import c4.conarm.client.models.ModelConstructsArmor;
+import c4.conarm.lib.tinkering.TinkersArmor;
+import mod.acgaming.universaltweaks.mods.electroblobswizardry.FixedConstructsArmoryModel;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

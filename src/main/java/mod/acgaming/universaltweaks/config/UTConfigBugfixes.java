@@ -184,6 +184,7 @@ public class UTConfigBugfixes
         @Config.Comment("Fixes lag caused by dead entities by sending additional packets when the player is not alive")
         public boolean utDestroyPacketToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Disconnect Dupe")
         @Config.Comment("Fixes item duplications when players are dropping items and disconnecting")
         public boolean utDisconnectDupeToggle = true;
@@ -193,8 +194,9 @@ public class UTConfigBugfixes
         @Config.Comment("Fixes missing player states when changing dimensions by sending additional packets")
         public boolean utDimensionChangeToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Double Consumption")
-        @Config.Comment("Fixes consuming an item having a chance of also consuming a second item without any animation")
+        @Config.Comment("Fixes consuming an item having a chance of also consuming a second item without any animation, like the infamous double eating food bug")
         public boolean utDoubleConsumptionToggle = true;
 
         @Config.Name("Donkey/Mule Dupe")
@@ -243,6 +245,7 @@ public class UTConfigBugfixes
             })
         public boolean utEntityTrackerToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Entity UUID")
         @Config.Comment("Changes UUIDs of loaded entities in case their UUIDs are already assigned (and removes log spam)")
         public boolean utEntityUUIDToggle = true;

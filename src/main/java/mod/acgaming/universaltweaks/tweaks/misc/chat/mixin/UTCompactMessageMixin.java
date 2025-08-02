@@ -10,10 +10,13 @@ import net.minecraft.client.gui.GuiNewChat;
 import net.minecraft.client.gui.GuiUtilRenderComponents;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.event.HoverEvent;
 
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
-import net.minecraft.util.text.event.HoverEvent;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -54,7 +57,8 @@ public abstract class UTCompactMessageMixin
         int chatSize = MathHelper.floor(this.getChatWidth() / this.getChatScale());
         List<ITextComponent> splittedText = GuiUtilRenderComponents.splitText(chatComponent, chatSize, this.mc.fontRenderer, false, false);
         ITextComponent textComponent = splittedText.get(splittedText.size() - 1);
-        if (!this.drawnChatLines.isEmpty() && !this.chatLines.isEmpty()) {
+        if (!this.drawnChatLines.isEmpty() && !this.chatLines.isEmpty())
+        {
             ChatLine oldDrawnChatLine = this.drawnChatLines.get(0);
             ChatLine oldChatLine = this.chatLines.get(0);
             if (universalTweaks$isMessageEqual(oldDrawnChatLine.getChatComponent().createCopy(), textComponent.createCopy()))
@@ -70,7 +74,8 @@ public abstract class UTCompactMessageMixin
                         }
                     }
                 }
-                if ((oldDrawnChatLine.equals(oldDrawnChatLine) || splittedText.contains(oldDrawnChatLine.getChatComponent())) && oldChatLine.getChatComponent().getUnformattedComponentText().equals(chatComponent.getUnformattedComponentText())) {
+                if ((oldDrawnChatLine.equals(oldDrawnChatLine) || splittedText.contains(oldDrawnChatLine.getChatComponent())) && oldChatLine.getChatComponent().getUnformattedComponentText().equals(chatComponent.getUnformattedComponentText()))
+                {
                     this.drawnChatLines.remove(oldDrawnChatLine);
                     this.chatLines.remove(oldChatLine);
                 }

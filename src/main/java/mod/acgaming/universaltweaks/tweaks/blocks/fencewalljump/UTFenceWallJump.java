@@ -9,16 +9,12 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of TheRealp455w0rd
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTFenceWallJump
 {
     protected static final AxisAlignedBB[] FENCE_WALL_AABBS = new AxisAlignedBB[]
@@ -60,7 +56,6 @@ public class UTFenceWallJump
     @SubscribeEvent
     public static void utOnJump(LivingEvent.LivingJumpEvent event)
     {
-        if (!UTConfigTweaks.BLOCKS.utFenceWallJumpToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFenceWallJump ::: Jump event");
         if (event.getEntity() instanceof EntityPlayerSP)
         {

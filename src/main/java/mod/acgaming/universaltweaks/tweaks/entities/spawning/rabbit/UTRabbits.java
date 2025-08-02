@@ -2,7 +2,6 @@ package mod.acgaming.universaltweaks.tweaks.entities.spawning.rabbit;
 
 import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -11,7 +10,6 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTRandomUtil;
 
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTRabbits
 {
     @SubscribeEvent(priority = EventPriority.HIGHEST)

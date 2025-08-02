@@ -3,14 +3,11 @@ package mod.acgaming.universaltweaks.bugfixes.world.portal;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTPortalLocationLink
 {
     /**
@@ -19,7 +16,6 @@ public class UTPortalLocationLink
     @SubscribeEvent
     public static void utDimensionChangeEventPortalLocation(EntityTravelToDimensionEvent event)
     {
-        if (!UTConfigBugfixes.WORLD.utPortalLocationLink) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTPortalLocationLink ::: Entity travel to dimension event");
         if (event.getEntity().inPortal && event.getEntity().getEntityWorld().provider.getDimension() == 0)
         {

@@ -1,10 +1,11 @@
 package mod.acgaming.universaltweaks.tweaks.entities.trading;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-import java.util.HashMap;
-import java.util.Map;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 

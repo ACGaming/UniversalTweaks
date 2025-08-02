@@ -3,8 +3,6 @@ package mod.acgaming.universaltweaks.mods.effortlessbuilding.mixin;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-
-
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 
@@ -34,7 +32,7 @@ public class UTCompatHelperMixin
         if (stack.getItem() instanceof ItemRandomizerBag)
         {
             IItemHandler bagInventory = ItemRandomizerBag.getBagInventory(stack);
-            for(int i = 0; i < bagInventory.getSlots(); ++i)
+            for (int i = 0; i < bagInventory.getSlots(); ++i)
             {
                 ItemStack bagStack = bagInventory.getStackInSlot(i);
                 if (!bagStack.isEmpty() && stack.isItemEqual(blockStack))
@@ -47,7 +45,7 @@ public class UTCompatHelperMixin
         {
             IItemHandler handler = stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 
-            for(int i = 0; i < handler.getSlots(); ++i)
+            for (int i = 0; i < handler.getSlots(); ++i)
             {
                 ItemStack ref = handler.getStackInSlot(i);
                 if (ref.getItem() instanceof ItemBlock && ref.isItemEqual(blockStack))

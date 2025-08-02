@@ -7,7 +7,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.world.BlockEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -15,13 +14,11 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTFiniteWater
 {
     @SubscribeEvent
     public static void utFiniteWater(BlockEvent.CreateFluidSourceEvent event)
     {
-        if (!UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTFiniteWater ::: Create fluid source event");
         World world = event.getWorld();
         BlockPos pos = event.getPos();

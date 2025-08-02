@@ -7,23 +7,20 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTRayTraceEntity;
 
 // Courtesy of Exidex, Rongmario
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTSwingThroughGrass
 {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void utSwingThroughGrass(PlayerInteractEvent.LeftClickBlock event)
     {
-        if (!UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle || UTSwingThroughGrassLists.blacklistedItems.contains(event.getEntityPlayer().getHeldItemMainhand().getItem())) return;
+        if (UTSwingThroughGrassLists.blacklistedItems.contains(event.getEntityPlayer().getHeldItemMainhand().getItem())) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSwingThroughGrass ::: Left click block event");
         Entity entity = getEntityBehindGrass(event.getWorld(), event.getPos(), event.getEntityPlayer());
         if (entity != null)
@@ -36,7 +33,7 @@ public class UTSwingThroughGrass
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void utInteractThroughGrass(PlayerInteractEvent.RightClickBlock event)
     {
-        if (!UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle || UTSwingThroughGrassLists.blacklistedItems.contains(event.getEntityPlayer().getHeldItemMainhand().getItem())) return;
+        if (UTSwingThroughGrassLists.blacklistedItems.contains(event.getEntityPlayer().getHeldItemMainhand().getItem())) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSwingThroughGrass ::: Right click block event");
         Entity entity = getEntityBehindGrass(event.getWorld(), event.getPos(), event.getEntityPlayer());
         if (entity != null)

@@ -36,7 +36,7 @@ public abstract class UTHealthStaffMixin extends Item
 
             for (int i = 0; i < 5; ++i)
             {
-                entity.world.spawnParticle(EnumParticleTypes.HEART, entity.posX + (double) itemRand.nextFloat() - 0.5, entity.posY + 1.0 + (double) itemRand.nextFloat(), entity.posZ + (double) itemRand.nextFloat() - 0.5, (double) (itemRand.nextFloat() - 0.5F), (double) (itemRand.nextFloat() - 0.5F), (double) (itemRand.nextFloat() - 0.5F), new int[0]);
+                entity.world.spawnParticle(EnumParticleTypes.HEART, entity.posX + (double) itemRand.nextFloat() - 0.5, entity.posY + 1.0 + (double) itemRand.nextFloat(), entity.posZ + (double) itemRand.nextFloat() - 0.5, itemRand.nextFloat() - 0.5F, itemRand.nextFloat() - 0.5F, itemRand.nextFloat() - 0.5F);
             }
 
             BlockPos bp = new BlockPos(entity.posX, entity.posY, entity.posZ);

@@ -4,12 +4,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import mod.acgaming.universaltweaks.config.UTConfigMods;
 
 // Courtesy of WaitingIdly
 @Mixin(targets = "de.ellpeck.actuallyadditions.mod.network.PacketHandler$3", remap = false)

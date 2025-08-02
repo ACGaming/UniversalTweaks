@@ -1,9 +1,9 @@
 package mod.acgaming.universaltweaks.mods.electroblobswizardry;
 
-import c4.conarm.client.models.ModelConstructsArmor;
-
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.inventory.EntityEquipmentSlot;
+
+import c4.conarm.client.models.ModelConstructsArmor;
 
 public class FixedConstructsArmoryModel extends ModelConstructsArmor
 {

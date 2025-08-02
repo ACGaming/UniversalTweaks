@@ -2,17 +2,13 @@ package mod.acgaming.universaltweaks.tweaks.entities.jumping.coyotetime;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.minecraftforge.fml.relauncher.Side;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of sparkflo
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID, value = Side.CLIENT)
 public class UTCoyoteTimeJumping
 {
     private static boolean jumped = false;
@@ -20,7 +16,6 @@ public class UTCoyoteTimeJumping
     @SubscribeEvent
     public static void utCoyoteTimeJumping(TickEvent.PlayerTickEvent event)
     {
-        if (!UTConfigTweaks.ENTITIES.utCoyoteTimeJumpingToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCoyoteTimeJumping ::: Player tick event");
         EntityPlayerSP player = Minecraft.getMinecraft().player;
         if (event.phase != TickEvent.Phase.START || player == null || player.movementInput == null || player.dataManager == null) return;

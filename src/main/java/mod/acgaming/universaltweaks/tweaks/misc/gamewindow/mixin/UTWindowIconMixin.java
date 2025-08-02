@@ -1,17 +1,18 @@
 package mod.acgaming.universaltweaks.tweaks.misc.gamewindow.mixin;
 
-import org.apache.commons.io.IOUtils;
-import org.lwjgl.opengl.Display;
-import net.minecraft.client.Minecraft;
-import net.minecraft.launchwrapper.Launch;
-import net.minecraft.util.Util;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import org.apache.commons.io.IOUtils;
+import org.lwjgl.opengl.Display;
+import net.minecraft.client.Minecraft;
+import net.minecraft.launchwrapper.Launch;
+import net.minecraft.util.Util;
+
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import org.spongepowered.asm.mixin.Mixin;

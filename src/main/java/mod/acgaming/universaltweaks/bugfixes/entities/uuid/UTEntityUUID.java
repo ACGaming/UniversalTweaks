@@ -8,20 +8,17 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 
 // Courtesy of CAS-ual-TY
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTEntityUUID
 {
     @SubscribeEvent
     public static void utFixDuplicateUUID(EntityJoinWorldEvent event)
     {
-        if (UTConfigBugfixes.ENTITIES.utEntityUUIDToggle && event.getWorld() instanceof WorldServer)
+        if (event.getWorld() instanceof WorldServer)
         {
             Entity entity = event.getEntity();
             if (entity instanceof EntityPlayer) return;

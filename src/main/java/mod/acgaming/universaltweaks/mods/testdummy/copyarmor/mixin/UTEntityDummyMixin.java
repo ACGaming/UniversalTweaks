@@ -4,9 +4,9 @@ import net.minecraft.item.ItemStack;
 
 import boni.dummy.EntityDummy;
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import mod.acgaming.universaltweaks.config.UTConfigMods;
 
 // Courtesy of WaitingIdly
 @Mixin(value = EntityDummy.class, remap = false)

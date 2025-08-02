@@ -42,6 +42,7 @@ cfg.universaltweaks.config.blocks=Blocks
 cfg.universaltweaks.config.debug=Debug
 cfg.universaltweaks.config.entities=Entities
 cfg.universaltweaks.config.items=Items
+cfg.universaltweaks.config.masterswitches=Master Switches
 cfg.universaltweaks.config.misc=Misc
 cfg.universaltweaks.config.performance=Performance
 cfg.universaltweaks.config.world=World

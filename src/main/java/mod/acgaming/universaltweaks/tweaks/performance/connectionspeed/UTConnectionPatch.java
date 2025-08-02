@@ -1,11 +1,11 @@
 package mod.acgaming.universaltweaks.tweaks.performance.connectionspeed;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-
 import com.google.common.net.InetAddresses;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 public class UTConnectionPatch
 {

@@ -3,7 +3,6 @@ package mod.acgaming.universaltweaks.tweaks.entities.spawning.creeper.charged;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -13,7 +12,6 @@ import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTRandomUtil;
 
 // Courtesy of UeberallGebannt
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTChargedCreepers
 {
     // All creepers with this tag will be ignored and not checked again

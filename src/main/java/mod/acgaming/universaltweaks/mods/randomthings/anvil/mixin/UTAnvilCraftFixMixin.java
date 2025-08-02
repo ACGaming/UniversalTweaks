@@ -6,10 +6,9 @@ import net.minecraftforge.event.AnvilUpdateEvent;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import lumien.randomthings.handler.RTEventHandler;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-
-import mod.acgaming.universaltweaks.config.UTConfigMods;
 
 // Courtesy of WaitingIdly
 @Mixin(value = RTEventHandler.class, remap = false)

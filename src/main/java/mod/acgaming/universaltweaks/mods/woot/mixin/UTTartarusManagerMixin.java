@@ -52,7 +52,7 @@ public class UTTartarusManagerMixin implements ITartarusCleaner
     @Override
     public boolean ut$areBoxesInUse()
     {
-        for (SpawnBox box: spawnBoxMap.values())
+        for (SpawnBox box : spawnBoxMap.values())
         {
             if (box.isUsed()) return true;
         }

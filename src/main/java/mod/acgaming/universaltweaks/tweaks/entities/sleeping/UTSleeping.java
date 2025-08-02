@@ -8,7 +8,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
 import net.minecraftforge.event.entity.player.SleepingTimeCheckEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -17,13 +16,12 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Funwayguy
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTSleeping
 {
     @SubscribeEvent
     public static void utDisableSleeping(PlayerSleepInBedEvent event)
     {
-        if (!UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle || (event.getEntityPlayer()).world.isRemote) return;
+        if (event.getEntityPlayer().world.isRemote) return;
         if (event.getEntityPlayer().isPlayerSleeping() || !event.getEntityPlayer().isEntityAlive()) return;
         if (!(event.getEntityPlayer()).world.provider.canRespawnHere() || (event.getEntityPlayer()).world.isDaytime())
         {

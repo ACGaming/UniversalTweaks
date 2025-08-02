@@ -17,6 +17,10 @@ public class UTConfigGeneral
     @Config.Name("Debug")
     public static final DebugCategory DEBUG = new DebugCategory();
 
+    @Config.LangKey("cfg.universaltweaks.config.masterswitches")
+    @Config.Name("Master Switches")
+    public static final MasterSwitchesCategory MASTER_SWITCHES = new MasterSwitchesCategory();
+
     public static class DebugCategory
     {
         @Config.Name("Bypass Incompatibility Warnings")
@@ -30,6 +34,33 @@ public class UTConfigGeneral
         @Config.Name("Show Loading Time")
         @Config.Comment("Prints the time the game needed to launch to the log")
         public boolean utLoadingTimeToggle = true;
+    }
+
+    public static class MasterSwitchesCategory
+    {
+        @Config.Name("Master Switch: Bugfixes")
+        @Config.Comment
+            ({
+                "Enables the 'Bugfixes' module",
+                "Turn off to disable all bugfix tweaks"
+            })
+        public boolean utMasterSwitchBugfixes = true;
+
+        @Config.Name("Master Switch: Mod Integration")
+        @Config.Comment
+            ({
+                "Enables the 'Mod Integration' module",
+                "Turn off to disable all mod integration tweaks"
+            })
+        public boolean utMasterSwitchModIntegration = true;
+
+        @Config.Name("Master Switch: Tweaks")
+        @Config.Comment
+            ({
+                "Enables the 'Tweaks' module",
+                "Turn off to disable all vanilla tweaks"
+            })
+        public boolean utMasterSwitchTweaks = true;
     }
 
     static

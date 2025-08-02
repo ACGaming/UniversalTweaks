@@ -9,21 +9,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of CAS-ual-TY
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTSlimeBlockProjectiles
 {
     @SubscribeEvent
     public static void utSlimeBlockProjectiles(ProjectileImpactEvent event)
     {
-        if (!UTConfigTweaks.BLOCKS.utSlimeBlockProjectiles) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSlimeBlockProjectiles ::: Projectile impact event");
         RayTraceResult rayTraceResult = event.getRayTraceResult();
         if (rayTraceResult.typeOfHit == RayTraceResult.Type.BLOCK)

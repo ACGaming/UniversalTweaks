@@ -23,7 +23,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -34,7 +33,6 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Drullkus
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTParry
 {
     private static final List<EntityEntry> projectileList = new ArrayList<>();
@@ -62,7 +60,7 @@ public class UTParry
     @SubscribeEvent
     public static void utRegisterEnchantment(RegistryEvent.Register<Enchantment> event)
     {
-        if (!UTConfigTweaks.ITEMS.PARRY.utParryToggle || !UTConfigTweaks.ITEMS.PARRY.utParryReboundToggle) return;
+        if (!UTConfigTweaks.ITEMS.PARRY.utParryReboundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Register enchantment");
         enchantmentTypeShield = EnumHelper.addEnchantmentType("shield", input -> input instanceof ItemShield || input != null && input.isShield(new ItemStack(input, 1, 0), null));
         enchantment = new EnchantmentRebound(Enchantment.Rarity.COMMON).setRegistryName(new ResourceLocation("parry", "parry")).setName("parry");
@@ -72,7 +70,6 @@ public class UTParry
     @SubscribeEvent
     public static void utArrowParry(ProjectileImpactEvent.Arrow event)
     {
-        if (!UTConfigTweaks.ITEMS.PARRY.utParryToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry arrow");
         final EntityArrow projectile = event.getArrow();
         final EntityEntry projectileEntity = EntityRegistry.getEntry(projectile.getClass());
@@ -110,7 +107,6 @@ public class UTParry
     @SubscribeEvent
     public static void utFireballParry(ProjectileImpactEvent.Fireball event)
     {
-        if (!UTConfigTweaks.ITEMS.PARRY.utParryToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry fireball");
         final EntityFireball projectile = event.getFireball();
         final EntityEntry projectileEntity = EntityRegistry.getEntry(projectile.getClass());
@@ -153,7 +149,6 @@ public class UTParry
     @SubscribeEvent
     public static void utThrowableParry(ProjectileImpactEvent.Throwable event)
     {
-        if (!UTConfigTweaks.ITEMS.PARRY.utParryToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTParry ::: Parry throwable");
         final EntityThrowable projectile = event.getThrowable();
         final EntityEntry projectileEntity = EntityRegistry.getEntry(projectile.getClass());

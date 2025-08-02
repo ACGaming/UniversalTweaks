@@ -1,9 +1,10 @@
 package mod.acgaming.universaltweaks.bugfixes.entities.desync.mixin;
 
-import net.minecraft.entity.Entity;
-
 import mod.acgaming.universaltweaks.bugfixes.entities.desync.IPrevMotion;
 import mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync;
+
+import net.minecraft.entity.Entity;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;

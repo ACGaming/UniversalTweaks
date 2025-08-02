@@ -3,10 +3,9 @@ package mod.acgaming.universaltweaks.mods.extrautilities.potionlogging.mixin;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.rwtema.extrautils2.utils.LogHelper;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-
-import mod.acgaming.universaltweaks.config.UTConfigMods;
 
 // Courtesy of WaitingIdly
 @Mixin(targets = "com.rwtema.extrautils2.machine.BrewingEnergyRecipe", remap = false)

@@ -1,11 +1,12 @@
 package mod.acgaming.universaltweaks.mods.minejurassic.mixin;
 
+import java.util.List;
+import java.util.Random;
+
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 
-import java.util.List;
-import java.util.Random;
 import net.mcreator.minejurassic.ElementsMineJurassic;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

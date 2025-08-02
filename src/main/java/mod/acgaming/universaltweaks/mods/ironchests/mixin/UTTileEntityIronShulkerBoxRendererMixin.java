@@ -35,6 +35,7 @@ public class UTTileEntityIronShulkerBoxRendererMixin extends TileEntitySpecialRe
 
     /**
      * Use simple RenderItem instead of RenderEntityItem.
+     *
      * @reason Don't use customItem which retains the first WorldClient.
      * @author jchung01
      */

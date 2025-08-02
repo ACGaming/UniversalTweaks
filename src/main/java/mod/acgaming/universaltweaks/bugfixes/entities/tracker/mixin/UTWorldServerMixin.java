@@ -1,5 +1,7 @@
 package mod.acgaming.universaltweaks.bugfixes.entities.tracker.mixin;
 
+import mod.acgaming.universaltweaks.bugfixes.entities.tracker.IWorldServer;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.profiler.Profiler;
 import net.minecraft.server.MinecraftServer;
@@ -9,7 +11,6 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.ISaveHandler;
 import net.minecraft.world.storage.WorldInfo;
 
-import mod.acgaming.universaltweaks.bugfixes.entities.tracker.IWorldServer;
 import org.spongepowered.asm.mixin.Mixin;
 
 // MC-92916

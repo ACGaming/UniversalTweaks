@@ -12,7 +12,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -21,10 +20,8 @@ import net.minecraftforge.oredict.OreDictionary;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTRepairableAnvil
 {
-
     private static final Map<Item, Integer> repairItems = new HashMap<>();
 
     public static void initRepairItemsList()
@@ -65,7 +62,7 @@ public class UTRepairableAnvil
     @SubscribeEvent
     public static void utRepairableAnvil(PlayerInteractEvent.RightClickBlock event)
     {
-        if (repairItems.isEmpty() || !UTConfigTweaks.BLOCKS.ANVIL.utRepairableAnvilToggle) return;
+        if (repairItems.isEmpty()) return;
         if (!event.getEntityPlayer().isSneaking()) return;
         if (event.isCanceled()) return;
         if (event.getWorld().getBlockState(event.getPos()).getBlock() != Blocks.ANVIL) return;

@@ -9,20 +9,16 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTBetterIgnition
 {
     @SubscribeEvent
     public static void utBetterIgnition(PlayerInteractEvent.EntityInteract event)
     {
-        if (!UTConfigTweaks.ENTITIES.utBetterIgnitionToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTBetterIgnition ::: Right click entity event");
         EnumHand hand = event.getHand();
         EntityPlayer player = event.getEntityPlayer();

@@ -7,14 +7,11 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.world.BlockEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of WaitingIdly
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTFarmlandTrample
 {
     @SubscribeEvent

@@ -13,7 +13,6 @@ import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.PlayerPickupXpEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -22,7 +21,6 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of FloorIsJava & Rakambda
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTMending
 {
     public static ItemStack getDamagedEnchantedItem(Enchantment ench, EntityPlayer player)
@@ -60,7 +58,6 @@ public class UTMending
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utPickupXP(PlayerPickupXpEvent event)
     {
-        if (!UTConfigTweaks.ITEMS.MENDING.utMendingToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMending ::: Player pick up XP event");
         event.setCanceled(true);
         EntityPlayer player = event.getEntityPlayer();

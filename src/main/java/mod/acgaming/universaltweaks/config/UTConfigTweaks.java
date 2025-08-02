@@ -1,5 +1,8 @@
 package mod.acgaming.universaltweaks.config;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -7,8 +10,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.cleanroommc.configanytime.ConfigAnytime;
-import java.util.HashMap;
-import java.util.Map;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.tweaks.blocks.anvil.UTRepairableAnvil;
@@ -139,6 +140,7 @@ public class UTConfigTweaks
         @Config.Comment("Replaces bed obstruction checks with an improved version")
         public boolean utBedObstructionToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Better Harvest")
         @Config.Comment("Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking")
         public boolean utBetterHarvestToggle = false;
@@ -218,6 +220,7 @@ public class UTConfigTweaks
         @Config.Comment("Allows placing Pumpkins and Jack'O'Lanterns without a supporting block")
         public boolean utUnsupportedPumpkinPlacing = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Projectiles Bounce Off Slime Blocks")
         @Config.Comment("Lets projectiles like arrows bounce off slime blocks")
         public boolean utSlimeBlockProjectiles = false;
@@ -539,6 +542,7 @@ public class UTConfigTweaks
         @Config.Comment("Replaces entity AI for improved server performance")
         public boolean utAIReplacementToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("AI Removal")
         @Config.Comment("Removes entity AI for improved server performance")
         public boolean utAIRemovalToggle = false;
@@ -553,8 +557,9 @@ public class UTConfigTweaks
         @Config.Comment("Replaces auto jump with an increased step height (singleplayer only)")
         public boolean utAutoJumpToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Better Ignition")
-        @Config.Comment("Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them")
+        @Config.Comment("Enables ignition of entities by right-clicking flint and steel instead of awkwardly lighting the block under them")
         public boolean utBetterIgnitionToggle = true;
 
         @Config.RequiresMcRestart
@@ -574,10 +579,12 @@ public class UTConfigTweaks
         @Config.Comment("Lets zombies burn in daylight")
         public boolean utBurningZombiesToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Coyote Time Jumping")
         @Config.Comment("Lets the player jump a couple frames after stepping off a ledge, similar to jumping in many platformers")
         public boolean utCoyoteTimeJumpingToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Creeper Charged Spawning Chance")
         @Config.Comment("Sets the chance for creepers to spawn charged")
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
@@ -642,6 +649,7 @@ public class UTConfigTweaks
         @Config.Comment("Mobs carrying picked up items will drop their equipment and despawn properly")
         public boolean utMobDespawnToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Modern Knockback")
         @Config.Comment("Backports 1.16+ knockback to 1.12: Knockback resistance is now a scale instead of a probability")
         public boolean utModernKnockbackToggle = true;
@@ -661,11 +669,13 @@ public class UTConfigTweaks
         @Config.Comment("Stops horses wandering around when saddled")
         public boolean utSaddledWanderingToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Rabbit Killer Spawning Chance")
         @Config.Comment("Sets the chance for rabbits to spawn as the killer bunny variant")
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
         public double utRabbitKillerChance = 0.0D;
 
+        @Config.RequiresMcRestart
         @Config.Name("Rabbit Toast Spawning Chance")
         @Config.Comment("Sets the chance for rabbits to spawn as the Toast variant")
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
@@ -795,6 +805,7 @@ public class UTConfigTweaks
 
         public static class ChickenSheddingCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Chicken Shedding")
             @Config.Comment("Enables chickens to have a chance to shed a feather")
             public boolean utChickenSheddingToggle = false;
@@ -810,6 +821,7 @@ public class UTConfigTweaks
 
         public static class EasyBreedingCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Easy Breeding Toggle")
             @Config.Comment("Enables easy breeding of animals by tossing food on the ground")
             public boolean utEasyBreedingToggle = false;
@@ -944,6 +956,7 @@ public class UTConfigTweaks
 
         public static class RallyHealthCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Rally Health Toggle")
             @Config.Comment
                 ({
@@ -1169,6 +1182,7 @@ public class UTConfigTweaks
         @Config.Comment("Allows the consumption of food at any time, regardless of the hunger bar")
         public boolean utAlwaysEatToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Auto Switch Tools")
         @Config.Comment("Switches the selected hotbar slot to a proper tool if required")
         public boolean utAutoSwitchToggle = false;
@@ -1261,6 +1275,7 @@ public class UTConfigTweaks
         @Config.Comment("Requires the hunger bar to be missing food points equal to or more than the amount restored by the food")
         public boolean utSmartEatToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Super Hot Torch")
         @Config.Comment("Enables one-time ignition of entities by hitting them with a torch")
         public boolean utSuperHotTorchToggle = false;
@@ -1297,6 +1312,7 @@ public class UTConfigTweaks
 
         public static class InfinityCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Arrowless Infinity")
             @Config.Comment("Bows enchanted with Infinity no longer require arrows")
             public boolean utBowInfinityToggle = true;
@@ -1321,6 +1337,7 @@ public class UTConfigTweaks
             @Config.Comment("Adds physical aspects such as collision boxes to item entities")
             public boolean utIEPhysicsToggle = false;
 
+            @Config.RequiresMcRestart
             @Config.Name("[03] Automatic Pickup")
             @Config.Comment
                 ({
@@ -1408,6 +1425,7 @@ public class UTConfigTweaks
 
         public static class MendingCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Mending Toggle")
             @Config.Comment("Implements modern mending behavior to only repair damaged equipment with XP")
             public boolean utMendingToggle = true;
@@ -1423,6 +1441,7 @@ public class UTConfigTweaks
 
         public static class ParryCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[01] Shield Parry Toggle")
             @Config.Comment("Allows parrying of projectiles with shields")
             public boolean utParryToggle = false;
@@ -1569,6 +1588,7 @@ public class UTConfigTweaks
             })
         public boolean utCopyWorldSeedToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Damage Tilt")
         @Config.Comment("Restores feature to tilt the camera when damaged")
         public boolean utDamageTiltToggle = true;
@@ -1670,6 +1690,7 @@ public class UTConfigTweaks
         @Config.Comment("Disables the flashing effect when the night vision potion effect is about to run out")
         public boolean utNightVisionFlashToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("No Potion Shift")
         @Config.Comment("Disables the inventory shift when potion effects are active")
         public boolean utPotionShiftToggle = true;
@@ -1694,6 +1715,7 @@ public class UTConfigTweaks
         @Config.Comment("Disables the experience reward when smelting items in furnaces")
         public boolean utSmeltingXPToggle = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Offhand Improvement")
         @Config.Comment("Prevents placing offhand blocks when blocks or food are held in the mainhand")
         public boolean utOffhandToggle = true;
@@ -1773,6 +1795,7 @@ public class UTConfigTweaks
         @Config.Comment("Allows using a custom Narrator key, instead of being stuck with CTRL+B")
         public boolean utUseCustomNarratorKeybind = false;
 
+        @Config.RequiresMcRestart
         @Config.Name("Toggle Cheats Button")
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
         public boolean utToggleCheatsToggle = true;
@@ -1834,6 +1857,7 @@ public class UTConfigTweaks
 
         public static class AdvancementScreenshotCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Advancement Screenshot Toggle")
             @Config.Comment("Silently takes a screenshot every time an advancement is achieved")
             public boolean utAdvancementScreenshotToggle = false;
@@ -2187,6 +2211,7 @@ public class UTConfigTweaks
 
         public static class SwingThroughGrassCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Swing Through Grass Toggle")
             @Config.Comment("Allows hitting entities through grass instead of breaking it")
             public boolean utSwingThroughGrassToggle = true;
@@ -2494,6 +2519,7 @@ public class UTConfigTweaks
         @Config.Comment("Enforces stronghold generation to generate all blocks, regardless of air")
         public boolean utStrongholdToggle = true;
 
+        @Config.RequiresMcRestart
         @Config.Name("Tidy Chunk")
         @Config.Comment("Tidies newly generated chunks by removing scattered item entities")
         public boolean utTidyChunkToggle = false;
@@ -2568,6 +2594,7 @@ public class UTConfigTweaks
 
         public static class DimensionUnloadCategory
         {
+            @Config.RequiresMcRestart
             @Config.Name("[1] Dimension Unload Toggle")
             @Config.Comment("Unloads dimensions not in use to free up resources")
             public boolean utUnloaderToggle = true;

@@ -10,7 +10,6 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.SoundCategory;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
@@ -19,13 +18,11 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Mrbysco
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTRallyHealth
 {
     @SubscribeEvent
     public static void utDamageHandler(LivingHurtEvent event)
     {
-        if (!UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRallyHealth ::: Damage handler");
         if (event.getEntityLiving() instanceof EntityPlayer)
         {
@@ -44,7 +41,6 @@ public class UTRallyHealth
     @SubscribeEvent
     public static void utLivingAttack(LivingAttackEvent event)
     {
-        if (!UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRallyHealth ::: Living attack");
         if (event.getSource().getDamageType().equals("player") && event.getSource().getTrueSource() instanceof EntityPlayer)
         {
@@ -68,7 +64,6 @@ public class UTRallyHealth
     @SubscribeEvent
     public static void utRiskEvent(TickEvent.PlayerTickEvent event)
     {
-        if (!UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTRallyHealth ::: Risk event");
         if (event.phase.equals(TickEvent.Phase.START) && event.side.isServer())
         {

@@ -39,6 +39,7 @@ public abstract class UTObeliskSpecialRendererMixin<T extends TileEntityBase> ex
 
     /**
      * Use simple RenderItem instead of RenderEntityItem.
+     *
      * @reason Don't use rei/entityItem which retains the first WorldClient.
      * @author jchung01
      */
@@ -74,7 +75,8 @@ public abstract class UTObeliskSpecialRendererMixin<T extends TileEntityBase> ex
         // CHANGE END
 
         this.rand.nextBoolean();
-        if (Minecraft.getMinecraft().gameSettings.fancyGraphics) {
+        if (Minecraft.getMinecraft().gameSettings.fancyGraphics)
+        {
             GlStateManager.rotate(rand.nextFloat() * 360f, 0, 1, 0);
         }
         // CHANGE START: Don't use enityItem and use built-in RenderItem

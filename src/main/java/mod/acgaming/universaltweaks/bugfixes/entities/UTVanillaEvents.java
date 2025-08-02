@@ -7,15 +7,12 @@ import net.minecraft.item.ItemShears;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 
 // Courtesy of Focamacho
-@Mod.EventBusSubscriber(modid = UniversalTweaks.MODID)
 public class UTVanillaEvents
 {
     @SubscribeEvent

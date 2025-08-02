@@ -34,6 +34,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * Also reduces memory usage when Alfheim Lighting Engine is present.
  * <br>
  * Adapted from MMCE/Multiblocked's DummyWorld.
+ *
  * @author jchung01
  */
 @Mixin(value = ProxyWorld.class)
@@ -81,7 +82,8 @@ public abstract class UTProxyWorldMixin extends World
         this.getWorldBorder().setSize(30000000);
         ObfuscationReflectionHelper.setPrivateValue(World.class, this, null, FMLLaunchHandler.isDeobfuscatedEnvironment() ? "lightUpdateBlockList" : "field_72994_J");
         // De-allocate alfheim lighting engine
-        if (DummyWorld.isAlfheimLoaded) {
+        if (DummyWorld.isAlfheimLoaded)
+        {
             ObfuscationReflectionHelper.setPrivateValue(World.class, this, null,
                 "alfheim$lightingEngine");
         }
@@ -100,69 +102,82 @@ public abstract class UTProxyWorldMixin extends World
     }
 
     @Override
-    protected void initCapabilities() {
+    protected void initCapabilities()
+    {
         //NOOP - do not trigger forge events
     }
 
     @Override
-    public void notifyNeighborsRespectDebug(@Nonnull BlockPos pos, @Nonnull Block blockType, boolean p_175722_3_) {
+    public void notifyNeighborsRespectDebug(@Nonnull BlockPos pos, @Nonnull Block blockType, boolean p_175722_3_)
+    {
         //NOOP - do not trigger forge events
     }
 
     @Override
-    public void notifyNeighborsOfStateChange(@Nonnull BlockPos pos, @Nonnull Block blockType, boolean updateObservers) {
+    public void notifyNeighborsOfStateChange(@Nonnull BlockPos pos, @Nonnull Block blockType, boolean updateObservers)
+    {
         //NOOP - do not trigger forge events
     }
 
     @Override
-    public void notifyNeighborsOfStateExcept(@Nonnull BlockPos pos, @Nonnull Block blockType, @Nonnull EnumFacing skipSide) {
+    public void notifyNeighborsOfStateExcept(@Nonnull BlockPos pos, @Nonnull Block blockType, @Nonnull EnumFacing skipSide)
+    {
         //NOOP - do not trigger forge events
     }
 
     @Override
-    public void markAndNotifyBlock(@Nonnull BlockPos pos, @Nullable Chunk chunk, @Nonnull IBlockState iblockstate, @Nonnull IBlockState newState, int flags) {
+    public void markAndNotifyBlock(@Nonnull BlockPos pos, @Nullable Chunk chunk, @Nonnull IBlockState iblockstate, @Nonnull IBlockState newState, int flags)
+    {
         //NOOP - do not trigger forge events
     }
 
     @Override
-    public void notifyBlockUpdate(@Nonnull BlockPos pos, @Nonnull IBlockState oldState, @Nonnull IBlockState newState, int flags) {
+    public void notifyBlockUpdate(@Nonnull BlockPos pos, @Nonnull IBlockState oldState, @Nonnull IBlockState newState, int flags)
+    {
     }
 
     @Override
-    public void markBlockRangeForRenderUpdate(@Nonnull BlockPos rangeMin, @Nonnull BlockPos rangeMax) {
+    public void markBlockRangeForRenderUpdate(@Nonnull BlockPos rangeMin, @Nonnull BlockPos rangeMax)
+    {
     }
 
     @Override
-    public void markBlockRangeForRenderUpdate(int x1, int y1, int z1, int x2, int y2, int z2) {
+    public void markBlockRangeForRenderUpdate(int x1, int y1, int z1, int x2, int y2, int z2)
+    {
     }
 
     @Override
-    public void updateObservingBlocksAt(@Nonnull BlockPos pos, @Nonnull Block blockType) {
+    public void updateObservingBlocksAt(@Nonnull BlockPos pos, @Nonnull Block blockType)
+    {
     }
 
     @Override
     // De-allocated lightUpdateBlockList, default return
-    public boolean checkLightFor(@Nonnull EnumSkyBlock lightType, @Nonnull BlockPos pos) {
+    public boolean checkLightFor(@Nonnull EnumSkyBlock lightType, @Nonnull BlockPos pos)
+    {
         return true;
     }
 
     @Nonnull
     @Override
     @Optional.Method(modid = "alfheim")
-    public World init() {
+    public World init()
+    {
         return this;
     }
 
     @SuppressWarnings("NullableProblems")
     @Override
     @Optional.Method(modid = "alfheim")
-    public int getLightFromNeighborsFor(EnumSkyBlock type, BlockPos pos) {
+    public int getLightFromNeighborsFor(EnumSkyBlock type, BlockPos pos)
+    {
         return 15;
     }
 
     @SuppressWarnings({"MissingUnique", "unused"})
     @Optional.Method(modid = "alfheim")
-    public int alfheim$getLight(BlockPos pos, boolean checkNeighbors) {
+    public int alfheim$getLight(BlockPos pos, boolean checkNeighbors)
+    {
         return 15;
     }
 }

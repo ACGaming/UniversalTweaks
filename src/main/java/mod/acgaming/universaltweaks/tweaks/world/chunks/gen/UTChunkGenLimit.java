@@ -1,11 +1,12 @@
 package mod.acgaming.universaltweaks.tweaks.world.chunks.gen;
 
-import net.minecraft.world.DimensionType;
-import net.minecraftforge.common.DimensionManager;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import net.minecraft.world.DimensionType;
+import net.minecraftforge.common.DimensionManager;
+
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 public class UTChunkGenLimit

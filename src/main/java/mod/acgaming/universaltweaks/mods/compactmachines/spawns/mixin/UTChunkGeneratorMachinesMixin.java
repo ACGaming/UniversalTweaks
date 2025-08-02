@@ -25,6 +25,7 @@ public class UTChunkGeneratorMachinesMixin
 
     /**
      * Another spot the CM config should control spawns; here for redundancy.
+     *
      * @reason Control mob spawn based on type
      * @author jchung01
      */
