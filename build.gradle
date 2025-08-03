@@ -1,4 +1,4 @@
-//version: 1748883909
+//version: 1753288091
 /*
  * DO NOT CHANGE THIS FILE!
  * Also, you may replace this file at any time if there is an update available.
@@ -872,8 +872,8 @@ if (enableJava17RunTasks.toBoolean()) {
 
     dependencies {
         if (modId != 'lwjgl3ify') {
-            java17Dependencies("io.github.twilightflower:lwjgl3ify:1.0.0")
-            java17PatchDependencies("io.github.twilightflower:lwjgl3ify:1.0.0:forgePatches") {
+            java17Dependencies("io.github.twilightflower:lwjgl3ify:1.0.1")
+            java17PatchDependencies("io.github.twilightflower:lwjgl3ify:1.0.1:forgePatches") {
             transitive = false
             }
         }
@@ -1011,7 +1011,7 @@ abstract class RunHotswappableMinecraftTask extends RunMinecraftTask {
 
         if (project.usesMixins.toBoolean()) {
             this.extraJvmArgs.addAll(project.provider(() -> {
-                def mixinCfg = project.configurations.detachedConfiguration(project.dependencies.create(mixinProviderSpec))
+                def mixinCfg = project.configurations.detachedConfiguration(project.dependencies.create(project.mixinProviderSpec))
                 mixinCfg.canBeConsumed = false
                 mixinCfg.canBeResolved = true
                 mixinCfg.transitive = false
