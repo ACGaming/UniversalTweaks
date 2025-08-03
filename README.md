@@ -262,6 +262,7 @@ All changes are toggleable via config files.
 * **Super Hot Torch:** Enables one-time ignition of entities by hitting them with a torch
 * **Stronghold Enforcement:** Enforces stronghold generation to generate all blocks, regardless of air
 * **Swing Through Grass:** Allows hitting entities through grass instead of breaking it
+* **Texture Atlas Size:** Increases the size of the texture atlas as large as the GPU actually supports, has no effect when [Valkyrie](https://www.curseforge.com/minecraft/mc-mods/valkyrie) is installed
 * **Third Person Ignores Non-solid Blocks:** When viewing in third person, don't stop the camera on non-solid blocks
 * **Tidy Chunk:** Tidies newly generated chunks by removing scattered item entities
 * **Toast Control:** Enables the control of toasts (pop-up text boxes)

@@ -255,6 +255,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins.tweaks.performance.missingmodel.json", () -> UTConfigTweaks.PERFORMANCE.utDisableFancyMissingModelToggle && !UTReflectionUtil.isClassLoaded("com.hbm.lib.RefStrings"));
                 put("mixins.tweaks.performance.mobspawnerrender.json", () -> UTConfigTweaks.PERFORMANCE.utDisableMobSpawnerRendering);
                 put("mixins.tweaks.performance.resourcemanager.json", () -> UTConfigTweaks.PERFORMANCE.utCheckAnimatedModelsToggle);
+                put("mixins.tweaks.performance.textureatlas.json", () -> UTConfigTweaks.PERFORMANCE.utTextureAtlasToggle && !UTReflectionUtil.isClassLoaded("dev.redstudio.valkyrie.utils.ValkyrieUtils"));
                 put("mixins.tweaks.performance.texturemapcheck.json", () -> UTConfigTweaks.PERFORMANCE.utTextureMapCheckToggle);
                 put("mixins.tweaks.performance.weathereffects.json", () -> UTConfigTweaks.PERFORMANCE.utDisableRainParticles);
                 put("mixins.tweaks.world.loading.client.json", () -> UTConfigTweaks.PERFORMANCE.utWorldLoadingToggle);

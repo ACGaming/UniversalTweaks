@@ -2438,6 +2438,15 @@ public class UTConfigTweaks
         public boolean utRedstoneLightingToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Texture Atlas Size")
+        @Config.Comment
+            ({
+                "Increases the size of the texture atlas as large as the GPU actually supports",
+                "Has no effect when Valkyrie is installed"
+            })
+        public boolean utTextureAtlasToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Uncap FPS")
         @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
         public boolean utUncapFPSToggle = true;
