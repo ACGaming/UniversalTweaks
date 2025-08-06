@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = TileOven.class, remap = false)
+@Mixin(TileOven.class)
 public abstract class UTTileOvenMixin
 {
     /**
@@ -38,7 +38,7 @@ public abstract class UTTileOvenMixin
      * ItemStack before the shrink.
      * </p>
      */
-    @Inject(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;shrink(I)V"), remap = true)
+    @Inject(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;shrink(I)V"))
     private void updateCaptureFuelItem(CallbackInfo ci, @Local(ordinal = 0) ItemStack fuelItem, @Share("fuelStackCopy") LocalRef<ItemStack> localRef)
     {
         localRef.set(fuelItem.copy());
@@ -65,10 +65,7 @@ public abstract class UTTileOvenMixin
      * {@link RangedWrapper#setStackInSlot(int, ItemStack)} to use the captured stack copy.
      * </p>
      */
-    @Redirect(
-        method = "update",
-        at = @At(value = "INVOKE", target = "Lnet/minecraftforge/items/wrapper/RangedWrapper;setStackInSlot(ILnet/minecraft/item/ItemStack;)V", ordinal = 0)
-    )
+    @Redirect(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraftforge/items/wrapper/RangedWrapper;setStackInSlot(ILnet/minecraft/item/ItemStack;)V", ordinal = 0, remap = false))
     private void updateRedirectFuelConsumption(RangedWrapper instance, int i, ItemStack itemStack, @Share("fuelStackCopy") LocalRef<ItemStack> localRef)
     {
         ItemStack copy = localRef.get();
