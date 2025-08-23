@@ -191,10 +191,6 @@ public class UTConfigMods
     @Config.Name("Mekanism")
     public static final MekanismCategory MEKANISM = new MekanismCategory();
 
-    @Config.LangKey("cfg.universaltweaks.modintegration.minejurassic")
-    @Config.Name("MineJurassic")
-    public static final MineJurassicCategory MINEJURASSIC = new MineJurassicCategory();
-
     @Config.LangKey("cfg.universaltweaks.modintegration.moartinkers")
     @Config.Name("Moar Tinkers")
     public static final MoarTinkersCategory MOAR_TINKERS = new MoarTinkersCategory();
@@ -870,14 +866,6 @@ public class UTConfigMods
                 "Has no effect when playing with Mekanism CEu"
             })
         public boolean utFluidTankExtraction = true;
-    }
-
-    public static class MineJurassicCategory
-    {
-        @Config.RequiresMcRestart
-        @Config.Name("Prevent Fossil Generation")
-        @Config.Comment("Prevents fossil blocks from generating in the world")
-        public boolean utMineJurassicFossilsToggle = false;
     }
 
     public static class MoarTinkersCategory
