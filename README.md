@@ -406,6 +406,8 @@ All changes are toggleable via config files.
     * **Replace Crystal Chest/Shulker Renderer:** Fixes client-side memory leak by replacing the crystal chest/shulker box renderer with a simpler one (Note: Disables stack size rendering)
 * **Item Stages**
     * **Ingredient Matching:** Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues
+* **Jurassic Reborn**
+    * **Geneticist Villager House Generation:** Toggles the generation of geneticist houses in villages
 * **Mekanism**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fluid Tank Extraction:** Fixes a logic error allowing extracting fluids from fluid tanks regardless of requested fluid

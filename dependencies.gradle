@@ -107,6 +107,7 @@ final def mod_dependencies = [
     'curse.maven:infinitylib-251396:3317119'                          : [debug_agricraft],
     'curse.maven:ironbackpacks-227049:2564573'                        : [debug_iron_backpacks],
     'curse.maven:ironchests-228756:2747935'                           : [debug_iron_chests],
+    'curse.maven:jurassic-reborn-359537:4574634'                      : [debug_jurassic_reborn],
     'curse.maven:mantle-74924:2713386'                                : [debug_tinkers_construct, debug_moartinkers],
     'curse.maven:mcjtylib-233105:2745846'                             : [debug_rftools],
     'curse.maven:mekanism-268560:2835175'                             : [debug_mekanism],

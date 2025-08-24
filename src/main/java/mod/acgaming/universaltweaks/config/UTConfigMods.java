@@ -187,6 +187,10 @@ public class UTConfigMods
     @Config.Name("Item Stages")
     public static final ItemStagesCategory ITEM_STAGES = new ItemStagesCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.jurassicreborn")
+    @Config.Name("Jurassic Reborn")
+    public static final JurassicRebornCategory JURASSIC_REBORN = new JurassicRebornCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.mekanism")
     @Config.Name("Mekanism")
     public static final MekanismCategory MEKANISM = new MekanismCategory();
@@ -849,6 +853,13 @@ public class UTConfigMods
         @Config.Name("Ingredient Matching")
         @Config.Comment("Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues")
         public boolean utIngredientMatching = true;
+    }
+
+    public static class JurassicRebornCategory
+    {
+        @Config.Name("Geneticist Villager House Generation")
+        @Config.Comment("Generates the geneticist house in villages")
+        public boolean utGeneticistHouseGenToggle = true;
     }
 
     public static class MekanismCategory
