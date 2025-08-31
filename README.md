@@ -463,6 +463,13 @@ All changes are toggleable via config files.
     * **Memory Leak Fix:** Fixes a client-side memory leak associated with EntityPlayer
 * **Tech Reborn**
     * **Optimized Rolling Machine:** Optimizes the Rolling Machine to reduce tick time
+* **Thaumcraft**
+    * **Focus Effects**
+        * Revamps the cast sounds of certain focus effects to provide better variety
+        * Adds impact sounds (like air or curse) to various focus effects that lack it
+    * **Focus Mediums:** Makes several focus mediums play additional cast sounds to make them stand out more
+    * **Spiderlike Eldritch Crabs:** Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders
+    * **Stable Thaumometer:** Stops the thaumometer from bobbing rapidly when using it to scan objects
 * **The Erebus**
     * **Fix Cabbage Drop:** Fixes Cabbage not dropping the correct items in some situations
     * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks

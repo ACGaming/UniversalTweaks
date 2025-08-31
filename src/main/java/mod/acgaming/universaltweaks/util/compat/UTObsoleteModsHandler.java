@@ -52,6 +52,7 @@ public class UTObsoleteModsHandler
             {
                 put("drawerfps", () -> UTConfigMods.STORAGE_DRAWERS.utSDRenderRange > 0);
                 put("erebusfix", () -> UTConfigMods.EREBUS.utEBPreservedBlocksToggle);
+                put("nobounce", () -> UTConfigMods.THAUMCRAFT.utTCStableThaumometerToggle);
                 put("steamworldpatcher", () -> UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
