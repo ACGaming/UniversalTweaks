@@ -1295,9 +1295,53 @@ public class UTConfigMods
     public static class TinkersConstructCategory
     {
         @Config.RequiresMcRestart
-        @Config.Name("Ceramics: Gaseous Fluids")
+        @Config.Name("Gaseous Fluids")
         @Config.Comment("Excludes gaseous fluids from being transferable via faucets")
         public boolean utTConGaseousFluidsToggle = false;
+
+        @Config.Name("Maximum Items to Render in Smeltery")
+        @Config.Comment
+            ({
+                "Determines the maximum number of possible items to display before not rendering any to prevent substantial lag",
+                "0 to disable rendering items in the smeltery entirely",
+                "-1 for the default, which is always rendering items"
+            })
+        public int utMaximumItemRendersInSmeltery = -1;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Material Blacklist")
+        @Config.Comment
+            ({
+                "Hides tool/bow materials in the 'Materials and You' book",
+                "Syntax: material",
+                "Enabling debug logging prints all materials on game launch"
+            })
+        public String[] utTConMaterialBlacklist = new String[] {};
+
+        @Config.RequiresMcRestart
+        @Config.Name("Offhand Shuriken")
+        @Config.Comment("Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand")
+        public boolean utTConShurikenToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Ore Dictionary Cache")
+        @Config.Comment("Caches all ore dictionary smelting recipes to speed up game loading")
+        public boolean utTConOreDictCacheToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Projectile Despawning")
+        @Config.Comment("Despawns unbreakable projectiles faster to improve framerates")
+        public boolean utTConProjectileToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Duplication Fixes")
+        @Config.Comment("Fixes various duplication exploits")
+        public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Particle Fixes")
+        @Config.Comment("Fixes server world being leaked to various particles")
+        public boolean utParticleFixesToggle = true;
 
         @Config.LangKey("cfg.universaltweaks.modintegration.tcon.toolcustomization")
         @Config.Name("Tool Customization")

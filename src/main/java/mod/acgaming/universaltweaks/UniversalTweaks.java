@@ -25,6 +25,7 @@ import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
+import mod.acgaming.universaltweaks.core.UTMixinLoader;
 import mod.acgaming.universaltweaks.mods.arcanearchives.UTArcaneArchivesEvents;
 import mod.acgaming.universaltweaks.mods.astralsorcery.UTClearOnChange;
 import mod.acgaming.universaltweaks.mods.bloodmagic.UTBloodMagicEvents;
@@ -37,6 +38,9 @@ import mod.acgaming.universaltweaks.mods.mekanism.dupes.UTMekanismFixes;
 import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.UTSimplyJetpacksEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageClientStatesReset;
+import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructEvents;
+import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructMaterials;
+import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
 import mod.acgaming.universaltweaks.mods.woot.UTWootTicketManager;
 import mod.acgaming.universaltweaks.tweaks.blocks.anvil.UTRepairableAnvil;
 import mod.acgaming.universaltweaks.tweaks.blocks.betterharvest.UTBetterHarvest;
@@ -127,7 +131,7 @@ public class UniversalTweaks
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
         {
-
+            if (UTMixinLoader.regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
         }
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
@@ -175,6 +179,7 @@ public class UniversalTweaks
             }
             // Unregister reason: event handler adds to an unused map that is never cleared.
             if (Loader.isModLoaded("tardis") && UTConfigMods.TARDIS.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.unregister(ClientProxy.class);
+            if (UTMixinLoader.regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTTConstructEvents());
             if (Loader.isModLoaded("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle) UTWootTicketManager.init();
         }
 
@@ -282,7 +287,7 @@ public class UniversalTweaks
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
         {
-
+            if (UTMixinLoader.regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utTConMaterialBlacklist.length > 0) UTTConstructMaterials.utHandleBlacklistedMaterials();
         }
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
@@ -399,7 +404,7 @@ public class UniversalTweaks
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
         {
-
+            if (UTMixinLoader.regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.onLoadComplete();
         }
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
