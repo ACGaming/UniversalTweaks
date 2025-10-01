@@ -97,6 +97,13 @@ public class UTConfigTweaks
         }
     }
 
+    public enum BobbingMode
+    {
+        DEFAULT,
+        HAND_ONLY,
+        CAMERA_ONLY
+    }
+
     public static class BlocksCategory
     {
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.anvil")
@@ -1810,6 +1817,15 @@ public class UTConfigTweaks
             })
         public int utXPLevelCap = -1;
 
+        @Config.Name("View Bobbing Mode")
+        @Config.Comment
+            ({
+                "Sets the view bobbing mode",
+                "Default: Bobs both hand and camera (vanilla default)",
+                "Hand only: Bobs only hand",
+                "Camera only: Bobs only camera"
+            })
+        public BobbingMode utViewBobbing = BobbingMode.DEFAULT;
 
         public static class AdvancementsCategory
         {
