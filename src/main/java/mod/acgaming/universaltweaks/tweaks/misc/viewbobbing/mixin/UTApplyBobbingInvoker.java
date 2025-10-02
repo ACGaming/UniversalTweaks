@@ -9,5 +9,5 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 public interface UTApplyBobbingInvoker
 {
     @Invoker("applyBobbing")
-    void applyBobbing(float partialTicks);
+    void invokeApplyBobbing(float partialTicks);
 }
