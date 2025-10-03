@@ -99,6 +99,7 @@ All changes are toggleable via config files.
 * **Anvil XP Level Cap:** Sets the experience level cap for anvil recipes
 * **Armed Armor Stands:** Enables arms for armor stands by default
 * **Armor Curve:** Adjusts the armor scaling and degradation formulae for mobs and players
+* **Armor Swap:** Enable the ability to swap equipped armor when right-clicking armor, instead of only being able to equip armor when the slot is empty. Also applies to Elytra
 * **Attributes:** Sets custom ranges for entity attributes
 * **Auto Jump Replacement:** Replaces auto jump with an increased step height (singleplayer only)
 * **Auto Save Interval:** Configurable interval in ticks between world auto saves
