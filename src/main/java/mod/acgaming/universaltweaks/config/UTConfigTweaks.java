@@ -527,6 +527,10 @@ public class UTConfigTweaks
         @Config.Name("Undead Horses")
         public final UndeadHorsesCategory UNDEAD_HORSES = new UndeadHorsesCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.unsafesleeping")
+        @Config.Name("Unsafe Sleeping")
+        public final UnsafeSleepingCategory UNSAFE_SLEEPING = new UnsafeSleepingCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.waterfalldamage")
         @Config.Name("Water Fall Damage")
         public final WaterFallDamageCategory WATER_FALL_DAMAGE = new WaterFallDamageCategory();
@@ -1050,6 +1054,31 @@ public class UTConfigTweaks
             @Config.Name("No Skeleton Trap Spawning")
             @Config.Comment("Prevents skeleton traps spawning during thunderstorms")
             public boolean utSkeletonTrapSpawningToggle = false;
+        }
+
+        public static class UnsafeSleepingCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Unsafe Sleeping Toggle")
+            @Config.Comment("Enables the use of any of the settings in this category")
+            public boolean utUnsafeSleepingToggle = false;
+
+            @Config.Name("[2] Ignore Unsafe Sleeping")
+            @Config.Comment("Allow sleeping even if mobs are nearby")
+            public boolean utAllowUnsafeSleeping = false;
+
+            @Config.Name("[3] Highlight Unsafe Mobs")
+            @Config.Comment("Apply the Glowing potion effect to nearby mobs preventing sleeping")
+            public boolean utApplyGlowingToUnsafeMobs = false;
+
+            @Config.Name("[4] Highlight Duration")
+            @Config.Comment("Time in ticks the highlight will last. Only applies if \"[3] Highlight Unsafe Mobs\" is true")
+            @Config.RangeInt(min = 1)
+            public int utGlowingTime = 100;
+
+            @Config.Name("[4] Show Glowing Particles")
+            @Config.Comment("If the Glowing potion effect will apply particles. Only applies if \"[3] Highlight Unsafe Mobs\" is true")
+            public boolean utShowGlowingParticles = false;
         }
 
         public static class WaterFallDamageCategory
