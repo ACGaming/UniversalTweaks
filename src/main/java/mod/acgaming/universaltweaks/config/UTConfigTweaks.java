@@ -1199,7 +1199,7 @@ public class UTConfigTweaks
         public final AttackCooldownCategory ATTACK_COOLDOWN = new AttackCooldownCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.items.infinity")
-        @Config.Name("Mending")
+        @Config.Name("Infinity")
         public final InfinityCategory INFINITY = new InfinityCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.items.itementities")
