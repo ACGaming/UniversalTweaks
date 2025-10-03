@@ -157,6 +157,7 @@ cfg.universaltweaks.tweaks.entities.rallyhealth=Rally Health
 cfg.universaltweaks.tweaks.entities.sleeping=Sleeping
 cfg.universaltweaks.tweaks.entities.spawncaps=Spawn Caps
 cfg.universaltweaks.tweaks.entities.undeadhorses=Undead Horses
+cfg.universaltweaks.tweaks.entities.unsafesleeping=Unsafe Sleeping
 cfg.universaltweaks.tweaks.entities.waterfalldamage=Water Fall Damage
 cfg.universaltweaks.tweaks.entities.voidteleport=Void Teleport
 cfg.universaltweaks.tweaks.items.attackcooldown=Attack Cooldown
