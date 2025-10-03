@@ -107,6 +107,10 @@ public class UTConfigMods
     @Config.Name("Corpse")
     public static final CorpseCategory CORPSE = new CorpseCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.divineprg")
+    @Config.Name("Divine RPG")
+    public static final DivineRPGCategory DIVINE_RPG = new DivineRPGCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.effortlessbuilding")
     @Config.Name("Effortless Building")
     public static final EffortlessBuildingCategory EFFORTLESS_BUILDING = new EffortlessBuildingCategory();
@@ -584,6 +588,28 @@ public class UTConfigMods
         @Config.Name("Opening GUIs Off-thread Fix")
         @Config.Comment("Fixes opening up GUIs on a non-client thread")
         public boolean utOpeningGuisOffThreadFixToggle = true;
+    }
+
+    public static class DivineRPGCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Change Water Mob Creature Type")
+        @Config.Comment("Changes the creature type for DivineRPG Water Mobs to be WATER_CREATURE, fixing issues with hostile mob spawn caps and infinite water mob spawning")
+        public boolean utChangeWaterMobCreatureType = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Aquamarine Stack Size")
+        @Config.Comment
+            ({
+                "Aquamarine nominally has durability, but does not set the max stack size to 1.",
+                "As the tweak \"Fix Consuming Incorrect Hand\" fixes the bug preventing durability from being used, fixing the stack size is also needed."
+            })
+        public boolean utFixAquamarineStackSize = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Consuming Incorrect Hand")
+        @Config.Comment("Fix various DivineRPG items consuming the item in the main hand regardless of the hand actually used")
+        public boolean utFixHandConsumption = true;
     }
 
     public static class EffortlessBuildingCategory
