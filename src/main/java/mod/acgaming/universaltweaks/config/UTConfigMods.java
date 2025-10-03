@@ -593,6 +593,11 @@ public class UTConfigMods
     public static class DivineRPGCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Change Water Mob Creature Type")
+        @Config.Comment("Changes the creature type for DivineRPG Water Mobs to be WATER_CREATURE, fixing issues with hostile mob spawn caps and infinite water mob spawning")
+        public boolean utChangeWaterMobCreatureType = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Aquamarine Stack Size")
         @Config.Comment
             ({

@@ -355,8 +355,9 @@ All changes are toggleable via config files.
 * **Corpse**
     * **Opening GUIs Off-thread Fix:** Fixes opening up GUIs on a non-client thread
 * **Divine RPG**
-    * **Fix Consuming Incorrect Hand:** Fix various DivineRPG items consuming the item in the main hand regardless of the hand actually used
+    * **Change Water Mob Creature Type:** Changes the creature type for DivineRPG Water Mobs to be WATER_CREATURE, fixing issues with hostile mob spawn caps and infinite water mob spawning
     * **Fix Aquamarine Stack Size:** Aquamarine has durability, yet doesn't have a max stack size of 1
+    * **Fix Consuming Incorrect Hand:** Fix various DivineRPG items consuming the item in the main hand regardless of the hand actually used
 * **Effortless Building**
     * **Block Transmutation Fix:** Fixes Effortless Building ignoring Metadata when checking for items in inventory
 * **Electroblob's Wizardry**
