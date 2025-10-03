@@ -394,6 +394,9 @@ All changes are toggleable via config files.
     * **Fix Restructurer Crash:** Safely access a nullable value when checking recipes in the Restructurer
 * **HWYLA**
     * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
+* **Immersive Engineering**
+    * **Tool Break Fire Event:** Fires the PlayerDestroyItemEvent when an Immersive Engineering tool breaks, fixing a number of cross-compatibility issues
+    * **Tool Break Hand Replacement:** Fixes the tool breaking setting the main hand to empty regardless of what hand the tool is in
 * **In Control!**
     * **Spawn Rule Stats Fix:** Fixes onJoin spawn rules repeatedly modifying mob attack/health/speed
 * **IndustrialCraft 2**

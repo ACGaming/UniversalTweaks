@@ -103,6 +103,7 @@ final def mod_dependencies = [
     'curse.maven:geckolib-388172:4020277'                             : [debug_cqrepoured],
     'curse.maven:guideapi-228832:2645992'                             : [debug_blood_magic],
     'curse.maven:hwyla-253449:2568751'                                : [debug_hwyla],
+    'curse.maven:immersive_engineering-231951:2974106'                : [debug_immersive_engineering],
     'curse.maven:incontrol-257356:3101719'                            : [debug_incontrol],
     'curse.maven:industrialcraft-242638:3078604'                      : [debug_industrialcraft],
     'curse.maven:infinitylib-251396:3317119'                          : [debug_agricraft],
