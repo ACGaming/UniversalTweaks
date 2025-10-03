@@ -14,12 +14,12 @@ public class UTViewBobbingMixin
     @Redirect(method = "setupCameraTransform", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/EntityRenderer;applyBobbing(F)V"))
     private void utCameraBobbing(EntityRenderer entity, float partialTicks)
     {
-        if (UTConfigTweaks.MISC.utViewBobbing != BobbingMode.HAND_ONLY) ((UTApplyBobbingInvoker) (Object)entity).applyBobbing(partialTicks);
+        if (UTConfigTweaks.MISC.utViewBobbing != BobbingMode.HAND_ONLY) ((UTApplyBobbingInvoker) (Object)entity).invokeApplyBobbing(partialTicks);
     }
 
     @Redirect(method = "renderHand", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/EntityRenderer;applyBobbing(F)V"))
     private void utHandBobbing(EntityRenderer entity, float partialTicks)
     {
-        if (UTConfigTweaks.MISC.utViewBobbing != BobbingMode.CAMERA_ONLY) ((UTApplyBobbingInvoker) (Object)entity).applyBobbing(partialTicks);
+        if (UTConfigTweaks.MISC.utViewBobbing != BobbingMode.CAMERA_ONLY) ((UTApplyBobbingInvoker) (Object)entity).invokeApplyBobbing(partialTicks);
     }
 }
