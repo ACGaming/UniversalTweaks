@@ -86,6 +86,7 @@ public class UTObsoleteModsHandler
                 put("creeperconfetti", () -> UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiChance > 0);
                 put("damagetilt", () -> UTConfigTweaks.MISC.utDamageTiltToggle);
                 put("darkstone", () -> UTConfigTweaks.PERFORMANCE.utRedstoneLightingToggle);
+                put("defaultlanport", () -> UTConfigTweaks.MISC.utLANServerProperties);
                 put("ding", () -> UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfigTweaks.MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING);
                 put("easybreeding", () -> UTConfigTweaks.ENTITIES.EASY_BREEDING.utEasyBreedingToggle);
                 put("enablecheats", () -> UTConfigTweaks.MISC.utToggleCheatsToggle);
@@ -137,6 +138,7 @@ public class UTObsoleteModsHandler
                 put("rebind_narrator", () -> UTConfigTweaks.MISC.utUseCustomNarratorKeybind);
                 put("salwayseat", () -> UTConfigTweaks.ITEMS.utAlwaysEatToggle);
                 put("savemystronghold", () -> UTConfigTweaks.WORLD.utStrongholdToggle);
+                put("silentboss", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundDragon || !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundWither);
                 put("sleepsooner", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
                 put("smooth-scrolling-everywhere", () -> UTConfigTweaks.MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle);
                 put("sourcebottles", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
