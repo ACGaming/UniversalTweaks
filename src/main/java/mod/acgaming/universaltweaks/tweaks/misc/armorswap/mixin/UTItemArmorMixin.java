@@ -28,12 +28,13 @@ public class UTItemArmorMixin
     }
 
     /**
-     * @reason set the return value to be the itemstack that was in the armor slot, which will cause the hand to be replaced by it
+     * @reason if the hand stack is empty, set the return value to be the itemstack that was in the armor slot,
+     * which will cause the hand to be replaced by it
      * @author WaitingIdly
      */
     @ModifyReturnValue(method = "onItemRightClick", at = @At(value = "RETURN", ordinal = 0))
-    private ActionResult<ItemStack> utSwapEquippedArmorStack(ActionResult<ItemStack> original, @Local(ordinal = 1) ItemStack armorStack)
+    private ActionResult<ItemStack> utSwapEquippedArmorStack(ActionResult<ItemStack> original, @Local(ordinal = 0) ItemStack handStack, @Local(ordinal = 1) ItemStack armorStack)
     {
-        return new ActionResult<>(EnumActionResult.SUCCESS, armorStack);
+        return handStack.isEmpty() ? new ActionResult<>(EnumActionResult.SUCCESS, armorStack) : original;
     }
 }
