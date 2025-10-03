@@ -1587,6 +1587,11 @@ public class UTConfigTweaks
         public boolean utReturnToMainMenu = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Armor Swap")
+        @Config.Comment("Enable the ability to swap equipped armor when right-clicking armor, instead of only being able to equip armor when the slot is empty. Also applies to Elytra")
+        public boolean utArmorSwap = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Copy World Seed")
         @Config.Comment
             ({
