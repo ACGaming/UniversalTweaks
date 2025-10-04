@@ -214,7 +214,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins.tweaks.items.attackcooldown.client.json", () -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
                 put("mixins.tweaks.items.itementities.client.json", () -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle);
                 put("mixins.tweaks.misc.advancements.guisize.json", () -> UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle);
-                put("mixins.tweaks.misc.buttons.anaglyph.json", () -> UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle);
+                put("mixins.tweaks.misc.buttons.anaglyph.json", () -> UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle && !Coremods.OPTIFINE.isLoaded());
+                put("mixins.tweaks.misc.buttons.anaglyph.optifine.json", () -> UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle && Coremods.OPTIFINE.isLoaded());
                 put("mixins.tweaks.misc.buttons.realms.json", () -> SystemUtils.IS_JAVA_1_8 && UTConfigTweaks.MISC.utRealmsButtonToggle && !Coremods.RANDOM_PATCHES.isLoaded());
                 put("mixins.tweaks.misc.buttons.snooper.client.json", () -> SystemUtils.IS_JAVA_1_8 && UTConfigTweaks.MISC.utSnooperToggle);
                 put("mixins.tweaks.misc.chat.compactmessage.json", () -> UTConfigTweaks.MISC.CHAT.utCompactMessagesToggle);
