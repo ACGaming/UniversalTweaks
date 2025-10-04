@@ -24,6 +24,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.advancements.screenshot.UTAdvanc
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
+import mod.acgaming.universaltweaks.tweaks.misc.musiccontrol.UTMusicType;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.misc.timeouts.UTTimeoutManager;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
@@ -1586,6 +1587,10 @@ public class UTConfigTweaks
         @Config.Name("Load Sounds")
         public final LoadSoundsCategory LOAD_SOUNDS = new LoadSoundsCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.musiccontrol")
+        @Config.Name("Music Control")
+        public final MusicControlCategory MUSIC_CONTROL = new MusicControlCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.pickupnotification")
         @Config.Name("Pickup Notification")
         public final PickupNotificationCategory PICKUP_NOTIFICATION = new PickupNotificationCategory();
@@ -2143,6 +2148,46 @@ public class UTConfigTweaks
                 WORLD,
                 MINECRAFT_AND_WORLD
             }
+        }
+
+        public static class MusicControlCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Music Control Toggle")
+            @Config.Comment("Enables various music playback control tweak")
+            public boolean utMusicControlToggle = true;
+
+            @Config.Name("[2] Menu Music")
+            @Config.Comment("Select which music to play on menu screen")
+            public UTMusicType utMusicControlMenu = UTMusicType.MENU;
+
+            @Config.Name("[3] Overworld Music")
+            @Config.Comment("Select which music to play on overworld dimension")
+            public UTMusicType utMusicControlOverworld = UTMusicType.OVERWORLD;
+
+            @Config.Name("[4] Creative Music")
+            @Config.Comment("Select which music to play on creative mode")
+            public UTMusicType utMusicControlCreative = UTMusicType.CREATIVE;
+
+            @Config.Name("[5] Nether Music")
+            @Config.Comment("Select which music to play on nether dimension")
+            public UTMusicType utMusicControlNether = UTMusicType.NETHER;
+
+            @Config.Name("[6] End Music")
+            @Config.Comment("Select which music to play on end dimension")
+            public UTMusicType utMusicControlEnd = UTMusicType.END;
+
+            @Config.Name("[7] End Boss Music")
+            @Config.Comment("Select which music to play on end dimension boss fight music")
+            public UTMusicType utMusicControlEndBoss = UTMusicType.END_BOSS;
+
+            @Config.Name("[8] Credits Music")
+            @Config.Comment("Select which music to play on credits screen")
+            public UTMusicType utMusicControlCredits = UTMusicType.CREDITS;
+
+            @Config.Name("[9] Keep Music On Pause")
+            @Config.Comment("Don't pause music when game is paused")
+            public boolean utKeepMusicOnPause = true;
         }
 
         public static class PickupNotificationCategory
