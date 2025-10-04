@@ -12,10 +12,19 @@ import net.minecraftforge.fml.common.Loader;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import zone.rong.mixinbooter.Context;
 import zone.rong.mixinbooter.ILateMixinLoader;
 
 public class UTMixinLoader implements ILateMixinLoader
 {
+
+    private static final Map<String, BooleanSupplier> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
+    {
+        {
+            put("mixins.mods.randomthings.teleport.json", () -> loaded("randomthings") && UTConfigMods.RANDOM_THINGS.utTeleportStall);
+        }
+    });
+
     private static final Map<String, BooleanSupplier> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
     {
         {
@@ -127,6 +136,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.properpumpkins.json", () -> loaded("pumpking") && UTConfigMods.PROPER_PUMPKIN.utFacingFix);
                 put("mixins.mods.quark.dupes.json", () -> loaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
                 put("mixins.mods.randomthings.anvil.json", () -> loaded("randomthings") && UTConfigMods.RANDOM_THINGS.utAnvilCraftFix);
+                put("mixins.mods.randomthings.collector.json", () -> loaded("randomthings") && UTConfigMods.RANDOM_THINGS.utItemCollectorDupe);
                 put("mixins.mods.requiousfrakto.json", () -> loaded("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);
                 put("mixins.mods.reskillable.json", () -> loaded("reskillable"));
                 put("mixins.mods.rftoolsdimensions.json", () -> loaded("rftoolsdim"));
@@ -172,18 +182,17 @@ public class UTMixinLoader implements ILateMixinLoader
     public List<String> getMixinConfigs()
     {
         List<String> configs = new ArrayList<>();
-        if (UTLoadingPlugin.isClient)
-        {
-            configs.addAll(clientsideMixinConfigs.keySet());
-        }
+        if (UTLoadingPlugin.isClient) configs.addAll(clientsideMixinConfigs.keySet());
+        else configs.addAll(serversideMixinConfigs.keySet());
         configs.addAll(commonMixinConfigs.keySet());
         return configs;
     }
 
     @Override
-    public boolean shouldMixinConfigQueue(String mixinConfig)
+    public boolean shouldMixinConfigQueue(Context context)
     {
-        BooleanSupplier sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : null;
+        String mixinConfig = context.mixinConfig();
+        BooleanSupplier sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : serversideMixinConfigs.get(mixinConfig);
         BooleanSupplier commonSupplier = commonMixinConfigs.get(mixinConfig);
         return sidedSupplier != null ? sidedSupplier.getAsBoolean() : commonSupplier == null || commonSupplier.getAsBoolean();
     }
