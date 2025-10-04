@@ -1,0 +1,9 @@
+{
+  "package": "mod.acgaming.universaltweaks.tweaks.misc.buttons.anaglyph.optifine.mixin",
+  "refmap": "universaltweaks.refmap.json",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "UT3DAnaglyphOFMixin"
+  ]
+}
