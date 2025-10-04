@@ -24,6 +24,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.advancements.screenshot.UTAdvanc
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
+import mod.acgaming.universaltweaks.tweaks.misc.music.UTMusicType;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.misc.timeouts.UTTimeoutManager;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
@@ -1586,6 +1587,10 @@ public class UTConfigTweaks
         @Config.Name("Load Sounds")
         public final LoadSoundsCategory LOAD_SOUNDS = new LoadSoundsCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.music")
+        @Config.Name("Music")
+        public final MusicCategory MUSIC = new MusicCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.pickupnotification")
         @Config.Name("Pickup Notification")
         public final PickupNotificationCategory PICKUP_NOTIFICATION = new PickupNotificationCategory();
@@ -1672,11 +1677,6 @@ public class UTConfigTweaks
         @Config.Name("Forge Mod List Improvements")
         @Config.Comment("Improves the Forge mod list GUI by remembering last searches and supporting pipes `|` to look up multiple mods")
         public boolean utForgeModListImprovements = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Infinite Music")
-        @Config.Comment("Lets background music play continuously without delays")
-        public boolean utInfiniteMusicToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("LAN Server Properties")
@@ -2143,6 +2143,50 @@ public class UTConfigTweaks
                 WORLD,
                 MINECRAFT_AND_WORLD
             }
+        }
+
+        public static class MusicCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[01] Music Control Toggle")
+            @Config.Comment("Enables various music playback control tweak")
+            public boolean utMusicControlToggle = false;
+
+            @Config.Name("[02] Menu Music")
+            @Config.Comment("Select which music to play on menu screen")
+            public UTMusicType utMusicControlMenu = UTMusicType.MENU;
+
+            @Config.Name("[03] Overworld Music")
+            @Config.Comment("Select which music to play on overworld dimension")
+            public UTMusicType utMusicControlOverworld = UTMusicType.OVERWORLD;
+
+            @Config.Name("[04] Creative Music")
+            @Config.Comment("Select which music to play on creative mode")
+            public UTMusicType utMusicControlCreative = UTMusicType.CREATIVE;
+
+            @Config.Name("[05] Nether Music")
+            @Config.Comment("Select which music to play on nether dimension")
+            public UTMusicType utMusicControlNether = UTMusicType.NETHER;
+
+            @Config.Name("[06] End Music")
+            @Config.Comment("Select which music to play on end dimension")
+            public UTMusicType utMusicControlEnd = UTMusicType.END;
+
+            @Config.Name("[07] End Boss Music")
+            @Config.Comment("Select which music to play on end dimension boss fight music")
+            public UTMusicType utMusicControlEndBoss = UTMusicType.END_BOSS;
+
+            @Config.Name("[08] Credits Music")
+            @Config.Comment("Select which music to play on credits screen")
+            public UTMusicType utMusicControlCredits = UTMusicType.CREDITS;
+
+            @Config.Name("[09] Keep Music On Pause")
+            @Config.Comment("Don't pause music when game is paused")
+            public boolean utKeepMusicOnPause = false;
+
+            @Config.Name("[10] Infinite Music")
+            @Config.Comment("Lets background music play continuously without delays")
+            public boolean utInfiniteMusicToggle = false;
         }
 
         public static class PickupNotificationCategory
