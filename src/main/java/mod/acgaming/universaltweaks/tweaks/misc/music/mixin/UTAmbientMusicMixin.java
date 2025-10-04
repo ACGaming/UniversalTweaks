@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.misc.musiccontrol.mixin;
+package mod.acgaming.universaltweaks.tweaks.misc.music.mixin;
 
 import javax.annotation.Nullable;
 
@@ -15,7 +15,7 @@ import net.minecraft.world.WorldProviderHell;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
-import mod.acgaming.universaltweaks.tweaks.misc.musiccontrol.UTMusicType;
+import mod.acgaming.universaltweaks.tweaks.misc.music.UTMusicType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -41,9 +41,9 @@ public class UTAmbientMusicMixin
     @Inject(method = "getAmbientMusicType", at = @At(value = "HEAD"), cancellable = true)
     public void getAmbientMusicType(CallbackInfoReturnable<MusicTicker.MusicType> cir)
     {
-        UTMusicType musicType = UTConfigTweaks.MISC.MUSIC_CONTROL.utMusicControlMenu;
+        UTMusicType musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlMenu;
 
-        if (currentScreen instanceof GuiWinGame) musicType = UTConfigTweaks.MISC.MUSIC_CONTROL.utMusicControlCredits;
+        if (currentScreen instanceof GuiWinGame) musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlCredits;
         else if (player != null)
         {
             MusicTicker.MusicType worldMusicType = world.provider.getMusicType();
@@ -52,14 +52,14 @@ public class UTAmbientMusicMixin
                 cir.setReturnValue(worldMusicType);
                 return;
             }
-            else if (player.world.provider instanceof WorldProviderHell) musicType = UTConfigTweaks.MISC.MUSIC_CONTROL.utMusicControlNether;
+            else if (player.world.provider instanceof WorldProviderHell) musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlNether;
             else if (player.world.provider instanceof WorldProviderEnd)
             {
-                if (ingameGUI.getBossOverlay().shouldPlayEndBossMusic()) musicType = UTConfigTweaks.MISC.MUSIC_CONTROL.utMusicControlEndBoss;
-                else musicType = UTConfigTweaks.MISC.MUSIC_CONTROL.utMusicControlEnd;
+                if (ingameGUI.getBossOverlay().shouldPlayEndBossMusic()) musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlEndBoss;
+                else musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlEnd;
             }
-            else if (player.capabilities.isCreativeMode && player.capabilities.allowFlying) musicType = UTConfigTweaks.MISC.MUSIC_CONTROL.utMusicControlCreative;
-            else musicType = UTConfigTweaks.MISC.MUSIC_CONTROL.utMusicControlOverworld;
+            else if (player.capabilities.isCreativeMode && player.capabilities.allowFlying) musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlCreative;
+            else musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlOverworld;
         }
 
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMusicControl ::: Playing ambient music " + musicType);

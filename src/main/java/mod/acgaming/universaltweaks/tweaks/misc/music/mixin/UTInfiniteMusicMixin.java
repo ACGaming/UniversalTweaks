@@ -22,7 +22,7 @@ public class UTInfiniteMusicMixin
     @Redirect(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/audio/MusicTicker$MusicType;getMinDelay()I"))
     public int utInfiniteMusicMinDelay(MusicTicker.MusicType instance)
     {
-        if (!UTConfigTweaks.MISC.utInfiniteMusicToggle) return this.mc.getAmbientMusicType().getMinDelay();
+        if (!UTConfigTweaks.MISC.MUSIC.utInfiniteMusicToggle) return this.mc.getAmbientMusicType().getMinDelay();
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInfiniteMusic ::: Set min delay");
         return 20;
     }
@@ -30,7 +30,7 @@ public class UTInfiniteMusicMixin
     @Redirect(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/audio/MusicTicker$MusicType;getMaxDelay()I"))
     public int utInfiniteMusicMaxDelay(MusicTicker.MusicType instance)
     {
-        if (!UTConfigTweaks.MISC.utInfiniteMusicToggle) return this.mc.getAmbientMusicType().getMaxDelay();
+        if (!UTConfigTweaks.MISC.MUSIC.utInfiniteMusicToggle) return this.mc.getAmbientMusicType().getMaxDelay();
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInfiniteMusic ::: Set max delay");
         return 20;
     }

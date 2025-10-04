@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.misc.musiccontrol.mixin;
+package mod.acgaming.universaltweaks.tweaks.misc.music.mixin;
 
 import java.util.Map.Entry;
 
@@ -29,7 +29,7 @@ public class UTNoMusicPauseMixin
         ISound value = this.localEntry.getValue();
         boolean isMusic = value.getCategory() == SoundCategory.MUSIC;
         boolean isPlaying = ((SoundManager) (Object)this).isSoundPlaying(value);
-        if (UTConfigTweaks.MISC.MUSIC_CONTROL.utKeepMusicOnPause) return !isMusic && isPlaying;
+        if (UTConfigTweaks.MISC.MUSIC.utKeepMusicOnPause) return !isMusic && isPlaying;
         else return isPlaying;
     }
 }

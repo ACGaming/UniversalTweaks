@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.misc.musiccontrol;
+package mod.acgaming.universaltweaks.tweaks.misc.music;
 
 import net.minecraft.client.audio.MusicTicker.MusicType;
 
