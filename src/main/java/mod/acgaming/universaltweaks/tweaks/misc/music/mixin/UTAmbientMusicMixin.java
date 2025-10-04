@@ -64,6 +64,6 @@ public class UTAmbientMusicMixin
 
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMusicControl ::: Playing ambient music " + musicType);
 
-        cir.setReturnValue(musicType.getMusicTickerType());
+        cir.setReturnValue(musicType.getMusicTickerType().get());
     }
 }

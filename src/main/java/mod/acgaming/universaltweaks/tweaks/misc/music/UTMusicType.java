@@ -1,11 +1,18 @@
 package mod.acgaming.universaltweaks.tweaks.misc.music;
 
+import java.util.Objects;
+import java.util.function.Supplier;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import net.minecraft.client.audio.MusicTicker.MusicType;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public enum UTMusicType
 {
-    // When the mod is loading, MusicTicker.MusicType isn't initialized yet.
-    // Otherwise we can use enumerated field instead of getting the value with method.
+    // MusicTicker.MusicType might not exist yet if this class is loaded during core-mod stage.
+    // If so, use these enum members instead of getting the type.
     MENU,
     OVERWORLD,
     CREATIVE,
@@ -14,18 +21,34 @@ public enum UTMusicType
     END_BOSS,
     CREDITS;
 
-    public MusicType getMusicTickerType()
+    // Must be lazy as MusicType may not exist yet.
+    @Nullable
+    @SideOnly(Side.CLIENT)
+    private Supplier<MusicType> musicTypeSupplier;
+
+    @SideOnly(Side.CLIENT)
+    public void setMusicTypeSupplier(@Nonnull Supplier<MusicType> musicTypeSupplier)
     {
-        switch (this)
-        {
-            default:
-            case MENU: return MusicType.MENU;
-            case OVERWORLD: return MusicType.GAME;
-            case CREATIVE: return MusicType.CREATIVE;
-            case NETHER: return MusicType.NETHER;
-            case END: return MusicType.END;
-            case END_BOSS: return MusicType.END_BOSS;
-            case CREDITS: return MusicType.CREDITS;
-        }
+        this.musicTypeSupplier = musicTypeSupplier;
+    }
+
+    // Must call this instead of initializing in constructor to avoid early class-loading
+    @SideOnly(Side.CLIENT)
+    public static void init()
+    {
+        MENU.setMusicTypeSupplier(() -> MusicType.MENU);
+        OVERWORLD.setMusicTypeSupplier(() -> MusicType.GAME);
+        CREATIVE.setMusicTypeSupplier(() -> MusicType.CREATIVE);
+        NETHER.setMusicTypeSupplier(() -> MusicType.NETHER);
+        END.setMusicTypeSupplier(() -> MusicType.END);
+        END_BOSS.setMusicTypeSupplier(() -> MusicType.END_BOSS);
+        CREDITS.setMusicTypeSupplier(() -> MusicType.CREDITS);
+    }
+
+    @Nonnull
+    @SideOnly(Side.CLIENT)
+    public Supplier<MusicType> getMusicTickerType()
+    {
+        return Objects.requireNonNull(musicTypeSupplier);
     }
 }

@@ -86,6 +86,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties.UTLanSer
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.lightning.damage.UTLightningItemDestruction;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
+import mod.acgaming.universaltweaks.tweaks.misc.music.UTMusicType;
 import mod.acgaming.universaltweaks.tweaks.misc.offhand.mixin.UTOffhand;
 import mod.acgaming.universaltweaks.tweaks.misc.pickupnotification.UTPickupNotificationOverlay;
 import mod.acgaming.universaltweaks.tweaks.misc.potionshift.UTPotionShift;
@@ -139,6 +140,8 @@ public class UniversalTweaks
             if (UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
             if (UTConfigTweaks.MISC.utSkipRegistryScreenToggle) System.setProperty("fml.queryResult", "confirm");
         }
+
+        if (UTLoadingPlugin.isClient) UTMusicType.init();
 
         LOGGER.info(NAME + " pre-initialized");
     }
