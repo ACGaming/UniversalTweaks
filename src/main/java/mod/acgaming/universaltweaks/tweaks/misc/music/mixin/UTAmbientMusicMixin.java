@@ -1,69 +1,39 @@
 package mod.acgaming.universaltweaks.tweaks.misc.music.mixin;
 
-import javax.annotation.Nullable;
-
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.MusicTicker;
-import net.minecraft.client.entity.EntityPlayerSP;
-import net.minecraft.client.gui.GuiIngame;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.GuiWinGame;
-import net.minecraft.client.multiplayer.WorldClient;
-import net.minecraft.world.WorldProviderEnd;
-import net.minecraft.world.WorldProviderHell;
+import net.minecraft.client.audio.MusicTicker.MusicType;
 
-import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
-import mod.acgaming.universaltweaks.tweaks.misc.music.UTMusicType;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+// Courtesy of Apis035, jchung01
 @Mixin(Minecraft.class)
 public class UTAmbientMusicMixin
 {
-    @Shadow
-    public WorldClient world;
-
-    @Shadow
-    public EntityPlayerSP player;
-
-    @Shadow
-    @Nullable
-    public GuiScreen currentScreen;
-
-    @Shadow
-    public GuiIngame ingameGUI;
-
-    @Inject(method = "getAmbientMusicType", at = @At(value = "HEAD"), cancellable = true)
-    public void getAmbientMusicType(CallbackInfoReturnable<MusicTicker.MusicType> cir)
+    @ModifyReturnValue(method = "getAmbientMusicType", at = @At(value = "RETURN"))
+    private MusicType utGetAmbientMusicType(MusicType originalType)
     {
-        UTMusicType musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlMenu;
-
-        if (currentScreen instanceof GuiWinGame) musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlCredits;
-        else if (player != null)
+        switch (originalType)
         {
-            MusicTicker.MusicType worldMusicType = world.provider.getMusicType();
-            if (worldMusicType != null)
-            {
-                cir.setReturnValue(worldMusicType);
-                return;
-            }
-            else if (player.world.provider instanceof WorldProviderHell) musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlNether;
-            else if (player.world.provider instanceof WorldProviderEnd)
-            {
-                if (ingameGUI.getBossOverlay().shouldPlayEndBossMusic()) musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlEndBoss;
-                else musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlEnd;
-            }
-            else if (player.capabilities.isCreativeMode && player.capabilities.allowFlying) musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlCreative;
-            else musicType = UTConfigTweaks.MISC.MUSIC.utMusicControlOverworld;
+            case MENU:
+                return UTConfigTweaks.MISC.MUSIC.utMusicControlMenu.getMusicTickerType().get();
+            case GAME:
+                return UTConfigTweaks.MISC.MUSIC.utMusicControlOverworld.getMusicTickerType().get();
+            case CREATIVE:
+                return UTConfigTweaks.MISC.MUSIC.utMusicControlCreative.getMusicTickerType().get();
+            case CREDITS:
+                return UTConfigTweaks.MISC.MUSIC.utMusicControlCredits.getMusicTickerType().get();
+            case NETHER:
+                return UTConfigTweaks.MISC.MUSIC.utMusicControlNether.getMusicTickerType().get();
+            case END_BOSS:
+                return UTConfigTweaks.MISC.MUSIC.utMusicControlEndBoss.getMusicTickerType().get();
+            case END:
+                return UTConfigTweaks.MISC.MUSIC.utMusicControlEnd.getMusicTickerType().get();
+            default:
+                return originalType;
         }
-
-        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMusicControl ::: Playing ambient music " + musicType);
-
-        cir.setReturnValue(musicType.getMusicTickerType().get());
     }
+
 }
