@@ -2180,9 +2180,29 @@ public class UTConfigTweaks
             @Config.Comment("Don't pause music when game is paused")
             public boolean utKeepMusicOnPause = false;
 
-            @Config.Name("[10] Infinite Music")
-            @Config.Comment("Lets background music play continuously without delays")
-            public boolean utInfiniteMusicToggle = false;
+            @Config.Name("[10] Custom Music Delay")
+            @Config.Comment("Enable custom delay for next music to play")
+            public boolean utCustomMusicDelay = false;
+
+            @Config.Name("[11] Min Music Delay")
+            @Config.Comment
+                ({
+                    "Minimum delay before next music plays (in minutes)",
+                    "A value of 0 will set the delay to 1 second"
+                })
+            @Config.RangeInt(min = 0, max = 20)
+            @Config.SlidingOption
+            public int utMusicDelayMin = 0;
+
+            @Config.Name("[12] Max Music Delay")
+            @Config.Comment
+                ({
+                    "Maximum delay before next music plays (in minutes)",
+                    "A value of 0 will set the delay to 1 second"
+                })
+            @Config.RangeInt(min = 0, max = 20)
+            @Config.SlidingOption
+            public int utMusicDelayMax = 0;
         }
 
         public static class PickupNotificationCategory
