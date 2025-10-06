@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(MusicTicker.class)
-public class UTInfiniteMusicMixin
+public class UTMusicDelayMixin
 {
     @Shadow
     @Final
@@ -22,16 +22,16 @@ public class UTInfiniteMusicMixin
     @Redirect(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/audio/MusicTicker$MusicType;getMinDelay()I"))
     public int utInfiniteMusicMinDelay(MusicTicker.MusicType instance)
     {
-        if (!UTConfigTweaks.MISC.MUSIC.utInfiniteMusicToggle) return this.mc.getAmbientMusicType().getMinDelay();
+        if (!UTConfigTweaks.MISC.MUSIC.utCustomMusicDelay) return this.mc.getAmbientMusicType().getMinDelay();
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInfiniteMusic ::: Set min delay");
-        return 20;
+        return Math.max(20, Math.min(UTConfigTweaks.MISC.MUSIC.utMusicDelayMin, UTConfigTweaks.MISC.MUSIC.utMusicDelayMax) * 20 * 60);
     }
 
     @Redirect(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/audio/MusicTicker$MusicType;getMaxDelay()I"))
     public int utInfiniteMusicMaxDelay(MusicTicker.MusicType instance)
     {
-        if (!UTConfigTweaks.MISC.MUSIC.utInfiniteMusicToggle) return this.mc.getAmbientMusicType().getMaxDelay();
+        if (!UTConfigTweaks.MISC.MUSIC.utCustomMusicDelay) return this.mc.getAmbientMusicType().getMaxDelay();
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInfiniteMusic ::: Set max delay");
-        return 20;
+        return Math.max(20, UTConfigTweaks.MISC.MUSIC.utMusicDelayMax * 20 * 60);
     }
 }

@@ -81,7 +81,7 @@ public class UTObsoleteModsHandler
                 put("cleardespawn", () -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIEClearDespawnToggle);
                 put("configurablecane", () -> UTConfigTweaks.BLOCKS.utSugarCaneSize != 3);
                 put("configurabledespawntimer", () -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle);
-                put("continousmusic", () -> UTConfigTweaks.MISC.MUSIC.utInfiniteMusicToggle);
+                put("continousmusic", () -> UTConfigTweaks.MISC.MUSIC.utCustomMusicDelay);
                 put("creeperconfetti", () -> UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiChance > 0);
                 put("damagetilt", () -> UTConfigTweaks.MISC.utDamageTiltToggle);
                 put("darkstone", () -> UTConfigTweaks.PERFORMANCE.utRedstoneLightingToggle);
