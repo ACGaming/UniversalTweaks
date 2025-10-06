@@ -77,10 +77,12 @@ public class UTBlockOverlay
                 bufferBuilder.begin(GL11.GL_QUADS, DefaultVertexFormats.BLOCK);
                 bufferBuilder.setTranslation(-x, -(y - player.getEyeHeight()), -z);
             }
-            IBlockState state1 = state.getActualState(world, pos);
-            // Call extendedBlockState if it has one: see BlockRendererDispatcher#renderBlock()
-            state1 = state.getBlock().getExtendedState(state1, world, pos);
-            mc.getBlockRendererDispatcher().getBlockModelRenderer().renderModel(world, mc.getBlockRendererDispatcher().getModelForState(state1), state1, pos, bufferBuilder, false);
+            /// This one is used to get the actual model of the state, since extended states may not have models registered (e.g. CTM)
+            /// @see [BlockRendererDispatcher#renderBlock()]
+            IBlockState actualState = state.getActualState(world, pos);
+            // The actual state for rendering
+            IBlockState extendedState = state.getBlock().getExtendedState(actualState, world, pos);
+            mc.getBlockRendererDispatcher().getBlockModelRenderer().renderModel(world, mc.getBlockRendererDispatcher().getModelForState(actualState), extendedState, pos, bufferBuilder, false);
         });
 
         if (startedBuilding[0])
