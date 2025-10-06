@@ -5,16 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
+import net.minecraft.client.renderer.*;
+import net.minecraft.world.IBlockAccess;
 import org.lwjgl.opengl.GL11;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.multiplayer.WorldClient;
-import net.minecraft.client.renderer.BufferBuilder;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.GlStateManager.CullFace;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
@@ -78,7 +76,7 @@ public class UTBlockOverlay
                 bufferBuilder.setTranslation(-x, -(y - player.getEyeHeight()), -z);
             }
             /// This one is used to get the actual model of the state, since extended states may not have models registered (e.g. CTM)
-            /// @see [BlockRendererDispatcher#renderBlock()]
+            /// @see BlockRendererDispatcher#renderBlock(IBlockState, BlockPos, IBlockAccess, BufferBuilder)
             IBlockState actualState = state.getActualState(world, pos);
             // The actual state for rendering
             IBlockState extendedState = state.getBlock().getExtendedState(actualState, world, pos);
