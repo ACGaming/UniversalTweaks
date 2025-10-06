@@ -24,7 +24,7 @@ public class UTMusicDelayMixin
     {
         if (!UTConfigTweaks.MISC.MUSIC.utCustomMusicDelay) return this.mc.getAmbientMusicType().getMinDelay();
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInfiniteMusic ::: Set min delay");
-        return Math.max(20, Math.min(UTConfigTweaks.MISC.MUSIC.utMusicDelayMin, UTConfigTweaks.MISC.MUSIC.utMusicDelayMax) * 20);
+        return Math.max(20, Math.min(UTConfigTweaks.MISC.MUSIC.utMusicDelayMin, UTConfigTweaks.MISC.MUSIC.utMusicDelayMax) * 20 * 60);
     }
 
     @Redirect(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/audio/MusicTicker$MusicType;getMaxDelay()I"))
@@ -32,6 +32,6 @@ public class UTMusicDelayMixin
     {
         if (!UTConfigTweaks.MISC.MUSIC.utCustomMusicDelay) return this.mc.getAmbientMusicType().getMaxDelay();
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInfiniteMusic ::: Set max delay");
-        return Math.max(20, UTConfigTweaks.MISC.MUSIC.utMusicDelayMax * 20);
+        return Math.max(20, UTConfigTweaks.MISC.MUSIC.utMusicDelayMax * 20 * 60);
     }
 }
