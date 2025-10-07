@@ -6,9 +6,10 @@ import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.Pseudo;
 
 // Courtesy of Sk1erLLC
-@SuppressWarnings("UnresolvedMixinReference")
+@Pseudo
 @Mixin(targets = "net.minecraft.client.renderer.BlockModelRenderer$AmbientOcclusionFace")
 public class UTSmoothLightingMixin
 {

@@ -137,6 +137,7 @@ public class UTObsoleteModsHandler
                 put("rebind_narrator", () -> UTConfigTweaks.MISC.utUseCustomNarratorKeybind);
                 put("salwayseat", () -> UTConfigTweaks.ITEMS.utAlwaysEatToggle);
                 put("savemystronghold", () -> UTConfigTweaks.WORLD.utStrongholdToggle);
+                put("seedcopy", () -> UTConfigTweaks.MISC.utCopyWorldSeedToggle);
                 put("silentboss", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundDragon || !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundWither);
                 put("sleepsooner", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
                 put("smooth-scrolling-everywhere", () -> UTConfigTweaks.MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle);

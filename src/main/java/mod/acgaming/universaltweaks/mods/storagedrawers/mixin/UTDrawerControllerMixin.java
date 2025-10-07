@@ -16,10 +16,7 @@ import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
 import mod.acgaming.universaltweaks.mods.storagedrawers.api.IAuxData;
 import mod.acgaming.universaltweaks.mods.storagedrawers.api.SlotGroupAccessor;
-import org.spongepowered.asm.mixin.Final;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -114,6 +111,7 @@ public class UTDrawerControllerMixin
         }
     }
 
+    @Pseudo
     @Mixin(targets = "com.jaquadro.minecraft.storagedrawers.block.tile.TileEntityController$SlotRecord", remap = false)
     private static abstract class SlotRecordMixin implements SlotGroupAccessor
     {
