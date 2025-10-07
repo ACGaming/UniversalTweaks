@@ -2187,20 +2187,20 @@ public class UTConfigTweaks
             @Config.Name("[11] Min Music Delay")
             @Config.Comment
                 ({
-                    "Minimum delay before next music plays (in minutes)",
+                    "Minimum delay before next music plays (in ticks)",
                     "A value of 0 will set the delay to 1 second"
                 })
-            @Config.RangeInt(min = 0, max = 20)
+            @Config.RangeInt(min = 0, max = 20 * 20 * 60)
             @Config.SlidingOption
             public int utMusicDelayMin = 0;
 
             @Config.Name("[12] Max Music Delay")
             @Config.Comment
                 ({
-                    "Maximum delay before next music plays (in minutes)",
+                    "Maximum delay before next music plays (in ticks)",
                     "A value of 0 will set the delay to 1 second"
                 })
-            @Config.RangeInt(min = 0, max = 20)
+            @Config.RangeInt(min = 0, max = 20 * 20 * 60)
             @Config.SlidingOption
             public int utMusicDelayMax = 0;
         }
