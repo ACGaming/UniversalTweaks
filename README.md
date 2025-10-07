@@ -448,6 +448,7 @@ All changes are toggleable via config files.
     * **Facing Crash Fix:** Fixes a bug where converting a pumpkin from a non-horizontal face would crash
 * **Quark**
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Fix Untranslated Link Items:** When using the Link Items feature, if playing on a server, items that are not localized serverside will display the lang code in chat. This only impacts servers.
 * **Random Things**
     * **Anvil Crafting Fix:** Fixes a bug where crafting the output of an Anvil recipe would modify the recipe, preventing crafts until restart
     * **Fix Spectre Dimension Teleport Stall:** Fix a bug where teleporting to the Spectre dimension on servers can leave the player stalled out in the void
