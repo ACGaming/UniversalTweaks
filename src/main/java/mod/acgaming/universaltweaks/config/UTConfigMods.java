@@ -1033,6 +1033,11 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Untranslated Link Items")
+        @Config.Comment("When using the Link Items feature, if playing on a server, items that are not localized serverside will display the lang code in chat. This causes it to be translated.")
+        public boolean utLinkItemsServer = true;
     }
 
     public static class RailcraftCategory

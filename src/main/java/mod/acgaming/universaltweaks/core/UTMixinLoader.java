@@ -22,6 +22,7 @@ public class UTMixinLoader implements ILateMixinLoader
     {
         {
             put("mixins.mods.randomthings.teleport.json", () -> loaded("randomthings") && UTConfigMods.RANDOM_THINGS.utTeleportStall);
+            put("mixins.mods.quark.linkitems.json", () -> loaded("quark") && UTConfigMods.QUARK.utLinkItemsServer);
         }
     });
 
