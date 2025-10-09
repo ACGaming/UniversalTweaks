@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.world.loading.mixin;
+package mod.acgaming.universaltweaks.tweaks.world.chunks.spawn.mixin;
 
 import net.minecraft.server.MinecraftServer;
 
@@ -10,11 +10,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // Courtesy of ZombieHDGaming
 @Mixin(MinecraftServer.class)
-public class UTInitialChunkLoadMixin
+public abstract class UTSpawnChunksGenMixin
 {
     @Inject(method = "initialWorldChunkLoad", at = @At("HEAD"), cancellable = true)
     public void utInitialChunkLoad(CallbackInfo ci)
     {
-        if (UTConfigTweaks.PERFORMANCE.utWorldLoadingToggle) ci.cancel();
+        if (!UTConfigTweaks.WORLD.SPAWN_CHUNKS.utSpawnChunksGenToggle) ci.cancel();
     }
 }

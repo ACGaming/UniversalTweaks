@@ -2513,11 +2513,7 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Fast World Loading")
-        @Config.Comment
-            ({
-                "Skips initial world chunk loading & garbage collection to speed up world loading",
-                "May have side effects such as slower chunk generation"
-            })
+        @Config.Comment("Skips garbage collection to speed up world loading")
         public boolean utWorldLoadingToggle = false;
 
         @Config.RequiresMcRestart
@@ -2628,6 +2624,10 @@ public class UTConfigTweaks
         @Config.LangKey("cfg.universaltweaks.tweaks.world.dimensionunload")
         @Config.Name("Dimension Unload")
         public final DimensionUnloadCategory DIMENSION_UNLOAD = new DimensionUnloadCategory();
+
+        @Config.LangKey("cfg.universaltweaks.tweaks.world.chunks.spawn")
+        @Config.Name("Spawn Chunks")
+        public final SpawnChunksCategory SPAWN_CHUNKS = new SpawnChunksCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.world.voidfog")
         @Config.Name("Void Fog")
@@ -2744,6 +2744,19 @@ public class UTConfigTweaks
                     "0",
                     "overworld"
                 };
+        }
+
+        public static class SpawnChunksCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Spawn Chunks Generation")
+            @Config.Comment("Determines if overworld spawn chunks are generated during world creation")
+            public boolean utSpawnChunksGenToggle = true;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Spawn Chunks Loading")
+            @Config.Comment("Determines if overworld spawn chunks are always kept loaded")
+            public boolean utSpawnChunksLoadingToggle = true;
         }
 
         public static class VoidFogCategory

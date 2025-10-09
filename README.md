@@ -180,7 +180,7 @@ All changes are toggleable via config files.
 * **Fast Dye Blending:** Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry
 * **Fast Leaf Decay:** Makes leaves decay faster when trees are chopped
 * **Fast Prefix Checking:** Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
-* **Fast World Loading:** Skips initial world chunk loading & garbage collection to speed up world loading
+* **Fast World Loading:** Skips garbage collection to speed up world loading
 * **Fence/Wall Jump:** Allows the player to jump over fences and walls
 * **Finite Water:** Prevents creation of infinite water sources outside of ocean and river biomes
 * **First Person Burning Overlay:** Sets the offset for the fire overlay in first person when the player is burning
@@ -260,6 +260,8 @@ All changes are toggleable via config files.
 * **Smooth Scrolling:** Adds smooth scrolling to every in-game list
 * **Soulbound Vexes:** Summoned vexes will also die when their summoner is killed
 * **Spawn Caps:** Sets maximum spawning limits for different entity types
+* **Spawn Chunks Generation:** Determines if overworld spawn chunks are generated during world creation
+* **Spawn Chunks Loading:** Determines if overworld spawn chunks are always kept loaded
 * **Super Hot Torch:** Enables one-time ignition of entities by hitting them with a torch
 * **Stronghold Enforcement:** Enforces stronghold generation to generate all blocks, regardless of air
 * **Swing Through Grass:** Allows hitting entities through grass instead of breaking it
