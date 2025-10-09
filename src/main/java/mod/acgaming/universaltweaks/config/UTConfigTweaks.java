@@ -693,6 +693,16 @@ public class UTConfigTweaks
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
         public double utRabbitToastChance = 0.0D;
 
+        @Config.Name("Hunger Treshold to Sprint")
+        @Config.Comment({
+            "Set the limit of required hunger to be able to sprint",
+            "Value of -1 lets you sprint with empty hunger",
+            "Value of 20 prevents you from sprinting at all"
+        })
+        @Config.RangeInt(min = -1, max = 20)
+        @Config.SlidingOption
+        public int utSprintHungerTreshold = 6;
+
         @Config.RequiresMcRestart
         @Config.Name("Riding Exhaustion")
         @Config.Comment("Sets the exhaustion value per cm when riding mounts")
