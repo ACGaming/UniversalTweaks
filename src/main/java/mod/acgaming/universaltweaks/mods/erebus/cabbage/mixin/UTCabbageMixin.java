@@ -28,7 +28,7 @@ public abstract class UTCabbageMixin extends BlockCrops
     public int damageDropped(IBlockState blockState)
     {
         if (!UTConfigMods.EREBUS.utCabbageDrop) return super.damageDropped(blockState);
-        return ItemErebusFood.EnumFoodType.CABBAGE.ordinal();
+        return isMaxAge(blockState) ? ItemErebusFood.EnumFoodType.CABBAGE.ordinal() : 0;
     }
 
     @Inject(method = "getDrops", at = @At("HEAD"), remap = false, cancellable = true)
