@@ -1,5 +1,5 @@
 {
-  "package": "mod.acgaming.universaltweaks.tweaks.performance.advancementcheck.mixin",
+  "package": "mod.acgaming.universaltweaks.tweaks.performance.advancements.logging.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

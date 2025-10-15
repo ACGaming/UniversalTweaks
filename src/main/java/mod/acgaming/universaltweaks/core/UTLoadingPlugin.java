@@ -165,7 +165,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins.tweaks.misc.xp.cap.json", () -> UTConfigTweaks.MISC.utXPLevelCap > -1);
                 put("mixins.tweaks.misc.xp.linear.json", () -> UTConfigTweaks.MISC.utLinearXP > 0);
                 put("mixins.tweaks.misc.xp.smelting.json", () -> UTConfigTweaks.MISC.utSmeltingXPToggle);
-                put("mixins.tweaks.performance.advancementcheck.json", () -> UTConfigTweaks.PERFORMANCE.utAdvancementCheckToggle);
+                put("mixins.tweaks.performance.advancements.logging.json", () -> UTConfigTweaks.PERFORMANCE.utAdvancementCheckToggle);
+                put("mixins.tweaks.performance.advancements.triggers.json", () -> UTConfigTweaks.PERFORMANCE.ADVANCEMENT_TRIGGERS.utFasterAdvancementTriggersToggle);
                 put("mixins.tweaks.performance.autosave.json", () -> UTConfigTweaks.PERFORMANCE.utAutoSaveInterval != 900);
                 put("mixins.tweaks.performance.craftingcache.json", () -> UTConfigTweaks.PERFORMANCE.utCraftingCacheToggle);
                 put("mixins.tweaks.performance.dyeblending.json", () -> UTConfigTweaks.PERFORMANCE.utDyeBlendingToggle);

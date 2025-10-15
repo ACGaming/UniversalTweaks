@@ -2445,6 +2445,10 @@ public class UTConfigTweaks
 
     public static class PerformanceCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.performance.advancementtriggers")
+        @Config.Name("Advancement Triggers")
+        public final AdvancmentTriggersCategory ADVANCEMENT_TRIGGERS = new AdvancmentTriggersCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.performance.entityradiuscheck")
         @Config.Name("Entity Radius Check")
         public final EntityRadiusCheckCategory ENTITY_RADIUS_CHECK = new EntityRadiusCheckCategory();
@@ -2566,6 +2570,42 @@ public class UTConfigTweaks
         @Config.Name("Uncap FPS")
         @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
         public boolean utUncapFPSToggle = true;
+
+        public static class AdvancmentTriggersCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[01] Faster Advancement Trigger Checking")
+            @Config.Comment
+                ({
+                    "Optimizes triggering advancements when obtaining items",
+                    "Toggles all tweaks in this category",
+                })
+            public boolean utFasterAdvancementTriggersToggle = true;
+
+            @Config.Name("[02] Ignore Triggers for Emptied Stacks")
+            @Config.Comment("Ignores inventory changes when stacks are completely emptied")
+            public boolean utIgnoreEmptiedStackTriggers = true;
+
+            @Config.Name("[03] Ignore Triggers for Decreased Stacks")
+            @Config.Comment("Ignores inventory changes when stacks decrease in size, but are not emptied")
+            public boolean utIgnoreDecreasedStackTriggers = true;
+
+            @Config.Name("[04] Optimize Triggers for Increased Stacks")
+            @Config.Comment("Only trigger inventory changes for increased stack sizes that pass an advancement threshold")
+            public boolean utOptimizeIncreasedStackTriggers = true;
+
+            @Config.Name("[05] Faster Criterion Test")
+            @Config.Comment("Check the changed stack before testing and rewrite criterion matching")
+            public boolean utFasterCriterionTest = true;
+
+            @Config.Name("[06] Initialize Container with Known Inventory")
+            @Config.Comment("Add all inventory contents immediately upon opening a container")
+            public boolean utInitializeContainerWithInventory = true;
+
+            @Config.Name("[07] Compare Stack Size before Matching")
+            @Config.Comment("Only match against predicates after checking the changed stack size crosses a threshold")
+            public boolean utCompareSizeBeforePredicateMatch = true;
+        }
 
         public static class EntityRadiusCheckCategory
         {

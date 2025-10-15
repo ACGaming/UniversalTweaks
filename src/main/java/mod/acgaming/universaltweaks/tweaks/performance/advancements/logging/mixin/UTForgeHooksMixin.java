@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.performance.advancementcheck.mixin;
+package mod.acgaming.universaltweaks.tweaks.performance.advancements.logging.mixin;
 
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.ForgeHooks;
@@ -17,7 +17,7 @@ public abstract class UTForgeHooksMixin
         at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;error(Ljava/lang/String;Ljava/lang/Throwable;)V"),
         remap = false
     )
-    private static boolean utLoadAdvancements(Logger instance, String s, Throwable throwable)
+    private static boolean utLogErrorsIfAllowed(Logger instance, String s, Throwable throwable)
     {
         return !UTConfigTweaks.PERFORMANCE.utAdvancementCheckToggle;
     }
