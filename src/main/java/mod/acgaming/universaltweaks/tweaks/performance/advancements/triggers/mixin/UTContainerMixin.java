@@ -35,7 +35,7 @@ public class UTContainerMixin
     }
 
     @Inject(method = "detectAndSendChanges", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isEmpty()Z"))
-    private void utCapturePreviousStack(CallbackInfo ci, @Local(ordinal = 1) ItemStack prevStack, @Share("prevStackSize") LocalRef<ItemStack> prevStackRef)
+    private void utCapturePreviousStack(CallbackInfo ci, @Local(ordinal = 1) ItemStack prevStack, @Share("prevStack") LocalRef<ItemStack> prevStackRef)
     {
         prevStackRef.set(prevStack);
     }
@@ -47,7 +47,7 @@ public class UTContainerMixin
      * @param prevStackRef reference to the old item stack, set by {@link #utCapturePreviousStack(CallbackInfo, ItemStack, LocalRef)}
      */
     @Inject(method = "detectAndSendChanges", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/NonNullList;set(ILjava/lang/Object;)Ljava/lang/Object;", shift = At.Shift.AFTER))
-    private void utSetPreviousStackSize(CallbackInfo ci, @Local(ordinal = 1) ItemStack newStack, @Share("prevStackSize") LocalRef<ItemStack> prevStackRef)
+    private void utSetPreviousStackSize(CallbackInfo ci, @Local(ordinal = 1) ItemStack newStack, @Share("prevStack") LocalRef<ItemStack> prevStackRef)
     {
         if (ItemStack.areItemsEqual(prevStackRef.get(), newStack))
         {
