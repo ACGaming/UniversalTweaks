@@ -49,18 +49,7 @@ public class UTInventoryChangeTriggerInstanceMixin
             return;
         }
         // Test slot count bounds first, with precomputed counts
-        ISlotContext.SlotCounts slotCounts = ((ISlotContext) inventory).ut$getSlotCounts();
-        if (!this.full.test(slotCounts.numFull))
-        {
-            cir.setReturnValue(false);
-            return;
-        }
-        else if (!this.empty.test(slotCounts.numEmpty))
-        {
-            cir.setReturnValue(false);
-            return;
-        }
-        else if (!this.occupied.test(slotCounts.numOccupied))
+        if (!((ISlotContext) inventory).ut$getSlotCounts().matches(full, empty, occupied))
         {
             cir.setReturnValue(false);
             return;

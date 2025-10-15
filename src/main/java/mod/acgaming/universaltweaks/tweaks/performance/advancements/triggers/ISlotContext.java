@@ -1,5 +1,6 @@
 package mod.acgaming.universaltweaks.tweaks.performance.advancements.triggers;
 
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.item.ItemStack;
 
 /**
@@ -31,15 +32,41 @@ public interface ISlotContext
 
     class SlotCounts
     {
-        public final int numFull;
-        public final int numEmpty;
-        public final int numOccupied;
+        private final int numFull;
+        private final int numEmpty;
+        private final int numOccupied;
 
         public SlotCounts(int numFull, int numEmpty, int numOccupied)
         {
             this.numFull = numFull;
             this.numEmpty = numEmpty;
             this.numOccupied = numOccupied;
+        }
+
+        public boolean matches(MinMaxBounds full, MinMaxBounds empty, MinMaxBounds occupied)
+        {
+            if (!full.test(this.numFull)) {
+                return false;
+            } else if (!empty.test(this.numEmpty)) {
+                return false;
+            } else {
+                return occupied.test(this.numOccupied);
+            }
+        }
+
+        public int numFull()
+        {
+            return numFull;
+        }
+
+        public int numEmpty()
+        {
+            return numEmpty;
+        }
+
+        public int numOccupied()
+        {
+            return numOccupied;
         }
     }
 }
