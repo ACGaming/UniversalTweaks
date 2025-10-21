@@ -392,6 +392,11 @@ public class UTConfigBugfixes
         @Config.Name("Cull Picked-up Items")
         @Config.Comment("Fix missing face culling during item pickup particle rendering")
         public boolean utItemPickupCulling = true;
+        
+        @Config.RequiresMcRestart
+        @Config.Name("Extend Item Durability Range")
+        @Config.Comment("Changes the durability storing to use ints instead of shorts, eliminating many issues with high-durability items. (I.E. TiC tools)")
+        public boolean utExtendDurabilityCap = true;
     }
 
     public static class WorldCategory
