@@ -417,6 +417,8 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Iron Chests**
     * **Replace Crystal Chest/Shulker Renderer:** Fixes client-side memory leak by replacing the crystal chest/shulker box renderer with a simpler one (Note: Disables stack size rendering)
+* **Item Favorites**
+    * **Linux Saving/Loading**: Fixes saving and loading of favorite items on Unix systems
 * **Item Stages**
     * **Ingredient Matching:** Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues
 * **Jurassic Reborn**
