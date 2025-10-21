@@ -144,6 +144,11 @@ public class UTConfigTweaks
         public final SaplingBehaviorCategory SAPLING_BEHAVIOR = new SaplingBehaviorCategory();
 
         @Config.RequiresMcRestart
+        @Config.Name("Better Rail Placement")
+        @Config.Comment("Implements an improved system that makes rails face the player when placed.")
+        public boolean utBetterRailPlacementToggle = true;
+        
+        @Config.RequiresMcRestart
         @Config.Name("Bed Obstruction Replacement")
         @Config.Comment("Replaces bed obstruction checks with an improved version")
         public boolean utBedObstructionToggle = true;
