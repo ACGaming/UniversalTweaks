@@ -191,6 +191,10 @@ public class UTConfigMods
     @Config.Name("Iron Chests")
     public static final IronChestsCategory IRON_CHESTS = new IronChestsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.itemfavorites")
+    @Config.Name("Item Favorites")
+    public static final ItemFavoritesCategory ITEM_FAVORITES = new ItemFavoritesCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.itemstages")
     @Config.Name("Item Stages")
     public static final ItemStagesCategory ITEM_STAGES = new ItemStagesCategory();
@@ -888,6 +892,14 @@ public class UTConfigMods
                 "Note: Stack sizes are not rendered, similar to modern versions of this mod"
             })
         public boolean utReplaceItemRenderer = true;
+    }
+
+    public static class ItemFavoritesCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Path correction")
+        @Config.Comment("Fixes issues with favorite items not being saved/loaded correctly on Unix-based systems")
+        public boolean utUnixPathFix = true;
     }
 
     public static class ItemStagesCategory
