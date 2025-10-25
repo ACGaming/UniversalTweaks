@@ -526,6 +526,10 @@ public class UTConfigMods
 
     public static class CoFHCoreCategory
     {
+        @Config.Name("Multishot Enchantment For Any Bow")
+        @Config.Comment("Applies the Multishot enchantment to most bows instead of vanilla and CoFH only")
+        public boolean utCoFHMultishotToggle = true;
+
         @Config.Name("Vorpal Enchantment Damage")
         @Config.Comment("Sets the damage multiplier of the Vorpal enchantment")
         public double utCoFHVorpalDamage = 10.0D;
@@ -820,7 +824,7 @@ public class UTConfigMods
         @Config.Name("Tool Break Fire Event")
         @Config.Comment("Fires the PlayerDestroyItemEvent when an Immersive Engineering tool breaks, fixing a number of cross-compatibility issues")
         public boolean utFireBreakEvent = true;
-        
+
         @Config.RequiresMcRestart
         @Config.Name("Tool Break Hand Replacement")
         @Config.Comment("Fixes the tool breaking setting the main hand to empty regardless of what hand the tool is in")

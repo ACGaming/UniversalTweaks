@@ -347,6 +347,7 @@ All changes are toggleable via config files.
 * **CodeChicken Lib**
     * **Packet Leak Fix:** Fixes network ByteBuf leaks from PacketCustom
 * **CoFH Core**
+    * **Multishot Enchantment For Any Bow:** Applies the Multishot enchantment to most bows instead of vanilla and CoFH only
     * **Vorpal Enchantment Damage:** Sets the damage multiplier of the Vorpal enchantment
 * **CoFH World**
     * **Prevent Superflat Generation:** Prevents CoFH World features from generating in superflat world types
