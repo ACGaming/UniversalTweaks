@@ -63,7 +63,11 @@ public abstract class UTRailMixin implements UTRailExtension {
 		}
 	}
 	
-	@Overwrite
+	/**
+     * @author ExistingEevee
+     * @reason Better rail placement
+     */
+    @Overwrite
 	public BlockRailBase.Rail place(boolean powered, boolean initialPlacement) {
 		BlockPos blockpos = this.pos.north();
 		BlockPos blockpos1 = this.pos.south();
