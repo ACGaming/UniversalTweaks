@@ -312,6 +312,10 @@ All changes are toggleable via config files.
     * **Sooty Marble Rendering:** Fixes Sooty Marble Pillar blocking the proper rendering of adjacent fluids due to inverted logic
     * **Clear Particle Effects:** Fixes a bug where particle effects would continue to render after changing dimensions
     * **Fix Division By Zero Crystal Tool:** Fixes a bug where merging Crystal Tool Properties could result in a division by zero
+    * **Fix Fluid Vein Overflow:** Fixes a bug where the fluid veins could overflow, resulting in empty veins (just water)
+    * **Allow Unlimited Fluid Veins:** Make it so max size fluid veins never run out
+    * **Allow to change the Neromantic Prime Extraction Quantity:** Allows configuring the amount extracted from the fluid vein per Neromantic Prime operation
+    * **Allow to specify dimensions for fluid veins:** Extends the fluid vein configuration to allow specifying in which dimensions a fluid can generate
 * **Advent of Ascension**
     * **Improved Player Tick:** Improves AoA player ticking by only sending inventory changes when necessary
 * **Arcane Archives**
