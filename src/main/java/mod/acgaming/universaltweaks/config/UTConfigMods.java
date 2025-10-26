@@ -392,6 +392,27 @@ public class UTConfigMods
         @Config.Name("Fix Division By Zero Crystal Tool")
         @Config.Comment("Fixes a bug where merging Crystal Tool Properties could result in a division by zero")
         public boolean utEmptyPropertiesZero = true;
+
+        @Config.Name("Fix Neromantic Prime Fluid Overflow")
+        @Config.Comment("Fixes a bug where the fluid veins for Neromantic Prime could overflow, resulting in empty veins (just water)")
+        public boolean utNeromanticPrimeFluidOverflow = true;
+
+        @Config.Name("Allow Unlimited Fluid Veins")
+        @Config.Comment("Make it so max size fluid veins never run out")
+        public boolean utNeromanticPrimeUnlimitedVeins = true;
+
+        @Config.Name("Neromantic Prime Extraction Quantity")
+        @Config.Comment("Amount of fluid extracted per Neromantic Prime operation (in mB per 20-30 ticks)")
+        public int utNeromanticPrimeExtractionQuantity = 300;
+
+        @Config.Name("Neromantic Prime Fluid Vein Dimensions")
+        @Config.Comment({
+            "Extends the fluid vein configuration to allow specifying in which dimensions a fluid can generate",
+            "This should be done as a list of comma-separated dimension IDs at the 5th field. Leave blank to allow all dimensions.",
+            "Example: 'lava;100000;200000;50;0,-1,7' allows lava veins to spawn in the Overworld (0) and Nether (-1)",
+            "Example: 'essence;50000;150000;30' allows essence veins to spawn in all dimensions"
+        })
+        public boolean utNeromanticPrimeFluidVeinDimensions = true;
     }
 
     public static class AOACategory
