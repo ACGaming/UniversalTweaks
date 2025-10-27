@@ -145,7 +145,7 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Better Rail Placement")
-        @Config.Comment("Implements an improved system that makes rails face the player when placed.")
+        @Config.Comment("Implements an improved system that makes rails face the player when placed")
         public boolean utBetterRailPlacementToggle = true;
         
         @Config.RequiresMcRestart
@@ -700,7 +700,7 @@ public class UTConfigTweaks
 
         @Config.Name("Hunger Treshold to Sprint")
         @Config.Comment({
-            "Set the limit of required hunger to be able to sprint",
+            "Sets the limit of required hunger to be able to sprint",
             "Value of -1 lets you sprint with empty hunger",
             "Value of 20 prevents you from sprinting at all"
         })
@@ -2160,7 +2160,7 @@ public class UTConfigTweaks
         {
             @Config.RequiresMcRestart
             @Config.Name("[01] Music Control Toggle")
-            @Config.Comment("Enables various music playback control tweak")
+            @Config.Comment("Enables various music playback control tweaks")
             public boolean utMusicControlToggle = false;
 
             @Config.Name("[02] Menu Music")

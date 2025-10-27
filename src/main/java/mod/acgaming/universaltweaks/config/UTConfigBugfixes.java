@@ -395,7 +395,7 @@ public class UTConfigBugfixes
         
         @Config.RequiresMcRestart
         @Config.Name("Extend Item Durability Range")
-        @Config.Comment("Changes the durability storing to use ints instead of shorts, eliminating many issues with high-durability items. (I.E. TiC tools)")
+        @Config.Comment("Changes the durability storing to use ints instead of shorts, eliminating many issues with high-durability items (I.E. TiC tools)")
         public boolean utExtendDurabilityCap = true;
     }
 

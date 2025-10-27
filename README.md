@@ -47,6 +47,7 @@ All changes are toggleable via config files.
 * **Entity Tracker:** Fixes entity tracker to prevent client-sided desyncs when teleporting or changing dimensions
 * **Entity UUID:** Changes UUIDs of loaded entities in case their UUIDs are already assigned (and removes log spam)
 * **Exhaustion:** Fixes saturation depleting in peaceful mode
+* **Extend Item Durability Range:** Changes the durability storing to use ints instead of shorts, eliminating many issues with high-durability items (I.E. TiC tools)
 * **Falling Block Entity Damage:** Only damage living entities hit by falling blocks, prevents killing items and XP
 * **Faster Background Startup:** Fixes slow background startup edge case caused by checking tooltips during the loading process
 * **Fixes Invisible Player when Flying with Elytra:** Fixes the player model occasionally disappearing when flying with elytra in a straight line in third-person mode
@@ -115,6 +116,7 @@ All changes are toggleable via config files.
 * **Better Ignition:** Enables ignition of entities by right-clicking instead of awkwardly lighting the block under them
 * **Better Ping Display:** Displays the ping in milliseconds of players when viewing the server list
 * **Better Placement:** Removes the delay between placing blocks
+* **Better Rail Placement:** Implements an improved system that makes rails face the player when placed
 * **Block Dispenser:** Allows dispensers to place blocks
 * **Block Hit Delay:** Sets the delay in ticks between breaking blocks
 * **Boat Speed:** Sets the acceleration value for controlling boats
@@ -181,6 +183,7 @@ All changes are toggleable via config files.
 * **Fast Leaf Decay:** Makes leaves decay faster when trees are chopped
 * **Fast Prefix Checking:** Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
 * **Fast World Loading:** Skips garbage collection to speed up world loading
+* **Faster Advancement Trigger Checking:** Optimizes triggering advancements when obtaining items
 * **Fence/Wall Jump:** Allows the player to jump over fences and walls
 * **Finite Water:** Prevents creation of infinite water sources outside of ocean and river biomes
 * **First Person Burning Overlay:** Sets the offset for the fire overlay in first person when the player is burning
@@ -189,6 +192,7 @@ All changes are toggleable via config files.
 * **Growth Size:** Configurable growth height/length for sugar cane, cacti and vines
 * **Hardcore Buckets:** Prevents placing of liquid source blocks in the world
 * **Hide Personal Effect Particles:** Disables potion effect particles emitting from yourself
+* **Hunger Treshold to Sprint:** Sets the limit of required hunger to be able to sprint
 * **Husk & Stray Spawning:** Lets husks and strays spawn underground like regular zombies and skeletons
 * **Improve Barrier Particle Display:** Causes Barrier Particles to always be displayed to players in Creative mode
 * **Improve Language Switching Speed:** Improves the speed of switching languages in the Language GUI
@@ -212,6 +216,7 @@ All changes are toggleable via config files.
 * **Mob Despawn Improvement:** Mobs carrying picked up items will drop their equipment and despawn properly
 * **Modern Knockback:** Backports 1.16+ knockback to 1.12: Knockback resistance is now a scale instead of a probability
 * **More Banner Layers:** Sets the amount of applicable pattern layers for banners
+* **Music Control:** Enables various music playback control tweaks
 * **Mute Advancement Errors:** Silences advancement errors
 * **Mute Texture Map Errors:** Silences texture map errors
 * **No Attack Cooldown:** Disables the 1.9 combat update attack cooldown
@@ -289,6 +294,7 @@ All changes are toggleable via config files.
 * **Weaken Wither Structure Requirements:** Allows creating Withers with non-air blocks in the bottom corners of the structure
 * **XP Bottle Amount:** Sets the amount of experience spawned by bottles o' enchanting
 * **XP Level Cap:** Sets the maximum experience level players can reach
+* **View Bobbing Mode:** Sets the view bobbing mode (Default: Bobs both hand and camera (vanilla default); Hand only: Bobs only hand; Camera only: Bobs only camera)
 * **Void Teleport:**
     * Options allow toggling the setting globally, controlling to what Y-level the entity is teleported, if blindness is applied, maximum number of consecutive times, and how much and in what way fall damage is taken
     * **Configure Entities:** Configures what entities can be teleported, and if the player is teleported
