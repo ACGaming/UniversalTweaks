@@ -228,7 +228,7 @@ public class UTConfigBugfixes
         public boolean utEntityIDToggle = true;
 
         @Config.Name("Entity NaN Values")
-        @Config.Comment("Prevents corruption of entities caused by invalid health or damage values")
+        @Config.Comment("Prevents corruption of entities caused by invalid health, absorption, damage and knockback values")
         public boolean utEntityNaNToggle = true;
 
         @Config.RequiresMcRestart

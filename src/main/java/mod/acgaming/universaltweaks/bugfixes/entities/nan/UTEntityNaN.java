@@ -3,6 +3,7 @@ package mod.acgaming.universaltweaks.bugfixes.entities.nan;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.living.LivingKnockBackEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -34,6 +35,17 @@ public class UTEntityNaN
         if (Float.isNaN(event.getAmount()))
         {
             if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityNaN ::: Deny invalid damage");
+            event.setResult(Event.Result.DENY);
+            event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void utKnockbackNaN(LivingKnockBackEvent event)
+    {
+        if (event.getRatioX() == 0 && event.getRatioZ() == 0)
+        {
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEntityNaN ::: Deny invalid knockback");
             event.setResult(Event.Result.DENY);
             event.setCanceled(true);
         }
