@@ -1003,6 +1003,14 @@ public class UTConfigTweaks
             @Config.Name("[4] Indication Sound")
             @Config.Comment("Plays an indication sound effect when health is regained")
             public boolean utRallyHealthSound = false;
+
+            @Config.Name("[5] Max Heal Amount")
+            @Config.Comment
+                ({
+                    "Determines the maximum amount of health to regain",
+                    "0 for no limitation"
+                })
+            public double utRallyHealthMaxHealAmount = 0;
         }
 
         public static class SleepingCategory

@@ -51,7 +51,8 @@ public class UTRallyHealth
                 && playerData.getBoolean("atRisk")
                 && player.world.rand.nextInt(100) < UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthHealChance)
             {
-                player.heal(playerData.getFloat("lastDamage"));
+                float maxHeal = (float) UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthMaxHealAmount;
+                player.heal(maxHeal > 0 ? Math.min(maxHeal, playerData.getFloat("lastDamage")) : playerData.getFloat("lastDamage"));
                 playerData.setBoolean("atRisk", false);
                 if (UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthSound)
                 {
