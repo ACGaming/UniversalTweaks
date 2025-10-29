@@ -628,6 +628,11 @@ public class UTConfigMods
         public boolean utFixAquamarineStackSize = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Armor Set Effect Cleanup")
+        @Config.Comment("Fixes issues with armor set effects being cleaned up under the wrong conditions that caused crashes")
+        public boolean utFixArmorSetCleanup = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Consuming Incorrect Hand")
         @Config.Comment("Fix various DivineRPG items consuming the item in the main hand regardless of the hand actually used")
         public boolean utFixHandConsumption = true;
