@@ -90,6 +90,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.cookingforblockheads.json", () -> loaded("cookingforblockheads") && UTConfigMods.COOKING_FOR_BLOCKHEADS.utOvenFixToggle);
                 put("mixins.mods.corpse.json", () -> loaded("corpse") && UTConfigMods.CORPSE.utOpeningGuisOffThreadFixToggle);
                 put("mixins.mods.cqrepoured.json", () -> loaded("cqrepoured"));
+                put("mixins.mods.dankstorage.json", () -> loaded("dankstorage"));
                 put("mixins.mods.divinerpg.aquamarine.json", () -> loaded("divinerpg") && UTConfigMods.DIVINE_RPG.utFixAquamarineStackSize);
                 put("mixins.mods.divinerpg.hand.json", () -> loaded("divinerpg") && UTConfigMods.DIVINE_RPG.utFixHandConsumption);
                 put("mixins.mods.divinerpg.waterspawning.json", () -> loaded("divinerpg") && UTConfigMods.DIVINE_RPG.utChangeWaterMobCreatureType);
