@@ -107,6 +107,10 @@ public class UTConfigMods
     @Config.Name("Corpse")
     public static final CorpseCategory CORPSE = new CorpseCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.dankstorage")
+    @Config.Name("Dank Storage")
+    public static final DankStorageCategory DANK_STORAGE = new DankStorageCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.divineprg")
     @Config.Name("Divine RPG")
     public static final DivineRPGCategory DIVINE_RPG = new DivineRPGCategory();
@@ -609,6 +613,13 @@ public class UTConfigMods
         @Config.Name("Opening GUIs Off-thread Fix")
         @Config.Comment("Fixes opening up GUIs on a non-client thread")
         public boolean utOpeningGuisOffThreadFixToggle = true;
+    }
+
+    public static class DankStorageCategory
+    {
+        @Config.Name("Fix Slot voiding")
+        @Config.Comment("Fixes Max Int (2.1B) stacks being voided when right clicking on them in a Dank")
+        public boolean utFixMaxIntVoid = true;
     }
 
     public static class DivineRPGCategory

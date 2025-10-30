@@ -86,6 +86,7 @@ final def mod_dependencies = [
     'curse.maven:cqrepoured-303422:3953103'                           : [debug_cqrepoured],
     'curse.maven:ctm-267602:2915363'                                  : [debug_chisel],
     'curse.maven:cyclops-core-232758:3159497'                         : [debug_evilcraft],
+    'curse.maven:dankkstorage-335673:2787318'                         : [debug_dankstorage],
     'curse.maven:effortlessbuilding-302113:2847346'                   : [debug_effortless_building],
     'curse.maven:official-divinerpg-363543:3081433'                   : [debug_divinerpg],
     'curse.maven:electroblobs-wizardry-265642:5354477'                : [debug_electroblobs_wizardry],

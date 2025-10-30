@@ -28,7 +28,7 @@ public abstract class UTConfigurableFluidVeinDimensionsMixin {
     private static List<FluidRarityEntry> rarityList;
 
     // Replaces "FluidRarityEntry sample = selectFluidEntry(r); "to add dimension id via w.provider.getDimension()
-	@WrapOperation(
+    @WrapOperation(
         method = "onChLoad",
         at = @At(
             value ="INVOKE",
@@ -36,35 +36,35 @@ public abstract class UTConfigurableFluidVeinDimensionsMixin {
         ),
         remap = false
     )
-	private FluidRarityEntry GenerateWrap(Random random, Operation<FluidRarityEntry> original, @Local World w) {
+    private FluidRarityEntry GenerateWrap(Random random, Operation<FluidRarityEntry> original, @Local World w) {
         return ut$selectFluidEntryByDim(random, w.provider.getDimension());
-	}
+    }
 
     // New method to select FluidRarityEntry based on dimension filtering
-	@Unique
-	private static FluidRarityEntry ut$selectFluidEntryByDim(Random random, int dimId) {
-		// Build filtered list based on optional allowedDims
-		List<FluidRarityEntry> filtered = new ArrayList<>();
-		for (FluidRarityEntry e : rarityList) {
-			if (e.fluid == null || e.fluid.equals(FluidRegistry.WATER)) {
-				continue; // mirror original selectFluidEntry behavior that can return null for WATER
-			}
+    @Unique
+    private static FluidRarityEntry ut$selectFluidEntryByDim(Random random, int dimId) {
+        // Build filtered list based on optional allowedDims
+        List<FluidRarityEntry> filtered = new ArrayList<>();
+        for (FluidRarityEntry e : rarityList) {
+            if (e.fluid == null || e.fluid.equals(FluidRegistry.WATER)) {
+                continue; // mirror original selectFluidEntry behavior that can return null for WATER
+            }
 
             int[] allowed = ((UTFluidRarityEntryExt) e).ut$getAllowedDims();
-			if (allowed == null || allowed.length == 0) {
-				filtered.add(e);
-			} else {
-				for (int d : allowed) {
-					if (d == dimId) {
-						filtered.add(e);
-						break;
-					}
-				}
-			}
-		}
+            if (allowed == null || allowed.length == 0) {
+                filtered.add(e);
+            } else {
+                for (int d : allowed) {
+                    if (d == dimId) {
+                        filtered.add(e);
+                        break;
+                    }
+                }
+            }
+        }
 
         if (filtered.isEmpty()) return null;
 
         return (FluidRarityEntry) WeightedRandom.getRandomItem(random, filtered);
-	}
+    }
 }
