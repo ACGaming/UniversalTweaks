@@ -1,0 +1,10 @@
+{
+  "package": "mod.acgaming.universaltweaks.mods.divinerpg.armorset.mixin",
+  "refmap": "universaltweaks.refmap.json",
+  "minVersion": "0.8",
+  "mixinextras": {
+    "minVersion": "0.5.0-beta.5"
+  },
+  "compatibilityLevel": "JAVA_8",
+  "mixins": ["UTArmorPowersMixin"]
+}
