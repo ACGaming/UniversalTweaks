@@ -698,7 +698,7 @@ public class UTConfigTweaks
         @Config.RangeDouble(min = 0.0D, max = 1.0D)
         public double utRabbitToastChance = 0.0D;
 
-        @Config.Name("Hunger Treshold to Sprint")
+        @Config.Name("Hunger Threshold to Sprint")
         @Config.Comment({
             "Sets the limit of required hunger to be able to sprint",
             "Value of -1 lets you sprint with empty hunger",
