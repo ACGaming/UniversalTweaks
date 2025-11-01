@@ -1,5 +1,5 @@
 {
-  "package": "mod.acgaming.universaltweaks.tweaks.entities.saturation.mixin",
+  "package": "mod.acgaming.universaltweaks.tweaks.entities.exhaustion.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

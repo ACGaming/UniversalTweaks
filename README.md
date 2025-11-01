@@ -248,6 +248,7 @@ All changes are toggleable via config files.
 * **Rabbit Killer Spawning:** Configurable chance for rabbits to spawn as the killer bunny variant
 * **Rabbit Toast Spawning:** Configurable chance for rabbits to spawn as the Toast variant
 * **Rally Health:** Adds Bloodborne's Rally system to Minecraft, regain lost health when attacking back within the risk time
+* **Regen Exhaustion:** Sets the maximum exhaustion value when healing
 * **Remove 3D Anaglyph Button:** Removes the 3D Anaglyph button from the video settings menu
 * **Remove Realms Button:** Removes the redundant Minecraft Realms button from the main menu and silences notifications
 * **Remove Recipe Book:** Removes the recipe book button from GUIs

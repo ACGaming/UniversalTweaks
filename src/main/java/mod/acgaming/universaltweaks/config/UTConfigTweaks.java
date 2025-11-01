@@ -147,7 +147,7 @@ public class UTConfigTweaks
         @Config.Name("Better Rail Placement")
         @Config.Comment("Implements an improved system that makes rails face the player when placed")
         public boolean utBetterRailPlacementToggle = true;
-        
+
         @Config.RequiresMcRestart
         @Config.Name("Bed Obstruction Replacement")
         @Config.Comment("Replaces bed obstruction checks with an improved version")
@@ -707,6 +707,15 @@ public class UTConfigTweaks
         @Config.RangeInt(min = -1, max = 20)
         @Config.SlidingOption
         public int utSprintHungerTreshold = 6;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Regen Exhaustion")
+        @Config.Comment
+            ({
+                "Sets the maximum exhaustion value when healing",
+                "6.0 for vanilla default"
+            })
+        public double utRegenExhaustion = 6.0D;
 
         @Config.RequiresMcRestart
         @Config.Name("Riding Exhaustion")

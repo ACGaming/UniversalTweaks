@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.entities.saturation.mixin;
+package mod.acgaming.universaltweaks.tweaks.entities.exhaustion.mixin;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
