@@ -21,6 +21,7 @@ import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 
+import dev.redstudio.alfheim.lighting.LightingEngine;
 import mod.acgaming.universaltweaks.mods.compactmachines.memory.DummyWorld;
 import org.dave.compactmachines3.world.ProxyWorld;
 import org.spongepowered.asm.mixin.*;
@@ -166,10 +167,9 @@ public abstract class UTProxyWorldMixin extends World
         return this;
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     @Optional.Method(modid = "alfheim")
-    public int getLightFromNeighborsFor(EnumSkyBlock type, BlockPos pos)
+    public int getLightFromNeighborsFor(@Nonnull EnumSkyBlock type, @Nonnull BlockPos pos)
     {
         return 15;
     }
@@ -179,5 +179,11 @@ public abstract class UTProxyWorldMixin extends World
     public int alfheim$getLight(BlockPos pos, boolean checkNeighbors)
     {
         return 15;
+    }
+
+    @SuppressWarnings({"MissingUnique", "unused"})
+    @Optional.Method(modid = "alfheim")
+    public LightingEngine getAlfheim$lightingEngine() {
+        return null;
     }
 }
