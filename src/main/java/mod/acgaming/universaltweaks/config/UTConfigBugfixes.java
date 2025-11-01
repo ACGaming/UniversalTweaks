@@ -161,6 +161,16 @@ public class UTConfigBugfixes
         public boolean utBlockFireToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Boat Breaking Fall Height")
+        @Config.Comment
+            ({
+                "Sets the required fall height in blocks for boats to break",
+                "-1 for vanilla default",
+                "0 for never breaking"
+            })
+        public int utBoatBreakingFallHeight = 0;
+
+        @Config.RequiresMcRestart
         @Config.Name("Boat Riding Offset")
         @Config.Comment("Fixes entities glitching through the bottom of boats")
         public boolean utBoatOffsetToggle = true;
@@ -392,7 +402,7 @@ public class UTConfigBugfixes
         @Config.Name("Cull Picked-up Items")
         @Config.Comment("Fix missing face culling during item pickup particle rendering")
         public boolean utItemPickupCulling = true;
-        
+
         @Config.RequiresMcRestart
         @Config.Name("Extend Item Durability Range")
         @Config.Comment("Changes the durability storing to use ints instead of shorts, eliminating many issues with high-durability items (I.E. TiC tools)")
