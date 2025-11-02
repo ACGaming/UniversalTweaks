@@ -240,6 +240,7 @@ All changes are toggleable via config files.
 * **Pickup Notification:** Displays highly configurable notifications when the player obtains or loses items
 * **Piston Block Blacklist:** Integrates a blacklist of blocks which are not allowed to be pushed by pistons
 * **Player Speed:** Enables the modification of base and maximum player speeds along with fixing 'Player moved too quickly' messages
+* **Player XP Drop Percentage:** Sets the percentage of experience players can drop upon death instead of the capped ~7 levels
 * **Prevent Mob Eggs from Changing Spawners:** Prevents using Mob Spawner Eggs to change what a Spawner is spawning
 * **Prevent Observer Activating on Placement:** Controls if the observer activates itself on the first tick when it is placed
 * **Prevent Placing Buckets in Portals:** Prevents placing of liquid source blocks overriding portal blocks

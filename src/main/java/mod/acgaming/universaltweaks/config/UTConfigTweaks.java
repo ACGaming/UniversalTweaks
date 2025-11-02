@@ -1803,6 +1803,17 @@ public class UTConfigTweaks
         public int utOverlayMessageHeight = -4;
 
         @Config.RequiresMcRestart
+        @Config.Name("Player XP Drop Percentage")
+        @Config.Comment
+            ({
+                "Sets the percentage of experience players can drop upon death instead of the capped ~7 levels",
+                "Range from 0.0 to 1.0",
+                "Below 0.0 for vanilla default"
+            })
+        @Config.RangeDouble(min = -1.0D, max = 1.0D)
+        public double utPlayerXPDropPercentage = -1.0D;
+
+        @Config.RequiresMcRestart
         @Config.Name("Remove 3D Anaglyph Button")
         @Config.Comment("Removes the 3D Anaglyph button from the video settings menu")
         public boolean ut3DAnaglyphButtonToggle = true;
