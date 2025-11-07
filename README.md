@@ -349,6 +349,7 @@ All changes are toggleable via config files.
 * **Botania**
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
+    * **Alfheim Portal NBT Fix:** Optimize the Alfheim Portal for large quantities of items, preventing chunkbans and chunk corruption. NOTE: Toggling this off after having it on will wipe the contents of existing Alfheim Portals
 * **Better with Mods**
     * **Beacon NBT Loading Fix:** Fixes BWM beacons reading null tags from vanilla beacons
 * **CB Multipart**

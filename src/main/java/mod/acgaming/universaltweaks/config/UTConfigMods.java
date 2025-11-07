@@ -508,6 +508,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.Name("Alfheim Portal NBT Fix")
+        @Config.Comment({
+            "Greatly reduces the size of Alfheim Portal NBT data to prevent crashes",
+            "This will also make their performance at high item count much better",
+            "NOTE: Toggling this option off after it has been enabled will erase existing Alfheim Portals' NBT data!"
+        })
+        public boolean utAlfheimPortalNBTFix = true;
     }
 
     public static class BWMCategory
