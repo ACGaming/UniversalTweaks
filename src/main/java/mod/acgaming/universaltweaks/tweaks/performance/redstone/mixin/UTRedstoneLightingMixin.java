@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 // Courtesy of TheComputerizer
 @Mixin(BlockStateContainer.StateImplementation.class)
-public class UTRedstoneLightingMixin
+public abstract class UTRedstoneLightingMixin
 {
     @Shadow
     @Final
