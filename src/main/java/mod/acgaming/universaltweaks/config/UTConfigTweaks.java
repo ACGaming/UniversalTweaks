@@ -702,11 +702,12 @@ public class UTConfigTweaks
         @Config.Comment({
             "Sets the limit of required hunger to be able to sprint",
             "Value of -1 lets you sprint with empty hunger",
-            "Value of 20 prevents you from sprinting at all"
+            "Value of 20 prevents you from sprinting at all",
+            "6 for vanilla default"
         })
         @Config.RangeInt(min = -1, max = 20)
         @Config.SlidingOption
-        public int utSprintHungerTreshold = 6;
+        public int utSprintHungerThreshold = 6;
 
         @Config.RequiresMcRestart
         @Config.Name("Regen Exhaustion")

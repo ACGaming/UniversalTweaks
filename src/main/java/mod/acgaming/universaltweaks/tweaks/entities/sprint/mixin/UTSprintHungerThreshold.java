@@ -9,12 +9,12 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(EntityPlayerSP.class)
-public class UTSprintHungerTreshold
+public class UTSprintHungerThreshold
 {
     @ModifyConstant(method = "onLivingUpdate", constant = @Constant(floatValue = 6.0F))
-    private float utHungerTresholdToSprint(float treshold)
+    private float utHungerThresholdToSprint(float threshold)
     {
-        if (treshold == 6.0f) return (float)UTConfigTweaks.ENTITIES.utSprintHungerTreshold;
-        return treshold;
+        if (threshold == 6.0f) return (float)UTConfigTweaks.ENTITIES.utSprintHungerThreshold;
+        return threshold;
     }
 }
