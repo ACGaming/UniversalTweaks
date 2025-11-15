@@ -36,6 +36,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.cbmultipart.client.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
                 put("mixins.mods.compactmachines.memory.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utMemoryLeakFixToggle);
                 put("mixins.mods.compactmachines.render.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
+                put("mixins.mods.corpse.json", () -> loaded("corpse") && UTConfigMods.CORPSE.utOpeningGuisOffThreadFixToggle);
                 put("mixins.mods.crafttweaker.json", () -> loaded("crafttweaker"));
                 put("mixins.mods.electroblobswizardry.json", () -> loaded("ebwizardry") && loaded("conarm") && UTConfigMods.ELECTROBLOBS_WIZARDRY.utConstructsArmoryFixToggle);
                 put("mixins.mods.enderio.itemrender.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
@@ -88,7 +89,6 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.collective.json", () -> loaded("collective"));
                 put("mixins.mods.compactmachines.spawns.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utAllowedSpawnsImprovementToggle);
                 put("mixins.mods.cookingforblockheads.json", () -> loaded("cookingforblockheads") && UTConfigMods.COOKING_FOR_BLOCKHEADS.utOvenFixToggle);
-                put("mixins.mods.corpse.json", () -> loaded("corpse") && UTConfigMods.CORPSE.utOpeningGuisOffThreadFixToggle);
                 put("mixins.mods.cqrepoured.json", () -> loaded("cqrepoured"));
                 put("mixins.mods.dankstorage.json", () -> loaded("dankstorage"));
                 put("mixins.mods.divinerpg.aquamarine.json", () -> loaded("divinerpg") && UTConfigMods.DIVINE_RPG.utFixAquamarineStackSize);

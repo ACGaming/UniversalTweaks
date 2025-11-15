@@ -193,7 +193,7 @@ All changes are toggleable via config files.
 * **Growth Size:** Configurable growth height/length for sugar cane, cacti and vines
 * **Hardcore Buckets:** Prevents placing of liquid source blocks in the world
 * **Hide Personal Effect Particles:** Disables potion effect particles emitting from yourself
-* **Hunger Treshold to Sprint:** Sets the limit of required hunger to be able to sprint
+* **Hunger Threshold to Sprint:** Sets the limit of required hunger to be able to sprint
 * **Husk & Stray Spawning:** Lets husks and strays spawn underground like regular zombies and skeletons
 * **Improve Barrier Particle Display:** Causes Barrier Particles to always be displayed to players in Creative mode
 * **Improve Language Switching Speed:** Improves the speed of switching languages in the Language GUI
