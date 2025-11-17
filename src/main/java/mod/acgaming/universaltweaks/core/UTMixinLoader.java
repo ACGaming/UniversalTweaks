@@ -144,7 +144,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.requiousfrakto.json", () -> loaded("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);
                 put("mixins.mods.reskillable.json", () -> loaded("reskillable"));
                 put("mixins.mods.rftoolsdimensions.json", () -> loaded("rftoolsdim"));
-                put("mixins.mods.roost.contenttweaker.json", () -> loaded("contenttweaker"));
+                put("mixins.mods.roost.contenttweaker.json", () -> loaded("roost") && loaded("contenttweaker"));
                 put("mixins.mods.simpledifficulty.json", () -> loaded("simpledifficulty"));
                 put("mixins.mods.spiceoflife.dupes.json", () -> loaded("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);
                 put("mixins.mods.steamworld.json", () -> loaded("steamworld") && UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
