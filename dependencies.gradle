@@ -85,6 +85,7 @@ final def mod_dependencies = [
     'curse.maven:corpse-316582:3010808'                               : [debug_corpse],
     'curse.maven:cqrepoured-303422:3953103'                           : [debug_cqrepoured],
     'curse.maven:ctm-267602:2915363'                                  : [debug_chisel],
+    'curse.maven:cyclic-239286:4075832'                               : [debug_cyclic],
     'curse.maven:cyclops-core-232758:3159497'                         : [debug_evilcraft],
     'curse.maven:dankkstorage-335673:2787318'                         : [debug_dankstorage],
     'curse.maven:effortlessbuilding-302113:2847346'                   : [debug_effortless_building],

@@ -107,6 +107,10 @@ public class UTConfigMods
     @Config.Name("Corpse")
     public static final CorpseCategory CORPSE = new CorpseCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.cyclic")
+    @Config.Name("Cyclic")
+    public static final CyclicCategory CYCLIC = new CyclicCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.dankstorage")
     @Config.Name("Dank Storage")
     public static final DankStorageCategory DANK_STORAGE = new DankStorageCategory();
@@ -621,6 +625,14 @@ public class UTConfigMods
         @Config.Name("Opening GUIs Off-thread Fix")
         @Config.Comment("Fixes opening up GUIs on a non-client thread")
         public boolean utOpeningGuisOffThreadFixToggle = true;
+    }
+
+    public static class CyclicCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Memory Leak Fix")
+        @Config.Comment("Fixes memory leak associated with advancements when creating FakePlayers")
+        public boolean utMemoryLeakFixToggle = true;
     }
 
     public static class DankStorageCategory
