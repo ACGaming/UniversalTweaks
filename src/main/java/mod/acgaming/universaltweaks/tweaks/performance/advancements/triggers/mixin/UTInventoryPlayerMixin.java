@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.Unique;
 public class UTInventoryPlayerMixin implements ISlotContext
 {
     @Unique
-    private ItemStack ut$changedStack;
+    private ItemStack ut$changedStack = ItemStack.EMPTY;
 
     @Unique
     private SlotCounts ut$slotCounts;
