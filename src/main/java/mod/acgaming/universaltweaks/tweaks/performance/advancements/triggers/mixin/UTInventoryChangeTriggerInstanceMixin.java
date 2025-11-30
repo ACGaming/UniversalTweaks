@@ -56,6 +56,10 @@ public class UTInventoryChangeTriggerInstanceMixin
         }
 
         ItemStack changedStack = ((ISlotContext) inventory).ut$getStack();
+        // Ignore optimization if stack info is unavailable.
+        if (changedStack == null) {
+            return;
+        }
         int numPredicates = items.length;
         if (numPredicates == 0)
         {

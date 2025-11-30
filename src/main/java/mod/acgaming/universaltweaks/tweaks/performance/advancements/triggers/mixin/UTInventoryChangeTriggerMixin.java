@@ -36,14 +36,22 @@ public class UTInventoryChangeTriggerMixin
     private void utOnlyTriggerForIncreasedStacks(EntityPlayerMP player, InventoryPlayer inventory, CallbackInfo ci)
     {
         ItemStack stack = ((ISlotContext) inventory).ut$getStack();
-        if ((stack.isEmpty() && UTConfigTweaks.PERFORMANCE.ADVANCEMENT_TRIGGERS.utIgnoreEmptiedStackTriggers)
-            || (UTConfigTweaks.PERFORMANCE.ADVANCEMENT_TRIGGERS.utIgnoreDecreasedStackTriggers
-            && stack.getCount() < ((IPrevSizeTracker) (Object) stack).ut$getPreviousStackSize())
-            || (UTConfigTweaks.PERFORMANCE.ADVANCEMENT_TRIGGERS.utOptimizeIncreasedStackTriggers
-            && !StackSizeThresholdManager.doesStackPassThreshold(stack)))
+        // Ignore optimization for triggers where stack info is unavailable.
+        if (stack == null)
         {
-            ci.cancel();
+            if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInventoryChangeTrigger ::: Allowing trigger from unknown source");
+            ut$prepareSlotCounts(inventory);
+            return;
+        }
+        if ((UTConfigTweaks.PERFORMANCE.ADVANCEMENT_TRIGGERS.utIgnoreEmptiedStackTriggers
+                && stack.isEmpty())
+            || (UTConfigTweaks.PERFORMANCE.ADVANCEMENT_TRIGGERS.utIgnoreDecreasedStackTriggers
+                && stack.getCount() < ((IPrevSizeTracker) (Object) stack).ut$getPreviousStackSize())
+            || (UTConfigTweaks.PERFORMANCE.ADVANCEMENT_TRIGGERS.utOptimizeIncreasedStackTriggers
+                && !StackSizeThresholdManager.doesStackPassThreshold(stack)))
+        {
             if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInventoryChangeTrigger ::: Cancelling trigger for {} with previous size {}", stack, ((IPrevSizeTracker) (Object) stack).ut$getPreviousStackSize());
+            ci.cancel();
             return;
         }
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTInventoryChangeTrigger ::: Allowing trigger for {} with previous size {}", stack, ((IPrevSizeTracker) (Object) stack).ut$getPreviousStackSize());
