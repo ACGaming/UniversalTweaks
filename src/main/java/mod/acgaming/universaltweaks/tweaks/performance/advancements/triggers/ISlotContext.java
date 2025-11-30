@@ -1,5 +1,7 @@
 package mod.acgaming.universaltweaks.tweaks.performance.advancements.triggers;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.item.ItemStack;
 
@@ -20,7 +22,11 @@ public interface ISlotContext
 
     /**
      * Get the stack that was changed.
+     * <br>
+     * An empty ItemStack means the context was passed an empty stack.
+     * A null stack means the context was never passed stack info.
      */
+    @Nullable
     ItemStack ut$getStack();
 
     /**
@@ -28,6 +34,9 @@ public interface ISlotContext
      */
     void ut$setStack(ItemStack stack);
 
+    /**
+     * Reset stack info and slot counts.
+     */
     void ut$resetContext();
 
     class SlotCounts

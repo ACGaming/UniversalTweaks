@@ -1,6 +1,7 @@
 package mod.acgaming.universaltweaks.tweaks.performance.advancements.triggers.mixin;
 
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
@@ -13,8 +14,9 @@ import org.spongepowered.asm.mixin.Unique;
 @Mixin(value = InventoryPlayer.class)
 public class UTInventoryPlayerMixin implements ISlotContext
 {
+    @Nullable
     @Unique
-    private ItemStack ut$changedStack = ItemStack.EMPTY;
+    private ItemStack ut$changedStack = null;
 
     @Unique
     private SlotCounts ut$slotCounts;
@@ -31,6 +33,7 @@ public class UTInventoryPlayerMixin implements ISlotContext
         ut$slotCounts = new SlotCounts(numFull, numEmpty, numOccupied);
     }
 
+    @Nullable
     @Override
     public ItemStack ut$getStack()
     {
@@ -46,7 +49,7 @@ public class UTInventoryPlayerMixin implements ISlotContext
     @Override
     public void ut$resetContext()
     {
-        ut$changedStack = ItemStack.EMPTY;
+        ut$changedStack = null;
         ut$slotCounts = null;
     }
 }
