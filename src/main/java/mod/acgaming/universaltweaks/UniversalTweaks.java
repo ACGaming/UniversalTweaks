@@ -80,6 +80,7 @@ import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration
 import mod.acgaming.universaltweaks.tweaks.misc.advancements.screenshot.UTAdvancementScreenshot;
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import mod.acgaming.universaltweaks.tweaks.misc.buttons.cheats.UTToggleCheats;
+import mod.acgaming.universaltweaks.tweaks.misc.chat.bed.UTKeepChatOpen;
 import mod.acgaming.universaltweaks.tweaks.misc.damagetilt.UTDamageTilt;
 import mod.acgaming.universaltweaks.tweaks.misc.endportal.UTEndPortalParallax;
 import mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties.UTLanServerProperties;
@@ -249,6 +250,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.ENTITIES.utCoyoteTimeJumpingToggle) MinecraftForge.EVENT_BUS.register(UTCoyoteTimeJumping.class);
             if (UTConfigTweaks.ITEMS.utAutoSwitchToggle) MinecraftForge.EVENT_BUS.register(UTAutoSwitch.class);
             if (UTConfigTweaks.MISC.ADVANCEMENT_SCREENSHOT.utAdvancementScreenshotToggle) MinecraftForge.EVENT_BUS.register(UTAdvancementScreenshot.class);
+            if (UTConfigTweaks.MISC.CHAT.utKeepChatOpen) MinecraftForge.EVENT_BUS.register(UTKeepChatOpen.class);
             if (UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfigTweaks.MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) MinecraftForge.EVENT_BUS.register(UTLoadSound.class);
             if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) UTPickupNotificationOverlay.init();
             if (UTConfigTweaks.MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
