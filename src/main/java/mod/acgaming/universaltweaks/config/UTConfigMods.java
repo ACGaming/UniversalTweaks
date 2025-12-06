@@ -283,6 +283,10 @@ public class UTConfigMods
     @Config.Name("Roost")
     public static final RoostCategory ROOST = new RoostCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.roots")
+    @Config.Name("Roots")
+    public static final RootsCategory ROOTS = new RootsCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.simpledifficulty")
     @Config.Name("Simple Difficulty")
     public static final SimpleDifficultyCategory SIMPLE_DIFFICULTY = new SimpleDifficultyCategory();
@@ -1151,6 +1155,14 @@ public class UTConfigMods
         public boolean utParticleFixesToggle = true;
     }
 
+    public static class RFToolsDimensionsCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fully Unregister Dimensions")
+        @Config.Comment("Fixes a bug where joining a world or server with any RFTools Dimension registered would disallow entering another world without that dimension until restarting")
+        public boolean utFullyUnregisterDimensions = true;
+    }
+
     public static class RoostCategory
     {
         @Config.RequiresMcRestart
@@ -1165,12 +1177,47 @@ public class UTConfigMods
         public boolean utRoostEarlyRegisterCTChickens = true;
     }
 
-    public static class RFToolsDimensionsCategory
+    public static class RootsCategory
     {
         @Config.RequiresMcRestart
-        @Config.Name("Fully Unregister Dimensions")
-        @Config.Comment("Fixes a bug where joining a world or server with any RFTools Dimension registered would disallow entering another world without that dimension until restarting")
-        public boolean utFullyUnregisterDimensions = true;
+        @Config.Name("Creative Pouch GUI Crash")
+        @Config.Comment("Disable opening the Creative Pouch GUI as it immediately crashes")
+        public boolean utDisableCreativePouchGUI = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Modifier GUI Voiding")
+        @Config.Comment("Fix an issue where disabled modifiers would still consume their material, voiding the ")
+        public boolean utFixDisableModifierVoiding = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Icicle Type Saving")
+        @Config.Comment("Save the Icicle entity type as NBT, fixing a crash where the type was null")
+        public boolean utFixIcicleSaving = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Mortar Spell Dust Fix")
+        @Config.Comment("Make the Mortar Spell Dust crafting output a copy of the ItemStack, avoiding issues where the recipe is inadvertently modified")
+        public boolean utFixMortarSpellDust = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Check Spirit Drop Oredict")
+        @Config.Comment("Check if the oredict is registered before adding an entry to the list, preventing a bug when copper or silver ingots or nuggets are disabled")
+        public boolean utFixSpiritDrops = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Summon Creatures Ritual Infinite loop")
+        @Config.Comment("Make the Summon Creatures Ritual stop when checking if blocks out of world are air, preventing an infinite loop when running the ritual above the void")
+        public boolean utFixSummoningInfiniteDescent = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Prevent Shatter Spell Breaking Unbreakable")
+        @Config.Comment("Check if the target block is unbreakable for the Shatter Spell")
+        public boolean utPreventShatterOnUnbreakable = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Element Soil Growth Acceleration")
+        @Config.Comment("Disable Elemental Soils triggering updates on redstone updates")
+        public boolean utPreventSoilNeighborUpdates = true;
     }
 
     public static class SimpleDifficultyCategory

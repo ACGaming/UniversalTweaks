@@ -146,6 +146,14 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.reskillable.json", () -> loaded("reskillable"));
                 put("mixins.mods.rftoolsdimensions.json", () -> loaded("rftoolsdim"));
                 put("mixins.mods.roost.contenttweaker.json", () -> loaded("roost") && loaded("contenttweaker"));
+                put("mixins.mods.roots.creativepouch.json", () -> loaded("roots") && UTConfigMods.ROOTS.utDisableCreativePouchGUI);
+                put("mixins.mods.roots.disabledmodifier.json", () -> loaded("roots") && UTConfigMods.ROOTS.utFixDisableModifierVoiding);
+                put("mixins.mods.roots.icicle.json", () -> loaded("roots") && UTConfigMods.ROOTS.utFixIcicleSaving);
+                put("mixins.mods.roots.mortar.json", () -> loaded("roots") && UTConfigMods.ROOTS.utFixMortarSpellDust);
+                put("mixins.mods.roots.shatter.json", () -> loaded("roots") && UTConfigMods.ROOTS.utPreventShatterOnUnbreakable);
+                put("mixins.mods.roots.soil.json", () -> loaded("roots") && UTConfigMods.ROOTS.utPreventSoilNeighborUpdates);
+                put("mixins.mods.roots.spiritdrops.json", () -> loaded("roots") && UTConfigMods.ROOTS.utFixSpiritDrops);
+                put("mixins.mods.roots.summon.json", () -> loaded("roots") && UTConfigMods.ROOTS.utFixSummoningInfiniteDescent);
                 put("mixins.mods.simpledifficulty.json", () -> loaded("simpledifficulty"));
                 put("mixins.mods.spiceoflife.dupes.json", () -> loaded("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);
                 put("mixins.mods.steamworld.json", () -> loaded("steamworld") && UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
