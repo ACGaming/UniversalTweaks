@@ -34,7 +34,8 @@ public class UTUnsafeSleepingMixin
     }
 
     /**
-     * @reason allow sleeping if either the list is empty or the config to allow unsafe sleeping is set
+     * @reason allow sleeping if the config to allow unsafe sleeping is set, the list is empty,
+     * or if the config to skip named mobs is set and the list after being filtered is empty.
      * @author WaitingIdly
      */
     @ModifyExpressionValue(method = "trySleep", at = @At(value = "INVOKE", target = "Ljava/util/List;isEmpty()Z"))
