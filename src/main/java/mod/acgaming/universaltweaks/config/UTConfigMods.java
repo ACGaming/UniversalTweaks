@@ -806,6 +806,11 @@ public class UTConfigMods
         public boolean utCatchRadarException = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Make Radar skip ungenerated chests")
+        @Config.Comment("Makes the Radar skip inventories when the loottable for it has not yet been generated")
+        public boolean utRadarSkipsLoottables = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Deep Dark Stats")
         @Config.Comment("Fixes Mob Attack and Health Statistics being repeatedly doubled")
         public boolean utDeepDarkStats = true;
