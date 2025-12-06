@@ -1113,6 +1113,10 @@ public class UTConfigTweaks
             @Config.Name("[4] Show Glowing Particles")
             @Config.Comment("If the Glowing potion effect will apply particles. Only applies if \"[3] Highlight Unsafe Mobs\" is true")
             public boolean utShowGlowingParticles = false;
+
+            @Config.Name("[5] Ignore Named Mobs")
+            @Config.Comment("When checking nearby hostile mobs, skip named mobs")
+            public boolean utSkipNamedMobs = false;
         }
 
         public static class WaterFallDamageCategory

@@ -2,6 +2,7 @@ package mod.acgaming.universaltweaks.tweaks.entities.unsafesleeping.mixin;
 
 import java.util.List;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
@@ -33,12 +34,18 @@ public class UTUnsafeSleepingMixin
     }
 
     /**
-     * @reason allow sleeping if either the list is empty or the config to allow unsafe sleeping is set
+     * @reason allow sleeping if the config to allow unsafe sleeping is set, the list is empty,
+     * or if the config to skip named mobs is set and the list after being filtered is empty.
      * @author WaitingIdly
      */
     @ModifyExpressionValue(method = "trySleep", at = @At(value = "INVOKE", target = "Ljava/util/List;isEmpty()Z"))
-    private boolean utCheckUnsafeSleeping(boolean original)
+    private boolean utCheckUnsafeSleeping(boolean original, @Local List<EntityMob> list)
     {
-        return original || UTConfigTweaks.ENTITIES.UNSAFE_SLEEPING.utAllowUnsafeSleeping;
+        if (original || UTConfigTweaks.ENTITIES.UNSAFE_SLEEPING.utAllowUnsafeSleeping) return true;
+        if (UTConfigTweaks.ENTITIES.UNSAFE_SLEEPING.utSkipNamedMobs)
+        {
+            list.removeIf(Entity::hasCustomName);
+        }
+        return list.isEmpty();
     }
 }
