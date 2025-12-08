@@ -3,5 +3,10 @@
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
-  "mixins": ["UTTileEntityBreakerMixin", "UTTileEntityDirectionalBreakerMixin", "UTTileEntityPhantomPlacerMixin"]
+  "mixins": [
+    "StackUtilMixin",
+    "UTTileEntityBreakerMixin",
+    "UTTileEntityDirectionalBreakerMixin",
+    "UTTileEntityPhantomPlacerMixin"
+  ]
 }
