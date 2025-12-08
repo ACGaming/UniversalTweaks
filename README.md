@@ -488,6 +488,15 @@ All changes are toggleable via config files.
     * **Properly Unregister Dimensions:** Fixes a bug where joining a world or server with any RFTools Dimension registered would disallow entering another world without that dimension until restarting.
 * **Roost**
     * **Early Register CT Chickens:** Improves load time by registering ContentTweaker chickens early for Roost to detect them
+* **Roots**
+    * **Creative Pouch GUI Crash:** Disable opening the Creative Pouch GUI as it immediately crashes
+    * **Modifier GUI Voiding:** Fix an issue where disabled modifiers would still consume their material, voiding the 
+    * **Icicle Type Saving:** Save the Icicle entity type as NBT, fixing a crash where the type was null
+    * **Mortar Spell Dust Fix:** Make the Mortar Spell Dust crafting output a copy of the ItemStack, avoiding issues where the recipe is inadvertently modified
+    * **Check Spirit Drop Oredict:** Check if the oredict is registered before adding an entry to the list, preventing a bug when copper or silver ingots or nuggets are disabled
+    * **Summon Creatures Ritual Infinite loop:** Make the Summon Creatures Ritual stop when checking if blocks out of world are air, preventing an infinite loop when running the ritual above the void
+    * **Prevent Shatter Spell Breaking Unbreakable:** Check if the target block is unbreakable for the Shatter Spell
+    * **Disable Element Soil Growth Acceleration:** Disable Elemental Soils triggering updates on redstone updates
 * **Simple Difficulty**
     * **Iron Canteen Interaction Fix:** Fixes the interaction of iron canteens with rain collectors
     * **Altitude Modifier:** Sets additional variables for altitude modifier calculations

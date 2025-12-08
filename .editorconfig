@@ -534,7 +534,8 @@ ij_shell_redirect_followed_by_space = false
 ij_shell_switch_cases_indented = false
 ij_shell_use_unix_line_separator = true
 
-[{*.gant,*.groovy,*.gy}]
+[{*.gant,*.groovy,*.gy,*.gradle}]
+ij_continuation_indent_size = 4
 ij_groovy_align_group_field_declarations = false
 ij_groovy_align_multiline_array_initializer_expression = false
 ij_groovy_align_multiline_assignment = false
