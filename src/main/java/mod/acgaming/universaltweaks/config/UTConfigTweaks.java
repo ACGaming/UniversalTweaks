@@ -2060,6 +2060,11 @@ public class UTConfigTweaks
             @Config.Name("[3] Compact Messages")
             @Config.Comment("Removes duplicate messages and instead put a number behind the message how often it was repeated")
             public boolean utCompactMessagesToggle = false;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[4] Keep Chat Active on waking")
+            @Config.Comment("When waking up from bed, if the chat had text keep the chat window open")
+            public boolean utKeepChatOpen = true;
         }
 
         public static class GameWindowCategory

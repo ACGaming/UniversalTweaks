@@ -136,6 +136,7 @@ All changes are toggleable via config files.
     * **Chat Lines:** Sets the maximum number of chat lines to display
     * **Compact Messages:** Removes duplicate messages and instead put a number behind the message how often it was repeated
     * **Keep Sent Messages:** Don't clear sent message history on leaving the world
+    * **Keep Chat Active on waking:** When waking up from bed, if the chat had text keep the chat window open
 * **Check Animated Models:** Improves model load times by checking if an animated model exists before trying to load it
 * **Chicken Shedding:** Allows chickens to have a chance to shed feathers (similarly to laying eggs)
 * **Chunk Gen Limit:** Limits maximum chunk generation per tick for improved server performance

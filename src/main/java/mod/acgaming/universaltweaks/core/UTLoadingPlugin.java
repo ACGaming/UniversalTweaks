@@ -227,6 +227,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins.tweaks.misc.buttons.anaglyph.optifine.json", () -> UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle && Coremods.OPTIFINE.isLoaded());
                 put("mixins.tweaks.misc.buttons.realms.json", () -> SystemUtils.IS_JAVA_1_8 && UTConfigTweaks.MISC.utRealmsButtonToggle && !Coremods.RANDOM_PATCHES.isLoaded());
                 put("mixins.tweaks.misc.buttons.snooper.client.json", () -> SystemUtils.IS_JAVA_1_8 && UTConfigTweaks.MISC.utSnooperToggle);
+                put("mixins.tweaks.misc.chat.bed.json", () -> UTConfigTweaks.MISC.CHAT.utKeepChatOpen);
                 put("mixins.tweaks.misc.chat.compactmessage.json", () -> UTConfigTweaks.MISC.CHAT.utCompactMessagesToggle);
                 put("mixins.tweaks.misc.chat.keepsentmessages.json", () -> UTConfigTweaks.MISC.CHAT.utKeepSentMessageHistory);
                 put("mixins.tweaks.misc.chat.maximumlines.json", () -> UTConfigTweaks.MISC.CHAT.utChatLines != 100);
