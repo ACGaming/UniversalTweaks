@@ -138,7 +138,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.netherchest.dupes.json", () -> loaded("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle);
                 put("mixins.mods.netherrocks.json", () -> loaded("netherrocks"));
                 put("mixins.mods.nuclearcraft.json", () -> loaded("nuclearcraft"));
-                put("mixins.mods.openblocks.json", () -> loaded("openblocks") && UTConfigMods.OPEN_BLOCKS.utLastStandFixToggle);
+                put("mixins.mods.openblocks.json", () -> regularOpenBlocksLoaded() && UTConfigMods.OPEN_BLOCKS.utLastStandFixToggle);
                 put("mixins.mods.properpumpkins.json", () -> loaded("pumpking") && UTConfigMods.PROPER_PUMPKIN.utFacingFix);
                 put("mixins.mods.quark.dupes.json", () -> loaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
                 put("mixins.mods.randomthings.anvil.json", () -> loaded("randomthings") && UTConfigMods.RANDOM_THINGS.utAnvilCraftFix);
@@ -178,6 +178,15 @@ public class UTMixinLoader implements ILateMixinLoader
     private static boolean loaded(String modid)
     {
         return Loader.isModLoaded(modid);
+    }
+
+    public static boolean regularOpenBlocksLoaded()
+    {
+        if (loaded("openblocks"))
+        {
+            return Loader.instance().getIndexedModList().get("openblocks").getName().equals("OpenBlocks");
+        }
+        return false;
     }
 
     public static boolean regularTConLoaded()
