@@ -107,6 +107,8 @@ import mod.acgaming.universaltweaks.util.UTKeybindings;
 import mod.acgaming.universaltweaks.util.UTPacketHandler;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
+
+import erebus.core.handler.DeathCompassRespawnEvent;
 import mods.railcraft.common.core.BetaMessageTickHandler;
 import net.tardis.mod.proxy.ClientProxy;
 import tonius.simplyjetpacks.network.NetworkHandler;
@@ -169,6 +171,8 @@ public class UniversalTweaks
             if (Loader.isModLoaded("cqrepoured") && UTConfigMods.CHOCOLATE_QUEST.utCQRGoldenFeatherToggle) MinecraftForge.EVENT_BUS.register(new UTGoldenFeatherEvent());
             if (Loader.isModLoaded("elenaidodge2") && UTConfigMods.ELENAI_DODGE_2.utED2ExtinguishingDodgeChance > 0) MinecraftForge.EVENT_BUS.register(new UTED2Burning());
             if (Loader.isModLoaded("elenaidodge2") && UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherConsumption > 0) MinecraftForge.EVENT_BUS.register(new UTED2Sprinting());
+            // Unregister reason: disable death compass.
+            if (Loader.isModLoaded("erebus") && UTConfigMods.EREBUS.utDeathCompassToggle) MinecraftForge.EVENT_BUS.unregister(DeathCompassRespawnEvent.class);
             if (Loader.isModLoaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
             if (Loader.isModLoaded("projectred-exploration") && UTConfigMods.PROJECTRED.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTProjectRedWorldEvents());
             // Unregister reason: disable beta warning.

@@ -514,9 +514,10 @@ All changes are toggleable via config files.
 * **Tech Reborn**
     * **Optimized Rolling Machine:** Optimizes the Rolling Machine to reduce tick time
 * **The Erebus**
+    * **Disable Death Compass:** Disables granting a death compass upon demise without disabling Block o' Bones
     * **Fix Cabbage Drop:** Fixes Cabbage not dropping the correct items in some situations
-    * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
     * **Fix Quake Hammer Texture:** Fixes the Quake Hammer using the incorrect config option to control its size
+    * **Preserved Blocks Fix:** Prevents HWYLA/TOP crashes with preserved blocks
 * **EvilCraft**
     * **Vengeance Spirit Regex Cache:** Cache the result of Vengeance Spirit checks against the config, which may attempt to build and check against hundreds of Regex Patterns every tick
     * **Vengeance Spirit Random Performance:** Avoid repeatedly running intensive calculations involving spawning a random Vengeance Spirit

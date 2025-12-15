@@ -104,10 +104,10 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.enderio.soulbinderjei.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utFixSoulBinderJEI);
                 put("mixins.mods.enderstorage.json", () -> loaded("enderstorage") && UTConfigMods.ENDER_STORAGE.utFrequencyTrackFixToggle);
                 put("mixins.mods.epicsiegemod.json", () -> loaded("epicsiegemod"));
-                put("mixins.mods.erebus.cabbage.json", () -> loaded("erebus") && UTConfigMods.EREBUS.utCabbageDrop);
+                put("mixins.mods.erebus.cabbage.json", () -> loaded("erebus") && UTConfigMods.EREBUS.utCabbageDropToggle);
                 put("mixins.mods.erebus.json", () -> loaded("erebus"));
                 put("mixins.mods.gaiadimension.restructurer.json", () -> loaded("gaiadimension") && UTConfigMods.GAIA_DIMENSION.utFixNPERestructurerRecipe);
-                put("mixins.mods.erebus.quakehammer.json", () -> loaded("erebus") && UTConfigMods.EREBUS.utFixQuakeHammerTexture);
+                put("mixins.mods.erebus.quakehammer.json", () -> loaded("erebus") && UTConfigMods.EREBUS.utFixQuakeHammerTextureToggle);
                 put("mixins.mods.evilcraft.vengeancespirit.regex.json", () -> loaded("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritCache);
                 put("mixins.mods.evilcraft.vengeancespirit.random.json", () -> loaded("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritRandom);
                 put("mixins.mods.extrautilities.breakcreativemill.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utFixCreativeMillHarvestability);

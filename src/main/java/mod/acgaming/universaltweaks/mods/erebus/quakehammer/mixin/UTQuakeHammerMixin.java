@@ -13,7 +13,7 @@ public class UTQuakeHammerMixin
     @Redirect(method = "syncConfigs", at = @At(value = "FIELD", target = "Lerebus/core/handler/configs/ConfigHandler;hammer_renderSize:F", ordinal = 1))
     private void utFixRenderSize(ConfigHandler configHandler, float original)
     {
-        if (!UTConfigMods.EREBUS.utFixQuakeHammerTexture) return;
+        if (!UTConfigMods.EREBUS.utFixQuakeHammerTextureToggle) return;
         configHandler.getHammer_renderSizeChargedMultiplier = original;
     }
 }

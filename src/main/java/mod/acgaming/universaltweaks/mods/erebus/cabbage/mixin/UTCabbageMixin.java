@@ -27,14 +27,14 @@ public abstract class UTCabbageMixin extends BlockCrops
     @Override
     public int damageDropped(IBlockState blockState)
     {
-        if (!UTConfigMods.EREBUS.utCabbageDrop) return super.damageDropped(blockState);
+        if (!UTConfigMods.EREBUS.utCabbageDropToggle) return super.damageDropped(blockState);
         return isMaxAge(blockState) ? ItemErebusFood.EnumFoodType.CABBAGE.ordinal() : 0;
     }
 
     @Inject(method = "getDrops", at = @At("HEAD"), remap = false, cancellable = true)
     private void utOverrideDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune, CallbackInfoReturnable<List<ItemStack>> cir)
     {
-        if (!UTConfigMods.EREBUS.utCabbageDrop) return;
+        if (!UTConfigMods.EREBUS.utCabbageDropToggle) return;
         NonNullList<ItemStack> drops = NonNullList.create();
         getDrops(drops, world, pos, state, fortune);
         cir.setReturnValue(drops);
@@ -43,7 +43,7 @@ public abstract class UTCabbageMixin extends BlockCrops
     @ModifyReturnValue(method = "getCrop", at = @At("RETURN"))
     private Item utGetCrop(Item original)
     {
-        if (!UTConfigMods.EREBUS.utCabbageDrop) return original;
+        if (!UTConfigMods.EREBUS.utCabbageDropToggle) return original;
         return ModItems.EREBUS_FOOD;
     }
 }
