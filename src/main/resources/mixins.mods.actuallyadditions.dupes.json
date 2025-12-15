@@ -4,7 +4,7 @@
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "StackUtilMixin",
+    "UTStackUtilMixin",
     "UTTileEntityBreakerMixin",
     "UTTileEntityDirectionalBreakerMixin",
     "UTTileEntityPhantomPlacerMixin"
