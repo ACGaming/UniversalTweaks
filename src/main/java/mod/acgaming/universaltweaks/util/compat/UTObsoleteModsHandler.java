@@ -111,6 +111,7 @@ public class UTObsoleteModsHandler
                 put("leafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
                 put("letmedespawn", () -> UTConfigTweaks.ENTITIES.utMobDespawnToggle);
                 put("mendingfix", () -> UTConfigTweaks.ITEMS.MENDING.utMendingToggle);
+                put("mfpu", () -> UTConfigTweaks.PERFORMANCE.utUncapFPSToggle);
                 put("mobpc", () -> UTConfigTweaks.ENTITIES.utMobDespawnToggle);
                 put("mobsunscreen", () -> !UTConfigTweaks.ENTITIES.utBurningSkeletonsToggle || !UTConfigTweaks.ENTITIES.utBurningZombiesToggle);
                 put("movingquickly", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
@@ -150,6 +151,7 @@ public class UTObsoleteModsHandler
                 put("tinkersoredictcache", () -> UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
                 put("toastcontrol", () -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlToggle);
                 put("tramplestopper", () -> UTConfigTweaks.BLOCKS.utFarmlandTrample != UTConfigTweaks.TrampleOptions.DEFAULT);
+                put("underwaterenchanting", () -> UTConfigTweaks.BLOCKS.utEnchantmentTableObstructionToggle);
                 put("unloader", () -> UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle);
                 put("unridekeybind", () -> UTConfigTweaks.MISC.utUseSeparateDismountKey);
                 put("voidfog", () -> UTConfigTweaks.WORLD.VOID_FOG.utVoidFogToggle);
