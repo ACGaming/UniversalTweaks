@@ -82,6 +82,13 @@ public class UTConfigTweaks
         FEATHER_FALLING
     }
 
+    public enum EnumMobDespawning
+    {
+        DEFAULT,
+        DESPAWN,
+        DESPAWN_DROP
+    }
+
     public enum EnumBeacon
     {
         MODIFIER(false, true),
@@ -663,8 +670,14 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Mob Despawn Improvement")
-        @Config.Comment("Mobs carrying picked up items will drop their equipment and despawn properly")
-        public boolean utMobDespawnToggle = true;
+        @Config.Comment
+            ({
+                "Mobs carrying picked up items will despawn properly (and optionally drop their equipment)",
+                "DEFAULT: Vanilla behavior, no despawning",
+                "DESPAWN: Despawn, void equipment",
+                "DESPAWN_DROP: Despawn, drop equipment"
+            })
+        public EnumMobDespawning utMobDespawnToggle = EnumMobDespawning.DEFAULT;
 
         @Config.RequiresMcRestart
         @Config.Name("Modern Knockback")

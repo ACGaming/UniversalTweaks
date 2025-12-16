@@ -1,7 +1,5 @@
 package mod.acgaming.universaltweaks.tweaks.entities.despawning.mixin;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
@@ -10,6 +8,8 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraftforge.fml.common.eventhandler.Event;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
@@ -22,38 +22,37 @@ import org.spongepowered.asm.mixin.Unique;
 public abstract class UTMobDespawnMixin extends EntityCreature
 {
     @Unique
-    public boolean pickedItems = false;
+    public boolean ut$pickedItems = false;
 
-    protected UTMobDespawnMixin(World worldIn)
+    protected UTMobDespawnMixin(World world)
     {
-        super(worldIn);
+        super(world);
     }
 
     @Override
-    @ParametersAreNonnullByDefault
     public void updateEquipmentIfNeeded(EntityItem itemEntity)
     {
         super.updateEquipmentIfNeeded(itemEntity);
-        if (!UTConfigTweaks.ENTITIES.utMobDespawnToggle) return;
+        if (UTConfigTweaks.ENTITIES.utMobDespawnToggle == UTConfigTweaks.EnumMobDespawning.DEFAULT) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Update equipment");
-        this.pickedItems = true;
+        this.ut$pickedItems = true;
         ((EntityLivingAccessor) this).setPersistenceRequired(this.hasCustomName());
     }
 
     @Override
     public void despawnEntity()
     {
-        if (!UTConfigTweaks.ENTITIES.utMobDespawnToggle)
+        if (UTConfigTweaks.ENTITIES.utMobDespawnToggle != UTConfigTweaks.EnumMobDespawning.DESPAWN_DROP)
         {
             super.despawnEntity();
             return;
         }
-        net.minecraftforge.fml.common.eventhandler.Event.Result result;
+        Event.Result result;
         if (((EntityLivingAccessor) this).getPersistenceRequired()) this.idleTime = 0;
-        else if ((this.idleTime & 0x1F) == 0x1F && (result = net.minecraftforge.event.ForgeEventFactory.canEntityDespawn(this)) != net.minecraftforge.fml.common.eventhandler.Event.Result.DEFAULT)
+        else if ((this.idleTime & 0x1F) == 0x1F && (result = ForgeEventFactory.canEntityDespawn(this)) != Event.Result.DEFAULT)
         {
-            if (result == net.minecraftforge.fml.common.eventhandler.Event.Result.DENY) this.idleTime = 0;
-            else dropEquipmentAndDespawn();
+            if (result == Event.Result.DENY) this.idleTime = 0;
+            else ut$dropEquipmentAndDespawn();
         }
         else
         {
@@ -64,18 +63,18 @@ public abstract class UTMobDespawnMixin extends EntityCreature
                 double d1 = entity.posY - this.posY;
                 double d2 = entity.posZ - this.posZ;
                 double d3 = d0 * d0 + d1 * d1 + d2 * d2;
-                if (this.canDespawn() && d3 > 16384.0D) dropEquipmentAndDespawn();
-                if (this.idleTime > 600 && this.rand.nextInt(800) == 0 && d3 > 1024.0D && this.canDespawn()) dropEquipmentAndDespawn();
+                if (this.canDespawn() && d3 > 16384.0D) ut$dropEquipmentAndDespawn();
+                if (this.idleTime > 600 && this.rand.nextInt(800) == 0 && d3 > 1024.0D && this.canDespawn()) ut$dropEquipmentAndDespawn();
                 else if (d3 < 1024.0D) this.idleTime = 0;
             }
         }
     }
 
     @Unique
-    public void dropEquipmentAndDespawn()
+    public void ut$dropEquipmentAndDespawn()
     {
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Despawn entity");
-        if (this.pickedItems)
+        if (this.ut$pickedItems)
         {
             for (EntityEquipmentSlot entityequipmentslot : EntityEquipmentSlot.values())
             {
