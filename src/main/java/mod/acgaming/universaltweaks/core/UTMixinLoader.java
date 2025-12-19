@@ -70,6 +70,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.astralsorcery.tool.json", () -> loaded("astralsorcery") && UTConfigMods.ASTRAL_SORCERY.utEmptyPropertiesZero);
                 put("mixins.mods.backpack.json", () -> loaded("backpack") && UTConfigMods.BACKPACKS.utBPNoOffhandInteractionToggle);
                 put("mixins.mods.bewitchment.json", () -> loaded("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
+                put("mixins.mods.bibliocraft.itemstack.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utCopyItemStackCorrectlyToggle);
                 put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
                 put("mixins.mods.biomesoplenty.sealevel.json", () -> loaded("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
                 put("mixins.mods.bloodmagic.boundtool.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);

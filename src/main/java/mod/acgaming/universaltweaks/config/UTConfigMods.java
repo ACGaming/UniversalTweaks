@@ -457,6 +457,11 @@ public class UTConfigMods
         @Config.Name("Disable Version Check")
         @Config.Comment("Fixes client-side memory leak by disabling version check")
         public boolean utDisableVersionCheckToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix ItemStack Copying")
+        @Config.Comment("Fixes removing an ItemStack not copying all data correctly, particularly for backpacks")
+        public boolean utCopyItemStackCorrectlyToggle = true;
     }
 
     public static class BiomesOPlentyCategory
