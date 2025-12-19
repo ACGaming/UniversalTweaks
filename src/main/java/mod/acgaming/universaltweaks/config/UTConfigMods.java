@@ -459,6 +459,11 @@ public class UTConfigMods
         public boolean utDisableVersionCheckToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Left Handed Rendering")
+        @Config.Comment("Fixes the Antique Atlas and Clipboard rendering incorrect when the Main Hand is set to Left")
+        public boolean utSwapDisplayHandWhenLeftHanded = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix ItemStack Copying")
         @Config.Comment("Fixes removing an ItemStack not copying all data correctly, particularly for backpacks")
         public boolean utCopyItemStackCorrectlyToggle = true;
