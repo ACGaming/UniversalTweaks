@@ -215,7 +215,7 @@ All changes are toggleable via config files.
 * **Mending Overpowered:** If mending fix is enabled, repairs entire damaged inventory with XP
 * **Mending:** Only repairs damaged equipment with XP
 * **Minecart Drops Itself:** Replaces vanilla Minecarts dropping a Minecart and the contained item, and instead drop the combined item
-* **Mob Despawn Improvement:** Mobs carrying picked up items will despawn properly (and optionally drop their equipment)
+* **Mob Despawning Improvement:** Mobs carrying picked up items will despawn properly (and optionally drop their equipment)
 * **Modern Knockback:** Backports 1.16+ knockback to 1.12: Knockback resistance is now a scale instead of a probability
 * **More Banner Layers:** Sets the amount of applicable pattern layers for banners
 * **Music Control:** Enables various music playback control tweaks

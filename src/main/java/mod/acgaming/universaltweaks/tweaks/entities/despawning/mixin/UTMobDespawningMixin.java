@@ -19,12 +19,12 @@ import org.spongepowered.asm.mixin.Unique;
 
 // Courtesy of frikinjay
 @Mixin(EntityMob.class)
-public abstract class UTMobDespawnMixin extends EntityCreature
+public abstract class UTMobDespawningMixin extends EntityCreature
 {
     @Unique
     public boolean ut$pickedItems = false;
 
-    protected UTMobDespawnMixin(World world)
+    protected UTMobDespawningMixin(World world)
     {
         super(world);
     }
@@ -33,7 +33,7 @@ public abstract class UTMobDespawnMixin extends EntityCreature
     public void updateEquipmentIfNeeded(EntityItem itemEntity)
     {
         super.updateEquipmentIfNeeded(itemEntity);
-        if (UTConfigTweaks.ENTITIES.utMobDespawnToggle == UTConfigTweaks.EnumMobDespawning.DEFAULT) return;
+        if (UTConfigTweaks.ENTITIES.utMobDespawningToggle == UTConfigTweaks.EnumMobDespawning.DEFAULT) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMobDespawn ::: Update equipment");
         this.ut$pickedItems = true;
         ((EntityLivingAccessor) this).setPersistenceRequired(this.hasCustomName());
@@ -42,7 +42,7 @@ public abstract class UTMobDespawnMixin extends EntityCreature
     @Override
     public void despawnEntity()
     {
-        if (UTConfigTweaks.ENTITIES.utMobDespawnToggle != UTConfigTweaks.EnumMobDespawning.DESPAWN_DROP)
+        if (UTConfigTweaks.ENTITIES.utMobDespawningToggle != UTConfigTweaks.EnumMobDespawning.DESPAWN_DROP)
         {
             super.despawnEntity();
             return;

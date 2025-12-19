@@ -109,10 +109,10 @@ public class UTObsoleteModsHandler
                 put("ksyxis", () -> !UTConfigTweaks.WORLD.SPAWN_CHUNKS.utSpawnChunksGenToggle || !UTConfigTweaks.WORLD.SPAWN_CHUNKS.utSpawnChunksLoadingToggle);
                 put("lanserverproperties", () -> UTConfigTweaks.MISC.utLANServerProperties);
                 put("leafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
-                put("letmedespawn", () -> UTConfigTweaks.ENTITIES.utMobDespawnToggle != UTConfigTweaks.EnumMobDespawning.DEFAULT);
+                put("letmedespawn", () -> UTConfigTweaks.ENTITIES.utMobDespawningToggle != UTConfigTweaks.EnumMobDespawning.DEFAULT);
                 put("mendingfix", () -> UTConfigTweaks.ITEMS.MENDING.utMendingToggle);
                 put("mfpu", () -> UTConfigTweaks.PERFORMANCE.utUncapFPSToggle);
-                put("mobpc", () -> UTConfigTweaks.ENTITIES.utMobDespawnToggle != UTConfigTweaks.EnumMobDespawning.DEFAULT);
+                put("mobpc", () -> UTConfigTweaks.ENTITIES.utMobDespawningToggle != UTConfigTweaks.EnumMobDespawning.DEFAULT);
                 put("mobsunscreen", () -> !UTConfigTweaks.ENTITIES.utBurningSkeletonsToggle || !UTConfigTweaks.ENTITIES.utBurningZombiesToggle);
                 put("movingquickly", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
                 put("mtqfix", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);

@@ -669,7 +669,7 @@ public class UTConfigTweaks
         public boolean utHuskStraySpawningToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Mob Despawn Improvement")
+        @Config.Name("Mob Despawning Improvement")
         @Config.Comment
             ({
                 "Mobs carrying picked up items will despawn properly (and optionally drop their equipment)",
@@ -677,7 +677,7 @@ public class UTConfigTweaks
                 "DESPAWN: Despawn, void equipment",
                 "DESPAWN_DROP: Despawn, drop equipment"
             })
-        public EnumMobDespawning utMobDespawnToggle = EnumMobDespawning.DEFAULT;
+        public EnumMobDespawning utMobDespawningToggle = EnumMobDespawning.DEFAULT;
 
         @Config.RequiresMcRestart
         @Config.Name("Modern Knockback")
