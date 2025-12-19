@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.bibliocraft.mixin;
+package mod.acgaming.universaltweaks.mods.bibliocraft.version.mixin;
 
 import jds.bibliocraft.BiblioCraft;
 import org.spongepowered.asm.mixin.Mixin;

@@ -32,7 +32,7 @@ public class UTMixinLoader implements ILateMixinLoader
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
             {
                 put("mixins.mods.actuallyadditions.itemparticle.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utItemLaserParticlesGraphics > -1);
-                put("mixins.mods.bibliocraft.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utDisableVersionCheckToggle);
+                put("mixins.mods.bibliocraft.version.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utDisableVersionCheckToggle);
                 put("mixins.mods.cbmultipart.client.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
                 put("mixins.mods.compactmachines.memory.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utMemoryLeakFixToggle);
                 put("mixins.mods.compactmachines.render.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
@@ -70,6 +70,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.astralsorcery.tool.json", () -> loaded("astralsorcery") && UTConfigMods.ASTRAL_SORCERY.utEmptyPropertiesZero);
                 put("mixins.mods.backpack.json", () -> loaded("backpack") && UTConfigMods.BACKPACKS.utBPNoOffhandInteractionToggle);
                 put("mixins.mods.bewitchment.json", () -> loaded("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
+                put("mixins.mods.bibliocraft.itemstack.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utCopyItemStackCorrectlyToggle);
                 put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
                 put("mixins.mods.biomesoplenty.sealevel.json", () -> loaded("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
                 put("mixins.mods.bloodmagic.boundtool.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);
