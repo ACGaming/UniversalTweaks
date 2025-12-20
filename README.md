@@ -339,6 +339,7 @@ All changes are toggleable via config files.
     * **Disable Version Check:** Fixes client-side memory leak by disabling version check
     * **Fix ItemStack Copying:** Fixes removing an ItemStack not copying all data correctly, particularly for backpacks
     * **Fix Left Handed Rendering:** Fixes the Antique Atlas and Clipboard rendering incorrect when the Main Hand is set to Left
+    * **Multiplayer Sound Fix:** Register all sounds, fixing bugs when attempting to play them on servers
 * **Binnie's Mods**
     * **Gather Windfall:** Allows Forestry farms to pick up ExtraTrees fruit
 * **Biomes O' Plenty**

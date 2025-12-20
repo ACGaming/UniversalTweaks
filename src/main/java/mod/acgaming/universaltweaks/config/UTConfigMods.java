@@ -467,6 +467,11 @@ public class UTConfigMods
         @Config.Name("Fix ItemStack Copying")
         @Config.Comment("Fixes removing an ItemStack not copying all data correctly, particularly for backpacks")
         public boolean utCopyItemStackCorrectlyToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Multiplayer Sound Fix")
+        @Config.Comment("Register all sounds, fixing bugs when attempting to play them on servers")
+        public boolean utRegisterSoundToggle = true;
     }
 
     public static class BiomesOPlentyCategory

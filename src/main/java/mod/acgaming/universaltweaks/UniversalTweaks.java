@@ -28,6 +28,7 @@ import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.core.UTMixinLoader;
 import mod.acgaming.universaltweaks.mods.arcanearchives.UTArcaneArchivesEvents;
 import mod.acgaming.universaltweaks.mods.astralsorcery.UTClearOnChange;
+import mod.acgaming.universaltweaks.mods.bibliocraft.sound.UTBiblioCraftSoundRegister;
 import mod.acgaming.universaltweaks.mods.bloodmagic.UTBloodMagicEvents;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.mods.collective.UTCollectiveEvents;
@@ -136,6 +137,7 @@ public class UniversalTweaks
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
         {
             if (UTMixinLoader.regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
+            if (Loader.isModLoaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utRegisterSoundToggle) MinecraftForge.EVENT_BUS.register(new UTBiblioCraftSoundRegister());
         }
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
