@@ -15,6 +15,7 @@ import net.minecraftforge.items.ItemHandlerHelper;
 
 import WayofTime.bloodmagic.item.ItemBoundTool;
 import com.llamalad7.mixinextras.sugar.Local;
+import mod.acgaming.universaltweaks.mods.vanilla.mixin.UTBlockAccessor;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -26,11 +27,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = ItemBoundTool.class, remap = false)
 public abstract class UTItemBoundToolMixin
 {
-    @Shadow(remap = true)
-    public abstract float getDestroySpeed(ItemStack stack, IBlockState state);
-
     @Unique
     private final NonNullList<ItemStack> harvestedStacks = NonNullList.create();
+
+    @Shadow(remap = true)
+    public abstract float getDestroySpeed(ItemStack stack, IBlockState state);
 
     /**
      * @author Invadermonky
@@ -69,7 +70,7 @@ public abstract class UTItemBoundToolMixin
                     NonNullList<ItemStack> drops = NonNullList.create();
                     if (silkTouch && state.getBlock().canSilkHarvest(world, pos, world.getBlockState(pos), player))
                     {
-                        ItemStack silkDrop = state.getBlock().getSilkTouchDrop(state);
+                        ItemStack silkDrop = ((UTBlockAccessor) state.getBlock()).callGetSilkTouchDrop(state);
                         if (!silkDrop.isEmpty())
                         {
                             drops.add(silkDrop);

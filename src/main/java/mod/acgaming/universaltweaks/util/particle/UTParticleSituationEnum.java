@@ -15,6 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import forestry.core.blocks.BlockBase;
 import forestry.core.blocks.IBlockType;
 import forestry.core.blocks.IMachinePropertiesTesr;
+import mod.acgaming.universaltweaks.mods.vanilla.mixin.UTMinecraftAccessor;
 
 /**
  * {@link UTParticleSpawnerMessage} uses this enum to understand which particle situation we are handling
@@ -75,7 +76,7 @@ public enum UTParticleSituationEnum
     @SideOnly(Side.CLIENT)
     private TextureAtlasSprite getTexture(String textureLocation)
     {
-        return Minecraft.getMinecraft().modelManager.getTextureMap().getAtlasSprite(textureLocation);
+        return ((UTMinecraftAccessor) Minecraft.getMinecraft()).getModelManager().getTextureMap().getAtlasSprite(textureLocation);
     }
 
 }

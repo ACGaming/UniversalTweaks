@@ -4,6 +4,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
+import mod.acgaming.universaltweaks.mods.vanilla.mixin.UTEntityLivingBaseAccessor;
+
 // MC-849
 // https://bugs.mojang.com/browse/MC-849
 // Courtesy of Marcono1234, makamys
@@ -17,7 +19,7 @@ public class UTDoubleConsumption
             ItemStack currentItem = event.player.inventory.getCurrentItem();
             if (event.player.getActiveItemStack() != currentItem && ItemStack.areItemStacksEqual(currentItem, event.player.getActiveItemStack()))
             {
-                event.player.activeItemStack = currentItem;
+                ((UTEntityLivingBaseAccessor) event.player).setActiveItemStack(currentItem);
             }
         }
     }

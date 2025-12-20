@@ -44,6 +44,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     private static final Map<String, BooleanSupplier> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
     {
         {
+            put("mixins.vanilla.mod.accessors.json", () -> true);
+
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchBugfixes)
             {
                 put("mixins.bugfixes.blocks.comparatortiming.json", () -> UTConfigBugfixes.BLOCKS.utComparatorTimingToggle);

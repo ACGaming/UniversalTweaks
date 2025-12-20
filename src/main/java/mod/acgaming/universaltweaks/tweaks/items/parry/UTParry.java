@@ -31,6 +31,8 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.mods.vanilla.mixin.UTEntityLivingBaseAccessor;
+import mod.acgaming.universaltweaks.mods.vanilla.mixin.UTEntityThrowableAccessor;
 
 // Courtesy of Drullkus
 public class UTParry
@@ -84,7 +86,7 @@ public class UTParry
                 {
                     EntityLivingBase entityBlocking = (EntityLivingBase) entity;
                     if (UTConfigTweaks.ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
-                    if (entityBlocking.canBlockDamageSource(new DamageSource("parry_this")
+                    if (((UTEntityLivingBaseAccessor) entityBlocking).callCanBlockDamageSource(new DamageSource("parry_this")
                     {
                         public Vec3d getDamageLocation()
                         {
@@ -121,7 +123,7 @@ public class UTParry
                 {
                     EntityLivingBase entityBlocking = (EntityLivingBase) entity;
                     if (UTConfigTweaks.ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
-                    if (entityBlocking.canBlockDamageSource(new DamageSource("parry_this")
+                    if (((UTEntityLivingBaseAccessor) entityBlocking).callCanBlockDamageSource(new DamageSource("parry_this")
                     {
                         public Vec3d getDamageLocation()
                         {
@@ -161,7 +163,7 @@ public class UTParry
             {
                 EntityLivingBase entityBlocking = (EntityLivingBase) entity;
                 if (UTConfigTweaks.ITEMS.PARRY.utParryReboundRequire && getEnchantedLevel(entityBlocking.getActiveItemStack()) == 0) return;
-                if (entityBlocking.canBlockDamageSource(new DamageSource("parry_this")
+                if (((UTEntityLivingBaseAccessor) entityBlocking).callCanBlockDamageSource(new DamageSource("parry_this")
                 {
                     public Vec3d getDamageLocation()
                     {
@@ -171,7 +173,7 @@ public class UTParry
                 {
                     Vec3d playerVec3 = entityBlocking.getLookVec();
                     projectile.shoot(playerVec3.x, playerVec3.y, playerVec3.z, 1.1F, 0.1F);
-                    projectile.thrower = entityBlocking;
+                    ((UTEntityThrowableAccessor) projectile).setThrower(entityBlocking);
                     entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.PLAYERS, 1.0F, 0.8F + entityBlocking.world.rand.nextFloat() * 0.4F);
                     if (UTConfigTweaks.ITEMS.PARRY.utParrySound) entityBlocking.world.playSound(null, entityBlocking.getPosition(), SoundEvents.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 0.5F, 2.0F);
                     event.setCanceled(true);
