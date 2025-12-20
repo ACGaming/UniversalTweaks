@@ -459,6 +459,11 @@ public class UTConfigMods
         public boolean utDisableVersionCheckToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Fancy Sign Rotation")
+        @Config.Comment("Fix Fancy Signs rendering items and blocks in different ways between the GUI and in-world")
+        public boolean utFancySignRotationToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Left Handed Rendering")
         @Config.Comment("Fixes the Antique Atlas and Clipboard rendering incorrect when the Main Hand is set to Left")
         public boolean utSwapDisplayHandWhenLeftHanded = true;
