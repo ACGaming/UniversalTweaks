@@ -469,6 +469,15 @@ public class UTConfigMods
         public boolean utSwapDisplayHandWhenLeftHanded = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix IItemHandler Method Not Existing")
+        @Config.Comment
+            ({
+                "Fix IItemHandler#getStackInSlot method not existing due to being obfuscated by IInventory, preventing countless errors",
+                "This occurs because BiblioCraft's Tile Entities implement both IInventory and IItemHandler, and getStackInSlot is an obfuscated method in IInventory but not IItemHandler",
+            })
+        public boolean utEnsureIItemHandlerMethodToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix ItemStack Copying")
         @Config.Comment("Fixes removing an ItemStack not copying all data correctly, particularly for backpacks")
         public boolean utCopyItemStackCorrectlyToggle = true;
