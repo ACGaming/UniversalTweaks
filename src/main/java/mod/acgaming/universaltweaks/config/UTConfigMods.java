@@ -478,6 +478,11 @@ public class UTConfigMods
         public boolean utEnsureIItemHandlerMethodToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Item Transfer")
+        @Config.Comment("Make BiblioCraft actually use simulate properly when inserting and extracting items, fixing many item transfer methods")
+        public boolean utFixItemTransferToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix ItemStack Copying")
         @Config.Comment("Fixes removing an ItemStack not copying all data correctly, particularly for backpacks")
         public boolean utCopyItemStackCorrectlyToggle = true;
