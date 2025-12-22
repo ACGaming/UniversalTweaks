@@ -484,6 +484,11 @@ public class UTConfigMods
         public boolean utSwapDisplayHandWhenLeftHanded = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Using Incorrect Hand")
+        @Config.Comment("Fix the Clipboard and the Stockroom Catalogue behaving incorrectly when used in the offhand")
+        public boolean utFixHandConsumption = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix IItemHandler Method Not Existing")
         @Config.Comment
             ({

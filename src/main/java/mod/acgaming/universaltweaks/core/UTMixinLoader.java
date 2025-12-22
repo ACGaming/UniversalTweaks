@@ -32,9 +32,9 @@ public class UTMixinLoader implements ILateMixinLoader
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
             {
                 put("mixins.mods.actuallyadditions.itemparticle.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utItemLaserParticlesGraphics > -1);
-                put("mixins.mods.bibliocraft.version.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utDisableVersionCheckToggle);
                 put("mixins.mods.bibliocraft.lefthand.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utSwapDisplayHandWhenLeftHanded);
                 put("mixins.mods.bibliocraft.sign.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFancySignRotationToggle);
+                put("mixins.mods.bibliocraft.version.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utDisableVersionCheckToggle);
                 put("mixins.mods.cbmultipart.client.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
                 put("mixins.mods.compactmachines.memory.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utMemoryLeakFixToggle);
                 put("mixins.mods.compactmachines.render.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
@@ -74,6 +74,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.bewitchment.json", () -> loaded("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
                 put("mixins.mods.bibliocraft.armor.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandSlotFixToggle);
                 put("mixins.mods.bibliocraft.armorbinding.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandBindingCurseToggle);
+                put("mixins.mods.bibliocraft.hand.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFixHandConsumption);
                 put("mixins.mods.bibliocraft.handler.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utEnsureIItemHandlerMethodToggle);
                 put("mixins.mods.bibliocraft.itemstack.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utCopyItemStackCorrectlyToggle);
                 put("mixins.mods.bibliocraft.printpress.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utPrintingPressAnyBlackDyeToggle);
