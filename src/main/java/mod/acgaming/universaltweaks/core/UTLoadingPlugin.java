@@ -80,13 +80,13 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins.bugfixes.entities.skeletonaim.json", c -> UTConfigBugfixes.ENTITIES.utSkeletonAimToggle);
                 put("mixins.bugfixes.entities.sleeping.json", c -> UTConfigBugfixes.BLOCKS.utSleepResetsWeatherToggle);
                 put("mixins.bugfixes.entities.suffocation.json", c -> UTConfigBugfixes.ENTITIES.utEntitySuffocationToggle);
-                put("mixins.bugfixes.entities.tracker.json", c -> UTConfigBugfixes.ENTITIES.utEntityTrackerToggle && !Coremods.SPONGEFORGE.isLoaded());
+                put("mixins.bugfixes.entities.tracker.json", c -> UTConfigBugfixes.ENTITIES.utEntityTrackerToggle && !c.isModPresent("spongeforge"));
                 put("mixins.bugfixes.entities.untippedarrowparticles.json", c -> UTConfigBugfixes.ENTITIES.utUntippedArrowParticlesToggle);
                 put("mixins.bugfixes.misc.crafteditemstatistics.json", c -> UTConfigBugfixes.MISC.utCraftedItemStatisticsToggle);
-                put("mixins.bugfixes.misc.packetsize.json", c -> UTConfigBugfixes.MISC.utPacketSize > 0x200000 && !Coremods.SPONGEFORGE.isLoaded() && !Coremods.RANDOM_PATCHES.isLoaded());
+                put("mixins.bugfixes.misc.packetsize.json", c -> UTConfigBugfixes.MISC.utPacketSize > 0x200000 && !c.isModPresent("spongeforge") && !c.isModPresent("randompatches"));
                 put("mixins.bugfixes.misc.particlespawning.json", c -> UTConfigBugfixes.MISC.utParticleSpawningToggle);
                 put("mixins.bugfixes.misc.durabilitycap.json", c -> UTConfigBugfixes.MISC.utExtendDurabilityCap);
-                put("mixins.bugfixes.world.chunksaving.json", c -> UTConfigBugfixes.WORLD.utChunkSavingToggle && !Coremods.SPONGEFORGE.isLoaded());
+                put("mixins.bugfixes.world.chunksaving.json", c -> UTConfigBugfixes.WORLD.utChunkSavingToggle && !c.isModPresent("spongeforge"));
                 put("mixins.bugfixes.world.portal.json", c -> UTConfigBugfixes.WORLD.utPortalLocationLink);
                 put("mixins.bugfixes.world.tileentities.json", c -> UTConfigBugfixes.WORLD.utTileEntityMap != UTConfigBugfixes.WorldCategory.EnumMaps.HASHMAP);
                 put("mixins.bugfixes.world.village.json", c -> UTConfigBugfixes.WORLD.utVillageComponentPartsToggle);
@@ -198,11 +198,11 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         {
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchBugfixes)
             {
-                put("mixins.bugfixes.blocks.banner.json", c -> UTConfigBugfixes.BLOCKS.utBannerBoundingBoxToggle && !Coremods.RENDERLIB.isLoaded());
+                put("mixins.bugfixes.blocks.banner.json", c -> UTConfigBugfixes.BLOCKS.utBannerBoundingBoxToggle && !c.isModPresent("renderlib"));
                 put("mixins.bugfixes.blocks.blockoverlay.json", c -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
                 put("mixins.bugfixes.blocks.miningglitch.client.json", c -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
                 put("mixins.bugfixes.entities.elytra.json", c -> UTConfigBugfixes.ENTITIES.utElytraDeploymentLandingToggle);
-                put("mixins.bugfixes.entities.elytrarender.json", c -> UTConfigBugfixes.ENTITIES.utFixInvisiblePlayerModelWithElytra && !Coremods.OPENMODS.isLoaded());
+                put("mixins.bugfixes.entities.elytrarender.json", c -> UTConfigBugfixes.ENTITIES.utFixInvisiblePlayerModelWithElytra && !c.isModPresent("openmods"));
                 put("mixins.bugfixes.entities.entitylists.client.json", c -> UTConfigBugfixes.ENTITIES.ENTITY_LISTS.utWorldAdditionsToggle);
                 put("mixins.bugfixes.entities.villagermantle.json", c -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
                 put("mixins.bugfixes.misc.actionbar.json", c -> UTConfigBugfixes.MISC.utOverlayMessageFadeOut);
@@ -228,9 +228,9 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins.tweaks.items.attackcooldown.client.json", c -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
                 put("mixins.tweaks.items.itementities.client.json", c -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle);
                 put("mixins.tweaks.misc.advancements.guisize.json", c -> UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle);
-                put("mixins.tweaks.misc.buttons.anaglyph.json", c -> UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle && !Coremods.OPTIFINE.isLoaded());
-                put("mixins.tweaks.misc.buttons.anaglyph.optifine.json", c -> UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle && Coremods.OPTIFINE.isLoaded());
-                put("mixins.tweaks.misc.buttons.realms.json", c -> SystemUtils.IS_JAVA_1_8 && UTConfigTweaks.MISC.utRealmsButtonToggle && !Coremods.RANDOM_PATCHES.isLoaded());
+                put("mixins.tweaks.misc.buttons.anaglyph.json", c -> UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle && !c.isModPresent("optifine"));
+                put("mixins.tweaks.misc.buttons.anaglyph.optifine.json", c -> UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle && c.isModPresent("optifine"));
+                put("mixins.tweaks.misc.buttons.realms.json", c -> SystemUtils.IS_JAVA_1_8 && UTConfigTweaks.MISC.utRealmsButtonToggle && !c.isModPresent("randompatches"));
                 put("mixins.tweaks.misc.buttons.snooper.client.json", c -> SystemUtils.IS_JAVA_1_8 && UTConfigTweaks.MISC.utSnooperToggle);
                 put("mixins.tweaks.misc.chat.bed.json", c -> UTConfigTweaks.MISC.CHAT.utKeepChatOpen);
                 put("mixins.tweaks.misc.chat.compactmessage.json", c -> UTConfigTweaks.MISC.CHAT.utCompactMessagesToggle);
@@ -265,7 +265,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins.tweaks.misc.timeouts.client.json", c -> UTConfigTweaks.MISC.TIMEOUTS.utTimeoutsToggle);
                 put("mixins.tweaks.misc.toastcontrol.json", c -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlToggle);
                 put("mixins.tweaks.misc.viewbobbing.json", c -> true);
-                put("mixins.tweaks.performance.audioreload.json", c -> UTConfigTweaks.PERFORMANCE.utDisableAudioDebugToggle && !Coremods.SURGE.isLoaded());
+                put("mixins.tweaks.performance.audioreload.json", c -> UTConfigTweaks.PERFORMANCE.utDisableAudioDebugToggle && !c.isModPresent("surge"));
                 put("mixins.tweaks.performance.connectionspeed.json", c -> UTConfigTweaks.PERFORMANCE.utImproveLanguageSwitchingSpeed);
                 put("mixins.tweaks.performance.fps.json", c -> UTConfigTweaks.PERFORMANCE.utUncapFPSToggle);
                 put("mixins.tweaks.performance.languageswitching.json", c -> UTConfigTweaks.PERFORMANCE.utImproveLanguageSwitchingSpeed);
