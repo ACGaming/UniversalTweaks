@@ -156,7 +156,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins.tweaks.items.repairing.json", c -> UTConfigTweaks.ITEMS.utCraftingRepairToggle);
                 put("mixins.tweaks.items.xpbottle.json", c -> UTConfigTweaks.ITEMS.utXPBottleAmount != -1);
                 put("mixins.tweaks.misc.advancements.json", c -> UTConfigTweaks.MISC.utDisableAdvancementsToggle);
-                put("mixins.tweaks.misc.armorcurve.json", c -> UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle);
+                put("mixins.tweaks.misc.armorcurve.json", c -> !c.inDev() && UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle);
                 put("mixins.tweaks.misc.armorswap.json", c -> UTConfigTweaks.MISC.utArmorSwap);
                 put("mixins.tweaks.misc.bannerlayers.json", c -> UTConfigTweaks.MISC.utBannerLayers != 6);
                 put("mixins.tweaks.misc.commands.seed.json", c -> UTConfigTweaks.MISC.utCopyWorldSeedToggle);
@@ -240,8 +240,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins.tweaks.misc.glint.enchantedbook.json", c -> UTConfigTweaks.MISC.utDisableEnchantmentBookGlint);
                 put("mixins.tweaks.misc.glint.potion.json", c -> UTConfigTweaks.MISC.utDisablePotionGlint);
                 put("mixins.tweaks.misc.gui.defaultguitextcolor.json", c -> !UTConfigTweaks.MISC.utDefaultGuiTextColor.equals("404040"));
-                put("mixins.tweaks.misc.gui.gamewindow.icon.json", c -> !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon16.isEmpty() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon32.isEmpty() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon256.isEmpty());
-                put("mixins.tweaks.misc.gui.gamewindow.title.json", c -> !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowDisplayTitle.isEmpty());
+                put("mixins.tweaks.misc.gui.gamewindow.icon.json", c -> !c.inDev() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon16.isEmpty() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon32.isEmpty() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon256.isEmpty());
+                put("mixins.tweaks.misc.gui.gamewindow.title.json", c -> !c.inDev() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowDisplayTitle.isEmpty());
                 put("mixins.tweaks.misc.gui.keybindlistentry.json", c -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
                 put("mixins.tweaks.misc.gui.lanserverproperties.json", c -> UTConfigTweaks.MISC.utLANServerProperties);
                 put("mixins.tweaks.misc.gui.modlist.json", c -> UTConfigTweaks.MISC.utForgeModListImprovements);
@@ -338,12 +338,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         Coremods.initFromContext(context);
 
         String mixinConfig = context.mixinConfig();
-        if (context.inDev())
-        {
-            return !mixinConfig.equals("mixins.tweaks.misc.armorcurve.json") // Causes crashes in dev env only
-                && !mixinConfig.equals("mixins.tweaks.misc.gui.gamewindow.icon.json") // No icon
-                && !mixinConfig.equals("mixins.tweaks.misc.gui.gamewindow.title.json"); // No title
-        }
         Predicate<Context> sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : serversideMixinConfigs.get(mixinConfig);
         Predicate<Context> commonSupplier = commonMixinConfigs.get(mixinConfig);
         return sidedSupplier != null ? sidedSupplier.test(context) : commonSupplier == null || commonSupplier.test(context);
