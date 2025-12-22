@@ -12,6 +12,7 @@ import net.minecraft.world.World;
 
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.mods.vanilla.mixin.UTEntityItemAccessor;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -142,7 +143,7 @@ public abstract class UTEntityItemMixin extends Entity
             if (entityItem.ticksExisted < 20) return;
             double radius = UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIESmartCombinationRadius;
             boolean checkY = UTConfigTweaks.ITEMS.ITEM_ENTITIES.utIESmartCombinationYAxis;
-            for (EntityItem i : entityItem.world.getEntitiesWithinAABB(EntityItem.class, entityItem.getEntityBoundingBox().grow(radius, checkY ? radius : 0, radius))) entityItem.combineItems(i);
+            for (EntityItem i : entityItem.world.getEntitiesWithinAABB(EntityItem.class, entityItem.getEntityBoundingBox().grow(radius, checkY ? radius : 0, radius))) ((UTEntityItemAccessor) entityItem).callCombineItems(i);
             ci.cancel();
         }
     }

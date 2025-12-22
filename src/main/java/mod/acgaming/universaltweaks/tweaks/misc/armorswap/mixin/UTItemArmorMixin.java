@@ -1,6 +1,7 @@
 package mod.acgaming.universaltweaks.tweaks.misc.armorswap.mixin;
 
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemElytra;
 import net.minecraft.item.ItemStack;
@@ -22,9 +23,9 @@ public class UTItemArmorMixin
      * @author WaitingIdly
      */
     @WrapOperation(method = "onItemRightClick", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isEmpty()Z"))
-    private boolean utCheckNotBindingCurse(ItemStack stack, Operation<Boolean> original)
+    private boolean utCheckNotBindingCurse(ItemStack stack, Operation<Boolean> original, @Local(argsOnly = true) EntityPlayer playerIn)
     {
-        return !EnchantmentHelper.hasBindingCurse(stack);
+        return playerIn.isCreative() || !EnchantmentHelper.hasBindingCurse(stack);
     }
 
     /**

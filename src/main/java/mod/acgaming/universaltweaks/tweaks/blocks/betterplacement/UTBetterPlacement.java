@@ -12,6 +12,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
+import mod.acgaming.universaltweaks.mods.vanilla.mixin.UTMinecraftAccessor;
 
 // Courtesy of tterrag1098, BucketOfCompasses
 public class UTBetterPlacement
@@ -33,7 +34,7 @@ public class UTBetterPlacement
                 Type hitType = hover.typeOfHit;
                 if (hitType == Type.BLOCK)
                 {
-                    int timer = Minecraft.getMinecraft().rightClickDelayTimer;
+                    int timer = ((UTMinecraftAccessor) Minecraft.getMinecraft()).getRightClickDelayTimer();
                     BlockPos pos = hover.getBlockPos();
                     EnumFacing side = hover.sideHit;
                     Vec3d playerVector = Minecraft.getMinecraft().player.getPositionVector();
@@ -48,7 +49,7 @@ public class UTBetterPlacement
                             // [*]: Special case for blocks that you right-click to remove, e.g. by holding a Chest Transporter.
                             && !lastTargetPos.equals(pos.offset(side))))
                         {
-                            Minecraft.getMinecraft().rightClickDelayTimer = 0;
+                            ((UTMinecraftAccessor) Minecraft.getMinecraft()).setRightClickDelayTimer(0);
                         }
                     }
                     else
@@ -59,11 +60,11 @@ public class UTBetterPlacement
                         // Player is building straight-up
                         if (side == EnumFacing.UP && !playerVector.equals(lastPlayerPos) && playerPos.getX() == pos.getX() && playerPos.getZ() == pos.getZ())
                         {
-                            Minecraft.getMinecraft().rightClickDelayTimer = 0;
+                            ((UTMinecraftAccessor) Minecraft.getMinecraft()).setRightClickDelayTimer(0);
                         }
                         else if (UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementNewLoc && pos.equals(lastTargetPos) && side == lastTargetSide && !isInteractableAt(pos))
                         {
-                            Minecraft.getMinecraft().rightClickDelayTimer = 4;
+                            ((UTMinecraftAccessor) Minecraft.getMinecraft()).setRightClickDelayTimer(4);
                         }
                     }
                     lastTargetPos = pos.toImmutable();

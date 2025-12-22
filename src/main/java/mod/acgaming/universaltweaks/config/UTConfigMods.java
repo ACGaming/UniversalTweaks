@@ -454,14 +454,63 @@ public class UTConfigMods
     public static class BiblioCraftCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Allow Any Black Dye for Printing Press")
+        @Config.Comment("Allow the Printing Press to properly work with any itemstack with the dyeBlack oredict, instead of only processing with Ink Sacs")
+        public boolean utPrintingPressAnyBlackDyeToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Disable Version Check")
         @Config.Comment("Fixes client-side memory leak by disabling version check")
         public boolean utDisableVersionCheckToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Armor Stand Slots")
+        @Config.Comment("Fix BiblioCraft's custom Armor Stand using the incorrect slots for items or not recognizing the items as valid")
+        public boolean utArmorStandSlotFixToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Armor Stand Binding")
+        @Config.Comment("Fix BiblioCraft's custom Armor Stand not respecting the Curse of Binding")
+        public boolean utArmorStandBindingCurseToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Fancy Sign Rotation")
+        @Config.Comment("Fix Fancy Signs rendering items and blocks in different ways between the GUI and in-world")
+        public boolean utFancySignRotationToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Left Handed Rendering")
+        @Config.Comment("Fixes the Antique Atlas and Clipboard rendering incorrect when the Main Hand is set to Left")
+        public boolean utSwapDisplayHandWhenLeftHanded = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Using Incorrect Hand")
+        @Config.Comment("Fix the Clipboard and the Stockroom Catalogue behaving incorrectly when used in the offhand")
+        public boolean utFixHandConsumption = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix IItemHandler Method Not Existing")
+        @Config.Comment
+            ({
+                "Fix IItemHandler#getStackInSlot method not existing due to being obfuscated by IInventory, preventing countless errors",
+                "This occurs because BiblioCraft's Tile Entities implement both IInventory and IItemHandler, and getStackInSlot is an obfuscated method in IInventory but not IItemHandler",
+            })
+        public boolean utEnsureIItemHandlerMethodToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Item Transfer")
+        @Config.Comment("Make BiblioCraft actually use simulate properly when inserting and extracting items, fixing many item transfer methods")
+        public boolean utFixItemTransferToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix ItemStack Copying")
         @Config.Comment("Fixes removing an ItemStack not copying all data correctly, particularly for backpacks")
         public boolean utCopyItemStackCorrectlyToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Multiplayer Sound Fix")
+        @Config.Comment("Register all sounds, fixing bugs when attempting to play them on servers")
+        public boolean utRegisterSoundToggle = true;
     }
 
     public static class BiomesOPlentyCategory
