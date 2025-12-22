@@ -338,8 +338,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         Coremods.initFromContext(context);
 
         String mixinConfig = context.mixinConfig();
-        Predicate<Context> sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : serversideMixinConfigs.get(mixinConfig);
-        Predicate<Context> commonSupplier = commonMixinConfigs.get(mixinConfig);
-        return sidedSupplier != null ? sidedSupplier.test(context) : commonSupplier == null || commonSupplier.test(context);
+        Predicate<Context> sidedPredicate = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : serversideMixinConfigs.get(mixinConfig);
+        Predicate<Context> commonPredicate = commonMixinConfigs.get(mixinConfig);
+        return sidedPredicate != null ? sidedPredicate.test(context) : commonPredicate == null || commonPredicate.test(context);
     }
 }
