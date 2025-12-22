@@ -5,12 +5,7 @@ import zone.rong.mixinbooter.Context;
 public enum Coremods
 {
     CHUNKGEN_LIMITER("chunkgenlimit"),
-    OPENMODS("openmods"),
     OPTIFINE("optifine"),
-    RANDOM_PATCHES("randompatches"),
-    RENDERLIB("renderlib"),
-    SPONGEFORGE("spongeforge"),
-    SURGE("surge"),
     ;
 
     private static boolean initialized = false;
