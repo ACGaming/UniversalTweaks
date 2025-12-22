@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.BooleanSupplier;
+import java.util.function.Predicate;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraftforge.fml.common.Loader;
@@ -18,180 +18,175 @@ import zone.rong.mixinbooter.ILateMixinLoader;
 public class UTMixinLoader implements ILateMixinLoader
 {
 
-    private static final Map<String, BooleanSupplier> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
+    private static final Map<String, Predicate<Context>> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Predicate<Context>>()
     {
         {
-            put("mixins.mods.randomthings.teleport.json", () -> loaded("randomthings") && UTConfigMods.RANDOM_THINGS.utTeleportStall);
-            put("mixins.mods.quark.linkitems.json", () -> loaded("quark") && UTConfigMods.QUARK.utLinkItemsServer);
+            put("mixins.mods.randomthings.teleport.json", c -> c.isModPresent("randomthings") && UTConfigMods.RANDOM_THINGS.utTeleportStall);
+            put("mixins.mods.quark.linkitems.json", c -> c.isModPresent("quark") && UTConfigMods.QUARK.utLinkItemsServer);
         }
     });
 
-    private static final Map<String, BooleanSupplier> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
-    {
-        {
-            if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
-            {
-                put("mixins.mods.actuallyadditions.itemparticle.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utItemLaserParticlesGraphics > -1);
-                put("mixins.mods.bibliocraft.lefthand.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utSwapDisplayHandWhenLeftHanded);
-                put("mixins.mods.bibliocraft.sign.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFancySignRotationToggle);
-                put("mixins.mods.bibliocraft.version.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utDisableVersionCheckToggle);
-                put("mixins.mods.cbmultipart.client.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
-                put("mixins.mods.compactmachines.memory.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utMemoryLeakFixToggle);
-                put("mixins.mods.compactmachines.render.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
-                put("mixins.mods.corpse.json", () -> loaded("corpse") && UTConfigMods.CORPSE.utOpeningGuisOffThreadFixToggle);
-                put("mixins.mods.crafttweaker.json", () -> loaded("crafttweaker"));
-                put("mixins.mods.electroblobswizardry.json", () -> loaded("ebwizardry") && loaded("conarm") && UTConfigMods.ELECTROBLOBS_WIZARDRY.utConstructsArmoryFixToggle);
-                put("mixins.mods.enderio.itemrender.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
-                put("mixins.mods.fpsreducer.json", () -> loaded("fpsreducer") && UTConfigMods.FPS_REDUCER.utCorrectFpsValue);
-                put("mixins.mods.hwyla.json", () -> loaded("waila"));
-                put("mixins.mods.ironchests.json", () -> loaded("ironchest") && UTConfigMods.IRON_CHESTS.utReplaceItemRenderer);
-                put("mixins.mods.modularmagic.nullingredient.json", () -> loaded("modularmagic") && UTConfigMods.MODULAR_MAGIC.utEnsureIngredientNotNull);
-                put("mixins.mods.modularrouters.json", () -> loaded("modularrouters") && UTConfigMods.MODULAR_ROUTERS.utParticleThreadToggle);
-                put("mixins.mods.roost.json", () -> loaded("roost") && loaded("contenttweaker"));
-                put("mixins.mods.storagedrawers.client.json", () -> loaded("storagedrawers"));
-                put("mixins.mods.tconstruct.client.json", () -> regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utParticleFixesToggle);
-                put("mixins.tweaks.misc.recipebook.betweenlands.client.json", () -> loaded("thebetweenlands") && UTConfigTweaks.MISC.utRecipeBookToggle);
-                put("mixins.tweaks.misc.recipebook.buildcraft.client.json", () -> loaded("buildcraftcore") && UTConfigTweaks.MISC.utRecipeBookToggle);
-            }
-        }
-    });
-
-    private static final Map<String, BooleanSupplier> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>()
+    private static final Map<String, Predicate<Context>> clientsideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Predicate<Context>>()
     {
         {
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
             {
-                put("mixins.mods.abyssalcraft.json", () -> loaded("abyssalcraft"));
-                put("mixins.mods.actuallyadditions.dupes.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle);
-                put("mixins.mods.actuallyadditions.relayupgrade.json", () -> loaded("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utLaserUpgradeVoid);
-                put("mixins.mods.agricraft.json", () -> loaded("agricraft") && UTConfigMods.AGRICRAFT.utEnderIOPluginFixToggle);
-                put("mixins.mods.aoa3.json", () -> loaded("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
-                put("mixins.mods.arcanearchives.dupes.json", () -> loaded("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
-                put("mixins.mods.astralsorcery.json", () -> loaded("astralsorcery"));
-                put("mixins.mods.astralsorcery.neromanticprime.json", () -> loaded("astralsorcery"));
-                put("mixins.mods.astralsorcery.tool.json", () -> loaded("astralsorcery") && UTConfigMods.ASTRAL_SORCERY.utEmptyPropertiesZero);
-                put("mixins.mods.backpack.json", () -> loaded("backpack") && UTConfigMods.BACKPACKS.utBPNoOffhandInteractionToggle);
-                put("mixins.mods.bewitchment.json", () -> loaded("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
-                put("mixins.mods.bibliocraft.armor.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandSlotFixToggle);
-                put("mixins.mods.bibliocraft.armorbinding.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandBindingCurseToggle);
-                put("mixins.mods.bibliocraft.hand.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFixHandConsumption);
-                put("mixins.mods.bibliocraft.handler.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utEnsureIItemHandlerMethodToggle);
-                put("mixins.mods.bibliocraft.itemstack.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utCopyItemStackCorrectlyToggle);
-                put("mixins.mods.bibliocraft.printpress.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utPrintingPressAnyBlackDyeToggle);
-                put("mixins.mods.bibliocraft.transfer.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFixItemTransferToggle);
-                put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
-                put("mixins.mods.biomesoplenty.sealevel.json", () -> loaded("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
-                put("mixins.mods.bloodmagic.boundtool.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);
-                put("mixins.mods.bloodmagic.dupes.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);
-                put("mixins.mods.bloodmagic.fluidrouting.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utFluidRoutingFixToggle);
-                put("mixins.mods.bloodmagic.ritual.json", () -> loaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBMRitualToggle);
-                put("mixins.mods.bloodmagic.json", () -> loaded("bloodmagic"));
-                put("mixins.mods.botania.dupes.json", () -> loaded("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle);
-                put("mixins.mods.botania.json", () -> loaded("botania"));
-                put("mixins.mods.bwm.json", () -> loaded("betterwithmods") && UTConfigMods.BWM.utBeaconNBTLoadingFix);
-                put("mixins.mods.cbmultipart.json", () -> loaded("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
-                put("mixins.mods.ceramics.json", () -> loaded("ceramics"));
-                put("mixins.mods.chisel.tcomplement.dupes.json", () -> loaded("chisel") && loaded("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle);
-                put("mixins.mods.codechickenlib.json", () -> loaded("codechickenlib") && UTConfigMods.CCL.utPacketLeakFixToggle);
-                put("mixins.mods.cofhcore.json", () -> loaded("cofhcore"));
-                put("mixins.mods.cofhworld.json", () -> loaded("cofhworld") && UTConfigMods.COFH_WORLD.utCoFHSuperflatToggle);
-                put("mixins.mods.collective.json", () -> loaded("collective"));
-                put("mixins.mods.compactmachines.spawns.json", () -> loaded("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utAllowedSpawnsImprovementToggle);
-                put("mixins.mods.cookingforblockheads.json", () -> loaded("cookingforblockheads") && UTConfigMods.COOKING_FOR_BLOCKHEADS.utOvenFixToggle);
-                put("mixins.mods.cqrepoured.json", () -> loaded("cqrepoured"));
-                put("mixins.mods.cyclic.json", () -> loaded("cyclicmagic") && UTConfigMods.CYCLIC.utMemoryLeakFixToggle);
-                put("mixins.mods.dankstorage.json", () -> loaded("dankstorage"));
-                put("mixins.mods.divinerpg.aquamarine.json", () -> loaded("divinerpg") && UTConfigMods.DIVINE_RPG.utFixAquamarineStackSize);
-                put("mixins.mods.divinerpg.armorset.json", () -> loaded("divinerpg") && UTConfigMods.DIVINE_RPG.utFixArmorSetCleanup);
-                put("mixins.mods.divinerpg.hand.json", () -> loaded("divinerpg") && UTConfigMods.DIVINE_RPG.utFixHandConsumption);
-                put("mixins.mods.divinerpg.waterspawning.json", () -> loaded("divinerpg") && UTConfigMods.DIVINE_RPG.utChangeWaterMobCreatureType);
-                put("mixins.mods.effortlessbuilding.json", () -> loaded("effortlessbuilding") && UTConfigMods.EFFORTLESS_BUILDING.utEFTransmutationFixToggle);
-                put("mixins.mods.elementarystaffs.json", () -> loaded("element"));
-                put("mixins.mods.elenaidodge2.json", () -> loaded("elenaidodge2"));
-                put("mixins.mods.enderio.chorus.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utChorusStackOverflow);
-                put("mixins.mods.enderio.cyclebutton.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utSaveFilterCycleButtonProperly);
-                put("mixins.mods.enderio.soulbinderjei.json", () -> loaded("enderio") && UTConfigMods.ENDER_IO.utFixSoulBinderJEI);
-                put("mixins.mods.enderstorage.json", () -> loaded("enderstorage") && UTConfigMods.ENDER_STORAGE.utFrequencyTrackFixToggle);
-                put("mixins.mods.epicsiegemod.json", () -> loaded("epicsiegemod"));
-                put("mixins.mods.erebus.cabbage.json", () -> loaded("erebus") && UTConfigMods.EREBUS.utCabbageDropToggle);
-                put("mixins.mods.erebus.json", () -> loaded("erebus"));
-                put("mixins.mods.gaiadimension.restructurer.json", () -> loaded("gaiadimension") && UTConfigMods.GAIA_DIMENSION.utFixNPERestructurerRecipe);
-                put("mixins.mods.erebus.quakehammer.json", () -> loaded("erebus") && UTConfigMods.EREBUS.utFixQuakeHammerTextureToggle);
-                put("mixins.mods.evilcraft.vengeancespirit.regex.json", () -> loaded("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritCache);
-                put("mixins.mods.evilcraft.vengeancespirit.random.json", () -> loaded("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritRandom);
-                put("mixins.mods.extrautilities.breakcreativemill.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utFixCreativeMillHarvestability);
-                put("mixins.mods.extrautilities.deepdarkstats.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDeepDarkStats);
-                put("mixins.mods.extrautilities.dupes.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDuplicationFixesToggle);
-                put("mixins.mods.extrautilities.mutabledrops.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utMutableBlockDrops);
-                put("mixins.mods.extrautilities.potionlogging.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDowngradePotionLogging);
-                put("mixins.mods.extrautilities.radarexception.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utCatchRadarException);
-                put("mixins.mods.extrautilities.radarloot.json", () -> loaded("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utRadarSkipsLoottables);
-                put("mixins.mods.forestry.extratrees.json", () -> loaded("extratrees") && UTConfigMods.FORESTRY.utFOGatherWindfallToggle);
-                put("mixins.mods.forestry.json", () -> loaded("forestry"));
-                put("mixins.mods.immersiveengineering.toolevent.json", () -> loaded("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFireBreakEvent);
-                put("mixins.mods.immersiveengineering.toolhand.json", () -> loaded("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFixIncorrectHandReplacement);
-                put("mixins.mods.incontrol.json", () -> loaded("incontrol") && UTConfigMods.INCONTROL.utStatsFixToggle);
-                put("mixins.mods.industrialcraft.dupes.json", () -> loaded("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle);
-                put("mixins.mods.industrialforegoing.dupes.json", () -> loaded("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utDuplicationFixesToggle);
-                put("mixins.mods.industrialforegoing.rangeaddon.json", () -> loaded("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utRangeAddonNumberFix);
-                put("mixins.mods.infernalmobs.json", () -> loaded("infernalmobs"));
-                put("mixins.mods.ironbackpacks.dupes.json", () -> loaded("ironbackpacks") && UTConfigMods.IRON_BACKPACKS.utDuplicationFixesToggle);
-                put("mixins.mods.itemfavorites.unixfix.json", () -> loaded("itemfav") && UTConfigMods.ITEM_FAVORITES.utUnixPathFix);
-                put("mixins.mods.itemstages.json", () -> loaded("itemstages"));
-                put("mixins.mods.jurassicreborn.json", () -> loaded("rebornmod"));
-                put("mixins.mods.mekanism.dupes.json", () -> loaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle);
-                put("mixins.mods.mekanism.fluidtank.json", () -> loaded("mekanism") && UTConfigMods.MEKANISM.utFluidTankExtraction);
-                put("mixins.mods.moartinkers.json", () -> loaded("moartinkers") && UTConfigMods.MOAR_TINKERS.utBaublesCompatibility);
-                put("mixins.mods.mobstages.json", () -> loaded("mobstages"));
-                put("mixins.mods.mrtjpcore.json", () -> loaded("mrtjpcore") && UTConfigMods.MRTJPCORE.utMemoryLeakFixToggle);
-                put("mixins.mods.netherchest.dupes.json", () -> loaded("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle);
-                put("mixins.mods.netherrocks.json", () -> loaded("netherrocks"));
-                put("mixins.mods.nuclearcraft.json", () -> loaded("nuclearcraft"));
-                put("mixins.mods.openblocks.json", () -> regularOpenBlocksLoaded() && UTConfigMods.OPEN_BLOCKS.utLastStandFixToggle);
-                put("mixins.mods.properpumpkins.json", () -> loaded("pumpking") && UTConfigMods.PROPER_PUMPKIN.utFacingFix);
-                put("mixins.mods.quark.dupes.json", () -> loaded("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
-                put("mixins.mods.randomthings.anvil.json", () -> loaded("randomthings") && UTConfigMods.RANDOM_THINGS.utAnvilCraftFix);
-                put("mixins.mods.randomthings.collector.json", () -> loaded("randomthings") && UTConfigMods.RANDOM_THINGS.utItemCollectorDupe);
-                put("mixins.mods.requiousfrakto.json", () -> loaded("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);
-                put("mixins.mods.reskillable.json", () -> loaded("reskillable"));
-                put("mixins.mods.rftoolsdimensions.json", () -> loaded("rftoolsdim"));
-                put("mixins.mods.roost.contenttweaker.json", () -> loaded("roost") && loaded("contenttweaker"));
-                put("mixins.mods.roots.creativepouch.json", () -> loaded("roots") && UTConfigMods.ROOTS.utDisableCreativePouchGUI);
-                put("mixins.mods.roots.disabledmodifier.json", () -> loaded("roots") && UTConfigMods.ROOTS.utFixDisableModifierVoiding);
-                put("mixins.mods.roots.icicle.json", () -> loaded("roots") && UTConfigMods.ROOTS.utFixIcicleSaving);
-                put("mixins.mods.roots.mortar.json", () -> loaded("roots") && UTConfigMods.ROOTS.utFixMortarSpellDust);
-                put("mixins.mods.roots.shatter.json", () -> loaded("roots") && UTConfigMods.ROOTS.utPreventShatterOnUnbreakable);
-                put("mixins.mods.roots.soil.json", () -> loaded("roots") && UTConfigMods.ROOTS.utPreventSoilNeighborUpdates);
-                put("mixins.mods.roots.spiritdrops.json", () -> loaded("roots") && UTConfigMods.ROOTS.utFixSpiritDrops);
-                put("mixins.mods.roots.summon.json", () -> loaded("roots") && UTConfigMods.ROOTS.utFixSummoningInfiniteDescent);
-                put("mixins.mods.simpledifficulty.json", () -> loaded("simpledifficulty"));
-                put("mixins.mods.spiceoflife.dupes.json", () -> loaded("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);
-                put("mixins.mods.steamworld.json", () -> loaded("steamworld") && UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
-                put("mixins.mods.storagedrawers.json", () -> loaded("storagedrawers") && UTConfigMods.STORAGE_DRAWERS.utSDItemVoidingFixToggle);
-                put("mixins.mods.tconstruct.json", () -> regularTConLoaded());
-                put("mixins.mods.tconstruct.oredictcache.json", () -> regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
-                put("mixins.mods.tconstruct.toolcustomization.json", () -> regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.TOOL_CUSTOMIZATION.utTConToolCustomizationToggle);
-                put("mixins.mods.tconstruct.toolcustomization.plustic.json", () -> regularTConLoaded() && loaded("plustic") && UTConfigMods.TINKERS_CONSTRUCT.TOOL_CUSTOMIZATION.utTConToolCustomizationToggle);
-                put("mixins.mods.techreborn.json", () -> loaded("techreborn"));
-                put("mixins.mods.testdummy.copyarmor.json", () -> loaded("testdummy") && UTConfigMods.TEST_DUMMY.utCopyArmor);
-                put("mixins.mods.thefarlanders.dupes.json", () -> loaded("farlanders") && UTConfigMods.THE_FARLANDERS.utDuplicationFixesToggle);
-                put("mixins.mods.thermalexpansion.dupes.json", () -> loaded("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle);
-                put("mixins.mods.thermalexpansion.json", () -> loaded("thermalexpansion"));
-                put("mixins.mods.tinyprogressions.dupes.json", () -> loaded("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle);
-                put("mixins.mods.woot.json", () -> loaded("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle);
-                put("mixins.tweaks.blocks.enchantmenttable.bookshelf.json", () -> loaded("bookshelf") && UTConfigTweaks.BLOCKS.utEnchantmentTableObstructionToggle);
+                put("mixins.mods.actuallyadditions.itemparticle.json", c -> c.isModPresent("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utItemLaserParticlesGraphics > -1);
+                put("mixins.mods.bibliocraft.lefthand.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utSwapDisplayHandWhenLeftHanded);
+                put("mixins.mods.bibliocraft.sign.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFancySignRotationToggle);
+                put("mixins.mods.bibliocraft.version.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utDisableVersionCheckToggle);
+                put("mixins.mods.cbmultipart.client.json", c -> c.isModPresent("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
+                put("mixins.mods.compactmachines.memory.json", c -> c.isModPresent("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utMemoryLeakFixToggle);
+                put("mixins.mods.compactmachines.render.json", c -> c.isModPresent("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
+                put("mixins.mods.corpse.json", c -> c.isModPresent("corpse") && UTConfigMods.CORPSE.utOpeningGuisOffThreadFixToggle);
+                put("mixins.mods.crafttweaker.json", c -> c.isModPresent("crafttweaker"));
+                put("mixins.mods.electroblobswizardry.json", c -> c.isModPresent("ebwizardry") && c.isModPresent("conarm") && UTConfigMods.ELECTROBLOBS_WIZARDRY.utConstructsArmoryFixToggle);
+                put("mixins.mods.enderio.itemrender.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
+                put("mixins.mods.fpsreducer.json", c -> c.isModPresent("fpsreducer") && UTConfigMods.FPS_REDUCER.utCorrectFpsValue);
+                put("mixins.mods.hwyla.json", c -> c.isModPresent("waila"));
+                put("mixins.mods.ironchests.json", c -> c.isModPresent("ironchest") && UTConfigMods.IRON_CHESTS.utReplaceItemRenderer);
+                put("mixins.mods.modularmagic.nullingredient.json", c -> c.isModPresent("modularmagic") && UTConfigMods.MODULAR_MAGIC.utEnsureIngredientNotNull);
+                put("mixins.mods.modularrouters.json", c -> c.isModPresent("modularrouters") && UTConfigMods.MODULAR_ROUTERS.utParticleThreadToggle);
+                put("mixins.mods.roost.json", c -> c.isModPresent("roost") && c.isModPresent("contenttweaker"));
+                put("mixins.mods.storagedrawers.client.json", c -> c.isModPresent("storagedrawers"));
+                put("mixins.mods.tconstruct.client.json", c -> regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utParticleFixesToggle);
+                put("mixins.tweaks.misc.recipebook.betweenlands.client.json", c -> c.isModPresent("thebetweenlands") && UTConfigTweaks.MISC.utRecipeBookToggle);
+                put("mixins.tweaks.misc.recipebook.buildcraft.client.json", c -> c.isModPresent("buildcraftcore") && UTConfigTweaks.MISC.utRecipeBookToggle);
             }
         }
     });
 
-    private static boolean loaded(String modid)
+    private static final Map<String, Predicate<Context>> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Predicate<Context>>()
     {
-        return Loader.isModLoaded(modid);
-    }
+        {
+            if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
+            {
+                put("mixins.mods.abyssalcraft.json", c -> c.isModPresent("abyssalcraft"));
+                put("mixins.mods.actuallyadditions.dupes.json", c -> c.isModPresent("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle);
+                put("mixins.mods.actuallyadditions.relayupgrade.json", c -> c.isModPresent("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utLaserUpgradeVoid);
+                put("mixins.mods.agricraft.json", c -> c.isModPresent("agricraft") && UTConfigMods.AGRICRAFT.utEnderIOPluginFixToggle);
+                put("mixins.mods.aoa3.json", c -> c.isModPresent("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
+                put("mixins.mods.arcanearchives.dupes.json", c -> c.isModPresent("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
+                put("mixins.mods.astralsorcery.json", c -> c.isModPresent("astralsorcery"));
+                put("mixins.mods.astralsorcery.neromanticprime.json", c -> c.isModPresent("astralsorcery"));
+                put("mixins.mods.astralsorcery.tool.json", c -> c.isModPresent("astralsorcery") && UTConfigMods.ASTRAL_SORCERY.utEmptyPropertiesZero);
+                put("mixins.mods.backpack.json", c -> c.isModPresent("backpack") && UTConfigMods.BACKPACKS.utBPNoOffhandInteractionToggle);
+                put("mixins.mods.bewitchment.json", c -> c.isModPresent("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
+                put("mixins.mods.bibliocraft.armor.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandSlotFixToggle);
+                put("mixins.mods.bibliocraft.armorbinding.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandBindingCurseToggle);
+                put("mixins.mods.bibliocraft.hand.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFixHandConsumption);
+                put("mixins.mods.bibliocraft.handler.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utEnsureIItemHandlerMethodToggle);
+                put("mixins.mods.bibliocraft.itemstack.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utCopyItemStackCorrectlyToggle);
+                put("mixins.mods.bibliocraft.printpress.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utPrintingPressAnyBlackDyeToggle);
+                put("mixins.mods.bibliocraft.transfer.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFixItemTransferToggle);
+                put("mixins.mods.biomesoplenty.json", c -> c.isModPresent("biomesoplenty"));
+                put("mixins.mods.biomesoplenty.sealevel.json", c -> c.isModPresent("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
+                put("mixins.mods.bloodmagic.boundtool.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);
+                put("mixins.mods.bloodmagic.dupes.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);
+                put("mixins.mods.bloodmagic.fluidrouting.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utFluidRoutingFixToggle);
+                put("mixins.mods.bloodmagic.ritual.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBMRitualToggle);
+                put("mixins.mods.bloodmagic.json", c -> c.isModPresent("bloodmagic"));
+                put("mixins.mods.botania.dupes.json", c -> c.isModPresent("botania") && UTConfigMods.BOTANIA.utDuplicationFixesToggle);
+                put("mixins.mods.botania.json", c -> c.isModPresent("botania"));
+                put("mixins.mods.bwm.json", c -> c.isModPresent("betterwithmods") && UTConfigMods.BWM.utBeaconNBTLoadingFix);
+                put("mixins.mods.cbmultipart.json", c -> c.isModPresent("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
+                put("mixins.mods.ceramics.json", c -> c.isModPresent("ceramics"));
+                put("mixins.mods.chisel.tcomplement.dupes.json", c -> c.isModPresent("chisel") && c.isModPresent("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle);
+                put("mixins.mods.codechickenlib.json", c -> c.isModPresent("codechickenlib") && UTConfigMods.CCL.utPacketLeakFixToggle);
+                put("mixins.mods.cofhcore.json", c -> c.isModPresent("cofhcore"));
+                put("mixins.mods.cofhworld.json", c -> c.isModPresent("cofhworld") && UTConfigMods.COFH_WORLD.utCoFHSuperflatToggle);
+                put("mixins.mods.collective.json", c -> c.isModPresent("collective"));
+                put("mixins.mods.compactmachines.spawns.json", c -> c.isModPresent("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utAllowedSpawnsImprovementToggle);
+                put("mixins.mods.cookingforblockheads.json", c -> c.isModPresent("cookingforblockheads") && UTConfigMods.COOKING_FOR_BLOCKHEADS.utOvenFixToggle);
+                put("mixins.mods.cqrepoured.json", c -> c.isModPresent("cqrepoured"));
+                put("mixins.mods.cyclic.json", c -> c.isModPresent("cyclicmagic") && UTConfigMods.CYCLIC.utMemoryLeakFixToggle);
+                put("mixins.mods.dankstorage.json", c -> c.isModPresent("dankstorage"));
+                put("mixins.mods.divinerpg.aquamarine.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utFixAquamarineStackSize);
+                put("mixins.mods.divinerpg.armorset.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utFixArmorSetCleanup);
+                put("mixins.mods.divinerpg.hand.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utFixHandConsumption);
+                put("mixins.mods.divinerpg.waterspawning.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utChangeWaterMobCreatureType);
+                put("mixins.mods.effortlessbuilding.json", c -> c.isModPresent("effortlessbuilding") && UTConfigMods.EFFORTLESS_BUILDING.utEFTransmutationFixToggle);
+                put("mixins.mods.elementarystaffs.json", c -> c.isModPresent("element"));
+                put("mixins.mods.elenaidodge2.json", c -> c.isModPresent("elenaidodge2"));
+                put("mixins.mods.enderio.chorus.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utChorusStackOverflow);
+                put("mixins.mods.enderio.cyclebutton.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utSaveFilterCycleButtonProperly);
+                put("mixins.mods.enderio.soulbinderjei.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utFixSoulBinderJEI);
+                put("mixins.mods.enderstorage.json", c -> c.isModPresent("enderstorage") && UTConfigMods.ENDER_STORAGE.utFrequencyTrackFixToggle);
+                put("mixins.mods.epicsiegemod.json", c -> c.isModPresent("epicsiegemod"));
+                put("mixins.mods.erebus.cabbage.json", c -> c.isModPresent("erebus") && UTConfigMods.EREBUS.utCabbageDropToggle);
+                put("mixins.mods.erebus.json", c -> c.isModPresent("erebus"));
+                put("mixins.mods.gaiadimension.restructurer.json", c -> c.isModPresent("gaiadimension") && UTConfigMods.GAIA_DIMENSION.utFixNPERestructurerRecipe);
+                put("mixins.mods.erebus.quakehammer.json", c -> c.isModPresent("erebus") && UTConfigMods.EREBUS.utFixQuakeHammerTextureToggle);
+                put("mixins.mods.evilcraft.vengeancespirit.regex.json", c -> c.isModPresent("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritCache);
+                put("mixins.mods.evilcraft.vengeancespirit.random.json", c -> c.isModPresent("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritRandom);
+                put("mixins.mods.extrautilities.breakcreativemill.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utFixCreativeMillHarvestability);
+                put("mixins.mods.extrautilities.deepdarkstats.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDeepDarkStats);
+                put("mixins.mods.extrautilities.dupes.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDuplicationFixesToggle);
+                put("mixins.mods.extrautilities.mutabledrops.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utMutableBlockDrops);
+                put("mixins.mods.extrautilities.potionlogging.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDowngradePotionLogging);
+                put("mixins.mods.extrautilities.radarexception.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utCatchRadarException);
+                put("mixins.mods.extrautilities.radarloot.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utRadarSkipsLoottables);
+                put("mixins.mods.forestry.extratrees.json", c -> c.isModPresent("extratrees") && UTConfigMods.FORESTRY.utFOGatherWindfallToggle);
+                put("mixins.mods.forestry.json", c -> c.isModPresent("forestry"));
+                put("mixins.mods.immersiveengineering.toolevent.json", c -> c.isModPresent("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFireBreakEvent);
+                put("mixins.mods.immersiveengineering.toolhand.json", c -> c.isModPresent("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFixIncorrectHandReplacement);
+                put("mixins.mods.incontrol.json", c -> c.isModPresent("incontrol") && UTConfigMods.INCONTROL.utStatsFixToggle);
+                put("mixins.mods.industrialcraft.dupes.json", c -> c.isModPresent("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle);
+                put("mixins.mods.industrialforegoing.dupes.json", c -> c.isModPresent("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utDuplicationFixesToggle);
+                put("mixins.mods.industrialforegoing.rangeaddon.json", c -> c.isModPresent("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utRangeAddonNumberFix);
+                put("mixins.mods.infernalmobs.json", c -> c.isModPresent("infernalmobs"));
+                put("mixins.mods.ironbackpacks.dupes.json", c -> c.isModPresent("ironbackpacks") && UTConfigMods.IRON_BACKPACKS.utDuplicationFixesToggle);
+                put("mixins.mods.itemfavorites.unixfix.json", c -> c.isModPresent("itemfav") && UTConfigMods.ITEM_FAVORITES.utUnixPathFix);
+                put("mixins.mods.itemstages.json", c -> c.isModPresent("itemstages"));
+                put("mixins.mods.jurassicreborn.json", c -> c.isModPresent("rebornmod"));
+                put("mixins.mods.mekanism.dupes.json", c -> c.isModPresent("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle);
+                put("mixins.mods.mekanism.fluidtank.json", c -> c.isModPresent("mekanism") && UTConfigMods.MEKANISM.utFluidTankExtraction);
+                put("mixins.mods.moartinkers.json", c -> c.isModPresent("moartinkers") && UTConfigMods.MOAR_TINKERS.utBaublesCompatibility);
+                put("mixins.mods.mobstages.json", c -> c.isModPresent("mobstages"));
+                put("mixins.mods.mrtjpcore.json", c -> c.isModPresent("mrtjpcore") && UTConfigMods.MRTJPCORE.utMemoryLeakFixToggle);
+                put("mixins.mods.netherchest.dupes.json", c -> c.isModPresent("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle);
+                put("mixins.mods.netherrocks.json", c -> c.isModPresent("netherrocks"));
+                put("mixins.mods.nuclearcraft.json", c -> c.isModPresent("nuclearcraft"));
+                put("mixins.mods.openblocks.json", c -> regularOpenBlocksLoaded() && UTConfigMods.OPEN_BLOCKS.utLastStandFixToggle);
+                put("mixins.mods.properpumpkins.json", c -> c.isModPresent("pumpking") && UTConfigMods.PROPER_PUMPKIN.utFacingFix);
+                put("mixins.mods.quark.dupes.json", c -> c.isModPresent("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
+                put("mixins.mods.randomthings.anvil.json", c -> c.isModPresent("randomthings") && UTConfigMods.RANDOM_THINGS.utAnvilCraftFix);
+                put("mixins.mods.randomthings.collector.json", c -> c.isModPresent("randomthings") && UTConfigMods.RANDOM_THINGS.utItemCollectorDupe);
+                put("mixins.mods.requiousfrakto.json", c -> c.isModPresent("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);
+                put("mixins.mods.reskillable.json", c -> c.isModPresent("reskillable"));
+                put("mixins.mods.rftoolsdimensions.json", c -> c.isModPresent("rftoolsdim"));
+                put("mixins.mods.roost.contenttweaker.json", c -> c.isModPresent("roost") && c.isModPresent("contenttweaker"));
+                put("mixins.mods.roots.creativepouch.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utDisableCreativePouchGUI);
+                put("mixins.mods.roots.disabledmodifier.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utFixDisableModifierVoiding);
+                put("mixins.mods.roots.icicle.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utFixIcicleSaving);
+                put("mixins.mods.roots.mortar.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utFixMortarSpellDust);
+                put("mixins.mods.roots.shatter.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utPreventShatterOnUnbreakable);
+                put("mixins.mods.roots.soil.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utPreventSoilNeighborUpdates);
+                put("mixins.mods.roots.spiritdrops.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utFixSpiritDrops);
+                put("mixins.mods.roots.summon.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utFixSummoningInfiniteDescent);
+                put("mixins.mods.simpledifficulty.json", c -> c.isModPresent("simpledifficulty"));
+                put("mixins.mods.spiceoflife.dupes.json", c -> c.isModPresent("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);
+                put("mixins.mods.steamworld.json", c -> c.isModPresent("steamworld") && UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
+                put("mixins.mods.storagedrawers.json", c -> c.isModPresent("storagedrawers") && UTConfigMods.STORAGE_DRAWERS.utSDItemVoidingFixToggle);
+                put("mixins.mods.tconstruct.json", c -> regularTConLoaded());
+                put("mixins.mods.tconstruct.oredictcache.json", c -> regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
+                put("mixins.mods.tconstruct.toolcustomization.json", c -> regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.TOOL_CUSTOMIZATION.utTConToolCustomizationToggle);
+                put("mixins.mods.tconstruct.toolcustomization.plustic.json", c -> regularTConLoaded() && c.isModPresent("plustic") && UTConfigMods.TINKERS_CONSTRUCT.TOOL_CUSTOMIZATION.utTConToolCustomizationToggle);
+                put("mixins.mods.techreborn.json", c -> c.isModPresent("techreborn"));
+                put("mixins.mods.testdummy.copyarmor.json", c -> c.isModPresent("testdummy") && UTConfigMods.TEST_DUMMY.utCopyArmor);
+                put("mixins.mods.thefarlanders.dupes.json", c -> c.isModPresent("farlanders") && UTConfigMods.THE_FARLANDERS.utDuplicationFixesToggle);
+                put("mixins.mods.thermalexpansion.dupes.json", c -> c.isModPresent("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle);
+                put("mixins.mods.thermalexpansion.json", c -> c.isModPresent("thermalexpansion"));
+                put("mixins.mods.tinyprogressions.dupes.json", c -> c.isModPresent("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle);
+                put("mixins.mods.woot.json", c -> c.isModPresent("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle);
+                put("mixins.tweaks.blocks.enchantmenttable.bookshelf.json", c -> c.isModPresent("bookshelf") && UTConfigTweaks.BLOCKS.utEnchantmentTableObstructionToggle);
+            }
+        }
+    });
 
     public static boolean regularOpenBlocksLoaded()
     {
-        if (loaded("openblocks"))
+        if (Loader.isModLoaded("openblocks"))
         {
             return Loader.instance().getIndexedModList().get("openblocks").getName().equals("OpenBlocks");
         }
@@ -200,7 +195,7 @@ public class UTMixinLoader implements ILateMixinLoader
 
     public static boolean regularTConLoaded()
     {
-        if (loaded("tconstruct"))
+        if (Loader.isModLoaded("tconstruct"))
         {
             return Loader.instance().getIndexedModList().get("tconstruct").getName().equals("Tinkers' Construct");
         }
@@ -221,8 +216,8 @@ public class UTMixinLoader implements ILateMixinLoader
     public boolean shouldMixinConfigQueue(Context context)
     {
         String mixinConfig = context.mixinConfig();
-        BooleanSupplier sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : serversideMixinConfigs.get(mixinConfig);
-        BooleanSupplier commonSupplier = commonMixinConfigs.get(mixinConfig);
-        return sidedSupplier != null ? sidedSupplier.getAsBoolean() : commonSupplier == null || commonSupplier.getAsBoolean();
+        Predicate<Context> sidedSupplier = UTLoadingPlugin.isClient ? clientsideMixinConfigs.get(mixinConfig) : serversideMixinConfigs.get(mixinConfig);
+        Predicate<Context> commonSupplier = commonMixinConfigs.get(mixinConfig);
+        return sidedSupplier != null ? sidedSupplier.test(context) : commonSupplier == null || commonSupplier.test(context);
     }
 }
