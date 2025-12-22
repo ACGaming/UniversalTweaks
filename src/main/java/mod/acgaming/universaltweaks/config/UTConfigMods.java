@@ -464,6 +464,11 @@ public class UTConfigMods
         public boolean utArmorStandSlotFixToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Armor Stand Binding")
+        @Config.Comment("Fix BiblioCraft's custom Armor Stand not respecting the Curse of Binding")
+        public boolean utArmorStandBindingCurseToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Fancy Sign Rotation")
         @Config.Comment("Fix Fancy Signs rendering items and blocks in different ways between the GUI and in-world")
         public boolean utFancySignRotationToggle = true;

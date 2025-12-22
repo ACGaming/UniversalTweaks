@@ -73,6 +73,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.backpack.json", () -> loaded("backpack") && UTConfigMods.BACKPACKS.utBPNoOffhandInteractionToggle);
                 put("mixins.mods.bewitchment.json", () -> loaded("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
                 put("mixins.mods.bibliocraft.armor.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandSlotFixToggle);
+                put("mixins.mods.bibliocraft.armorbinding.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandBindingCurseToggle);
                 put("mixins.mods.bibliocraft.handler.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utEnsureIItemHandlerMethodToggle);
                 put("mixins.mods.bibliocraft.itemstack.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utCopyItemStackCorrectlyToggle);
                 put("mixins.mods.bibliocraft.transfer.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFixItemTransferToggle);
