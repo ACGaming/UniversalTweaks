@@ -459,6 +459,11 @@ public class UTConfigMods
         public boolean utDisableVersionCheckToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Armor Stand Slots")
+        @Config.Comment("Fix BiblioCraft's custom Armor Stand using the incorrect slots for items or not recognizing the items as valid")
+        public boolean utArmorStandSlotFixToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Fancy Sign Rotation")
         @Config.Comment("Fix Fancy Signs rendering items and blocks in different ways between the GUI and in-world")
         public boolean utFancySignRotationToggle = true;

@@ -337,6 +337,7 @@ All changes are toggleable via config files.
     * **Witches' Oven Fix:** Fixes Witches' Oven consuming container fuel items
 * **Bibliocraft**
     * **Disable Version Check:** Fixes client-side memory leak by disabling version check
+    * **Fix Armor Stand Slots:** Fix BiblioCraft's custom Armor Stand using the incorrect slots for items or not recognizing the items as valid
     * **Fix Fancy Sign Rotation:** Fix Fancy Signs rendering items and blocks in different ways between the GUI and in-world
     * **Fix IItemHandler Method Not Existing:** Fix IItemHandler#getStackInSlot method not existing due to being obfuscated by IInventory, preventing countless errors
     * **Fix Item Transfer:** Make BiblioCraft actually use simulate properly when inserting and extracting items, fixing many item transfer methods
