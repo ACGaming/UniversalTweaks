@@ -454,6 +454,11 @@ public class UTConfigMods
     public static class BiblioCraftCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Allow Any Black Dye for Printing Press")
+        @Config.Comment("Allow the Printing Press to properly work with any itemstack with the dyeBlack oredict, instead of only processing with Ink Sacs")
+        public boolean utPrintingPressAnyBlackDyeToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Disable Version Check")
         @Config.Comment("Fixes client-side memory leak by disabling version check")
         public boolean utDisableVersionCheckToggle = true;

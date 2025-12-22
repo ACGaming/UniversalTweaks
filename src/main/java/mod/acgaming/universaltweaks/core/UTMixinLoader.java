@@ -76,6 +76,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins.mods.bibliocraft.armorbinding.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandBindingCurseToggle);
                 put("mixins.mods.bibliocraft.handler.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utEnsureIItemHandlerMethodToggle);
                 put("mixins.mods.bibliocraft.itemstack.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utCopyItemStackCorrectlyToggle);
+                put("mixins.mods.bibliocraft.printpress.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utPrintingPressAnyBlackDyeToggle);
                 put("mixins.mods.bibliocraft.transfer.json", () -> loaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFixItemTransferToggle);
                 put("mixins.mods.biomesoplenty.json", () -> loaded("biomesoplenty"));
                 put("mixins.mods.biomesoplenty.sealevel.json", () -> loaded("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);

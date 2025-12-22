@@ -336,6 +336,7 @@ All changes are toggleable via config files.
 * **Bewitchment**
     * **Witches' Oven Fix:** Fixes Witches' Oven consuming container fuel items
 * **Bibliocraft**
+    * **Allow Any Black Dye for Printing Press:** Allow the Printing Press to properly work with any itemstack with the dyeBlack oredict, instead of only processing with Ink Sacs
     * **Disable Version Check:** Fixes client-side memory leak by disabling version check
     * **Fix Armor Stand Binding:** Fix BiblioCraft's custom Armor Stand not respecting the Curse of Binding
     * **Fix Armor Stand Slots:** Fix BiblioCraft's custom Armor Stand using the incorrect slots for items or not recognizing the items as valid
