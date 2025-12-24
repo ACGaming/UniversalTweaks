@@ -50,6 +50,9 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.mods.roost.json", c -> c.isModPresent("roost") && c.isModPresent("contenttweaker"));
                 put("mixins/mods/mixins.mods.storagedrawers.client.json", c -> c.isModPresent("storagedrawers"));
                 put("mixins/mods/mixins.mods.tconstruct.client.json", c -> regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utParticleFixesToggle);
+            }
+            if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
+            {
                 put("mixins/tweaks/mixins.tweaks.misc.recipebook.betweenlands.client.json", c -> c.isModPresent("thebetweenlands") && UTConfigTweaks.MISC.utRecipeBookToggle);
                 put("mixins/tweaks/mixins.tweaks.misc.recipebook.buildcraft.client.json", c -> c.isModPresent("buildcraftcore") && UTConfigTweaks.MISC.utRecipeBookToggle);
             }
@@ -179,6 +182,9 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.mods.thermalexpansion.json", c -> c.isModPresent("thermalexpansion"));
                 put("mixins/mods/mixins.mods.tinyprogressions.dupes.json", c -> c.isModPresent("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.mods.woot.json", c -> c.isModPresent("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle);
+            }
+            if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
+            {
                 put("mixins/tweaks/mixins.tweaks.blocks.enchantmenttable.bookshelf.json", c -> c.isModPresent("bookshelf") && UTConfigTweaks.BLOCKS.utEnchantmentTableObstructionToggle);
             }
         }
