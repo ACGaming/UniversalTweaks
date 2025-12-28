@@ -1544,6 +1544,17 @@ public class UTConfigMods
 
     public static class TombManyGravesCategory
     {
+        @SuppressWarnings("unused")
+        @Config.RequiresMcRestart
+        @Config.Name("Aether Legacy Accessory Compat")
+        @Config.Comment
+            ({
+                "Universal Tweaks always adds AetherLegacyInventory compat to TombManyGraves2,",
+                "but this functionality will only work properly if Aether Legacy: Capture Accessory Drops is enabled.",
+                "This cannot be disabled, and this config only exists to notify that this functionality exists."
+            })
+        public String utUnusedAccessoryCompatEnabled = "ALWAYS_ENABLED";
+
         @Config.RequiresMcRestart
         @Config.Name("Proper World Size Check")
         @Config.Comment("Fix TombManyGraves not spawning the grave due to incorrectly checking world height")
