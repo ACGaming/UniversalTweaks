@@ -56,6 +56,7 @@ final def mod_dependencies = [
     'curse.maven:abyssalcraft-53686:3425234'                          : [debug_abyssalcraft],
     'curse.maven:actuallyaditions-228404:2844115'                     : [debug_actually_additions],
     'curse.maven:advent-of-ascension-311054:3054253'                  : [debug_advent_of_ascension],
+    'curse.maven:aether-255308:6316434'                               : [debug_aether_legacy],
     'curse.maven:agricraft-225635:3317747'                            : [debug_agricraft],
     'curse.maven:applecore-224472:2969118'                            : [debug_the_spice_of_life],
     'curse.maven:arcanearchives-311357:3057332'                       : [debug_arcane_archives],

@@ -23,6 +23,10 @@ public class UTConfigMods
     @Config.Name("Actually Additions")
     public static final ActuallyAdditionsCategory ACTUALLY_ADDITIONS = new ActuallyAdditionsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.aether_legacy")
+    @Config.Name("Aether Legacy")
+    public static final AetherLegacyCategory AETHER_LEGACY = new AetherLegacyCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.agricraft")
     @Config.Name("Agricraft")
     public static final AgricraftCategory AGRICRAFT = new AgricraftCategory();
@@ -369,6 +373,14 @@ public class UTConfigMods
                 "3 or higher will never disable these particles"
             })
         public int utItemLaserParticlesGraphics = -1;
+    }
+
+    public static class AetherLegacyCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Capture Accessory Drops")
+        @Config.Comment("When dropping equipped Accessories, add the drops to the event instead of dropping them directly, allowing compatibility with various grave mods")
+        public boolean utCaptureAccessoryDrops = true;
     }
 
     public static class AgricraftCategory

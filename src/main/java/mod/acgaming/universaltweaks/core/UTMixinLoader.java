@@ -67,6 +67,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.abyssalcraft.json", c -> c.isModPresent("abyssalcraft"));
                 put("mixins/mods/mixins.actuallyadditions.dupes.json", c -> c.isModPresent("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.actuallyadditions.relayupgrade.json", c -> c.isModPresent("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utLaserUpgradeVoid);
+                put("mixins/mods/mixins.aetherlegacy.eventdrops.json", c -> c.isModPresent("aether_legacy") && UTConfigMods.AETHER_LEGACY.utCaptureAccessoryDrops);
                 put("mixins/mods/mixins.agricraft.json", c -> c.isModPresent("agricraft") && UTConfigMods.AGRICRAFT.utEnderIOPluginFixToggle);
                 put("mixins/mods/mixins.aoa3.json", c -> c.isModPresent("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
                 put("mixins/mods/mixins.arcanearchives.dupes.json", c -> c.isModPresent("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);

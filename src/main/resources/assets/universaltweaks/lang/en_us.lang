@@ -53,6 +53,7 @@ cfg.universaltweaks.bugfixes.entities.entitylists=Entity Lists
 
 cfg.universaltweaks.modintegration.abyssalcraft=AbyssalCraft
 cfg.universaltweaks.modintegration.actuallyadditions=Actually Additions
+cfg.universaltweaks.modintegration.aether_legacy=Aether Legacy
 cfg.universaltweaks.modintegration.agricraft=Agricraft
 cfg.universaltweaks.modintegration.aoa=Advent of Ascension
 cfg.universaltweaks.modintegration.arcanearchives=Arcane Archives
