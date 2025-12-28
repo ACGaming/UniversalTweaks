@@ -551,5 +551,6 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **TombManyGraves2**
     * **Proper World Size Check:** Fix TombManyGraves not spawning the grave due to incorrectly checking world height
+    * **Add Compat Aether Legacy Accessories:** If **Aether Legacy: Capture Accessory Drops** is enabled, allow TombManyGraves2 to have compat with Aether Legacy Accessories
 * **Woot**
     * **Cleanup Simulated Kills:** Remove any leftover entities spawned on simulated mob's death
