@@ -182,6 +182,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.thermalexpansion.dupes.json", c -> c.isModPresent("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.thermalexpansion.json", c -> c.isModPresent("thermalexpansion"));
                 put("mixins/mods/mixins.tinyprogressions.dupes.json", c -> c.isModPresent("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle);
+                put("mixins/mods/mixins.tombmanygraves.worldsize.json", c -> c.isModPresent("tombmanygraves") && UTConfigMods.TOMBMANYGRAVES.utProperWorldSizeCheck);
                 put("mixins/mods/mixins.woot.json", c -> c.isModPresent("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle);
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)

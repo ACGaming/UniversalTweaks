@@ -339,6 +339,10 @@ public class UTConfigMods
     @Config.Name("Tiny Progressions")
     public static final TinyProgressionsCategory TINY_PROGRESSIONS = new TinyProgressionsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.tombmanygraves")
+    @Config.Name("TombManyGraves2")
+    public static final TombManyGravesCategory TOMBMANYGRAVES = new TombManyGravesCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.woot")
     @Config.Name("Woot")
     public static final WootCategory WOOT = new WootCategory();
@@ -1536,6 +1540,14 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class TombManyGravesCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Proper World Size Check")
+        @Config.Comment("Fix TombManyGraves not spawning the grave due to incorrectly checking world height")
+        public boolean utProperWorldSizeCheck = true;
     }
 
     public static class WootCategory
