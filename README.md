@@ -333,6 +333,7 @@ All changes are toggleable via config files.
 * **Backpacks**
     * **No Offhand Interaction:** Prevents unintended offhand right-click behavior when opening backpacks
 * **Bewitchment**
+    * **Fix Altar IBlockState Check:** Fix the Witches Altar checking blocks causing crashes when scanning blocks that do not have the expected properties, primarily TerraFirmaCraft leaves
     * **Witches' Oven Fix:** Fixes Witches' Oven consuming container fuel items
 * **Bibliocraft**
     * **Allow Any Black Dye for Printing Press:** Allow the Printing Press to properly work with any itemstack with the dyeBlack oredict, instead of only processing with Ink Sacs

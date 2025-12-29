@@ -446,6 +446,11 @@ public class UTConfigMods
     public static class BewitchmentCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Fix Altar IBlockState Check")
+        @Config.Comment("Fix the Witches Altar checking blocks causing crashes when scanning blocks that do not have the expected properties, primarily TerraFirmaCraft leaves")
+        public boolean utLeavesChechFix = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Witches' Oven Fix")
         @Config.Comment("Fixes Witches' Oven consuming container fuel items")
         public boolean utWitchesOvenFixToggle = true;
