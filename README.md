@@ -550,7 +550,8 @@ All changes are toggleable via config files.
 * **Tiny Progressions**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **TombManyGraves2**
-    * **Proper World Size Check:** Fix TombManyGraves not spawning the grave due to incorrectly checking world height
     * **Add Compat Aether Legacy Accessories:** If **Aether Legacy: Capture Accessory Drops** is enabled, allow TombManyGraves2 to have compat with Aether Legacy Accessories
+    * **Change Timestamp:** Change the timestamp used from 'MM_dd_YYYY_HH_mm_ss' to an ISO 8601 based format of 'YYYY-MM-dd'T'HH:mm:ss'
+    * **Proper World Size Check:** Fix TombManyGraves not spawning the grave due to incorrectly checking world height
 * **Woot**
     * **Cleanup Simulated Kills:** Remove any leftover entities spawned on simulated mob's death

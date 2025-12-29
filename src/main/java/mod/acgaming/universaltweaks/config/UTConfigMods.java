@@ -1556,6 +1556,11 @@ public class UTConfigMods
         public String utUnusedAccessoryCompatEnabled = "ALWAYS_ENABLED";
 
         @Config.RequiresMcRestart
+        @Config.Name("Change Timestamp")
+        @Config.Comment("Change the timestamp used from 'MM_dd_YYYY_HH_mm_ss' to an ISO 8601 based format of 'yyyy-MM-dd'T'HH:mm:ss'")
+        public boolean utISOTimestamp = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Proper World Size Check")
         @Config.Comment("Fix TombManyGraves not spawning the grave due to incorrectly checking world height")
         public boolean utProperWorldSizeCheck = true;
