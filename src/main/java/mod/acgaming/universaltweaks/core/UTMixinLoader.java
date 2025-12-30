@@ -76,6 +76,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.astralsorcery.tool.json", c -> c.isModPresent("astralsorcery") && UTConfigMods.ASTRAL_SORCERY.utEmptyPropertiesZero);
                 put("mixins/mods/mixins.backpack.json", c -> c.isModPresent("backpack") && UTConfigMods.BACKPACKS.utBPNoOffhandInteractionToggle);
                 put("mixins/mods/mixins.bewitchment.json", c -> c.isModPresent("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
+                put("mixins/mods/mixins.bewitchment.leaves.json", c -> c.isModPresent("bewitchment") && UTConfigMods.BEWITCHMENT.utLeavesChechFix);
                 put("mixins/mods/mixins.bibliocraft.armor.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandSlotFixToggle);
                 put("mixins/mods/mixins.bibliocraft.armorbinding.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandBindingCurseToggle);
                 put("mixins/mods/mixins.bibliocraft.hand.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFixHandConsumption);
