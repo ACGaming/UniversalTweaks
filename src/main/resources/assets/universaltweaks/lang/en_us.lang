@@ -53,6 +53,7 @@ cfg.universaltweaks.bugfixes.entities.entitylists=Entity Lists
 
 cfg.universaltweaks.modintegration.abyssalcraft=AbyssalCraft
 cfg.universaltweaks.modintegration.actuallyadditions=Actually Additions
+cfg.universaltweaks.modintegration.aether_legacy=Aether Legacy
 cfg.universaltweaks.modintegration.agricraft=Agricraft
 cfg.universaltweaks.modintegration.aoa=Advent of Ascension
 cfg.universaltweaks.modintegration.arcanearchives=Arcane Archives
@@ -130,6 +131,7 @@ cfg.universaltweaks.modintegration.te=Thermal Expansion
 cfg.universaltweaks.modintegration.test_dummy=MmmMmmMmmMmm
 cfg.universaltweaks.modintegration.thefarlanders=The Farlanders
 cfg.universaltweaks.modintegration.tinyprogressions=Tiny Progressions
+cfg.universaltweaks.modintegration.tombmanygraves=TombManyGraves2
 cfg.universaltweaks.modintegration.tr=Tech Reborn
 cfg.universaltweaks.modintegration.woot=Woot
 cfg.universaltweaks.modintegration=Mod Integration
