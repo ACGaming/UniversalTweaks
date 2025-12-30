@@ -67,6 +67,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.abyssalcraft.json", c -> c.isModPresent("abyssalcraft"));
                 put("mixins/mods/mixins.actuallyadditions.dupes.json", c -> c.isModPresent("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.actuallyadditions.relayupgrade.json", c -> c.isModPresent("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utLaserUpgradeVoid);
+                put("mixins/mods/mixins.aetherlegacy.eventdrops.json", c -> c.isModPresent("aether_legacy") && UTConfigMods.AETHER_LEGACY.utCaptureAccessoryDrops);
                 put("mixins/mods/mixins.agricraft.json", c -> c.isModPresent("agricraft") && UTConfigMods.AGRICRAFT.utEnderIOPluginFixToggle);
                 put("mixins/mods/mixins.aoa3.json", c -> c.isModPresent("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
                 put("mixins/mods/mixins.arcanearchives.dupes.json", c -> c.isModPresent("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
@@ -76,6 +77,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.avaritiaddons.json", c -> c.isModPresent("avaritiaddons") && UTConfigMods.AVARITIADDONS.utFixContainerCloseVoidBug);
                 put("mixins/mods/mixins.backpack.json", c -> c.isModPresent("backpack") && UTConfigMods.BACKPACKS.utBPNoOffhandInteractionToggle);
                 put("mixins/mods/mixins.bewitchment.json", c -> c.isModPresent("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
+                put("mixins/mods/mixins.bewitchment.leaves.json", c -> c.isModPresent("bewitchment") && UTConfigMods.BEWITCHMENT.utLeavesChechFix);
                 put("mixins/mods/mixins.bibliocraft.armor.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandSlotFixToggle);
                 put("mixins/mods/mixins.bibliocraft.armorbinding.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utArmorStandBindingCurseToggle);
                 put("mixins/mods/mixins.bibliocraft.hand.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFixHandConsumption);
@@ -114,6 +116,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.elenaidodge2.json", c -> c.isModPresent("elenaidodge2"));
                 put("mixins/mods/mixins.enderio.chorus.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utChorusStackOverflow);
                 put("mixins/mods/mixins.enderio.cyclebutton.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utSaveFilterCycleButtonProperly);
+                put("mixins/mods/mixins.enderio.redstoneconduit.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utClearRedstoneConduitChange);
                 put("mixins/mods/mixins.enderio.soulbinderjei.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utFixSoulBinderJEI);
                 put("mixins/mods/mixins.enderstorage.json", c -> c.isModPresent("enderstorage") && UTConfigMods.ENDER_STORAGE.utFrequencyTrackFixToggle);
                 put("mixins/mods/mixins.epicsiegemod.json", c -> c.isModPresent("epicsiegemod"));
@@ -182,6 +185,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.thermalexpansion.dupes.json", c -> c.isModPresent("thermalexpansion") && UTConfigMods.THERMAL_EXPANSION.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.thermalexpansion.json", c -> c.isModPresent("thermalexpansion"));
                 put("mixins/mods/mixins.tinyprogressions.dupes.json", c -> c.isModPresent("tp") && UTConfigMods.TINY_PROGRESSIONS.utDuplicationFixesToggle);
+                put("mixins/mods/mixins.tombmanygraves.timestamp.json", c -> c.isModPresent("tombmanygraves") && UTConfigMods.TOMBMANYGRAVES.utISOTimestamp);
+                put("mixins/mods/mixins.tombmanygraves.worldsize.json", c -> c.isModPresent("tombmanygraves") && UTConfigMods.TOMBMANYGRAVES.utProperWorldSizeCheck);
                 put("mixins/mods/mixins.woot.json", c -> c.isModPresent("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle);
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)

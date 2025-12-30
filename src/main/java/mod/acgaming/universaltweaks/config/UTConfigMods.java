@@ -23,6 +23,10 @@ public class UTConfigMods
     @Config.Name("Actually Additions")
     public static final ActuallyAdditionsCategory ACTUALLY_ADDITIONS = new ActuallyAdditionsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.aether_legacy")
+    @Config.Name("Aether Legacy")
+    public static final AetherLegacyCategory AETHER_LEGACY = new AetherLegacyCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.agricraft")
     @Config.Name("Agricraft")
     public static final AgricraftCategory AGRICRAFT = new AgricraftCategory();
@@ -339,6 +343,10 @@ public class UTConfigMods
     @Config.Name("Tiny Progressions")
     public static final TinyProgressionsCategory TINY_PROGRESSIONS = new TinyProgressionsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.tombmanygraves")
+    @Config.Name("TombManyGraves2")
+    public static final TombManyGravesCategory TOMBMANYGRAVES = new TombManyGravesCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.woot")
     @Config.Name("Woot")
     public static final WootCategory WOOT = new WootCategory();
@@ -373,6 +381,14 @@ public class UTConfigMods
                 "3 or higher will never disable these particles"
             })
         public int utItemLaserParticlesGraphics = -1;
+    }
+
+    public static class AetherLegacyCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Capture Accessory Drops")
+        @Config.Comment("When dropping equipped Accessories, add the drops to the event instead of dropping them directly, allowing compatibility with various grave mods")
+        public boolean utCaptureAccessoryDrops = true;
     }
 
     public static class AgricraftCategory
@@ -457,6 +473,11 @@ public class UTConfigMods
 
     public static class BewitchmentCategory
     {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Altar IBlockState Check")
+        @Config.Comment("Fix the Witches Altar checking blocks causing crashes when scanning blocks that do not have the expected properties, primarily TerraFirmaCraft leaves")
+        public boolean utLeavesChechFix = true;
+
         @Config.RequiresMcRestart
         @Config.Name("Witches' Oven Fix")
         @Config.Comment("Fixes Witches' Oven consuming container fuel items")
@@ -796,6 +817,11 @@ public class UTConfigMods
 
     public static class EnderIOCategory
     {
+        @Config.RequiresMcRestart
+        @Config.Name("Clear Outdated Redstone Conduit")
+        @Config.Comment("When changing colors in the Redstone Conduit GUI, remove the signal from the old color")
+        public boolean utClearRedstoneConduitChange = true;
+
         @Config.RequiresMcRestart
         @Config.Name("Fix Chorus Farming StackOverflow")
         @Config.Comment("Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow")
@@ -1536,6 +1562,30 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+    }
+
+    public static class TombManyGravesCategory
+    {
+        @SuppressWarnings("unused")
+        @Config.RequiresMcRestart
+        @Config.Name("Aether Legacy Accessory Compat")
+        @Config.Comment
+            ({
+                "Universal Tweaks always adds AetherLegacyInventory compat to TombManyGraves2,",
+                "but this functionality will only work properly if Aether Legacy: Capture Accessory Drops is enabled.",
+                "This cannot be disabled, and this config only exists to notify that this functionality exists."
+            })
+        public String utUnusedAccessoryCompatEnabled = "ALWAYS_ENABLED";
+
+        @Config.RequiresMcRestart
+        @Config.Name("Change Timestamp")
+        @Config.Comment("Change the timestamp used from 'MM_dd_YYYY_HH_mm_ss' to an ISO 8601 based format of 'yyyy-MM-dd'T'HH:mm:ss'")
+        public boolean utISOTimestamp = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Proper World Size Check")
+        @Config.Comment("Fix TombManyGraves not spawning the grave due to incorrectly checking world height")
+        public boolean utProperWorldSizeCheck = true;
     }
 
     public static class WootCategory
