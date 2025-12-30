@@ -801,6 +801,11 @@ public class UTConfigMods
     public static class EnderIOCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Clear Outdated Redstone Conduit")
+        @Config.Comment("When changing colors in the Redstone Conduit GUI, remove the signal from the old color")
+        public boolean utClearRedstoneConduitChange = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Chorus Farming StackOverflow")
         @Config.Comment("Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow")
         public boolean utChorusStackOverflow = true;

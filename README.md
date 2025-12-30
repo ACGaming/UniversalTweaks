@@ -409,6 +409,7 @@ All changes are toggleable via config files.
     * **Feathers Helper API Fix:** Fixes server-sided crashes when the Feathers Helper API is utilized
     * **Sprinting Integration:** Configurable consumption of feathers when the player is sprinting
 * **Ender IO**
+    * **Clear Outdated Redstone Conduit:** When changing colors in the Redstone Conduit GUI, remove the signal from the old color
     * **Fix Chorus Farming StackOverflow:** Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow
     * **Fix Soul Binder JEI Appearance:** Fixes the Soul Binder having empty ingredients or displaying filled soul vials in the output slot incorrectly
     * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one
