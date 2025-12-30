@@ -43,6 +43,10 @@ public class UTConfigMods
     @Config.Name("Advent of Ascension")
     public static final AOACategory AOA = new AOACategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.avaritiaddons")
+    @Config.Name("Avaritiaddons")
+    public static final AvaritiaddonsCategory AVARITIADDONS = new AvaritiaddonsCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.backpack")
     @Config.Name("Backpacks")
     public static final BackpacksCategory BACKPACKS = new BackpacksCategory();
@@ -449,6 +453,14 @@ public class UTConfigMods
         @Config.Name("Improved Player Tick")
         @Config.Comment("Improves AoA player ticking by only sending inventory changes when necessary")
         public boolean utImprovedPlayerTickToggle = true;
+    }
+
+    public static class AvaritiaddonsCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Container Held Stack Bug")
+        @Config.Comment("Fix the Infinity Chest not properly handling the held itemstack when closing the container")
+        public boolean utFixContainerCloseVoidBug = true;
     }
 
     public static class BackpacksCategory

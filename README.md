@@ -332,6 +332,8 @@ All changes are toggleable via config files.
     * **Improved Player Tick:** Improves AoA player ticking by only sending inventory changes when necessary
 * **Arcane Archives**
     * **Duplication Fixes:** Fixes various duplication exploits
+* **Avaritiaddons**
+    * **Fix Container Held Stack Bug:** Fix the Infinity Chest not properly handling the held itemstack when closing the container
 * **Backpacks**
     * **No Offhand Interaction:** Prevents unintended offhand right-click behavior when opening backpacks
 * **Bewitchment**
