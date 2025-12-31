@@ -21,6 +21,11 @@ public class UTItemHandlerIteratorMixin {
     @Shadow
     private int slot;
 
+    /// As far as I can tell, this crash happens when the IItemHandler that's being iterated over changes its
+    /// length in the middle of being iterated over. This is obviously a bug, but AE2 has no control over how the
+    /// IItemHandler behaves. This mixin changes the behaviour of ItemHandlerIterator to instead pretend these
+    /// invalid slots are empty and cannot be extracted from, instead of crashing.
+    ///
     /// java.util.NoSuchElementException
     ///     at appeng.util.inv.ItemHandlerIterator.next(ItemHandlerIterator.java:48)
     ///     at appeng.util.inv.ItemHandlerIterator.next(ItemHandlerIterator.java:28)
