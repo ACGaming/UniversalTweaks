@@ -404,7 +404,7 @@ public class UTConfigMods
         @Config.RequiresMcRestart
         @Config.Name("Mitigate Storage Bus Crashes")
         @Config.Comment("Mitigates crashes caused by misbehaving IItemHandlers.")
-        public boolean uteItemHandlerCrash = true;
+        public boolean utItemHandlerCrash = true;
     }
 
     public static class AetherLegacyCategory
