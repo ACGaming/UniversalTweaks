@@ -319,6 +319,8 @@ All changes are toggleable via config files.
     * **Capture Accessory Drops:** When dropping equipped Accessories, add the drops to the event instead of dropping them directly, allowing compatibility with various grave mods
 * **Agricraft**
     * **Ender IO Integration Fix:** Fixes crash when Ender IO's Farming Station attempts to harvest Agricraft crops
+* **Applied Energistics 2 Unofficial Extended Life**
+    * **Mitigate Storage Bus Crashes:** Mitigates crashes caused by misbehaving IItemHandlers
 * **Astral Sorcery**
     * **Missing Player Log Level:** Downgrades the message when completing a recipe without an initializing player from a warning to a debug
     * **Sooty Marble Rendering:** Fixes Sooty Marble Pillar blocking the proper rendering of adjacent fluids due to inverted logic
@@ -429,6 +431,8 @@ All changes are toggleable via config files.
     * **Mutable Machine Block Drops:** Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list.
     * **Creative Mill Harvestability:** Fixes the Creative Mill Generator not respecting the Creative Block Breaking config
     * **Downgrade Potion Recipes Log Level:** Downgrades the message when creating a potion recipe from info to a debug
+* **Extreme Reactors**
+    * **Mitigate Steam Reactor Crash:** Mitigates NPE in updateServer by no-oping fluid transfers when the direction is null
 * **Forestry**
     * **Arborist Villager Trades:** Adds custom emerald to germling trades to the arborist villager
 * **FPS Reducer**
@@ -441,6 +445,7 @@ All changes are toggleable via config files.
     * **Tool Break Fire Event:** Fires the PlayerDestroyItemEvent when an Immersive Engineering tool breaks, fixing a number of cross-compatibility issues
     * **Tool Break Hand Replacement:** Fixes the tool breaking setting the main hand to empty regardless of what hand the tool is in
 * **In Control!**
+    * **Fix ForgeEventHandler Crash:** Prevents the client thread from modifying a server-only static field
     * **Spawn Rule Stats Fix:** Fixes onJoin spawn rules repeatedly modifying mob attack/health/speed
 * **IndustrialCraft 2**
     * **Duplication Fixes:** Fixes various duplication exploits
@@ -499,8 +504,9 @@ All changes are toggleable via config files.
     * **No Beta Warning:** Disables the beta message warning on world join
 * **Requious Frakto**
     * **Particle Fixes:** Fixes server world being leaked to various particles
-* **RFTools Dimension**
-    * **Properly Unregister Dimensions:** Fixes a bug where joining a world or server with any RFTools Dimension registered would disallow entering another world without that dimension until restarting.
+* **RFTools**
+    * **Fully Unregister Dimensions:** Fixes a bug where joining a world or server with any RFTools Dimension registered would disallow entering another world without that dimension until restarting
+    * **Fix XNet Channel Crash:** Fixes sporadic crashes when using RFTools Storage XNet channels
 * **Roost**
     * **Early Register CT Chickens:** Improves load time by registering ContentTweaker chickens early for Roost to detect them
 * **Roots**
@@ -559,3 +565,5 @@ All changes are toggleable via config files.
     * **Proper World Size Check:** Fix TombManyGraves not spawning the grave due to incorrectly checking world height
 * **Woot**
     * **Cleanup Simulated Kills:** Remove any leftover entities spawned on simulated mob's death
+* **XNet**
+    * **Fix Various Controller Crashes:** Patches several ArrayIndexOutOfBoundsExceptions in the controller logic

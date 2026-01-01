@@ -295,10 +295,6 @@ public class UTConfigMods
     @Config.Name("RFTools")
     public static final RFToolsCategory RFTOOLS = new RFToolsCategory();
 
-    @Config.LangKey("cfg.universaltweaks.modintegration.rftoolsdimensions")
-    @Config.Name("RFTools Dimensions")
-    public static final RFToolsDimensionsCategory RFTOOLS_DIMENSIONS = new RFToolsDimensionsCategory();
-
     @Config.LangKey("cfg.universaltweaks.modintegration.roost")
     @Config.Name("Roost")
     public static final RoostCategory ROOST = new RoostCategory();
@@ -403,8 +399,8 @@ public class UTConfigMods
     {
         @Config.RequiresMcRestart
         @Config.Name("Mitigate Storage Bus Crashes")
-        @Config.Comment("Mitigates crashes caused by misbehaving IItemHandlers.")
-        public boolean utItemHandlerCrash = true;
+        @Config.Comment("Mitigates crashes caused by misbehaving IItemHandlers")
+        public boolean utItemHandlerCrash = false;
     }
 
     public static class AetherLegacyCategory
@@ -965,7 +961,7 @@ public class UTConfigMods
     {
         @Config.RequiresMcRestart
         @Config.Name("Mitigate Steam Reactor Crash")
-        @Config.Comment("Mitigates NPE in updateServer by no-oping fluid transfers when the direction is null.")
+        @Config.Comment("Mitigates NPE in updateServer by no-oping fluid transfers when the direction is null")
         public boolean utSteamReactorCrash = true;
     }
 
@@ -1029,14 +1025,14 @@ public class UTConfigMods
     public static class InControlCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Fix ForgeEventHandler Crash")
+        @Config.Comment("Prevents the client thread from modifying a server-only static field")
+        public boolean utClientCrash = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Spawn Rule Stats Fix")
         @Config.Comment("Fixes onJoin spawn rules repeatedly modifying mob attack/health/speed")
         public boolean utStatsFixToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Fix ForgeEventHandler Crash")
-        @Config.Comment("Prevents the client thread from modifying a server-only static field.")
-        public boolean utClientCrash = true;
     }
 
     public static class IndustrialCraftCategory
@@ -1297,17 +1293,14 @@ public class UTConfigMods
     public static class RFToolsCategory
     {
         @Config.RequiresMcRestart
-        @Config.Name("Fix RF Tools + XNet Crash")
-        @Config.Comment("Fixes a sporadic crash when using a rftools.storage xnet channel")
-        public boolean utRFToolsStorageCrash = true;
-    }
-
-    public static class RFToolsDimensionsCategory
-    {
-        @Config.RequiresMcRestart
         @Config.Name("Fully Unregister Dimensions")
         @Config.Comment("Fixes a bug where joining a world or server with any RFTools Dimension registered would disallow entering another world without that dimension until restarting")
         public boolean utFullyUnregisterDimensions = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix XNet Channel Crash")
+        @Config.Comment("Fixes sporadic crashes when using RFTools Storage XNet channels")
+        public boolean utXNetChannelCrash = true;
     }
 
     public static class RoostCategory

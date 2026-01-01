@@ -164,7 +164,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.randomthings.collector.json", c -> c.isModPresent("randomthings") && UTConfigMods.RANDOM_THINGS.utItemCollectorDupe);
                 put("mixins/mods/mixins.requiousfrakto.json", c -> c.isModPresent("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);
                 put("mixins/mods/mixins.reskillable.json", c -> c.isModPresent("reskillable"));
-                put("mixins/mods/mixins.rftools.json", c -> c.isModPresent("rftools") && UTConfigMods.RFTOOLS.utRFToolsStorageCrash);
+                put("mixins/mods/mixins.rftools.json", c -> c.isModPresent("rftools") && UTConfigMods.RFTOOLS.utXNetChannelCrash);
                 put("mixins/mods/mixins.rftoolsdimensions.json", c -> c.isModPresent("rftoolsdim"));
                 put("mixins/mods/mixins.roost.contenttweaker.json", c -> c.isModPresent("roost") && c.isModPresent("contenttweaker"));
                 put("mixins/mods/mixins.roots.creativepouch.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utDisableCreativePouchGUI);

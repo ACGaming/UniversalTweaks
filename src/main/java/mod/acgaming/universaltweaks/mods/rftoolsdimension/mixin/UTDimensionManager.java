@@ -21,7 +21,7 @@ public abstract class UTDimensionManager
     @Inject(method = "cleanupDimensionInformation", at = @At("HEAD"))
     private static void utClearClientInstance(CallbackInfo ci)
     {
-        if (!UTConfigMods.RFTOOLS_DIMENSIONS.utFullyUnregisterDimensions) return;
+        if (!UTConfigMods.RFTOOLS.utFullyUnregisterDimensions) return;
         if (clientInstance != null)
         {
             UniversalTweaks.LOGGER.info("UTDimensionManager ::: Cleaning up RFTools dimensions for the clientInstance");
