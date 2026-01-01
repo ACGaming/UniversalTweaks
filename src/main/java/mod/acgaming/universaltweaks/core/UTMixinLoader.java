@@ -68,6 +68,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.actuallyadditions.dupes.json", c -> c.isModPresent("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.actuallyadditions.relayupgrade.json", c -> c.isModPresent("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utLaserUpgradeVoid);
                 put("mixins/mods/mixins.aetherlegacy.eventdrops.json", c -> c.isModPresent("aether_legacy") && UTConfigMods.AETHER_LEGACY.utCaptureAccessoryDrops);
+                put("mixins/mods/mixins.ae2uel.handler_crash.json", c -> c.isModPresent("appliedenergistics2") && UTConfigMods.AE2UEL.utItemHandlerCrash);
                 put("mixins/mods/mixins.agricraft.json", c -> c.isModPresent("agricraft") && UTConfigMods.AGRICRAFT.utEnderIOPluginFixToggle);
                 put("mixins/mods/mixins.aoa3.json", c -> c.isModPresent("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
                 put("mixins/mods/mixins.arcanearchives.dupes.json", c -> c.isModPresent("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
@@ -133,11 +134,13 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.extrautilities.potionlogging.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDowngradePotionLogging);
                 put("mixins/mods/mixins.extrautilities.radarexception.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utCatchRadarException);
                 put("mixins/mods/mixins.extrautilities.radarloot.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utRadarSkipsLoottables);
+                put("mixins/mods/mixins.extreme_reactors.reactor_crash.json", c -> c.isModPresent("bigreactors") && UTConfigMods.EXTREME_REACTORS.utSteamReactorCrash);
                 put("mixins/mods/mixins.forestry.extratrees.json", c -> c.isModPresent("extratrees") && UTConfigMods.FORESTRY.utFOGatherWindfallToggle);
                 put("mixins/mods/mixins.forestry.json", c -> c.isModPresent("forestry"));
                 put("mixins/mods/mixins.immersiveengineering.toolevent.json", c -> c.isModPresent("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFireBreakEvent);
                 put("mixins/mods/mixins.immersiveengineering.toolhand.json", c -> c.isModPresent("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFixIncorrectHandReplacement);
-                put("mixins/mods/mixins.incontrol.json", c -> c.isModPresent("incontrol") && UTConfigMods.INCONTROL.utStatsFixToggle);
+                put("mixins/mods/mixins.incontrol.rule.json", c -> c.isModPresent("incontrol") && UTConfigMods.INCONTROL.utStatsFixToggle);
+                put("mixins/mods/mixins.incontrol.handler_crash.json", c -> c.isModPresent("incontrol") && UTConfigMods.INCONTROL.utClientCrash);
                 put("mixins/mods/mixins.industrialcraft.dupes.json", c -> c.isModPresent("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.industrialforegoing.dupes.json", c -> c.isModPresent("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.industrialforegoing.rangeaddon.json", c -> c.isModPresent("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utRangeAddonNumberFix);
@@ -161,6 +164,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.randomthings.collector.json", c -> c.isModPresent("randomthings") && UTConfigMods.RANDOM_THINGS.utItemCollectorDupe);
                 put("mixins/mods/mixins.requiousfrakto.json", c -> c.isModPresent("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);
                 put("mixins/mods/mixins.reskillable.json", c -> c.isModPresent("reskillable"));
+                put("mixins/mods/mixins.rftools.json", c -> c.isModPresent("rftools") && UTConfigMods.RFTOOLS.utRFToolsStorageCrash);
                 put("mixins/mods/mixins.rftoolsdimensions.json", c -> c.isModPresent("rftoolsdim"));
                 put("mixins/mods/mixins.roost.contenttweaker.json", c -> c.isModPresent("roost") && c.isModPresent("contenttweaker"));
                 put("mixins/mods/mixins.roots.creativepouch.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utDisableCreativePouchGUI);
@@ -188,6 +192,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.tombmanygraves.timestamp.json", c -> c.isModPresent("tombmanygraves") && UTConfigMods.TOMBMANYGRAVES.utISOTimestamp);
                 put("mixins/mods/mixins.tombmanygraves.worldsize.json", c -> c.isModPresent("tombmanygraves") && UTConfigMods.TOMBMANYGRAVES.utProperWorldSizeCheck);
                 put("mixins/mods/mixins.woot.json", c -> c.isModPresent("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle);
+                put("mixins/mods/mixins.xnet.controller_crashes.json", c -> c.isModPresent("xnet") && UTConfigMods.XNET.utControllerCrashes);
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
             {

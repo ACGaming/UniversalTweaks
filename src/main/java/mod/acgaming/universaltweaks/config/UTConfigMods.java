@@ -23,6 +23,10 @@ public class UTConfigMods
     @Config.Name("Actually Additions")
     public static final ActuallyAdditionsCategory ACTUALLY_ADDITIONS = new ActuallyAdditionsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.ae2uel")
+    @Config.Name("Applied Energistics 2 Unofficial Extended Life")
+    public static final AE2UELCategory AE2UEL = new AE2UELCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.aether_legacy")
     @Config.Name("Aether Legacy")
     public static final AetherLegacyCategory AETHER_LEGACY = new AetherLegacyCategory();
@@ -167,6 +171,10 @@ public class UTConfigMods
     @Config.Name("Extra Utilities 2")
     public static final ExtraUtilitiesCategory EXTRA_UTILITIES = new ExtraUtilitiesCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.extreme_reactors")
+    @Config.Name("Extreme Reactors")
+    public static final ExtremeReactorsCategory EXTREME_REACTORS = new ExtremeReactorsCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.forestry")
     @Config.Name("Forestry")
     public static final ForestryCategory FORESTRY = new ForestryCategory();
@@ -283,6 +291,10 @@ public class UTConfigMods
     @Config.Name("Requious Frakto")
     public static final RequiousFraktoCategory REQUIOUS_FRAKTO = new RequiousFraktoCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.rftools")
+    @Config.Name("RFTools")
+    public static final RFToolsCategory RFTOOLS = new RFToolsCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.rftoolsdimensions")
     @Config.Name("RFTools Dimensions")
     public static final RFToolsDimensionsCategory RFTOOLS_DIMENSIONS = new RFToolsDimensionsCategory();
@@ -351,6 +363,10 @@ public class UTConfigMods
     @Config.Name("Woot")
     public static final WootCategory WOOT = new WootCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.xnet")
+    @Config.Name("XNet")
+    public static final XNetCategory XNET = new XNetCategory();
+
     public static class AbyssalCraftCategory
     {
         @Config.Name("Disable Plague Potion Clouds")
@@ -381,6 +397,14 @@ public class UTConfigMods
                 "3 or higher will never disable these particles"
             })
         public int utItemLaserParticlesGraphics = -1;
+    }
+
+    public static class AE2UELCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Mitigate Storage Bus Crashes")
+        @Config.Comment("Mitigates crashes caused by misbehaving IItemHandlers.")
+        public boolean utItemHandlerCrash = true;
     }
 
     public static class AetherLegacyCategory
@@ -937,6 +961,14 @@ public class UTConfigMods
         public boolean utDowngradePotionLogging = true;
     }
 
+    public static class ExtremeReactorsCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Mitigate Steam Reactor Crash")
+        @Config.Comment("Mitigates NPE in updateServer by no-oping fluid transfers when the direction is null.")
+        public boolean utSteamReactorCrash = true;
+    }
+
     public static class ForestryCategory
     {
         @Config.RequiresMcRestart
@@ -1000,6 +1032,11 @@ public class UTConfigMods
         @Config.Name("Spawn Rule Stats Fix")
         @Config.Comment("Fixes onJoin spawn rules repeatedly modifying mob attack/health/speed")
         public boolean utStatsFixToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix ForgeEventHandler Crash")
+        @Config.Comment("Prevents the client thread from modifying a server-only static field.")
+        public boolean utClientCrash = true;
     }
 
     public static class IndustrialCraftCategory
@@ -1255,6 +1292,14 @@ public class UTConfigMods
         @Config.Name("Particle Fixes")
         @Config.Comment("Fixes server world being leaked to various particles")
         public boolean utParticleFixesToggle = true;
+    }
+
+    public static class RFToolsCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix RF Tools + XNet Crash")
+        @Config.Comment("Fixes a sporadic crash when using a rftools.storage xnet channel")
+        public boolean utRFToolsStorageCrash = true;
     }
 
     public static class RFToolsDimensionsCategory
@@ -1594,6 +1639,14 @@ public class UTConfigMods
         @Config.Name("Cleanup Simulated Kills")
         @Config.Comment("Remove any leftover entities spawned on simulated mob's death")
         public boolean utCleanupSimulatedKillsToggle = true;
+    }
+
+    public static class XNetCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Various Controller Crashes")
+        @Config.Comment("Patches several ArrayIndexOutOfBoundsExceptions in the controller logic")
+        public boolean utControllerCrashes = true;
     }
 
     static
