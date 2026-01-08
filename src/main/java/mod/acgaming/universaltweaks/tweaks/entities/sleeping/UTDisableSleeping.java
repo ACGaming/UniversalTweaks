@@ -7,16 +7,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
-import net.minecraftforge.event.entity.player.SleepingTimeCheckEvent;
-import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
-import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 // Courtesy of Funwayguy
-public class UTSleeping
+public class UTDisableSleeping
 {
     @SubscribeEvent
     public static void utDisableSleeping(PlayerSleepInBedEvent event)
@@ -36,14 +33,5 @@ public class UTSleeping
         if (event.getEntityPlayer().isRiding()) event.getEntityPlayer().dismountRidingEntity();
         event.getEntityPlayer().setSpawnChunk(event.getPos(), false, (event.getEntityPlayer()).dimension);
         event.getEntityPlayer().sendStatusMessage(new TextComponentTranslation("msg.universaltweaks.sleep.spawnpoint"), true);
-    }
-
-    @SubscribeEvent
-    public static void utSleepingTime(SleepingTimeCheckEvent event)
-    {
-        if (UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime < 0) return;
-        if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSleepingTime ::: Sleeping time check event");
-        if (event.getEntityPlayer().getEntityWorld().getWorldTime() >= UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime) event.setResult(Event.Result.ALLOW);
-        else event.setResult(Event.Result.DENY);
     }
 }
