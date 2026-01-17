@@ -121,9 +121,9 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.enderio.soulbinderjei.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utFixSoulBinderJEI);
                 put("mixins/mods/mixins.enderstorage.json", c -> c.isModPresent("enderstorage") && UTConfigMods.ENDER_STORAGE.utFrequencyTrackFixToggle);
                 put("mixins/mods/mixins.epicsiegemod.json", c -> c.isModPresent("epicsiegemod"));
-                put("mixins/mods/mixins.erebus.cabbage.json", c -> c.isModPresent("erebus") && UTConfigMods.EREBUS.utCabbageDropToggle);
                 put("mixins/mods/mixins.erebus.json", c -> c.isModPresent("erebus"));
-                put("mixins/mods/mixins.gaiadimension.restructurer.json", c -> c.isModPresent("gaiadimension") && UTConfigMods.GAIA_DIMENSION.utFixNPERestructurerRecipe);
+                put("mixins/mods/mixins.erebus.cabbage.json", c -> c.isModPresent("erebus") && UTConfigMods.EREBUS.utCabbageDropToggle);
+                put("mixins/mods/mixins.erebus.deathcompass.json", c -> c.isModPresent("erebus") && UTConfigMods.EREBUS.utDeathCompassToggle);
                 put("mixins/mods/mixins.erebus.quakehammer.json", c -> c.isModPresent("erebus") && UTConfigMods.EREBUS.utFixQuakeHammerTextureToggle);
                 put("mixins/mods/mixins.evilcraft.vengeancespirit.regex.json", c -> c.isModPresent("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritCache);
                 put("mixins/mods/mixins.evilcraft.vengeancespirit.random.json", c -> c.isModPresent("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritRandom);
@@ -137,6 +137,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.extreme_reactors.reactor_crash.json", c -> c.isModPresent("bigreactors") && UTConfigMods.EXTREME_REACTORS.utSteamReactorCrash);
                 put("mixins/mods/mixins.forestry.extratrees.json", c -> c.isModPresent("extratrees") && UTConfigMods.FORESTRY.utFOGatherWindfallToggle);
                 put("mixins/mods/mixins.forestry.json", c -> c.isModPresent("forestry"));
+                put("mixins/mods/mixins.gaiadimension.restructurer.json", c -> c.isModPresent("gaiadimension") && UTConfigMods.GAIA_DIMENSION.utFixNPERestructurerRecipe);
                 put("mixins/mods/mixins.immersiveengineering.toolevent.json", c -> c.isModPresent("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFireBreakEvent);
                 put("mixins/mods/mixins.immersiveengineering.toolhand.json", c -> c.isModPresent("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFixIncorrectHandReplacement);
                 put("mixins/mods/mixins.incontrol.rule.json", c -> c.isModPresent("incontrol") && UTConfigMods.INCONTROL.utStatsFixToggle);
