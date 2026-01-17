@@ -1368,18 +1368,35 @@ public class UTConfigMods
         public boolean utRainCollectorCanteenToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Altitude Modifier Customization")
+        @Config.Comment("Enables customization of the altitude modifier")
+        public boolean utAltitudeModifierToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Altitude Modifier: Sea Level")
-        @Config.Comment("Sets the sea level for altitude modifier calculations")
+        @Config.Comment
+            ({
+                "Sets the sea level for altitude modifier calculations",
+                "Requires 'Altitude Modifier Customization' to be enabled"
+            })
         public int utAltitudeSeaLevel = 64;
 
         @Config.RequiresMcRestart
         @Config.Name("Altitude Modifier: Above Sea Level Multiplier")
-        @Config.Comment("Sets the multiplier above sea level for altitude modifier calculations")
+        @Config.Comment
+            ({
+                "Sets the multiplier above sea level for altitude modifier calculations",
+                "Requires 'Altitude Modifier Customization' to be enabled"
+            })
         public double utAltitudeMultiplierAboveSeaLevel = 1.0D;
 
         @Config.RequiresMcRestart
         @Config.Name("Altitude Modifier: Below Sea Level Multiplier")
-        @Config.Comment("Sets the multiplier below sea level for altitude modifier calculations")
+        @Config.Comment
+            ({
+                "Sets the multiplier below sea level for altitude modifier calculations",
+                "Requires 'Altitude Modifier Customization' to be enabled"
+            })
         public double utAltitudeMultiplierBelowSeaLevel = 1.0D;
     }
 

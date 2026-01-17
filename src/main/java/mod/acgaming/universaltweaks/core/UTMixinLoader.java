@@ -176,7 +176,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.roots.soil.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utPreventSoilNeighborUpdates);
                 put("mixins/mods/mixins.roots.spiritdrops.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utFixSpiritDrops);
                 put("mixins/mods/mixins.roots.summon.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utFixSummoningInfiniteDescent);
-                put("mixins/mods/mixins.simpledifficulty.json", c -> c.isModPresent("simpledifficulty"));
+                put("mixins/mods/mixins.simpledifficulty.altitudemodifier.json", c -> c.isModPresent("simpledifficulty") && UTConfigMods.SIMPLE_DIFFICULTY.utAltitudeModifierToggle);
+                put("mixins/mods/mixins.simpledifficulty.raincollector.json", c -> c.isModPresent("simpledifficulty") && UTConfigMods.SIMPLE_DIFFICULTY.utRainCollectorCanteenToggle);
                 put("mixins/mods/mixins.spiceoflife.dupes.json", c -> c.isModPresent("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.steamworld.json", c -> c.isModPresent("steamworld") && UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
                 put("mixins/mods/mixins.storagedrawers.json", c -> c.isModPresent("storagedrawers") && UTConfigMods.STORAGE_DRAWERS.utSDItemVoidingFixToggle);
