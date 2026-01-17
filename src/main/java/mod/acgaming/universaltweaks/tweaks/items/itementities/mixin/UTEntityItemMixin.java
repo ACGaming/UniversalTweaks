@@ -169,4 +169,10 @@ public abstract class UTEntityItemMixin extends Entity
         // Run on odd ticks to not skip the '% 25' check
         return instance.ticksExisted % 2 != 0;
     }
+
+    @Inject(method = "getName", at = @At("RETURN"), cancellable = true)
+    public void utIEGetName(CallbackInfoReturnable<String> cir)
+    {
+        cir.setReturnValue(this.hasCustomName() ? this.getCustomNameTag() : this.getItem().getDisplayName());
+    }
 }
