@@ -153,7 +153,7 @@ public class UTConfigTweaks
         @Config.RequiresMcRestart
         @Config.Name("Better Rail Placement")
         @Config.Comment("Implements an improved system that makes rails face the player when placed")
-        public boolean utBetterRailPlacementToggle = true;
+        public boolean utBetterRailPlacementToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Bed Obstruction Replacement")
