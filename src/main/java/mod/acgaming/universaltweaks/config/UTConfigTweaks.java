@@ -1363,6 +1363,11 @@ public class UTConfigTweaks
         public boolean utSmartEatToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Soup Bowl Returns")
+        @Config.Comment("Respects stack sizes of soups when returning bowls")
+        public boolean utSoupBowlToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Super Hot Torch")
         @Config.Comment("Enables one-time ignition of entities by hitting them with a torch")
         public boolean utSuperHotTorchToggle = false;

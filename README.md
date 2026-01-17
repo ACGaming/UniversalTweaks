@@ -267,6 +267,7 @@ All changes are toggleable via config files.
 * **Smart Eat:** Requires the hunger bar to be missing food points equal to or more than the amount restored by the food
 * **Smooth Scrolling:** Adds smooth scrolling to every in-game list
 * **Soulbound Vexes:** Summoned vexes will also die when their summoner is killed
+* **Soup Bowl Returns:** Respects stack sizes of soups when returning bowls
 * **Spawn Caps:** Sets maximum spawning limits for different entity types
 * **Spawn Chunks Generation:** Determines if overworld spawn chunks are generated during world creation
 * **Spawn Chunks Loading:** Determines if overworld spawn chunks are always kept loaded
