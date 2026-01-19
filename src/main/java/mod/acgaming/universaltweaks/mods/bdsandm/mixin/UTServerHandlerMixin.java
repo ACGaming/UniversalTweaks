@@ -22,7 +22,11 @@ import funwayguy.bdsandm.network.PacketBdsm;
 @Mixin(value = PacketBdsm.ServerHandler.class, remap = false, priority = Integer.MAX_VALUE)
 public class UTServerHandlerMixin
 {
-
+    /**
+     * @author bruberu
+     * @reason Adds thread safety to the network handler, which is required for correctly spawning dropped items.
+     * Without this, crashes occur on servers while using certain world generation/spawn control mods.
+     */
     @WrapOperation(method = "onMessage(Lfunwayguy/bdsandm/network/PacketBdsm;Lnet/minecraftforge/fml/common/network/simpleimpl/MessageContext;)Lfunwayguy/bdsandm/network/PacketBdsm;",
         at = @At(target = "Lfunwayguy/bdsandm/blocks/IStorageBlock;onPlayerInteract(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/util/EnumFacing;Lnet/minecraft/entity/player/EntityPlayerMP;Lnet/minecraft/util/EnumHand;ZZI)V",
             value = "INVOKE"))
