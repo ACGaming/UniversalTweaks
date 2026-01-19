@@ -55,6 +55,10 @@ public class UTConfigMods
     @Config.Name("Backpacks")
     public static final BackpacksCategory BACKPACKS = new BackpacksCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.bdsandm")
+    @Config.Name("Barrels, Drums, Storage & More")
+    public static final BDSAndMCategory BDSANDM = new BDSAndMCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.bewitchment")
     @Config.Name("Bewitchment")
     public static final BewitchmentCategory BEWITCHMENT = new BewitchmentCategory();
@@ -489,6 +493,14 @@ public class UTConfigMods
         @Config.Name("No Offhand Interaction")
         @Config.Comment("Prevents unintended offhand right-click behavior when opening backpacks")
         public boolean utBPNoOffhandInteractionToggle = true;
+    }
+
+    public static class BDSAndMCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Barrel Thread Safety")
+        @Config.Comment("Prevents CME crashes in other mods (e.g. InControl) when dropping items onto the floor from a barrel")
+        public boolean utBarrelThreadSafety = true;
     }
 
     public static class BewitchmentCategory
@@ -1680,4 +1692,5 @@ public class UTConfigMods
             }
         }
     }
+
 }
