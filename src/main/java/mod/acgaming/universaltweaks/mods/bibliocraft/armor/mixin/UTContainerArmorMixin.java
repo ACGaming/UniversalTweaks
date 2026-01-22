@@ -26,7 +26,7 @@ public abstract class UTContainerArmorMixin
      * @reason Slots are ordered 0/1/2/3 as HEAD/CHEST/LEGS/FEET, BiblioCraft inverts that order in this location.
      * This fixes inserting into the armor stand slots.
      */
-    @WrapOperation(method = "transferStackInSlot", at = @At(value = "INVOKE", target = "Ljds/bibliocraft/containers/ContainerArmor;mergeItemStack(Lnet/minecraft/item/ItemStack;IIZ)Z"), slice = @Slice(from = @At(value = "FIELD", target = "Lnet/minecraft/inventory/EntityEquipmentSlot;FEET:Lnet/minecraft/inventory/EntityEquipmentSlot;"), to = @At(value = "CONSTANT", args = "classValue=net/minecraft/item/ItemSkull")))
+    @WrapOperation(method = "transferStackInSlot", at = @At(value = "INVOKE", target = "Ljds/bibliocraft/containers/ContainerArmor;mergeItemStack(Lnet/minecraft/item/ItemStack;IIZ)Z"), slice = @Slice(from = @At(value = "FIELD", target = "Lnet/minecraft/inventory/EntityEquipmentSlot;FEET:Lnet/minecraft/inventory/EntityEquipmentSlot;"), to = @At(value = "CONSTANT", args = "classValue=net/minecraft/item/ItemSkull")), remap = true)
     private boolean utEnsureArmorStandOrder(ContainerArmor instance, ItemStack stack, int startIndex, int endIndex, boolean reverseDirection, Operation<Boolean> original)
     {
         int start = startIndex <= 3 ? 3 - startIndex : startIndex;
@@ -38,7 +38,7 @@ public abstract class UTContainerArmorMixin
      * @reason Slots are ordered 0/1/2/3 as HEAD/CHEST/LEGS/FEET for Vanilla, BiblioCraft has the incorrect order.
      * This fixes shift-clicking from the player armor slots.
      */
-    @WrapOperation(method = "transferStackInSlot", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/NonNullList;get(I)Ljava/lang/Object;"), slice = @Slice(from = @At(value = "FIELD", target = "Lnet/minecraft/inventory/EntityEquipmentSlot;FEET:Lnet/minecraft/inventory/EntityEquipmentSlot;"), to = @At(value = "CONSTANT", args = "classValue=net/minecraft/item/ItemSkull")))
+    @WrapOperation(method = "transferStackInSlot", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/NonNullList;get(I)Ljava/lang/Object;"), slice = @Slice(from = @At(value = "FIELD", target = "Lnet/minecraft/inventory/EntityEquipmentSlot;FEET:Lnet/minecraft/inventory/EntityEquipmentSlot;"), to = @At(value = "CONSTANT", args = "classValue=net/minecraft/item/ItemSkull")), remap = true)
     private Object utEnsureArmorSlotOrder(NonNullList<Object> instance, int index, Operation<Object> original)
     {
         return original.call(instance, 3 - index);
@@ -50,7 +50,7 @@ public abstract class UTContainerArmorMixin
      */
     @Definition(id = "ItemArmor", type = ItemArmor.class)
     @Expression("? instanceof ItemArmor")
-    @ModifyExpressionValue(method = "transferStackInSlot", at = @At("MIXINEXTRAS:EXPRESSION"))
+    @ModifyExpressionValue(method = "transferStackInSlot", at = @At("MIXINEXTRAS:EXPRESSION"), remap = true)
     private boolean utSkipItemArmorCheck(boolean original)
     {
         return true;
@@ -62,7 +62,7 @@ public abstract class UTContainerArmorMixin
      */
     @Definition(id = "ItemArmor", type = ItemArmor.class)
     @Expression("(ItemArmor) ?")
-    @WrapOperation(method = "transferStackInSlot", at = @At("MIXINEXTRAS:EXPRESSION"))
+    @WrapOperation(method = "transferStackInSlot", at = @At("MIXINEXTRAS:EXPRESSION"), remap = true)
     private ItemArmor utSkipItemArmorCast(Object object, Operation<ItemArmor> original)
     {
         return null;
@@ -74,7 +74,7 @@ public abstract class UTContainerArmorMixin
      * Requires {@link #utSkipItemArmorCast} and {@link #utSkipItemArmorCheck}.
      * Fixes slots not respecting the armor type of the stack and only allowing {@link ItemArmor}.
      */
-    @WrapOperation(method = "transferStackInSlot", at = @At(value = "FIELD", target = "Lnet/minecraft/item/ItemArmor;armorType:Lnet/minecraft/inventory/EntityEquipmentSlot;"))
+    @WrapOperation(method = "transferStackInSlot", at = @At(value = "FIELD", target = "Lnet/minecraft/item/ItemArmor;armorType:Lnet/minecraft/inventory/EntityEquipmentSlot;"), remap = true)
     private EntityEquipmentSlot utAccessRealEquipmentSlot(ItemArmor instance, Operation<EntityEquipmentSlot> original, @Local(ordinal = 0) ItemStack stack)
     {
         return EntityLiving.getSlotForItemStack(stack);

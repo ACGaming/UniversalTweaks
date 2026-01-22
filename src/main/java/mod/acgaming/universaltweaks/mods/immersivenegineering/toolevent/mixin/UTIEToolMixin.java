@@ -75,7 +75,7 @@ public abstract class UTIEToolMixin
      * @author WaitingIdly
      * @reason if the itemstack is being set to empty, fire {@link PlayerDestroyItemEvent} with the original stack.
      */
-    @Inject(method = "onItemUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/EntityPlayer;setItemStackToSlot(Lnet/minecraft/inventory/EntityEquipmentSlot;Lnet/minecraft/item/ItemStack;)V", shift = At.Shift.AFTER))
+    @Inject(method = "onItemUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/EntityPlayer;setItemStackToSlot(Lnet/minecraft/inventory/EntityEquipmentSlot;Lnet/minecraft/item/ItemStack;)V", shift = At.Shift.AFTER), remap = true)
     private void utFireDestroyOnUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ, CallbackInfoReturnable<EnumActionResult> cir, @Local(ordinal = 0) ItemStack stack)
     {
         ForgeEventFactory.onPlayerDestroyItem(player, stack, hand);

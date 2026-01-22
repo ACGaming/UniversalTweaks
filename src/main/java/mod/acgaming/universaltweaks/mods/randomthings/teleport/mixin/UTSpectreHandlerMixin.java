@@ -19,7 +19,7 @@ public class UTSpectreHandlerMixin
      * the player might stall out in the void unless they are in creative (which skips this code path).
      * Setting their location directly avoids this issue.
      */
-    @WrapOperation(method = "checkPosition", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/NetHandlerPlayServer;setPlayerLocation(DDDFF)V"))
+    @WrapOperation(method = "checkPosition", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/NetHandlerPlayServer;setPlayerLocation(DDDFF)V", remap = true))
     private void fixSpectreTeleport(NetHandlerPlayServer instance, double x, double y, double z, float yaw, float pitch, Operation<Void> original)
     {
         if (UTConfigMods.RANDOM_THINGS.utTeleportStall)

@@ -17,7 +17,7 @@ public abstract class UTSlotImposerModifierInfoMixin
      * while the relevant modifier is disabled, which voids the item.
      * This makes the modifier not valid if its disabled.
      */
-    @ModifyExpressionValue(method = "isItemValid", at = @At(value = "INVOKE", target = "Lepicsquid/roots/modifiers/instance/staff/StaffModifierInstance;isApplied()Z"))
+    @ModifyExpressionValue(method = "isItemValid", at = @At(value = "INVOKE", target = "Lepicsquid/roots/modifiers/instance/staff/StaffModifierInstance;isApplied()Z", remap = false), remap = true)
     private boolean utBlockDisabledModifiers(boolean original, @Local StaffModifierInstance info)
     {
         return original || info.isDisabled();

@@ -21,7 +21,7 @@ public abstract class UTItemAquamarineMixin
      * @author WaitingIdly
      * @reason fix completely ignoring the actual itemstack being used and instead creating and modifying the durability of a new instance.
      */
-    @WrapOperation(method = "onItemUse", at = @At(value = "NEW", target = "(Lnet/minecraft/item/Item;)Lnet/minecraft/item/ItemStack;"))
+    @WrapOperation(method = "onItemUse", at = @At(value = "NEW", target = "(Lnet/minecraft/item/Item;)Lnet/minecraft/item/ItemStack;"), remap = true)
     private ItemStack utUseCorrectHand(Item itemIn, Operation<ItemStack> original, @Local(argsOnly = true) EntityPlayer player, @Local(argsOnly = true) EnumHand hand)
     {
         if (!UTConfigMods.DIVINE_RPG.utFixHandConsumption) return original.call(itemIn);

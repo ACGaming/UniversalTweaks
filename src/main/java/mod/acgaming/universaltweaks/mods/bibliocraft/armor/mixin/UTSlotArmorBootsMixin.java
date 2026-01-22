@@ -19,7 +19,7 @@ public abstract class UTSlotArmorBootsMixin
      * @reason Make BiblioCraft use the forge method to determine
      * if the itemstack is valid for the desired armor slot.
      */
-    @Inject(method = "isItemValid", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "isItemValid", at = @At("HEAD"), cancellable = true, remap = true)
     private void utEnsureValidity(ItemStack stack, CallbackInfoReturnable<Boolean> cir)
     {
         cir.setReturnValue(EntityEquipmentSlot.FEET == EntityLiving.getSlotForItemStack(stack));

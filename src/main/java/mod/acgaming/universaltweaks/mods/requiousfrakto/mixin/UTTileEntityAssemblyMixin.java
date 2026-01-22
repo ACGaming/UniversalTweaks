@@ -16,7 +16,7 @@ public abstract class UTTileEntityAssemblyMixin extends TileEntity
      * This is the earliest we can check the side before calls to IProxy
      * methods for spawning particles.
      */
-    @ModifyExpressionValue(method = "update", at = @At(value = "INVOKE", target = "Ljava/util/Iterator;hasNext()Z", remap = false))
+    @ModifyExpressionValue(method = "update", at = @At(value = "INVOKE", target = "Ljava/util/Iterator;hasNext()Z"))
     private boolean utCheckSide(boolean original)
     {
         if (!this.world.isRemote) return false;
