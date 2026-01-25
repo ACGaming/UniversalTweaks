@@ -112,6 +112,13 @@ public class UTConfigTweaks
         CAMERA_ONLY
     }
 
+    public enum BedSetSpawnMode
+    {
+        DEFAULT,
+        DISABLED,
+        ANYTIME
+    }
+
     public static class BlocksCategory
     {
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.anvil")
@@ -1038,16 +1045,26 @@ public class UTConfigTweaks
 
         public static class SleepingCategory
         {
-            @Config.Name("Disable Sleeping")
-            @Config.Comment("Disables skipping night by using a bed while making it still able to set spawn")
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Enable Sleeping Tweak")
+            @Config.Comment("Enables sleeping tweaks")
+            public boolean utEnableSleepingTweak = true;
+
+            @Config.Name("[2] Disable Sleeping")
+            @Config.Comment("Disables sleeping in bed")
             public boolean utDisableSleepingToggle = false;
 
-            @Config.RequiresMcRestart
-            @Config.Name("Disable Sleeping Setting Spawn")
-            @Config.Comment("Disables setting the spawn point by using a bed while making it still able to sleep")
-            public boolean utDisableSettingSpawnToggle = false;
+            @Config.Name("[3] Bed Set Spawn Point Mode")
+            @Config.Comment
+                ({
+                    "Set bed spawn point setting behavior",
+                    "Default: Sets spawn point after sleeping",
+                    "Disabled: Sleeping will not set spawn point",
+                    "Anytime: Sets spawn point on right clicking bed"
+                })
+            public BedSetSpawnMode utBedSetSpawnMode = BedSetSpawnMode.DEFAULT;
 
-            @Config.Name("Sleeping Time")
+            @Config.Name("[4] Sleeping Time")
             @Config.RangeInt(min = -1, max = 23999)
             @Config.Comment
                 ({

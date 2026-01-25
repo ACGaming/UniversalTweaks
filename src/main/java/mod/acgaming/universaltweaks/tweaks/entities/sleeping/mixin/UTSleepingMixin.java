@@ -17,6 +17,6 @@ public class UTSleepingMixin
     public boolean utSleepingSpawn(EntityPlayer player, BlockPos pos, boolean forced)
     {
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSleepingSpawn ::: Sleeping set spawn point");
-        return !UTConfigTweaks.ENTITIES.SLEEPING.utDisableSettingSpawnToggle;
+        return UTConfigTweaks.ENTITIES.SLEEPING.utBedSetSpawnMode == UTConfigTweaks.BedSetSpawnMode.DEFAULT;
     }
 }

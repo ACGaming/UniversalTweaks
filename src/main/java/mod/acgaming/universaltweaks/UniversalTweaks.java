@@ -65,7 +65,7 @@ import mod.acgaming.universaltweaks.tweaks.entities.chickenshedding.UTChickenShe
 import mod.acgaming.universaltweaks.tweaks.entities.jumping.coyotetime.UTCoyoteTimeJumping;
 import mod.acgaming.universaltweaks.tweaks.entities.knockback.UTModernKnockback;
 import mod.acgaming.universaltweaks.tweaks.entities.rallyhealth.UTRallyHealth;
-import mod.acgaming.universaltweaks.tweaks.entities.sleeping.UTDisableSleeping;
+import mod.acgaming.universaltweaks.tweaks.entities.sleeping.UTSleepingTweak;
 import mod.acgaming.universaltweaks.tweaks.entities.sleeping.UTSleepingTime;
 import mod.acgaming.universaltweaks.tweaks.entities.soulboundvexes.UTSoulboundVexes;
 import mod.acgaming.universaltweaks.tweaks.entities.spawning.creeper.charged.UTChargedCreepers;
@@ -262,7 +262,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.ENTITIES.CHICKEN_SHEDDING.utChickenSheddingToggle) MinecraftForge.EVENT_BUS.register(UTChickenShedding.class);
             if (UTConfigTweaks.ENTITIES.EASY_BREEDING.utEasyBreedingToggle) MinecraftForge.EVENT_BUS.register(UTEasyBreeding.class);
             if (UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle) MinecraftForge.EVENT_BUS.register(UTRallyHealth.class);
-            if (UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle) MinecraftForge.EVENT_BUS.register(UTDisableSleeping.class);
+            if (UTConfigTweaks.ENTITIES.SLEEPING.utEnableSleepingTweak) MinecraftForge.EVENT_BUS.register(UTSleepingTweak.class);
             if (UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime > -1) MinecraftForge.EVENT_BUS.register(UTSleepingTime.class);
             if (UTConfigTweaks.ENTITIES.utAdaptiveXPFactor > 0) MinecraftForge.EVENT_BUS.register(UTAdaptiveXPDrops.class);
             if (UTConfigTweaks.ENTITIES.utAIRemovalToggle) MinecraftForge.EVENT_BUS.register(UTRemoveAI.class);
