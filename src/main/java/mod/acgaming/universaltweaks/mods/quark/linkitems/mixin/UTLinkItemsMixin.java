@@ -72,7 +72,7 @@ public class UTLinkItemsMixin
      * instead of a {@link TextComponentString} of the untranslated name.
      * @author WaitingIdly
      */
-    @WrapOperation(method = "linkItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;getTextComponent()Lnet/minecraft/util/text/ITextComponent;"))
+    @WrapOperation(method = "linkItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;getTextComponent()Lnet/minecraft/util/text/ITextComponent;", remap = true))
     private static ITextComponent useItemStackTranslation(ItemStack instance, Operation<ITextComponent> original, @Local(argsOnly = true) EntityPlayer player)
     {
         if (UTConfigMods.QUARK.utLinkItemsServer && player.isServerWorld()) return universalTweaks$getTextComponent(instance);

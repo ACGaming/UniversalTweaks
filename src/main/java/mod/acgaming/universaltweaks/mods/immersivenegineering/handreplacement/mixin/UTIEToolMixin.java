@@ -22,7 +22,7 @@ public abstract class UTIEToolMixin
      * @author WaitingIdly
      * @reason Fix setting the stack not accounting for what hand was used
      */
-    @WrapOperation(method = "onItemUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/EntityPlayer;setItemStackToSlot(Lnet/minecraft/inventory/EntityEquipmentSlot;Lnet/minecraft/item/ItemStack;)V"))
+    @WrapOperation(method = "onItemUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/EntityPlayer;setItemStackToSlot(Lnet/minecraft/inventory/EntityEquipmentSlot;Lnet/minecraft/item/ItemStack;)V"), remap = true)
     private void utReplaceCorrectItem(EntityPlayer instance, EntityEquipmentSlot slotIn, ItemStack stack, Operation<Void> original, @Local(ordinal = 0, argsOnly = true) EnumHand hand)
     {
         if (UTConfigMods.IMMERSIVE_ENGINEERING.utFixIncorrectHandReplacement)

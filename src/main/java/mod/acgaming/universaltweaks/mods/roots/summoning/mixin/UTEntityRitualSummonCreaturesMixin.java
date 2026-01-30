@@ -32,7 +32,7 @@ public abstract class UTEntityRitualSummonCreaturesMixin
      * since blocks outside bounds return the default value, "false", and its "!isSideSolid(solid, UP)".
      * This makes it check if the block is valid too.
      */
-    @WrapOperation(method = "onUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isSideSolid(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;)Z"))
+    @WrapOperation(method = "onUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isSideSolid(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;)Z", remap = false), remap = true)
     private boolean utSolidCheckIsValid(World instance, BlockPos pos, EnumFacing side, Operation<Boolean> original)
     {
         return !instance.isValid(pos) || original.call(instance, pos, side);

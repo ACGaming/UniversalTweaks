@@ -20,7 +20,7 @@ public abstract class UTTileEntityArmorStandMixin
      * It also fails to properly check the slot used for items, only allowing armor instead of
      * using the forge method for anything that fits in the armor slot.
      */
-    @Inject(method = "isItemValidForSlot", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;getItem()Lnet/minecraft/item/Item;", ordinal = 0), cancellable = true)
+    @Inject(method = "isItemValidForSlot", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;getItem()Lnet/minecraft/item/Item;", ordinal = 0), cancellable = true, remap = true)
     private void utEnsureValidity(int slot, ItemStack itemstack, CallbackInfoReturnable<Boolean> cir)
     {
         if (slot == 0)

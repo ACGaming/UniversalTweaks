@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class UTBrewingEnergyRecipeMixin
 {
     @WrapOperation(method = "checkTypes", at = @At(value = "INVOKE", target = "Lcom/rwtema/extrautils2/utils/LogHelper;info(Ljava/lang/Object;[Ljava/lang/Object;)V"))
-    private static void utDowngradePotionLogging(Object info, Object[] info2, Operation<Void> original)
+    private void utDowngradePotionLogging(Object info, Object[] info2, Operation<Void> original)
     {
         if (!UTConfigMods.EXTRA_UTILITIES.utDowngradePotionLogging) original.call(info, info2);
         else LogHelper.fine(info, info2);

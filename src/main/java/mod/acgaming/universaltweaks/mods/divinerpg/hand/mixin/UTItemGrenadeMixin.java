@@ -22,7 +22,7 @@ public abstract class UTItemGrenadeMixin
      * @author WaitingIdly
      * @reason fix item voiding and duplication when using the grenade in the offhand
      */
-    @WrapOperation(method = "onItemRightClick", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/EntityPlayer;getHeldItemMainhand()Lnet/minecraft/item/ItemStack;"))
+    @WrapOperation(method = "onItemRightClick", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/EntityPlayer;getHeldItemMainhand()Lnet/minecraft/item/ItemStack;"), remap = true)
     private ItemStack utUseCorrectHand(EntityPlayer instance, Operation<ItemStack> original, @Local(argsOnly = true) EnumHand hand)
     {
         if (!UTConfigMods.DIVINE_RPG.utFixHandConsumption) return original.call(instance);

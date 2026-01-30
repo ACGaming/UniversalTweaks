@@ -24,7 +24,7 @@ public abstract class UTContainerAvaritiaddonsChestMixin extends WContainer<WTil
      * @author WaitingIdly
      * @reason Ensure the held itemstack is properly handled when the inventory is closed.
      */
-    @Inject(method = "onContainerClosed", at = @At(value = "HEAD"))
+    @Inject(method = "onContainerClosed", at = @At(value = "HEAD"), remap = true)
     private void utCallSuper(EntityPlayer playerIn, CallbackInfo ci)
     {
         super.onContainerClosed(playerIn);

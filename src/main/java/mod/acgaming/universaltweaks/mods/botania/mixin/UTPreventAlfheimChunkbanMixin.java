@@ -178,8 +178,7 @@ public abstract class UTPreventAlfheimChunkbanMixin extends TileMod {
 	}
 
     // Replace writeToNBT to aggregate identical ItemStacks to reduce NBT size and prevent chunkbans
-    // public NBTTagCompound writeToNBT(NBTTagCompound cmp)
-    @Inject(method = "func_189515_b", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "writeToNBT", at = @At("HEAD"), cancellable = true, remap = true)
     private void writeToNBTAggregated(NBTTagCompound cmp, CallbackInfoReturnable<NBTTagCompound> cir) {
         if (!UTConfigMods.BOTANIA.utAlfheimPortalNBTFix) return;
 
@@ -197,8 +196,7 @@ public abstract class UTPreventAlfheimChunkbanMixin extends TileMod {
     }
 
     // Replace readFromNBT to handle aggregated stacks, while maintaining backwards compatibility
-    // public void readFromNBT(NBTTagCompound cmp)
-    @Inject(method = "func_145839_a", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "readFromNBT", at = @At("HEAD"), cancellable = true, remap = true)
     private void readFromNBTAggregated(NBTTagCompound cmp, CallbackInfo ci) {
         if (!UTConfigMods.BOTANIA.utAlfheimPortalNBTFix) return;
 

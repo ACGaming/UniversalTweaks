@@ -17,7 +17,7 @@ public abstract class UTGuiFancySignMixin
      * into
      * <br><code>GL11.glRotatef(135.0f, 0.0F, 1.0F, 0.0F)</code>
      */
-    @ModifyConstant(method = "drawGuiContainerBackgroundLayer", constant = @Constant(floatValue = -225.0f))
+    @ModifyConstant(method = "drawGuiContainerBackgroundLayer", constant = @Constant(floatValue = -225.0f), remap = true)
     private float utFixLeft(float original)
     {
         return 135.0f;
@@ -30,7 +30,7 @@ public abstract class UTGuiFancySignMixin
      * into
      * <br><code>GL11.glRotatef(0.0f, 0.0F, 1.0F, 0.0F)</code>
      */
-    @ModifyConstant(method = "drawGuiContainerBackgroundLayer", constant = @Constant(floatValue = 90.0f))
+    @ModifyConstant(method = "drawGuiContainerBackgroundLayer", constant = @Constant(floatValue = 90.0f), remap = true)
     private float utFixCenter(float original)
     {
         return 0.0f;
@@ -43,7 +43,7 @@ public abstract class UTGuiFancySignMixin
      * into
      * <br><code>GL11.glRotatef(45.0f, 0.0F, 1.0F, 0.0F)</code>
      */
-    @ModifyConstant(method = "drawGuiContainerBackgroundLayer", constant = @Constant(floatValue = 225.0f))
+    @ModifyConstant(method = "drawGuiContainerBackgroundLayer", constant = @Constant(floatValue = 225.0f), remap = true)
     private float utFixRight(float original)
     {
         return 45.0f;

@@ -23,7 +23,7 @@ public abstract class UTSpellShatterMixin
      * @author WaitingIdly
      * @reason Ensure that the block being targeted is actually breakable.
      */
-    @WrapWithCondition(method = "cast", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;destroyBlock(Lnet/minecraft/util/math/BlockPos;Z)Z"))
+    @WrapWithCondition(method = "cast", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;destroyBlock(Lnet/minecraft/util/math/BlockPos;Z)Z", remap = true))
     private boolean utEnsureBreakable(World instance, BlockPos pos, boolean dropBlock)
     {
         return instance.getBlockState(pos).getBlockHardness(instance, pos) >= 0.0f;
