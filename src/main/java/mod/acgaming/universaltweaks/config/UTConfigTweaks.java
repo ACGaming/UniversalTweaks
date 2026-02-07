@@ -835,6 +835,17 @@ public class UTConfigTweaks
 
             @Config.Name("[21] Luck Max")
             public double utAttributeLuckMax = 65536;
+
+            @Config.Name("[22] Attribute Keeper")
+            @Config.Comment
+                ({
+                    "A list of attributes that will persist after player death. Only the base attribute value will be kept",
+                    "such as those increased through the Player Attribute Commands mod.",
+                    " Examples:",
+                    "  generic.maxHealth",
+                    "  generic.attackDamage"
+                })
+            public String[] utAttributeLock = new String[] {};
         }
 
         public static class BetterBurningCategory
