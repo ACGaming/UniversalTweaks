@@ -1,5 +1,7 @@
 package mod.acgaming.universaltweaks;
 
+import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributeKeeper;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
@@ -202,6 +204,7 @@ public class UniversalTweaks
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
         {
             if (UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributesToggle) UTAttributes.utSetAttributes();
+            if (UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributesToggle) MinecraftForge.EVENT_BUS.register(UTAttributeKeeper.class);
             if (UTConfigTweaks.MISC.utSkipRegistryScreenToggle) System.setProperty("fml.queryResult", "confirm");
         }
 

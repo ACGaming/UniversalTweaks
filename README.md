@@ -102,6 +102,7 @@ All changes are toggleable via config files.
 * **Armor Curve:** Adjusts the armor scaling and degradation formulae for mobs and players
 * **Armor Swap:** Enable the ability to swap equipped armor when right-clicking armor, instead of only being able to equip armor when the slot is empty. Also applies to Elytra
 * **Attributes:** Sets custom ranges for entity attributes
+* **Attribute Keeper:** Specify attributes that will persist through player death
 * **Auto Jump Replacement:** Replaces auto jump with an increased step height (singleplayer only)
 * **Auto Save Interval:** Configurable interval in ticks between world auto saves
 * **Auto Switch Tools:** Switches the selected hotbar slot to a proper tool if required
