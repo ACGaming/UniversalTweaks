@@ -51,6 +51,16 @@ public class UTConfigBugfixes
         public boolean utBannerBoundingBoxToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Block Selection Box Offset")
+        @Config.Comment
+            ({
+                "Fixes the offset of mouseover selection boxes for blocks",
+                "Value needs to be larger than 0 to prevent z-fighting",
+                "Vanilla default is 0.002"
+            })
+        public double utBlockSelectionBoxOffset = 0.0001D;
+
+        @Config.RequiresMcRestart
         @Config.Name("Comparator Timing")
         @Config.Comment("Fixes inconsistent delays of comparators to prevent redstone timing issues")
         public boolean utComparatorTimingToggle = true;

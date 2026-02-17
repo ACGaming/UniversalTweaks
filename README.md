@@ -22,6 +22,7 @@ All changes are toggleable via config files.
 * **Banner Bounding Box:** Fixes rendering issues with banners by correctly sizing their render bounding boxes
 * **Block Fire:** Prevents fire projectiles burning entities when blocking with shields
 * **Block Overlay:** Fixes x-ray when standing in non-suffocating blocks
+* **Block Selection Box Offset:** Fixes the offset of mouseover selection boxes for blocks
 * **Boat Breaking Fall Height:** Sets the required fall height in blocks for boats to break
 * **Boat Riding Offset:** Fixes entities glitching through the bottom of boats
 * **Chunk Saving:** Fixes loading of outdated chunks to prevent duplications, deletions and data corruption
