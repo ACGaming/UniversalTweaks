@@ -35,6 +35,7 @@ import mod.acgaming.universaltweaks.mods.bloodmagic.UTBloodMagicEvents;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 import mod.acgaming.universaltweaks.mods.collective.UTCollectiveEvents;
 import mod.acgaming.universaltweaks.mods.cqrepoured.UTGoldenFeatherEvent;
+import mod.acgaming.universaltweaks.mods.divinerpg.armorset.ArmorPowerHandler;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Burning;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Sprinting;
 import mod.acgaming.universaltweaks.mods.mekanism.dupes.UTMekanismFixes;
@@ -233,6 +234,7 @@ public class UniversalTweaks
             if (Loader.isModLoaded("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTBloodMagicEvents());
             if (Loader.isModLoaded("collective") && UTConfigMods.COLLECTIVE.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.register(new UTCollectiveEvents());
             if (Loader.isModLoaded("cqrepoured") && UTConfigMods.CHOCOLATE_QUEST.utCQRGoldenFeatherToggle) MinecraftForge.EVENT_BUS.register(new UTGoldenFeatherEvent());
+            if (Loader.isModLoaded("divinerpg") && UTConfigMods.DIVINE_RPG.utFixArmorSetCleanup) MinecraftForge.EVENT_BUS.register(new ArmorPowerHandler());
             if (Loader.isModLoaded("elenaidodge2") && UTConfigMods.ELENAI_DODGE_2.utED2ExtinguishingDodgeChance > 0) MinecraftForge.EVENT_BUS.register(new UTED2Burning());
             if (Loader.isModLoaded("elenaidodge2") && UTConfigMods.ELENAI_DODGE_2.utED2SprintingFeatherConsumption > 0) MinecraftForge.EVENT_BUS.register(new UTED2Sprinting());
             if (Loader.isModLoaded("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle) UTMekanismFixes.fixBinRecipes();
