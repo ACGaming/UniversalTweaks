@@ -159,6 +159,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.netherchest.dupes.json", c -> c.isModPresent("netherchest") && UTConfigMods.NETHER_CHEST.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.netherrocks.json", c -> c.isModPresent("netherrocks"));
                 put("mixins/mods/mixins.nuclearcraft.json", c -> c.isModPresent("nuclearcraft"));
+                put("mixins/mods/mixins.open_glasses.json", c -> c.isModPresent("openglasses") && UTConfigMods.OPEN_GLASSES.utFixOpenGlasses2NPE);
                 put("mixins/mods/mixins.openblocks.json", c -> regularOpenBlocksLoaded() && UTConfigMods.OPEN_BLOCKS.utLastStandFixToggle);
                 put("mixins/mods/mixins.properpumpkins.json", c -> c.isModPresent("pumpking") && UTConfigMods.PROPER_PUMPKIN.utFacingFix);
                 put("mixins/mods/mixins.quark.dupes.json", c -> c.isModPresent("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
