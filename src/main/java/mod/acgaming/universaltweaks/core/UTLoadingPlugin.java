@@ -44,7 +44,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     private static final Map<String, Predicate<Context>> commonMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Predicate<Context>>()
     {
         {
-            if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
+            if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks || UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchBugfixes || UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
             {
                 put("mixins/mixins.vanilla.mod.accessors.json", c -> true);
             }
