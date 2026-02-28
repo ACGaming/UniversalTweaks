@@ -271,6 +271,10 @@ public class UTConfigMods
     @Config.Name("OpenBlocks")
     public static final OpenBlocksCategory OPEN_BLOCKS = new OpenBlocksCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.openglasses")
+    @Config.Name("Open Glasses 2")
+    public static final OpenGlassesCategory OPEN_GLASSES = new OpenGlassesCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.projectred")
     @Config.Name("ProjectRed")
     public static final ProjectRedCategory PROJECTRED = new ProjectRedCategory();
@@ -1233,6 +1237,14 @@ public class UTConfigMods
                 "instead of on post-mitigation damage."
             })
         public boolean utLastStandFixToggle = true;
+    }
+
+    public static class OpenGlassesCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Exception getting Glasses Stack")
+        @Config.Comment("Fix a NPE when getting the glasses stack when Baubles or Techguns is installed")
+        public boolean utFixOpenGlasses2NPE = true;
     }
 
     public static class ProjectRedCategory

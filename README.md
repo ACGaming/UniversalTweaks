@@ -492,6 +492,8 @@ All changes are toggleable via config files.
     * **Radiation Environment Map:** Changes the data table of the radiation environment handler to improve tick time
 * **OpenBlocks**
     * **Last Stand Trigger Fix:** Fixes the Last Stand enchantment triggering too early on pre-mitigation damage (before enchants, potions, etc), instead of on post-mitigation damage.
+* **Open Glasses 2**
+    * **Exception getting Glasses Stack:** Fix a NPE when getting the glasses stack when Baubles or Techguns is installed
 * **ProjectRed**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Proper Pumpkins**

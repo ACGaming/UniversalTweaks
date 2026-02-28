@@ -134,6 +134,7 @@ final def mod_dependencies = [
     'curse.maven:nuclearcraft-226254:3784145'                         : [debug_nuclearcraft],
     'curse.maven:official-divinerpg-363543:3081433'                   : [debug_divinerpg],
     'curse.maven:openblocks-228816:2699056'                           : [debug_openblocks],
+    'curse.maven:openglasses2-300957:3143467'                         : [debug_openglasses],
     'curse.maven:openmodslib-228815:2699055'                          : [debug_openblocks],
     'curse.maven:patchouli-306770:3162874'                            : [debug_bewitchment, debug_roots],
     'curse.maven:plustic-376903:4703532'                              : [debug_tinkers_construct],
