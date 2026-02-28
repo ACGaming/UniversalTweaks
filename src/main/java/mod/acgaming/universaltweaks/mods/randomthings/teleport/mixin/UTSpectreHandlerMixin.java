@@ -22,7 +22,7 @@ public class UTSpectreHandlerMixin
     @WrapOperation(method = "checkPosition", at = @At(value = "INVOKE", target = "Lnet/minecraft/network/NetHandlerPlayServer;setPlayerLocation(DDDFF)V", remap = true))
     private void fixSpectreTeleport(NetHandlerPlayServer instance, double x, double y, double z, float yaw, float pitch, Operation<Void> original)
     {
-        if (UTConfigMods.RANDOM_THINGS.utTeleportStall)
+        if (!UTConfigMods.RANDOM_THINGS.utTeleportStall)
         {
             original.call(instance, x, y, z, yaw, pitch);
         }

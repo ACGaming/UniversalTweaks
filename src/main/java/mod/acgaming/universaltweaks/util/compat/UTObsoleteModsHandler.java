@@ -117,6 +117,7 @@ public class UTObsoleteModsHandler
                 put("movingquickly", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
                 put("mtqfix", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
                 put("muteuselesslogs", () -> UTConfigTweaks.PERFORMANCE.utPrefixCheckToggle || UTConfigTweaks.PERFORMANCE.utTextureMapCheckToggle);
+                put("narrus_yeetus", () -> UTConfigTweaks.MISC.utDisableNarratorToggle);
                 put("naturallychargedcreepers", () -> UTConfigTweaks.ENTITIES.utCreeperChargedChance > 0);
                 put("noadvancements", () -> UTConfigTweaks.MISC.utDisableAdvancementsToggle);
                 put("nodoze", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
