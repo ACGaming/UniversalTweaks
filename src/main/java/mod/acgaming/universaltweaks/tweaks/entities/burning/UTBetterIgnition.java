@@ -1,6 +1,7 @@
 package mod.acgaming.universaltweaks.tweaks.entities.burning;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityMinecartTNT;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFlintAndSteel;
@@ -30,6 +31,7 @@ public class UTBetterIgnition
         World world = event.getWorld();
         Entity target = event.getTarget();
         world.playSound(player, target.getPosition(), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, world.rand.nextFloat() * 0.4F + 0.8F);
-        target.setFire(8);
+        if (target instanceof EntityMinecartTNT) ((EntityMinecartTNT) target).ignite();
+        else target.setFire(8);
     }
 }
