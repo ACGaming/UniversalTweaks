@@ -76,6 +76,7 @@ All changes are toggleable via config files.
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Sleep Resets Weather:** Fixes sleeping always resetting rain and thunder times
 * **Spectator Menu:** Fixes the spectator menu not showing player skins
+* **Third Person Camera Orientation:** Fixes a raytracing bug which causes third person camera tilting to be slightly asymmetric
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
 * **Untipped Arrow Particles:** Fixes untipped arrows emitting blue tipped arrow particles upon reloading a world
 * **Village Component Parts:** Always builds village structures with biome-specific blocks, improves compatibility with mods such as BiomeTweaker

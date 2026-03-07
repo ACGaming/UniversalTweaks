@@ -417,6 +417,11 @@ public class UTConfigBugfixes
         @Config.Name("Extend Item Durability Range")
         @Config.Comment("Changes the durability storing to use ints instead of shorts, eliminating many issues with high-durability items (I.E. TiC tools)")
         public boolean utExtendDurabilityCap = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Third Person Camera Orientation")
+        @Config.Comment("Fixes a raytracing bug which causes third person camera tilting to be slightly asymmetric")
+        public boolean utCameraOrientation = true;
     }
 
     public static class WorldCategory
