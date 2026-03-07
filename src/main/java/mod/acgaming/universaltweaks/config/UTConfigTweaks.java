@@ -2763,6 +2763,11 @@ public class UTConfigTweaks
         public final VoidFogCategory VOID_FOG = new VoidFogCategory();
 
         @Config.RequiresMcRestart
+        @Config.Name("Incremental Time Command")
+        @Config.Comment("Lets `/time set day` and `/time set night` commands skip to the actual next day/night instead of resetting total world time")
+        public boolean utIncrementalTimeCommand = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Sea Level")
         @Config.Comment
             ({
