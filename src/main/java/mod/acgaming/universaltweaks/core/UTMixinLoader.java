@@ -179,6 +179,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.roots.spiritdrops.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utFixSpiritDrops);
                 put("mixins/mods/mixins.roots.summon.json", c -> c.isModPresent("roots") && UTConfigMods.ROOTS.utFixSummoningInfiniteDescent);
                 put("mixins/mods/mixins.simpledifficulty.altitudemodifier.json", c -> c.isModPresent("simpledifficulty") && UTConfigMods.SIMPLE_DIFFICULTY.utAltitudeModifierToggle);
+                put("mixins/mods/mixins.simpledifficulty.alwaysdrink.json", c -> c.isModPresent("simpledifficulty") && UTConfigMods.SIMPLE_DIFFICULTY.utAlwaysDrinkToggle);
                 put("mixins/mods/mixins.simpledifficulty.raincollector.json", c -> c.isModPresent("simpledifficulty") && UTConfigMods.SIMPLE_DIFFICULTY.utRainCollectorCanteenToggle);
                 put("mixins/mods/mixins.spiceoflife.dupes.json", c -> c.isModPresent("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.steamworld.json", c -> c.isModPresent("steamworld") && UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);

@@ -1422,6 +1422,11 @@ public class UTConfigMods
                 "Requires 'Altitude Modifier Customization' to be enabled"
             })
         public double utAltitudeMultiplierBelowSeaLevel = 1.0D;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Always Drink")
+        @Config.Comment("Allows the consumption of drinks at any time, regardless of the thirst bar")
+        public boolean utAlwaysDrinkToggle = false;
     }
 
     public static class SimplyJetpacksCategory
