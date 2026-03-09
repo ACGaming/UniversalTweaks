@@ -160,6 +160,7 @@ cfg.universaltweaks.tweaks.entities.cobwebslowness=Cobweb Slowness
 cfg.universaltweaks.tweaks.entities.creeperconfetti=Creeper Confetti
 cfg.universaltweaks.tweaks.entities.damagevelocity=Damage Velocity
 cfg.universaltweaks.tweaks.entities.easybreeding=Easy Breeding
+cfg.universaltweaks.tweaks.entities.mobgriefing=Mob Griefing
 cfg.universaltweaks.tweaks.entities.nogolems=No Golems
 cfg.universaltweaks.tweaks.entities.playerspeed=Player Speed
 cfg.universaltweaks.tweaks.entities.rallyhealth=Rally Health

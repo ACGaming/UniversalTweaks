@@ -2,6 +2,8 @@ package mod.acgaming.universaltweaks;
 
 import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributeKeeper;
 
+import mod.acgaming.universaltweaks.tweaks.entities.griefing.UTMobGriefing;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
@@ -266,6 +268,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.BLOCKS.utSlimeBlockProjectiles) MinecraftForge.EVENT_BUS.register(UTSlimeBlockProjectiles.class);
             if (UTConfigTweaks.ENTITIES.CHICKEN_SHEDDING.utChickenSheddingToggle) MinecraftForge.EVENT_BUS.register(UTChickenShedding.class);
             if (UTConfigTweaks.ENTITIES.EASY_BREEDING.utEasyBreedingToggle) MinecraftForge.EVENT_BUS.register(UTEasyBreeding.class);
+            if (UTConfigTweaks.ENTITIES.MOB_GRIEFING.utEntityList.length > 0) MinecraftForge.EVENT_BUS.register(UTMobGriefing.class);
             if (UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle) MinecraftForge.EVENT_BUS.register(UTRallyHealth.class);
             if (UTConfigTweaks.ENTITIES.SLEEPING.utEnableSleepingTweak) MinecraftForge.EVENT_BUS.register(UTSleepingTweak.class);
             if (UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime > -1) MinecraftForge.EVENT_BUS.register(UTSleepingTime.class);

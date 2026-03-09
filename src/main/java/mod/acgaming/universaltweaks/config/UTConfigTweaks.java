@@ -523,6 +523,10 @@ public class UTConfigTweaks
         @Config.Name("Easy Breeding")
         public final EasyBreedingCategory EASY_BREEDING = new EasyBreedingCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.mobgriefing")
+        @Config.Name("Mob Griefing")
+        public final MobGriefingCategory MOB_GRIEFING = new MobGriefingCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.nogolems")
         @Config.Name("No Golems")
         public final NoGolemsCategory NO_GOLEMS = new NoGolemsCategory();
@@ -950,6 +954,26 @@ public class UTConfigTweaks
                     "Whitelist Mode: Damage sources that change velocity, others don't"
                 })
             public EnumLists utDamageVelocityListMode = EnumLists.BLACKLIST;
+        }
+
+        public static class MobGriefingCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Entity List")
+            @Config.Comment
+                ({
+                    "List of the resource location names for entities concerning mob griefing",
+                    "Behavior depends on the list mode"
+                })
+            public String[] utEntityList = new String[] {};
+
+            @Config.Name("[2] Entity List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Entities that won't be able to grief, others will",
+                    "Whitelist Mode: Entities that will be able to grief, others won't"
+                })
+            public EnumLists utEntityListMode = EnumLists.BLACKLIST;
         }
 
         public static class NoGolemsCategory
