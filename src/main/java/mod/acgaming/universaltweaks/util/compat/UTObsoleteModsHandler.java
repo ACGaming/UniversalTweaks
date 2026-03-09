@@ -119,7 +119,7 @@ public class UTObsoleteModsHandler
                 put("muteuselesslogs", () -> UTConfigTweaks.PERFORMANCE.utPrefixCheckToggle || UTConfigTweaks.PERFORMANCE.utTextureMapCheckToggle);
                 put("narrus_yeetus", () -> UTConfigTweaks.MISC.utDisableNarratorToggle);
                 put("naturallychargedcreepers", () -> UTConfigTweaks.ENTITIES.utCreeperChargedChance > 0);
-                put("noadvancements", () -> UTConfigTweaks.MISC.utDisableAdvancementsToggle);
+                put("noadvancements", () -> UTConfigTweaks.MISC.utDisableAdvancementsToggle && !Loader.isModLoaded("animania"));
                 put("nodoze", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
                 put("noexpensive", () -> UTConfigTweaks.BLOCKS.ANVIL.utAnvilXPLevelCap != 40 || UTConfigTweaks.ITEMS.INFINITY.utInfinityEnchantmentConflicts);
                 put("nomoreglowingpots", () -> UTConfigTweaks.MISC.utDisablePotionGlint);
