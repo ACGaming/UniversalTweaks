@@ -92,7 +92,9 @@ public class UTOverhaulBeaconMixin
     )
     private boolean utOverhaulBeacon$collectBlocksOnLevel(boolean original, @Local Block block, @Local(index = 8) int level)
     {
-        if (!original) return false;
+        boolean isConfigured = UTConfigTweaks.BLOCKS.OVERHAUL_BEACON.utOverhaulBeaconBlocksModifier.containsKey(Block.REGISTRY.getNameForObject(block).toString());
+        boolean isValidBase = original || (isConfigured && UTConfigTweaks.BLOCKS.OVERHAUL_BEACON.utOverhaulBeaconMode.isModifier);
+        if (!isValidBase) return false;
 
         boolean isAllowedBlock = true;
 
