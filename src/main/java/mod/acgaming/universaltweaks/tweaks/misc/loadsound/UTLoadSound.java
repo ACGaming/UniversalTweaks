@@ -126,7 +126,7 @@ public class UTLoadSound
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void utMenuSound(GuiOpenEvent event)
     {
-        if (!playedMenu && event.getGui() instanceof GuiMainMenu)
+        if (!playedMenu && (event.getGui() instanceof GuiMainMenu || event.getGui().getClass().getName().equals("lumien.custommainmenu.gui.GuiCustom")))
         {
             if (UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode == MINECRAFT || UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode == MINECRAFT_AND_WORLD) playRandomSoundMC();
             playedMenu = true;
