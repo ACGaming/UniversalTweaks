@@ -131,7 +131,7 @@ public class UTConfigMods
     @Config.Name("Dank Storage")
     public static final DankStorageCategory DANK_STORAGE = new DankStorageCategory();
 
-    @Config.LangKey("cfg.universaltweaks.modintegration.divineprg")
+    @Config.LangKey("cfg.universaltweaks.modintegration.divinerpg")
     @Config.Name("Divine RPG")
     public static final DivineRPGCategory DIVINE_RPG = new DivineRPGCategory();
 
@@ -1427,6 +1427,11 @@ public class UTConfigMods
         @Config.Name("Always Drink")
         @Config.Comment("Allows the consumption of drinks at any time, regardless of the thirst bar")
         public boolean utAlwaysDrinkToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Canteen Consumes Water Source")
+        @Config.Comment("Causes canteens to consume the source block or a cauldron level of water")
+        public boolean utCanteensConsumeWaterSourceToggle = false;
     }
 
     public static class SimplyJetpacksCategory

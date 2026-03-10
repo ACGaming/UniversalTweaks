@@ -530,6 +530,7 @@ All changes are toggleable via config files.
     * **Iron Canteen Interaction Fix:** Fixes the interaction of iron canteens with rain collectors
     * **Altitude Modifier:** Sets additional variables for altitude modifier calculations
     * **Always Drink:** Allows the consumption of drinks at any time, regardless of the thirst bar
+    * **Canteen Consumes Water Source:** Causes canteens to consume the source block or a cauldron level of water
 * **Simply Jetpacks**
     * **Memory Leak Fix:** Fixes a client-side memory leak associated with EntityPlayer
 * **Spice Of Life**
