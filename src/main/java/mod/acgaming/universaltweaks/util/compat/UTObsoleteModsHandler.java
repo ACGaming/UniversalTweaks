@@ -39,13 +39,14 @@ public class UTObsoleteModsHandler
                 put("givemebackmyhp", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
                 put("helpfixer", () -> UTConfigBugfixes.MISC.utHelpToggle);
                 put("horsefallfix", () -> UTConfigBugfixes.ENTITIES.utHorseFallingToggle);
+                put("ihateghostblocks", () -> UTConfigBugfixes.BLOCKS.utMiningGlitchToggle);
                 put("loginhpfix", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
                 put("maxhealthfixer", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
                 put("nanfix", () -> UTConfigBugfixes.ENTITIES.utEntityNaNToggle);
                 put("nanpolice", () -> UTConfigBugfixes.ENTITIES.utEntityNaNToggle);
                 put("netherportalfix", () -> UTConfigBugfixes.WORLD.utPortalLocationLink);
                 put("portaldupebegone", () -> UTConfigBugfixes.WORLD.utPortalTravelingDupeToggle);
-                put("preventghost", () -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
+                put("preventghost", () -> UTConfigBugfixes.BLOCKS.utMiningGlitchToggle);
                 put("villagermantlefix", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)

@@ -62,7 +62,7 @@ All changes are toggleable via config files.
 * **Locale:** Prevents various crashes with Turkish locale
 * **Max Health:** Corrects maximum player health on joining by setting the last saved health value
 * **Minecart AI:** Fixes non-player entities being able to control minecarts
-* **Mining Glitch:** Prevents ghost blocks by sending additional movement packets
+* **Mining Glitch:** Prevents ghost blocks by sending an additional block change packet
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
 * **Overlay Message Fade Out:** Fixes Forge's overlay message (action bar) fade out regression
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments

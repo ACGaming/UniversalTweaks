@@ -37,10 +37,6 @@ public class UTConfigBugfixes
         @Config.Name("Block Overlay")
         public final BlockOverlayCategory BLOCK_OVERLAY = new BlockOverlayCategory();
 
-        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.miningglitch")
-        @Config.Name("Mining Glitch")
-        public final MiningGlitchCategory MINING_GLITCH = new MiningGlitchCategory();
-
         @Config.RequiresMcRestart
         @Config.Name("Banner Bounding Box")
         @Config.Comment
@@ -95,6 +91,11 @@ public class UTConfigBugfixes
         public boolean utLadderFlyingToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Mining Glitch")
+        @Config.Comment("Prevents ghost blocks by sending an additional block change packet")
+        public boolean utMiningGlitchToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Piston Progress")
         @Config.Comment("Properly saves the last state of pistons to tags")
         public boolean utPistonTileToggle = true;
@@ -131,22 +132,6 @@ public class UTConfigBugfixes
                     "Syntax: modid:block"
                 })
             public String[] utBlockOverlayWhitelist = new String[] {};
-        }
-
-        public static class MiningGlitchCategory
-        {
-            @Config.RequiresMcRestart
-            @Config.Name("[1] Mining Glitch Toggle")
-            @Config.Comment("Prevents ghost blocks by sending additional movement packets")
-            public boolean utMiningGlitchToggle = true;
-
-            @Config.Name("[2] Maximum Movement Packets")
-            @Config.Comment
-                ({
-                    "Defines the maximum number of movement packets that can be sent per tick",
-                    "Vanilla default is 5"
-                })
-            public int utMiningGlitchPackets = 10;
         }
     }
 

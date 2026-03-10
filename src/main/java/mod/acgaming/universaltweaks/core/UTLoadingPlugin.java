@@ -57,7 +57,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/bugfixes/mixins.blocks.hopper.tile.json", c -> UTConfigBugfixes.BLOCKS.utHopperInsertToggle);
                 put("mixins/bugfixes/mixins.blocks.itemframevoid.json", c -> UTConfigBugfixes.BLOCKS.utItemFrameVoidToggle);
                 put("mixins/bugfixes/mixins.blocks.ladderflying.json", c -> UTConfigBugfixes.BLOCKS.utLadderFlyingToggle);
-                put("mixins/bugfixes/mixins.blocks.miningglitch.server.json", c -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
+                put("mixins/bugfixes/mixins.blocks.miningglitch.json", c -> UTConfigBugfixes.BLOCKS.utMiningGlitchToggle);
                 put("mixins/bugfixes/mixins.blocks.piston.retraction.json", c -> UTConfigBugfixes.BLOCKS.utPistonRetractionToggle);
                 put("mixins/bugfixes/mixins.blocks.piston.tile.json", c -> UTConfigBugfixes.BLOCKS.utPistonTileToggle);
                 put("mixins/bugfixes/mixins.entities.ai.json", c -> UTConfigBugfixes.ENTITIES.utEntityAITasksToggle);
@@ -202,7 +202,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             {
                 put("mixins/bugfixes/mixins.blocks.banner.json", c -> UTConfigBugfixes.BLOCKS.utBannerBoundingBoxToggle && !c.isModPresent("renderlib"));
                 put("mixins/bugfixes/mixins.blocks.blockoverlay.json", c -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
-                put("mixins/bugfixes/mixins.blocks.miningglitch.client.json", c -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
                 put("mixins/bugfixes/mixins.blocks.selectionbox.json", c -> UTConfigBugfixes.BLOCKS.utBlockSelectionBoxOffset != 0.002D);
                 put("mixins/bugfixes/mixins.entities.elytra.json", c -> UTConfigBugfixes.ENTITIES.utElytraDeploymentLandingToggle);
                 put("mixins/bugfixes/mixins.entities.elytrarender.json", c -> UTConfigBugfixes.ENTITIES.utFixInvisiblePlayerModelWithElytra && !c.isModPresent("openmods"));
