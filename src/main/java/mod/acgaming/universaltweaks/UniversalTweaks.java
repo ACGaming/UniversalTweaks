@@ -1,5 +1,6 @@
 package mod.acgaming.universaltweaks;
 
+import mod.acgaming.universaltweaks.mods.simpledifficulty.UTCanteenCauldron;
 import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributeKeeper;
 
 import mod.acgaming.universaltweaks.tweaks.entities.griefing.UTMobGriefing;
@@ -365,6 +366,7 @@ public class UniversalTweaks
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
         {
             if (UTMixinLoader.regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utTConMaterialBlacklist.length > 0) UTTConstructMaterials.utHandleBlacklistedMaterials();
+            if (Loader.isModLoaded("simpledifficulty") && UTConfigMods.SIMPLE_DIFFICULTY.utCanteensConsumeWaterSourceToggle) UTCanteenCauldron.replaceCauldronHandler();
         }
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
