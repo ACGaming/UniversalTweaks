@@ -50,7 +50,7 @@ All changes are toggleable via config files.
 * **Entity UUID:** Changes UUIDs of loaded entities in case their UUIDs are already assigned (and removes log spam)
 * **Exhaustion:** Fixes saturation depleting in peaceful mode
 * **Extend Item Durability Range:** Changes the durability storing to use ints instead of shorts, eliminating many issues with high-durability items (I.E. TiC tools)
-* **Falling Block End Portal Duplication:** Prevents duplication of falling blocks through end portals
+* **Falling Block End Portal Dupe:** Prevents duplication of falling blocks through end portals
 * **Falling Block Entity Damage:** Only damage living entities hit by falling blocks, prevents killing items and XP
 * **Faster Background Startup:** Fixes slow background startup edge case caused by checking tooltips during the loading process
 * **Fixes Invisible Player when Flying with Elytra:** Fixes the player model occasionally disappearing when flying with elytra in a straight line in third-person mode

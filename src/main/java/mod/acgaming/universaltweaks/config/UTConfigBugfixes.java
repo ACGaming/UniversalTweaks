@@ -62,7 +62,7 @@ public class UTConfigBugfixes
         public boolean utComparatorTimingToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Falling Block End Portal Duplication")
+        @Config.Name("Falling Block End Portal Dupe")
         @Config.Comment("Prevents duplication of falling blocks through end portals")
         public boolean utFallingBlockPortalDupeToggle = true;
 
