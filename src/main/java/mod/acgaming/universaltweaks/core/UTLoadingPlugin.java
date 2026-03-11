@@ -53,6 +53,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             {
                 put("mixins/bugfixes/mixins.blocks.comparatortiming.json", c -> UTConfigBugfixes.BLOCKS.utComparatorTimingToggle);
                 put("mixins/bugfixes/mixins.blocks.falling.json", c -> UTConfigBugfixes.BLOCKS.utFallingBlockDamageToggle);
+                put("mixins/bugfixes/mixins.blocks.falling.dupe.json", c -> UTConfigBugfixes.BLOCKS.utFallingBlockPortalDupeToggle);
                 put("mixins/bugfixes/mixins.blocks.hopper.boundingbox.json", c -> UTConfigBugfixes.BLOCKS.utDietHopperToggle);
                 put("mixins/bugfixes/mixins.blocks.hopper.tile.json", c -> UTConfigBugfixes.BLOCKS.utHopperInsertToggle);
                 put("mixins/bugfixes/mixins.blocks.itemframevoid.json", c -> UTConfigBugfixes.BLOCKS.utItemFrameVoidToggle);

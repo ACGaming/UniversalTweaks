@@ -62,6 +62,11 @@ public class UTConfigBugfixes
         public boolean utComparatorTimingToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Falling Block End Portal Duplication")
+        @Config.Comment("Prevents duplication of falling blocks through end portals")
+        public boolean utFallingBlockPortalDupeToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Falling Block Entity Damage")
         @Config.Comment("Only damage living entities hit by falling blocks, prevents killing items and XP")
         public boolean utFallingBlockDamageToggle = true;
