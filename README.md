@@ -438,6 +438,7 @@ All changes are toggleable via config files.
     * **Mutable Machine Block Drops:** Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list.
     * **Creative Mill Harvestability:** Fixes the Creative Mill Generator not respecting the Creative Block Breaking config
     * **Downgrade Potion Recipes Log Level:** Downgrades the message when creating a potion recipe from info to a debug
+    * **Unstable Ingots Inventory Scanning:** Prevents CME crashes when iterating over inventory slots in special containers
 * **Extreme Reactors**
     * **Mitigate Steam Reactor Crash:** Mitigates NPE in updateServer by no-oping fluid transfers when the direction is null
 * **Forestry**

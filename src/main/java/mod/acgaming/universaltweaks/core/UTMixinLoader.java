@@ -135,6 +135,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.extrautilities.potionlogging.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDowngradePotionLogging);
                 put("mixins/mods/mixins.extrautilities.radarexception.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utCatchRadarException);
                 put("mixins/mods/mixins.extrautilities.radarloot.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utRadarSkipsLoottables);
+                put("mixins/mods/mixins.extrautilities.unstableingot.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utUnstableIngotsInvScanning);
                 put("mixins/mods/mixins.extreme_reactors.reactor_crash.json", c -> c.isModPresent("bigreactors") && UTConfigMods.EXTREME_REACTORS.utSteamReactorCrash);
                 put("mixins/mods/mixins.forestry.extratrees.json", c -> c.isModPresent("extratrees") && UTConfigMods.FORESTRY.utFOGatherWindfallToggle);
                 put("mixins/mods/mixins.forestry.json", c -> c.isModPresent("forestry"));

@@ -971,6 +971,11 @@ public class UTConfigMods
         @Config.Name("Downgrade Potion Recipes Log Level")
         @Config.Comment("Downgrades the message when creating a potion recipe from info to a debug")
         public boolean utDowngradePotionLogging = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Unstable Ingots Inventory Scanning")
+        @Config.Comment("Prevents CME crashes when iterating over inventory slots in special containers")
+        public boolean utUnstableIngotsInvScanning = true;
     }
 
     public static class ExtremeReactorsCategory
