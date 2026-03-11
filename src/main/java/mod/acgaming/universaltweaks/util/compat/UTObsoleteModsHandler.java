@@ -31,6 +31,7 @@ public class UTObsoleteModsHandler
                 put("blockoverlayfix", () -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
                 put("deuf", () -> UTConfigBugfixes.ENTITIES.utEntityUUIDToggle);
                 put("diethopper", () -> UTConfigBugfixes.BLOCKS.utDietHopperToggle);
+                put("difficultypatch", () -> UTConfigBugfixes.WORLD.utDifficultyConsistencyToggle);
                 put("entity_desync_fix", () -> UTConfigBugfixes.ENTITIES.ENTITY_DESYNC.utEntityDesyncToggle);
                 put("experiencebugfix", () -> UTConfigBugfixes.ENTITIES.utDimensionChangeToggle);
                 put("eyltrafix", () -> UTConfigBugfixes.ENTITIES.utElytraDeploymentLandingToggle);

@@ -32,6 +32,7 @@ All changes are toggleable via config files.
 * **Death Time:** Fixes corrupted entities exceeding the allowed death time
 * **Depth Mask:** Fixes entity and particle rendering issues by enabling depth buffer writing
 * **Destroy Entity Packets:** Fixes lag caused by dead entities by sending additional packets when the player is not alive
+* **Difficulty Consistency:** Fixes mismatching difficulty settings if a mod loads new dimensions before the world is loaded on client side
 * **Dimension Change Player States:** Fixes missing player states when changing dimensions by sending additional packets
 * **Disconnect Dupe:** Fixes item dupes when players are dropping items and disconnecting
 * **Double Consumption:** Fixes consuming an item having a chance of also consuming a second item without any animation

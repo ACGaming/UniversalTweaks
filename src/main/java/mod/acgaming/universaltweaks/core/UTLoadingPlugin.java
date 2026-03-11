@@ -215,6 +215,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/bugfixes/mixins.misc.spectatormenu.json", c -> UTConfigBugfixes.MISC.utSpectatorMenuToggle);
                 put("mixins/bugfixes/mixins.misc.startup.json", c -> UTConfigTweaks.PERFORMANCE.utFasterBackgroundStartupToggle);
                 put("mixins/bugfixes/mixins.misc.itempickup.json", c -> UTConfigBugfixes.MISC.utItemPickupCulling);
+                put("mixins/bugfixes/mixins.world.difficultyconsistency.json", c -> UTConfigBugfixes.WORLD.utDifficultyConsistencyToggle);
                 put("mixins/bugfixes/mixins.world.frustumculling.json", c -> UTConfigBugfixes.WORLD.utFrustumCullingToggle);
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)

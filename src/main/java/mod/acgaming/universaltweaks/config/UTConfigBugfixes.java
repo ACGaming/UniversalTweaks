@@ -421,6 +421,11 @@ public class UTConfigBugfixes
         public boolean utChunkSavingToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Difficulty Consistency")
+        @Config.Comment("Fixes mismatching difficulty settings if a mod loads new dimensions before the world is loaded on client side")
+        public boolean utDifficultyConsistencyToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Frustum Culling")
         @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
         public boolean utFrustumCullingToggle = true;
