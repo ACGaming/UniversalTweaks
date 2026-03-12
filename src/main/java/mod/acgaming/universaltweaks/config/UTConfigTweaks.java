@@ -783,7 +783,7 @@ public class UTConfigTweaks
             public double utAttributeFollowRangeMin = 0;
 
             @Config.Name("[05] Follow Range Max")
-            public double utAttributeFollowRangeMax = 65536;
+            public double utAttributeFollowRangeMax = 128;
 
             @Config.Name("[06] Knockback Resistance Min")
             @Config.RangeDouble(min = 0)
