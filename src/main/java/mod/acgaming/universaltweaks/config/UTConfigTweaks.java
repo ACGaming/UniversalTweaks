@@ -495,6 +495,10 @@ public class UTConfigTweaks
 
     public static class EntitiesCategory
     {
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.arrowlayers")
+        @Config.Name("Arrow Layers")
+        public final ArrowLayersCategory ARROW_LAYERS = new ArrowLayersCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.attributes")
         @Config.Name("Attributes")
         public final AttributesCategory ATTRIBUTES = new AttributesCategory();
@@ -763,6 +767,28 @@ public class UTConfigTweaks
                 "Example 2: blacklist;minecraft:desert=minecraft:farmer"
             })
         public String[] utVillagerProfessionBiomeRestriction = new String[] {};
+
+        public static class ArrowLayersCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Entity List")
+            @Config.Comment
+                ({
+                    "List of the resource location names for entities concerning rendering of arrow layers",
+                    "Behavior depends on the list mode"
+                })
+            public String[] utEntityList = new String[] {};
+
+            @Config.RequiresMcRestart
+            @Config.Name("[2] Entity List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Entities that won't render hit arrows on them, others will",
+                    "Whitelist Mode: Entities that will render hit arrows on them, others won't",
+                    "Always enabled for players"
+                })
+            public EnumLists utEntityListMode = EnumLists.WHITELIST;
+        }
 
         public static class AttributesCategory
         {

@@ -105,6 +105,7 @@ All changes are toggleable via config files.
 * **Armed Armor Stands:** Enables arms for armor stands by default
 * **Armor Curve:** Adjusts the armor scaling and degradation formulae for mobs and players
 * **Armor Swap:** Enable the ability to swap equipped armor when right-clicking armor, instead of only being able to equip armor when the slot is empty. Also applies to Elytra
+* **Arrow Layers:** Reintroduces rendering of hit arrows on mobs from Beta versions of Minecraft
 * **Attributes:** Sets custom ranges for entity attributes
 * **Attribute Keeper:** Specify attributes that will persist through player death
 * **Auto Jump Replacement:** Replaces auto jump with an increased step height (singleplayer only)

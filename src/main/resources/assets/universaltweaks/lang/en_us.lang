@@ -153,6 +153,7 @@ cfg.universaltweaks.tweaks.blocks.finitewater=Finite Water
 cfg.universaltweaks.tweaks.blocks.overhaulbeacon=Overhaul Beacon
 cfg.universaltweaks.tweaks.blocks.piston=Piston
 cfg.universaltweaks.tweaks.blocks.sapling=Sapling Behavior
+cfg.universaltweaks.tweaks.entities.arrowlayers=Arrow Layers
 cfg.universaltweaks.tweaks.entities.attributes=Attributes
 cfg.universaltweaks.tweaks.entities.betterburning=Better Burning
 cfg.universaltweaks.tweaks.entities.chickenshedding=Chicken Shedding

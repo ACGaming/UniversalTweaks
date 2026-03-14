@@ -3,6 +3,7 @@ package mod.acgaming.universaltweaks;
 import mod.acgaming.universaltweaks.mods.simpledifficulty.UTCanteenCauldron;
 import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributeKeeper;
 
+import mod.acgaming.universaltweaks.tweaks.entities.damage.arrow.layers.UTArrowLayers;
 import mod.acgaming.universaltweaks.tweaks.entities.griefing.UTMobGriefing;
 
 import org.apache.logging.log4j.LogManager;
@@ -411,6 +412,7 @@ public class UniversalTweaks
         {
             if (UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfigTweaks.MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) UTLoadSound.initLists();
             if (UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlTutorialToggle) UTTutorialToast.utTutorialToast();
+            UTArrowLayers.addArrowLayers();
         }
 
         LOGGER.info(NAME + " client post-initialized");
