@@ -16,11 +16,19 @@ public abstract class UTEndCrystalPlacementMixin
 {
     // Pretend every block is Obsidian when trying to place allowed blocks
     @ModifyExpressionValue(method = "onItemUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/state/IBlockState;getBlock()Lnet/minecraft/block/Block;", ordinal = 0))
-    public Block utEndCrystalPlacement(Block original)
+    public Block utEndCrystalPlacementObsidian(Block original)
     {
         if (!UTConfigTweaks.BLOCKS.END_CRYSTAL_PLACEMENT.utEndCrystalPlacementToggle) return original;
         boolean isBlacklist = UTConfigTweaks.BLOCKS.END_CRYSTAL_PLACEMENT.utEndCrystalPlacementListMode == UTConfigTweaks.EnumLists.BLACKLIST;
-        if (UTEndCrystalPlacement.BLOCK_LIST.contains(original) == isBlacklist) return original;
-        return Blocks.OBSIDIAN;
+        return UTEndCrystalPlacement.BLOCK_LIST.contains(original) == isBlacklist ? Blocks.AIR : Blocks.OBSIDIAN;
+    }
+
+    // Pretend every block is Bedrock when trying to place allowed blocks
+    @ModifyExpressionValue(method = "onItemUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/state/IBlockState;getBlock()Lnet/minecraft/block/Block;", ordinal = 1))
+    public Block utEndCrystalPlacementBedrock(Block original)
+    {
+        if (!UTConfigTweaks.BLOCKS.END_CRYSTAL_PLACEMENT.utEndCrystalPlacementToggle) return original;
+        boolean isBlacklist = UTConfigTweaks.BLOCKS.END_CRYSTAL_PLACEMENT.utEndCrystalPlacementListMode == UTConfigTweaks.EnumLists.BLACKLIST;
+        return UTEndCrystalPlacement.BLOCK_LIST.contains(original) == isBlacklist ? Blocks.AIR : Blocks.BEDROCK;
     }
 }
