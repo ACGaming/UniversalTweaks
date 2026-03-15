@@ -142,8 +142,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.gaiadimension.restructurer.json", c -> c.isModPresent("gaiadimension") && UTConfigMods.GAIA_DIMENSION.utFixNPERestructurerRecipe);
                 put("mixins/mods/mixins.immersiveengineering.toolevent.json", c -> c.isModPresent("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFireBreakEvent);
                 put("mixins/mods/mixins.immersiveengineering.toolhand.json", c -> c.isModPresent("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFixIncorrectHandReplacement);
-                put("mixins/mods/mixins.incontrol.rule.json", c -> c.isModPresent("incontrol") && UTConfigMods.INCONTROL.utStatsFixToggle);
-                put("mixins/mods/mixins.incontrol.handler_crash.json", c -> c.isModPresent("incontrol") && UTConfigMods.INCONTROL.utClientCrash);
+                put("mixins/mods/mixins.incontrol.rule.json", c -> regularInControlLoaded() && UTConfigMods.INCONTROL.utStatsFixToggle);
+                put("mixins/mods/mixins.incontrol.handler_crash.json", c -> regularInControlLoaded() && UTConfigMods.INCONTROL.utClientCrash);
                 put("mixins/mods/mixins.industrialcraft.dupes.json", c -> c.isModPresent("ic2") && UTConfigMods.INDUSTRIALCRAFT.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.industrialforegoing.dupes.json", c -> c.isModPresent("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.industrialforegoing.rangeaddon.json", c -> c.isModPresent("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utRangeAddonNumberFix);
@@ -222,6 +222,15 @@ public class UTMixinLoader implements ILateMixinLoader
         if (Loader.isModLoaded("tconstruct"))
         {
             return Loader.instance().getIndexedModList().get("tconstruct").getName().equals("Tinkers' Construct");
+        }
+        return false;
+    }
+
+    public static boolean regularInControlLoaded()
+    {
+        if (Loader.isModLoaded("incontrol"))
+        {
+            return Loader.instance().getIndexedModList().get("incontrol").getName().equals("InControl");
         }
         return false;
     }
