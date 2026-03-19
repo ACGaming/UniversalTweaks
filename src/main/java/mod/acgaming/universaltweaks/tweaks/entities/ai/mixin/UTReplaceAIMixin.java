@@ -15,7 +15,7 @@ public class UTReplaceAIMixin
     @Redirect(method = "onUpdateLook", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;atan2(DD)D"))
     public double utReplaceAI(double y, double x)
     {
-        if (UTConfigTweaks.ENTITIES.utAIReplacementToggle) return UTDiamondAtan2.atan2(y, x);
+        if (UTConfigTweaks.ENTITIES.utWatchingAIReplacementToggle) return UTDiamondAtan2.atan2(y, x);
         else return MathHelper.atan2(y, x);
     }
 }

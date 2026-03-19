@@ -275,7 +275,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.ENTITIES.SLEEPING.utEnableSleepingTweak) MinecraftForge.EVENT_BUS.register(UTSleepingTweak.class);
             if (UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime > -1) MinecraftForge.EVENT_BUS.register(UTSleepingTime.class);
             if (UTConfigTweaks.ENTITIES.utAdaptiveXPFactor > 0) MinecraftForge.EVENT_BUS.register(UTAdaptiveXPDrops.class);
-            if (UTConfigTweaks.ENTITIES.utAIRemovalToggle) MinecraftForge.EVENT_BUS.register(UTRemoveAI.class);
+            if (UTConfigTweaks.ENTITIES.utWatchingAIRemovalToggle) MinecraftForge.EVENT_BUS.register(UTRemoveAI.class);
             if (UTConfigTweaks.ENTITIES.utBetterIgnitionToggle) MinecraftForge.EVENT_BUS.register(UTBetterIgnition.class);
             if (UTConfigTweaks.ENTITIES.utCreeperChargedChance > 0) MinecraftForge.EVENT_BUS.register(UTChargedCreepers.class);
             if (UTConfigTweaks.ENTITIES.utModernKnockbackToggle) MinecraftForge.EVENT_BUS.register(UTModernKnockback.class);

@@ -577,16 +577,6 @@ public class UTConfigTweaks
         public double utAdaptiveXPFactor = 0;
 
         @Config.RequiresMcRestart
-        @Config.Name("AI Replacement")
-        @Config.Comment("Replaces entity AI for improved server performance")
-        public boolean utAIReplacementToggle = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("AI Removal")
-        @Config.Comment("Removes entity AI for improved server performance")
-        public boolean utAIRemovalToggle = false;
-
-        @Config.RequiresMcRestart
         @Config.Name("Armed Armor Stands")
         @Config.Comment("Enables arms for armor stands by default")
         public boolean utArmedArmorStandsToggle = false;
@@ -767,6 +757,16 @@ public class UTConfigTweaks
                 "Example 2: blacklist;minecraft:desert=minecraft:farmer"
             })
         public String[] utVillagerProfessionBiomeRestriction = new String[] {};
+
+        @Config.RequiresMcRestart
+        @Config.Name("Watching AI Removal")
+        @Config.Comment("Removes watching/looking entity AI for improved server performance")
+        public boolean utWatchingAIRemovalToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Watching AI Replacement")
+        @Config.Comment("Replaces watching/looking entity AI for improved server performance")
+        public boolean utWatchingAIReplacementToggle = true;
 
         public static class ArrowLayersCategory
         {

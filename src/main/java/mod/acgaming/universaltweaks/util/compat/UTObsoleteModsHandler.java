@@ -59,7 +59,7 @@ public class UTObsoleteModsHandler
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
             {
                 put("advancementscreenshot", () -> UTConfigTweaks.MISC.ADVANCEMENT_SCREENSHOT.utAdvancementScreenshotToggle);
-                put("aiimprovements", () -> UTConfigTweaks.ENTITIES.utAIReplacementToggle || UTConfigTweaks.ENTITIES.utAIRemovalToggle);
+                put("aiimprovements", () -> UTConfigTweaks.ENTITIES.utWatchingAIReplacementToggle || UTConfigTweaks.ENTITIES.utWatchingAIRemovalToggle);
                 put("armorcurve", () -> UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle);
                 put("attributefix", () -> UTConfigTweaks.ENTITIES.ATTRIBUTES.utAttributesToggle);
                 put("badwithernocookiereloaded", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundDragon || !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundEndPortal || !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundWither);

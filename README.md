@@ -98,7 +98,6 @@ All changes are toggleable via config files.
     * Disables the background fading when hovering over an advancement
     * Adds Advancement Page Title text to the Advancement GUI header
 * **Adaptive XP Drops:** Scales dropped experience from entities based on their health
-* **AI Improvements:** Replaces/removes entity AI for improved server performance
 * **Always Eat:** Allows the consumption of food at any time, regardless of the hunger bar
 * **Always Return to Main Menu:** Always returns the player to the main menu when quitting the game
 * **Anvil XP Level Cap:** Sets the experience level cap for anvil recipes
@@ -312,6 +311,8 @@ All changes are toggleable via config files.
     * Options allow toggling the setting globally, controlling to what Y-level the entity is teleported, if blindness is applied, maximum number of consecutive times, and how much and in what way fall damage is taken
     * **Configure Entities:** Configures what entities can be teleported, and if the player is teleported
     * **Configure Dimensions:** Configures what dimensions the effect can take place in
+* **Watching AI Removal:** Removes watching/looking entity AI for improved server performance
+* **Watching AI Replacement:** Replaces watching/looking entity AI for improved server performance
 * **Window Icon:** Sets the relative path to the 16x16, 32x32 and 256x256 Minecraft window icons
 
 ![](https://i.imgur.com/1EmHZlb.png)
