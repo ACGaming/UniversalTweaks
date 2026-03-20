@@ -2945,7 +2945,7 @@ public class UTConfigTweaks
 
             @Config.Name("[2] Height Whitelist")
             @Config.Comment("List of allowed Y values for bedrock layer generation")
-            public int[] utFlatBedrockHeightWhitelist = new int[] {0, 127};
+            public int[] utFlatBedrockHeightWhitelist = new int[] {0, 127, 255};
         }
 
         public static class SpawnChunksCategory
