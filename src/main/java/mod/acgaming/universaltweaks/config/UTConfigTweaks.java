@@ -3,6 +3,8 @@ package mod.acgaming.universaltweaks.config;
 import java.util.HashMap;
 import java.util.Map;
 
+import mod.acgaming.universaltweaks.tweaks.world.flatbedrock.UTFlatBedrockList;
+
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -2804,6 +2806,10 @@ public class UTConfigTweaks
         @Config.Name("Dimension Unload")
         public final DimensionUnloadCategory DIMENSION_UNLOAD = new DimensionUnloadCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.world.flatbedrock")
+        @Config.Name("Flat Bedrock")
+        public final FlatBedrockCategory FLAT_BEDROCK = new FlatBedrockCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.world.chunks.spawn")
         @Config.Name("Spawn Chunks")
         public final SpawnChunksCategory SPAWN_CHUNKS = new SpawnChunksCategory();
@@ -2930,6 +2936,18 @@ public class UTConfigTweaks
                 };
         }
 
+        public static class FlatBedrockCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Flat Bedrock Toggle")
+            @Config.Comment("Allows height control over bedrock layer generation")
+            public boolean utFlatBedrockToggle = false;
+
+            @Config.Name("[2] Height Whitelist")
+            @Config.Comment("List of allowed Y values for bedrock layer generation")
+            public int[] utFlatBedrockHeightWhitelist = new int[] {0, 127};
+        }
+
         public static class SpawnChunksCategory
         {
             @Config.RequiresMcRestart
@@ -3030,6 +3048,7 @@ public class UTConfigTweaks
                 if (ITEMS.utCustomUseDurations.length > 0) UTCustomUseDuration.initItemUseMaps();
                 if (ITEMS.PARRY.utParryToggle) UTParry.initProjectileList();
                 if (WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle) UTChunkGenLimit.initDimensionList();
+                if (WORLD.FLAT_BEDROCK.utFlatBedrockToggle) UTFlatBedrockList.initHeightWhitelist();
                 if (WORLD.VOID_FOG.utVoidFogToggle) UTVoidFog.initDimensionList();
                 if (UTLoadingPlugin.isClient)
                 {

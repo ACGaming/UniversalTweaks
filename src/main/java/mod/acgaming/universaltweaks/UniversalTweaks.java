@@ -6,6 +6,8 @@ import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributeKeeper
 import mod.acgaming.universaltweaks.tweaks.entities.damage.arrow.layers.UTArrowLayers;
 import mod.acgaming.universaltweaks.tweaks.entities.griefing.UTMobGriefing;
 
+import mod.acgaming.universaltweaks.tweaks.world.flatbedrock.UTFlatBedrockList;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
@@ -294,6 +296,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.MISC.utDamageTiltToggle) MinecraftForge.EVENT_BUS.register(UTDamageTilt.class);
             if (UTConfigTweaks.MISC.utOffhandToggle) MinecraftForge.EVENT_BUS.register(UTOffhand.class);
             if (UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle) MinecraftForge.EVENT_BUS.register(UTUnloader.class);
+            if (UTConfigTweaks.WORLD.FLAT_BEDROCK.utFlatBedrockToggle) UTFlatBedrockList.initHeightWhitelist();
             if (UTConfigTweaks.WORLD.utTidyChunkToggle) MinecraftForge.EVENT_BUS.register(UTTidyChunk.class);
         }
 

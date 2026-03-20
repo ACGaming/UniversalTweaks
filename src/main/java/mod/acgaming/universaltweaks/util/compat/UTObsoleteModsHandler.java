@@ -65,8 +65,11 @@ public class UTObsoleteModsHandler
                 put("badwithernocookiereloaded", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundDragon || !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundEndPortal || !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundWither);
                 put("bedbreakbegone", () -> UTConfigTweaks.BLOCKS.utBedObstructionToggle);
                 put("bedfix", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
+                put("bedrockbreaks", () -> UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle);
                 put("bedsaynosleep", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
                 put("betteradvancements", () -> UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle);
+                put("betterbedrock", () -> UTConfigTweaks.WORLD.FLAT_BEDROCK.utFlatBedrockToggle);
+                put("betterbedrockgen", () -> UTConfigTweaks.WORLD.FLAT_BEDROCK.utFlatBedrockToggle);
                 put("betterburning", () -> UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBArrowsToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBCookedToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBExtinguishToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBOverlayToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBSpreadingToggle);
                 put("betterpingdisplay", () -> UTConfigTweaks.MISC.utBetterPing);
                 put("betterplacement", () -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
