@@ -6,6 +6,7 @@ import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributeKeeper
 import mod.acgaming.universaltweaks.tweaks.entities.damage.arrow.layers.UTArrowLayers;
 import mod.acgaming.universaltweaks.tweaks.entities.griefing.UTMobGriefing;
 
+import mod.acgaming.universaltweaks.tweaks.items.eating.UTInterruptEating;
 import mod.acgaming.universaltweaks.tweaks.world.flatbedrock.UTFlatBedrockList;
 
 import org.apache.logging.log4j.LogManager;
@@ -289,6 +290,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.ITEMS.MENDING.utMendingToggle) MinecraftForge.EVENT_BUS.register(UTMending.class);
             if (UTConfigTweaks.ITEMS.PARRY.utParryToggle) MinecraftForge.EVENT_BUS.register(UTParry.class);
             if (UTConfigTweaks.ITEMS.utCustomUseDurations.length > 0) MinecraftForge.EVENT_BUS.register(UTCustomUseDuration.class);
+            if (UTConfigTweaks.ITEMS.utInterruptEatingToggle) MinecraftForge.EVENT_BUS.register(UTInterruptEating.class);
             if (UTConfigTweaks.ITEMS.utSuperHotTorchToggle) MinecraftForge.EVENT_BUS.register(UTSuperHotTorch.class);
             if (UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
             if (UTConfigTweaks.MISC.LIGHTNING.utLightningItemDestructionToggle) MinecraftForge.EVENT_BUS.register(UTLightningItemDestruction.class);

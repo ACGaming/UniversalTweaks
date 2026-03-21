@@ -1438,6 +1438,11 @@ public class UTConfigTweaks
         public String[] utCustomUseDurations = new String[] {};
 
         @Config.RequiresMcRestart
+        @Config.Name("Interrupt Eating")
+        @Config.Comment("Interrupts consumption of food and drinks upon taking damage")
+        public boolean utInterruptEatingToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Smart Eat")
         @Config.Comment("Requires the hunger bar to be missing food points equal to or more than the amount restored by the food")
         public boolean utSmartEatToggle = false;

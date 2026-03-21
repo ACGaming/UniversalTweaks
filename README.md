@@ -207,6 +207,7 @@ All changes are toggleable via config files.
 * **Incremental Time Command:** Lets `/time set day` and `/time set night` commands skip to the actual next day/night instead of resetting total world time
 * **Incurable Potions:** Excludes potion effects from being curable with curative items like buckets of milk
 * **Infinite Music:** Lets background music play continuously without delays
+* **Interrupt Eating:** Interrupts consumption of food and drinks upon taking damage
 * **Item Entities:** Enables the modification of item entity properties
 * **LAN Server Properties:** Enhance the vanilla 'Open to LAN' GUI for listening port customization, removal of enforced authentication and more
 * **Lenient Paths:** Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)
