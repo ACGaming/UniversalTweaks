@@ -35,7 +35,7 @@ All changes are toggleable via config files.
 * **Difficulty Consistency:** Fixes mismatching difficulty settings if a mod loads new dimensions before the world is loaded on client side
 * **Dimension Change Player States:** Fixes missing player states when changing dimensions by sending additional packets
 * **Disconnect Dupe:** Fixes item dupes when players are dropping items and disconnecting
-* **Double Consumption:** Fixes consuming an item having a chance of also consuming a second item without any animation
+* **Double Food Consumption:** Fixes consuming a food item having a chance of also consuming a second item without any animation
 * **Donkey/Mule Dupe:** Fixes a duplication exploit connected to the inventories of donkeys and mules
 * **Elytra Deployment & Landing:** Relocate elytra deployment and landing to client side to prevent issues with high latencies
 * **Entity Bounding Boxes:** Saves entity bounding boxes to tags to prevent breakouts and suffocation

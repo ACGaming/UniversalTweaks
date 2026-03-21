@@ -9,10 +9,10 @@ import mod.acgaming.universaltweaks.mods.vanilla.mixin.UTEntityLivingBaseAccesso
 // MC-849
 // https://bugs.mojang.com/browse/MC-849
 // Courtesy of Marcono1234, makamys
-public class UTDoubleConsumption
+public class UTDoubleFoodConsumption
 {
     @SubscribeEvent
-    public static void utDoubleConsumption(TickEvent.PlayerTickEvent event)
+    public static void utDoubleFoodConsumption(TickEvent.PlayerTickEvent event)
     {
         if (event.phase == TickEvent.Phase.START && event.player.getActiveItemStack() != ItemStack.EMPTY)
         {

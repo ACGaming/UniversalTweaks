@@ -19,7 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayLists;
 import mod.acgaming.universaltweaks.bugfixes.entities.UTVanillaEvents;
-import mod.acgaming.universaltweaks.bugfixes.entities.consumption.UTDoubleConsumption;
+import mod.acgaming.universaltweaks.bugfixes.entities.consumption.UTDoubleFoodConsumption;
 import mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync;
 import mod.acgaming.universaltweaks.bugfixes.entities.dimensionchange.UTDimensionChange;
 import mod.acgaming.universaltweaks.bugfixes.entities.disconnectdupe.UTDisconnectDupe;
@@ -227,7 +227,7 @@ public class UniversalTweaks
         {
             MinecraftForge.EVENT_BUS.register(UTVanillaEvents.class);
             if (UTConfigBugfixes.ENTITIES.utDimensionChangeToggle) MinecraftForge.EVENT_BUS.register(UTDimensionChange.class);
-            if (UTConfigBugfixes.ENTITIES.utDoubleConsumptionToggle) MinecraftForge.EVENT_BUS.register(UTDoubleConsumption.class);
+            if (UTConfigBugfixes.ENTITIES.utDoubleFoodConsumptionToggle) MinecraftForge.EVENT_BUS.register(UTDoubleFoodConsumption.class);
             if (UTConfigBugfixes.ENTITIES.utEntityNaNToggle) MinecraftForge.EVENT_BUS.register(UTEntityNaN.class);
             if (UTConfigBugfixes.ENTITIES.utEntityUUIDToggle) MinecraftForge.EVENT_BUS.register(UTEntityUUID.class);
             if (UTConfigBugfixes.WORLD.utPortalLocationLink) MinecraftForge.EVENT_BUS.register(UTPortalLocationLink.class);

@@ -35,7 +35,7 @@ public class UTObsoleteModsHandler
                 put("entity_desync_fix", () -> UTConfigBugfixes.ENTITIES.ENTITY_DESYNC.utEntityDesyncToggle);
                 put("experiencebugfix", () -> UTConfigBugfixes.ENTITIES.utDimensionChangeToggle);
                 put("eyltrafix", () -> UTConfigBugfixes.ENTITIES.utElytraDeploymentLandingToggle);
-                put("foodfix", () -> UTConfigBugfixes.ENTITIES.utDoubleConsumptionToggle);
+                put("foodfix", () -> UTConfigBugfixes.ENTITIES.utDoubleFoodConsumptionToggle);
                 put("framevoidpatch", () -> UTConfigBugfixes.BLOCKS.utItemFrameVoidToggle);
                 put("givemebackmyhp", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
                 put("helpfixer", () -> UTConfigBugfixes.MISC.utHelpToggle);

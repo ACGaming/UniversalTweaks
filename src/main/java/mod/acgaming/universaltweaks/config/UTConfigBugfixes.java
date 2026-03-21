@@ -205,9 +205,9 @@ public class UTConfigBugfixes
         public boolean utDimensionChangeToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Double Consumption")
-        @Config.Comment("Fixes consuming an item having a chance of also consuming a second item without any animation, like the infamous double eating food bug")
-        public boolean utDoubleConsumptionToggle = true;
+        @Config.Name("Double Food Consumption")
+        @Config.Comment("Fixes consuming a food item having a chance of also consuming a second item without any animation, like the infamous double eating food bug")
+        public boolean utDoubleFoodConsumptionToggle = true;
 
         @Config.Name("Donkey/Mule Dupe")
         @Config.Comment("Fixes a duplication exploit connected to the inventories of donkeys and mules")
