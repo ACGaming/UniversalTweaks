@@ -233,7 +233,9 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.entities.sprint.json", c -> UTConfigTweaks.ENTITIES.utSprintHungerThreshold != 6);
                 put("mixins/tweaks/mixins.items.attackcooldown.client.json", c -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
                 put("mixins/tweaks/mixins.items.itementities.client.json", c -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle);
+                put("mixins/tweaks/mixins.misc.advancements.client.json", c -> UTConfigTweaks.MISC.utDisableAdvancementsToggle);
                 put("mixins/tweaks/mixins.misc.advancements.guisize.json", c -> UTConfigTweaks.MISC.ADVANCEMENTS.utAdvancementsToggle);
+                put("mixins/tweaks/mixins.misc.buttons.advancements.json", c -> UTConfigTweaks.MISC.utDisableAdvancementsToggle);
                 put("mixins/tweaks/mixins.misc.buttons.anaglyph.json", c -> UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle && !c.isModPresent("optifine"));
                 put("mixins/tweaks/mixins.misc.buttons.anaglyph.optifine.json", c -> UTConfigTweaks.MISC.ut3DAnaglyphButtonToggle && c.isModPresent("optifine"));
                 put("mixins/tweaks/mixins.misc.buttons.realms.json", c -> SystemUtils.IS_JAVA_1_8 && UTConfigTweaks.MISC.utRealmsButtonToggle && !c.isModPresent("randompatches"));
