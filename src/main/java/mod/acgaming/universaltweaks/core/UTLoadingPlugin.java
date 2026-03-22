@@ -62,6 +62,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/bugfixes/mixins.blocks.piston.retraction.json", c -> UTConfigBugfixes.BLOCKS.utPistonRetractionToggle);
                 put("mixins/bugfixes/mixins.blocks.piston.tile.json", c -> UTConfigBugfixes.BLOCKS.utPistonTileToggle);
                 put("mixins/bugfixes/mixins.entities.ai.json", c -> UTConfigBugfixes.ENTITIES.utEntityAITasksToggle);
+                put("mixins/bugfixes/mixins.entities.ai.rails.json", c -> UTConfigBugfixes.ENTITIES.utMobsCrossingRailsToggle);
                 put("mixins/bugfixes/mixins.entities.attackradius.json", c -> UTConfigBugfixes.ENTITIES.utAttackRadiusToggle);
                 put("mixins/bugfixes/mixins.entities.blockfire.json", c -> UTConfigBugfixes.ENTITIES.utBlockFireToggle);
                 put("mixins/bugfixes/mixins.entities.boat.breaking.json", c -> UTConfigBugfixes.ENTITIES.utBoatBreakingFallHeight >= 0);

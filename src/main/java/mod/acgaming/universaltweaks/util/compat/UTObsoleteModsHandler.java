@@ -80,6 +80,7 @@ public class UTObsoleteModsHandler
                 put("bowinfinityfix", () -> UTConfigTweaks.ITEMS.INFINITY.utBowInfinityToggle);
                 put("breedablekillerrabbit", () -> UTConfigTweaks.ENTITIES.utRabbitKillerChance > 0.0D);
                 put("burnbabyburn", () -> UTConfigTweaks.ENTITIES.utBurningBabyZombiesToggle);
+                put("chestelytraswap", () -> UTConfigTweaks.MISC.utArmorSwap);
                 put("chickensshed", () -> UTConfigTweaks.ENTITIES.CHICKEN_SHEDDING.utChickenSheddingToggle);
                 put("cie", () -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle);
                 put("classiccombat", () -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
@@ -118,6 +119,7 @@ public class UTObsoleteModsHandler
                 put("mendingfix", () -> UTConfigTweaks.ITEMS.MENDING.utMendingToggle);
                 put("mfpu", () -> UTConfigTweaks.PERFORMANCE.utUncapFPSToggle);
                 put("mobpc", () -> UTConfigTweaks.ENTITIES.utMobDespawningToggle != UTConfigTweaks.EnumMobDespawning.DEFAULT);
+                put("mobsonrails", () -> UTConfigBugfixes.ENTITIES.utMobsCrossingRailsToggle);
                 put("mobsunscreen", () -> !UTConfigTweaks.ENTITIES.utBurningSkeletonsToggle || !UTConfigTweaks.ENTITIES.utBurningZombiesToggle);
                 put("movingquickly", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
                 put("mtqfix", () -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);

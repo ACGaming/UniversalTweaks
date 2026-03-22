@@ -275,6 +275,11 @@ public class UTConfigBugfixes
         public boolean utMinecartAIToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Mobs Crossing Rails")
+        @Config.Comment("Fixes mobs being unable to cross rails during pathfinding")
+        public boolean utMobsCrossingRailsToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Mount Desync")
         @Config.Comment("Fixes mounts and boats sometimes disappearing after dismounting")
         public boolean utMountDesyncToggle = true;
