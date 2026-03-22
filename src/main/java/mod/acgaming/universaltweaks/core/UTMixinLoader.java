@@ -21,7 +21,7 @@ public class UTMixinLoader implements ILateMixinLoader
     private static final Map<String, Predicate<Context>> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Predicate<Context>>()
     {
         {
-            put("mixins/mods/mixins.randomthings.teleport.json", c -> c.isModPresent("randomthings") && UTConfigMods.RANDOM_THINGS.utTeleportStall);
+            put("mixins/mods/mixins.randomthings.teleport.json", c -> regularRandomThingsLoaded() && UTConfigMods.RANDOM_THINGS.utTeleportStall);
             put("mixins/mods/mixins.quark.linkitems.json", c -> c.isModPresent("quark") && UTConfigMods.QUARK.utLinkItemsServer);
         }
     });
@@ -164,8 +164,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.openblocks.json", c -> regularOpenBlocksLoaded() && UTConfigMods.OPEN_BLOCKS.utLastStandFixToggle);
                 put("mixins/mods/mixins.properpumpkins.json", c -> c.isModPresent("pumpking") && UTConfigMods.PROPER_PUMPKIN.utFacingFix);
                 put("mixins/mods/mixins.quark.dupes.json", c -> c.isModPresent("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
-                put("mixins/mods/mixins.randomthings.anvil.json", c -> c.isModPresent("randomthings") && UTConfigMods.RANDOM_THINGS.utAnvilCraftFix);
-                put("mixins/mods/mixins.randomthings.collector.json", c -> c.isModPresent("randomthings") && UTConfigMods.RANDOM_THINGS.utItemCollectorDupe);
+                put("mixins/mods/mixins.randomthings.anvil.json", c -> regularRandomThingsLoaded() && UTConfigMods.RANDOM_THINGS.utAnvilCraftFix);
+                put("mixins/mods/mixins.randomthings.collector.json", c -> regularRandomThingsLoaded() && UTConfigMods.RANDOM_THINGS.utItemCollectorDupe);
                 put("mixins/mods/mixins.requiousfrakto.json", c -> c.isModPresent("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);
                 put("mixins/mods/mixins.reskillable.json", c -> c.isModPresent("reskillable"));
                 put("mixins/mods/mixins.rftools.json", c -> c.isModPresent("rftools") && UTConfigMods.RFTOOLS.utXNetChannelCrash);
@@ -231,6 +231,15 @@ public class UTMixinLoader implements ILateMixinLoader
         if (Loader.isModLoaded("incontrol"))
         {
             return Loader.instance().getIndexedModList().get("incontrol").getName().equals("InControl");
+        }
+        return false;
+    }
+
+    public static boolean regularRandomThingsLoaded()
+    {
+        if (Loader.isModLoaded("randomthings"))
+        {
+            return Loader.instance().getIndexedModList().get("randomthings").getName().equals("Random Things");
         }
         return false;
     }
