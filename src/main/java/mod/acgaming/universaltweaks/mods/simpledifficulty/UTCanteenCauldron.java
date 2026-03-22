@@ -9,6 +9,7 @@ import com.charles445.simpledifficulty.api.item.IItemCanteen;
 import com.charles445.simpledifficulty.api.thirst.ThirstEnum;
 import com.charles445.simpledifficulty.api.thirst.ThirstUtil;
 import com.charles445.simpledifficulty.compat.CompatRightClick;
+import com.charles445.simpledifficulty.item.ItemDragonCanteen;
 import com.charles445.simpledifficulty.util.SoundUtil;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 
@@ -41,7 +42,7 @@ public class UTCanteenCauldron
                 if (level > 0)
                 {
                     IItemCanteen canteen = (IItemCanteen) heldItem.getItem();
-                    if (canteen.tryAddDose(heldItem, ThirstEnum.NORMAL))
+                    if (canteen.tryAddDose(heldItem, canteen instanceof ItemDragonCanteen ? ThirstEnum.PURIFIED : ThirstEnum.NORMAL))
                     {
                         SoundUtil.serverPlayBlockSound(world, pos, SoundEvents.ITEM_BUCKET_FILL);
                         if (UTConfigMods.SIMPLE_DIFFICULTY.utCanteensConsumeWaterSourceToggle && !event.getWorld().isRemote && !event.getEntityPlayer().capabilities.isCreativeMode)
