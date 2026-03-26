@@ -864,6 +864,11 @@ public class UTConfigMods
         public boolean utChorusStackOverflow = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Impulse Hopper NBT Inputs")
+        @Config.Comment("Makes inserting into the Impulse Hopper filter by NBT of the relevant ghost item, which is required for actually moving the item")
+        public boolean utImpulseHopperInsert = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Soul Binder JEI Appearance")
         @Config.Comment("Fix the Soul Binder having empty ingredients or displaying filled soul vials in the output slot incorrectly")
         public boolean utFixSoulBinderJEI = true;

@@ -429,6 +429,7 @@ All changes are toggleable via config files.
 * **Ender IO**
     * **Clear Outdated Redstone Conduit:** When changing colors in the Redstone Conduit GUI, remove the signal from the old color
     * **Fix Chorus Farming StackOverflow:** Fixes the Farming Station Chorus Walker being able to loop though and check the same positions endlessly, causing a StackOverflow
+    * **Fix Impulse Hopper NBT Inputs:** Makes inserting into the Impulse Hopper filter by NBT of the relevant ghost item, which is required for actually moving the item
     * **Fix Soul Binder JEI Appearance:** Fixes the Soul Binder having empty ingredients or displaying filled soul vials in the output slot incorrectly
     * **Replace Obelisk Renderer:** Fixes client-side memory leak by replacing obelisk renderer with a simpler one
     * **Save Filter Cycle Buttons Properly:** Fixes an issue where Cycle Buttons for Damage do not report being clicked when in the Picker Overlay, preventing changing Damage values until clicked again
