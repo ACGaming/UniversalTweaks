@@ -11,10 +11,10 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(value = BlockRainCollector.class, remap = false)
+@Mixin(BlockRainCollector.class)
 public abstract class UTRainCollectorCanteenMixin
 {
-    @Redirect(method = "onBlockActivated", at = @At(value = "FIELD", target = "Lcom/charles445/simpledifficulty/api/SDItems;canteen:Lnet/minecraft/item/Item;", opcode = Opcodes.GETSTATIC))
+    @Redirect(method = "onBlockActivated", at = @At(value = "FIELD", target = "Lcom/charles445/simpledifficulty/api/SDItems;canteen:Lnet/minecraft/item/Item;", remap = false, opcode = Opcodes.GETSTATIC))
     private Item utRainCollectorCanteen(@Local(name = "item") Item item)
     {
         return (item instanceof IItemCanteen) ? item : SDItems.canteen;

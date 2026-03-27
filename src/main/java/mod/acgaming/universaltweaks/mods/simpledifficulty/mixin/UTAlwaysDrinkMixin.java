@@ -9,10 +9,10 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(value = {ItemDrinkBase.class, ItemCanteen.class, ItemDragonCanteen.class}, remap = false)
+@Mixin({ItemDrinkBase.class, ItemCanteen.class, ItemDragonCanteen.class})
 public abstract class UTAlwaysDrinkMixin
 {
-    @Redirect(method = "onItemRightClick", at = @At(value = "INVOKE", target = "Lcom/charles445/simpledifficulty/api/thirst/IThirstCapability;isThirsty()Z"))
+    @Redirect(method = "onItemRightClick", at = @At(value = "INVOKE", target = "Lcom/charles445/simpledifficulty/api/thirst/IThirstCapability;isThirsty()Z", remap = false))
     public boolean utAlwaysDrink(IThirstCapability capability)
     {
         return capability.isThirsty() || UTConfigMods.SIMPLE_DIFFICULTY.utAlwaysDrinkToggle;
