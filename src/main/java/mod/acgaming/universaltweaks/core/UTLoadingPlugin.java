@@ -195,6 +195,11 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.world.timecommand.json", c -> UTConfigTweaks.WORLD.utIncrementalTimeCommand);
                 put("mixins/tweaks/mixins.world.village.json", c -> UTConfigTweaks.WORLD.utVillageDistance != 32);
             }
+
+            if (Calendar.getInstance().get(Calendar.MONTH) == Calendar.APRIL && Calendar.getInstance().get(Calendar.DAY_OF_MONTH) == 1)
+            {
+                put("mixins/tweaks/mixins.misc.gui.mainmenu.version.json", c -> true);
+            }
         }
     });
 
