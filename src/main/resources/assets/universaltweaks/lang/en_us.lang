@@ -202,3 +202,8 @@ cfg.universaltweaks.tweaks.world.voidfog=Void Fog
 
 # VANILLA
 entity.EnderCrystal.name=End Crystal
+
+# EXTRA UTILITIES
+entity.Villager.shady_merchant=Shady Merchant
+entity.Villager.red_mechanic=Red Mechanic
+entity.Villager.alchemist=Alchemist
