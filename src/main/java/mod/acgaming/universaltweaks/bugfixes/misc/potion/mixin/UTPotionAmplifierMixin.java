@@ -19,8 +19,12 @@ public abstract class UTPotionAmplifierMixin
     public String utDrawActivePotionEffects(String text, @Local PotionEffect potioneffect)
     {
         int amplifier = potioneffect.getAmplifier();
-        if (amplifier > 3 && amplifier < 20) text += " " + I18n.format("enchantment.level." + (amplifier + 1));
-        else text += " " + amplifier + 1;
+        if (amplifier > 3)
+        {
+            String potionLevel = I18n.format("enchantment.level." + (amplifier + 1));
+            if (!potionLevel.contains("enchantment.level.")) text += " " + potionLevel;
+            else text += " " + (amplifier + 1);
+        }
         return text;
     }
 }
