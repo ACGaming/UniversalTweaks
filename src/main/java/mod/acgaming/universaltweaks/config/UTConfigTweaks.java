@@ -2834,6 +2834,11 @@ public class UTConfigTweaks
         public boolean utIncrementalTimeCommand = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Inhospitable Nether Roof")
+        @Config.Comment("Effectively limits the Nether to its actual height and applies void damage to entities")
+        public boolean utInhospitableNetherRoofToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Sea Level")
         @Config.Comment
             ({

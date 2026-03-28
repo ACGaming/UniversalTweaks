@@ -191,6 +191,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.world.chunks.gen.json", c -> UTConfigTweaks.WORLD.CHUNK_GEN_LIMIT.utChunkGenLimitToggle);
                 put("mixins/tweaks/mixins.world.chunks.spawn.json", c -> !UTConfigTweaks.WORLD.SPAWN_CHUNKS.utSpawnChunksGenToggle || !UTConfigTweaks.WORLD.SPAWN_CHUNKS.utSpawnChunksLoadingToggle);
                 put("mixins/tweaks/mixins.world.flatbedrock.json", c -> UTConfigTweaks.WORLD.FLAT_BEDROCK.utFlatBedrockToggle);
+                put("mixins/tweaks/mixins.world.nether.json", c -> UTConfigTweaks.WORLD.utInhospitableNetherRoofToggle);
                 put("mixins/tweaks/mixins.world.sealevel.json", c -> UTConfigTweaks.WORLD.utSeaLevel != 63);
                 put("mixins/tweaks/mixins.world.stronghold.json", c -> UTConfigTweaks.WORLD.utStrongholdToggle);
                 put("mixins/tweaks/mixins.world.timecommand.json", c -> UTConfigTweaks.WORLD.utIncrementalTimeCommand);
