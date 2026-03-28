@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.bugfixes.misc.potionamplifier.mixin;
+package mod.acgaming.universaltweaks.bugfixes.misc.potion.mixin;
 
 import net.minecraft.client.renderer.InventoryEffectRenderer;
 import net.minecraft.client.resources.I18n;
@@ -19,11 +19,8 @@ public abstract class UTPotionAmplifierMixin
     public String utDrawActivePotionEffects(String text, @Local PotionEffect potioneffect)
     {
         int amplifier = potioneffect.getAmplifier();
-        if (amplifier > 3 && amplifier < 20)
-        {
-            if (amplifier > 9) text += " " + I18n.format("enchantment.level.10") + I18n.format("enchantment.level." + (amplifier - 9));
-            else text += " " + I18n.format("enchantment.level." + (amplifier + 1));
-        }
+        if (amplifier > 3 && amplifier < 20) text += " " + I18n.format("enchantment.level." + (amplifier + 1));
+        else text += " " + amplifier + 1;
         return text;
     }
 }
