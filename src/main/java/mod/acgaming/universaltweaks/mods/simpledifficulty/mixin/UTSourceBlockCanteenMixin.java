@@ -19,12 +19,12 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin({ItemCanteen.class, ItemDragonCanteen.class})
-public abstract class UTCanteenSourceBlockMixin extends Item
+public abstract class UTSourceBlockCanteenMixin extends Item
 {
     @Inject(method = "onItemRightClick", at = @At(value = "INVOKE", target = "Lcom/charles445/simpledifficulty/util/SoundUtil;commonPlayPlayerSound(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/SoundEvent;)V", remap = false))
-    public void utCanteenSourceBlock(World world, EntityPlayer player, EnumHand hand, CallbackInfoReturnable<ActionResult<ItemStack>> cir, @Local(name = "traceBlockPos") ThirstEnumBlockPos traceBlockPos)
+    public void utSourceBlockCanteen(World world, EntityPlayer player, EnumHand hand, CallbackInfoReturnable<ActionResult<ItemStack>> cir, @Local(name = "traceBlockPos") ThirstEnumBlockPos traceBlockPos)
     {
-        if (UTConfigMods.SIMPLE_DIFFICULTY.utCanteensConsumeWaterSourceToggle && traceBlockPos.thirstEnum != ThirstEnum.PURIFIED)
+        if (UTConfigMods.SIMPLE_DIFFICULTY.utDrinkingConsumesWaterSourceToggle && traceBlockPos.thirstEnum != ThirstEnum.PURIFIED)
         {
             player.world.setBlockToAir(traceBlockPos.pos);
         }

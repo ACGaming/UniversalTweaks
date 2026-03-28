@@ -535,11 +535,12 @@ All changes are toggleable via config files.
     * **Summon Creatures Ritual Infinite loop:** Make the Summon Creatures Ritual stop when checking if blocks out of world are air, preventing an infinite loop when running the ritual above the void
     * **Prevent Shatter Spell Breaking Unbreakable:** Check if the target block is unbreakable for the Shatter Spell
     * **Disable Element Soil Growth Acceleration:** Disable Elemental Soils triggering updates on redstone updates
-* **Simple Difficulty**
+* **SimpleDifficulty**
     * **Iron Canteen Interaction Fix:** Fixes the interaction of iron canteens with rain collectors
     * **Altitude Modifier:** Sets additional variables for altitude modifier calculations
     * **Always Drink:** Allows the consumption of drinks at any time, regardless of the thirst bar
-    * **Canteen Consumes Water Source:** Causes canteens to consume the source block or a cauldron level of water
+    * **Drinking Consumes Water Source:** Causes canteens and manual drinking to consume the source block or a cauldron level of water
+    * **Full Canteen Fix:** Prevents canteens from adding water when already full
 * **Simply Jetpacks**
     * **Memory Leak Fix:** Fixes a client-side memory leak associated with EntityPlayer
 * **Spice Of Life**

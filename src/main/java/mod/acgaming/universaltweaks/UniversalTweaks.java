@@ -372,7 +372,7 @@ public class UniversalTweaks
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
         {
             if (UTMixinLoader.regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utTConMaterialBlacklist.length > 0) UTTConstructMaterials.utHandleBlacklistedMaterials();
-            if (Loader.isModLoaded("simpledifficulty") && UTConfigMods.SIMPLE_DIFFICULTY.utCanteensConsumeWaterSourceToggle) UTCanteenCauldron.replaceCauldronHandler();
+            if (Loader.isModLoaded("simpledifficulty") && UTConfigMods.SIMPLE_DIFFICULTY.utDrinkingConsumesWaterSourceToggle) UTCanteenCauldron.replaceCauldronHandler();
         }
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)

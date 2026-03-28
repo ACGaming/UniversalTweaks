@@ -1439,9 +1439,14 @@ public class UTConfigMods
         public boolean utAlwaysDrinkToggle = false;
 
         @Config.RequiresMcRestart
-        @Config.Name("Canteen Consumes Water Source")
-        @Config.Comment("Causes canteens to consume the source block or a cauldron level of water")
-        public boolean utCanteensConsumeWaterSourceToggle = false;
+        @Config.Name("Drinking Consumes Water Source")
+        @Config.Comment("Causes canteens and manual drinking to consume the source block or a cauldron level of water")
+        public boolean utDrinkingConsumesWaterSourceToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Full Canteen Fix")
+        @Config.Comment("Prevents canteens from adding water when already full")
+        public boolean utFullCanteenToggle = true;
     }
 
     public static class SimplyJetpacksCategory

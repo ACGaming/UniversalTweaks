@@ -28,7 +28,7 @@ public class UTCanteenCauldron
                     {
                         ThirstUtil.takeDrink(player, ThirstEnum.NORMAL);
                         SoundUtil.serverPlayBlockSound(world, pos, SoundEvents.ENTITY_GENERIC_DRINK);
-                        if (UTConfigMods.SIMPLE_DIFFICULTY.utCanteensConsumeWaterSourceToggle && !event.getWorld().isRemote && !event.getEntityPlayer().capabilities.isCreativeMode)
+                        if (UTConfigMods.SIMPLE_DIFFICULTY.utDrinkingConsumesWaterSourceToggle && !event.getWorld().isRemote && !event.getEntityPlayer().capabilities.isCreativeMode)
                         {
                             BlockCauldron cauldron = (BlockCauldron) state.getBlock();
                             cauldron.setWaterLevel(event.getWorld(), event.getPos(), state, level - 1);
@@ -45,7 +45,7 @@ public class UTCanteenCauldron
                     if (canteen.tryAddDose(heldItem, canteen instanceof ItemDragonCanteen ? ThirstEnum.PURIFIED : ThirstEnum.NORMAL))
                     {
                         SoundUtil.serverPlayBlockSound(world, pos, SoundEvents.ITEM_BUCKET_FILL);
-                        if (UTConfigMods.SIMPLE_DIFFICULTY.utCanteensConsumeWaterSourceToggle && !event.getWorld().isRemote && !event.getEntityPlayer().capabilities.isCreativeMode)
+                        if (UTConfigMods.SIMPLE_DIFFICULTY.utDrinkingConsumesWaterSourceToggle && !event.getWorld().isRemote && !event.getEntityPlayer().capabilities.isCreativeMode)
                         {
                             BlockCauldron cauldron = (BlockCauldron) state.getBlock();
                             cauldron.setWaterLevel(event.getWorld(), event.getPos(), state, level - 1);
