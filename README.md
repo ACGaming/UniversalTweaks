@@ -197,6 +197,7 @@ All changes are toggleable via config files.
 * **Flat Bedrock:** Allows height control over bedrock layer generation
 * **Forge Mod List Improvements:** Improves the Forge mod list GUI by remembering last searches and supporting pipes `|` to look up multiple mods
 * **Glass Bottle Consumes Water Source:** Causes Glass Bottles to consume the source block of water
+* **Glass Bottle Returns:** Respects stack sizes of water bottles when returning glass bottles on cauldron interactions
 * **Growth Size:** Configurable growth height/length for sugar cane, cacti and vines
 * **Hardcore Buckets:** Prevents placing of liquid source blocks in the world
 * **Hide Personal Effect Particles:** Disables potion effect particles emitting from yourself

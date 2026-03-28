@@ -1438,6 +1438,11 @@ public class UTConfigTweaks
         public String[] utCustomUseDurations = new String[] {};
 
         @Config.RequiresMcRestart
+        @Config.Name("Glass Bottle Returns")
+        @Config.Comment("Respects stack sizes of water bottles when returning glass bottles on cauldron interactions")
+        public boolean utGlassBottleCauldronToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Interrupt Eating")
         @Config.Comment("Interrupts consumption of food and drinks upon taking damage")
         public boolean utInterruptEatingToggle = false;

@@ -146,6 +146,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.entities.villagerprofessions.json", c -> UTConfigTweaks.ENTITIES.utVillagerProfessionBiomeRestriction.length > 0);
                 put("mixins/tweaks/mixins.entities.voidteleport.json", c -> UTConfigTweaks.ENTITIES.VOID_TELEPORT.utVoidTeleportToggle);
                 put("mixins/tweaks/mixins.items.attackcooldown.server.json", c -> UTConfigTweaks.ITEMS.ATTACK_COOLDOWN.utAttackCooldownToggle);
+                put("mixins/tweaks/mixins.items.bottle.cauldron.json", c -> UTConfigTweaks.ITEMS.utGlassBottleCauldronToggle);
                 put("mixins/tweaks/mixins.items.bottle.json", c -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
                 put("mixins/tweaks/mixins.items.bucket.json", c -> UTConfigTweaks.ITEMS.utPreventBucketPlacingInPortal);
                 put("mixins/tweaks/mixins.items.eating.json", c -> UTConfigTweaks.ITEMS.utAlwaysEatToggle || UTConfigTweaks.ITEMS.utSmartEatToggle);
