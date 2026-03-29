@@ -364,6 +364,11 @@ public class UTConfigBugfixes
             })
         public boolean utDepthMaskToggle = false;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Enchantment Level Visibility")
+        @Config.Comment("Fixes enchantments displaying unlocalized levels")
+        public boolean utEnchantmentLevelVisibilityToggle = true;
+
         @Config.Name("Help Command")
         @Config.Comment("Replaces the help command, sorts and reports broken commands")
         public boolean utHelpToggle = true;

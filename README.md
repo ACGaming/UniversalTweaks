@@ -38,6 +38,7 @@ All changes are toggleable via config files.
 * **Double Food Consumption:** Fixes consuming a food item having a chance of also consuming a second item without any animation
 * **Donkey/Mule Dupe:** Fixes a duplication exploit connected to the inventories of donkeys and mules
 * **Elytra Deployment & Landing:** Relocate elytra deployment and landing to client side to prevent issues with high latencies
+* **Enchantment Level Visibility:** Fixes enchantments displaying unlocalized levels
 * **Entity Bounding Boxes:** Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * **Entity Desync:** Fixes entity motion desyncs most notable with arrows and thrown items
 * **Entity ID:** Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0
