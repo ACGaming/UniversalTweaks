@@ -13,11 +13,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class UTAdvancementsButtonIngameMenuMixin extends GuiScreen
 {
     @Inject(method = "initGui", at = @At("TAIL"))
-    public void utDisableAdvancementsButtonIngameMenu(CallbackInfo ci)
+    public void utRemoveAdvancementsButtonIngameMenu(CallbackInfo ci)
     {
-        for (GuiButton button : this.buttonList)
+        buttonList.removeIf(button -> button.id == 5);
+        for (GuiButton button : buttonList)
         {
-            if (button.id == 5) button.enabled = false;
+            if (button.id == 6)
+            {
+                button.x = this.width / 2 - 100;
+                button.setWidth(200);
+                break;
+            }
         }
     }
 }
