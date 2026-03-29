@@ -446,6 +446,16 @@ public class UTConfigBugfixes
         public boolean utFrustumCullingToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Occlusion Culling Threshold")
+        @Config.RangeInt(max = 4097)
+        @Config.Comment
+            ({
+                "Determines the required amount of opaque blocks in the chunk to enable occlusion culling",
+                "Performance sensitive!"
+            })
+        public int utOcclusionCullingThreshold = 256;
+
+        @Config.RequiresMcRestart
         @Config.Name("Portal Location Link")
         @Config.Comment("Ensures portals link to their original overworld portal if within close distance")
         public boolean utPortalLocationLink = true;
