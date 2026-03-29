@@ -177,6 +177,7 @@ final def mod_dependencies = [
     'curse.maven:xnet-260912:2745852'                                 : [debug_xnet],
     'curse.maven:tomb-many-graves-2-262823:2619249'                   : [debug_tomb_many_graves],
     'curse.maven:woot-244049:2712670'                                 : [debug_woot],
+    'curse.maven:wopper-269377:2456802'                               : [debug_wopper],
     'curse.maven:zerocore-247921:3194743'                             : [debug_extreme_reactors],
     'maven.modrinth:industrial-foregoing:1.12.13-237'                 : [debug_industrial_foregoing],
     'net.darkhax.bookshelf:Bookshelf-1.12.2:2.3.590'                  : [debug_stages, debug_bookshelf],

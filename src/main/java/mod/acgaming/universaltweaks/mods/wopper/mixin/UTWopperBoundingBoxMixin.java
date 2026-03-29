@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.bugfixes.blocks.hopper.boundingbox.mixin;
+package mod.acgaming.universaltweaks.mods.wopper.mixin;
 
 import java.util.Objects;
 import javax.annotation.Nonnull;
@@ -13,14 +13,14 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
+import de.ellpeck.wopper.BlockWopper;
 import mod.acgaming.universaltweaks.bugfixes.blocks.hopper.boundingbox.UTHopperBoundingBox;
 import org.spongepowered.asm.mixin.Mixin;
 
-// Courtesy of RWTema
-@Mixin(BlockHopper.class)
-public abstract class UTHopperBoundingBoxMixin extends BlockContainer
+@Mixin(BlockWopper.class)
+public abstract class UTWopperBoundingBoxMixin extends BlockContainer
 {
-    public UTHopperBoundingBoxMixin(Material material)
+    public UTWopperBoundingBoxMixin(Material material)
     {
         super(material);
     }

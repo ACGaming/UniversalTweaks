@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.function.Predicate;
 
 import com.google.common.collect.ImmutableMap;
+
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+
 import net.minecraftforge.fml.common.Loader;
 
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
@@ -201,6 +204,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.tombmanygraves.timestamp.json", c -> c.isModPresent("tombmanygraves") && UTConfigMods.TOMBMANYGRAVES.utISOTimestamp);
                 put("mixins/mods/mixins.tombmanygraves.worldsize.json", c -> c.isModPresent("tombmanygraves") && UTConfigMods.TOMBMANYGRAVES.utProperWorldSizeCheck);
                 put("mixins/mods/mixins.woot.json", c -> c.isModPresent("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle);
+                put("mixins/mods/mixins.wopper.json", c -> c.isModPresent("wopper") && UTConfigBugfixes.BLOCKS.utDietHopperToggle);
                 put("mixins/mods/mixins.xnet.controller_crashes.json", c -> c.isModPresent("xnet") && UTConfigMods.XNET.utControllerCrashes);
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
