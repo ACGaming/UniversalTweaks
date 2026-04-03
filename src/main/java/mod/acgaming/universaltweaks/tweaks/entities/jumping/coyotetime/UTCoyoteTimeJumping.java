@@ -18,7 +18,7 @@ public class UTCoyoteTimeJumping
     {
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTCoyoteTimeJumping ::: Player tick event");
         EntityPlayerSP player = Minecraft.getMinecraft().player;
-        if (event.phase != TickEvent.Phase.START || player == null || player.movementInput == null || player.dataManager == null) return;
+        if (event.phase != TickEvent.Phase.START || player == null || player.movementInput == null || player.getDataManager() == null) return;
         UTCoyoteTimeJumping.attemptJump(player);
     }
 
