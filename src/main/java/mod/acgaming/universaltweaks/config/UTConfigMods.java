@@ -758,6 +758,11 @@ public class UTConfigMods
         @Config.Name("Fix Consuming Incorrect Hand")
         @Config.Comment("Fix various DivineRPG items consuming the item in the main hand regardless of the hand actually used")
         public boolean utFixHandConsumption = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Nightmare Bed Drop")
+        @Config.Comment("Fix the Nightmare Bed not dropping when being broken")
+        public boolean utFixNightmareBed = true;
     }
 
     public static class EffortlessBuildingCategory
