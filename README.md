@@ -297,6 +297,7 @@ All changes are toggleable via config files.
 * **Uncap FPS:** Removes the hardcoded 30 FPS limit in screens like the main menu
 * **Undead Horses**
     * **Burning:** Lets untamed undead horses burn in daylight
+    * **Despawning:** Lets untamed undead horses despawn
     * **Taming:** Allows taming of undead horses
 * **Unsafe Sleeping**
     * **Highlight Unsafe Mobs:** Apply the Glowing potion effect for a configurable length of time to nearby mobs preventing sleeping

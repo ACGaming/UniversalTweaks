@@ -125,7 +125,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.entities.damage.arrow.json", c -> UTConfigTweaks.ENTITIES.utCriticalArrowDamage != -1);
                 put("mixins/tweaks/mixins.entities.damage.falling.json", c -> UTConfigTweaks.ENTITIES.WATER_FALL_DAMAGE.utFallDamageToggle);
                 put("mixins/tweaks/mixins.entities.damage.velocity.json", c -> UTConfigTweaks.ENTITIES.DAMAGE_VELOCITY.utDamageVelocityToggle);
-                put("mixins/tweaks/mixins.entities.despawning.json", c -> UTConfigTweaks.ENTITIES.utMobDespawningToggle != UTConfigTweaks.EnumMobDespawning.DEFAULT);
+                put("mixins/tweaks/mixins.entities.despawning.horse.json", c -> UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utDespawningUndeadHorsesToggle);
+                put("mixins/tweaks/mixins.entities.despawning.mobs.json", c -> UTConfigTweaks.ENTITIES.utMobDespawningToggle != UTConfigTweaks.EnumMobDespawning.DEFAULT);
                 put("mixins/tweaks/mixins.entities.loot.json", c -> UTConfigTweaks.ENTITIES.utCreeperMusicDiscsToggle);
                 put("mixins/tweaks/mixins.entities.minecart.json", c -> UTConfigTweaks.ENTITIES.utMinecartDropsType);
                 put("mixins/tweaks/mixins.entities.exhaustion.regen.json", c -> UTConfigTweaks.ENTITIES.utRegenExhaustion != 6.0D);

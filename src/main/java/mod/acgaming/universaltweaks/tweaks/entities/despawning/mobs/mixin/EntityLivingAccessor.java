@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.tweaks.entities.despawning.mixin;
+package mod.acgaming.universaltweaks.tweaks.entities.despawning.mobs.mixin;
 
 import net.minecraft.entity.EntityLiving;
 

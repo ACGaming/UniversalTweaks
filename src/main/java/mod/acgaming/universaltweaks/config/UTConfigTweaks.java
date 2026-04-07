@@ -1170,7 +1170,12 @@ public class UTConfigTweaks
             @Config.RequiresMcRestart
             @Config.Name("Burning Undead Horses")
             @Config.Comment("Lets untamed undead horses burn in daylight")
-            public boolean utBurningUndeadHorsesToggle = true;
+            public boolean utBurningUndeadHorsesToggle = false;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Despawning Undead Horses")
+            @Config.Comment("Lets untamed undead horses despawn")
+            public boolean utDespawningUndeadHorsesToggle = true;
 
             @Config.RequiresMcRestart
             @Config.Name("Taming Undead Horses")
