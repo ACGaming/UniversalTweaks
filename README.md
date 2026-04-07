@@ -418,6 +418,7 @@ All changes are toggleable via config files.
     * **Fix Aquamarine Stack Size:** Aquamarine has durability, yet doesn't have a max stack size of 1
     * **Fix Armor Set Effect Cleanup:** Fixes issues with armor set effects being cleaned up under the wrong conditions that caused crashes
     * **Fix Consuming Incorrect Hand:** Fix various DivineRPG items consuming the item in the main hand regardless of the hand actually used
+    * **Fix Nightmare Bed Drop:** Fix the Nightmare Bed not dropping when being broken
 * **Dank Storage**
     * **Max Int stack voiding:** Fixes Max Int (2.1B) stacks being voided when right clicking on them in a Dank
 * **Effortless Building**

@@ -114,6 +114,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.divinerpg.aquamarine.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utFixAquamarineStackSize);
                 put("mixins/mods/mixins.divinerpg.armorset.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utFixArmorSetCleanup);
                 put("mixins/mods/mixins.divinerpg.hand.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utFixHandConsumption);
+                put("mixins/mods/mixins.divinerpg.nightmarebed.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utFixNightmareBed);
                 put("mixins/mods/mixins.divinerpg.waterspawning.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utChangeWaterMobCreatureType);
                 put("mixins/mods/mixins.effortlessbuilding.json", c -> c.isModPresent("effortlessbuilding") && UTConfigMods.EFFORTLESS_BUILDING.utEFTransmutationFixToggle);
                 put("mixins/mods/mixins.elementarystaffs.json", c -> c.isModPresent("element"));
