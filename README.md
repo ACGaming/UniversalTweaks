@@ -185,6 +185,7 @@ All changes are toggleable via config files.
 * **Fast Prefix Checking:** Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
 * **Fast World Loading:** Skips garbage collection to speed up world loading
 * **Faster Advancement Trigger Checking:** Optimizes triggering advancements when obtaining items
+* **Fence Gate Placing:** Allows placing Fence Gates without a supporting block
 * **Fence/Wall Jump:** Allows the player to jump over fences and walls
 * **Finite Water:** Prevents creation of infinite water sources outside of ocean and river biomes
 * **First Person Burning Overlay:** Sets the offset for the fire overlay in first person when the player is burning

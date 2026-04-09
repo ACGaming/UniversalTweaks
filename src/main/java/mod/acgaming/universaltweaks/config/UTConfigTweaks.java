@@ -240,6 +240,10 @@ public class UTConfigTweaks
         @Config.Comment("Allows placing Pumpkins and Jack'O'Lanterns without a supporting block")
         public boolean utUnsupportedPumpkinPlacing = false;
 
+        @Config.Name("Unsupported Fence Gate Placing")
+        @Config.Comment("Allows placing Fence Gates without a supporting block")
+        public boolean utUnsupportedFenceGatePlacing = false;
+
         @Config.RequiresMcRestart
         @Config.Name("Projectiles Bounce Off Slime Blocks")
         @Config.Comment("Lets projectiles like arrows bounce off slime blocks")
