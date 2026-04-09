@@ -106,6 +106,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.blocks.endportal.json", c -> UTConfigTweaks.BLOCKS.utRenderEndPortalBottom);
                 put("mixins/tweaks/mixins.blocks.explosion.json", c -> UTConfigTweaks.BLOCKS.utExplosionDropChance != 1.0D);
                 put("mixins/tweaks/mixins.blocks.falling.json", c -> UTConfigTweaks.BLOCKS.utFallingBlockLifespan != 600);
+                put("mixins/tweaks/mixins.blocks.fencegateplacing.json", c -> UTConfigTweaks.BLOCKS.utUnsupportedFenceGatePlacing);
                 put("mixins/tweaks/mixins.blocks.golemstructure.json", c -> UTConfigTweaks.ENTITIES.utGolemPlacement);
                 put("mixins/tweaks/mixins.blocks.growthsize.json", c -> UTConfigTweaks.BLOCKS.utCactusSize != 3 && UTConfigTweaks.BLOCKS.utSugarCaneSize != 3 && UTConfigTweaks.BLOCKS.utVineSize != 0);
                 put("mixins/tweaks/mixins.blocks.leafdecay.json", c -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
