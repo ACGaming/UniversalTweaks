@@ -1,6 +1,7 @@
 package mod.acgaming.universaltweaks;
 
 import mod.acgaming.universaltweaks.mods.simpledifficulty.UTCanteenCauldron;
+import mod.acgaming.universaltweaks.mods.voidislandcontrol.UTVoidIslandControlEvents;
 import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributeKeeper;
 
 import mod.acgaming.universaltweaks.tweaks.entities.damage.arrow.layers.UTArrowLayers;
@@ -260,6 +261,7 @@ public class UniversalTweaks
             if (Loader.isModLoaded("tardis") && UTConfigMods.TARDIS.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.unregister(ClientProxy.class);
             if (UTMixinLoader.regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTTConstructEvents());
             if (Loader.isModLoaded("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle) UTWootTicketManager.init();
+            if (Loader.isModLoaded("voidislandcontrol") && UTConfigMods.VOID_ISLAND_CONTROL.utFixSpawnIslandCreation)  MinecraftForge.EVENT_BUS.register(new UTVoidIslandControlEvents());
         }
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
