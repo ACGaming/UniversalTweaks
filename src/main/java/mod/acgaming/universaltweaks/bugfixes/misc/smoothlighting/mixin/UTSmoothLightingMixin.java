@@ -1,19 +1,18 @@
 package mod.acgaming.universaltweaks.bugfixes.misc.smoothlighting.mixin;
 
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.BlockModelRenderer;
 
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.Pseudo;
 
 // Courtesy of Sk1erLLC
-@Pseudo
-@Mixin(targets = "net.minecraft.client.renderer.BlockModelRenderer$AmbientOcclusionFace")
+@Mixin(BlockModelRenderer.AmbientOcclusionFace.class)
 public class UTSmoothLightingMixin
 {
-    @Redirect(method = "updateVertexBrightness(Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;[FLjava/util/BitSet;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/state/IBlockState;isTranslucent()Z"))
+    @Redirect(method = "updateVertexBrightness", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/state/IBlockState;isTranslucent()Z"))
     public boolean utSmoothLighting(IBlockState state)
     {
         if (!UTConfigBugfixes.MISC.utAccurateSmoothLighting) return state.isTranslucent();
