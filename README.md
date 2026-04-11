@@ -18,6 +18,7 @@ All changes are toggleable via config files.
 ### **🐞 BUGFIXES**
 
 * **Accurate Smooth Lighting:** Improves the accuracy of smooth lighting by checking for suffocation and light opacity
+* **Anvil Repairable Check:** Fixes anvils allowing to repair irreparable items
 * **Attack Radius:** Improves the attack radius of hostile mobs by checking the line of sight with raytracing
 * **Banner Bounding Box:** Fixes rendering issues with banners by correctly sizing their render bounding boxes
 * **Block Fire:** Prevents fire projectiles burning entities when blocking with shields

@@ -38,6 +38,11 @@ public class UTConfigBugfixes
         public final BlockOverlayCategory BLOCK_OVERLAY = new BlockOverlayCategory();
 
         @Config.RequiresMcRestart
+        @Config.Name("Anvil Repairable Check")
+        @Config.Comment("Fixes anvils allowing to repair irreparable items")
+        public boolean utAnvilRepairableCheckToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Banner Bounding Box")
         @Config.Comment
             ({

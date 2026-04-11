@@ -51,6 +51,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchBugfixes)
             {
+                put("mixins/bugfixes/mixins.blocks.anvil.json", c -> UTConfigBugfixes.BLOCKS.utAnvilRepairableCheckToggle);
                 put("mixins/bugfixes/mixins.blocks.comparatortiming.json", c -> UTConfigBugfixes.BLOCKS.utComparatorTimingToggle);
                 put("mixins/bugfixes/mixins.blocks.falling.json", c -> UTConfigBugfixes.BLOCKS.utFallingBlockDamageToggle);
                 put("mixins/bugfixes/mixins.blocks.falling.dupe.json", c -> UTConfigBugfixes.BLOCKS.utFallingBlockPortalDupeToggle);
