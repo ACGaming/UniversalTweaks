@@ -361,13 +361,18 @@ public class UTConfigBugfixes
         public boolean utCraftedItemStatisticsToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Depth Mask")
+        @Config.Name("Entity Depth Mask")
+        @Config.Comment("Fixes entity layer rendering issues by enabling depth buffer writing")
+        public boolean utEntityDepthMaskToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Particle Depth Mask")
         @Config.Comment
             ({
-                "Fixes entity and particle rendering issues by enabling depth buffer writing",
+                "Fixes particle rendering issues by enabling depth buffer writing",
                 "Can cause issues with modded particles"
             })
-        public boolean utDepthMaskToggle = false;
+        public boolean utParticleDepthMaskToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Enchantment Level Visibility")
