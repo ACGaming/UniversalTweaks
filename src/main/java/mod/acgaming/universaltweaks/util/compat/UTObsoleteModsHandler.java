@@ -96,6 +96,7 @@ public class UTObsoleteModsHandler
                 put("easybreeding", () -> UTConfigTweaks.ENTITIES.EASY_BREEDING.utEasyBreedingToggle);
                 put("enablecheats", () -> UTConfigTweaks.MISC.utToggleCheatsToggle);
                 put("endportalparallax", () -> UTConfigTweaks.MISC.utEndPortalParallaxToggle);
+                put("extendpolyphonylimit", () -> UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsNormal != 28 || UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsStreaming != 4);
                 put("f5fix", () -> UTConfigTweaks.ENTITIES.utThirdPersonIgnoresNonSolidBlocks);
                 put("fastbench", () -> UTConfigTweaks.PERFORMANCE.utCraftingCacheToggle);
                 put("fastleafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
@@ -150,6 +151,8 @@ public class UTObsoleteModsHandler
                 put("silentboss", () -> !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundDragon || !UTConfigTweaks.MISC.BROADCAST_SOUNDS.utBroadcastSoundWither);
                 put("sleepsooner", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
                 put("smooth-scrolling-everywhere", () -> UTConfigTweaks.MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle);
+                put("soundcap", () -> UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsNormal != 28 || UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsStreaming != 4);
+                put("soundlimitextends", () -> UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsNormal != 28 || UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsStreaming != 4);
                 put("sourcebottles", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
                 put("stepupfix", () -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
                 put("stg", () -> UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle);

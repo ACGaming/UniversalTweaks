@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.bugfixes.misc.depthmask.mixin;
+package mod.acgaming.universaltweaks.bugfixes.misc.depthmask.particle.mixin;
 
 import net.minecraft.client.particle.ParticleManager;
 
@@ -13,6 +13,6 @@ public class UTParticleManagerMixin
     @WrapWithCondition(method = "renderParticles", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/GlStateManager;depthMask(Z)V", ordinal = 0))
     public boolean utRenderParticles(boolean flagIn)
     {
-        return !UTConfigBugfixes.MISC.utDepthMaskToggle;
+        return !UTConfigBugfixes.MISC.utParticleDepthMaskToggle;
     }
 }

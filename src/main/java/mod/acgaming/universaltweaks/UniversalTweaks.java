@@ -1,15 +1,5 @@
 package mod.acgaming.universaltweaks;
 
-import mod.acgaming.universaltweaks.mods.simpledifficulty.UTCanteenCauldron;
-import mod.acgaming.universaltweaks.mods.voidislandcontrol.UTVoidIslandControlEvents;
-import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributeKeeper;
-
-import mod.acgaming.universaltweaks.tweaks.entities.damage.arrow.layers.UTArrowLayers;
-import mod.acgaming.universaltweaks.tweaks.entities.griefing.UTMobGriefing;
-
-import mod.acgaming.universaltweaks.tweaks.items.eating.UTInterruptEating;
-import mod.acgaming.universaltweaks.tweaks.world.flatbedrock.UTFlatBedrockList;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
@@ -48,11 +38,13 @@ import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Burning;
 import mod.acgaming.universaltweaks.mods.elenaidodge2.UTED2Sprinting;
 import mod.acgaming.universaltweaks.mods.mekanism.dupes.UTMekanismFixes;
 import mod.acgaming.universaltweaks.mods.projectred.UTProjectRedWorldEvents;
+import mod.acgaming.universaltweaks.mods.simpledifficulty.UTCanteenCauldron;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.UTSimplyJetpacksEvents;
 import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageClientStatesReset;
 import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructEvents;
 import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructMaterials;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
+import mod.acgaming.universaltweaks.mods.voidislandcontrol.UTVoidIslandControlEvents;
 import mod.acgaming.universaltweaks.mods.woot.UTWootTicketManager;
 import mod.acgaming.universaltweaks.tweaks.blocks.anvil.UTRepairableAnvil;
 import mod.acgaming.universaltweaks.tweaks.blocks.betterharvest.UTBetterHarvest;
@@ -67,17 +59,20 @@ import mod.acgaming.universaltweaks.tweaks.blocks.piston.UTPistonBlockBlacklist;
 import mod.acgaming.universaltweaks.tweaks.blocks.slimeblock.UTSlimeBlockProjectiles;
 import mod.acgaming.universaltweaks.tweaks.entities.ai.UTRemoveAI;
 import mod.acgaming.universaltweaks.tweaks.entities.ai.wither.UTWitherAI;
+import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributeKeeper;
 import mod.acgaming.universaltweaks.tweaks.entities.attributes.UTAttributes;
 import mod.acgaming.universaltweaks.tweaks.entities.breeding.UTEasyBreeding;
 import mod.acgaming.universaltweaks.tweaks.entities.burning.UTBetterBurning;
 import mod.acgaming.universaltweaks.tweaks.entities.burning.UTBetterIgnition;
 import mod.acgaming.universaltweaks.tweaks.entities.burning.UTSuperHotTorch;
 import mod.acgaming.universaltweaks.tweaks.entities.chickenshedding.UTChickenShedding;
+import mod.acgaming.universaltweaks.tweaks.entities.damage.arrow.layers.UTArrowLayers;
+import mod.acgaming.universaltweaks.tweaks.entities.griefing.UTMobGriefing;
 import mod.acgaming.universaltweaks.tweaks.entities.jumping.coyotetime.UTCoyoteTimeJumping;
 import mod.acgaming.universaltweaks.tweaks.entities.knockback.UTModernKnockback;
 import mod.acgaming.universaltweaks.tweaks.entities.rallyhealth.UTRallyHealth;
-import mod.acgaming.universaltweaks.tweaks.entities.sleeping.UTSleepingTweak;
 import mod.acgaming.universaltweaks.tweaks.entities.sleeping.UTSleepingTime;
+import mod.acgaming.universaltweaks.tweaks.entities.sleeping.UTSleepingTweak;
 import mod.acgaming.universaltweaks.tweaks.entities.soulboundvexes.UTSoulboundVexes;
 import mod.acgaming.universaltweaks.tweaks.entities.spawning.creeper.charged.UTChargedCreepers;
 import mod.acgaming.universaltweaks.tweaks.entities.spawning.rabbit.UTRabbits;
@@ -85,6 +80,7 @@ import mod.acgaming.universaltweaks.tweaks.entities.trading.UTVillagerProfession
 import mod.acgaming.universaltweaks.tweaks.items.autoswitch.UTAutoSwitch;
 import mod.acgaming.universaltweaks.tweaks.items.bowinfinity.UTBowInfinity;
 import mod.acgaming.universaltweaks.tweaks.items.dragonbreath.UTLeftoverDragonBreath;
+import mod.acgaming.universaltweaks.tweaks.items.eating.UTInterruptEating;
 import mod.acgaming.universaltweaks.tweaks.items.itementities.UTEntityItemInteract;
 import mod.acgaming.universaltweaks.tweaks.items.mending.UTMending;
 import mod.acgaming.universaltweaks.tweaks.items.parry.UTParry;
@@ -104,6 +100,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.music.UTMusicType;
 import mod.acgaming.universaltweaks.tweaks.misc.offhand.mixin.UTOffhand;
 import mod.acgaming.universaltweaks.tweaks.misc.pickupnotification.UTPickupNotificationOverlay;
 import mod.acgaming.universaltweaks.tweaks.misc.potionshift.UTPotionShift;
+import mod.acgaming.universaltweaks.tweaks.misc.sound.channels.UTSoundChannels;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrass;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.misc.toastcontrol.UTTutorialToast;
@@ -113,6 +110,7 @@ import mod.acgaming.universaltweaks.tweaks.performance.craftingcache.UTCraftingC
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
 import mod.acgaming.universaltweaks.tweaks.world.chunks.gen.UTChunkGenLimit;
 import mod.acgaming.universaltweaks.tweaks.world.chunks.tidy.mixin.UTTidyChunk;
+import mod.acgaming.universaltweaks.tweaks.world.flatbedrock.UTFlatBedrockList;
 import mod.acgaming.universaltweaks.tweaks.world.loading.UTUnloader;
 import mod.acgaming.universaltweaks.tweaks.world.voidfog.UTVoidFog;
 import mod.acgaming.universaltweaks.util.UTCommands;
@@ -334,6 +332,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.MISC.CHAT.utKeepChatOpen) MinecraftForge.EVENT_BUS.register(UTKeepChatOpen.class);
             if (UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfigTweaks.MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) MinecraftForge.EVENT_BUS.register(UTLoadSound.class);
             if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) UTPickupNotificationOverlay.init();
+            if (UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsNormal != 28 || UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsStreaming != 4) MinecraftForge.EVENT_BUS.register(UTSoundChannels.class);
             if (UTConfigTweaks.MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
             if (UTConfigTweaks.MISC.utLANServerProperties) MinecraftForge.EVENT_BUS.register(UTLanServerProperties.class);
             if (UTConfigTweaks.MISC.utPotionShiftToggle) MinecraftForge.EVENT_BUS.register(UTPotionShift.class);

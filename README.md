@@ -18,6 +18,7 @@ All changes are toggleable via config files.
 ### **🐞 BUGFIXES**
 
 * **Accurate Smooth Lighting:** Improves the accuracy of smooth lighting by checking for suffocation and light opacity
+* **Anvil Repairable Check:** Fixes anvils allowing to repair irreparable items
 * **Attack Radius:** Improves the attack radius of hostile mobs by checking the line of sight with raytracing
 * **Banner Bounding Box:** Fixes rendering issues with banners by correctly sizing their render bounding boxes
 * **Block Fire:** Prevents fire projectiles burning entities when blocking with shields
@@ -282,6 +283,7 @@ All changes are toggleable via config files.
 * **Smart Eat:** Requires the hunger bar to be missing food points equal to or more than the amount restored by the food
 * **Smooth Scrolling:** Adds smooth scrolling to every in-game list
 * **Soulbound Vexes:** Summoned vexes will also die when their summoner is killed
+* **Sound Channels:** Configures the amount of normal and streaming channels to be used by the sound engine
 * **Soup Bowl Returns:** Respects stack sizes of soups when returning bowls
 * **Spawn Caps:** Sets maximum spawning limits for different entity types
 * **Spawn Chunks Generation:** Determines if overworld spawn chunks are generated during world creation

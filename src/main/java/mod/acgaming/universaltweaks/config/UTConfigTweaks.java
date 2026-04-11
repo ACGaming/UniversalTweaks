@@ -3,8 +3,6 @@ package mod.acgaming.universaltweaks.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import mod.acgaming.universaltweaks.tweaks.world.flatbedrock.UTFlatBedrockList;
-
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -32,6 +30,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.timeouts.UTTimeoutManager;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
 import mod.acgaming.universaltweaks.tweaks.world.chunks.gen.UTChunkGenLimit;
+import mod.acgaming.universaltweaks.tweaks.world.flatbedrock.UTFlatBedrockList;
 import mod.acgaming.universaltweaks.tweaks.world.voidfog.UTVoidFog;
 
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
@@ -1753,6 +1752,10 @@ public class UTConfigTweaks
         @Config.Name("Smooth Scrolling")
         public final SmoothScrollingCategory SMOOTH_SCROLLING = new SmoothScrollingCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.soundchannels")
+        @Config.Name("Sound Channels")
+        public final SoundChannelsCategory SOUND_CHANNELS = new SoundChannelsCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.stg")
         @Config.Name("Swing Through Grass")
         public final SwingThroughGrassCategory SWING_THROUGH_GRASS = new SwingThroughGrassCategory();
@@ -2487,6 +2490,19 @@ public class UTConfigTweaks
 
             @Config.Name("[4] Scroll Step")
             public double utSmoothScrollingStep = 19.0;
+        }
+
+        public static class SoundChannelsCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("Normal Sound Channels")
+            @Config.Comment("Amount of channels reserved for regular sounds")
+            public int utSoundChannelsNormal = 28;
+
+            @Config.RequiresMcRestart
+            @Config.Name("Streaming Sound Channels")
+            @Config.Comment("Amount of channels reserved for streamed sounds such as music")
+            public int utSoundChannelsStreaming = 4;
         }
 
         public static class SwingThroughGrassCategory

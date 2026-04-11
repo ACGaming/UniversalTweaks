@@ -51,6 +51,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchBugfixes)
             {
+                put("mixins/bugfixes/mixins.blocks.anvil.json", c -> UTConfigBugfixes.BLOCKS.utAnvilRepairableCheckToggle);
                 put("mixins/bugfixes/mixins.blocks.comparatortiming.json", c -> UTConfigBugfixes.BLOCKS.utComparatorTimingToggle);
                 put("mixins/bugfixes/mixins.blocks.falling.json", c -> UTConfigBugfixes.BLOCKS.utFallingBlockDamageToggle);
                 put("mixins/bugfixes/mixins.blocks.falling.dupe.json", c -> UTConfigBugfixes.BLOCKS.utFallingBlockPortalDupeToggle);
@@ -222,7 +223,8 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/bugfixes/mixins.entities.villagermantle.json", c -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
                 put("mixins/bugfixes/mixins.misc.actionbar.json", c -> UTConfigBugfixes.MISC.utOverlayMessageFadeOut);
                 put("mixins/bugfixes/mixins.misc.camera.json", c -> UTConfigBugfixes.MISC.utCameraOrientation);
-                put("mixins/bugfixes/mixins.misc.depthmask.json", c -> UTConfigBugfixes.MISC.utDepthMaskToggle);
+                put("mixins/bugfixes/mixins.misc.depthmask.entity.json", c -> UTConfigBugfixes.MISC.utEntityDepthMaskToggle);
+                put("mixins/bugfixes/mixins.misc.depthmask.particle.json", c -> UTConfigBugfixes.MISC.utParticleDepthMaskToggle);
                 put("mixins/bugfixes/mixins.misc.potionamplifier.json", c -> UTConfigBugfixes.MISC.utPotionAmplifierVisibilityToggle);
                 put("mixins/bugfixes/mixins.misc.smoothlighting.json", c -> UTConfigBugfixes.MISC.utAccurateSmoothLighting);
                 put("mixins/bugfixes/mixins.misc.spectatormenu.json", c -> UTConfigBugfixes.MISC.utSpectatorMenuToggle);
