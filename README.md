@@ -75,7 +75,7 @@ All changes are toggleable via config files.
 * **Particle Spawning:** Fixes various particle types not showing up on the client
 * **Piston Progress:** Properly saves the last state of pistons to tags
 * **Piston Retraction:** Improves retraction behavior on double piston extenders
-* **Portal Location Link:** Ensures portals link to their original overworld portal if within close distance
+* **Portal Location Link:** Lets Nether portals link to the player's overworld entry portal if within the configured search distance
 * **Portal Traveling Dupe:** Fixes duplication issues that can occur when entities travel through portals
 * **Potion Amplifier Visibility:** Fixes potion effects not displaying their level above 'IV'
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms

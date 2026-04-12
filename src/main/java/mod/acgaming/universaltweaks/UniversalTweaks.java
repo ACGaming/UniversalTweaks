@@ -230,7 +230,7 @@ public class UniversalTweaks
             if (UTConfigBugfixes.ENTITIES.utDoubleFoodConsumptionToggle) MinecraftForge.EVENT_BUS.register(UTDoubleFoodConsumption.class);
             if (UTConfigBugfixes.ENTITIES.utEntityNaNToggle) MinecraftForge.EVENT_BUS.register(UTEntityNaN.class);
             if (UTConfigBugfixes.ENTITIES.utEntityUUIDToggle) MinecraftForge.EVENT_BUS.register(UTEntityUUID.class);
-            if (UTConfigBugfixes.WORLD.utPortalLocationLink) MinecraftForge.EVENT_BUS.register(UTPortalLocationLink.class);
+            if (UTConfigBugfixes.WORLD.PORTAL_LOCATION_LINK.utPortalLocationLinkToggle) MinecraftForge.EVENT_BUS.register(UTPortalLocationLink.class);
             if (UTConfigBugfixes.WORLD.utPortalTravelingDupeToggle) MinecraftForge.EVENT_BUS.register(UTPortalTravelingDupe.class);
         }
 

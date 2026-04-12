@@ -436,6 +436,27 @@ public class UTConfigBugfixes
 
     public static class WorldCategory
     {
+        @Config.LangKey("cfg.universaltweaks.bugfixes.world.portallocationlink")
+        @Config.Name("Portal Location Link")
+        public final PortalLocationLinkCategory PORTAL_LOCATION_LINK = new PortalLocationLinkCategory();
+
+        public static class PortalLocationLinkCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Portal Location Link Toggle")
+            @Config.Comment("Lets Nether portals link to the player's overworld entry portal if within the configured search distance")
+            public boolean utPortalLocationLinkToggle = true;
+
+            @Config.Name("[2] Portal Search Distance")
+            @Config.Comment
+                ({
+                    "Distance in blocks to search for the player's overworld entry portal",
+                    "Set to 0 to always link to the last overworld entry portal regardless of distance"
+                })
+            @Config.RangeInt(min = 0)
+            public int utPortalSearchDistance = 1024;
+        }
+
         @Config.RequiresMcRestart
         @Config.Name("Chunk Saving")
         @Config.Comment
@@ -464,11 +485,6 @@ public class UTConfigBugfixes
                 "Performance sensitive!"
             })
         public int utOcclusionCullingThreshold = 256;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Portal Location Link")
-        @Config.Comment("Ensures portals link to their original overworld portal if within close distance")
-        public boolean utPortalLocationLink = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Portal Traveling Dupe")

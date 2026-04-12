@@ -45,7 +45,7 @@ public class UTObsoleteModsHandler
                 put("maxhealthfixer", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
                 put("nanfix", () -> UTConfigBugfixes.ENTITIES.utEntityNaNToggle);
                 put("nanpolice", () -> UTConfigBugfixes.ENTITIES.utEntityNaNToggle);
-                put("netherportalfix", () -> UTConfigBugfixes.WORLD.utPortalLocationLink);
+                put("netherportalfix", () -> UTConfigBugfixes.WORLD.PORTAL_LOCATION_LINK.utPortalLocationLinkToggle);
                 put("portaldupebegone", () -> UTConfigBugfixes.WORLD.utPortalTravelingDupeToggle);
                 put("preventghost", () -> UTConfigBugfixes.BLOCKS.utMiningGlitchToggle);
                 put("villagermantlefix", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);

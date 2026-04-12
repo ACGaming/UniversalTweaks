@@ -6,6 +6,7 @@ import net.minecraftforge.event.entity.EntityTravelToDimensionEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
+import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.mods.vanilla.mixin.UTEntityAccessor;
 
@@ -36,9 +37,11 @@ public class UTPortalLocationLink
             double[] storedPortalCoords = UTPortalLocationLink.readPortalNBT(entity);
             if (storedPortalCoords != null)
             {
-                // Check if the stored portal is within the vanilla teleporter distance (128 blocks)
-                double distanceSq = entity.getPosition().distanceSq(storedPortalCoords[0], storedPortalCoords[1], storedPortalCoords[2]);
-                if (distanceSq <= 128 * 128)
+                // Check if the stored portal is within the configured distance
+                double dx = Math.abs(entity.posX - storedPortalCoords[0]);
+                double dz = Math.abs(entity.posZ - storedPortalCoords[2]);
+                int dist = UTConfigBugfixes.WORLD.PORTAL_LOCATION_LINK.utPortalSearchDistance;
+                if (dist == 0 || (dx <= dist && dz <= dist))
                 {
                     return storedPortalCoords;
                 }
