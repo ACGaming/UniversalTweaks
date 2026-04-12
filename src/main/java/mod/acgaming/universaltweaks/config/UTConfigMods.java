@@ -1703,8 +1703,8 @@ public class UTConfigMods
 
     public static class VoidIslandControlCategory
     {
-        @Config.Name("Fix spawn island creation")
-        @Config.Comment("Fixes islands not being able to be created if the dimension is not the overworld when visiting the dimension for the first time due to the spawn island not being created.")
+        @Config.Name("Fix Spawn Island Creation")
+        @Config.Comment("Fixes islands not being able to be created if the dimension is not the overworld when visiting the dimension for the first time due to the spawn island not being created")
         public boolean utFixSpawnIslandCreation = true;
     }
 
