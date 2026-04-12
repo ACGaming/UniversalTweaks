@@ -363,6 +363,10 @@ public class UTConfigMods
     @Config.Name("TombManyGraves2")
     public static final TombManyGravesCategory TOMBMANYGRAVES = new TombManyGravesCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.voidislandcontrol")
+    @Config.Name("Void Island Control")
+    public static final VoidIslandControlCategory VOID_ISLAND_CONTROL = new VoidIslandControlCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.woot")
     @Config.Name("Woot")
     public static final WootCategory WOOT = new WootCategory();
@@ -1695,6 +1699,13 @@ public class UTConfigMods
         @Config.Name("Proper World Size Check")
         @Config.Comment("Fix TombManyGraves not spawning the grave due to incorrectly checking world height")
         public boolean utProperWorldSizeCheck = true;
+    }
+
+    public static class VoidIslandControlCategory
+    {
+        @Config.Name("Fix spawn island creation")
+        @Config.Comment("Fixes islands not being able to be created if the dimension is not the overworld when visiting the dimension for the first time due to the spawn island not being created.")
+        public boolean utFixSpawnIslandCreation = true;
     }
 
     public static class WootCategory

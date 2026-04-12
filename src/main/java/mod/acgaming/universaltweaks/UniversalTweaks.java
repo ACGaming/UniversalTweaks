@@ -44,6 +44,7 @@ import mod.acgaming.universaltweaks.mods.simplyjetpacks.network.message.MessageC
 import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructEvents;
 import mod.acgaming.universaltweaks.mods.tconstruct.UTTConstructMaterials;
 import mod.acgaming.universaltweaks.mods.tconstruct.oredictcache.UTOreDictCache;
+import mod.acgaming.universaltweaks.mods.voidislandcontrol.UTVoidIslandControlEvents;
 import mod.acgaming.universaltweaks.mods.woot.UTWootTicketManager;
 import mod.acgaming.universaltweaks.tweaks.blocks.anvil.UTRepairableAnvil;
 import mod.acgaming.universaltweaks.tweaks.blocks.betterharvest.UTBetterHarvest;
@@ -258,6 +259,7 @@ public class UniversalTweaks
             if (Loader.isModLoaded("tardis") && UTConfigMods.TARDIS.utMemoryLeakFixToggle) MinecraftForge.EVENT_BUS.unregister(ClientProxy.class);
             if (UTMixinLoader.regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utDuplicationFixesToggle) MinecraftForge.EVENT_BUS.register(new UTTConstructEvents());
             if (Loader.isModLoaded("woot") && UTConfigMods.WOOT.utCleanupSimulatedKillsToggle) UTWootTicketManager.init();
+            if (Loader.isModLoaded("voidislandcontrol") && UTConfigMods.VOID_ISLAND_CONTROL.utFixSpawnIslandCreation)  MinecraftForge.EVENT_BUS.register(new UTVoidIslandControlEvents());
         }
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
