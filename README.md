@@ -70,6 +70,7 @@ All changes are toggleable via config files.
 * **Mobs Crossing Rails:** Fixes mobs being unable to cross rails during pathfinding
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
 * **Occlusion Culling Threshold:** Determines the required amount of opaque blocks in the chunk to enable occlusion culling
+* **Ocelot Biome Spawn List:** Fixes ocelots being incorrectly included in biome monster spawn lists
 * **Overlay Message Fade Out:** Fixes Forge's overlay message (action bar) fade out regression
 * **Packet Size:** Increases the packet size limit to account for large packets in modded environments
 * **Particle Spawning:** Fixes various particle types not showing up on the client

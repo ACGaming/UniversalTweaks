@@ -290,6 +290,11 @@ public class UTConfigBugfixes
         public boolean utMountDesyncToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Ocelot Biome Spawn List")
+        @Config.Comment("Fixes ocelots being incorrectly included in biome monster spawn lists")
+        public boolean utOcelotBiomeSpawnList = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Player Saturation")
         @Config.Comment("Fixes saturation depleting in peaceful mode")
         public boolean utExhaustionToggle = true;

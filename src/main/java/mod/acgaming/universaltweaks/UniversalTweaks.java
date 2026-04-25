@@ -1,5 +1,7 @@
 package mod.acgaming.universaltweaks;
 
+import mod.acgaming.universaltweaks.bugfixes.entities.ocelot.UTOcelotBiomeSpawnList;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
@@ -368,6 +370,7 @@ public class UniversalTweaks
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchBugfixes)
         {
             if (UTConfigBugfixes.ENTITIES.ENTITY_DESYNC.utEntityDesyncToggle) UTEntityDesync.initBlacklistedEntityEntries();
+            if (UTConfigBugfixes.ENTITIES.utOcelotBiomeSpawnList) UTOcelotBiomeSpawnList.fixSpawnListEntries();
         }
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
