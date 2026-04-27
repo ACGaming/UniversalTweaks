@@ -73,6 +73,7 @@ public class UTObsoleteModsHandler
                 put("betterburning", () -> UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBArrowsToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBCookedToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBExtinguishToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBOverlayToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBSpreadingToggle);
                 put("betterpingdisplay", () -> UTConfigTweaks.MISC.utBetterPing);
                 put("betterplacement", () -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
+                put("bettersafebed", () -> UTConfigTweaks.ENTITIES.UNSAFE_SLEEPING.utAllowUnsafeSleeping);
                 put("biggerchathistory", () -> UTConfigTweaks.MISC.CHAT.utChatLines != 100);
                 put("blockdispenser", () -> UTConfigTweaks.BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle);
                 put("bottlefix", () -> UTConfigTweaks.ITEMS.utGlassBottlesConsumeWaterSource);
