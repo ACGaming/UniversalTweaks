@@ -37,6 +37,27 @@ btn.universaltweaks.lanserverproperties.spawn_npcs=Spawn NPCs
 # COMPACT MESSAGES
 msg.universaltweaks.compactmessages.count=This message has been repeated %s times
 
+# EXTRA UTILITIES
+entity.Villager.shady_merchant=Shady Merchant
+entity.Villager.red_mechanic=Red Mechanic
+entity.Villager.alchemist=Alchemist
+
+# TIME COMMAND
+cmd.universaltweaks.time.set=Set time to %s in dimension %s
+
+# VANILLA
+enchantment.level.11=XI
+enchantment.level.12=XII
+enchantment.level.13=XIII
+enchantment.level.14=XIV
+enchantment.level.15=XV
+enchantment.level.16=XVI
+enchantment.level.17=XVII
+enchantment.level.18=XVIII
+enchantment.level.19=XIX
+enchantment.level.20=XX
+entity.EnderCrystal.name=End Crystal
+
 # CONFIG
 # Doesn't need to be translated because config is English in general
 cfg.universaltweaks.config.blocks=Blocks
@@ -192,6 +213,7 @@ cfg.universaltweaks.tweaks.misc.smoothscrolling=Smooth Scrolling
 cfg.universaltweaks.tweaks.misc.stg=Swing Through Grass
 cfg.universaltweaks.tweaks.misc.sound.broadcast=Broadcast Sounds
 cfg.universaltweaks.tweaks.misc.soundchannels=Sound Channels
+cfg.universaltweaks.tweaks.misc.timecommand=Incremental Time Command
 cfg.universaltweaks.tweaks.misc.timeouts=Connection Timeouts
 cfg.universaltweaks.tweaks.misc.toastcontrol=Toast Control
 cfg.universaltweaks.tweaks.performance.advancementtriggers=Advancement Triggers
@@ -202,21 +224,3 @@ cfg.universaltweaks.tweaks.world.flatbedrock=Flat Bedrock
 cfg.universaltweaks.tweaks.world.chunks.spawn=Spawn Chunks
 cfg.universaltweaks.tweaks.world.dimensionunload=Dimension Unload
 cfg.universaltweaks.tweaks.world.voidfog=Void Fog
-
-# VANILLA
-enchantment.level.11=XI
-enchantment.level.12=XII
-enchantment.level.13=XIII
-enchantment.level.14=XIV
-enchantment.level.15=XV
-enchantment.level.16=XVI
-enchantment.level.17=XVII
-enchantment.level.18=XVIII
-enchantment.level.19=XIX
-enchantment.level.20=XX
-entity.EnderCrystal.name=End Crystal
-
-# EXTRA UTILITIES
-entity.Villager.shady_merchant=Shady Merchant
-entity.Villager.red_mechanic=Red Mechanic
-entity.Villager.alchemist=Alchemist

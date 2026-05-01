@@ -22,6 +22,7 @@ import mod.acgaming.universaltweaks.tweaks.items.rarity.UTCustomRarity;
 import mod.acgaming.universaltweaks.tweaks.items.useduration.UTCustomUseDuration;
 import mod.acgaming.universaltweaks.tweaks.misc.advancements.screenshot.UTAdvancementScreenshot;
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
+import mod.acgaming.universaltweaks.tweaks.misc.commands.time.UTTimeCommandMaps;
 import mod.acgaming.universaltweaks.tweaks.misc.incurablepotions.UTIncurablePotions;
 import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.music.UTMusicType;
@@ -1760,6 +1761,10 @@ public class UTConfigTweaks
         @Config.Name("Swing Through Grass")
         public final SwingThroughGrassCategory SWING_THROUGH_GRASS = new SwingThroughGrassCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.timecommand")
+        @Config.Name("Incremental Time Command")
+        public final TimeCommandCategory TIME_COMMAND = new TimeCommandCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.timeouts")
         @Config.Name("Connection Timeouts")
         public final TimeoutsCategory TIMEOUTS = new TimeoutsCategory();
@@ -2540,6 +2545,23 @@ public class UTConfigTweaks
                 };
         }
 
+        public static class TimeCommandCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Incremental Time Command Toggle")
+            @Config.Comment("Lets `/time set day` and `/time set night` commands skip to the actual next day/night instead of resetting total world time")
+            public boolean utTimeCommandToggle = false;
+
+            @Config.Name("[2] Dimension List")
+            @Config.Comment
+                ({
+                    "Defines custom values for skipping time per dimension",
+                    "Dimensions not listed here will use a default day length of 24000 ticks, with added 1000 ticks for day and 13000 ticks for night",
+                    "Syntax: dimensionID;dayLength;dayAdd;nightAdd"
+                })
+            public String[] utTimeCommandDimList = new String[] {};
+        }
+
         public static class TimeoutsCategory
         {
             @Config.Name("[1] Connection Timeouts Toggle")
@@ -2854,11 +2876,6 @@ public class UTConfigTweaks
         public final VoidFogCategory VOID_FOG = new VoidFogCategory();
 
         @Config.RequiresMcRestart
-        @Config.Name("Incremental Time Command")
-        @Config.Comment("Lets `/time set day` and `/time set night` commands skip to the actual next day/night instead of resetting total world time")
-        public boolean utIncrementalTimeCommand = false;
-
-        @Config.RequiresMcRestart
         @Config.Name("Inhospitable Nether Roof")
         @Config.Comment("Effectively limits the Nether to its actual height and applies void damage to entities")
         public boolean utInhospitableNetherRoofToggle = false;
@@ -3077,8 +3094,9 @@ public class UTConfigTweaks
                 if (ENTITIES.utVillagerProfessionBiomeRestriction.length > 0) UTVillagerProfessionRestriction.initBiomeRestrictions();
                 if (MISC.ADVANCEMENT_SCREENSHOT.utAdvancementScreenshotToggle) UTAdvancementScreenshot.initAdvancementList();
                 if (MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
-                if (MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
                 if (MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();
+                if (MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
+                if (MISC.TIME_COMMAND.utTimeCommandToggle) UTTimeCommandMaps.initDimensions();
                 if (PERFORMANCE.ENTITY_RADIUS_CHECK.utEntityRadiusCheckCategoryToggle)
                 {
                     if (PERFORMANCE.ENTITY_RADIUS_CHECK.utReduceSearchSizeToggle) UTEntityRadiusCheck.initSearchTargets();

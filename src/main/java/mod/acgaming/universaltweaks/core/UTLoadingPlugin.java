@@ -169,6 +169,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.misc.armorswap.json", c -> UTConfigTweaks.MISC.utArmorSwap);
                 put("mixins/tweaks/mixins.misc.bannerlayers.json", c -> UTConfigTweaks.MISC.utBannerLayers != 6);
                 put("mixins/tweaks/mixins.misc.commands.seed.json", c -> UTConfigTweaks.MISC.utCopyWorldSeedToggle);
+                put("mixins/tweaks/mixins.misc.commands.time.json", c -> UTConfigTweaks.MISC.TIME_COMMAND.utTimeCommandToggle);
                 put("mixins/tweaks/mixins.misc.difficulty.singleplayer.json", c -> true);
                 put("mixins/tweaks/mixins.misc.incurablepotions.json", c -> UTConfigTweaks.MISC.INCURABLE_POTIONS.utIncurablePotionsToggle);
                 put("mixins/tweaks/mixins.misc.lightning.damage.json", c -> UTConfigTweaks.MISC.LIGHTNING.utLightningDamage != 5.0D || UTConfigTweaks.MISC.LIGHTNING.utLightningFireTicks != 8);
@@ -199,7 +200,6 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.world.nether.json", c -> UTConfigTweaks.WORLD.utInhospitableNetherRoofToggle);
                 put("mixins/tweaks/mixins.world.sealevel.json", c -> UTConfigTweaks.WORLD.utSeaLevel != 63);
                 put("mixins/tweaks/mixins.world.stronghold.json", c -> UTConfigTweaks.WORLD.utStrongholdToggle);
-                put("mixins/tweaks/mixins.world.timecommand.json", c -> UTConfigTweaks.WORLD.utIncrementalTimeCommand);
                 put("mixins/tweaks/mixins.world.village.json", c -> UTConfigTweaks.WORLD.utVillageDistance != 32);
             }
 

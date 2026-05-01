@@ -1,7 +1,5 @@
 package mod.acgaming.universaltweaks;
 
-import mod.acgaming.universaltweaks.bugfixes.entities.ocelot.UTOcelotBiomeSpawnList;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
@@ -18,6 +16,7 @@ import mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync;
 import mod.acgaming.universaltweaks.bugfixes.entities.dimensionchange.UTDimensionChange;
 import mod.acgaming.universaltweaks.bugfixes.entities.disconnectdupe.UTDisconnectDupe;
 import mod.acgaming.universaltweaks.bugfixes.entities.nan.UTEntityNaN;
+import mod.acgaming.universaltweaks.bugfixes.entities.ocelot.UTOcelotBiomeSpawnList;
 import mod.acgaming.universaltweaks.bugfixes.entities.uuid.UTEntityUUID;
 import mod.acgaming.universaltweaks.bugfixes.misc.help.UTHelp;
 import mod.acgaming.universaltweaks.bugfixes.world.portal.UTPortalLocationLink;
@@ -92,6 +91,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.advancements.screenshot.UTAdvanc
 import mod.acgaming.universaltweaks.tweaks.misc.armorcurve.UTArmorCurve;
 import mod.acgaming.universaltweaks.tweaks.misc.buttons.cheats.UTToggleCheats;
 import mod.acgaming.universaltweaks.tweaks.misc.chat.bed.UTKeepChatOpen;
+import mod.acgaming.universaltweaks.tweaks.misc.commands.time.UTTimeCommandMaps;
 import mod.acgaming.universaltweaks.tweaks.misc.damagetilt.UTDamageTilt;
 import mod.acgaming.universaltweaks.tweaks.misc.endportal.UTEndPortalParallax;
 import mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties.UTLanServerProperties;
@@ -297,6 +297,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
             if (UTConfigTweaks.MISC.LIGHTNING.utLightningItemDestructionToggle) MinecraftForge.EVENT_BUS.register(UTLightningItemDestruction.class);
             if (UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) MinecraftForge.EVENT_BUS.register(UTSwingThroughGrass.class);
+            if (UTConfigTweaks.MISC.TIME_COMMAND.utTimeCommandToggle) UTTimeCommandMaps.initDimensions();
             if (UTConfigTweaks.MISC.utDamageTiltToggle) MinecraftForge.EVENT_BUS.register(UTDamageTilt.class);
             if (UTConfigTweaks.MISC.utOffhandToggle) MinecraftForge.EVENT_BUS.register(UTOffhand.class);
             if (UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle) MinecraftForge.EVENT_BUS.register(UTUnloader.class);
