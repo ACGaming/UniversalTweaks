@@ -15,6 +15,18 @@ All changes are toggleable via config files.
 
 ![](https://i.imgur.com/1EmHZlb.png)
 
+### **✨ Interested in best practices for your modpack? PackCompanion got you covered!**
+
+[**PackCompanion**](https://www.curseforge.com/minecraft/mc-mods/packcompanion) is the ultimate sentinel mod for 1.12.2 designed to perform a runtime check for modpack stability. It automatically identifies mods that are outdated, problematic, or superseded by modern alternatives.
+
+### **📦 Want a premade modpack that does the boring work for you? Check out BareBones Template!**
+
+**BareBones** is a template modpack for Minecraft 1.12.2 that aims to create a minimalistic standardized mod list that can be used as a base for new modpacks or a means of updating old modpacks to the new standards.
+
+Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpacks/barebones-template-cleanroom) and [**Forge**](https://www.curseforge.com/minecraft/modpacks/barebones-template-forge).
+
+![](https://i.imgur.com/1EmHZlb.png)
+
 ### **🐞 BUGFIXES**
 
 * **Accurate Smooth Lighting:** Improves the accuracy of smooth lighting by checking for suffocation and light opacity
