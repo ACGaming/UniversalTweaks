@@ -139,6 +139,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.entities.spawning.creeper.confetti.json", c -> UTConfigTweaks.ENTITIES.CREEPER_CONFETTI.utCreeperConfettiChance != 0.0D);
                 put("mixins/tweaks/mixins.entities.spawning.golem.json", c -> UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGIronGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGSnowGolemToggle || UTConfigTweaks.ENTITIES.NO_GOLEMS.utNGWitherToggle);
                 put("mixins/tweaks/mixins.entities.spawning.husk.json", c -> UTConfigTweaks.ENTITIES.utHuskStraySpawningToggle);
+                put("mixins/tweaks/mixins.entities.spawning.lightlevel.json", c -> UTConfigTweaks.ENTITIES.utMobSpawningLightLevel != 7);
                 put("mixins/tweaks/mixins.entities.spawning.portal.json", c -> UTConfigTweaks.ENTITIES.utPortalSpawningToggle);
                 put("mixins/tweaks/mixins.entities.spawning.skeletontrap.json", c -> UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utSkeletonTrapSpawningToggle);
                 put("mixins/tweaks/mixins.entities.spawning.stray.json", c -> UTConfigTweaks.ENTITIES.utHuskStraySpawningToggle);

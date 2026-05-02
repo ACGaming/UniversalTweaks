@@ -691,6 +691,17 @@ public class UTConfigTweaks
         public EnumMobDespawning utMobDespawningToggle = EnumMobDespawning.DEFAULT;
 
         @Config.RequiresMcRestart
+        @Config.Name("Mob Spawning Light Level")
+        @Config.Comment
+            ({
+                "Sets the maximum light level for hostile mobs to spawn",
+                "7 for vanilla default"
+            })
+        @Config.RangeInt(min = 0, max = 15)
+        @Config.SlidingOption
+        public int utMobSpawningLightLevel = 7;
+
+        @Config.RequiresMcRestart
         @Config.Name("Modern Knockback")
         @Config.Comment("Backports 1.16+ knockback to 1.12: Knockback resistance is now a scale instead of a probability")
         public boolean utModernKnockbackToggle = true;
