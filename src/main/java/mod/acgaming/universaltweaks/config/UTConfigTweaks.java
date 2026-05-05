@@ -264,6 +264,11 @@ public class UTConfigTweaks
         public int utSugarCaneSize = 3;
 
         @Config.RequiresMcRestart
+        @Config.Name("Unlimited Block Model Rotations")
+        @Config.Comment("Removes the artificial -45/-22.5/0/22.5/45 degree restriction for block models")
+        public boolean utUnlimitedBlockModelRotations = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Vine Size")
         @Config.Comment
             ({

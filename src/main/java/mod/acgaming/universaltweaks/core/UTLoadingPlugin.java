@@ -242,6 +242,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.blocks.betterplacement.json", c -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
                 put("mixins/tweaks/mixins.blocks.betterrailplacement.json", c -> UTConfigTweaks.BLOCKS.utBetterRailPlacementToggle);
                 put("mixins/tweaks/mixins.blocks.hitdelay.json", c -> UTConfigTweaks.BLOCKS.utBlockHitDelay != 5);
+                put("mixins/tweaks/mixins.blocks.rotation.json", c -> UTConfigTweaks.BLOCKS.utUnlimitedBlockModelRotations);
                 put("mixins/tweaks/mixins.entities.burning.player.json", c -> UTConfigTweaks.ENTITIES.utFirstPersonBurningOverlay != -0.3D);
                 put("mixins/tweaks/mixins.entities.jumping.autojump.json", c -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
                 put("mixins/tweaks/mixins.entities.playerdismount.json", c -> UTConfigTweaks.MISC.utUseSeparateDismountKey);

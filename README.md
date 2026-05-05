@@ -320,6 +320,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Highlight Unsafe Mobs:** Apply the Glowing potion effect for a configurable length of time to nearby mobs preventing sleeping
     * **Ignore Unsafe Sleeping:** Allow sleeping even if mobs are nearby
     * **Ignore Named Mobs:** When checking nearby hostile mobs, skip named mobs1
+* **Unlimited Block Model Rotations:** Removes the artificial -45/-22.5/0/22.5/45 degree restriction for block models
 * **Unlimited Sound Pitch Range:** Removes the hardcoded range for sound pitches (0.5-2.0)
 * **Use Separate Dismount Key:** Makes the dismount keybind separate from LSHIFT, allowing it to be rebound independently
 * **Use Separate Narrator Key:** Allows using a custom Narrator key, instead of being stuck with CTRL+B
