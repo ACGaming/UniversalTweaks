@@ -42,6 +42,9 @@ entity.Villager.shady_merchant=Shady Merchant
 entity.Villager.red_mechanic=Red Mechanic
 entity.Villager.alchemist=Alchemist
 
+# Cyclic
+gui.universaltweaks.cyclic.ender_book.page=Page %s / %s
+
 # TIME COMMAND
 cmd.universaltweaks.time.set=Set time to %s in dimension %s
 
