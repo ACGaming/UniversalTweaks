@@ -41,6 +41,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.compactmachines.render.json", c -> c.isModPresent("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
                 put("mixins/mods/mixins.corpse.json", c -> c.isModPresent("corpse") && UTConfigMods.CORPSE.utOpeningGuisOffThreadFixToggle);
                 put("mixins/mods/mixins.crafttweaker.json", c -> c.isModPresent("crafttweaker"));
+                put("mixins/mods/mixins.cyclic.enderbook.client.json", c -> c.isModPresent("cyclicmagic") && UTConfigMods.CYCLIC.utEnderBookPagination);
                 put("mixins/mods/mixins.electroblobswizardry.json", c -> c.isModPresent("ebwizardry") && c.isModPresent("conarm") && UTConfigMods.ELECTROBLOBS_WIZARDRY.utConstructsArmoryFixToggle);
                 put("mixins/mods/mixins.enderio.itemrender.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
                 put("mixins/mods/mixins.fpsreducer.json", c -> c.isModPresent("fpsreducer") && UTConfigMods.FPS_REDUCER.utCorrectFpsValue);

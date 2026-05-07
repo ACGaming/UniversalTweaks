@@ -764,6 +764,20 @@ public class UTConfigMods
         @Config.Name("Memory Leak Fix")
         @Config.Comment("Fixes memory leak associated with advancements when creating FakePlayers")
         public boolean utMemoryLeakFixToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Ender Book Pagination")
+        @Config.Comment("Adds pages to Cyclic's Ender Book waypoint GUI to prevent large waypoint lists rendering off-screen")
+        public boolean utEnderBookPagination = true;
+
+        @Config.Name("Ender Book Waypoints Per Page")
+        @Config.RangeInt(min = 1, max = 64)
+        @Config.Comment({
+            "How many saved waypoints to show on each Ender Book page.",
+            "Default 32 keeps Cyclic's original 8 rows per column and shows four columns per page.",
+            "Cyclicmagic.cfg: 'EnderBookMaxSaved' still controls the maximum number of waypoints stored per book."
+        })
+        public int utEnderBookWaypointsPerPage = 32;
     }
 
     public static class DankStorageCategory
