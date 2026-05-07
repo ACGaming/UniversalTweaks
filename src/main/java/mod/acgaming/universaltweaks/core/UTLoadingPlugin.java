@@ -148,6 +148,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.entities.speed.player.json", c -> UTConfigTweaks.ENTITIES.PLAYER_SPEED.utPlayerSpeedToggle);
                 put("mixins/tweaks/mixins.entities.taming.horse.json", c -> UTConfigTweaks.ENTITIES.UNDEAD_HORSES.utTamingUndeadHorsesToggle);
                 put("mixins/tweaks/mixins.entities.trading.json", c -> UTConfigTweaks.ENTITIES.utVillagerTradeLevelingToggle || UTConfigTweaks.ENTITIES.utVillagerTradeRestockToggle);
+                put("mixins/tweaks/mixins.entities.villagerharvest.json", c -> UTConfigTweaks.ENTITIES.VILLAGER_HARVEST.utVillagerHarvestToggle);
                 put("mixins/tweaks/mixins.entities.unsafesleeping.json", c -> UTConfigTweaks.ENTITIES.UNSAFE_SLEEPING.utUnsafeSleepingToggle);
                 put("mixins/tweaks/mixins.entities.villagerprofessions.json", c -> UTConfigTweaks.ENTITIES.utVillagerProfessionBiomeRestriction.length > 0);
                 put("mixins/tweaks/mixins.entities.voidteleport.json", c -> UTConfigTweaks.ENTITIES.VOID_TELEPORT.utVoidTeleportToggle);

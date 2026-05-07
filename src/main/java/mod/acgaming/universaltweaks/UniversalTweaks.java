@@ -1,5 +1,7 @@
 package mod.acgaming.universaltweaks;
 
+import mod.acgaming.universaltweaks.tweaks.entities.villagerharvest.UTVillagerHarvestUtils;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
@@ -388,6 +390,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.BLOCKS.END_CRYSTAL_PLACEMENT.utEndCrystalPlacementToggle) UTEndCrystalPlacement.initBlockList();
             if (UTConfigTweaks.BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
             if (UTConfigTweaks.ENTITIES.utVillagerProfessionBiomeRestriction.length > 0) UTVillagerProfessionRestriction.initBiomeRestrictions();
+            if (UTConfigTweaks.ENTITIES.VILLAGER_HARVEST.utVillagerHarvestToggle) UTVillagerHarvestUtils.initLists();
             if (UTConfigTweaks.MISC.ADVANCEMENT_SCREENSHOT.utAdvancementScreenshotToggle) UTAdvancementScreenshot.initAdvancementList();
             if (UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle) UTSwingThroughGrassLists.initLists();
             if (UTConfigTweaks.MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();

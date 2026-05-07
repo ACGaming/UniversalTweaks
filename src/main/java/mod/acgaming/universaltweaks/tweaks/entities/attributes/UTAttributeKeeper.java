@@ -21,7 +21,7 @@ public class UTAttributeKeeper
 {
     @SubscribeEvent
     public static void utAttributeKeeper(PlayerEvent.Clone event) {
-        if(event.isWasDeath() && !event.isCanceled())
+        if(!event.isCanceled())
         {
             EntityPlayer original = event.getOriginal();
             AbstractAttributeMap originalAttributes = original.getAttributeMap();
