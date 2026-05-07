@@ -45,6 +45,9 @@ entity.Villager.alchemist=Alchemist
 # Cyclic
 gui.universaltweaks.cyclic.ender_book.page=Page %s / %s
 
+# Tweaked Excavation
+tweakedexcavation.jei.mineral.average.Infinite=Average Mineral yield: Infinite
+
 # TIME COMMAND
 cmd.universaltweaks.time.set=Set time to %s in dimension %s
 
