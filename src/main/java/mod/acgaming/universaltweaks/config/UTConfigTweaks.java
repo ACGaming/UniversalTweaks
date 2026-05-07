@@ -3,6 +3,8 @@ package mod.acgaming.universaltweaks.config;
 import java.util.HashMap;
 import java.util.Map;
 
+import mod.acgaming.universaltweaks.tweaks.entities.villagerharvest.UTVillagerHarvestUtils;
+
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -573,6 +575,10 @@ public class UTConfigTweaks
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.waterfalldamage")
         @Config.Name("Water Fall Damage")
         public final WaterFallDamageCategory WATER_FALL_DAMAGE = new WaterFallDamageCategory();
+
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.villagerharvest")
+        @Config.Name("Villager Harvesting")
+        public final VillagerHarvestCategory VILLAGER_HARVEST = new VillagerHarvestCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.voidteleport")
         @Config.Name("Void Teleport")
@@ -1247,6 +1253,39 @@ public class UTConfigTweaks
             @Config.Name("[2] Damage Reduction")
             @Config.Comment("How much fall damage gets reduced by water per tick")
             public double utFallDamageValue = 2.0D;
+        }
+
+        public static class VillagerHarvestCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[01] Villager Harvest Tweak Toggle")
+            @Config.Comment
+                ({
+                    "Enables Villager Harvest tweak, allowing villagers to harvest and replant modded crops.",
+                    "This tweak also allows villagers to breed with modded crops."
+                })
+            public boolean utVillagerHarvestToggle = true;
+
+            @Config.Name("[02] Food Whitelist")
+            @Config.Comment
+                ({
+                    "A list of foods that villagers can pick up and use to breed. Minecraft uses 'count' values",
+                    "of 12 for Potatoes and Carrots, and a value of 3 for bread. Adding different values to this",
+                    "list for those foods will override vanilla behavior.",
+                    "  Syntax: modid:itemid=count",
+                    "  Example -> minecraft:steak=2"
+                })
+            public String[] utFoodWhitelist = new String[] {};
+
+            @Config.Name("[03] Harvest Blacklist")
+            @Config.Comment
+                ({
+                    "A list of crops that villagers will not harvest. This is used to prevent villagers from",
+                    "breaking crops that have custom harvest logic.",
+                    "  Syntax: modid:blockid",
+                    "  Example -> minecraft:wheat"
+                })
+            public String[] utHarvestBlacklist = new String[] {};
         }
 
         public static class VoidTeleportCategory
@@ -3108,6 +3147,7 @@ public class UTConfigTweaks
                 if (BLOCKS.END_CRYSTAL_PLACEMENT.utEndCrystalPlacementToggle) UTEndCrystalPlacement.initBlockList();
                 if (BLOCKS.PISTON.utPistonBlockBlacklistToggle) UTPistonBlockBlacklist.initBlockBlacklist();
                 if (ENTITIES.utVillagerProfessionBiomeRestriction.length > 0) UTVillagerProfessionRestriction.initBiomeRestrictions();
+                if (ENTITIES.VILLAGER_HARVEST.utVillagerHarvestToggle) UTVillagerHarvestUtils.initLists();
                 if (MISC.ADVANCEMENT_SCREENSHOT.utAdvancementScreenshotToggle) UTAdvancementScreenshot.initAdvancementList();
                 if (MISC.ARMOR_CURVE.utArmorCurveToggle) UTArmorCurve.initExpressions();
                 if (MISC.INCURABLE_POTIONS.utIncurablePotionsToggle) UTIncurablePotions.initPotionList();

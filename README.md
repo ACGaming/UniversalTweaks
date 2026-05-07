@@ -325,6 +325,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Use Separate Dismount Key:** Makes the dismount keybind separate from LSHIFT, allowing it to be rebound independently
 * **Use Separate Narrator Key:** Allows using a custom Narrator key, instead of being stuck with CTRL+B
 * **Village Distance:** Sets the village generation distance in chunks
+* **Villager Harvesting:** Fixes Villagers being unable to replant modded crops and allows villagers to breed using modded foods.
 * **Villager Profession Biome Restriction:** Controls villager professions in specified biomes
 * **Void Fog:** Re-implements pre-1.8 void fog and void particles
 * **Water Fall Damage:** Re-implements an improved version of pre-1.4 fall damage in water
