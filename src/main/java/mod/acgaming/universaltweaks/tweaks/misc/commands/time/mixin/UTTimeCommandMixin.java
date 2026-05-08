@@ -39,7 +39,7 @@ public abstract class UTTimeCommandMixin extends CommandBase
             long newTotalTime = days * dayLength + timeValue;
             world.setWorldTime(timeValue);
             world.setTotalWorldTime(newTotalTime);
-            notifyCommandListener(sender, this, "cmd.universaltweaks.time.set", newTotalTime, dimID);
+            notifyCommandListener(sender, this, "cmd.universaltweaks.time.set", dimID, newTotalTime);
         }
         ci.cancel();
     }

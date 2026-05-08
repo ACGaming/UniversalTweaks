@@ -157,6 +157,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.itemfavorites.unixfix.json", c -> c.isModPresent("itemfav") && UTConfigMods.ITEM_FAVORITES.utUnixPathFix);
                 put("mixins/mods/mixins.itemstages.json", c -> c.isModPresent("itemstages"));
                 put("mixins/mods/mixins.jurassicreborn.json", c -> c.isModPresent("rebornmod"));
+                put("mixins/mods/mixins.justenoughdimensions.json", c -> c.isModPresent("justenoughdimensions") && UTConfigTweaks.MISC.TIME_COMMAND.utTimeCommandToggle);
                 put("mixins/mods/mixins.mekanism.dupes.json", c -> c.isModPresent("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.mekanism.fluidtank.json", c -> c.isModPresent("mekanism") && UTConfigMods.MEKANISM.utFluidTankExtraction);
                 put("mixins/mods/mixins.moartinkers.json", c -> c.isModPresent("moartinkers") && UTConfigMods.MOAR_TINKERS.utBaublesCompatibility);

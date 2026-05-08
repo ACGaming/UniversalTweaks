@@ -118,6 +118,7 @@ final def mod_dependencies = [
     'curse.maven:ironchests-228756:2747935'                           : [debug_iron_chests],
     'curse.maven:item-favorites-358194:3177845'                       : [debug_itemfavorites],
     'curse.maven:jurassic-reborn-359537:4574634'                      : [debug_jurassic_reborn],
+    'curse.maven:just-enough-dimensions-254317:3840727'               : [debug_just_enough_dimensions],
     'curse.maven:mantle-74924:2713386'                                : [debug_tinkers_construct, debug_moartinkers],
     'curse.maven:mcjtylib-233105:2745846'                             : [debug_rftools, debug_xnet],
     'curse.maven:mekanism-268560:2835175'                             : [debug_mekanism],
