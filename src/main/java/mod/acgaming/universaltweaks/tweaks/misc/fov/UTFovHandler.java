@@ -4,6 +4,7 @@ import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBow;
 import net.minecraftforge.client.event.FOVUpdateEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -11,7 +12,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class UTFovHandler
 {
-    @SubscribeEvent
+    /**
+     * Priority is {@link EventPriority#HIGH} for this event to fire early so mods with custom FOV
+     * handling can modify this value without being overwritten.
+     */
+    @SubscribeEvent(priority = EventPriority.HIGH)
     public static void utOnFovUpdate(FOVUpdateEvent event) {
         event.setNewfov(getBowFov(event.getEntity()));
     }
