@@ -2,6 +2,8 @@ package mod.acgaming.universaltweaks;
 
 import mod.acgaming.universaltweaks.tweaks.entities.villagerharvest.UTVillagerHarvestUtils;
 
+import mod.acgaming.universaltweaks.tweaks.misc.fov.UTFovHandler;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.common.MinecraftForge;
@@ -338,6 +340,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfigTweaks.MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING) MinecraftForge.EVENT_BUS.register(UTLoadSound.class);
             if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) UTPickupNotificationOverlay.init();
             if (UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsNormal != 28 || UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsStreaming != 4) MinecraftForge.EVENT_BUS.register(UTSoundChannels.class);
+            if (UTConfigTweaks.MISC.utDisableFov) MinecraftForge.EVENT_BUS.register(UTFovHandler.class);
             if (UTConfigTweaks.MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
             if (UTConfigTweaks.MISC.utLANServerProperties) MinecraftForge.EVENT_BUS.register(UTLanServerProperties.class);
             if (UTConfigTweaks.MISC.utPotionShiftToggle) MinecraftForge.EVENT_BUS.register(UTPotionShift.class);
