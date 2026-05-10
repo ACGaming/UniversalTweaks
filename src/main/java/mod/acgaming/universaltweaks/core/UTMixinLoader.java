@@ -45,6 +45,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.electroblobswizardry.json", c -> c.isModPresent("ebwizardry") && c.isModPresent("conarm") && UTConfigMods.ELECTROBLOBS_WIZARDRY.utConstructsArmoryFixToggle);
                 put("mixins/mods/mixins.enderio.itemrender.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
                 put("mixins/mods/mixins.fpsreducer.json", c -> c.isModPresent("fpsreducer") && UTConfigMods.FPS_REDUCER.utCorrectFpsValue);
+                put("mixins/mods/mixins.hammerlib.json", c -> c.isModPresent("hammercore") && UTConfigMods.HAMMER_LIB.utOptimizeItemColorHelper);
                 put("mixins/mods/mixins.hwyla.json", c -> c.isModPresent("waila"));
                 put("mixins/mods/mixins.ironchests.json", c -> c.isModPresent("ironchest") && UTConfigMods.IRON_CHESTS.utReplaceItemRenderer);
                 put("mixins/mods/mixins.modularmagic.nullingredient.json", c -> c.isModPresent("modularmagic") && UTConfigMods.MODULAR_MAGIC.utEnsureIngredientNotNull);
