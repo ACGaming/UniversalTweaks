@@ -1876,6 +1876,11 @@ public class UTConfigTweaks
         public boolean utDisableAdvancementsToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable FOV")
+        @Config.Comment("Disables FOV changes caused by sprinting, potions, or armor attributes")
+        public boolean utDisableFov = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Disable Narrator")
         @Config.Comment("Disables the narrator functionality entirely")
         public boolean utDisableNarratorToggle = false;
