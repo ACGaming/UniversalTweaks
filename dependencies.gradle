@@ -109,6 +109,7 @@ final def mod_dependencies = [
     'curse.maven:gaiadimension-302529:2724738'                        : [debug_gaiadimension],
     'curse.maven:geckolib-388172:4020277'                             : [debug_cqrepoured],
     'curse.maven:guideapi-228832:2645992'                             : [debug_blood_magic],
+    'curse.maven:hammerlib-247401:6348753'                            : [debug_hammerlib],
     'curse.maven:hwyla-253449:2568751'                                : [debug_hwyla],
     'curse.maven:immersive_engineering-231951:2974106'                : [debug_immersive_engineering],
     'curse.maven:incontrol-257356:3101719'                            : [debug_incontrol],

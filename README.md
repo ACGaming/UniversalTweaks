@@ -480,6 +480,8 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Correct FPS Display:** Fixes incorrect FPS number being displayed on the HUD
 * **Gaia Dimension**
     * **Fix Restructurer Crash:** Safely access a nullable value when checking recipes in the Restructurer
+* **HammerLib**
+    * **Optimized ItemColorHelper Rendering**  Optimizes HammerLib's item color rendering performance, increasing FPS when rendering ItemStacks
 * **HWYLA**
     * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
 * **Immersive Engineering**

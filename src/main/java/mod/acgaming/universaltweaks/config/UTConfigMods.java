@@ -191,6 +191,10 @@ public class UTConfigMods
     @Config.Name("Gaia Dimension")
     public static final GaiaDimensionCategory GAIA_DIMENSION = new GaiaDimensionCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.hammerlib")
+    @Config.Name("HammerLib")
+    public static final HammerLibCategory HAMMER_LIB = new HammerLibCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.immersiveengineering")
     @Config.Name("Immersive Engineering")
     public static final ImmersiveEngineeringCategory IMMERSIVE_ENGINEERING = new ImmersiveEngineeringCategory();
@@ -1056,6 +1060,14 @@ public class UTConfigMods
         @Config.Name("Fix Restructurer Crash")
         @Config.Comment("Safely access a nullable array when checking recipes in the Restructurer")
         public boolean utFixNPERestructurerRecipe = true;
+    }
+
+    public static class HammerLibCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Optimized ItemColorHelper Rendering")
+        @Config.Comment("Optimizes HammerLib's item color rendering performance, increasing FPS when rendering ItemStacks")
+        public boolean utOptimizeItemColorHelper = true;
     }
 
     public static class ImmersiveEngineeringCategory
