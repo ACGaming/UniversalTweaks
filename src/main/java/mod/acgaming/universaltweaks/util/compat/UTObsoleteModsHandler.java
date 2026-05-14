@@ -94,6 +94,7 @@ public class UTObsoleteModsHandler
                 put("darkstone", () -> UTConfigTweaks.PERFORMANCE.utRedstoneLightingToggle);
                 put("defaultlanport", () -> UTConfigTweaks.MISC.utLANServerProperties);
                 put("ding", () -> UTConfigTweaks.MISC.LOAD_SOUNDS.utLoadSoundMode != UTConfigTweaks.MiscCategory.LoadSoundsCategory.EnumSoundModes.NOTHING);
+                put("dirt2path", () -> UTConfigTweaks.BLOCKS.utDirtToPath);
                 put("easybreeding", () -> UTConfigTweaks.ENTITIES.EASY_BREEDING.utEasyBreedingToggle);
                 put("enablecheats", () -> UTConfigTweaks.MISC.utToggleCheatsToggle);
                 put("endportalparallax", () -> UTConfigTweaks.MISC.utEndPortalParallaxToggle);
@@ -131,6 +132,7 @@ public class UTObsoleteModsHandler
                 put("noadvancements", () -> UTConfigTweaks.MISC.utDisableAdvancementsToggle && !Loader.isModLoaded("animania"));
                 put("nodoze", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
                 put("noexpensive", () -> UTConfigTweaks.BLOCKS.ANVIL.utAnvilXPLevelCap != 40 || UTConfigTweaks.ITEMS.INFINITY.utInfinityEnchantmentConflicts);
+                put("nofov", () -> UTConfigTweaks.MISC.utDisableFov);
                 put("nomoreglowingpots", () -> UTConfigTweaks.MISC.utDisablePotionGlint);
                 put("nonvflash", () -> UTConfigTweaks.MISC.utNightVisionFlashToggle);
                 put("nopotionshift", () -> UTConfigTweaks.MISC.utPotionShiftToggle);
@@ -146,6 +148,7 @@ public class UTObsoleteModsHandler
                 put("quickleafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
                 put("rallyhealth", () -> UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle);
                 put("rebind_narrator", () -> UTConfigTweaks.MISC.utUseCustomNarratorKeybind);
+                put("replant", () -> UTConfigTweaks.ENTITIES.VILLAGER_HARVEST.utVillagerHarvestToggle);
                 put("salwayseat", () -> UTConfigTweaks.ITEMS.utAlwaysEatToggle);
                 put("savemystronghold", () -> UTConfigTweaks.WORLD.utStrongholdToggle);
                 put("seedcopy", () -> UTConfigTweaks.MISC.utCopyWorldSeedToggle);
