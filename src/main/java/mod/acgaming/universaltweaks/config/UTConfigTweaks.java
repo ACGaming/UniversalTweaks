@@ -545,6 +545,10 @@ public class UTConfigTweaks
         @Config.Name("Damage Velocity")
         public final DamageVelocityCategory DAMAGE_VELOCITY = new DamageVelocityCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.dragonkill")
+        @Config.Name("Dragon Kill")
+        public final DragonKillCategory DRAGON_KILL = new DragonKillCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.easybreeding")
         @Config.Name("Easy Breeding")
         public final EasyBreedingCategory EASY_BREEDING = new EasyBreedingCategory();
@@ -952,6 +956,26 @@ public class UTConfigTweaks
             @Config.Name("[3] Baby Chickens Shed Feathers")
             @Config.Comment("Allows baby chickens to also shed feathers")
             public boolean utChickenSheddingBabyToggle = false;
+        }
+
+        public static class DragonKillCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Dragon Kill Toggle")
+            @Config.Comment("Enables the dragon kill tweaks")
+            public boolean utDragonKillToggle = true;
+
+            @Config.Name("[2] First Kill Xp")
+            @Config.Comment("The amount of experience dropped on the first dragon kill")
+            public int utFirstKillXp = 12000;
+
+            @Config.Name("[3] Second+ Kill Xp")
+            @Config.Comment("The amount of experience dropped on dragon kills after the first")
+            public int utSecondKillXp = 500;
+
+            @Config.Name("[4] Second+ Kill Egg")
+            @Config.Comment("Enables a dragon egg spawning on dragon kills after the first")
+            public boolean utSecondKillEgg = false;
         }
 
         public static class EasyBreedingCategory
