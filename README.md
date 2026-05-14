@@ -176,6 +176,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Default Difficulty:** Sets the default difficulty for newly generated worlds
 * **Default GUI Text Color:** Sets the default GUI text color (HEX RGB code) which can improve readability in dark mode resource packs
 * **Dimension Unload:** Unloads dimensions not in use to free up resources
+* **Dirt To Path:** Dirt can be shoveled into grass paths and grass paths can be shoveled into dirt
 * **Disable Advancements:** Prevents the advancement system from loading entirely
 * **Disable Audio Debug:** Improves loading times by removing debug code for missing sounds and subtitles
 * **Disable Creeper Music Discs:** Disables creepers dropping music discs when slain by skeletons

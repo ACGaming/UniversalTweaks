@@ -243,6 +243,15 @@ public class UTConfigTweaks
         public boolean utEnchantmentTableObstructionToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Dirt to Path")
+        @Config.Comment
+            ({
+                "Allows converting dirt blocks to grass path by clicking them with a shovel. Grass paths can",
+                "be reverted to dirt with shift right-click."
+            })
+        public boolean utDirtToPath = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Lenient Paths")
         @Config.Comment("Allows the creation of grass paths everywhere (beneath fence gates, trapdoors, ...)")
         public boolean utLenientPathsToggle = true;

@@ -1,5 +1,6 @@
 package mod.acgaming.universaltweaks;
 
+import mod.acgaming.universaltweaks.tweaks.blocks.paths.UTDirtToPath;
 import mod.acgaming.universaltweaks.tweaks.entities.villagerharvest.UTVillagerHarvestUtils;
 
 import mod.acgaming.universaltweaks.tweaks.misc.fov.UTFovHandler;
@@ -276,6 +277,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle) MinecraftForge.EVENT_BUS.register(UTBreakableBedrock.class);
             if (UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle) MinecraftForge.EVENT_BUS.register(UTFiniteWater.class);
             if (UTConfigTweaks.BLOCKS.utBetterHarvestToggle) MinecraftForge.EVENT_BUS.register(UTBetterHarvest.class);
+            if (UTConfigTweaks.BLOCKS.utDirtToPath) MinecraftForge.EVENT_BUS.register(UTDirtToPath.class);
             if (UTConfigTweaks.BLOCKS.utSlimeBlockProjectiles) MinecraftForge.EVENT_BUS.register(UTSlimeBlockProjectiles.class);
             if (UTConfigTweaks.ENTITIES.CHICKEN_SHEDDING.utChickenSheddingToggle) MinecraftForge.EVENT_BUS.register(UTChickenShedding.class);
             if (UTConfigTweaks.ENTITIES.EASY_BREEDING.utEasyBreedingToggle) MinecraftForge.EVENT_BUS.register(UTEasyBreeding.class);
