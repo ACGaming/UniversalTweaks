@@ -195,6 +195,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Disable Villager Trade Restock:** Disables restocking of villager trades, only allowing one trade per offer
 * **Disable Wither Targeting AI:** Disables withers targeting animals
 * **Display Title:** Determines the title of the game window
+* **Dragon Kill:** Allows setting dragon kill experience drops and egg spawn after first kill
 * **Easy Breeding:** Enables easy breeding of animals by tossing food on the ground
 * **End Crystal Placement:** Allows placing end crystals on more blocks than obsidian or bedrock below
 * **End Portal Parallax:** Re-implements parallax rendering of the end portal from 1.11 and older
