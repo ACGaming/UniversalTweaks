@@ -2,7 +2,6 @@ package mod.acgaming.universaltweaks.tweaks.entities.sleeping;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayer.SleepResult;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -17,15 +16,9 @@ public class UTSleepingTweak
     @SubscribeEvent
     public static void utSleepTweak(PlayerSleepInBedEvent event)
     {
-        boolean debugEnabled = UTConfigGeneral.DEBUG.utDebugToggle;
         EntityPlayer player = event.getEntityPlayer();
-        BlockPos pos = event.getPos();
-
-        if (player.world.isRemote) return;
-        if (player.isPlayerSleeping() || !player.isEntityAlive()) return;
-
-        SleepResult result = event.getResultStatus();
-
+        if (player.world.isRemote || player.isPlayerSleeping() || !player.isEntityAlive()) return;
+        boolean debugEnabled = UTConfigGeneral.DEBUG.utDebugToggle;
         switch (UTConfigTweaks.ENTITIES.SLEEPING.utBedSetSpawnMode)
         {
             case DEFAULT:
@@ -38,14 +31,10 @@ public class UTSleepingTweak
 
             case ANYTIME:
                 if (debugEnabled) UniversalTweaks.LOGGER.debug("UTSleepTweak ::: Set spawn point without sleep");
-
-                if (result == SleepResult.TOO_FAR_AWAY) return;
-
+                if (event.getResultStatus() == SleepResult.TOO_FAR_AWAY) return;
                 if (player.isRiding()) player.dismountRidingEntity();
-                player.setSpawnPoint(pos, false);
-                player.sendStatusMessage(new TextComponentTranslation("msg.universaltweaks.sleep.spawnpoint"), true);
-                event.setResult(SleepResult.OTHER_PROBLEM);
-
+                player.setSpawnPoint(event.getPos(), false);
+                player.sendStatusMessage(new TextComponentTranslation("msg.universaltweaks.sleep.spawnpoint"), false);
                 break;
         }
 
