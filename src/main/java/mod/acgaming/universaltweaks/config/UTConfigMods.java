@@ -1112,6 +1112,11 @@ public class UTConfigMods
         public boolean utDuplicationFixesToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fix Black Hole Tank Bucket Voiding")
+        @Config.Comment("Fix the Black Hole Tank voiding buckets if the player inventory is full by dropping the buckets on the ground")
+        public boolean utFixBlackHoleTankVoiding = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Machines Max Range Off-By-One Fix")
         @Config.Comment("Fixes an off-by-one error where IF Machines would display the max tier of range addon as one less than the actual maximum")
         public boolean utRangeAddonNumberFix = true;
