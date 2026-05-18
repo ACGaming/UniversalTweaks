@@ -405,9 +405,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Optimized Hellfire Forge:** Optimizes the Hellfire/Soul Forge to reduce tick time
     * **Ritual Fix:** Fixes ritual resetting on chunk/world unload
 * **Botania**
-    * **Duplication Fixes:** Fixes various duplication exploits
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
-    * **Alfheim Portal NBT Fix:** Optimize the Alfheim Portal for large quantities of items, preventing chunkbans and chunk corruption. NOTE: Toggling this off after having it on will wipe the contents of existing Alfheim Portals
 * **Better with Mods**
     * **Beacon NBT Loading Fix:** Fixes BWM beacons reading null tags from vanilla beacons
 * **CB Multipart**
@@ -531,8 +529,6 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Netherrocks**
     * **Right Click Harvesting Fix:** Prevents crashing with mods implementing right click crop harvesting
-* **NuclearCraft**
-    * **Radiation Environment Map:** Changes the data table of the radiation environment handler to improve tick time
 * **OpenBlocks**
     * **Last Stand Trigger Fix:** Fixes the Last Stand enchantment triggering too early on pre-mitigation damage (before enchants, potions, etc), instead of on post-mitigation damage.
 * **Open Glasses 2**

@@ -175,7 +175,6 @@ public class UniversalTweaks
         + "after:mrtjpcore;"
         + "after:netherchest;"
         + "after:netherrocks;"
-        + "after:nuclearcraft;"
         + "after:openblocks;"
         + "after:plustic;"
         + "after:projectred-exploration;"

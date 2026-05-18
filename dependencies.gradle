@@ -133,7 +133,6 @@ final def mod_dependencies = [
     'curse.maven:mysticallib-277064:3483816'                          : [debug_arcane_archives, debug_roots],
     'curse.maven:netherchest-268888:2655413'                          : [debug_netherchest],
     'curse.maven:netherrocks-226140:2628297'                          : [debug_netherrocks],
-    'curse.maven:nuclearcraft-226254:3784145'                         : [debug_nuclearcraft],
     'curse.maven:official-divinerpg-363543:3081433'                   : [debug_divinerpg],
     'curse.maven:openblocks-228816:2699056'                           : [debug_openblocks],
     'curse.maven:openglasses2-300957:3143467'                         : [debug_openglasses],

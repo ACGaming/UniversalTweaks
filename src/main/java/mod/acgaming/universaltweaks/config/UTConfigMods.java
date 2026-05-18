@@ -267,10 +267,6 @@ public class UTConfigMods
     @Config.Name("Netherrocks")
     public static final NetherrocksCategory NETHERROCKS = new NetherrocksCategory();
 
-    @Config.LangKey("cfg.universaltweaks.modintegration.nuclearcraft")
-    @Config.Name("NuclearCraft")
-    public static final NuclearCraftCategory NUCLEARCRAFT = new NuclearCraftCategory();
-
     @Config.LangKey("cfg.universaltweaks.modintegration.openblocks")
     @Config.Name("OpenBlocks")
     public static final OpenBlocksCategory OPEN_BLOCKS = new OpenBlocksCategory();
@@ -1241,27 +1237,6 @@ public class UTConfigMods
         @Config.Name("Right Click Harvesting Fix")
         @Config.Comment("Prevents crashing with mods implementing right click crop harvesting")
         public boolean utNRRightClickHarvestingToggle = true;
-    }
-
-    public static class NuclearCraftCategory
-    {
-        @Config.RequiresMcRestart
-        @Config.Name("Radiation Environment Map")
-        @Config.Comment
-            ({
-                "Changes the data table of the radiation environment handler to improve tick time",
-                "CONCURRENT_HASHMAP:        NuclearCraft default",
-                "CONCURRENT_LINKED_HASHMAP: Keeps order of radiation environment info to improve iteration - Better performance",
-                "CONCURRENT_LINKED_QUEUE:   Uses a queue to avoid iteration - Best performance"
-            })
-        public EnumMaps utNCRadiationEnvironmentMap = EnumMaps.CONCURRENT_LINKED_QUEUE;
-
-        public enum EnumMaps
-        {
-            CONCURRENT_HASHMAP,
-            CONCURRENT_LINKED_HASHMAP,
-            CONCURRENT_LINKED_QUEUE
-        }
     }
 
     public static class OpenBlocksCategory
