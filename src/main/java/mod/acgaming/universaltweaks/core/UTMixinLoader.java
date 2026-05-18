@@ -97,8 +97,6 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.bloodmagic.fluidrouting.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utFluidRoutingFixToggle);
                 put("mixins/mods/mixins.bloodmagic.ritual.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBMRitualToggle);
                 put("mixins/mods/mixins.bloodmagic.json", c -> c.isModPresent("bloodmagic"));
-                put("mixins/mods/mixins.botania.alfheim.json", c -> regularBotaniaLoaded() && UTConfigMods.BOTANIA.utAlfheimPortalNBTFix);
-                put("mixins/mods/mixins.botania.dupes.json", c -> regularBotaniaLoaded() && UTConfigMods.BOTANIA.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.botania.xp.linear.json", c -> c.isModPresent("botania") && UTConfigTweaks.MISC.utLinearXP != 0);
                 put("mixins/mods/mixins.bwm.json", c -> c.isModPresent("betterwithmods") && UTConfigMods.BWM.utBeaconNBTLoadingFix);
                 put("mixins/mods/mixins.cbmultipart.json", c -> c.isModPresent("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
@@ -250,15 +248,6 @@ public class UTMixinLoader implements ILateMixinLoader
         if (Loader.isModLoaded("randomthings"))
         {
             return Loader.instance().getIndexedModList().get("randomthings").getName().equals("Random Things");
-        }
-        return false;
-    }
-
-    public static boolean regularBotaniaLoaded()
-    {
-        if (Loader.isModLoaded("botania"))
-        {
-            return Loader.instance().getIndexedModList().get("botania").getVersion().equals("r1.10-364");
         }
         return false;
     }
