@@ -475,6 +475,7 @@ All changes are toggleable via config files.
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Industrial Foregoing**
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Fix Black Hole Tank Bucket Voiding:** Fix the Black Hole Tank voiding buckets if the player inventory is full by dropping the buckets on the ground
     * **Machines Max Range Off-By-One Fix:** Fixes an off-by-one error where IF Machines would display the max tier of range addon as one less than the actual maximum
 * **Infernal Mobs**
     * **Better Entity Names:** Gets the actual display names of entities for improved naming
