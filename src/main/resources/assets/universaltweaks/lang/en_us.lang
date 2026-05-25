@@ -48,6 +48,10 @@ gui.universaltweaks.cyclic.ender_book.page=Page %s / %s
 # Tweaked Excavation
 tweakedexcavation.jei.mineral.average.Infinite=Average Mineral yield: Infinite
 
+# No Tree Punching
+tile.notreepunching:cobblestone.basalt.name=Basalt Cobblestone
+item.notreepunching:rock.basalt.name=Basalt Rock
+
 # TIME COMMAND
 cmd.universaltweaks.time.set=DIM %s: Set the time to %s
 
