@@ -20,7 +20,7 @@ public class UTOcelotBiomeSpawnList
             if (removedMonster && !addedCreature)
             {
                 ((UTBiomeAccessor) biome).getSpawnableCreatureList().add(new Biome.SpawnListEntry(EntityOcelot.class, 2, 1, 1));
-                UniversalTweaks.LOGGER.info("UTOcelotBiomeSpawnList ::: Fixed ocelot spawn list entry for biome {}", biome.getBiomeName());
+                UniversalTweaks.LOGGER.info("UTOcelotBiomeSpawnList ::: Fixed ocelot spawn list entry for biome {}", biome.getRegistryName());
             }
         }
     }
