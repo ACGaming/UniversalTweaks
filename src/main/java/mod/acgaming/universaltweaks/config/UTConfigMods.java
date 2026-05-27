@@ -1051,6 +1051,11 @@ public class UTConfigMods
         @Config.Name("Optimized ItemColorHelper Rendering")
         @Config.Comment("Optimizes HammerLib's item color rendering performance, increasing FPS when rendering ItemStacks")
         public boolean utOptimizeItemColorHelper = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Skip Checking URL")
+        @Config.Comment("Prevent checking the stopmodreposts api, as it is blocked in some regions and can cause timeouts or significant delays in starting")
+        public boolean utSkipURLCheck = false;
     }
 
     public static class ImmersiveEngineeringCategory
