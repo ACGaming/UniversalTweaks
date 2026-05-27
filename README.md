@@ -481,7 +481,8 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Gaia Dimension**
     * **Fix Restructurer Crash:** Safely access a nullable value when checking recipes in the Restructurer
 * **HammerLib**
-    * **Optimized ItemColorHelper Rendering**  Optimizes HammerLib's item color rendering performance, increasing FPS when rendering ItemStacks
+    * **Optimized ItemColorHelper Rendering:**  Optimizes HammerLib's item color rendering performance, increasing FPS when rendering ItemStacks
+    * **Skip Checking URL:** Prevent checking the stopmodreposts api, as it is blocked in some regions and can cause timeouts or significant delays in starting
 * **HWYLA**
     * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
 * **Immersive Engineering**
