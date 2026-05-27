@@ -432,6 +432,8 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Corpse**
     * **Opening GUIs Off-thread Fix:** Fixes opening up GUIs on a non-client thread
 * **Cyclic**
+    * **Ender Book Pagination:** Adds pages to Cyclic's Ender Book waypoint GUI to prevent large waypoint lists rendering off-screen
+    * **Ender Book Waypoints Per Page:** How many saved waypoints to show on each Ender Book page
     * **Memory Leak Fix:** Fixes memory leak associated with advancements when creating FakePlayers
 * **Divine RPG**
     * **Change Water Mob Creature Type:** Changes the creature type for DivineRPG Water Mobs to be WATER_CREATURE, fixing issues with hostile mob spawn caps and infinite water mob spawning
