@@ -211,7 +211,7 @@ public class UniversalTweaks
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
         {
             if (UTMixinLoader.regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle) UTOreDictCache.preInit();
-            if (Loader.isModLoaded("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utRegisterSoundToggle) MinecraftForge.EVENT_BUS.register(new UTBiblioCraftSoundRegister());
+            if (UTMixinLoader.regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utRegisterSoundToggle) MinecraftForge.EVENT_BUS.register(new UTBiblioCraftSoundRegister());
         }
 
         if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)

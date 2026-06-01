@@ -33,9 +33,9 @@ public class UTMixinLoader implements ILateMixinLoader
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
             {
                 put("mixins/mods/mixins.actuallyadditions.itemparticle.json", c -> c.isModPresent("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utItemLaserParticlesGraphics > -1);
-                put("mixins/mods/mixins.bibliocraft.lefthand.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utSwapDisplayHandWhenLeftHanded);
-                put("mixins/mods/mixins.bibliocraft.sign.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utFancySignRotationToggle);
-                put("mixins/mods/mixins.bibliocraft.version.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utDisableVersionCheckToggle);
+                put("mixins/mods/mixins.bibliocraft.lefthand.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utSwapDisplayHandWhenLeftHanded);
+                put("mixins/mods/mixins.bibliocraft.sign.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utFancySignRotationToggle);
+                put("mixins/mods/mixins.bibliocraft.version.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utDisableVersionCheckToggle);
                 put("mixins/mods/mixins.cbmultipart.client.json", c -> c.isModPresent("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
                 put("mixins/mods/mixins.compactmachines.memory.json", c -> c.isModPresent("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utMemoryLeakFixToggle);
                 put("mixins/mods/mixins.compactmachines.render.json", c -> c.isModPresent("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
