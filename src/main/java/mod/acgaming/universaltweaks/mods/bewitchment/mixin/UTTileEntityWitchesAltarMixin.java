@@ -21,7 +21,7 @@ public class UTTileEntityWitchesAltarMixin
      * See <a href="https://github.com/TerraFirmaCraft/TerraFirmaCraft/blob/1.12.x/src/main/java/net/dries007/tfc/objects/blocks/wood/BlockLeavesTFC.java#L59">BlockLeavesTFC.java</a>
      */
     @SuppressWarnings("MixinExtrasOperationParameters")
-    @WrapOperation(method = "convert", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/state/IBlockState;withProperty(Lnet/minecraft/block/properties/IProperty;Ljava/lang/Comparable;)Lnet/minecraft/block/state/IBlockState;"))
+    @WrapOperation(method = "convert", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/state/IBlockState;withProperty(Lnet/minecraft/block/properties/IProperty;Ljava/lang/Comparable;)Lnet/minecraft/block/state/IBlockState;", remap = true))
     private <T extends Comparable<T>, V extends T> IBlockState utCheckPropertyExists(IBlockState instance, IProperty<T> property, V value, Operation<IBlockState> original)
     {
         if (instance.getPropertyKeys().contains(property)) return original.call(instance, property, value);
