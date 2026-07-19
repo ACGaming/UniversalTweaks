@@ -280,6 +280,11 @@ public class UTConfigBugfixes
         public boolean utMinecartAIToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Mining Fatigue III")
+        @Config.Comment("Fixes the mining speed multiplier for Mining Fatigue III (MC-279819, fixed in Minecraft 26.3)")
+        public boolean utMiningFatigueIIIToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Mobs Crossing Rails")
         @Config.Comment("Fixes mobs being unable to cross rails during pathfinding")
         public boolean utMobsCrossingRailsToggle = true;

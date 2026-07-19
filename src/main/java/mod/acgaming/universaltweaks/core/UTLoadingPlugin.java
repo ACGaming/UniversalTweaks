@@ -78,6 +78,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/bugfixes/mixins.entities.horsefalling.json", c -> UTConfigBugfixes.ENTITIES.utHorseFallingToggle);
                 put("mixins/bugfixes/mixins.entities.maxhealth.json", c -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
                 put("mixins/bugfixes/mixins.entities.minecart.json", c -> UTConfigBugfixes.ENTITIES.utMinecartAIToggle);
+                put("mixins/bugfixes/mixins.entities.miningfatigue.json", c -> UTConfigBugfixes.ENTITIES.utMiningFatigueIIIToggle);
                 put("mixins/bugfixes/mixins.entities.mount.json", c -> UTConfigBugfixes.ENTITIES.utMountDesyncToggle);
                 put("mixins/bugfixes/mixins.entities.ocelot.json", c -> UTConfigBugfixes.ENTITIES.utOcelotBiomeSpawnList);
                 put("mixins/bugfixes/mixins.entities.saturation.json", c -> UTConfigBugfixes.ENTITIES.utExhaustionToggle);
