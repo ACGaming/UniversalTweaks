@@ -78,6 +78,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Locale:** Prevents various crashes with Turkish locale
 * **Max Health:** Corrects maximum player health on joining by setting the last saved health value
 * **Minecart AI:** Fixes non-player entities being able to control minecarts
+* **Mining Fatigue III:** Fixes the mining speed multiplier for Mining Fatigue III (MC-279819)
 * **Mining Glitch:** Prevents ghost blocks by sending an additional block change packet
 * **Mobs Crossing Rails:** Fixes mobs being unable to cross rails during pathfinding
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
