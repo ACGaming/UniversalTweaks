@@ -155,6 +155,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.industrialforegoing.rangeaddon.json", c -> c.isModPresent("industrialforegoing") && UTConfigMods.INDUSTRIAL_FOREGOING.utRangeAddonNumberFix);
                 put("mixins/mods/mixins.infernalmobs.json", c -> c.isModPresent("infernalmobs"));
                 put("mixins/mods/mixins.ironbackpacks.dupes.json", c -> c.isModPresent("ironbackpacks") && UTConfigMods.IRON_BACKPACKS.utDuplicationFixesToggle);
+                put("mixins/mods/mixins.ironchests.animation.json", c -> c.isModPresent("ironchest") && UTConfigMods.IRON_CHESTS.utFixChestAnimationSync);
                 put("mixins/mods/mixins.itemfavorites.unixfix.json", c -> c.isModPresent("itemfav") && UTConfigMods.ITEM_FAVORITES.utUnixPathFix);
                 put("mixins/mods/mixins.itemstages.json", c -> c.isModPresent("itemstages"));
                 put("mixins/mods/mixins.jurassicreborn.json", c -> c.isModPresent("rebornmod"));

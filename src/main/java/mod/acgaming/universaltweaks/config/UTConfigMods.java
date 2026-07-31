@@ -1139,6 +1139,11 @@ public class UTConfigMods
     public static class IronChestsCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("Fix Chest Opening Animation Sync")
+        @Config.Comment("Fixes chest opening and closing animations not being synchronized between players")
+        public boolean utFixChestAnimationSync = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Replace Crystal Chest/Shulker Renderer")
         @Config.Comment
             ({
