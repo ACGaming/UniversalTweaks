@@ -509,6 +509,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Iron Backpacks**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Iron Chests**
+    * **Fix Chest Opening Animation Sync:** Fixes chest opening and closing animations not being synchronized between players
     * **Replace Crystal Chest/Shulker Renderer:** Fixes client-side memory leak by replacing the crystal chest/shulker box renderer with a simpler one (Note: Disables stack size rendering)
 * **Item Favorites**
     * **Linux Saving/Loading**: Fixes saving and loading of favorite items on Unix systems
