@@ -491,6 +491,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **HWYLA**
     * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
 * **Immersive Engineering**
+    * **Crusher Process Queue Sync Fix:** Prevents Crushers from repeatedly synchronizing and reconstructing their full process queue on clients
     * **Tool Break Fire Event:** Fires the PlayerDestroyItemEvent when an Immersive Engineering tool breaks, fixing a number of cross-compatibility issues
     * **Tool Break Hand Replacement:** Fixes the tool breaking setting the main hand to empty regardless of what hand the tool is in
 * **In Control!**
