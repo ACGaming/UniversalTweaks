@@ -1069,6 +1069,15 @@ public class UTConfigMods
         @Config.Name("Tool Break Hand Replacement")
         @Config.Comment("Fixes the tool breaking setting the main hand to empty regardless of what hand the tool is in")
         public boolean utFixIncorrectHandReplacement = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Crusher Process Queue Sync Fix")
+        @Config.Comment
+            ({
+                "Prevents Immersive Engineering Crushers from synchronizing their full process queue to clients",
+                "Backports the later Immersive Engineering behavior of synchronizing only the render-active state"
+            })
+        public boolean utCrusherSyncFix = true;
     }
 
     public static class InControlCategory
