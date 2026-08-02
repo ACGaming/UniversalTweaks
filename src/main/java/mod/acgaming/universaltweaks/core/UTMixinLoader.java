@@ -145,6 +145,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.forestry.extratrees.json", c -> c.isModPresent("extratrees") && UTConfigMods.FORESTRY.utFOGatherWindfallToggle);
                 put("mixins/mods/mixins.forestry.json", c -> c.isModPresent("forestry"));
                 put("mixins/mods/mixins.gaiadimension.restructurer.json", c -> c.isModPresent("gaiadimension") && UTConfigMods.GAIA_DIMENSION.utFixNPERestructurerRecipe);
+                put("mixins/mods/mixins.immersiveengineering.crushersync.json", c -> c.isModPresent("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utCrusherSyncFix);
                 put("mixins/mods/mixins.immersiveengineering.toolevent.json", c -> c.isModPresent("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFireBreakEvent);
                 put("mixins/mods/mixins.immersiveengineering.toolhand.json", c -> c.isModPresent("immersiveengineering") && UTConfigMods.IMMERSIVE_ENGINEERING.utFixIncorrectHandReplacement);
                 put("mixins/mods/mixins.incontrol.rule.json", c -> regularInControlLoaded() && UTConfigMods.INCONTROL.utStatsFixToggle);
