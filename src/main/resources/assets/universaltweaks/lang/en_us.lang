@@ -55,6 +55,10 @@ item.notreepunching:rock.basalt.name=Basalt Rock
 # TIME COMMAND
 cmd.universaltweaks.time.set=DIM %s: Set the time to %s
 
+# LOCATE COMMAND
+cmd.universaltweaks.locate=Located %s at %s (%s blocks away)
+cmd.universaltweaks.locate.tooltip=Click to teleport
+
 # VANILLA
 enchantment.level.11=XI
 enchantment.level.12=XII

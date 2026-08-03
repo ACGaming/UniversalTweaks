@@ -1916,6 +1916,15 @@ public class UTConfigTweaks
         public boolean utCopyWorldSeedToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Locate Click to Teleport")
+        @Config.Comment
+            ({
+                "Enables clicking of `/locate` coordinates in chat to teleport to that location",
+                "Required on server AND client"
+            })
+        public boolean utLocateTeleportToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Damage Tilt")
         @Config.Comment("Restores feature to tilt the camera when damaged")
         public boolean utDamageTiltToggle = true;

@@ -167,6 +167,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Connection Timeouts:** Allows configuring read/login timeouts
     * Helps slow clients log into a server of a large modpack
 * **Copy World Seed:** Enables clicking of `/seed` world seed in chat to copy to clipboard
+* **Locate Click to Teleport:** Enables clicking of `/locate` coordinates in chat to teleport to that location
 * **Coyote Time Jumping:** Lets the player jump a couple frames after stepping off a ledge, similar to jumping in many platformers
 * **Crafting Cache:** Adds an IRecipe cache to improve recipe performance in large modpacks
 * **Creeper Confetti:** Replaces deadly creeper explosions with delightful confetti (with a configurable chance)

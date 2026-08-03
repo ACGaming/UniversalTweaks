@@ -173,6 +173,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.misc.armorcurve.json", c -> !c.inDev() && UTConfigTweaks.MISC.ARMOR_CURVE.utArmorCurveToggle);
                 put("mixins/tweaks/mixins.misc.armorswap.json", c -> UTConfigTweaks.MISC.utArmorSwap);
                 put("mixins/tweaks/mixins.misc.bannerlayers.json", c -> UTConfigTweaks.MISC.utBannerLayers != 6);
+                put("mixins/tweaks/mixins.misc.commands.locate.json", c -> UTConfigTweaks.MISC.utLocateTeleportToggle);
                 put("mixins/tweaks/mixins.misc.commands.seed.json", c -> UTConfigTweaks.MISC.utCopyWorldSeedToggle);
                 put("mixins/tweaks/mixins.misc.commands.time.json", c -> UTConfigTweaks.MISC.TIME_COMMAND.utTimeCommandToggle);
                 put("mixins/tweaks/mixins.misc.difficulty.singleplayer.json", c -> true);
