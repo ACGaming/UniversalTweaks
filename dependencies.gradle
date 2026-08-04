@@ -59,6 +59,7 @@ final def mod_dependencies = [
     'curse.maven:aether-255308:6316434'                               : [debug_aether_legacy],
     'curse.maven:ae2-extended-life-570458:5378163'                    : [debug_ae2uel],
     'curse.maven:agricraft-225635:3317747'                            : [debug_agricraft],
+    'curse.maven:cave-generator-298582:3587417'                       : [debug_cave_generator],
     'curse.maven:applecore-224472:2969118'                            : [debug_the_spice_of_life],
     'curse.maven:arcanearchives-311357:3057332'                       : [debug_arcane_archives],
     'curse.maven:astral-sorcery-241721:3044416'                       : [debug_astral_sorcery],
