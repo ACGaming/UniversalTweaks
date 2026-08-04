@@ -101,6 +101,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.botania.xp.linear.json", c -> c.isModPresent("botania") && UTConfigTweaks.MISC.utLinearXP != 0);
                 put("mixins/mods/mixins.bwm.json", c -> c.isModPresent("betterwithmods") && UTConfigMods.BWM.utBeaconNBTLoadingFix);
                 put("mixins/mods/mixins.cbmultipart.json", c -> c.isModPresent("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
+                put("mixins/mods/mixins.cavegenerator.json", c -> c.isModPresent("cavegenerator") && UTConfigMods.CAVE_GENERATOR.utCaveGeneratorToggle);
                 put("mixins/mods/mixins.ceramics.json", c -> c.isModPresent("ceramics"));
                 put("mixins/mods/mixins.chisel.tcomplement.dupes.json", c -> c.isModPresent("chisel") && c.isModPresent("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.codechickenlib.json", c -> c.isModPresent("codechickenlib") && UTConfigMods.CCL.utPacketLeakFixToggle);
