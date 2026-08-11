@@ -10,6 +10,8 @@ Universal Tweaks consolidates various bugfixes and tweaks into a single solution
 
 All changes are toggleable via config files.
 
+BiblioCraft-specific fixes have been moved to [BiblioCraft Reshelved](https://github.com/Elite-Modding-Team/BiblioCraftReshelved).
+
 [![Requires MixinBooter](https://img.shields.io/badge/Requires-MixinBooter-3498db.svg?labelColor=34495e&style=for-the-badge)](https://www.curseforge.com/minecraft/mc-mods/mixin-booter)
 [![Requires ConfigAnytime](https://img.shields.io/badge/Requires-ConfigAnytime-3498db.svg?labelColor=34495e&style=for-the-badge)](https://www.curseforge.com/minecraft/mc-mods/configanytime)
 
@@ -385,18 +387,6 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Bewitchment**
     * **Fix Altar IBlockState Check:** Fix the Witches Altar checking blocks causing crashes when scanning blocks that do not have the expected properties, primarily TerraFirmaCraft leaves
     * **Witches' Oven Fix:** Fixes Witches' Oven consuming container fuel items
-* **Bibliocraft**
-    * **Allow Any Black Dye for Printing Press:** Allow the Printing Press to properly work with any itemstack with the dyeBlack oredict, instead of only processing with Ink Sacs
-    * **Disable Version Check:** Fixes client-side memory leak by disabling version check
-    * **Fix Armor Stand Binding:** Fix BiblioCraft's custom Armor Stand not respecting the Curse of Binding
-    * **Fix Armor Stand Slots:** Fix BiblioCraft's custom Armor Stand using the incorrect slots for items or not recognizing the items as valid
-    * **Fix Fancy Sign Rotation:** Fix Fancy Signs rendering items and blocks in different ways between the GUI and in-world
-    * **Fix IItemHandler Method Not Existing:** Fix IItemHandler#getStackInSlot method not existing due to being obfuscated by IInventory, preventing countless errors
-    * **Fix Item Transfer:** Make BiblioCraft actually use simulate properly when inserting and extracting items, fixing many item transfer methods
-    * **Fix ItemStack Copying:** Fixes removing an ItemStack not copying all data correctly, particularly for backpacks
-    * **Fix Left Handed Rendering:** Fixes the Antique Atlas and Clipboard rendering incorrect when the Main Hand is set to Left
-    * **Fix Using Incorrect Hand:** Fix the Clipboard and the Stockroom Catalogue behaving incorrectly when used in the offhand
-    * **Multiplayer Sound Fix:** Register all sounds, fixing bugs when attempting to play them on servers
 * **Binnie's Mods**
     * **Gather Windfall:** Allows Forestry farms to pick up ExtraTrees fruit
 * **Biomes O' Plenty**

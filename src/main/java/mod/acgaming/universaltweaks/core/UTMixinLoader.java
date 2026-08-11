@@ -33,9 +33,6 @@ public class UTMixinLoader implements ILateMixinLoader
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
             {
                 put("mixins/mods/mixins.actuallyadditions.itemparticle.json", c -> c.isModPresent("actuallyadditions") && UTConfigMods.ACTUALLY_ADDITIONS.utItemLaserParticlesGraphics > -1);
-                put("mixins/mods/mixins.bibliocraft.lefthand.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utSwapDisplayHandWhenLeftHanded);
-                put("mixins/mods/mixins.bibliocraft.sign.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utFancySignRotationToggle);
-                put("mixins/mods/mixins.bibliocraft.version.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utDisableVersionCheckToggle);
                 put("mixins/mods/mixins.cbmultipart.client.json", c -> c.isModPresent("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
                 put("mixins/mods/mixins.compactmachines.memory.json", c -> c.isModPresent("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utMemoryLeakFixToggle);
                 put("mixins/mods/mixins.compactmachines.render.json", c -> c.isModPresent("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utCMRenderFixToggle);
@@ -84,13 +81,6 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.bdsandm.json", c -> c.isModPresent("bdsandm") && UTConfigMods.BDSANDM.utBarrelThreadSafety);
                 put("mixins/mods/mixins.bewitchment.json", c -> c.isModPresent("bewitchment") && UTConfigMods.BEWITCHMENT.utWitchesOvenFixToggle);
                 put("mixins/mods/mixins.bewitchment.leaves.json", c -> c.isModPresent("bewitchment") && UTConfigMods.BEWITCHMENT.utLeavesChechFix);
-                put("mixins/mods/mixins.bibliocraft.armor.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utArmorStandSlotFixToggle);
-                put("mixins/mods/mixins.bibliocraft.armorbinding.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utArmorStandBindingCurseToggle);
-                put("mixins/mods/mixins.bibliocraft.hand.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utFixHandConsumption);
-                put("mixins/mods/mixins.bibliocraft.handler.json", c -> c.isModPresent("bibliocraft") && UTConfigMods.BIBLIOCRAFT.utEnsureIItemHandlerMethodToggle);
-                put("mixins/mods/mixins.bibliocraft.itemstack.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utCopyItemStackCorrectlyToggle);
-                put("mixins/mods/mixins.bibliocraft.printpress.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utPrintingPressAnyBlackDyeToggle);
-                put("mixins/mods/mixins.bibliocraft.transfer.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utFixItemTransferToggle);
                 put("mixins/mods/mixins.biomesoplenty.json", c -> c.isModPresent("biomesoplenty"));
                 put("mixins/mods/mixins.biomesoplenty.sealevel.json", c -> c.isModPresent("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
                 put("mixins/mods/mixins.bloodmagic.boundtool.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);
@@ -252,15 +242,6 @@ public class UTMixinLoader implements ILateMixinLoader
         if (Loader.isModLoaded("randomthings"))
         {
             return Loader.instance().getIndexedModList().get("randomthings").getName().equals("Random Things");
-        }
-        return false;
-    }
-
-    public static boolean regularBiblioCraftLoaded()
-    {
-        if (Loader.isModLoaded("bibliocraft"))
-        {
-            return Loader.instance().getIndexedModList().get("bibliocraft").getName().equals("BiblioCraft");
         }
         return false;
     }

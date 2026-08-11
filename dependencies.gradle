@@ -71,7 +71,6 @@ final def mod_dependencies = [
     'curse.maven:bc-remastered-892913:5880716'                        : [debug_buildcraft],
     'curse.maven:barrels-drums-storage-more-319404:2708193'           : [debug_bdsandm],
     'curse.maven:bewitchment-285439:3044569'                          : [debug_bewitchment],
-    'curse.maven:bibliocraft-228027:3647708'                          : [debug_bibliocraft],
     'curse.maven:binnies-mods-223525:2916129'                         : [debug_binnies_mods],
     'curse.maven:biomes-o-plenty-220318:2842510'                      : [debug_biomes_o_plenty],
     'curse.maven:blood-magic-224791:2822288'                          : [debug_blood_magic],
