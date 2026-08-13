@@ -196,6 +196,11 @@ public class UTConfigTweaks
         public int utBlockHitDelay = 5;
 
         @Config.RequiresMcRestart
+        @Config.Name("Fast Fly Block Breaking")
+        @Config.Comment("Allows breaking blocks with normal speed while flying")
+        public boolean utFastFlyBlockBreakingToggle = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Cactus Size")
         @Config.Comment("Determines how tall cacti can grow")
         public int utCactusSize = 3;

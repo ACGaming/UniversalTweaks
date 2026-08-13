@@ -173,6 +173,7 @@ public class UTObsoleteModsHandler
                 put("unridekeybind", () -> UTConfigTweaks.MISC.utUseSeparateDismountKey);
                 put("voidfog", () -> UTConfigTweaks.WORLD.VOID_FOG.utVoidFogToggle);
                 put("watercontrolextreme", () -> UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle);
+                put("fastflyblockbreaking", () -> UTConfigTweaks.BLOCKS.utFastFlyBlockBreakingToggle);
             }
 
             put("bedpatch", () -> true); // Fix integrated in Forge 14.23.2.2643 (#4784)
