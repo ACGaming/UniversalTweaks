@@ -400,6 +400,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Binnie's Mods**
     * **Gather Windfall:** Allows Forestry farms to pick up ExtraTrees fruit
 * **Biomes O' Plenty**
+    * **Farmland Stuck Fix:** Fixes entities getting stuck when BOP farmland converts to dirt (MC-104259)
     * **Hot Spring Water:** Fixes rapid inflection of regeneration effects in hot spring water
 * **Blood Magic**
     * **Bound Tool Harvest Tweak:** Improves performance when harvesting blocks with Bound Tool's right-click and exposes block drops to HarvestDropsEvent
