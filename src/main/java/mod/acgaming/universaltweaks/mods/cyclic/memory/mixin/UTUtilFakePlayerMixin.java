@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.cyclic.mixin;
+package mod.acgaming.universaltweaks.mods.cyclic.memory.mixin;
 
 import java.util.UUID;
 
@@ -18,8 +18,12 @@ public class UTUtilFakePlayerMixin
     @Unique
     private static final GameProfile ut$CYCLIC_PROFILE = new GameProfile(UUID.nameUUIDFromBytes(Const.MODID.getBytes()), "[Cyclic]");
 
+    /**
+     * Use shared profile for fake players. World context (dimension, position) must be set each time before use by the caller.
+     */
     @Redirect(method = "initFakePlayer", at = @At(value = "NEW", target = "(Ljava/util/UUID;Ljava/lang/String;)Lcom/mojang/authlib/GameProfile;"))
-    private static GameProfile utUseSharedProfile(UUID id, String name) {
+    private static GameProfile utUseSharedProfile(UUID id, String name)
+    {
         return ut$CYCLIC_PROFILE;
     }
 }
