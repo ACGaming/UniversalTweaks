@@ -1586,6 +1586,11 @@ public class UTConfigMods
     public static class TinkersConstructCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("JEI Bounds")
+        @Config.Comment("Allows JEI to wrap the tinkers' GUIs instead of leaving large empty spaces")
+        public boolean utTConJEIBoundsToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Gaseous Fluids")
         @Config.Comment("Excludes gaseous fluids from being transferable via faucets")
         public boolean utTConGaseousFluidsToggle = false;
