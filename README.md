@@ -611,6 +611,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Disable Rendering Items in Smeltery:** Disables rendering items in the world when they are inside the Smeltery to prevent lag while rendering
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Gaseous Fluids:** Excludes gaseous fluids from being transferable via faucets
+    * **JEI Bounds:** Allows JEI to wrap the tinkers' GUIs instead of leaving large empty spaces
     * **Material Blacklist:** Hides tool/bow materials in the 'Materials and You' book
     * **Offhand Shuriken:** Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand
     * **Ore Dictionary Cache:** Caches all ore dictionary smelting recipes to speed up game loading
