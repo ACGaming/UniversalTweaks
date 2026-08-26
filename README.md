@@ -209,6 +209,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Explosion Block Drop Chance:** Determines the numerator of the block drop formula on explosions
 * **Falling Block Lifespan:** Determines how long falling blocks remain in ticks until they are dropped under normal circumstances
 * **Fast Dye Blending:** Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry
+* **Fast Fly Block Breaking:** Allows breaking blocks with normal speed while flying
 * **Fast Ladder Climbing:** Allows customization of up and down speeds when climbing ladders
 * **Fast Leaf Decay:** Makes leaves decay faster when trees are chopped
 * **Fast Prefix Checking:** Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
