@@ -210,6 +210,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Falling Block Lifespan:** Determines how long falling blocks remain in ticks until they are dropped under normal circumstances
 * **Fast Dye Blending:** Replaces color lookup for sheep to check a predefined table rather than querying the recipe registry
 * **Fast Fly Block Breaking:** Allows breaking blocks with normal speed while flying
+* **Fast Ladder Climbing:** Allows customization of up and down speeds when climbing ladders
 * **Fast Leaf Decay:** Makes leaves decay faster when trees are chopped
 * **Fast Prefix Checking:** Optimizes Forge's ID prefix checking and removes prefix warnings impacting load time
 * **Fast World Loading:** Skips garbage collection to speed up world loading
@@ -401,6 +402,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Binnie's Mods**
     * **Gather Windfall:** Allows Forestry farms to pick up ExtraTrees fruit
 * **Biomes O' Plenty**
+    * **Farmland Stuck Fix:** Fixes entities getting stuck when BOP farmland converts to dirt (MC-104259)
     * **Hot Spring Water:** Fixes rapid inflection of regeneration effects in hot spring water
 * **Blood Magic**
     * **Bound Tool Harvest Tweak:** Improves performance when harvesting blocks with Bound Tool's right-click and exposes block drops to HarvestDropsEvent
@@ -413,6 +415,8 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
 * **Better with Mods**
     * **Beacon NBT Loading Fix:** Fixes BWM beacons reading null tags from vanilla beacons
+* **Cave Generator**
+    * **Pond Coordinate Fix:** Fixes the pond coordinate bug at chunk borders
 * **CB Multipart**
     * **Memory Leak Fix:** Fixes a memory leak associated with EntityPlayer
 * **Chisel**
@@ -608,6 +612,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Disable Rendering Items in Smeltery:** Disables rendering items in the world when they are inside the Smeltery to prevent lag while rendering
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Gaseous Fluids:** Excludes gaseous fluids from being transferable via faucets
+    * **JEI Bounds:** Allows JEI to wrap the tinkers' GUIs instead of leaving large empty spaces
     * **Material Blacklist:** Hides tool/bow materials in the 'Materials and You' book
     * **Offhand Shuriken:** Suppresses special abilities of long swords and rapiers when shurikens are wielded in the offhand
     * **Ore Dictionary Cache:** Caches all ore dictionary smelting recipes to speed up game loading

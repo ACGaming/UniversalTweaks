@@ -54,6 +54,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.roost.json", c -> c.isModPresent("roost") && c.isModPresent("contenttweaker"));
                 put("mixins/mods/mixins.storagedrawers.client.json", c -> c.isModPresent("storagedrawers"));
                 put("mixins/mods/mixins.tconstruct.client.json", c -> regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utParticleFixesToggle);
+                put("mixins/mods/mixins.tconstruct.multimodulejeibounds.client.json", c -> c.isModPresent("tconstruct") && c.isModPresent("jei") && UTConfigMods.TINKERS_CONSTRUCT.utTConJEIBoundsToggle);
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
             {
@@ -92,6 +93,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.bibliocraft.printpress.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utPrintingPressAnyBlackDyeToggle);
                 put("mixins/mods/mixins.bibliocraft.transfer.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utFixItemTransferToggle);
                 put("mixins/mods/mixins.biomesoplenty.json", c -> c.isModPresent("biomesoplenty"));
+                put("mixins/mods/mixins.biomesoplenty.farmland.json", c -> c.isModPresent("biomesoplenty") && UTConfigMods.BIOMES_O_PLENTY.utBoPFarmlandStuckFixToggle);
                 put("mixins/mods/mixins.biomesoplenty.sealevel.json", c -> c.isModPresent("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
                 put("mixins/mods/mixins.bloodmagic.boundtool.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);
                 put("mixins/mods/mixins.bloodmagic.dupes.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);
@@ -101,6 +103,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.botania.xp.linear.json", c -> c.isModPresent("botania") && UTConfigTweaks.MISC.utLinearXP != 0);
                 put("mixins/mods/mixins.bwm.json", c -> c.isModPresent("betterwithmods") && UTConfigMods.BWM.utBeaconNBTLoadingFix);
                 put("mixins/mods/mixins.cbmultipart.json", c -> c.isModPresent("forgemultipartcbe") && UTConfigMods.CB_MULTIPART.utMemoryLeakFixToggle);
+                put("mixins/mods/mixins.cavegenerator.json", c -> c.isModPresent("cavegenerator") && UTConfigMods.CAVE_GENERATOR.utCaveGeneratorToggle);
                 put("mixins/mods/mixins.ceramics.json", c -> c.isModPresent("ceramics"));
                 put("mixins/mods/mixins.chisel.tcomplement.dupes.json", c -> c.isModPresent("chisel") && c.isModPresent("tcomplement") && UTConfigMods.CHISEL.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.codechickenlib.json", c -> c.isModPresent("codechickenlib") && UTConfigMods.CCL.utPacketLeakFixToggle);
@@ -110,7 +113,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.compactmachines.spawns.json", c -> c.isModPresent("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utAllowedSpawnsImprovementToggle);
                 put("mixins/mods/mixins.cookingforblockheads.json", c -> c.isModPresent("cookingforblockheads") && UTConfigMods.COOKING_FOR_BLOCKHEADS.utOvenFixToggle);
                 put("mixins/mods/mixins.cqrepoured.json", c -> c.isModPresent("cqrepoured"));
-                put("mixins/mods/mixins.cyclic.json", c -> c.isModPresent("cyclicmagic") && UTConfigMods.CYCLIC.utMemoryLeakFixToggle);
+                put("mixins/mods/mixins.cyclic.memory.json", c -> c.isModPresent("cyclicmagic") && UTConfigMods.CYCLIC.utMemoryLeakFixToggle);
                 put("mixins/mods/mixins.dankstorage.json", c -> c.isModPresent("dankstorage"));
                 put("mixins/mods/mixins.divinerpg.aquamarine.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utFixAquamarineStackSize);
                 put("mixins/mods/mixins.divinerpg.armorset.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utFixArmorSetCleanup);

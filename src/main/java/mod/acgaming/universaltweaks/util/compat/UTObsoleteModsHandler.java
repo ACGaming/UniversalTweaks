@@ -174,6 +174,7 @@ public class UTObsoleteModsHandler
                 put("voidfog", () -> UTConfigTweaks.WORLD.VOID_FOG.utVoidFogToggle);
                 put("watercontrolextreme", () -> UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle);
                 put("fastflyblockbreaking", () -> UTConfigTweaks.BLOCKS.utFastFlyBlockBreakingToggle);
+                put("fasterladderclimbing", () -> UTConfigTweaks.BLOCKS.FAST_LADDER_CLIMBING.utFastLadderClimbingToggle);
             }
 
             put("bedpatch", () -> true); // Fix integrated in Forge 14.23.2.2643 (#4784)

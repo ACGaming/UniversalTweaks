@@ -163,6 +163,10 @@ public class UTConfigTweaks
         @Config.Name("Sapling Behavior")
         public final SaplingBehaviorCategory SAPLING_BEHAVIOR = new SaplingBehaviorCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.blocks.fastladderclimbing")
+        @Config.Name("Fast Ladder Climbing")
+        public final FastLadderClimbingCategory FAST_LADDER_CLIMBING = new FastLadderClimbingCategory();
+
         @Config.RequiresMcRestart
         @Config.Name("Better Rail Placement")
         @Config.Comment("Implements an improved system that makes rails face the player when placed")
@@ -519,6 +523,32 @@ public class UTConfigTweaks
                 })
             @Config.RangeDouble(min = 0.0D, max = 1.0D)
             public double utSaplingGrowthChance = 0.125D;
+        }
+
+        public static class FastLadderClimbingCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Fast Ladder Climbing Toggle")
+            @Config.Comment("Allows customization of up and down speeds when climbing ladders")
+            public boolean utFastLadderClimbingToggle = false;
+
+            @Config.Name("[2] Enable Fast Ascent")
+            @Config.Comment("Enables the custom speed increment when going up a ladder")
+            public boolean utEnableFastAscent = true;
+
+            @Config.Name("[3] Ascent Speed Modifier")
+            @Config.Comment("Increments the speed of going up a ladder")
+            @Config.RangeDouble(min = 0.0D, max = 1.0D)
+            public double utAscentSpeedModifier = 0.3D;
+
+            @Config.Name("[4] Enable Fast Descent")
+            @Config.Comment("Enables the custom speed increment when going down a ladder")
+            public boolean utEnableFastDescent = true;
+
+            @Config.Name("[5] Descent Speed Modifier")
+            @Config.Comment("Increments the speed of going down a ladder")
+            @Config.RangeDouble(min = 0.0D, max = 1.0D)
+            public double utDescentSpeedModifier = 0.3D;
         }
     }
 

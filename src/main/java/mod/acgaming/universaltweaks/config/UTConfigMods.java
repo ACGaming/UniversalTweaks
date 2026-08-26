@@ -87,6 +87,10 @@ public class UTConfigMods
     @Config.Name("CB Multipart/Forge Multipart CBE")
     public static final CBMultipartCategory CB_MULTIPART = new CBMultipartCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.cavegenerator")
+    @Config.Name("Cave Generator")
+    public static final CaveGeneratorCategory CAVE_GENERATOR = new CaveGeneratorCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.ccl")
     @Config.Name("CodeChicken Lib")
     public static final CodeChickenLibCategory CCL = new CodeChickenLibCategory();
@@ -592,6 +596,11 @@ public class UTConfigMods
         @Config.Name("Hot Spring Water")
         @Config.Comment("Fixes rapid inflection of regeneration effects in hot spring water")
         public boolean utBoPHotSpringWaterToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Farmland Stuck Fix")
+        @Config.Comment("Fixes entities getting stuck when BOP farmland converts to dirt (MC-104259)")
+        public boolean utBoPFarmlandStuckFixToggle = true;
     }
 
     public static class BloodMagicCategory
@@ -653,6 +662,14 @@ public class UTConfigMods
         @Config.Name("Memory Leak Fix")
         @Config.Comment("Fixes a memory leak associated with EntityPlayer")
         public boolean utMemoryLeakFixToggle = true;
+    }
+
+    public static class CaveGeneratorCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Performance & Bug Fixes")
+        @Config.Comment("Fixes the pond coordinate bug at chunk borders for Cave Generator mod")
+        public boolean utCaveGeneratorToggle = true;
     }
 
     public static class ChiselCategory
@@ -1573,6 +1590,11 @@ public class UTConfigMods
 
     public static class TinkersConstructCategory
     {
+        @Config.RequiresMcRestart
+        @Config.Name("JEI Bounds")
+        @Config.Comment("Allows JEI to wrap the tinkers' GUIs instead of leaving large empty spaces")
+        public boolean utTConJEIBoundsToggle = true;
+
         @Config.RequiresMcRestart
         @Config.Name("Gaseous Fluids")
         @Config.Comment("Excludes gaseous fluids from being transferable via faucets")
