@@ -112,7 +112,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.compactmachines.spawns.json", c -> c.isModPresent("compactmachines3") && UTConfigMods.COMPACT_MACHINES.utAllowedSpawnsImprovementToggle);
                 put("mixins/mods/mixins.cookingforblockheads.json", c -> c.isModPresent("cookingforblockheads") && UTConfigMods.COOKING_FOR_BLOCKHEADS.utOvenFixToggle);
                 put("mixins/mods/mixins.cqrepoured.json", c -> c.isModPresent("cqrepoured"));
-                put("mixins/mods/mixins.cyclic.json", c -> c.isModPresent("cyclicmagic") && UTConfigMods.CYCLIC.utMemoryLeakFixToggle);
+                put("mixins/mods/mixins.cyclic.memory.json", c -> c.isModPresent("cyclicmagic") && UTConfigMods.CYCLIC.utMemoryLeakFixToggle);
                 put("mixins/mods/mixins.dankstorage.json", c -> c.isModPresent("dankstorage"));
                 put("mixins/mods/mixins.divinerpg.aquamarine.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utFixAquamarineStackSize);
                 put("mixins/mods/mixins.divinerpg.armorset.json", c -> c.isModPresent("divinerpg") && UTConfigMods.DIVINE_RPG.utFixArmorSetCleanup);

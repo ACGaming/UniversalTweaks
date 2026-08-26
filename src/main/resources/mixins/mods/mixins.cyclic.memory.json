@@ -1,0 +1,10 @@
+{
+  "package": "mod.acgaming.universaltweaks.mods.cyclic.memory.mixin",
+  "refmap": "universaltweaks.refmap.json",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixinextras": {
+    "minVersion": "0.5.0"
+  },
+  "mixins": ["UTBlockSpikesRetractableMixin", "UTTileEntityBlockMinerMixin", "UTTileEntityUserMixin", "UTTilesVerifyingFakePlayerMixin", "UTUtilFakePlayerMixin"]
+}
