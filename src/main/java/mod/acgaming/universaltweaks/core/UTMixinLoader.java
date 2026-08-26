@@ -92,6 +92,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.bibliocraft.printpress.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utPrintingPressAnyBlackDyeToggle);
                 put("mixins/mods/mixins.bibliocraft.transfer.json", c -> regularBiblioCraftLoaded() && UTConfigMods.BIBLIOCRAFT.utFixItemTransferToggle);
                 put("mixins/mods/mixins.biomesoplenty.json", c -> c.isModPresent("biomesoplenty"));
+                put("mixins/mods/mixins.biomesoplenty.farmland.json", c -> c.isModPresent("biomesoplenty") && UTConfigMods.BIOMES_O_PLENTY.utBoPFarmlandStuckFixToggle);
                 put("mixins/mods/mixins.biomesoplenty.sealevel.json", c -> c.isModPresent("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
                 put("mixins/mods/mixins.bloodmagic.boundtool.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);
                 put("mixins/mods/mixins.bloodmagic.dupes.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);

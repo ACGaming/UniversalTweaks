@@ -596,6 +596,11 @@ public class UTConfigMods
         @Config.Name("Hot Spring Water")
         @Config.Comment("Fixes rapid inflection of regeneration effects in hot spring water")
         public boolean utBoPHotSpringWaterToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Farmland Stuck Fix")
+        @Config.Comment("Fixes entities getting stuck when BOP farmland converts to dirt (MC-104259)")
+        public boolean utBoPFarmlandStuckFixToggle = true;
     }
 
     public static class BloodMagicCategory
