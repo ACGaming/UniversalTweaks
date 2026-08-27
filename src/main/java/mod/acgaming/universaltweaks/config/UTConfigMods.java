@@ -159,6 +159,10 @@ public class UTConfigMods
     @Config.Name("Ender Storage")
     public static final EnderStorageCategory ENDER_STORAGE = new EnderStorageCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.enderutilities")
+    @Config.Name("Ender Utilities")
+    public static final EnderUtilitiesCategory ENDER_UTILITIES = new EnderUtilitiesCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.esm")
     @Config.Name("Epic Siege Mod")
     public static final EpicSiegeModCategory EPIC_SIEGE_MOD = new EpicSiegeModCategory();
@@ -900,6 +904,14 @@ public class UTConfigMods
         @Config.Name("Fix Frequency Tracking")
         @Config.Comment("Fixes storage frequencies being tracked multiple times")
         public boolean utFrequencyTrackFixToggle = true;
+    }
+
+    public static class EnderUtilitiesCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix GUI Close Slot Crash")
+        @Config.Comment("Prevents slot hotkeys from being processed after an Ender Utilities GUI has already been closed")
+        public boolean utGuiCloseSlotCrashFixToggle = true;
     }
 
     public static class EpicSiegeModCategory

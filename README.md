@@ -466,6 +466,8 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Save Filter Cycle Buttons Properly:** Fixes an issue where Cycle Buttons for Damage do not report being clicked when in the Picker Overlay, preventing changing Damage values until clicked again
 * **Ender Storage**
     * **Fix Frequency Tracking:** Fixes storage frequencies being tracked multiple times
+* **Ender Utilities**
+    * **Fix GUI Close Slot Crash:** Prevents crashes from processing slot hotkeys after closing Ender Utilities GUIs (e.g. handybag hotkey 1-9 crash)
 * **Epic Siege Mod**
     * **Disable Digger AI Debug:** Disables leftover debug logging inside the digger AI of the beta builds
 * **Extra Utilities 2**
