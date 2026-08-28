@@ -4,8 +4,7 @@ msg.universaltweaks.obsoletemods.warning2=Daher sind die folgenden Mods nun nich
 msg.universaltweaks.obsoletemods.warning3=Ziehe in Erwägung, diese aus deinem Spiel zu entfernen oder die entsprechenden Funktionen zu deaktivieren.
 
 # TOGGLE CHEATS
-btn.universaltweaks.cheats.enabled=Cheats: AN
-btn.universaltweaks.cheats.disabled=Cheats: AUS
+btn.universaltweaks.cheats=Cheats:
 msg.universaltweaks.cheats.enabled=Cheats sind nun §aaktiviert
 msg.universaltweaks.cheats.disabled=Cheats sind nun §cdeaktiviert
 

@@ -4,8 +4,7 @@ msg.universaltweaks.obsoletemods.warning2=Por ende, los siguientes mods son inco
 msg.universaltweaks.obsoletemods.warning3=Considera quitarlos de tu instalación o desactivar sus funciones respectivas.
 
 # TOGGLE CHEATS
-btn.universaltweaks.cheats.enabled=Trucos: ACTIVADOS
-btn.universaltweaks.cheats.disabled=Trucos: DESACTIVADOS
+btn.universaltweaks.cheats=Trucos:
 msg.universaltweaks.cheats.enabled=Los trucos se encuentran §aactivados
 msg.universaltweaks.cheats.disabled=Los trucos se encuentran §adesactivados
 

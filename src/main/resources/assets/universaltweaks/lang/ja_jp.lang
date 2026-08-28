@@ -9,8 +9,7 @@ keybind.universaltweaks.dismount=降りる
 keybind.universaltweaks.narrator=ナレーター切り替え
 
 # TOGGLE CHEATS
-btn.universaltweaks.cheats.enabled=チート: ON
-btn.universaltweaks.cheats.disabled=チート: OFF
+btn.universaltweaks.cheats=チート:
 msg.universaltweaks.cheats.enabled=チートを§a有効化§fしました
 msg.universaltweaks.cheats.disabled=チートを§c無効化§fしました
 

@@ -4,7 +4,6 @@ msg.universaltweaks.obsoletemods.warning2=因此，以下模組現在與通用�
 msg.universaltweaks.obsoletemods.warning3=請考慮從你的遊戲中移除它們，或禁用相應的功能。
 
 # TOGGLE CHEATS
-btn.universaltweaks.cheats.enabled=作弊模式：開啟
-btn.universaltweaks.cheats.disabled=作弊模式：關閉
+btn.universaltweaks.cheats=作弊模式：
 msg.universaltweaks.cheats.enabled=作弊模式已§a執行
 msg.universaltweaks.cheats.disabled=作弊模式已§c停用
