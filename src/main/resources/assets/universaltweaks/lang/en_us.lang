@@ -24,14 +24,15 @@ enchantment.parry=Rebound
 msg.universaltweaks.tweaks.pickupnotification.xp=Experience
 
 # LAN SERVER PROPERTIES
-btn.universaltweaks.lanserverproperties.allow_flight=Allow Flight
-btn.universaltweaks.lanserverproperties.allow_pvp=Allow PVP
-btn.universaltweaks.lanserverproperties.max_players=Max Players
-btn.universaltweaks.lanserverproperties.online_mode=Online Mode
+btn.universaltweaks.lanserverproperties.allow_flight.c=Allow Flight:
+btn.universaltweaks.lanserverproperties.allow_pvp.c=Allow PVP:
+btn.universaltweaks.lanserverproperties.game_mode.c=Game Mode:
+btn.universaltweaks.lanserverproperties.spawn_animals.c=Spawn Animals:
+btn.universaltweaks.lanserverproperties.spawn_npcs.c=Spawn NPCs:
+btn.universaltweaks.lanserverproperties.online_mode.c=Online Mode:
 btn.universaltweaks.lanserverproperties.online_mode_desc=Disabling this will allow unauthenticated connections
 btn.universaltweaks.lanserverproperties.port=Listening Port
-btn.universaltweaks.lanserverproperties.spawn_animals=Spawn Animals
-btn.universaltweaks.lanserverproperties.spawn_npcs=Spawn NPCs
+btn.universaltweaks.lanserverproperties.max_players=Max Players
 
 # COMPACT MESSAGES
 msg.universaltweaks.compactmessages.count=This message has been repeated %s times

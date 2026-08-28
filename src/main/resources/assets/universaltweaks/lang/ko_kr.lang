@@ -16,3 +16,14 @@ enchantment.parry=반사
 
 # PICKUP NOTIFICATION
 msg.universaltweaks.tweaks.pickupnotification.xp=경험치
+
+# LAN SERVER PROPERTIES
+btn.universaltweaks.lanserverproperties.allow_flight.c=비행 허용:
+btn.universaltweaks.lanserverproperties.allow_pvp.c=PVP 허용:
+btn.universaltweaks.lanserverproperties.game_mode.c=게임 모드:
+btn.universaltweaks.lanserverproperties.spawn_animals.c=동물 스폰:
+btn.universaltweaks.lanserverproperties.spawn_npcs.c=NPC 스폰:
+btn.universaltweaks.lanserverproperties.online_mode.c=온라인 모드:
+btn.universaltweaks.lanserverproperties.online_mode_desc=비활성화하면 인증되지 않은 연결을 허용합니다
+btn.universaltweaks.lanserverproperties.port=수신 포트
+btn.universaltweaks.lanserverproperties.max_players=최대 플레이어 수
