@@ -218,6 +218,7 @@ public class UTMixinLoader implements ILateMixinLoader
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
             {
                 put("mixins/tweaks/mixins.blocks.enchantmenttable.bookshelf.json", c -> c.isModPresent("bookshelf") && UTConfigTweaks.BLOCKS.utEnchantmentTableObstructionToggle);
+                put("mixins/tweaks/mixins.misc.unsafefluidstack.json", c -> UTConfigTweaks.MISC.utUnsafeFluidStackConstructorToggle);
             }
         }
     });

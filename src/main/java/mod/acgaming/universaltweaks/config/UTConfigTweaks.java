@@ -1964,6 +1964,11 @@ public class UTConfigTweaks
         @Config.Comment("Restores feature to tilt the camera when damaged")
         public boolean utDamageTiltToggle = true;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Unsafe FluidStack Constructor")
+        @Config.Comment("Skips the registration check for fluid in FluidStack construtcors")
+        public boolean utUnsafeFluidStackConstructorToggle = true;
+
         @Config.Name("Default Difficulty")
         @Config.Comment("Sets the default difficulty for newly generated worlds")
         public EnumDifficulty utDefaultDifficulty = EnumDifficulty.NORMAL;
