@@ -272,7 +272,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.misc.credits.json", c -> UTConfigTweaks.MISC.utSkipCreditsToggle);
                 put("mixins/tweaks/mixins.misc.glint.enchantedbook.json", c -> UTConfigTweaks.MISC.utDisableEnchantmentBookGlint);
                 put("mixins/tweaks/mixins.misc.glint.potion.json", c -> UTConfigTweaks.MISC.utDisablePotionGlint);
-                put("mixins/tweaks/mixins.misc.gui.defaultguitextcolor.json", c -> !UTConfigTweaks.MISC.utDefaultGuiTextColor.equals("404040"));
+                put("mixins/tweaks/mixins.misc.gui.defaultguicolors.json", c -> !UTConfigTweaks.MISC.utDefaultGuiTextColor.equals("404040") || !UTConfigTweaks.MISC.utDefaultGuiButtonColor.equals("E0E0E0|FFFFA0|A0A0A0"));
                 put("mixins/tweaks/mixins.misc.gui.gamewindow.icon.json", c -> !c.inDev() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon16.isEmpty() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon32.isEmpty() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowIcon256.isEmpty());
                 put("mixins/tweaks/mixins.misc.gui.gamewindow.title.json", c -> !c.inDev() && !UTConfigTweaks.MISC.GAME_WINDOW.utGameWindowDisplayTitle.isEmpty());
                 put("mixins/tweaks/mixins.misc.gui.keybindlistentry.json", c -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
@@ -283,6 +283,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.misc.gui.potionduration.json", c -> UTConfigTweaks.MISC.utPotionDurationToggle);
                 put("mixins/tweaks/mixins.misc.gui.selecteditemtooltip.json", c -> UTConfigTweaks.MISC.utSelectedItemTooltipHeight != 59);
                 put("mixins/tweaks/mixins.misc.gui.textshadow.json", c -> UTConfigTweaks.MISC.utDisableTextShadow);
+                put("mixins/tweaks/mixins.misc.gui.textfield.json", c -> UTConfigTweaks.MISC.utTextFieldBorderColor);
                 put("mixins/tweaks/mixins.misc.hotbarscroll.json", c -> UTConfigTweaks.MISC.utDisableHotbarScrollWrapping);
                 put("mixins/tweaks/mixins.misc.lightning.flash.json", c -> UTConfigTweaks.MISC.LIGHTNING.utLightningFlashToggle);
                 put("mixins/tweaks/mixins.misc.gui.mainmenu.json", c -> UTConfigTweaks.MISC.utReturnToMainMenu);
