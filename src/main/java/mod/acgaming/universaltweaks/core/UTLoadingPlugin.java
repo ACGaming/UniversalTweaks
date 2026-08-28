@@ -286,6 +286,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/tweaks/mixins.misc.hotbarscroll.json", c -> UTConfigTweaks.MISC.utDisableHotbarScrollWrapping);
                 put("mixins/tweaks/mixins.misc.lightning.flash.json", c -> UTConfigTweaks.MISC.LIGHTNING.utLightningFlashToggle);
                 put("mixins/tweaks/mixins.misc.gui.mainmenu.json", c -> UTConfigTweaks.MISC.utReturnToMainMenu);
+                put("mixins/tweaks/mixins.misc.moderndebugrender.json", c -> UTConfigTweaks.MISC.utModernDebugRenderToggle);
                 put("mixins/tweaks/mixins.misc.music.json", c -> UTConfigTweaks.MISC.MUSIC.utMusicControlToggle);
                 put("mixins/tweaks/mixins.misc.narrator.json", c -> UTConfigTweaks.MISC.utDisableNarratorToggle);
                 put("mixins/tweaks/mixins.misc.narratorkeybind.json", c -> UTConfigTweaks.MISC.utUseCustomNarratorKeybind);
