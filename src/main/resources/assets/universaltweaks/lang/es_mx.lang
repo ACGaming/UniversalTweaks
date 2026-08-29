@@ -4,8 +4,7 @@ msg.universaltweaks.obsoletemods.warning2=Por ende, los siguientes mods son inco
 msg.universaltweaks.obsoletemods.warning3=Considera quitarlos de tu instalación o desactivar sus funciones respectivas.
 
 # TOGGLE CHEATS
-btn.universaltweaks.cheats.enabled=Trucos: ACTIVADOS
-btn.universaltweaks.cheats.disabled=Trucos: DESACTIVADOS
+btn.universaltweaks.cheats=Trucos:
 msg.universaltweaks.cheats.enabled=Los trucos se encuentran §aactivados
 msg.universaltweaks.cheats.disabled=Los trucos se encuentran §adesactivados
 
@@ -100,3 +99,14 @@ cfg.universaltweaks.tweaks.misc.stg=Atacar a través del pasto
 cfg.universaltweaks.tweaks.misc.toastcontrol=Toast Control
 cfg.universaltweaks.tweaks.world.chunkgenlimit=Límite de generación de chunks
 cfg.universaltweaks.tweaks.world.dimensionunload=Descargar dimensiones
+
+# LAN SERVER PROPERTIES
+btn.universaltweaks.lanserverproperties.allow_flight.c=Permitir volar:
+btn.universaltweaks.lanserverproperties.allow_pvp.c=Permitir PVP:
+btn.universaltweaks.lanserverproperties.game_mode.c=Modo de juego:
+btn.universaltweaks.lanserverproperties.spawn_animals.c=Generar animales:
+btn.universaltweaks.lanserverproperties.spawn_npcs.c=Generar NPCs:
+btn.universaltweaks.lanserverproperties.online_mode.c=Modo en línea:
+btn.universaltweaks.lanserverproperties.online_mode_desc=Desactivar esto permitirá conexiones no autenticadas
+btn.universaltweaks.lanserverproperties.port=Puerto de escucha
+btn.universaltweaks.lanserverproperties.max_players=Máximo de jugadores

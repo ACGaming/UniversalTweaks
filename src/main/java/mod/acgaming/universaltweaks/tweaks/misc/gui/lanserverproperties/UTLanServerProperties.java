@@ -1,6 +1,7 @@
 package mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties;
 
-import net.minecraft.client.Minecraft;
+import mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties.mixin.GuiShareToLanAccessor;
+
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiShareToLan;
 import net.minecraftforge.client.event.GuiOpenEvent;
@@ -15,7 +16,7 @@ public class UTLanServerProperties
         GuiScreen guiScreen = event.getGui();
         if (guiScreen instanceof GuiShareToLan)
         {
-            GuiScreen lastScreen = Minecraft.getMinecraft().currentScreen;
+            GuiScreen lastScreen = ((GuiShareToLanAccessor) guiScreen).getLastScreen();
             event.setGui(new UTGuiShareToLan(lastScreen));
         }
     }

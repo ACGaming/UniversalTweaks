@@ -4,7 +4,17 @@ msg.universaltweaks.obsoletemods.warning2=因此，以下模組現在與通用�
 msg.universaltweaks.obsoletemods.warning3=請考慮從你的遊戲中移除它們，或禁用相應的功能。
 
 # TOGGLE CHEATS
-btn.universaltweaks.cheats.enabled=作弊模式：開啟
-btn.universaltweaks.cheats.disabled=作弊模式：關閉
+btn.universaltweaks.cheats=作弊模式：
 msg.universaltweaks.cheats.enabled=作弊模式已§a執行
 msg.universaltweaks.cheats.disabled=作弊模式已§c停用
+
+# LAN SERVER PROPERTIES
+btn.universaltweaks.lanserverproperties.allow_flight.c=允許飛行：
+btn.universaltweaks.lanserverproperties.allow_pvp.c=允許PVP：
+btn.universaltweaks.lanserverproperties.game_mode.c=遊戲模式：
+btn.universaltweaks.lanserverproperties.spawn_animals.c=生成動物：
+btn.universaltweaks.lanserverproperties.spawn_npcs.c=生成NPC：
+btn.universaltweaks.lanserverproperties.online_mode.c=連線模式：
+btn.universaltweaks.lanserverproperties.online_mode_desc=停用後將允許未經身分驗證的連線
+btn.universaltweaks.lanserverproperties.port=監聽連接埠
+btn.universaltweaks.lanserverproperties.max_players=最大玩家數

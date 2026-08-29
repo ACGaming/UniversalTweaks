@@ -9,8 +9,7 @@ keybind.universaltweaks.dismount=降りる
 keybind.universaltweaks.narrator=ナレーター切り替え
 
 # TOGGLE CHEATS
-btn.universaltweaks.cheats.enabled=チート: ON
-btn.universaltweaks.cheats.disabled=チート: OFF
+btn.universaltweaks.cheats=チート:
 msg.universaltweaks.cheats.enabled=チートを§a有効化§fしました
 msg.universaltweaks.cheats.disabled=チートを§c無効化§fしました
 
@@ -24,14 +23,15 @@ enchantment.parry=リバウンド
 msg.universaltweaks.tweaks.pickupnotification.xp=経験値
 
 # LAN SERVER PROPERTIES
-btn.universaltweaks.lanserverproperties.allow_flight=飛行を許可
-btn.universaltweaks.lanserverproperties.allow_pvp=PVPを許可
-btn.universaltweaks.lanserverproperties.max_players=最大プレイヤー数
-btn.universaltweaks.lanserverproperties.online_mode=オンラインモード
+btn.universaltweaks.lanserverproperties.allow_flight.c=飛行を許可:
+btn.universaltweaks.lanserverproperties.allow_pvp.c=PVPを許可:
+btn.universaltweaks.lanserverproperties.game_mode.c=ゲームモード:
+btn.universaltweaks.lanserverproperties.spawn_animals.c=動物をスポーン:
+btn.universaltweaks.lanserverproperties.spawn_npcs.c=NPCをスポーン:
+btn.universaltweaks.lanserverproperties.online_mode.c=オンラインモード:
 btn.universaltweaks.lanserverproperties.online_mode_desc=これを無効にすると認証されていない接続を許可します
 btn.universaltweaks.lanserverproperties.port=待ち受けポート
-btn.universaltweaks.lanserverproperties.spawn_animals=動物をスポーン
-btn.universaltweaks.lanserverproperties.spawn_npcs=NPCをスポーン
+btn.universaltweaks.lanserverproperties.max_players=最大プレイヤー数
 
 # COMPACT MESSAGES
 msg.universaltweaks.compactmessages.count=このメッセージは %s 回繰り返されました

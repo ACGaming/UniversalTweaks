@@ -2,12 +2,13 @@ package mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties;
 
 import java.io.IOException;
 
+import org.lwjgl.input.Keyboard;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.GuiShareToLan;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.server.integrated.IntegratedServer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
@@ -18,31 +19,46 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import mod.acgaming.universaltweaks.UniversalTweaks;
-import mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties.mixin.GuiShareToLanAccessor;
 import mod.acgaming.universaltweaks.tweaks.misc.gui.lanserverproperties.mixin.PlayerListAccessor;
 
 // Courtesy of rikka0w0
 @SideOnly(Side.CLIENT)
-public class UTGuiShareToLan extends GuiShareToLan
+public class UTGuiShareToLan extends GuiScreen
 {
-    public static final String ONLINE_MODE_LANG_KEY = "btn.universaltweaks.lanserverproperties.online_mode";
-    public static final String ONLINE_MODE_LANG_KEY_DESC = "btn.universaltweaks.lanserverproperties.online_mode_desc";
-    public static final String SPAWN_ANIMALS_LANG_KEY = "btn.universaltweaks.lanserverproperties.spawn_animals";
-    public static final String SPAWN_NPCS_LANG_KEY = "btn.universaltweaks.lanserverproperties.spawn_npcs";
-    public static final String ALLOW_PVP_LANG_KEY = "btn.universaltweaks.lanserverproperties.allow_pvp";
-    public static final String ALLOW_FLIGHT_LANG_KEY = "btn.universaltweaks.lanserverproperties.allow_flight";
-    public static final String PORT_LANG_KEY = "btn.universaltweaks.lanserverproperties.port";
-    public static final String MAX_PLAYERS_LANG_KEY = "btn.universaltweaks.lanserverproperties.max_players";
     public static final String NBT_TAG = "LANServerProperties";
 
+    protected static final int PORT_MIN = 1024;
+    protected static final int PORT_MAX = 65535;
+    protected static final int MAX_PLAYERS_MIN = 1;
+    protected static final int MAX_PLAYERS_MAX = 65535;
+
+    protected static final int ID_START = 101;
+    protected static final int ID_CANCEL = 102;
+    protected static final int ID_ALLOW_CHEATS = 103;
+    protected static final int ID_GAME_MODE = 104;
+    protected static final int ID_SPAWN_ANIMALS = 105;
+    protected static final int ID_SPAWN_NPCS = 106;
+    protected static final int ID_ALLOW_PVP = 107;
+    protected static final int ID_ALLOW_FLIGHT = 108;
+    protected static final int ID_ONLINE_MODE = 109;
+
+    protected static final int WIDGET_WIDTH = 150;
+    protected static final int WIDGET_HEIGHT = 20;
+
     protected final GuiScreen lastScreen;
+    protected boolean settingsLoaded = false;
+
     protected GuiTextField portTextField = null;
     protected GuiTextField maxPlayersTextField = null;
+    protected GuiButton gameModeButton = null;
+    protected GuiButton allowCheatsButton = null;
     protected GuiButton onlineModeButton = null;
     protected GuiButton spawnAnimalsButton = null;
     protected GuiButton spawnNpcsButton = null;
     protected GuiButton allowPvpButton = null;
     protected GuiButton allowFlightButton = null;
+    protected String gameMode = "survival";
+    protected boolean allowCheats = false;
     protected boolean onlineMode = true;
     protected boolean spawnAnimals = true;
     protected boolean spawnNpcs = true;
@@ -53,119 +69,122 @@ public class UTGuiShareToLan extends GuiShareToLan
 
     public UTGuiShareToLan(GuiScreen lastScreen)
     {
-        super(lastScreen);
         this.lastScreen = lastScreen;
     }
 
     @Override
     public void initGui()
     {
-        // Load saved settings or use defaults
-        loadSavedSettings();
-
-        // Initialize the default GUI
-        super.initGui();
-
-        // Attempt to locate the old button
-        GuiButton button = null;
-        String msg = I18n.format("lanServer.start");
-        for (GuiButton widget : this.buttonList)
+        // Load saved settings or use defaults, but only once so a resize does not discard pending edits
+        if (!this.settingsLoaded)
         {
-            if (widget.displayString.equals(msg))
-            {
-                button = widget;
-                break;
-            }
+            loadSavedSettings();
+            this.settingsLoaded = true;
         }
 
-        if (button == null)
-        {
-            UniversalTweaks.LOGGER.info("LAN Server Properties ::: Unable to locate start server button!");
-            // If we cannot find the "Start LAN Server" button
-            // just leave everything else there
-            return;
-        }
+        Keyboard.enableRepeatEvents(true);
 
-        // Add our own widgets
-        // Toggle button for Online Mode
-        this.onlineModeButton = new GuiButton(233, this.width / 2 - 155, 124, 150, 20, getOnlineButtonText());
-        this.addButton(this.onlineModeButton);
+        // Carry the field state over so a resize keeps the pending input and the focused field
+        String portText = this.portTextField != null ? this.portTextField.getText() : String.valueOf(this.port);
+        String maxPlayersText = this.maxPlayersTextField != null ? this.maxPlayersTextField.getText() : String.valueOf(this.maxPlayers);
+        boolean maxPlayersFocused = this.maxPlayersTextField != null && this.maxPlayersTextField.isFocused();
 
-        // Toggle button for Spawn Animals
-        this.spawnAnimalsButton = new GuiButton(234, this.width / 2 + 5, 124, 150, 20, getSpawnAnimalsButtonText());
-        this.addButton(this.spawnAnimalsButton);
+        int leftX = this.width / 2 - 155;
+        int rightX = this.width / 2 + 5;
+        int centerX = this.width / 2 - WIDGET_WIDTH / 2;
+        int rowY = 86;
+        final int rowPitch = 24;
 
-        // Toggle button for Spawn NPCs
-        this.spawnNpcsButton = new GuiButton(235, this.width / 2 + 5, 148, 150, 20, getSpawnNpcsButtonText());
-        this.addButton(this.spawnNpcsButton);
+        this.gameModeButton = this.addButton(new GuiButton(ID_GAME_MODE, leftX, rowY, WIDGET_WIDTH, WIDGET_HEIGHT, getGameModeButtonText()));
+        this.allowCheatsButton = this.addButton(new GuiButton(ID_ALLOW_CHEATS, rightX, rowY, WIDGET_WIDTH, WIDGET_HEIGHT, getAllowCheatsButtonText()));
+        rowY += rowPitch;
+        this.spawnAnimalsButton = this.addButton(new GuiButton(ID_SPAWN_ANIMALS, leftX, rowY, WIDGET_WIDTH, WIDGET_HEIGHT, getSpawnAnimalsButtonText()));
+        this.spawnNpcsButton = this.addButton(new GuiButton(ID_SPAWN_NPCS, rightX, rowY, WIDGET_WIDTH, WIDGET_HEIGHT, getSpawnNpcsButtonText()));
+        rowY += rowPitch;
+        this.allowPvpButton = this.addButton(new GuiButton(ID_ALLOW_PVP, leftX, rowY, WIDGET_WIDTH, WIDGET_HEIGHT, getAllowPvpButtonText()));
+        this.allowFlightButton = this.addButton(new GuiButton(ID_ALLOW_FLIGHT, rightX, rowY, WIDGET_WIDTH, WIDGET_HEIGHT, getAllowFlightButtonText()));
+        rowY += rowPitch;
+        this.onlineModeButton = this.addButton(new GuiButton(ID_ONLINE_MODE, centerX, rowY, WIDGET_WIDTH, WIDGET_HEIGHT, getOnlineModeButtonText()));
 
-        // Toggle button for Allow PVP
-        this.allowPvpButton = new GuiButton(236, this.width / 2 + 5, 172, 150, 20, getAllowPvpButtonText());
-        this.addButton(this.allowPvpButton);
+        int bottomY = this.height - 28;
+        this.addButton(new GuiButton(ID_START, leftX, bottomY, WIDGET_WIDTH, WIDGET_HEIGHT, I18n.format("lanServer.start")));
+        this.addButton(new GuiButton(ID_CANCEL, rightX, bottomY, WIDGET_WIDTH, WIDGET_HEIGHT, I18n.format("gui.cancel")));
 
-        // Toggle button for Allow Flight
-        this.allowFlightButton = new GuiButton(237, this.width / 2 + 5, 196, 150, 20, getAllowFlightButtonText());
-        this.addButton(this.allowFlightButton);
+        // Text fields are inset by one pixel so their border lines up with the button columns
+        this.portTextField = createNumberField(leftX + 1, portText, PORT_MIN, PORT_MAX);
+        this.maxPlayersTextField = createNumberField(rightX + 1, maxPlayersText, MAX_PLAYERS_MIN, MAX_PLAYERS_MAX);
+        this.portTextField.setFocused(!maxPlayersFocused);
+        this.maxPlayersTextField.setFocused(maxPlayersFocused);
+    }
 
-        // Text field for Port
-        this.portTextField = new GuiTextField(238, this.fontRenderer, this.width / 2 - 154, this.height - 54, 148, 20);
-        this.portTextField.setText(String.valueOf(port));
-
-        // Text field for Max Players
-        this.maxPlayersTextField = new GuiTextField(239, this.fontRenderer, this.width / 2 + 6, this.height - 54, 148, 20);
-        this.maxPlayersTextField.setText(String.valueOf(maxPlayers));
+    @Override
+    public void onGuiClosed()
+    {
+        Keyboard.enableRepeatEvents(false);
     }
 
     @Override
     protected void actionPerformed(GuiButton button) throws IOException
     {
-        if (button.id == 101)
+        switch (button.id)
         {
-            serverStartButtonClick(button);
-        }
-        else if (button.id == 233)
-        {
-            this.onlineMode = !this.onlineMode;
-            button.displayString = this.getOnlineButtonText();
-        }
-        else if (button.id == 234)
-        {
-            this.spawnAnimals = !this.spawnAnimals;
-            button.displayString = this.getSpawnAnimalsButtonText();
-        }
-        else if (button.id == 235)
-        {
-            this.spawnNpcs = !this.spawnNpcs;
-            button.displayString = this.getSpawnNpcsButtonText();
-        }
-        else if (button.id == 236)
-        {
-            this.allowPvp = !this.allowPvp;
-            button.displayString = this.getAllowPvpButtonText();
-        }
-        else if (button.id == 237)
-        {
-            this.allowFlight = !this.allowFlight;
-            button.displayString = this.getAllowFlightButtonText();
-        }
-        else
-        {
-            super.actionPerformed(button);
+            case ID_START:
+                startServer();
+                break;
+            case ID_CANCEL:
+                this.mc.displayGuiScreen(this.lastScreen);
+                break;
+            case ID_GAME_MODE:
+                this.gameMode = nextGameMode(this.gameMode);
+                button.displayString = getGameModeButtonText();
+                break;
+            case ID_ALLOW_CHEATS:
+                this.allowCheats = !this.allowCheats;
+                button.displayString = getAllowCheatsButtonText();
+                break;
+            case ID_SPAWN_ANIMALS:
+                this.spawnAnimals = !this.spawnAnimals;
+                button.displayString = getSpawnAnimalsButtonText();
+                break;
+            case ID_SPAWN_NPCS:
+                this.spawnNpcs = !this.spawnNpcs;
+                button.displayString = getSpawnNpcsButtonText();
+                break;
+            case ID_ALLOW_PVP:
+                this.allowPvp = !this.allowPvp;
+                button.displayString = getAllowPvpButtonText();
+                break;
+            case ID_ALLOW_FLIGHT:
+                this.allowFlight = !this.allowFlight;
+                button.displayString = getAllowFlightButtonText();
+                break;
+            case ID_ONLINE_MODE:
+                this.onlineMode = !this.onlineMode;
+                button.displayString = getOnlineModeButtonText();
+                break;
+            default:
+                super.actionPerformed(button);
         }
     }
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
-        super.drawScreen(mouseX, mouseY, partialTicks);
+        this.drawDefaultBackground();
+        this.drawCenteredString(this.fontRenderer, I18n.format("lanServer.title"), this.width / 2, 50, 0xFFFFFF);
+        this.drawCenteredString(this.fontRenderer, I18n.format("lanServer.otherPlayers"), this.width / 2, 66, 0xFFFFFF);
 
-        this.drawString(this.fontRenderer, I18n.format(PORT_LANG_KEY), this.width / 2 - 155, this.height - 66, 10526880);
+        final int labelY = 186;
+        this.drawCenteredString(this.fontRenderer, I18n.format("btn.universaltweaks.lanserverproperties.port"), this.portTextField.x + this.portTextField.width / 2, labelY, 0xFFFFFF);
         this.portTextField.drawTextBox();
 
-        this.drawString(this.fontRenderer, I18n.format(MAX_PLAYERS_LANG_KEY), this.width / 2 + 5, this.height - 66, 10526880);
+        this.drawCenteredString(this.fontRenderer, I18n.format("btn.universaltweaks.lanserverproperties.max_players"), this.maxPlayersTextField.x + this.maxPlayersTextField.width / 2, labelY, 0xFFFFFF);
         this.maxPlayersTextField.drawTextBox();
 
-        if (this.onlineModeButton.isMouseOver()) this.drawHoveringText(I18n.format(ONLINE_MODE_LANG_KEY_DESC), mouseX, mouseY);
+        super.drawScreen(mouseX, mouseY, partialTicks);
+
+        // Buttons only know whether they are hovered after they have been drawn
+        if (this.onlineModeButton.isMouseOver()) this.drawHoveringText(I18n.format("btn.universaltweaks.lanserverproperties.online_mode_desc"), mouseX, mouseY);
     }
 
     @Override
@@ -173,13 +192,17 @@ public class UTGuiShareToLan extends GuiShareToLan
     {
         if (this.portTextField.textboxKeyTyped(typedChar, keyCode))
         {
-            // Check the format, make sure the text is a valid integer
-            this.portTextField.setTextColor(validateInt(this.portTextField.getText()) > 0 ? 0xFFFFFF : 0xFF0000);
+            this.portTextField.setTextColor(parseBounded(this.portTextField.getText(), PORT_MIN, PORT_MAX) > 0 ? 0xFFFFFF : 0xFF0000);
         }
         else if (this.maxPlayersTextField.textboxKeyTyped(typedChar, keyCode))
         {
-            // Check the format, make sure the text is a valid integer
-            this.maxPlayersTextField.setTextColor(validateInt(this.maxPlayersTextField.getText()) > 0 ? 0xFFFFFF : 0xFF0000);
+            this.maxPlayersTextField.setTextColor(parseBounded(this.maxPlayersTextField.getText(), MAX_PLAYERS_MIN, MAX_PLAYERS_MAX) > 0 ? 0xFFFFFF : 0xFF0000);
+        }
+        else if (keyCode == Keyboard.KEY_TAB)
+        {
+            boolean portFocused = this.portTextField.isFocused();
+            this.portTextField.setFocused(!portFocused);
+            this.maxPlayersTextField.setFocused(portFocused);
         }
         else
         {
@@ -195,28 +218,50 @@ public class UTGuiShareToLan extends GuiShareToLan
         this.maxPlayersTextField.mouseClicked(mouseX, mouseY, mouseButton);
     }
 
-    private int validateInt(String text)
+    @Override
+    public void updateScreen()
     {
-        boolean valid = true;
-        int parsedInt = -1;
+        super.updateScreen();
+        this.portTextField.updateCursorCounter();
+        this.maxPlayersTextField.updateCursorCounter();
+    }
+
+    protected GuiTextField createNumberField(int x, String text, int min, int max)
+    {
+        GuiTextField textField = new GuiTextField(0, this.fontRenderer, x, 198, WIDGET_WIDTH - 2, WIDGET_HEIGHT);
+        textField.setMaxStringLength(5);
+        textField.setValidator(input -> input == null || input.chars().allMatch(Character::isDigit));
+        textField.setText(text);
+        textField.setTextColor(parseBounded(textField.getText(), min, max) > 0 ? 0xFFFFFF : 0xFF0000);
+        return textField;
+    }
+
+    protected static String nextGameMode(String current)
+    {
+        if ("survival".equals(current)) return "spectator";
+        if ("spectator".equals(current)) return "creative";
+        if ("creative".equals(current)) return "adventure";
+        return "survival";
+    }
+
+    protected static int parseBounded(String text, int min, int max)
+    {
         try
         {
-            if (!text.isEmpty())
-            {
-                parsedInt = Integer.parseInt(text);
-                if (parsedInt <= 0 || parsedInt > 65535) valid = false;
-            }
+            if (text.isEmpty()) return -1;
+            int parsedInt = Integer.parseInt(text);
+            return parsedInt >= min && parsedInt <= max ? parsedInt : -1;
         }
         catch (NumberFormatException e)
         {
-            valid = false;
+            return -1;
         }
-        return valid ? parsedInt : -1;
     }
 
     private void loadSavedSettings()
     {
         WorldServer worldServer = this.mc.getIntegratedServer().getWorld(0);
+        //noinspection ConstantValue
         if (worldServer != null)
         {
             WorldInfo worldInfo = worldServer.getWorldInfo();
@@ -226,8 +271,8 @@ public class UTGuiShareToLan extends GuiShareToLan
             // Load values if they exist, otherwise keep defaults
             if (!customSettings.isEmpty())
             {
-                if (customSettings.hasKey("GameMode")) ((GuiShareToLanAccessor) this).setGameMode(customSettings.getString("GameMode"));
-                if (customSettings.hasKey("AllowCheats")) ((GuiShareToLanAccessor) this).setAllowCheats(customSettings.getBoolean("AllowCheats"));
+                if (customSettings.hasKey("GameMode")) this.gameMode = customSettings.getString("GameMode");
+                if (customSettings.hasKey("AllowCheats")) this.allowCheats = customSettings.getBoolean("AllowCheats");
                 if (customSettings.hasKey("OnlineMode")) this.onlineMode = customSettings.getBoolean("OnlineMode");
                 if (customSettings.hasKey("SpawnAnimals")) this.spawnAnimals = customSettings.getBoolean("SpawnAnimals");
                 if (customSettings.hasKey("SpawnNPCs")) this.spawnNpcs = customSettings.getBoolean("SpawnNPCs");
@@ -236,52 +281,52 @@ public class UTGuiShareToLan extends GuiShareToLan
                 if (customSettings.hasKey("Port")) this.port = customSettings.getInteger("Port");
                 if (customSettings.hasKey("MaxPlayers")) this.maxPlayers = customSettings.getInteger("MaxPlayers");
 
-                UniversalTweaks.LOGGER.info("LAN Server Properties ::: Loaded LAN server settings from level.dat");
+                UniversalTweaks.LOGGER.debug("LAN Server Properties ::: Loaded LAN server settings from level.dat");
             }
             else
             {
-                ((GuiShareToLanAccessor) this).setGameMode(worldInfo.getGameType().getName());
-                ((GuiShareToLanAccessor) this).setAllowCheats(worldInfo.areCommandsAllowed());
+                this.gameMode = worldInfo.getGameType().getName();
+                this.allowCheats = worldInfo.areCommandsAllowed();
 
-                UniversalTweaks.LOGGER.info("LAN Server Properties ::: No saved LAN settings found, using defaults");
+                UniversalTweaks.LOGGER.debug("LAN Server Properties ::: No saved LAN settings found, using defaults");
             }
         }
         else
         {
-            UniversalTweaks.LOGGER.error("LAN Server Properties ::: Failed to access WorldServer for loading settings, using defaults");
+            UniversalTweaks.LOGGER.warn("LAN Server Properties ::: Failed to access WorldServer for loading settings, using defaults");
         }
     }
 
-    private void serverStartButtonClick(GuiButton button) throws IOException
+    private void startServer() throws IOException
     {
         this.mc.displayGuiScreen(null);
 
-        String portStr = portTextField.getText();
-        int parsedPort = !portStr.isEmpty() ? validateInt(portStr) : this.port;
+        int parsedPort = parseBounded(this.portTextField.getText(), PORT_MIN, PORT_MAX);
+        if (parsedPort < 0) parsedPort = this.port;
 
-        String maxPlayersStr = maxPlayersTextField.getText();
-        int parsedMaxPlayers = !maxPlayersStr.isEmpty() ? validateInt(maxPlayersStr) : this.maxPlayers;
-
-        String gameMode = ((GuiShareToLanAccessor) this).getGameMode();
-        boolean allowCheats = ((GuiShareToLanAccessor) this).getAllowCheats();
+        int parsedMaxPlayers = parseBounded(this.maxPlayersTextField.getText(), MAX_PLAYERS_MIN, MAX_PLAYERS_MAX);
+        if (parsedMaxPlayers < 0) parsedMaxPlayers = this.maxPlayers;
 
         ITextComponent textComponent;
-        String newPort = this.mc.getIntegratedServer().shareToLAN(GameType.getByName(gameMode), allowCheats);
+        IntegratedServer server = this.mc.getIntegratedServer();
+        String newPort = server.shareToLAN(GameType.getByName(this.gameMode), this.allowCheats);
+        //noinspection ConstantValue
         if (newPort != null)
         {
-            this.mc.getIntegratedServer().getNetworkSystem().addEndpoint(null, parsedPort);
+            server.getNetworkSystem().addEndpoint(null, parsedPort);
             textComponent = new TextComponentTranslation("commands.publish.started", newPort + ", " + parsedPort);
 
             // Apply settings to the running server
-            this.mc.getIntegratedServer().setOnlineMode(onlineMode);
-            this.mc.getIntegratedServer().setCanSpawnAnimals(spawnAnimals);
-            this.mc.getIntegratedServer().setCanSpawnNPCs(spawnNpcs);
-            this.mc.getIntegratedServer().setAllowPvp(allowPvp);
-            this.mc.getIntegratedServer().setAllowFlight(allowFlight);
-            ((PlayerListAccessor) this.mc.getIntegratedServer().getPlayerList()).setMaxPlayers(parsedMaxPlayers);
+            server.setOnlineMode(onlineMode);
+            server.setCanSpawnAnimals(spawnAnimals);
+            server.setCanSpawnNPCs(spawnNpcs);
+            server.setAllowPvp(allowPvp);
+            server.setAllowFlight(allowFlight);
+            ((PlayerListAccessor) server.getPlayerList()).setMaxPlayers(parsedMaxPlayers);
 
             // Save settings to level.dat
             WorldServer worldServer = this.mc.getIntegratedServer().getWorld(0);
+            //noinspection ConstantValue
             if (worldServer != null)
             {
                 WorldInfo worldInfo = worldServer.getWorldInfo();
@@ -319,28 +364,43 @@ public class UTGuiShareToLan extends GuiShareToLan
         this.mc.ingameGUI.getChatGUI().printChatMessage(textComponent);
     }
 
-    private String getOnlineButtonText()
+    protected String getGameModeButtonText()
     {
-        return I18n.format(ONLINE_MODE_LANG_KEY) + ": " + I18n.format(this.onlineMode ? "options.on" : "options.off");
+        return I18n.format("btn.universaltweaks.lanserverproperties.game_mode.c") + " " + I18n.format("selectWorld.gameMode." + this.gameMode);
     }
 
-    private String getSpawnAnimalsButtonText()
+    protected String getAllowCheatsButtonText()
     {
-        return I18n.format(SPAWN_ANIMALS_LANG_KEY) + ": " + I18n.format(this.spawnAnimals ? "options.on" : "options.off");
+        return toggleText("selectWorld.allowCommands", this.allowCheats);
     }
 
-    private String getSpawnNpcsButtonText()
+    protected String getOnlineModeButtonText()
     {
-        return I18n.format(SPAWN_NPCS_LANG_KEY) + ": " + I18n.format(this.spawnNpcs ? "options.on" : "options.off");
+        return toggleText("btn.universaltweaks.lanserverproperties.online_mode.c", this.onlineMode);
     }
 
-    private String getAllowPvpButtonText()
+    protected String getSpawnAnimalsButtonText()
     {
-        return I18n.format(ALLOW_PVP_LANG_KEY) + ": " + I18n.format(this.allowPvp ? "options.on" : "options.off");
+        return toggleText("btn.universaltweaks.lanserverproperties.spawn_animals.c", this.spawnAnimals);
     }
 
-    private String getAllowFlightButtonText()
+    protected String getSpawnNpcsButtonText()
     {
-        return I18n.format(ALLOW_FLIGHT_LANG_KEY) + ": " + I18n.format(this.allowFlight ? "options.on" : "options.off");
+        return toggleText("btn.universaltweaks.lanserverproperties.spawn_npcs.c", this.spawnNpcs);
+    }
+
+    protected String getAllowPvpButtonText()
+    {
+        return toggleText("btn.universaltweaks.lanserverproperties.allow_pvp.c", this.allowPvp);
+    }
+
+    protected String getAllowFlightButtonText()
+    {
+        return toggleText("btn.universaltweaks.lanserverproperties.allow_flight.c", this.allowFlight);
+    }
+
+    protected static String toggleText(String langKey, boolean value)
+    {
+        return I18n.format(langKey) + " " + I18n.format(value ? "options.on" : "options.off");
     }
 }
