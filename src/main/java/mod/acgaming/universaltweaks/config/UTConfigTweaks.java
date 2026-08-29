@@ -2062,6 +2062,11 @@ public class UTConfigTweaks
         public int utLinearXP = 0;
 
         @Config.RequiresMcRestart
+        @Config.Name("Modern Debug Render")
+        @Config.Comment("Aligns the chunk border (F3+G) and hitbox (F3+B) overlays with Minecraft 1.21.1+")
+        public boolean utModernDebugRenderToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("More Banner Layers")
         @Config.Comment
             ({
