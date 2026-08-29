@@ -44,6 +44,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.cyclic.enderbook.client.json", c -> c.isModPresent("cyclicmagic") && UTConfigMods.CYCLIC.utEnderBookPagination);
                 put("mixins/mods/mixins.electroblobswizardry.json", c -> c.isModPresent("ebwizardry") && c.isModPresent("conarm") && UTConfigMods.ELECTROBLOBS_WIZARDRY.utConstructsArmoryFixToggle);
                 put("mixins/mods/mixins.enderio.itemrender.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
+                put("mixins/mods/mixins.enderutilities.json", c -> c.isModPresent("enderutilities") && UTConfigMods.ENDER_UTILITIES.utGuiCloseSlotCrashFixToggle);
                 put("mixins/mods/mixins.fpsreducer.json", c -> c.isModPresent("fpsreducer") && UTConfigMods.FPS_REDUCER.utCorrectFpsValue);
                 put("mixins/mods/mixins.hammerlib.color.json", c -> c.isModPresent("hammercore") && UTConfigMods.HAMMER_LIB.utOptimizeItemColorHelper);
                 put("mixins/mods/mixins.hammerlib.url.json", c -> c.isModPresent("hammercore") && UTConfigMods.HAMMER_LIB.utSkipURLCheck);
