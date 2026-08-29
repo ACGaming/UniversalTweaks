@@ -1968,7 +1968,6 @@ public class UTConfigTweaks
         @Config.Comment("Sets the default difficulty for newly generated worlds")
         public EnumDifficulty utDefaultDifficulty = EnumDifficulty.NORMAL;
 
-
         @Config.RequiresMcRestart
         @Config.Name("Default GUI Text Color")
         @Config.Comment
@@ -1977,6 +1976,16 @@ public class UTConfigTweaks
                 "404040 for vanilla default"
             })
         public String utDefaultGuiTextColor = "404040";
+
+        @Config.RequiresMcRestart
+        @Config.Name("Default GUI Button Color")
+        @Config.Comment
+            ({
+                "Sets the default GUI button text color (HEX RGB code) which can improve readability in dark mode resource packs",
+                "Formatted in normal|hovered|disabled",
+                "E0E0E0|FFFFA0|A0A0A0 for vanilla default"
+            })
+        public String utDefaultGuiButtonColor = "E0E0E0|FFFFA0|A0A0A0";
 
         @Config.RequiresMcRestart
         @Config.Name("Disable Advancements")
@@ -1997,6 +2006,11 @@ public class UTConfigTweaks
         @Config.Name("Disable Text Shadows")
         @Config.Comment("Disables all text shadowing, where text has a darker version of itself rendered behind the normal text, changing the appearance and can improve fps on some screens")
         public boolean utDisableTextShadow = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Text Field Border Color")
+        @Config.Comment("Colors the border of focused text fields white")
+        public boolean utTextFieldBorderColor = true;
 
         @Config.RequiresMcRestart
         @Config.Name("End Portal Parallax")
