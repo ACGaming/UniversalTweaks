@@ -480,6 +480,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Extra Utilities 2**
     * **Catch Radar Exception:** Fixes the Radar feature (find in nearby inventories) entirely breaking when near some inventories
     * **Make Radar skip ungenerated chests:** Makes the Radar skip inventories when the loottable for it has not yet been generated
+    * **Cursed Earth Mob Persistence:** Prevents Cursed Earth mobs from despawning immediately when the player is far enough. This does not remove the despawn timer (which exists to prevent mob spawn runaway)
     * **Duplication Fixes:** Fixes various duplication exploits
     * **Fix Deep Dark Stats:** Fixes Mob Attack and Health Statistics being repeatedly doubled
     * **Mutable Machine Block Drops:** Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list.
