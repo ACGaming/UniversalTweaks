@@ -929,6 +929,11 @@ public class UTConfigMods
         @Config.Name("Fix GUI Close Slot Crash")
         @Config.Comment("Prevents slot hotkeys from being processed after an Ender Utilities GUI has already been closed")
         public boolean utGuiCloseSlotCrashFixToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Show FTB Utilities Buttons in Handy Bag")
+        @Config.Comment("Shows FTB Utilities and FTB Library sidebar buttons in Ender Utilities Handy Bags")
+        public boolean utHandyBagFTBUtilitiesButtonsToggle = true;
     }
 
     public static class EpicSiegeModCategory
