@@ -198,6 +198,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.simpledifficulty.raincollector.json", c -> c.isModPresent("simpledifficulty") && UTConfigMods.SIMPLE_DIFFICULTY.utRainCollectorCanteenToggle);
                 put("mixins/mods/mixins.spiceoflife.dupes.json", c -> c.isModPresent("spiceoflife") && UTConfigMods.SPICE_OF_LIFE.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.steamworld.json", c -> c.isModPresent("steamworld") && UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
+                put("mixins/mods/mixins.storagedrawers.dropposition.json", c -> c.isModPresent("storagedrawers") && UTConfigMods.STORAGE_DRAWERS.utSDRemoveDropCoordinatesToggle);
                 put("mixins/mods/mixins.storagedrawers.json", c -> c.isModPresent("storagedrawers") && UTConfigMods.STORAGE_DRAWERS.utSDItemVoidingFixToggle);
                 put("mixins/mods/mixins.tconstruct.json", c -> regularTConLoaded());
                 put("mixins/mods/mixins.tconstruct.oredictcache.json", c -> regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utTConOreDictCacheToggle);
