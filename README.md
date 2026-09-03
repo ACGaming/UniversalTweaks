@@ -475,6 +475,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Fix Frequency Tracking:** Fixes storage frequencies being tracked multiple times
 * **Ender Utilities**
     * **Fix GUI Close Slot Crash:** Prevents crashes from processing slot hotkeys after closing Ender Utilities GUIs (e.g. handybag hotkey 1-9 crash)
+    * **Show FTB Utilities Buttons in Handy Bag:** Shows the configured FTB Utilities and FTB Library sidebar buttons in Handy Bags
 * **Epic Siege Mod**
     * **Disable Digger AI Debug:** Disables leftover debug logging inside the digger AI of the beta builds
 * **Extra Utilities 2**
