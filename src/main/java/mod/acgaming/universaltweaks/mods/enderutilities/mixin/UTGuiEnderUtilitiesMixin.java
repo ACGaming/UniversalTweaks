@@ -12,12 +12,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class UTGuiEnderUtilitiesMixin
 {
     /**
-     * @reason Stop processing slot hotkeys after the GUI has been closed.
+     * @reason Stop processing the close key itself and any later key events
+     * queued for this GUI after it has already been closed.
      */
-    @Inject(method = "keyTyped", at = @At("HEAD"), cancellable = true, require = 0, remap = true)
+    @Inject(method = "keyTyped", at = @At("HEAD"), cancellable = true, require = 1, remap = true)
     private void utStopKeyHandlingAfterClose(char typedChar, int keyCode, CallbackInfo ci)
     {
         Minecraft mc = Minecraft.getMinecraft();
+
+        if (mc.player == null || mc.currentScreen != (Object) this)
+        {
+            ci.cancel();
+            return;
+        }
 
         if (keyCode == Keyboard.KEY_ESCAPE || mc.gameSettings.keyBindInventory.isActiveAndMatches(keyCode))
         {
