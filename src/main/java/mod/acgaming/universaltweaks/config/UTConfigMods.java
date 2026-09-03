@@ -997,6 +997,11 @@ public class UTConfigMods
         public boolean utRadarSkipsLoottables = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Cursed Earth Mob Persistence")
+        @Config.Comment("Prevents Cursed Earth mobs from despawning immediately when the player is far enough")
+        public boolean utCursedEarthMobPersistence = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Fix Deep Dark Stats")
         @Config.Comment("Fixes Mob Attack and Health Statistics being repeatedly doubled")
         public boolean utDeepDarkStats = true;
