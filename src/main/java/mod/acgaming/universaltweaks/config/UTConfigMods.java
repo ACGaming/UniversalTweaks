@@ -1536,6 +1536,11 @@ public class UTConfigMods
         public boolean utSDItemVoidingFixToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Remove Position from Drops")
+        @Config.Comment("Removes position data from drawers that keep their contents when broken")
+        public boolean utSDRemoveDropCoordinatesToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Render Range")
         @Config.Comment
             ({
