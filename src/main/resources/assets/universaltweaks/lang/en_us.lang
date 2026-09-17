@@ -14,7 +14,7 @@ msg.universaltweaks.cheats.enabled=Cheats are now §aenabled
 msg.universaltweaks.cheats.disabled=Cheats are now §cdisabled
 
 # DISABLE SLEEPING
-msg.universaltweaks.sleep.spawnpoint=Spawn point set
+msg.universaltweaks.sleep.spawnpoint=Respawn point set
 msg.universaltweaks.sleep.disabled=Sleeping is disabled
 
 # PARRY
