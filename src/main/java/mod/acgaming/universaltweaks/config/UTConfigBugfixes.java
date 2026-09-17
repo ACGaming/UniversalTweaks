@@ -488,7 +488,11 @@ public class UTConfigBugfixes
 
         @Config.RequiresMcRestart
         @Config.Name("Frustum Culling")
-        @Config.Comment("Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)")
+        @Config.Comment
+            ({
+                "Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)",
+                "Incompatible with Celeritas"
+            })
         public boolean utFrustumCullingToggle = true;
 
         @Config.RequiresMcRestart
