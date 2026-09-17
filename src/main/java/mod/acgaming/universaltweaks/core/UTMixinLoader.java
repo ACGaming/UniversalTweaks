@@ -167,8 +167,8 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.itemstages.json", c -> c.isModPresent("itemstages"));
                 put("mixins/mods/mixins.jurassicreborn.json", c -> c.isModPresent("rebornmod"));
                 put("mixins/mods/mixins.justenoughdimensions.json", c -> c.isModPresent("justenoughdimensions") && UTConfigTweaks.MISC.TIME_COMMAND.utTimeCommandToggle);
-                put("mixins/mods/mixins.mekanism.dupes.json", c -> c.isModPresent("mekanism") && UTConfigMods.MEKANISM.utDuplicationFixesToggle);
-                put("mixins/mods/mixins.mekanism.fluidtank.json", c -> c.isModPresent("mekanism") && UTConfigMods.MEKANISM.utFluidTankExtraction);
+                put("mixins/mods/mixins.mekanism.dupes.json", c -> regularMekanismLoaded() && UTConfigMods.MEKANISM.utDuplicationFixesToggle);
+                put("mixins/mods/mixins.mekanism.fluidtank.json", c -> regularMekanismLoaded() && UTConfigMods.MEKANISM.utFluidTankExtraction);
                 put("mixins/mods/mixins.moartinkers.json", c -> c.isModPresent("moartinkers") && UTConfigMods.MOAR_TINKERS.utBaublesCompatibility);
                 put("mixins/mods/mixins.mobstages.json", c -> c.isModPresent("mobstages"));
                 put("mixins/mods/mixins.mrtjpcore.json", c -> c.isModPresent("mrtjpcore") && UTConfigMods.MRTJPCORE.utMemoryLeakFixToggle);
@@ -268,6 +268,15 @@ public class UTMixinLoader implements ILateMixinLoader
         if (Loader.isModLoaded("bibliocraft"))
         {
             return Loader.instance().getIndexedModList().get("bibliocraft").getName().equals("BiblioCraft");
+        }
+        return false;
+    }
+
+    public static boolean regularMekanismLoaded()
+    {
+        if (Loader.isModLoaded("mekanism"))
+        {
+            return Loader.instance().getIndexedModList().get("mekanism").getName().equals("Mekanism");
         }
         return false;
     }
