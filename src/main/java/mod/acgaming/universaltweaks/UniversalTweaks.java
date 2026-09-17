@@ -344,7 +344,7 @@ public class UniversalTweaks
             if (UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle) UTPickupNotificationOverlay.init();
             if (UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsNormal != 28 || UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsStreaming != 4) MinecraftForge.EVENT_BUS.register(UTSoundChannels.class);
             if (UTConfigTweaks.MISC.utDisableFov) MinecraftForge.EVENT_BUS.register(UTFovHandler.class);
-            if (UTConfigTweaks.MISC.utEndPortalParallaxToggle) UTEndPortalParallax.initRenderer();
+            if (UTConfigTweaks.MISC.utEndPortalParallaxToggle && !UTConfigTweaks.BLOCKS.utRenderEndPortalBottom) UTEndPortalParallax.initRenderer();
             if (UTConfigTweaks.MISC.utLANServerProperties) MinecraftForge.EVENT_BUS.register(UTLanServerProperties.class);
             if (UTConfigTweaks.MISC.utPotionShiftToggle) MinecraftForge.EVENT_BUS.register(UTPotionShift.class);
             if (UTConfigTweaks.MISC.utToggleCheatsToggle) MinecraftForge.EVENT_BUS.register(UTToggleCheats.class);

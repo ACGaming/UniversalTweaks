@@ -235,7 +235,11 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Render End Portal Bottom")
-        @Config.Comment("Controls if the End Portal renders its texture on the bottom face")
+        @Config.Comment
+            ({
+                "Controls if the End Portal renders its texture on the bottom face",
+                "Incompatible with End Portal Parallax tweak"
+            })
         public boolean utRenderEndPortalBottom = true;
 
         @Config.RequiresMcRestart
@@ -2019,7 +2023,11 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("End Portal Parallax")
-        @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
+        @Config.Comment
+            ({
+                "Re-implements parallax rendering of the end portal from 1.10 and older",
+                "Incompatible with Render End Portal Bottom tweak"
+            })
         public boolean utEndPortalParallaxToggle = false;
 
         @Config.RequiresMcRestart
