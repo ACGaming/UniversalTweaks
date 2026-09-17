@@ -527,6 +527,11 @@ public class UTConfigTweaks
                 })
             @Config.RangeDouble(min = 0.0D, max = 1.0D)
             public double utSaplingGrowthChance = 0.125D;
+
+            @Config.Name("[4] Bonemeal Growth Chance")
+            @Config.Comment("Chance per bonemeal application at which saplings grow into trees")
+            @Config.RangeDouble(min = 0.0D, max = 1.0D)
+            public double utSaplingBonemealGrowthChance = 0.45D;
         }
 
         public static class FastLadderClimbingCategory
