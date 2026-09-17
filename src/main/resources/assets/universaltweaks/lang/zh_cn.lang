@@ -3,18 +3,236 @@ msg.universaltweaks.obsoletemods.warning1=通用调整已经取代或改进了�
 msg.universaltweaks.obsoletemods.warning2=因此，以下模组现在与通用调整不兼容：
 msg.universaltweaks.obsoletemods.warning3=请考虑从你的游戏中移除它们，或禁用相应的功能。
 
+# KEYBINDS
+keybind.universaltweaks.clear_toasts=清除提示
+keybind.universaltweaks.dismount=下马
+keybind.universaltweaks.narrator=切换旁白
+
 # TOGGLE CHEATS
-btn.universaltweaks.cheats=作弊模式：
+btn.universaltweaks.cheats.enabled=作弊模式：开启
+btn.universaltweaks.cheats.disabled=作弊模式：关闭
 msg.universaltweaks.cheats.enabled=作弊模式已§a启用
 msg.universaltweaks.cheats.disabled=作弊模式已§c禁用
 
+# DISABLE SLEEPING
+msg.universaltweaks.sleep.spawnpoint=出生点已设置
+msg.universaltweaks.sleep.disabled=睡觉已禁用
+
+# PARRY
+enchantment.parry=反弹
+
+# PICKUP NOTIFICATION
+msg.universaltweaks.tweaks.pickupnotification.xp=经验
+
 # LAN SERVER PROPERTIES
-btn.universaltweaks.lanserverproperties.allow_flight.c=允许飞行：
-btn.universaltweaks.lanserverproperties.allow_pvp.c=允许PVP：
-btn.universaltweaks.lanserverproperties.game_mode.c=游戏模式：
-btn.universaltweaks.lanserverproperties.spawn_animals.c=生成动物：
-btn.universaltweaks.lanserverproperties.spawn_npcs.c=生成NPC：
-btn.universaltweaks.lanserverproperties.online_mode.c=联机模式：
-btn.universaltweaks.lanserverproperties.online_mode_desc=禁用后将允许未经身份验证的连接
-btn.universaltweaks.lanserverproperties.port=监听端口
+btn.universaltweaks.lanserverproperties.allow_flight=允许飞行
+btn.universaltweaks.lanserverproperties.allow_pvp=允许 PVP
 btn.universaltweaks.lanserverproperties.max_players=最大玩家数
+btn.universaltweaks.lanserverproperties.online_mode=在线模式
+btn.universaltweaks.lanserverproperties.online_mode_desc=禁用此项将允许未验证的连接
+btn.universaltweaks.lanserverproperties.port=监听端口
+btn.universaltweaks.lanserverproperties.spawn_animals=生成动物
+btn.universaltweaks.lanserverproperties.spawn_npcs=生成 NPC
+
+# COMPACT MESSAGES
+msg.universaltweaks.compactmessages.count=此消息已重复 %s 次
+
+# EXTRA UTILITIES
+entity.Villager.shady_merchant=可疑商人
+entity.Villager.red_mechanic=红色机械师
+entity.Villager.alchemist=炼金术士
+
+# Cyclic
+gui.universaltweaks.cyclic.ender_book.page=第 %s 页 / 共 %s 页
+
+# Tweaked Excavation
+tweakedexcavation.jei.mineral.average.Infinite=平均矿物产量：无限
+
+# No Tree Punching
+tile.notreepunching:cobblestone.basalt.name=玄武岩圆石
+item.notreepunching:rock.basalt.name=玄武岩石
+
+# TIME COMMAND
+cmd.universaltweaks.time.set=维度 %s：将时间设置为 %s
+
+# VANILLA
+enchantment.level.11=XI
+enchantment.level.12=XII
+enchantment.level.13=XIII
+enchantment.level.14=XIV
+enchantment.level.15=XV
+enchantment.level.16=XVI
+enchantment.level.17=XVII
+enchantment.level.18=XVIII
+enchantment.level.19=XIX
+enchantment.level.20=XX
+entity.EnderCrystal.name=末影水晶
+
+# CONFIG
+# 不需要翻译，因为配置通常为英文
+cfg.universaltweaks.config.blocks=方块
+cfg.universaltweaks.config.debug=调试
+cfg.universaltweaks.config.entities=实体
+cfg.universaltweaks.config.items=物品
+cfg.universaltweaks.config.masterswitches=总开关
+cfg.universaltweaks.config.misc=杂项
+cfg.universaltweaks.config.performance=性能
+cfg.universaltweaks.config.world=世界
+
+cfg.universaltweaks.bugfixes.blocks.blockoverlay=方块覆盖
+cfg.universaltweaks.bugfixes.entities.desync=实体不同步
+cfg.universaltweaks.bugfixes.entities.entitylists=实体列表
+cfg.universaltweaks.bugfixes.world.portallocationlink=传送门位置链接
+
+cfg.universaltweaks.modintegration.abyssalcraft=AbyssalCraft
+cfg.universaltweaks.modintegration.actuallyadditions=Actually Additions
+cfg.universaltweaks.modintegration.ae2uel=Applied Energistics 2 Unofficial Extended Life
+cfg.universaltweaks.modintegration.aether_legacy=Aether Legacy
+cfg.universaltweaks.modintegration.agricraft=Agricraft
+cfg.universaltweaks.modintegration.aoa=Advent of Ascension
+cfg.universaltweaks.modintegration.avaritiaddons=Avaritiaddons
+cfg.universaltweaks.modintegration.arcanearchives=Arcane Archives
+cfg.universaltweaks.modintegration.astralsorcery=Astral Sorcery
+cfg.universaltweaks.modintegration.backpack=Backpacks
+cfg.universaltweaks.modintegration.bdsandm=Barrels, Drums, Storage & More
+cfg.universaltweaks.modintegration.bewitchment=Bewitchment
+cfg.universaltweaks.modintegration.bibliocraft=BiblioCraft
+cfg.universaltweaks.modintegration.bm=Blood Magic
+cfg.universaltweaks.modintegration.bop=Biomes O' Plenty
+cfg.universaltweaks.modintegration.botania=Botania
+cfg.universaltweaks.modintegration.bwm=Better with Mods
+cfg.universaltweaks.modintegration.cbmultipart=CB Multipart/Forge Multipart CBE
+cfg.universaltweaks.modintegration.ccl=CodeChicken Lib
+cfg.universaltweaks.modintegration.chisel=Chisel
+cfg.universaltweaks.modintegration.cofhcore=CoFH Core
+cfg.universaltweaks.modintegration.cofhworld=CoFH World
+cfg.universaltweaks.modintegration.collective=Collective
+cfg.universaltweaks.modintegration.compactmachines=Compact Machines
+cfg.universaltweaks.modintegration.cookingforblockheads=Cooking For Blockheads
+cfg.universaltweaks.modintegration.corpse=Corpse
+cfg.universaltweaks.modintegration.cyclic=Cyclic
+cfg.universaltweaks.modintegration.divinerpg=Divine RPG
+cfg.universaltweaks.modintegration.cqrepoured=Chocolate Quest Repoured
+cfg.universaltweaks.modintegration.dankstorage=Dank Storage
+cfg.universaltweaks.modintegration.effortlessbuilding=Effortless Building
+cfg.universaltweaks.modintegration.electroblobswizardry=Electroblob's Wizardry
+cfg.universaltweaks.modintegration.elementarystaffs=Elementary Staffs
+cfg.universaltweaks.modintegration.elenaidodge2=Elenai Dodge 2
+cfg.universaltweaks.modintegration.enderio=Ender IO
+cfg.universaltweaks.modintegration.enderstorage=Ender Storage
+cfg.universaltweaks.modintegration.erebus=The Erebus
+cfg.universaltweaks.modintegration.evilcraft=EvilCraft
+cfg.universaltweaks.modintegration.esm=Epic Siege Mod
+cfg.universaltweaks.modintegration.extrautilities=Extra Utilities 2
+cfg.universaltweaks.modintegration.extreme_reactors=Extreme Reactors
+cfg.universaltweaks.modintegration.forestry=Forestry
+cfg.universaltweaks.modintegration.fpsreducer=FPS Reducer
+cfg.universaltweaks.modintegration.gaia_dimension=Gaia Dimension
+cfg.universaltweaks.modintegration.hammerlib=HammerLib
+cfg.universaltweaks.modintegration.immersiveengineering=Immersive Engineering
+cfg.universaltweaks.modintegration.incontrol=In Control!
+cfg.universaltweaks.modintegration.industrialcraft=IndustrialCraft 2
+cfg.universaltweaks.modintegration.industrialforegoing=Industrial Foregoing
+cfg.universaltweaks.modintegration.infernalmobs=Infernal Mobs
+cfg.universaltweaks.modintegration.ironbackpacks=Iron Backpacks
+cfg.universaltweaks.modintegration.ironchests=Iron Chests
+cfg.universaltweaks.modintegration.itemfavorites=Item Favorites
+cfg.universaltweaks.modintegration.itemstages=Item Stages
+cfg.universaltweaks.modintegration.jurassicreborn=Jurassic Reborn
+cfg.universaltweaks.modintegration.mekanism=Mekanism
+cfg.universaltweaks.modintegration.moartinkers=Moar Tinkers
+cfg.universaltweaks.modintegration.mobstages=Mob Stages
+cfg.universaltweaks.modintegration.modularmagic=Modular Magic
+cfg.universaltweaks.modintegration.modularrouters=Modular Routers
+cfg.universaltweaks.modintegration.mrtjpcore=MrTJPCore
+cfg.universaltweaks.modintegration.netherchest=Nether Chest
+cfg.universaltweaks.modintegration.netherrocks=Netherrocks
+cfg.universaltweaks.modintegration.openblocks=OpenBlocks
+cfg.universaltweaks.modintegration.openglasses=Open Glasses 2
+cfg.universaltweaks.modintegration.projectred=ProjectRed
+cfg.universaltweaks.modintegration.proper_pumpkin=Proper Pumpkin Mod
+cfg.universaltweaks.modintegration.quark=Quark
+cfg.universaltweaks.modintegration.rftools=RFTools
+cfg.universaltweaks.modintegration.railcraft=Railcraft
+cfg.universaltweaks.modintegration.randomthings=Random Things
+cfg.universaltweaks.modintegration.requiousfrakto=Requious Frakto
+cfg.universaltweaks.modintegration.roost=Roost
+cfg.universaltweaks.modintegration.roots=Roots
+cfg.universaltweaks.modintegration.steamworld=SteamWorld
+cfg.universaltweaks.modintegration.sd=Storage Drawers
+cfg.universaltweaks.modintegration.simpledifficulty=SimpleDifficulty
+cfg.universaltweaks.modintegration.simplyjetpacks=Simply Jetpacks
+cfg.universaltweaks.modintegration.spiceoflife=Spice Of Life
+cfg.universaltweaks.modintegration.tardis=Tardis Mod
+cfg.universaltweaks.modintegration.tcon=Tinkers' Construct
+cfg.universaltweaks.modintegration.tcon.toolcustomization=工具自定义
+cfg.universaltweaks.modintegration.te=Thermal Expansion
+cfg.universaltweaks.modintegration.test_dummy=MmmMmmMmmMmm
+cfg.universaltweaks.modintegration.thefarlanders=The Farlanders
+cfg.universaltweaks.modintegration.tinyprogressions=Tiny Progressions
+cfg.universaltweaks.modintegration.tombmanygraves=TombManyGraves2
+cfg.universaltweaks.modintegration.tr=Tech Reborn
+cfg.universaltweaks.modintegration.woot=Woot
+cfg.universaltweaks.modintegration.voidislandcontrol=Void Island Control
+cfg.universaltweaks.modintegration.xnet=XNet
+cfg.universaltweaks.modintegration=模组集成
+
+cfg.universaltweaks.tweaks.blocks.anvil=铁砧
+cfg.universaltweaks.tweaks.blocks.betterplacement=更好的放置
+cfg.universaltweaks.tweaks.blocks.blockdispenser=方块发射器
+cfg.universaltweaks.tweaks.blocks.breakablebedrock=可破坏基岩
+cfg.universaltweaks.tweaks.blocks.endcrystalplacement=末影水晶放置
+cfg.universaltweaks.tweaks.blocks.finitewater=有限水
+cfg.universaltweaks.tweaks.blocks.overhaulbeacon=信标重做
+cfg.universaltweaks.tweaks.blocks.piston=活塞
+cfg.universaltweaks.tweaks.blocks.sapling=树苗行为
+cfg.universaltweaks.tweaks.entities.arrowlayers=箭矢层
+cfg.universaltweaks.tweaks.entities.attributes=属性
+cfg.universaltweaks.tweaks.entities.betterburning=更好的燃烧
+cfg.universaltweaks.tweaks.entities.chickenshedding=鸡掉落羽毛
+cfg.universaltweaks.tweaks.entities.cobwebslowness=蜘蛛网减速
+cfg.universaltweaks.tweaks.entities.creeperconfetti=苦力怕彩纸
+cfg.universaltweaks.tweaks.entities.damagevelocity=伤害速度
+cfg.universaltweaks.tweaks.entities.dragonkill=击杀末影龙
+cfg.universaltweaks.tweaks.entities.easybreeding=简易繁殖
+cfg.universaltweaks.tweaks.entities.mobgriefing=生物破坏
+cfg.universaltweaks.tweaks.entities.nogolems=无傀儡
+cfg.universaltweaks.tweaks.entities.playerspeed=玩家速度
+cfg.universaltweaks.tweaks.entities.rallyhealth=生命集结
+cfg.universaltweaks.tweaks.entities.sleeping=睡觉
+cfg.universaltweaks.tweaks.entities.spawncaps=生成上限
+cfg.universaltweaks.tweaks.entities.undeadhorses=亡灵马
+cfg.universaltweaks.tweaks.entities.unsafesleeping=不安全睡觉
+cfg.universaltweaks.tweaks.entities.waterfalldamage=水中坠落伤害
+cfg.universaltweaks.tweaks.entities.villagerharvest=村民收割
+cfg.universaltweaks.tweaks.entities.voidteleport=虚空传送
+cfg.universaltweaks.tweaks.items.attackcooldown=攻击冷却
+cfg.universaltweaks.tweaks.items.infinity=无限
+cfg.universaltweaks.tweaks.items.itementities=物品实体
+cfg.universaltweaks.tweaks.items.mending=经验修补
+cfg.universaltweaks.tweaks.items.parry=盾牌格挡
+cfg.universaltweaks.tweaks.misc.advancements=进度
+cfg.universaltweaks.tweaks.misc.advancementscreenshot=进度截图
+cfg.universaltweaks.tweaks.misc.armorcurve=护甲曲线
+cfg.universaltweaks.tweaks.misc.chat=聊天
+cfg.universaltweaks.tweaks.misc.gamewindow=游戏窗口
+cfg.universaltweaks.tweaks.misc.incurablepotions=无法治愈的药水
+cfg.universaltweaks.tweaks.misc.lightning=闪电
+cfg.universaltweaks.tweaks.misc.loadsounds=加载声音
+cfg.universaltweaks.tweaks.misc.music=音乐
+cfg.universaltweaks.tweaks.misc.pickupnotification=拾取提示
+cfg.universaltweaks.tweaks.misc.smoothscrolling=平滑滚动
+cfg.universaltweaks.tweaks.misc.stg=穿过草挥动
+cfg.universaltweaks.tweaks.misc.sound.broadcast=广播声音
+cfg.universaltweaks.tweaks.misc.soundchannels=声音频道
+cfg.universaltweaks.tweaks.misc.timecommand=增量时间命令
+cfg.universaltweaks.tweaks.misc.timeouts=连接超时
+cfg.universaltweaks.tweaks.misc.toastcontrol=提示控制
+cfg.universaltweaks.tweaks.performance.advancementtriggers=进度触发器
+cfg.universaltweaks.tweaks.performance.entityradiuscheck=实体半径检查
+cfg.universaltweaks.tweaks.world.cavegen=洞穴生成
+cfg.universaltweaks.tweaks.world.chunkgenlimit=区块生成限制
+cfg.universaltweaks.tweaks.world.flatbedrock=平坦基岩
+cfg.universaltweaks.tweaks.world.chunks.spawn=出生区块
+cfg.universaltweaks.tweaks.world.dimensionunload=维度卸载
+cfg.universaltweaks.tweaks.world.voidfog=虚空迷雾
