@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(GameSettings.class)
-public abstract class UTAdvancementsKeyBindingMixin
+public abstract class UTAdvKeyBindGameSettingsMixin
 {
     @Shadow
     public KeyBinding[] keyBindings;
