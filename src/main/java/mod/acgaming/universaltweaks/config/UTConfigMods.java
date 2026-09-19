@@ -1012,6 +1012,12 @@ public class UTConfigMods
         public boolean utDuplicationFixesToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Ender Lily Worldgen Crash")
+        @Config.Comment("Prevents Ender Lily world generation from attempting to place above the build height, which crashes the game")
+        public boolean utEnderLilyWorldgenCrash = true;
+
+
+        @Config.RequiresMcRestart
         @Config.Name("Creative Mill Harvestability")
         @Config.Comment("Fixes the Creative Mill Generator not respecting the Creative Block Breaking config")
         public boolean utFixCreativeMillHarvestability = true;
