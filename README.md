@@ -478,6 +478,8 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Show FTB Utilities Buttons in Handy Bag:** Shows the configured FTB Utilities and FTB Library sidebar buttons in Handy Bags
 * **Epic Siege Mod**
     * **Disable Digger AI Debug:** Disables leftover debug logging inside the digger AI of the beta builds
+* **ExtraBotany**
+    * **Livingrock Pedestal Sync Fix:** Prevents Livingrock Pedestal conversion from running independently on the client
 * **Extra Utilities 2**
     * **Catch Radar Exception:** Fixes the Radar feature (find in nearby inventories) entirely breaking when near some inventories
     * **Make Radar skip ungenerated chests:** Makes the Radar skip inventories when the loottable for it has not yet been generated

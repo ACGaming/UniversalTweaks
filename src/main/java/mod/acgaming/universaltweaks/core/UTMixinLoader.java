@@ -138,6 +138,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.erebus.quakehammer.json", c -> c.isModPresent("erebus") && UTConfigMods.EREBUS.utFixQuakeHammerTextureToggle);
                 put("mixins/mods/mixins.evilcraft.vengeancespirit.regex.json", c -> c.isModPresent("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritCache);
                 put("mixins/mods/mixins.evilcraft.vengeancespirit.random.json", c -> c.isModPresent("evilcraft") && UTConfigMods.EVIL_CRAFT.utVengeanceSpiritRandom);
+                put("mixins/mods/mixins.extrabotany.pedestal.json", c -> c.isModPresent("extrabotany") && UTConfigMods.EXTRA_BOTANY.utPedestalFuelSyncFix);
                 put("mixins/mods/mixins.extrautilities.breakcreativemill.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utFixCreativeMillHarvestability);
                 put("mixins/mods/mixins.extrautilities.cursedearth.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utCursedEarthMobPersistence);
                 put("mixins/mods/mixins.extrautilities.deepdarkstats.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDeepDarkStats);

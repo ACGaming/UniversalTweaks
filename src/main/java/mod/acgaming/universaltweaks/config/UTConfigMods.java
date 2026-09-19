@@ -179,6 +179,10 @@ public class UTConfigMods
     @Config.Name("EvilCraft")
     public static final EvilCraftCategory EVIL_CRAFT = new EvilCraftCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.extrabotany")
+    @Config.Name("ExtraBotany")
+    public static final ExtraBotanyCategory EXTRA_BOTANY = new ExtraBotanyCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.extrautilities")
     @Config.Name("Extra Utilities 2")
     public static final ExtraUtilitiesCategory EXTRA_UTILITIES = new ExtraUtilitiesCategory();
@@ -978,6 +982,14 @@ public class UTConfigMods
         @Config.Name("Vengeance Spirit Random Performance")
         @Config.Comment("Avoid repeatedly running intensive calculations involving spawning a random Vengeance Spirit")
         public boolean utVengeanceSpiritRandom = true;
+    }
+
+    public static class ExtraBotanyCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Livingrock Pedestal Fuel Sync Fix")
+        @Config.Comment("Prevents Livingrock Pedestal fuel conversion from running independently on the client")
+        public boolean utPedestalFuelSyncFix = true;
     }
 
     public static class ExtraUtilitiesCategory
