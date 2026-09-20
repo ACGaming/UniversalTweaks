@@ -142,7 +142,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.extrautilities.cursedearth.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utCursedEarthMobPersistence);
                 put("mixins/mods/mixins.extrautilities.deepdarkstats.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDeepDarkStats);
                 put("mixins/mods/mixins.extrautilities.dupes.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDuplicationFixesToggle);
-                put("mixins/mods/mixins.extrautilities.enderlily.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utEnderLilyWorldgenCrash);
+                put("mixins/mods/mixins.extrautilities.worldgen.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utWorldgenBoundsFix);
                 put("mixins/mods/mixins.extrautilities.mutabledrops.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utMutableBlockDrops);
                 put("mixins/mods/mixins.extrautilities.potionlogging.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utDowngradePotionLogging);
                 put("mixins/mods/mixins.extrautilities.radarexception.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utCatchRadarException);

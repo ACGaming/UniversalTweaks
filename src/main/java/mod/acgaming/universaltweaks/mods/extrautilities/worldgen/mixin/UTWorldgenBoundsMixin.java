@@ -1,4 +1,4 @@
-package mod.acgaming.universaltweaks.mods.extrautilities.enderlily.mixin;
+package mod.acgaming.universaltweaks.mods.extrautilities.worldgen.mixin;
 
 import com.rwtema.extrautils2.worldgen.SingleChunkGen;
 import net.minecraft.block.state.IBlockState;
@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = SingleChunkGen.class, remap = false)
-public abstract class UTEnderLilyWorldgenMixin
+public abstract class UTWorldgenBoundsMixin
 {
     @Inject(method = "setBlockState", at = @At("HEAD"), cancellable = true)
     private void utPreventOutOfBoundsWorldgen(Chunk chunk, BlockPos pos, IBlockState state, CallbackInfo ci)

@@ -483,7 +483,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Make Radar skip ungenerated chests:** Makes the Radar skip inventories when the loottable for it has not yet been generated
     * **Cursed Earth Mob Persistence:** Prevents Cursed Earth mobs from despawning immediately when the player is far enough. This does not remove the despawn timer (which exists to prevent mob spawn runaway)
     * **Duplication Fixes:** Fixes various duplication exploits
-    * **Ender Lily Worldgen Crash:** Prevents crash from Ender Lily world generation attempting to generate above the build height.
+    * **Worldgen Bounds Fix:** Prevents Extra Utilities world generation from placing blocks outside the valid build height.
     * **Fix Deep Dark Stats:** Fixes Mob Attack and Health Statistics being repeatedly doubled
     * **Mutable Machine Block Drops:** Fixes Machine Block drops being immutable, causing a crash on attempting to remove entries from the list.
     * **Creative Mill Harvestability:** Fixes the Creative Mill Generator not respecting the Creative Block Breaking config

@@ -1012,9 +1012,9 @@ public class UTConfigMods
         public boolean utDuplicationFixesToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Ender Lily Worldgen Crash")
-        @Config.Comment("Prevents Ender Lily world generation from attempting to place above the build height, which crashes the game")
-        public boolean utEnderLilyWorldgenCrash = true;
+        @Config.Name("Worldgen Bounds Fix")
+        @Config.Comment("Prevents Extra Utilities world generation from placing blocks outside the valid build height, which can crash the game")
+        public boolean utWorldgenBoundsFix = true;
 
 
         @Config.RequiresMcRestart
