@@ -101,6 +101,7 @@ public class UTObsoleteModsHandler
                 put("equaldragons", () -> UTConfigTweaks.ENTITIES.DRAGON_KILL.utDragonKillToggle);
                 put("extendpolyphonylimit", () -> UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsNormal != 28 || UTConfigTweaks.MISC.SOUND_CHANNELS.utSoundChannelsStreaming != 4);
                 put("f5fix", () -> UTConfigTweaks.ENTITIES.utThirdPersonIgnoresNonSolidBlocks);
+                put("fastadvancements", () -> UTConfigTweaks.PERFORMANCE.ADVANCEMENT_TRIGGERS.utFasterAdvancementTriggersToggle);
                 put("fastbench", () -> UTConfigTweaks.PERFORMANCE.utCraftingCacheToggle);
                 put("fastleafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
                 put("fencejumper", () -> UTConfigTweaks.BLOCKS.utFenceWallJumpToggle);

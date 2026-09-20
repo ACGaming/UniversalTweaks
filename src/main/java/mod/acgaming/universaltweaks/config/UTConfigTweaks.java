@@ -2850,7 +2850,7 @@ public class UTConfigTweaks
     {
         @Config.LangKey("cfg.universaltweaks.tweaks.performance.advancementtriggers")
         @Config.Name("Advancement Triggers")
-        public final AdvancmentTriggersCategory ADVANCEMENT_TRIGGERS = new AdvancmentTriggersCategory();
+        public final AdvancementTriggersCategory ADVANCEMENT_TRIGGERS = new AdvancementTriggersCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.performance.entityradiuscheck")
         @Config.Name("Entity Radius Check")
@@ -2974,7 +2974,7 @@ public class UTConfigTweaks
         @Config.Comment("Removes the hardcoded 30 FPS limit in screens like the main menu")
         public boolean utUncapFPSToggle = true;
 
-        public static class AdvancmentTriggersCategory
+        public static class AdvancementTriggersCategory
         {
             @Config.RequiresMcRestart
             @Config.Name("[01] Faster Advancement Trigger Checking")
