@@ -102,6 +102,7 @@ final def mod_dependencies = [
     'maven.modrinth:ALKGFBqb:6AWXd1S8'                                : [debug_enderutilities],
     'curse.maven:epic-siege-mod-229449:3356157'                       : [debug_epic_siege_mod],
     'curse.maven:evilcraft-74610:2811267'                             : [debug_evilcraft],
+    'curse.maven:extrabotany-299086:3112313'                          : [debug_extrabotany],
     'curse.maven:extrautilities-225561:2678374'                       : [debug_extra_utilities_2],
     'curse.maven:extreme-reactors-250277:3194746'                     : [debug_extreme_reactors],
     'curse.maven:forestry-59751:2918418'                              : [debug_forestry, debug_binnies_mods],
