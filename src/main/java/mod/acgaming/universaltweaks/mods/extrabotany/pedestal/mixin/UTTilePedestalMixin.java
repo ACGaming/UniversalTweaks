@@ -8,13 +8,12 @@ import com.meteor.extrabotany.common.block.tile.TilePedestal;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
-@Mixin(value = TilePedestal.class, remap = false)
+@Mixin(TilePedestal.class)
 public class UTTilePedestalMixin
 {
     @WrapOperation(
         method = "update",
-        at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isDaytime()Z", remap = true),
-        remap = true,
+        at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;isDaytime()Z"),
         require = 1)
     private boolean utFixFuelConversionDesync(World instance, Operation<Boolean> original)
     {

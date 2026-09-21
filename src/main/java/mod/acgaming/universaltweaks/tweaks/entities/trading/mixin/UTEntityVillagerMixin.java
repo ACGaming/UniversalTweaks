@@ -27,7 +27,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class UTEntityVillagerMixin extends EntityAgeable
 {
     @Shadow(remap = false)
-    private VillagerRegistry.VillagerProfession prof;
+    public VillagerRegistry.VillagerProfession prof;
 
     protected UTEntityVillagerMixin(World world)
     {
