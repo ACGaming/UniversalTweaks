@@ -82,6 +82,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Mining Glitch:** Prevents ghost blocks by sending an additional block change packet
 * **Mobs Crossing Rails:** Fixes mobs being unable to cross rails during pathfinding
 * **Mount Desync:** Fixes mounts and boats sometimes disappearing after dismounting
+* **Mouse Keybind Fix:** Fixes keybinds not triggering when bound to a mouse button
 * **Occlusion Culling Threshold:** Determines the required amount of opaque blocks in the chunk to enable occlusion culling
 * **Ocelot Biome Spawn List:** Fixes ocelots being incorrectly included in biome monster spawn lists
 * **Overlay Message Fade Out:** Fixes Forge's overlay message (action bar) fade out regression
@@ -177,6 +178,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Damage Tilt:** Restores feature to tilt the camera when damaged
 * **Damage Velocity:** Enables the modification of damage sources that change the entity's velocity
 * **Default Difficulty:** Sets the default difficulty for newly generated worlds
+* **Default GUI Button Color:** Sets the default GUI button text color (HEX RGB code) which can improve readability in dark mode resource packs
 * **Default GUI Text Color:** Sets the default GUI text color (HEX RGB code) which can improve readability in dark mode resource packs
 * **Dimension Unload:** Unloads dimensions not in use to free up resources
 * **Dirt To Path:** Dirt can be shoveled into grass paths and grass paths can be shoveled into dirt
@@ -314,6 +316,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Super Hot Torch:** Enables one-time ignition of entities by hitting them with a torch
 * **Stronghold Enforcement:** Enforces stronghold generation to generate all blocks, regardless of air
 * **Swing Through Grass:** Allows hitting entities through grass instead of breaking it
+* **Text Field Border Color:** Colors the border of focused text fields white
 * **Texture Atlas Size:** Increases the size of the texture atlas as large as the GPU actually supports, has no effect when [Valkyrie](https://www.curseforge.com/minecraft/mc-mods/valkyrie) is installed
 * **Third Person Ignores Non-solid Blocks:** When viewing in third person, don't stop the camera on non-solid blocks
 * **Tidy Chunk:** Tidies newly generated chunks by removing scattered item entities
@@ -331,6 +334,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Ignore Named Mobs:** When checking nearby hostile mobs, skip named mobs1
 * **Unlimited Block Model Rotations:** Removes the artificial -45/-22.5/0/22.5/45 degree restriction for block models
 * **Unlimited Sound Pitch Range:** Removes the hardcoded range for sound pitches (0.5-2.0)
+* **Unsafe FluidStack Constructor:** Skips the registration check for fluid in FluidStack constructors
 * **Use Separate Dismount Key:** Makes the dismount keybind separate from LSHIFT, allowing it to be rebound independently
 * **Use Separate Narrator Key:** Allows using a custom Narrator key, instead of being stuck with CTRL+B
 * **Useful Hoes:** Backports faster Hoe block harvesting for hay bales and sponges, includes configurable whitelist
@@ -616,6 +620,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Thermal Expansion**
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Fluid Transposer Stuck Fix:** Fixes the Fluid Transposer rarely getting stuck while auto-processing fluid containers by ejecting spent/unusable containers from the center slot so crafting can resume
     * **Insolator Custom Monoculture:** Adds Monoculture Cycle integration to desired phytogenic insolator recipes added by ModTweaker
 * **Tinkers' Construct**
     * **Disable Rendering Items in Smeltery:** Disables rendering items in the world when they are inside the Smeltery to prevent lag while rendering

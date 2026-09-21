@@ -1975,7 +1975,7 @@ public class UTConfigTweaks
 
         @Config.RequiresMcRestart
         @Config.Name("Unsafe FluidStack Constructor")
-        @Config.Comment("Skips the registration check for fluid in FluidStack construtcors")
+        @Config.Comment("Skips the registration check for fluid in FluidStack constructors")
         public boolean utUnsafeFluidStackConstructorToggle = true;
 
         @Config.Name("Default Difficulty")
