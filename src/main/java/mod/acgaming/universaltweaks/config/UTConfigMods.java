@@ -1012,6 +1012,12 @@ public class UTConfigMods
         public boolean utDuplicationFixesToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Worldgen Bounds Fix")
+        @Config.Comment("Prevents Extra Utilities world generation from placing blocks outside the valid build height, which can crash the game")
+        public boolean utWorldgenBoundsFix = true;
+
+
+        @Config.RequiresMcRestart
         @Config.Name("Creative Mill Harvestability")
         @Config.Comment("Fixes the Creative Mill Generator not respecting the Creative Block Breaking config")
         public boolean utFixCreativeMillHarvestability = true;
