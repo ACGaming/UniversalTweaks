@@ -29,6 +29,7 @@ public class UTObsoleteModsHandler
                 put("biggerpacketsplz", () -> UTConfigBugfixes.MISC.utPacketSize > 0x200000);
                 put("blockfire", () -> UTConfigBugfixes.ENTITIES.utBlockFireToggle);
                 put("blockoverlayfix", () -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
+                put("chargefix", () -> UTConfigBugfixes.MISC.utEntityDepthMaskToggle);
                 put("deuf", () -> UTConfigBugfixes.ENTITIES.utEntityUUIDToggle);
                 put("diethopper", () -> UTConfigBugfixes.BLOCKS.utDietHopperToggle);
                 put("difficultypatch", () -> UTConfigBugfixes.WORLD.utDifficultyConsistencyToggle);
@@ -54,6 +55,7 @@ public class UTObsoleteModsHandler
             {
                 put("drawerfps", () -> UTConfigMods.STORAGE_DRAWERS.utSDRenderRange > 0);
                 put("erebusfix", () -> UTConfigMods.EREBUS.utEBPreservedBlocksToggle);
+                put("ironchestfix", () -> UTConfigMods.IRON_CHESTS.utFixChestAnimationSync);
                 put("steamworldpatcher", () -> UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
