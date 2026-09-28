@@ -224,6 +224,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             {
                 put("mixins/bugfixes/mixins.blocks.banner.json", c -> UTConfigBugfixes.BLOCKS.utBannerBoundingBoxToggle && !c.isModPresent("renderlib"));
                 put("mixins/bugfixes/mixins.blocks.blockoverlay.json", c -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
+                put("mixins/bugfixes/mixins.blocks.blockbreakprogress.json", c -> UTConfigBugfixes.BLOCKS.utBlockBreakProgressToggle);
                 put("mixins/bugfixes/mixins.blocks.selectionbox.json", c -> UTConfigBugfixes.BLOCKS.utBlockSelectionBoxOffset != 0.002D);
                 put("mixins/bugfixes/mixins.entities.elytra.json", c -> UTConfigBugfixes.ENTITIES.utElytraDeploymentLandingToggle);
                 put("mixins/bugfixes/mixins.entities.elytrarender.json", c -> UTConfigBugfixes.ENTITIES.utFixInvisiblePlayerModelWithElytra && !c.isModPresent("openmods"));

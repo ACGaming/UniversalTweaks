@@ -33,6 +33,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Anvil Repairable Check:** Fixes anvils allowing to repair irreparable items
 * **Attack Radius:** Improves the attack radius of hostile mobs by checking the line of sight with raytracing
 * **Banner Bounding Box:** Fixes rendering issues with banners by correctly sizing their render bounding boxes
+* **Block Break Progress:** Fixes incorrect destroy stage sprites of block damage overlays
 * **Block Fire:** Prevents fire projectiles burning entities when blocking with shields
 * **Block Overlay:** Fixes x-ray when standing in non-suffocating blocks
 * **Block Selection Box Offset:** Fixes the offset of mouseover selection boxes for blocks

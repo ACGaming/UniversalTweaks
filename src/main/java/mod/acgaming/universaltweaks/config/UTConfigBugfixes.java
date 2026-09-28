@@ -67,6 +67,11 @@ public class UTConfigBugfixes
         public boolean utComparatorTimingToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Block Break Progress")
+        @Config.Comment("Fixes incorrect destroy stage sprites of block damage overlays")
+        public boolean utBlockBreakProgressToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Falling Block End Portal Dupe")
         @Config.Comment("Prevents duplication of falling blocks through end portals")
         public boolean utFallingBlockPortalDupeToggle = true;
