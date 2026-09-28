@@ -17,7 +17,7 @@ All changes are toggleable via config files.
 
 ### **✨ Interested in best practices for your modpack? PackCompanion got you covered!**
 
-[**PackCompanion**](https://www.curseforge.com/minecraft/mc-mods/packcompanion) is the ultimate sentinel mod for 1.12.2 designed to perform a runtime check for modpack stability. It automatically identifies mods that are outdated, problematic, or superseded by modern alternatives.
+[**PackCompanion**](https://github.com/AnasDevO/PackTemplateCompanion/releases) is the ultimate sentinel mod for 1.12.2 designed to perform a runtime check for modpack stability. It automatically identifies mods that are outdated, problematic, or superseded by modern alternatives.
 
 ### **📦 Want a premade modpack that does the boring work for you? Check out BareBones Template!**
 
