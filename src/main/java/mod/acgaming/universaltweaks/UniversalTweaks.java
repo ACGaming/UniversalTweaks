@@ -191,6 +191,7 @@ public class UniversalTweaks
         + "after:tardis;"
         + "after:tcomplement;"
         + "after:tconstruct;"
+        + "after:techguns;"
         + "after:techreborn;"
         + "after:thebetweenlands;"
         + "after:thermalexpansion;"

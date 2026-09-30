@@ -167,6 +167,7 @@ final def mod_dependencies = [
     'curse.maven:storage-drawers-223852:2952606'                      : [debug_storage_drawers],
     'curse.maven:tardis-290247:2903453'                               : [debug_tardis],
     'curse.maven:tech-reborn-233564:2966851'                          : [debug_tech_reborn],
+    'curse.maven:techguns-244201:2958103'                             : [debug_techguns],
     'curse.maven:teslacorelib-254602:2891841'                         : [debug_industrial_foregoing],
     'curse.maven:test_dummy-225738:2503041'                           : [debug_test_dummy],
     'curse.maven:thaumcraft-223628:2629023'                           : [debug_thaumcraft],
