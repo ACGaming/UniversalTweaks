@@ -248,6 +248,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **No Lightning Fire:** Disables the creation of fire around lightning strikes
     * **No Lightning Flash:** Disables the flashing of skybox and ground brightness on lightning strikes
     * **No Lightning Item Destruction:** Prevents lightning bolts from destroying items
+* **Limit Spawning Radius:** Restricts natural mob spawning to a configurable radius around players, avoiding wasted spawns
 * **Linear XP Amount:** Sets the amount of XP needed for each level, effectively removing the increasing level scaling
 * **Load Sounds:** Plays sounds when the game or the world are loaded
 * **Mending Overpowered:** If mending fix is enabled, repairs entire damaged inventory with XP

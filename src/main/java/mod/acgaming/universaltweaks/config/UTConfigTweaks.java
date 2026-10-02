@@ -766,6 +766,25 @@ public class UTConfigTweaks
         public EnumMobDespawning utMobDespawningToggle = EnumMobDespawning.DEFAULT;
 
         @Config.RequiresMcRestart
+        @Config.Name("Limit spawning radius")
+        @Config.Comment
+            ({
+                "Vanilla Minecraft would try to spawn mobs far from players, causing them to be despawned immediately.",
+                "This limits mobs to spawn within a certain radius from players to avoid spawn scams",
+                "Mob spawner blocks, structures and scripted spawning are unaffected."
+            })
+        public boolean utSpawnRadiusToggle = true;
+
+        @Config.Name("Spawn Radius")
+        @Config.Comment
+            ({
+                "How close a natural spawn position must be to a player, in blocks.",
+                "Spawning is confined to this radius; 128 is the vanilla mob despawn distance.",
+                "Lower it to cut mob spawning down further."
+            })
+        public double utSpawnRadius = 128.0D;
+
+        @Config.RequiresMcRestart
         @Config.Name("Mob Spawning Light Level")
         @Config.Comment
             ({
