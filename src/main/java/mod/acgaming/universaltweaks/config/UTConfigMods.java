@@ -347,6 +347,18 @@ public class UTConfigMods
     @Config.Name("Tardis Mod")
     public static final TardisCategory TARDIS = new TardisCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.techguns")
+    @Config.Name("Techguns")
+    public static final TechgunsCategory TECHGUNS = new TechgunsCategory();
+
+    public static class TechgunsCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Projectile Trail Fix")
+        @Config.Comment("Stops Techguns projectiles from emitting trail particles forever at the world origin")
+        public boolean utTechgunsProjectileTrailFixToggle = true;
+    }
+
     @Config.LangKey("cfg.universaltweaks.modintegration.tr")
     @Config.Name("Tech Reborn")
     public static final TechRebornCategory TECH_REBORN = new TechRebornCategory();

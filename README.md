@@ -605,6 +605,8 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Item Voiding Fix:** Prevents voiding of items when near capacity limits
     * **Remove Position from Drops:** Removes position data from drawers that keep their contents when broken, allowing them to stack with each other
     * **Render Range:** Approximate range in blocks at which drawers render contained items
+* **Techguns**
+    * **Projectile Trail Fix:** Prevents Techguns projectiles from spawning trail particles that never expire
 * **Tardis**
     * **Memory Leak Fix:** Fixes a client-side memory leak associated with EntityPlayer
 * **Tech Reborn**
