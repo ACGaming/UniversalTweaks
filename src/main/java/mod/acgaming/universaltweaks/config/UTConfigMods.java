@@ -1060,6 +1060,11 @@ public class UTConfigMods
         @Config.Name("Unstable Ingots Inventory Scanning")
         @Config.Comment("Prevents CME crashes when iterating over inventory slots in special containers")
         public boolean utUnstableIngotsInvScanning = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Wildcard Input Matching")
+        @Config.Comment("Fixes machines not correctly matching wildcard item inputs, such as Bookshelves in Enchanter recipe for Magical Wood")
+        public boolean utWildcardMatching = true;
     }
 
     public static class ExtremeReactorsCategory
