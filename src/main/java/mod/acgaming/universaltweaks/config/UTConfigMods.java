@@ -613,6 +613,15 @@ public class UTConfigMods
     public static class BiomesOPlentyCategory
     {
         @Config.RequiresMcRestart
+        @Config.Name("BiomeTweaker Height Compatibility")
+        @Config.Comment
+            ({
+                "Allows BiomeTweaker to modify height properties of BOP biomes",
+                "Available script properties: averageheight, variationabove, variationbelow"
+            })
+        public boolean utBoPBTHeightToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Hot Spring Water")
         @Config.Comment("Fixes rapid inflection of regeneration effects in hot spring water")
         public boolean utBoPHotSpringWaterToggle = true;

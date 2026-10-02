@@ -1,0 +1,9 @@
+{
+  "package": "mod.acgaming.universaltweaks.mods.biomesoplenty.biometweaker.mixin",
+  "refmap": "universaltweaks.refmap.json",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "UTBTBiomePropertyManagerMixin"
+  ]
+}

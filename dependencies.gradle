@@ -74,6 +74,7 @@ final def mod_dependencies = [
     'curse.maven:bibliocraft-228027:3647708'                          : [debug_bibliocraft],
     'curse.maven:binnies-mods-223525:2916129'                         : [debug_binnies_mods],
     'curse.maven:biomes-o-plenty-220318:2842510'                      : [debug_biomes_o_plenty],
+    'curse.maven:biometweaker-228895:3112142'                         : [debug_biometweaker],
     'curse.maven:blood-magic-224791:2822288'                          : [debug_blood_magic],
     'curse.maven:botania-225643:3330934'                              : [debug_botania],
     'curse.maven:bwm-suite-246760:5702821'                            : [debug_bwm],

@@ -409,6 +409,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Binnie's Mods**
     * **Gather Windfall:** Allows Forestry farms to pick up ExtraTrees fruit
 * **Biomes O' Plenty**
+    * **BiomeTweaker Height Compatibility:** Allows BiomeTweaker to modify height properties of BOP biomes
     * **Farmland Stuck Fix:** Fixes entities getting stuck when BOP farmland converts to dirt (MC-104259)
     * **Hot Spring Water:** Fixes rapid inflection of regeneration effects in hot spring water
 * **Blood Magic**
