@@ -46,6 +46,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.enderio.itemrender.json", c -> c.isModPresent("enderio") && UTConfigMods.ENDER_IO.utReplaceItemRenderer);
                 put("mixins/mods/mixins.enderutilities.json", c -> c.isModPresent("enderutilities") && UTConfigMods.ENDER_UTILITIES.utGuiCloseSlotCrashFixToggle);
                 put("mixins/mods/mixins.enderutilities.ftbutilities.json", c -> c.isModPresent("enderutilities") && c.isModPresent("ftblib") && c.isModPresent("ftbutilities") && UTConfigMods.ENDER_UTILITIES.utHandyBagFTBUtilitiesButtonsToggle);
+                put("mixins/mods/mixins.enderutilities.ftbutilities.jei.json", c -> c.isModPresent("enderutilities") && c.isModPresent("ftblib") && c.isModPresent("ftbutilities") && c.isModPresent("jei") && UTConfigMods.ENDER_UTILITIES.utHandyBagFTBUtilitiesButtonsToggle);
                 put("mixins/mods/mixins.fpsreducer.json", c -> c.isModPresent("fpsreducer") && UTConfigMods.FPS_REDUCER.utCorrectFpsValue);
                 put("mixins/mods/mixins.hammerlib.color.json", c -> c.isModPresent("hammercore") && UTConfigMods.HAMMER_LIB.utOptimizeItemColorHelper);
                 put("mixins/mods/mixins.hammerlib.url.json", c -> c.isModPresent("hammercore") && UTConfigMods.HAMMER_LIB.utSkipURLCheck);

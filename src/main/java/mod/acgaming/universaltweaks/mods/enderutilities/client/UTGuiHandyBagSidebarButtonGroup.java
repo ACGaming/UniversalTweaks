@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.feed_the_beast.ftblib.client.FTBLibClientConfig;
-import com.feed_the_beast.ftblib.client.FTBLibClientEventHandler;
 import com.feed_the_beast.ftblib.client.SidebarButton;
 import com.feed_the_beast.ftblib.client.SidebarButtonGroup;
 import com.feed_the_beast.ftblib.client.SidebarButtonManager;
@@ -17,6 +16,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
+import javax.annotation.Nullable;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
@@ -69,7 +69,6 @@ public class UTGuiHandyBagSidebarButtonGroup extends GuiButton
         if (this.buttons.isEmpty())
         {
             this.visible = false;
-            FTBLibClientEventHandler.lastDrawnArea = new Rectangle();
             return;
         }
 
@@ -160,8 +159,17 @@ public class UTGuiHandyBagSidebarButtonGroup extends GuiButton
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         GlStateManager.popMatrix();
         this.zLevel = 0.0F;
+    }
 
-        FTBLibClientEventHandler.lastDrawnArea = new Rectangle(this.x, this.y, this.width, this.height);
+    @Nullable
+    public Rectangle getArea()
+    {
+        if (this.visible == false || this.width <= 0 || this.height <= 0)
+        {
+            return null;
+        }
+
+        return new Rectangle(this.x, this.y, this.width, this.height);
     }
 
     private void drawTooltip(FontRenderer fontRenderer, int mouseX, int mouseY)
