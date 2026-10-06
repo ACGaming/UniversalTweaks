@@ -49,6 +49,7 @@ public enum UTMusicType
     @SideOnly(Side.CLIENT)
     public Supplier<MusicType> getMusicTickerType()
     {
+        if (musicTypeSupplier == null) init();
         return Objects.requireNonNull(musicTypeSupplier);
     }
 }
