@@ -97,6 +97,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Sleep Resets Weather:** Fixes sleeping always resetting rain and thunder times
+* **Slot Click Crash:** Fixes a crash that occurred when an item's slot was changed at the same time the inventory was closed
 * **Spectator Menu:** Fixes the spectator menu not showing player skins
 * **Third Person Camera Orientation:** Fixes a raytracing bug which causes third person camera tilting to be slightly asymmetric
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
