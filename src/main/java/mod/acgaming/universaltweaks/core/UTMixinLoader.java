@@ -99,6 +99,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.biomesoplenty.json", c -> c.isModPresent("biomesoplenty"));
                 put("mixins/mods/mixins.biomesoplenty.biometweaker.json", c -> c.isModPresent("biomesoplenty") && c.isModPresent("biometweaker") && UTConfigMods.BIOMES_O_PLENTY.utBoPBTHeightToggle);
                 put("mixins/mods/mixins.biomesoplenty.farmland.json", c -> c.isModPresent("biomesoplenty") && UTConfigMods.BIOMES_O_PLENTY.utBoPFarmlandStuckFixToggle);
+                put("mixins/mods/mixins.biomesoplenty.plantssoil.json", c -> c.isModPresent("biomesoplenty") && UTConfigMods.BIOMES_O_PLENTY.utBoPPlantSoilCompatibilityToggle);
                 put("mixins/mods/mixins.biomesoplenty.sealevel.json", c -> c.isModPresent("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
                 put("mixins/mods/mixins.bloodmagic.boundtool.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);
                 put("mixins/mods/mixins.bloodmagic.dupes.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);

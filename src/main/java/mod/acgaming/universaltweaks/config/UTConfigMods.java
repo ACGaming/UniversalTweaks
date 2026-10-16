@@ -630,6 +630,15 @@ public class UTConfigMods
         @Config.Name("Farmland Stuck Fix")
         @Config.Comment("Fixes entities getting stuck when BOP farmland converts to dirt (MC-104259)")
         public boolean utBoPFarmlandStuckFixToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Plant Soil Compatibility")
+        @Config.Comment
+            ({
+                "Makes BOP flowers, plants, saplings, and bamboo accept soils that report support via Block#canSustainPlant",
+                "Fixes incompatibilities with modded soils such as Colored Grass from Random Things / Quantum Things"
+            })
+        public boolean utBoPPlantSoilCompatibilityToggle = true;
     }
 
     public static class BloodMagicCategory
