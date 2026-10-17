@@ -413,6 +413,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **BiomeTweaker Height Compatibility:** Allows BiomeTweaker to modify height properties of BOP biomes
     * **Farmland Stuck Fix:** Fixes entities getting stuck when BOP farmland converts to dirt (MC-104259)
     * **Hot Spring Water:** Fixes rapid inflection of regeneration effects in hot spring water
+    * **Plant Soil Compatibility:** Makes BOP flowers, plants, saplings, and bamboo accept soils via Block#canSustainPlant
 * **Blood Magic**
     * **Bound Tool Harvest Tweak:** Improves performance when harvesting blocks with Bound Tool's right-click and exposes block drops to HarvestDropsEvent
     * **Duplication Fixes:** Fixes various duplication exploits
