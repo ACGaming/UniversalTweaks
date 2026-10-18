@@ -1,0 +1,7 @@
+{
+  "package": "mod.acgaming.universaltweaks.mods.extrautilities.lawsword.mixin",
+  "refmap": "universaltweaks.refmap.json",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "server": ["UTMCTimerMixin"]
+}
