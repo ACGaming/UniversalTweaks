@@ -22,6 +22,7 @@ public class UTMixinLoader implements ILateMixinLoader
     private static final Map<String, Predicate<Context>> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Predicate<Context>>()
     {
         {
+            put("mixins/mods/mixins.extrautilities.lawsword.server.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utLawSwordDedicatedServerFix);
             put("mixins/mods/mixins.randomthings.teleport.json", c -> regularRandomThingsLoaded() && UTConfigMods.RANDOM_THINGS.utTeleportStall);
             put("mixins/mods/mixins.quark.linkitems.json", c -> c.isModPresent("quark") && UTConfigMods.QUARK.utLinkItemsServer);
         }

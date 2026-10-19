@@ -1049,6 +1049,11 @@ public class UTConfigMods
         public boolean utDeepDarkStats = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Kikoku Dedicated Server Fix")
+        @Config.Comment("Restores Kikoku health drain on dedicated servers")
+        public boolean utLawSwordDedicatedServerFix = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
