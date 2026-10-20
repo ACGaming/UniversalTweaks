@@ -59,6 +59,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.techguns.projectiles.json", c -> c.isModPresent("techguns") && UTConfigMods.TECHGUNS.utTechgunsProjectileTrailFixToggle);
                 put("mixins/mods/mixins.tconstruct.client.json", c -> regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utParticleFixesToggle);
                 put("mixins/mods/mixins.tconstruct.multimodulejeibounds.client.json", c -> c.isModPresent("tconstruct") && c.isModPresent("jei") && UTConfigMods.TINKERS_CONSTRUCT.utTConJEIBoundsToggle);
+                put("mixins/mods/mixins.rsctr.json", c -> c.isModPresent("rs_ctr") && UTConfigMods.REDSTONE_CONTROL.utFixRsctrSprites);
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
             {

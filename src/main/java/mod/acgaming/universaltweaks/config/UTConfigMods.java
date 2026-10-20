@@ -307,6 +307,10 @@ public class UTConfigMods
     @Config.Name("Random Things")
     public static final RandomThingsCategory RANDOM_THINGS = new RandomThingsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.redstonecontrol")
+    @Config.Name("Redstone Control")
+    public static final RedstoneControlCategory REDSTONE_CONTROL = new RedstoneControlCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.requiousfrakto")
     @Config.Name("Requious Frakto")
     public static final RequiousFraktoCategory REQUIOUS_FRAKTO = new RequiousFraktoCategory();
@@ -1420,6 +1424,16 @@ public class UTConfigMods
         public boolean utItemCollectorDupe = true;
     }
 
+    public static class RedstoneControlCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Gate Icon Fix")
+        @Config.Comment
+            ({
+                "Fixes the icons turning into missing textures when another mod (e.g. VintageFix) rewrites sprite loading"
+            })
+        public boolean utFixRsctrSprites = true;
+    }
     public static class RequiousFraktoCategory
     {
         @Config.RequiresMcRestart

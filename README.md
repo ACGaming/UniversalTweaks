@@ -575,6 +575,8 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Item Collector Dupe:** Fixes a duplication exploit connected to the Advanced Item Collector
 * **Railcraft**
     * **No Beta Warning:** Disables the beta message warning on world join
+* **Redstone Control**
+    * **Fix Gate Icons:** Keeps the circuit gate icons working when another mod changes how sprites are loaded (e.g. VintageFix)
 * **Requious Frakto**
     * **Particle Fixes:** Fixes server world being leaked to various particles
 * **RFTools**
