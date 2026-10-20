@@ -154,6 +154,7 @@ final def mod_dependencies = [
     'curse.maven:reach-fix-556777:4633407'                            : [debug_cqrepoured],
     'curse.maven:reborn-core-237903:3330308'                          : [debug_tech_reborn],
     'curse.maven:redstone-flux-270789:2920436'                        : [debug_thermal_expansion],
+    'curse.maven:recurrent-complex-223150:8562927'                    : [debug_reccomplex],
     'curse.maven:requious-frakto-336748:3218640'                      : [debug_requious_frakto],
     'curse.maven:reskillable-286382:2815686'                          : [debug_reskillable],
     'curse.maven:rftools-224641:2861573'                              : [debug_rftools],

@@ -189,6 +189,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.quark.dupes.json", c -> c.isModPresent("quark") && UTConfigMods.QUARK.utDuplicationFixesToggle);
                 put("mixins/mods/mixins.randomthings.anvil.json", c -> regularRandomThingsLoaded() && UTConfigMods.RANDOM_THINGS.utAnvilCraftFix);
                 put("mixins/mods/mixins.randomthings.collector.json", c -> regularRandomThingsLoaded() && UTConfigMods.RANDOM_THINGS.utItemCollectorDupe);
+                put("mixins/mods/mixins.reccomplex.bytearrays.json", c -> c.isModPresent("reccomplex") && UTConfigMods.RECURRENT_COMPLEX.utFasterStructureReadToggle);
                 put("mixins/mods/mixins.requiousfrakto.json", c -> c.isModPresent("requious") && UTConfigMods.REQUIOUS_FRAKTO.utParticleFixesToggle);
                 put("mixins/mods/mixins.reskillable.json", c -> c.isModPresent("reskillable"));
                 put("mixins/mods/mixins.rftools.json", c -> c.isModPresent("rftools") && UTConfigMods.RFTOOLS.utXNetChannelCrash);
