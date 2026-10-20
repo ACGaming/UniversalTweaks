@@ -452,6 +452,11 @@ public class UTConfigBugfixes
         @Config.Name("Third Person Camera Orientation")
         @Config.Comment("Fixes a raytracing bug which causes third person camera tilting to be slightly asymmetric")
         public boolean utCameraOrientation = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Slot Click Crash")
+        @Config.Comment("Fixes a crash that occurred when an item's slot was changed at the same time the inventory was closed.")
+        public boolean utSlotClickCrash = true;
     }
 
     public static class WorldCategory

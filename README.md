@@ -97,6 +97,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Shear Mooshroom Dupe:** Fixes a duplication exploit connected to shearing mooshrooms
 * **Skeleton Aim:** Fixes skeletons not looking at their targets when strafing
 * **Sleep Resets Weather:** Fixes sleeping always resetting rain and thunder times
+* **Slot Click Crash:** Fixes a crash that occurred when an item's slot was changed at the same time the inventory was closed
 * **Spectator Menu:** Fixes the spectator menu not showing player skins
 * **Third Person Camera Orientation:** Fixes a raytracing bug which causes third person camera tilting to be slightly asymmetric
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
@@ -412,6 +413,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **BiomeTweaker Height Compatibility:** Allows BiomeTweaker to modify height properties of BOP biomes
     * **Farmland Stuck Fix:** Fixes entities getting stuck when BOP farmland converts to dirt (MC-104259)
     * **Hot Spring Water:** Fixes rapid inflection of regeneration effects in hot spring water
+    * **Plant Soil Compatibility:** Makes BOP flowers, plants, saplings, and bamboo accept soils via Block#canSustainPlant
 * **Blood Magic**
     * **Bound Tool Harvest Tweak:** Improves performance when harvesting blocks with Bound Tool's right-click and exposes block drops to HarvestDropsEvent
     * **Duplication Fixes:** Fixes various duplication exploits
@@ -498,6 +500,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Creative Mill Harvestability:** Fixes the Creative Mill Generator not respecting the Creative Block Breaking config
     * **Downgrade Potion Recipes Log Level:** Downgrades the message when creating a potion recipe from info to a debug
     * **Unstable Ingots Inventory Scanning:** Prevents CME crashes when iterating over inventory slots in special containers
+    * **Fix Kikoku on Dedicated Server:** Fixes issues with the Kikoku weapon not draining max health of the target on dedicated servers
 * **Extreme Reactors**
     * **Mitigate Steam Reactor Crash:** Mitigates NPE in updateServer by no-oping fluid transfers when the direction is null
 * **Forestry**
@@ -577,6 +580,8 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **No Beta Warning:** Disables the beta message warning on world join
 * **Recurrent Complex**
     * **Faster Structure Reading:** Structures load faster at startup
+* **Redstone Control**
+    * **Fix Gate Icons:** Keeps the circuit gate icons working when another mod changes how sprites are loaded (e.g. VintageFix)
 * **Requious Frakto**
     * **Particle Fixes:** Fixes server world being leaked to various particles
 * **RFTools**

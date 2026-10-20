@@ -22,6 +22,7 @@ public class UTMixinLoader implements ILateMixinLoader
     private static final Map<String, Predicate<Context>> serversideMixinConfigs = ImmutableMap.copyOf(new HashMap<String, Predicate<Context>>()
     {
         {
+            put("mixins/mods/mixins.extrautilities.lawsword.server.json", c -> c.isModPresent("extrautils2") && UTConfigMods.EXTRA_UTILITIES.utLawSwordDedicatedServerFix);
             put("mixins/mods/mixins.randomthings.teleport.json", c -> regularRandomThingsLoaded() && UTConfigMods.RANDOM_THINGS.utTeleportStall);
             put("mixins/mods/mixins.quark.linkitems.json", c -> c.isModPresent("quark") && UTConfigMods.QUARK.utLinkItemsServer);
         }
@@ -59,6 +60,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.techguns.projectiles.json", c -> c.isModPresent("techguns") && UTConfigMods.TECHGUNS.utTechgunsProjectileTrailFixToggle);
                 put("mixins/mods/mixins.tconstruct.client.json", c -> regularTConLoaded() && UTConfigMods.TINKERS_CONSTRUCT.utParticleFixesToggle);
                 put("mixins/mods/mixins.tconstruct.multimodulejeibounds.client.json", c -> c.isModPresent("tconstruct") && c.isModPresent("jei") && UTConfigMods.TINKERS_CONSTRUCT.utTConJEIBoundsToggle);
+                put("mixins/mods/mixins.rsctr.json", c -> c.isModPresent("rs_ctr") && UTConfigMods.REDSTONE_CONTROL.utFixRsctrSprites);
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
             {
@@ -99,6 +101,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.biomesoplenty.json", c -> c.isModPresent("biomesoplenty"));
                 put("mixins/mods/mixins.biomesoplenty.biometweaker.json", c -> c.isModPresent("biomesoplenty") && c.isModPresent("biometweaker") && UTConfigMods.BIOMES_O_PLENTY.utBoPBTHeightToggle);
                 put("mixins/mods/mixins.biomesoplenty.farmland.json", c -> c.isModPresent("biomesoplenty") && UTConfigMods.BIOMES_O_PLENTY.utBoPFarmlandStuckFixToggle);
+                put("mixins/mods/mixins.biomesoplenty.plantssoil.json", c -> c.isModPresent("biomesoplenty") && UTConfigMods.BIOMES_O_PLENTY.utBoPPlantSoilCompatibilityToggle);
                 put("mixins/mods/mixins.biomesoplenty.sealevel.json", c -> c.isModPresent("biomesoplenty") && UTConfigTweaks.WORLD.utSeaLevel != 63);
                 put("mixins/mods/mixins.bloodmagic.boundtool.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utBoundToolTweakToggle);
                 put("mixins/mods/mixins.bloodmagic.dupes.json", c -> c.isModPresent("bloodmagic") && UTConfigMods.BLOOD_MAGIC.utDuplicationFixesToggle);

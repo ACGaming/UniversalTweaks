@@ -310,6 +310,10 @@ public class UTConfigMods
     @Config.LangKey("cfg.universaltweaks.modintegration.reccomplex")
     @Config.Name("Recurrent Complex")
     public static final RecurrentComplexCategory RECURRENT_COMPLEX = new RecurrentComplexCategory();
+  
+    @Config.LangKey("cfg.universaltweaks.modintegration.redstonecontrol")
+    @Config.Name("Redstone Control")
+    public static final RedstoneControlCategory REDSTONE_CONTROL = new RedstoneControlCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.requiousfrakto")
     @Config.Name("Requious Frakto")
@@ -634,6 +638,15 @@ public class UTConfigMods
         @Config.Name("Farmland Stuck Fix")
         @Config.Comment("Fixes entities getting stuck when BOP farmland converts to dirt (MC-104259)")
         public boolean utBoPFarmlandStuckFixToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Plant Soil Compatibility")
+        @Config.Comment
+            ({
+                "Makes BOP flowers, plants, saplings, and bamboo accept soils that report support via Block#canSustainPlant",
+                "Fixes incompatibilities with modded soils such as Colored Grass from Random Things / Quantum Things"
+            })
+        public boolean utBoPPlantSoilCompatibilityToggle = true;
     }
 
     public static class BloodMagicCategory
@@ -1044,6 +1057,11 @@ public class UTConfigMods
         public boolean utDeepDarkStats = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Kikoku Dedicated Server Fix")
+        @Config.Comment("Restores Kikoku health drain on dedicated servers")
+        public boolean utLawSwordDedicatedServerFix = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
@@ -1435,6 +1453,16 @@ public class UTConfigMods
         public boolean utItemCollectorDupe = true;
     }
 
+    public static class RedstoneControlCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Gate Icon Fix")
+        @Config.Comment
+            ({
+                "Fixes the icons turning into missing textures when another mod (e.g. VintageFix) rewrites sprite loading"
+            })
+        public boolean utFixRsctrSprites = true;
+    }
     public static class RequiousFraktoCategory
     {
         @Config.RequiresMcRestart
