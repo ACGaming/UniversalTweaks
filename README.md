@@ -575,6 +575,8 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Item Collector Dupe:** Fixes a duplication exploit connected to the Advanced Item Collector
 * **Railcraft**
     * **No Beta Warning:** Disables the beta message warning on world join
+* **Recurrent Complex**
+    * **Faster Structure Reading:** Structures load faster at startup
 * **Requious Frakto**
     * **Particle Fixes:** Fixes server world being leaked to various particles
 * **RFTools**

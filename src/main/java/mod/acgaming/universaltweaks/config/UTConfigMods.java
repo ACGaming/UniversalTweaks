@@ -307,6 +307,10 @@ public class UTConfigMods
     @Config.Name("Random Things")
     public static final RandomThingsCategory RANDOM_THINGS = new RandomThingsCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.reccomplex")
+    @Config.Name("Recurrent Complex")
+    public static final RecurrentComplexCategory RECURRENT_COMPLEX = new RecurrentComplexCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.requiousfrakto")
     @Config.Name("Requious Frakto")
     public static final RequiousFraktoCategory REQUIOUS_FRAKTO = new RequiousFraktoCategory();
@@ -1396,6 +1400,17 @@ public class UTConfigMods
         @Config.Name("No Beta Warning")
         @Config.Comment("Disables the beta message warning on world join")
         public boolean utNoBetaWarningToggle = true;
+    }
+
+    public static class RecurrentComplexCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Faster Structure Reading")
+        @Config.Comment
+            ({
+                "Speeds up RC structures loading at startup"
+            })
+        public boolean utFasterStructureReadToggle = true;
     }
 
     public static class RandomThingsCategory
