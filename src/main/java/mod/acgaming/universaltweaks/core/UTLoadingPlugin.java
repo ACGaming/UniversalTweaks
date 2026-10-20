@@ -15,6 +15,7 @@ import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import mod.acgaming.universaltweaks.Tags;
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
+import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
 import zone.rong.mixinbooter.Context;
