@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -33,6 +34,7 @@ public class UTSwingThroughGrass
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void utInteractThroughGrass(PlayerInteractEvent.RightClickBlock event)
     {
+        if (event.getEntityPlayer() == null || event.getEntityPlayer() instanceof FakePlayer) return;
         if (UTSwingThroughGrassLists.blacklistedItems.contains(event.getEntityPlayer().getHeldItemMainhand().getItem())) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTSwingThroughGrass ::: Right click block event");
         Entity entity = getEntityBehindGrass(event.getWorld(), event.getPos(), event.getEntityPlayer());
