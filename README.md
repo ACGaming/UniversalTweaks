@@ -501,6 +501,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Downgrade Potion Recipes Log Level:** Downgrades the message when creating a potion recipe from info to a debug
     * **Unstable Ingots Inventory Scanning:** Prevents CME crashes when iterating over inventory slots in special containers
     * **Fix Kikoku on Dedicated Server:** Fixes issues with the Kikoku weapon not draining max health of the target on dedicated servers
+    * **Overloaded Grid bypass:** Allows machines that do not currently use GP (e.g, not using any upgrades) to bypass the overloaded grid check and still operate normally
 * **Extreme Reactors**
     * **Mitigate Steam Reactor Crash:** Mitigates NPE in updateServer by no-oping fluid transfers when the direction is null
 * **Forestry**
