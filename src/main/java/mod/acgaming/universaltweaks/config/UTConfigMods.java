@@ -87,6 +87,10 @@ public class UTConfigMods
     @Config.Name("CB Multipart/Forge Multipart CBE")
     public static final CBMultipartCategory CB_MULTIPART = new CBMultipartCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.calculator")
+    @Config.Name("Calculator")
+    public static final CalculatorCategory CALCULATOR = new CalculatorCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.cavegenerator")
     @Config.Name("Cave Generator")
     public static final CaveGeneratorCategory CAVE_GENERATOR = new CaveGeneratorCategory();
@@ -708,6 +712,14 @@ public class UTConfigMods
         @Config.Name("Memory Leak Fix")
         @Config.Comment("Fixes a memory leak associated with EntityPlayer")
         public boolean utMemoryLeakFixToggle = true;
+    }
+
+    public static class CalculatorCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Reinforced Chest Voiding Fix")
+        @Config.Comment("Fixes Reinforced Chests voiding their contents when broken")
+        public boolean utReinforcedChestVoidingToggle = true;
     }
 
     public static class CaveGeneratorCategory

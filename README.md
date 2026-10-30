@@ -425,6 +425,8 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Fancy Skybox:** Enables the Botania Garden of Glass skybox for custom dimensions
 * **Better with Mods**
     * **Beacon NBT Loading Fix:** Fixes BWM beacons reading null tags from vanilla beacons
+* **Calculator**
+    * **Fix Reinforced Chest Voiding:** Fixes Reinforced Chests voiding its contents when broken
 * **Cave Generator**
     * **Pond Coordinate Fix:** Fixes the pond coordinate bug at chunk borders
 * **CB Multipart**
