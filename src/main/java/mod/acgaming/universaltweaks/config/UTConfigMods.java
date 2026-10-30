@@ -1096,6 +1096,11 @@ public class UTConfigMods
         @Config.Name("Wildcard Input Matching")
         @Config.Comment("Fixes machines not correctly matching wildcard item inputs, such as Bookshelves in Enchanter recipe for Magical Wood")
         public boolean utWildcardMatching = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Allow Zero GP Tiles During Overload")
+        @Config.Comment("Allows Extra Utilities tiles with no Grid Power demand to operate while the grid is overloaded")
+        public boolean utAllowZeroGPDuringOverload = true;
     }
 
     public static class ExtremeReactorsCategory
