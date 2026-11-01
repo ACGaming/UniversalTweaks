@@ -145,6 +145,7 @@ public class UniversalTweaks
         + "after:bloodmagic;"
         + "after:botania;"
         + "after:buildcraftcore;"
+        + "after:calculator;"
         + "after:ceramics;"
         + "after:chisel;"
         + "after:cofhcore;"
