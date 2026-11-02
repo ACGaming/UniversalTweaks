@@ -34,8 +34,8 @@ public class UTEntityMixin implements IPrevMotion
     @Inject(method = "onUpdate", at = @At("HEAD"))
     public void utOnUpdate(CallbackInfo info)
     {
+        universalTweaks$superUpdate = true;
         if (UTEntityDesync.isBlacklisted(((Entity) (Object) this))) return;
-        if (!universalTweaks$superUpdate) universalTweaks$superUpdate = true;
         prevMotionX = motionX;
         prevMotionY = motionY;
         prevMotionZ = motionZ;
