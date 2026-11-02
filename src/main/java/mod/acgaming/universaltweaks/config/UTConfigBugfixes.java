@@ -390,6 +390,11 @@ public class UTConfigBugfixes
         public boolean utParticleDepthMaskToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Enchantability Fix")
+        @Config.Comment("Fixes errors and crashes that occur when enchanting tables have negative enchanting power")
+        public boolean utEnchantabilityFix = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Enchantment Level Visibility")
         @Config.Comment("Fixes enchantments displaying unlocalized levels")
         public boolean utEnchantmentLevelVisibilityToggle = true;
