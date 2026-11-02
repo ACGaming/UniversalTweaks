@@ -31,6 +31,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 
 * **Accurate Smooth Lighting:** Improves the accuracy of smooth lighting by checking for suffocation and light opacity
 * **Anvil Repairable Check:** Fixes anvils allowing to repair irreparable items
+* **Arrow Landing Desync:** Fixes arrows visually snapping back after landing
 * **Attack Radius:** Improves the attack radius of hostile mobs by checking the line of sight with raytracing
 * **Banner Bounding Box:** Fixes rendering issues with banners by correctly sizing their render bounding boxes
 * **Block Break Progress:** Fixes incorrect destroy stage sprites of block damage overlays

@@ -161,6 +161,11 @@ public class UTConfigBugfixes
         public final EntityListsCategory ENTITY_LISTS = new EntityListsCategory();
 
         @Config.RequiresMcRestart
+        @Config.Name("Arrow Landing Desync")
+        @Config.Comment("Fixes arrows visually snapping back after landing")
+        public boolean utArrowLandingDesyncToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Attack Radius")
         @Config.Comment("Improves the attack radius of hostile mobs by checking the line of sight with raytracing")
         public boolean utAttackRadiusToggle = true;
