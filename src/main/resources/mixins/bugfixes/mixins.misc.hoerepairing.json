@@ -2,5 +2,6 @@
   "package": "mod.acgaming.universaltweaks.bugfixes.misc.hoerepairing.mixin",
   "refmap": "universaltweaks.refmap.json",
   "minVersion": "0.8",
-  "compatibilityLevel": "JAVA_8", "client": ["UTItemHoeMixin"]
+  "compatibilityLevel": "JAVA_8",
+  "mixins": ["UTItemHoeMixin"]
 }
