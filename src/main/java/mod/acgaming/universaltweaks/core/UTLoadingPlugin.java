@@ -90,6 +90,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/bugfixes/mixins.entities.untippedarrowparticles.json", c -> UTConfigBugfixes.ENTITIES.utUntippedArrowParticlesToggle);
                 put("mixins/bugfixes/mixins.misc.crafteditemstatistics.json", c -> UTConfigBugfixes.MISC.utCraftedItemStatisticsToggle);
                 put("mixins/bugfixes/mixins.misc.enchantability.json", c -> UTConfigBugfixes.MISC.utEnchantabilityFix);
+                put("mixins/bugfixes/mixins.misc.hoerepairing.json", c -> UTConfigBugfixes.MISC.utHoeRepairFix);
                 put("mixins/bugfixes/mixins.misc.enchantmentlevel.json", c -> UTConfigBugfixes.MISC.utEnchantmentLevelVisibilityToggle);
                 put("mixins/bugfixes/mixins.misc.packetsize.json", c -> UTConfigBugfixes.MISC.utPacketSize > 0x200000 && !c.isModPresent("spongeforge") && !c.isModPresent("randompatches"));
                 put("mixins/bugfixes/mixins.misc.particlespawning.json", c -> UTConfigBugfixes.MISC.utParticleSpawningToggle);
