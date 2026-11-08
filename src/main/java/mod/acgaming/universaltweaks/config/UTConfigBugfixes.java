@@ -406,7 +406,7 @@ public class UTConfigBugfixes
         @Config.RequiresMcRestart
         @Config.Name("Hoe Anvil Repairing")
         @Config.Comment({
-            "Fixes hoes not being repairable on anvils",
+            "Allows Hoes to be repaired by Anvils",
             "Mojang really hated hoes didn't they?"
         })
         public boolean utHoeRepairFix = true;
