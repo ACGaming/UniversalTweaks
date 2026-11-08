@@ -385,6 +385,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
     * **Allow Unlimited Fluid Veins:** Make it so max size fluid veins never run out
     * **Allow to change the Neromantic Prime Extraction Quantity:** Allows configuring the amount extracted from the fluid vein per Neromantic Prime operation
     * **Allow to specify dimensions for fluid veins:** Extends the fluid vein configuration to allow specifying in which dimensions a fluid can generate
+    * **Allow Fake Player Interactions:** Allows fake players to interact with Astral Sorcery machines
 * **Advent of Ascension**
     * **Improved Player Tick:** Improves AoA player ticking by only sending inventory changes when necessary
 * **Arcane Archives**
