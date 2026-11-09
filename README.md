@@ -72,6 +72,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Fixes Invisible Player when Flying with Elytra:** Fixes the player model occasionally disappearing when flying with elytra in a straight line in third-person mode
 * **Frustum Culling:** Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * **Help:** Replaces the help command, sorts and reports broken commands
+* **Hoe Anvil Repairing:** Fixes hoes not being repairable on anvils
 * **Hopper Bounding Box:** Slims down the hopper bounding box for easier access of nearby blocks
 * **Hopper Insert Safety Check:** Prevents crashes when the destination tile entity becomes unavailable during the item insert process
 * **Horse Falling:** Modifies falling logic of horses, listening to LivingFallEvent and taking jump boost into account

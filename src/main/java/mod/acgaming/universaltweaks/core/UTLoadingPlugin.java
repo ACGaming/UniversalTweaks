@@ -104,6 +104,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchTweaks)
             {
                 put("mixins/tweaks/mixins.blocks.anvil.json", c -> UTConfigTweaks.BLOCKS.ANVIL.utAnvilXPLevelCap != 40);
+                put("mixins/tweaks/mixins.blocks.anvil.hoerepairing.json", c -> UTConfigTweaks.BLOCKS.ANVIL.utHoeAnvilRepairing);
                 put("mixins/tweaks/mixins.blocks.barrier.json", c -> UTConfigTweaks.BLOCKS.utBarrierParticleDisplay);
                 put("mixins/tweaks/mixins.blocks.bedobstruction.json", c -> UTConfigTweaks.BLOCKS.utBedObstructionToggle);
                 put("mixins/tweaks/mixins.blocks.breakablebedrock.json", c -> UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle);

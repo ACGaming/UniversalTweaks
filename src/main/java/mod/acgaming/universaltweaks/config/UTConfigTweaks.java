@@ -310,6 +310,13 @@ public class UTConfigTweaks
             @Config.Comment("Sets the experience level cap for anvil recipes")
             public int utAnvilXPLevelCap = 40;
 
+            @Config.Name("Hoe Anvil Repairing")
+            @Config.Comment({
+                "Allows Hoes to be repaired by Anvils",
+                "Mojang really hated hoes didn't they?"
+            })
+            public boolean utHoeAnvilRepairing = true;
+
             @Config.Name("Repairable Anvil Toggle")
             @Config.Comment("Allows repairing damaged anvils by right-clicking them with a repair item")
             public boolean utRepairableAnvilToggle = false;
