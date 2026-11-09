@@ -96,6 +96,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 put("mixins/bugfixes/mixins.misc.durabilitycap.json", c -> UTConfigBugfixes.MISC.utExtendDurabilityCap);
                 put("mixins/bugfixes/mixins.misc.slotclickcrash.json", c -> UTConfigBugfixes.MISC.utSlotClickCrash);
                 put("mixins/bugfixes/mixins.world.chunksaving.json", c -> UTConfigBugfixes.WORLD.utChunkSavingToggle && !c.isModPresent("spongeforge"));
+                put("mixins/bugfixes/mixins.world.endpodium.json", c -> UTConfigBugfixes.WORLD.utEndPodiumEffectsFix);
                 put("mixins/bugfixes/mixins.world.portal.json", c -> UTConfigBugfixes.WORLD.PORTAL_LOCATION_LINK.utPortalLocationLinkToggle);
                 put("mixins/bugfixes/mixins.world.tileentities.json", c -> UTConfigBugfixes.WORLD.utTileEntityMap != UTConfigBugfixes.WorldCategory.EnumMaps.HASHMAP);
                 put("mixins/bugfixes/mixins.world.village.json", c -> UTConfigBugfixes.WORLD.utVillageComponentPartsToggle);
