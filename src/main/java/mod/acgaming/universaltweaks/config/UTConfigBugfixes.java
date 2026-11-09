@@ -404,14 +404,6 @@ public class UTConfigBugfixes
         public boolean utHelpToggle = true;
 
         @Config.RequiresMcRestart
-        @Config.Name("Hoe Anvil Repairing")
-        @Config.Comment({
-            "Allows Hoes to be repaired by Anvils",
-            "Mojang really hated hoes didn't they?"
-        })
-        public boolean utHoeRepairFix = true;
-
-        @Config.RequiresMcRestart
         @Config.Name("Locale Crash")
         @Config.Comment("Prevents various crashes with Turkish locale")
         public boolean utLocaleToggle = true;

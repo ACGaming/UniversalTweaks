@@ -1,6 +1,6 @@
-package mod.acgaming.universaltweaks.bugfixes.misc.hoerepairing.mixin;
+package mod.acgaming.universaltweaks.tweaks.blocks.anvil.mixin;
 
-import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
+import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
@@ -24,7 +24,7 @@ public abstract class UTItemHoeMixin extends Item
     public boolean getIsRepairable(@NotNull ItemStack toRepair, @NotNull ItemStack repair)
     {
         ItemStack mat = this.toolMaterial.getRepairItemStack();
-        if (UTConfigBugfixes.MISC.utHoeRepairFix && !mat.isEmpty() && OreDictionary.itemMatches(mat, repair, false)) return true;
+        if (UTConfigTweaks.BLOCKS.ANVIL.utHoeAnvilRepairing && !mat.isEmpty() && OreDictionary.itemMatches(mat, repair, false)) return true;
         return super.getIsRepairable(toRepair, repair);
     }
 }
