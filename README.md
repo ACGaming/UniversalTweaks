@@ -72,7 +72,6 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Fixes Invisible Player when Flying with Elytra:** Fixes the player model occasionally disappearing when flying with elytra in a straight line in third-person mode
 * **Frustum Culling:** Fixes invisible chunks in edge cases (small enclosed rooms at chunk borders)
 * **Help:** Replaces the help command, sorts and reports broken commands
-* **Hoe Anvil Repairing:** Fixes hoes not being repairable on anvils
 * **Hopper Bounding Box:** Slims down the hopper bounding box for easier access of nearby blocks
 * **Hopper Insert Safety Check:** Prevents crashes when the destination tile entity becomes unavailable during the item insert process
 * **Horse Falling:** Modifies falling logic of horses, listening to LivingFallEvent and taking jump boost into account
@@ -207,6 +206,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Dragon Kill:** Allows setting dragon kill experience drops and egg spawn after first kill
 * **Easy Breeding:** Enables easy breeding of animals by tossing food on the ground
 * **End Crystal Placement:** Allows placing end crystals on more blocks than obsidian or bedrock below
+* **End Podium Effects:** Fixes potion effects getting removed when using the End podium
 * **End Portal Parallax:** Re-implements parallax rendering of the end portal from 1.11 and older
 * **Entity Radius Check**
     * These tweaks are only effective if you have mod(s) that increase `World.MAX_ENTITY_RADIUS`! (Lycanites Mobs, Advanced Rocketry, Immersive Railroading, etc.)
@@ -232,6 +232,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Growth Size:** Configurable growth height/length for sugar cane, cacti and vines
 * **Hardcore Buckets:** Prevents placing of liquid source blocks in the world
 * **Hide Personal Effect Particles:** Disables potion effect particles emitting from yourself
+* **Hoe Anvil Repairing:** Allows Hoes to be repaired by Anvils
 * **Hunger Threshold to Sprint:** Sets the limit of required hunger to be able to sprint
 * **Husk & Stray Spawning:** Lets husks and strays spawn underground like regular zombies and skeletons
 * **Improve Barrier Particle Display:** Causes Barrier Particles to always be displayed to players in Creative mode
