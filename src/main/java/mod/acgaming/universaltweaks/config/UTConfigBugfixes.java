@@ -502,6 +502,11 @@ public class UTConfigBugfixes
         public boolean utDifficultyConsistencyToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("End Podium Effects")
+        @Config.Comment("Fixes potion effects getting removed when using the End podium")
+        public boolean utEndPodiumEffectsFix  = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Frustum Culling")
         @Config.Comment
             ({
