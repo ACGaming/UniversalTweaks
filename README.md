@@ -54,6 +54,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Elytra Deployment & Landing:** Relocate elytra deployment and landing to client side to prevent issues with high latencies
 * **Enchantability Fix:** Fixes errors and crashes that occur when enchanting tables have negative enchanting power
 * **Enchantment Level Visibility:** Fixes enchantments displaying unlocalized levels
+* **End Podium Effects:** Fixes potion effects getting removed when using the End podium
 * **Entity Bounding Boxes:** Saves entity bounding boxes to tags to prevent breakouts and suffocation
 * **Entity Desync:** Fixes entity motion desyncs most notable with arrows and thrown items
 * **Entity ID:** Fixes non-functional elytra firework boosting and guardian targeting if the entity ID is 0
@@ -206,7 +207,6 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Dragon Kill:** Allows setting dragon kill experience drops and egg spawn after first kill
 * **Easy Breeding:** Enables easy breeding of animals by tossing food on the ground
 * **End Crystal Placement:** Allows placing end crystals on more blocks than obsidian or bedrock below
-* **End Podium Effects:** Fixes potion effects getting removed when using the End podium
 * **End Portal Parallax:** Re-implements parallax rendering of the end portal from 1.11 and older
 * **Entity Radius Check**
     * These tweaks are only effective if you have mod(s) that increase `World.MAX_ENTITY_RADIUS`! (Lycanites Mobs, Advanced Rocketry, Immersive Railroading, etc.)
