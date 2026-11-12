@@ -53,6 +53,7 @@ public class UTObsoleteModsHandler
             }
             if (UTConfigGeneral.MASTER_SWITCHES.utMasterSwitchModIntegration)
             {
+                put("asaafp", () -> UTConfigMods.ASTRAL_SORCERY.utAllowFakePlayers);
                 put("drawerfps", () -> UTConfigMods.STORAGE_DRAWERS.utSDRenderRange > 0);
                 put("erebusfix", () -> UTConfigMods.EREBUS.utEBPreservedBlocksToggle);
                 put("ironchestfix", () -> UTConfigMods.IRON_CHESTS.utFixChestAnimationSync);

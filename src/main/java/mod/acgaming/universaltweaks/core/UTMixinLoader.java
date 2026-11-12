@@ -83,6 +83,7 @@ public class UTMixinLoader implements ILateMixinLoader
                 put("mixins/mods/mixins.agricraft.json", c -> c.isModPresent("agricraft") && UTConfigMods.AGRICRAFT.utEnderIOPluginFixToggle);
                 put("mixins/mods/mixins.aoa3.json", c -> c.isModPresent("aoa3") && UTConfigMods.AOA.utImprovedPlayerTickToggle);
                 put("mixins/mods/mixins.arcanearchives.dupes.json", c -> c.isModPresent("arcanearchives") && UTConfigMods.ARCANE_ARCHIVES.utDuplicationFixesToggle);
+                put("mixins/mods/mixins.astralsorcery.fakeplayer.json", c -> c.isModPresent("astralsorcery") && UTConfigMods.ASTRAL_SORCERY.utAllowFakePlayers);
                 put("mixins/mods/mixins.astralsorcery.json", c -> c.isModPresent("astralsorcery"));
                 put("mixins/mods/mixins.astralsorcery.neromanticprime.json", c -> c.isModPresent("astralsorcery"));
                 put("mixins/mods/mixins.astralsorcery.tool.json", c -> c.isModPresent("astralsorcery") && UTConfigMods.ASTRAL_SORCERY.utEmptyPropertiesZero);
