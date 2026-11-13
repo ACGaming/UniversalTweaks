@@ -1249,6 +1249,11 @@ public class UTConfigMods
         public boolean utIMBetterEntityNamesToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Particle Pause Fix")
+        @Config.Comment("Fixes particles from Infernal Mobs still attempting to emit even when the game is paused")
+        public boolean utIMParticlePauseFix = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Sticky Recall Compatibility")
         @Config.Comment("Enables compatibility between Infernal Mobs' Sticky effect and Capsule's Recall enchantment")
         public boolean utIMStickyRecallToggle = true;
