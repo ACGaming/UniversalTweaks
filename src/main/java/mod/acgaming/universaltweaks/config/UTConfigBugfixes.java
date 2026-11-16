@@ -531,6 +531,11 @@ public class UTConfigBugfixes
         public boolean utPortalTravelingDupeToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("TickNextTick List Sync")
+        @Config.Comment("Fixes \"TickNextTick list out of synch\" crashes by using an open-addressing set for pending block ticks")
+        public boolean utTickNextTickListSyncToggle = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Village Component Parts")
         @Config.Comment
             ({

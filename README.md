@@ -102,6 +102,7 @@ Available in flavors [**Cleanroom**](https://www.curseforge.com/minecraft/modpac
 * **Slot Click Crash:** Fixes a crash that occurred when an item's slot was changed at the same time the inventory was closed
 * **Spectator Menu:** Fixes the spectator menu not showing player skins
 * **Third Person Camera Orientation:** Fixes a raytracing bug which causes third person camera tilting to be slightly asymmetric
+* **TickNextTick List Sync:** Fixes "TickNextTick list out of synch" crashes by using an open-addressing set for pending block ticks
 * **Tile Entity Map:** Replaces the chunk position data table to prevent tile entity related issues
 * **Untipped Arrow Particles:** Fixes untipped arrows emitting blue tipped arrow particles upon reloading a world
 * **Village Component Parts:** Always builds village structures with biome-specific blocks, improves compatibility with mods such as BiomeTweaker
