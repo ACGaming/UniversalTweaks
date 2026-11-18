@@ -513,6 +513,11 @@ public class UTConfigMods
             "Example: 'essence;50000;150000;30' allows essence veins to spawn in all dimensions"
         })
         public boolean utNeromanticPrimeFluidVeinDimensions = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Allow Fake Player Interactions")
+        @Config.Comment("Allows fake players to interact with Astral Sorcery machines")
+        public boolean utAllowFakePlayers = false;
     }
 
     public static class AOACategory
